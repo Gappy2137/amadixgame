@@ -1,0 +1,64 @@
+---------------------------
+PROBLEM: Z niewiadomego powodu głębia obiektów na tym samym Y jest ustawiana losowo.
+ROZWIĄZANIE: Ustawić "yorigin" ważniejszych obiektów na wartość o 1 mniejszą.
+---------------------------
+
+---------------------------
+Ekwipunek
+//0 = PRZEDMIOT
+//1 = ILOSC
+//2 = RODZAJ
+//3 = MAKS. STACK
+//4 = HP (JEDZENIE I PICIE)
+//5 = ENERGIA (JEDZENIE I PICIE)
+//6 = POZIOM PRZEDMIOTU (BRON I UBRANIA)
+//7 = OBRAZENIA (BRON)
+//8 = OBRONA (UBRANIA)
+---------------------------
+
+function item_stack(iitem, amount){
+		var yy = 0;
+		var picked = false;
+		if (!picked){
+			repeat(obj_inventory.inv_slots){
+				if !((amount + obj_inventory.ds_inventory[# 1, yy]) > obj_inventory.ds_inventory[# 3, yy]){
+					if (obj_inventory.ds_inventory[# 0, yy] == item.none){
+						if (!picked){
+							obj_inventory.ds_inventory[# 0, yy] = iitem;
+							obj_inventory.ds_inventory[# 1, yy] += amount;
+							item_at(iitem, yy);
+							picked = true;
+						}
+					}else{
+						if (!picked){
+							if (obj_inventory.ds_inventory[# 0, yy] == iitem){
+								obj_inventory.ds_inventory[# 0, yy] = iitem;
+								obj_inventory.ds_inventory[# 1, yy] += amount;
+								item_at(iitem, yy);
+								picked = true;
+							}
+						}
+						yy ++;	
+					}
+				}else{
+					if (obj_inventory.ds_inventory[# 0, yy] == item.none){
+						if (!picked){
+							obj_inventory.ds_inventory[# 0, yy] = iitem;
+							obj_inventory.ds_inventory[# 1, yy] += amount;
+							item_at(iitem, yy);
+							picked = true;
+						}
+					}else{
+						yy ++;	
+					}
+				}
+			}
+		}
+}
+---------------------------
+var cam = view_camera[0];     
+var xpos = (obj_player.x + ((mouse_x - obj_player.x) / 2)) - camera_get_view_width(cam) / 2;     
+var ypos = (obj_player.y + ((mouse_x - obj_player.y) / 2)) - camera_get_view_height(cam) / 2;     
+     
+camera_set_view_pos(cam, xpos, ypos);   
+---------------------------

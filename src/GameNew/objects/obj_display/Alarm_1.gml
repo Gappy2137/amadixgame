@@ -1,0 +1,1 @@
+surface_resize(application_surface,ideal_width*window_size,ideal_height*window_size);
