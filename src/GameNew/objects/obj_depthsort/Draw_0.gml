@@ -38,6 +38,20 @@ with (par_objectdepth){
 
 ds_grid_sort(grid, 1, true);
 
+
+var yyy = 0;
+with (par_objectdepth){
+	repeat(inst_num){
+		if (yyy > 0){
+			if (grid[# 1, yyy] >= grid[# 1, yyy - 1]) && (grid[# 1, yyy] < (grid[# 1, yyy] + 1)){
+				
+			}
+		}
+	}
+	yyy++;
+}
+
+
 var inst;
 yy = 0;
 repeat(inst_num){
