@@ -32,6 +32,7 @@
     {"id":{"name":"scribble_typewriter_add_character_delay","path":"scripts/scribble_typewriter_add_character_delay/scribble_typewriter_add_character_delay.yy",},"order":2,},
     {"id":{"name":"spr_amadix_classicTC_u","path":"sprites/spr_amadix_classicTC_u/spr_amadix_classicTC_u.yy",},"order":1,},
     {"id":{"name":"spr_amadix_classicTC_l","path":"sprites/spr_amadix_classicTC_l/spr_amadix_classicTC_l.yy",},"order":2,},
+    {"id":{"name":"obj_testdepth","path":"objects/obj_testdepth/obj_testdepth.yy",},"order":9,},
     {"id":{"name":"spr_amadix_head_attack_l","path":"sprites/spr_amadix_head_attack_l/spr_amadix_head_attack_l.yy",},"order":7,},
     {"id":{"name":"spr_amadix_classicTC_attack_l","path":"sprites/spr_amadix_classicTC_attack_l/spr_amadix_classicTC_attack_l.yy",},"order":7,},
     {"id":{"name":"__scribble_generate_model","path":"scripts/__scribble_generate_model/__scribble_generate_model.yy",},"order":9,},
@@ -327,6 +328,7 @@
     {"id":{"name":"par_enemy","path":"objects/par_enemy/par_enemy.yy",},"order":2,},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},"order":0,},
     {"id":{"name":"obj_depthsort","path":"objects/obj_depthsort/obj_depthsort.yy",},"order":1,},
+    {"id":{"name":"rm_devroom_c","path":"rooms/rm_devroom_c/rm_devroom_c.yy",},"order":4,},
     {"id":{"name":"spr_amadix_head_attack_d","path":"sprites/spr_amadix_head_attack_d/spr_amadix_head_attack_d.yy",},"order":6,},
     {"id":{"name":"__scribble_class_element","path":"scripts/__scribble_class_element/__scribble_class_element.yy",},"order":0,},
     {"id":{"name":"item_drop_instant","path":"scripts/item_drop_instant/item_drop_instant.yy",},"order":16,},
@@ -380,6 +382,7 @@
     {"roomId":{"name":"rm_devroom","path":"rooms/rm_devroom/rm_devroom.yy",},},
     {"roomId":{"name":"rm_devroom_b","path":"rooms/rm_devroom_b/rm_devroom_b.yy",},},
     {"roomId":{"name":"Room4","path":"rooms/Room4/Room4.yy",},},
+    {"roomId":{"name":"rm_devroom_c","path":"rooms/rm_devroom_c/rm_devroom_c.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":13,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},

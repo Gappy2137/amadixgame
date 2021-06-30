@@ -27,30 +27,29 @@ var ins; yy = 0; repeat(i_num){
 */
 var grid = ds_depthsort;
 var inst_num = instance_number(par_objectdepth);
-ds_grid_resize(grid, 2, inst_num);
+ds_grid_resize(grid, 3, inst_num);
 
 var yy = 0; 
 with (par_objectdepth){
 	grid[# 0, yy] = id;
 	grid[# 1, yy] = y + yorigin + zaxis;
+	grid[# 2, yy] = x + sprite_get_xoffset(sprite_index);
 	yy++;
 }
 
 ds_grid_sort(grid, 1, true);
 
-
-var yyy = 0;
+/*
+yy = 0;
 with (par_objectdepth){
-	repeat(inst_num){
-		if (yyy > 0){
-			if (grid[# 1, yyy] >= grid[# 1, yyy - 1]) && (grid[# 1, yyy] < (grid[# 1, yyy] + 1)){
-				
+		if (yy > 0){
+			if (grid[# 1, yy] == grid[# 1, yy + 1]){
+				grid[# 2, yy] = 0;
 			}
 		}
-	}
-	yyy++;
+	yy++;
 }
-
+*/
 
 var inst;
 yy = 0;
