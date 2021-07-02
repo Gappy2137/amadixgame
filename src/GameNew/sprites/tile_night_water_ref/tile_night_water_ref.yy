@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "tileset",
-    "path": "folders/Sprites/tileset.yy",
+    "path": "folders/Tile Sets/tileset.yy",
   },
   "resourceVersion": "1.0",
   "name": "tile_night_water_ref",

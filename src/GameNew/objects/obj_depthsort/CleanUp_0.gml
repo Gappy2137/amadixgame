@@ -1,1 +1,1 @@
-ds_grid_destroy(ds_depthsort);
+//ds_grid_destroy(ds_depthsort);

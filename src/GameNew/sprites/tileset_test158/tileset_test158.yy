@@ -25,10 +25,6 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"9a154435-6380-4743-8901-c49a795196ca","path":"sprites/tileset_test158/tileset_test158.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"9a154435-6380-4743-8901-c49a795196ca","path":"sprites/tileset_test158/tileset_test158.yy",},"LayerId":{"name":"fced7393-386a-4034-a30b-e98265ab4734","path":"sprites/tileset_test158/tileset_test158.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"9a154435-6380-4743-8901-c49a795196ca","path":"sprites/tileset_test158/tileset_test158.yy",},"LayerId":{"name":"22ab56d8-ff2b-4702-94c4-9a6292a3447b","path":"sprites/tileset_test158/tileset_test158.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"9a154435-6380-4743-8901-c49a795196ca","path":"sprites/tileset_test158/tileset_test158.yy",},"LayerId":{"name":"21d8a47b-11d1-43f1-ab50-b5d36a6c358c","path":"sprites/tileset_test158/tileset_test158.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"9a154435-6380-4743-8901-c49a795196ca","path":"sprites/tileset_test158/tileset_test158.yy",},"LayerId":{"name":"312b38cd-33be-4455-a663-dc70a89951dc","path":"sprites/tileset_test158/tileset_test158.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"9a154435-6380-4743-8901-c49a795196ca","path":"sprites/tileset_test158/tileset_test158.yy",},"LayerId":{"name":"ac47d7e8-737a-4678-87cb-805de56c626d","path":"sprites/tileset_test158/tileset_test158.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"tileset_test158","path":"sprites/tileset_test158/tileset_test158.yy",},"resourceVersion":"1.0","name":"9a154435-6380-4743-8901-c49a795196ca","tags":[],"resourceType":"GMSpriteFrame",},
   ],
@@ -64,7 +60,7 @@
     "eventStubScript": null,
     "parent": {"name":"tileset_test158","path":"sprites/tileset_test158/tileset_test158.yy",},
     "resourceVersion": "1.3",
-    "name": "",
+    "name": "tileset_test158",
     "tags": [],
     "resourceType": "GMSequence",
   },
@@ -74,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "tileset",
-    "path": "folders/Sprites/tileset.yy",
+    "path": "folders/Tile Sets/tileset.yy",
   },
   "resourceVersion": "1.0",
   "name": "tileset_test158",

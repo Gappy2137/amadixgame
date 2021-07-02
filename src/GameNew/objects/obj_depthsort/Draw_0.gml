@@ -24,7 +24,8 @@ var ins; yy = 0; repeat(i_num){
 	
 	yy += 1;
 }
-*/
+
+
 var grid = ds_depthsort;
 var inst_num = instance_number(par_objectdepth);
 ds_grid_resize(grid, 3, inst_num);
@@ -50,7 +51,7 @@ with (par_objectdepth){
 	yy++;
 }
 */
-
+/*
 var inst;
 yy = 0;
 repeat(inst_num){
@@ -60,4 +61,4 @@ repeat(inst_num){
 	}
 	
 	yy++;
-}
+}*/
