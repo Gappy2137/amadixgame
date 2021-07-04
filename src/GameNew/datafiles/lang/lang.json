@@ -1,0 +1,10 @@
+{
+	"English": {
+		"Hello":"Hello!",
+		"Goodbye":"Goodbye!"
+	},
+	"Polish": {
+		"Hello":"Cześć!",
+		"Goodbye":"Do widzenia!"
+	}
+}
