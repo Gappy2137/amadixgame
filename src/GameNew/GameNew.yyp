@@ -307,6 +307,7 @@
     {"id":{"name":"spr_health_hud","path":"sprites/spr_health_hud/spr_health_hud.yy",},"order":0,},
     {"id":{"name":"effect_at","path":"scripts/effect_at/effect_at.yy",},"order":1,},
     {"id":{"name":"locales","path":"objects/locales/locales.yy",},"order":17,},
+    {"id":{"name":"spr_pine","path":"sprites/spr_pine/spr_pine.yy",},"order":4,},
     {"id":{"name":"obj_shallowwater16","path":"objects/obj_shallowwater16/obj_shallowwater16.yy",},"order":3,},
     {"id":{"name":"scr_draw_gui_box","path":"scripts/scr_draw_gui_box/scr_draw_gui_box.yy",},"order":0,},
     {"id":{"name":"obj_water16","path":"objects/obj_water16/obj_water16.yy",},"order":2,},

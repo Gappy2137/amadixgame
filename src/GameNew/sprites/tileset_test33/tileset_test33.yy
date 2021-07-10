@@ -104,11 +104,10 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"9a154435-6380-4743-8901-c49a795196ca","path":"sprites/tileset_test33/tileset_test33.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"9a154435-6380-4743-8901-c49a795196ca","path":"sprites/tileset_test33/tileset_test33.yy",},"LayerId":{"name":"a33eeddf-feea-4b65-a412-d49afe4503b2","path":"sprites/tileset_test33/tileset_test33.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"9a154435-6380-4743-8901-c49a795196ca","path":"sprites/tileset_test33/tileset_test33.yy",},"LayerId":{"name":"d93afa2a-8b31-45fb-9d2a-ca0fa3236599","path":"sprites/tileset_test33/tileset_test33.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"9a154435-6380-4743-8901-c49a795196ca","path":"sprites/tileset_test33/tileset_test33.yy",},"LayerId":{"name":"a33eeddf-feea-4b65-a412-d49afe4503b2","path":"sprites/tileset_test33/tileset_test33.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"9a154435-6380-4743-8901-c49a795196ca","path":"sprites/tileset_test33/tileset_test33.yy",},"LayerId":{"name":"4ee20728-64ef-4b9a-9828-3c27b13d3f02","path":"sprites/tileset_test33/tileset_test33.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"9a154435-6380-4743-8901-c49a795196ca","path":"sprites/tileset_test33/tileset_test33.yy",},"LayerId":{"name":"5e1780c2-72b1-42b4-a7e0-eb8e191a3ae4","path":"sprites/tileset_test33/tileset_test33.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"9a154435-6380-4743-8901-c49a795196ca","path":"sprites/tileset_test33/tileset_test33.yy",},"LayerId":{"name":"f91e7916-91cd-4fbb-b2c5-0dfdd207aca7","path":"sprites/tileset_test33/tileset_test33.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"tileset_test33","path":"sprites/tileset_test33/tileset_test33.yy",},"resourceVersion":"1.0","name":"9a154435-6380-4743-8901-c49a795196ca","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
