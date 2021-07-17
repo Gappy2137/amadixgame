@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_speech_default.wav",
-  "duration": 0.095249,
+  "duration": 0.090249,
   "parent": {
     "name": "Dialogue",
     "path": "folders/Sounds/Dialogue.yy",
