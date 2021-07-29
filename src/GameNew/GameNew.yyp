@@ -951,7 +951,7 @@
     {"CopyToMask":-1,"filePath":"datafiles/lang","resourceVersion":"1.0","name":"lang.json","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
-    "IDEVersion": "2.3.3.570",
+    "IDEVersion": "2.3.3.574",
   },
   "resourceVersion": "1.4",
   "name": "GameNew",
