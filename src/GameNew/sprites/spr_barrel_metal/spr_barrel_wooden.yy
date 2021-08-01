@@ -7,9 +7,9 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 2,
-  "bbox_right": 30,
-  "bbox_top": 2,
+  "bbox_left": 6,
+  "bbox_right": 25,
+  "bbox_top": 12,
   "bbox_bottom": 31,
   "HTile": false,
   "VTile": false,
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"198b91d5-e5c8-4158-acd6-f299f7ec62b9","path":"sprites/spr_rocks_plains_big/spr_rocks_plains_big.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"198b91d5-e5c8-4158-acd6-f299f7ec62b9","path":"sprites/spr_rocks_plains_big/spr_rocks_plains_big.yy",},"LayerId":{"name":"999d901a-fa9e-4944-8939-4c49f8793b7b","path":"sprites/spr_rocks_plains_big/spr_rocks_plains_big.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_rocks_plains_big","path":"sprites/spr_rocks_plains_big/spr_rocks_plains_big.yy",},"resourceVersion":"1.0","name":"198b91d5-e5c8-4158-acd6-f299f7ec62b9","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"6d2c6be3-5930-43a0-a768-19a07e005ec9","path":"sprites/spr_barrel_wooden/spr_barrel_wooden.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"6d2c6be3-5930-43a0-a768-19a07e005ec9","path":"sprites/spr_barrel_wooden/spr_barrel_wooden.yy",},"LayerId":{"name":"999d901a-fa9e-4944-8939-4c49f8793b7b","path":"sprites/spr_barrel_wooden/spr_barrel_wooden.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_barrel_wooden","path":"sprites/spr_barrel_wooden/spr_barrel_wooden.yy",},"resourceVersion":"1.0","name":"6d2c6be3-5930-43a0-a768-19a07e005ec9","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_rocks_plains_big","path":"sprites/spr_rocks_plains_big/spr_rocks_plains_big.yy",},
+    "spriteId": {"name":"spr_barrel_wooden","path":"sprites/spr_barrel_wooden/spr_barrel_wooden.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 1.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"d8d7cbf6-24f6-45f5-af43-aa3cc19d0601","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"198b91d5-e5c8-4158-acd6-f299f7ec62b9","path":"sprites/spr_rocks_plains_big/spr_rocks_plains_big.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"67d83d8a-0d96-4561-aa00-cf51f6fbf692","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"6d2c6be3-5930-43a0-a768-19a07e005ec9","path":"sprites/spr_barrel_wooden/spr_barrel_wooden.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,9 +58,9 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_rocks_plains_big","path":"sprites/spr_rocks_plains_big/spr_rocks_plains_big.yy",},
+    "parent": {"name":"spr_barrel_wooden","path":"sprites/spr_barrel_wooden/spr_barrel_wooden.yy",},
     "resourceVersion": "1.3",
-    "name": "spr_rocks_plains_big",
+    "name": "spr_barrel_wooden",
     "tags": [],
     "resourceType": "GMSequence",
   },
@@ -69,11 +69,11 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Rocks",
-    "path": "folders/Sprites/World/Rocks.yy",
+    "name": "Other",
+    "path": "folders/Sprites/World/Other.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spr_rocks_plains_big",
+  "name": "spr_barrel_wooden",
   "tags": [
     "worldobject",
     "boulder",

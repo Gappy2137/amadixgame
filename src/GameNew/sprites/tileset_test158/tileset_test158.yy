@@ -26,6 +26,8 @@
   "frames": [
     {"compositeImage":{"FrameId":{"name":"9a154435-6380-4743-8901-c49a795196ca","path":"sprites/tileset_test158/tileset_test158.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"9a154435-6380-4743-8901-c49a795196ca","path":"sprites/tileset_test158/tileset_test158.yy",},"LayerId":{"name":"ac47d7e8-737a-4678-87cb-805de56c626d","path":"sprites/tileset_test158/tileset_test158.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"9a154435-6380-4743-8901-c49a795196ca","path":"sprites/tileset_test158/tileset_test158.yy",},"LayerId":{"name":"e0eccbf8-e7be-4568-a604-3b9b824e0563","path":"sprites/tileset_test158/tileset_test158.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"9a154435-6380-4743-8901-c49a795196ca","path":"sprites/tileset_test158/tileset_test158.yy",},"LayerId":{"name":"6f7e7073-ca34-40c7-970f-7b151e2a8a2d","path":"sprites/tileset_test158/tileset_test158.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"tileset_test158","path":"sprites/tileset_test158/tileset_test158.yy",},"resourceVersion":"1.0","name":"9a154435-6380-4743-8901-c49a795196ca","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
@@ -65,9 +67,35 @@
     "resourceType": "GMSequence",
   },
   "layers": [
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 2","resourceVersion":"1.0","name":"6f7e7073-ca34-40c7-970f-7b151e2a8a2d","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"e0eccbf8-e7be-4568-a604-3b9b824e0563","tags":[],"resourceType":"GMImageLayer",},
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 2 (2)","resourceVersion":"1.0","name":"ac47d7e8-737a-4678-87cb-805de56c626d","tags":[],"resourceType":"GMImageLayer",},
   ],
-  "nineSlice": null,
+  "nineSlice": {
+    "left": 0,
+    "top": 0,
+    "right": 0,
+    "bottom": 0,
+    "guideColour": [
+      4294902015,
+      4294902015,
+      4294902015,
+      4294902015,
+    ],
+    "highlightColour": 1728023040,
+    "highlightStyle": 0,
+    "enabled": false,
+    "tileMode": [
+      0,
+      0,
+      0,
+      0,
+      0,
+    ],
+    "resourceVersion": "1.0",
+    "loadedVersion": null,
+    "resourceType": "GMNineSliceData",
+  },
   "parent": {
     "name": "tileset",
     "path": "folders/Tile Sets/tileset.yy",
