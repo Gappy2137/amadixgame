@@ -324,6 +324,7 @@
     {"id":{"name":"__scribble_class_font","path":"scripts/__scribble_class_font/__scribble_class_font.yy",},"order":1,},
     {"id":{"name":"obj_solid16","path":"objects/obj_solid16/obj_solid16.yy",},"order":0,},
     {"id":{"name":"spr_oak","path":"sprites/spr_oak/spr_oak.yy",},"order":0,},
+    {"id":{"name":"spr_jar_small","path":"sprites/spr_jar_small/spr_jar_small.yy",},"order":5,},
     {"id":{"name":"par_slope","path":"objects/par_slope/par_slope.yy",},"order":4,},
     {"id":{"name":"par_tree","path":"objects/par_tree/par_tree.yy",},"order":7,},
     {"id":{"name":"scr_draw_gui_box_stretch","path":"scripts/scr_draw_gui_box_stretch/scr_draw_gui_box_stretch.yy",},"order":1,},
@@ -954,7 +955,7 @@
     {"CopyToMask":-1,"filePath":"datafiles/lang","resourceVersion":"1.0","name":"lang.json","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
-    "IDEVersion": "2.3.4.580",
+    "IDEVersion": "2.3.4.583",
   },
   "resourceVersion": "1.4",
   "name": "GameNew",
