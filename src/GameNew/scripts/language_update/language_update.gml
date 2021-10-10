@@ -1,21 +1,22 @@
 function language_update(language){
 	
+
 	switch (language){
 		case lang.english:
-			itemName = load_csv(working_directory + @"\lang\" +"itemName_en.csv");
-			itemDesc = load_csv(working_directory + @"\lang\" +"itemDesc_en.csv");
-			itemType = load_csv(working_directory + @"\lang\" +"itemType_en.csv");
+			itemName = load_csv(working_directory + "/language/itemName_en.csv");
+			itemDesc = load_csv(working_directory + "/language/itemDesc_en.csv");
+			itemType = load_csv(working_directory + "/language/itemType_en.csv");
 		break;
 		case lang.polish:
-			itemName = load_csv(working_directory + @"\lang\" +"itemName_pl.csv");
-			itemDesc = load_csv(working_directory + @"\lang\" +"itemDesc_pl.csv");
-			itemType = load_csv(working_directory + @"\lang\" +"itemType_pl.csv");
+			itemName = load_csv(working_directory + "language/itemName_pl.csv");
+			itemDesc = load_csv(working_directory + "language/itemDesc_pl.csv");
+			itemType = load_csv(working_directory + "language/itemType_pl.csv");
 		break;
 	}
 	
 
 	
-	
+
 	
 	
 	

@@ -123,6 +123,6 @@ repeat(item.height){
 	i++;
 }
 
-item_attrib_grid();
-
 alarm[0] = 1; //Nazwy i opisy przedmiotow
+
+item_attrib_grid();

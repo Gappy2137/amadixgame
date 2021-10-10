@@ -726,3 +726,4 @@ else if (!show_inventory) && (!show_slots){
 }
 #endregion
 
+//item_attrib_grid();

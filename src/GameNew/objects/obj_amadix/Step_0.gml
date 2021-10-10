@@ -25,9 +25,10 @@ if (rm_trans != noone){
 }
 
 if (keyboard_check_pressed(vk_space)){
-	//item_add(-1, item.log, 2);
+	item_add(-1, item.log, 2);
 	item_add(-1, item.lemon, 4);
-	//item_add(-1, item.mango_salsa, 1);
+	item_add(-1, item.mango_salsa, 1);
+	item_add(-1, item.strawberry, 1);
 }
 if (keyboard_check_pressed(vk_enter)){
 	item_add(-1, item.lemon, 24);
