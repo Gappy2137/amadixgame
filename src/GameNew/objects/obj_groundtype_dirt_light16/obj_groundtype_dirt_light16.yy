@@ -4,7 +4,7 @@
     "path": "sprites/spr_dirt_basic_tt/spr_dirt_basic_tt.yy",
   },
   "solid": false,
-  "visible": true,
+  "visible": false,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": null,
@@ -28,7 +28,7 @@
     "path": "folders/Objects/World Objects/Terrain Types.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_basicdirt_tt",
+  "name": "obj_groundtype_dirt_light16",
   "tags": [],
   "resourceType": "GMObject",
 }

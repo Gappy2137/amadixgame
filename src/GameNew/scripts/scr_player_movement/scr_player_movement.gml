@@ -322,5 +322,7 @@ function scr_player_movement() {
 		y = yprevious;
 	}
 
+	//Efekty podloza
+	scr_groundtype_fx();
 
 }

@@ -8,9 +8,9 @@ function language_update(language){
 			itemType = load_csv(working_directory + "/language/itemType_en.csv");
 		break;
 		case lang.polish:
-			itemName = load_csv(working_directory + "language/itemName_pl.csv");
-			itemDesc = load_csv(working_directory + "language/itemDesc_pl.csv");
-			itemType = load_csv(working_directory + "language/itemType_pl.csv");
+			itemName = load_csv(working_directory + "itemName_pl.csv");
+			itemDesc = load_csv(working_directory + "itemDesc_pl.csv");
+			itemType = load_csv(working_directory + "itemType_pl.csv");
 		break;
 	}
 	

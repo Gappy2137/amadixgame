@@ -3,8 +3,10 @@ function json_read(key){
 var language = global.lang;
 
 // Open the Json file
-var JsonFile = file_text_open_read(working_directory + "language/lang.json");
+var JsonFile = file_text_open_read("lang.json");
 var Data = "";
+var dir = working_directory;
+show_message(dir);
 
 // Read through the Json file and save the text in the Data variable
 while (!file_text_eof(JsonFile)) {
