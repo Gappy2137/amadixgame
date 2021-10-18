@@ -1,5 +1,10 @@
 event_inherited();
 
+tenalarm++;
+if (tenalarm > 10){
+	tenalarm = 0;
+}
+
 //Fizyka i poruszanie
 scr_player_movement();
 

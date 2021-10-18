@@ -68,4 +68,6 @@ attackSpeedFix = false;
 runningfix = true;
 movingfix = true;
 
+tenalarm = 0;
+
 if (obj_gamecontrol.doTransition  == true) scr_updatePlayerAnim();

@@ -9,9 +9,9 @@ switch(type){
 	
 	break;
 	case 2:
-		curve_alpha_pos += 0.1;
+		curve_alpha_pos += 0.04;
 		x += (player_sign * spd);
-		accel += 0.1;
+		accel += 0.02;
 		y -= spd * accel;
 	break;
 }
@@ -25,4 +25,12 @@ alpha = _alpha;
 
 if (alpha == 0){
 	instance_destroy();	
+}
+
+if (_anim){
+	_anim_frame += 0.08;	
+}
+
+if (_anim_frame > _anim_frames){
+	instance_destroy();
 }

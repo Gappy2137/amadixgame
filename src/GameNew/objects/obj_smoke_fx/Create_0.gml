@@ -1,12 +1,15 @@
 event_inherited();
 
 _sprite = -1;
-_anim = 0;
+_anim = false;
 xscale = 1;
 yscale = 1;
 rot = 0;
 col = c_white;
 alpha = 1;
+
+_anim_frame = 0;
+_anim_frames = 0;
 
 type = 0;
 

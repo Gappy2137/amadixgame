@@ -1,0 +1,18 @@
+{
+
+	"English": {
+		"itemNameNone":	"Hello!",
+		"itemName":	"",
+		"itemName":	"",
+		"itemName":	"",
+		"itemName":	"",
+		"itemName":	"",
+		"Hello":	"Hello!"
+	},
+	
+	"Polish": {
+		"Hello":	"Cześć!",
+		"Goodbye":	"Do widzenia!"
+	}
+	
+}
