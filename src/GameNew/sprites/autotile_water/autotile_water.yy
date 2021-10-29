@@ -25,8 +25,9 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"8c2bde56-44d5-42b0-aa0b-dffba762f7ca","path":"sprites/autotile_water/autotile_water.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"8c2bde56-44d5-42b0-aa0b-dffba762f7ca","path":"sprites/autotile_water/autotile_water.yy",},"LayerId":{"name":"d39aa336-0b61-4886-85b4-6d80be6fda85","path":"sprites/autotile_water/autotile_water.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"8c2bde56-44d5-42b0-aa0b-dffba762f7ca","path":"sprites/autotile_water/autotile_water.yy",},"LayerId":{"name":"74c12640-29fb-4a81-a6b3-a534e0b21256","path":"sprites/autotile_water/autotile_water.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"8c2bde56-44d5-42b0-aa0b-dffba762f7ca","path":"sprites/autotile_water/autotile_water.yy",},"LayerId":{"name":"d39aa336-0b61-4886-85b4-6d80be6fda85","path":"sprites/autotile_water/autotile_water.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"8c2bde56-44d5-42b0-aa0b-dffba762f7ca","path":"sprites/autotile_water/autotile_water.yy",},"LayerId":{"name":"051391df-59aa-4065-aa03-cad4e2faeab4","path":"sprites/autotile_water/autotile_water.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"autotile_water","path":"sprites/autotile_water/autotile_water.yy",},"resourceVersion":"1.0","name":"8c2bde56-44d5-42b0-aa0b-dffba762f7ca","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
@@ -67,6 +68,7 @@
   },
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"74c12640-29fb-4a81-a6b3-a534e0b21256","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":false,"isLocked":false,"blendMode":0,"opacity":50.0,"displayName":"default (2)","resourceVersion":"1.0","name":"051391df-59aa-4065-aa03-cad4e2faeab4","tags":[],"resourceType":"GMImageLayer",},
     {"visible":false,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"d39aa336-0b61-4886-85b4-6d80be6fda85","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,

@@ -12,4 +12,4 @@ if (doTransition){
 	draw_rectangle_color(0, 0, guiWidth, guiHeight, c_black, c_black, c_black, c_black, false);
 	draw_set_alpha(1);
 }
-draw_text(64, 96, hours + ":" + minutes);
+//draw_text(64, 96, hours + ":" + minutes);

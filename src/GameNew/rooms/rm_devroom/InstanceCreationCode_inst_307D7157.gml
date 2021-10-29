@@ -3,11 +3,11 @@ var i = 0;
 switch(choice){
 	case -1:
 		//0 tekst
-		mes[i] = "Text."
+		mes[i] = "Jebie tu."
 		message_next[i] = 1;
-		myPortrait[i] = spr_portrait_test;
+		myPortrait[i] = spr_portrait_amadix;
 		myEmotion[i] = dialogueEmotion.normal;
-		myName[i] = "[pin_center]Gościu";
+		myName[i] = "[pin_center]Amadix";
 		
 		//1 tekst
 		i++;
