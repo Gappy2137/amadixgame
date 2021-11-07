@@ -38,7 +38,7 @@ mouse_slotx = 0;
 mouse_sloty = 0;
 mouse_slotx_second = 0;
 mouse_slotx_fix = 0;
-inslots = false;
+inslots = false;		//sprawdza czy myszka znajduje sie w eq
 
 show_slots_mouse = false;
 
