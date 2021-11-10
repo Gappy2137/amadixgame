@@ -81,7 +81,7 @@ function item_action(){
 						itemeaten = iitem;
 						actionstate = player_state_action.attacking_melee;
 						anim_frame_action = 0;
-						anim_speed_action = 0.4;
+						anim_speed_action = 0.4; // tu bedzie stamina - czyli dla broni bialej predkosc ciosow
 						anim_frame = 0;
 						canmove = false;
 						moving = false;
