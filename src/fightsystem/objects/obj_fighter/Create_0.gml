@@ -30,3 +30,5 @@ frame_jump_flag = false;
 
 shadowSize = 1;
 shadowAlpha = 0.5;
+
+depth = -1;

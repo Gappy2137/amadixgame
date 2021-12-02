@@ -50,3 +50,21 @@ switch(anim_state){
 		_frame_spd = 0;
 	break;
 }
+
+if instance_exists(obj_fight_control){
+	var ct = obj_fight_control;
+	
+	//jezeli nie moze walczyc niech wroci na miejsce
+	if (!ct.enemy_canfight){
+		x = lerp(x, main_x, accel);
+		y = lerp(y, main_y, accel);
+	}else{
+		// jezeli jest tura przeciwnika
+		if (ct.turn == 1){
+			ct.enemyStartTurnTimer--;
+			if (ct.enemyStartTurnTimer == 0){
+				ct.enemyStartTurnTimer = ENEMY_START_TURN_TIMER;
+			}
+		}
+	}
+}
