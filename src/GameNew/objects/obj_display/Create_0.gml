@@ -52,4 +52,4 @@ alarm[2] = 1;
 instance_create_layer(0,0,"Instances",obj_camera); 
 window_set_fullscreen(false);
 alarm[0] = 1;
-room_goto(room_next(room));
+room_goto(rm_devroom_3);

@@ -1,3 +1,5 @@
+event_inherited();
+
 if (ami_clicked()){
 	if (canclick){
 		isanim = true;

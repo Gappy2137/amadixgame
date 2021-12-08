@@ -1,1 +1,0 @@
-draw_sprite(jarr, 0, x, y);

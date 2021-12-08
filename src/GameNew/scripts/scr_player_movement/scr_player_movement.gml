@@ -238,11 +238,12 @@ function scr_player_movement() {
 	//-----------------------------------------------------------------------------
 
 
-
+	
 	var hor_collision = instance_place(x + hsp, y, par_collision);
 	var ver_collision = instance_place(x, y + vsp, par_collision);
 	var slope_collision = instance_place(x + hsp, y + vsp, par_slope);
 	slopefix = false;
+
 
 	if ((slope_collision != noone) && (slope_collision.cancollide == true)){
 		scr_player_movement_slope(true);
@@ -260,11 +261,6 @@ function scr_player_movement() {
 	if canmove == true{
 		x += hsp;
 	}
-
-
-
-
-
 	if (vsp != 0){
 		    if ((ver_collision != noone) && (ver_collision.cancollide)){
 		        repeat(abs(vsp)){
@@ -279,6 +275,45 @@ function scr_player_movement() {
 		y += vsp;
 	}
 
+
+
+/*
+	if (hsp != 0){
+		var yplus = 0;
+		    if ((hor_collision != noone) && (hor_collision.cancollide)){
+				while (place_meeting(x + hsp, y - yplus, par_collision) && yplus <= abs(1*hsp)) {yplus += 1;}
+				if (place_meeting(x + hsp, y - yplus, par_collision)){
+					while !(place_meeting(x + sign(hsp), y, par_collision)){x += sign(hsp)}
+					hsp = 0;
+				}else{
+					y -= yplus;	
+				}
+		    }
+	}
+	if canmove == true{
+		x += hsp;
+	}
+
+	if (vsp != 0){
+		var xplus = 0;
+		    if ((ver_collision != noone) && (ver_collision.cancollide)){
+				while (place_meeting(x - xplus, y + vsp, par_collision) && xplus <= abs(1*vsp)) {xplus += 1;}
+				if (place_meeting(x - xplus, y + vsp, par_collision)){
+					while !(place_meeting(x, y + sign(vsp), par_collision)){y += sign(vsp)}
+					vsp = 0;
+				}else{
+					x -= xplus;	
+				}
+		    }
+	}
+	if canmove == true{
+		y += vsp;
+	}*/
+	
+	
+	//var move_dist = point_distance(0, 0, hor_keyPress, ver_keyPress);
+	//var move_dir = point_direction(0, 0, hor_keyPress, ver_keyPress);
+	
 
 
 	/*if ((hor_collision != noone) && (hor_collision.cancollide)){

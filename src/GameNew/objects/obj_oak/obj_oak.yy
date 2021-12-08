@@ -4,7 +4,7 @@
     "path": "sprites/spr_oak/spr_oak.yy",
   },
   "solid": false,
-  "visible": false,
+  "visible": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {

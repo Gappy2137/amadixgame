@@ -24,7 +24,7 @@ var ins; yy = 0; repeat(i_num){
 	
 	yy += 1;
 }
-*/
+
 
 var grid = ds_depthsort;
 var inst_num = instance_number(par_objectdepth);

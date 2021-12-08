@@ -33,14 +33,8 @@
 		
 		
 		
-		"itemTypeResource":						"Resource",
-		"itemTypeFood":							"Food",
-		"itemTypeDrink":						"Drink",
-		"itemTypeMeleeWeapon":					"Melee Weapon",
-		"itemTypeTool":							"Tool",
-		"itemTypeFruit":						"Fruit",
-		"itemTypeVegetable":					"Vegetable",
-		"itemTypeDish":							"Dish",
+		"itemTypeResource":	"Resource",
+		
 		
 		
 		"Hello":	"Hello!"
@@ -76,17 +70,6 @@
 		"itemDescStrawberry":					"Truskawka",
 		"itemDescLemon":						"Cytryna",
 		"itemDescOrange":						"Pomarańcza",
-		
-		
-		
-		"itemTypeResource":						"Materiał",
-		"itemTypeFood":							"Jedzenie",
-		"itemTypeDrink":						"Napój",
-		"itemTypeMeleeWeapon":					"Broń biała",
-		"itemTypeTool":							"Narzędzie",
-		"itemTypeFruit":						"Owoc",
-		"itemTypeVegetable":					"Warzywo",
-		"itemTypeDish":							"Danie",
 		
 		
 		

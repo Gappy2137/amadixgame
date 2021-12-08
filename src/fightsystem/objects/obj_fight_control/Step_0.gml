@@ -1,4 +1,4 @@
-if !(instance_exists(obj_fighter) || instance_exists(obj_enemy)){exit;}
+if !(instance_exists(obj_fighter) && instance_exists(obj_enemy)){exit;}
 
 
 switch(phase){

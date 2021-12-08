@@ -1,6 +1,6 @@
 event_inherited();
 
-yorigin = 0;
+yorigin = 24;
 
 itemDrop = item.strawberry;
 

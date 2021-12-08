@@ -30,7 +30,7 @@ if (rm_trans != noone){
 }
 
 if (keyboard_check_pressed(vk_space)){
-	item_add(-1, item.log, 2);
+	item_add(-1, item.apple, 2);
 	item_add(-1, item.lemon, 4);
 	item_add(-1, item.mango_salsa, 1);
 	item_add(-1, item.strawberry, 1);
@@ -52,3 +52,5 @@ if (keyboard_check(ord("O"))){
 if (keyboard_check(ord("P"))){
 	global.stamina += 0.1;		
 }
+
+depth = -(bbox_bottom - (sprite_height - yorigin));

@@ -4,7 +4,7 @@
     "path": "sprites/spr_rocks_plains_big/spr_rocks_plains_big.yy",
   },
   "solid": false,
-  "visible": false,
+  "visible": true,
   "spriteMaskId": {
     "name": "spr_wobj32_mask",
     "path": "sprites/spr_wobj32_mask/spr_wobj32_mask.yy",
