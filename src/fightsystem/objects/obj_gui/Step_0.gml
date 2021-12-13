@@ -63,7 +63,7 @@ if (animDone){
 			scale[2] = lerp(scale[2], .75, accel);
 			
 			if (key_accept){
-				
+				obj_fight_control.phase = 2;
 			}
 		break;
 		case 1:

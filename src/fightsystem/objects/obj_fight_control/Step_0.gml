@@ -12,6 +12,13 @@ switch(phase){
 		obj_fighter.canmove = false;
 		obj_fighter.canjump = false;
 		
+	break;
+	case 1:
+		player_canfight = false;
+		enemy_canfight = false;
+		
+		obj_fighter.canmove = false;
+		obj_fighter.canjump = false;
 		
 	break;
 }
