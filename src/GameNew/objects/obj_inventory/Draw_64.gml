@@ -16,18 +16,10 @@ if (show_inventory) && (!show_slots){
 	var jj = 0;
 	var wh = c_white;
 	var bl = c_black;
-	switch(page){
-		case 0:
-			ii = 0;
-		break;
-		case 1:
-			ii = 84;
-		break;
-	}
+	ii = page * 84;
 	//Strony ekwipunku
 	
-	#region Strona 1
-	if (page == 0){
+	#region Strona
 		repeat (84){
 				//x,y slotow
 				xx = slots_x + ((cell_size+x_offset) * ix * scale);
@@ -119,112 +111,12 @@ if (show_inventory) && (!show_slots){
 		
 		
 				//Przelec przez cala siatke przedmiotow
-				ii += 1;
-				ix = ii mod inv_slots_width;
-				iy = ii div inv_slots_width;
+						ii += 1;
+						jj += 1;
+						ix = ii mod inv_slots_width;
+						iy = jj div inv_slots_width;
 		}
-	}
-	#endregion
-
-	#region Strona 2
-	if (page == 1){
-		repeat (84){
-				//x,y slotow
-				xx = slots_x + ((cell_size+x_offset) * ix * scale);
-				yy = slots_y + ((cell_size+y_offset) * iy * scale);
-		
-				//Przedmiot
-				iitem = inv_grid[# 0, ii];
-				sx = (iitem mod spr_inv_items_columns) * cell_size;
-				sy = (iitem div spr_inv_items_columns) * cell_size;
-		
-				//Rysuj slot i przedmiot
-		
-				if (iitem > 0) && (inv_grid[# 1, ii] > 0){
-					switch(ii){
-						case selected_slot:
-
-										scr_draw_slot_selected(xx, yy, 1);
-										scr_draw_item(sx, sy, xx, yy, 1);
-										scr_draw_slot_none(xx, yy, .3, true);
-
-									if (selected_slot == picked_slot){
-										if (onepicked_slot == 1){
-											scr_draw_slot_selected(xx, yy, 1);
-											scr_draw_item(sx, sy, xx, yy, 1);
-											scr_draw_slot_none(xx, yy, .3, true);
-										}else{
-											scr_draw_slot_none(xx, yy, 1, false);
-										}
-									
-									}else if (selected_slot != picked_slot){
-										if (onepicked_slot == 1){
-											scr_draw_slot_selected(xx, yy, 1);
-											scr_draw_item(sx, sy, xx, yy, 1);
-											scr_draw_slot_none(xx, yy, .3, true);
-										}else{
-											break;	
-										}
-									}
-							
-							
-
-							
-
-						break;
-						case picked_slot:
-									if (onepicked_slot == 1){
-										scr_draw_slot_item(xx, yy, 1);
-										scr_draw_item(sx, sy, xx, yy, 1);
-									}else{
-										scr_draw_slot_none(xx, yy, .2, false);
-									}
-						break;
-						default:
-									if (inv_grid[# 1, ii] > 0){
-										scr_draw_slot_item(xx, yy, 1);
-										scr_draw_item(sx, sy, xx, yy, 1);
-									}
-						break;
-					}
-				}
-		
-				//Rysuj liczbe przedmiotow
-				if (iitem > 0){
-					var amount = inv_grid[# 1, ii];
-					if (amount < 0) || (amount > 1){
-							switch(ii){
-								case selected_slot:
-									if (selected_slot == picked_slot) && (onepicked_slot == 0){
-										break;	
-									}
-									draw_text_transformed_color(xx + 16, yy + 12, string(amount), .75, .75, 0, bl, bl, bl, bl, 1);
-
-								break;
-								case picked_slot:
-									if (onepicked_slot == 1){
-										draw_text_transformed_color(xx + 16, yy + 12, string(amount), .75, .75, 0, bl, bl, bl, bl, 1);
-									}else{
-										break;
-									}
-								break;
-								default:
-									draw_text_transformed_color(xx + 16, yy + 12, string(amount), .75, .75, 0, bl, bl, bl, bl, 1);
-								break;
-							}
-					}
-
-				}
-
-		
-		
-				//Przelec przez cala siatke przedmiotow
-				ii += 1;
-				jj += 1;
-				ix = ii mod inv_slots_width;
-				iy = jj div inv_slots_width;
-		}
-	}
+	
 	#endregion
 	
 	//Rysowanie nazwy i opisu przedmiotow oraz GUI opisu

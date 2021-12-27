@@ -294,7 +294,6 @@
     {"id":{"name":"dialogue_special_counter","path":"scripts/dialogue_special_counter/dialogue_special_counter.yy",},"order":12,},
     {"id":{"name":"scribble_font_bake_outline","path":"scripts/scribble_font_bake_outline/scribble_font_bake_outline.yy",},"order":0,},
     {"id":{"name":"spr_groudtype_mud16","path":"sprites/spr_groudtype_mud16/spr_groudtype_mud16.yy",},"order":9,},
-    {"id":{"name":"spr_smudge","path":"sprites/spr_smudge/spr_smudge.yy",},"order":2,},
     {"id":{"name":"objdepth","path":"scripts/objdepth/objdepth.yy",},"order":4,},
     {"id":{"name":"chance","path":"scripts/chance/chance.yy",},"order":1,},
     {"id":{"name":"approach","path":"scripts/approach/approach.yy",},"order":0,},

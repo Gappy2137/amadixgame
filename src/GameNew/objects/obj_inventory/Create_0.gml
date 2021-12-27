@@ -1,11 +1,24 @@
 depth = -1;
 
 scale = 1;
+
+//Glowne eq
 show_inventory = false;
+
+//Pierwszy rzad slotow poza glownym eq
 show_slots = true;
 slots_position_up = false;
 
-inv_slots = 84;
+//Wartosci do obliczania pozycji calosci eq
+x_rel = 0;
+y_rel = 0;
+
+canUseInventory = true;
+
+page = 0;
+pages = 2;
+
+inv_slots = 84 * (pages + 1);
 inv_slots_width = 12;
 inv_slots_height = 7;
 
@@ -71,9 +84,6 @@ slots_y = yUI;
 
 text_timer = 300;
 text_alpha = 1;
-
-page = 0;
-pages = 1;
 
 //-------Ekwipunek
 //0 = PRZEDMIOT

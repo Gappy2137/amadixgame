@@ -1,6 +1,8 @@
 //if (keyboard_check_pressed(ord("E"))) {show_inventory = !show_inventory;}
 //if (keyboard_check_pressed(ord("R"))) {show_slots = !show_slots;}
 
+if (!canUseInventory){exit;}
+
 #region Operacje na przedmiotach
 if (show_inventory) && (!show_slots){
 
@@ -31,19 +33,14 @@ if (show_inventory) && (!show_slots){
 			mouse_slotx = numx;
 			mouse_sloty = numy;
 		}
-		switch(page){
-			case 0:
-				selected_slot = min(inv_slots - 1, mouse_slotx + (mouse_sloty * inv_slots_width));
-			break;
-			case 1:
-				selected_slot = min(inv_slots - 1 + 84, mouse_slotx + (mouse_sloty * inv_slots_width) + 84);
-			break;
-		}
+		selected_slot = min(inv_slots - 1 + (page * 84), mouse_slotx + (mouse_sloty * inv_slots_width) + (page * 84));
 	
 	}else{
 		selected_slot = -1;
 	}
 	
+	//////////////////////////////////////////////////////////////////////////
+	//Zmiana strony
 	if (mousex >= (xUI - 16)) && (mousex < (xUI - 16 + 14)) && (mousey >= (yUI + 70)) && (mousey <= (yUI + 70 + 25)){
 		if (page > 0){
 			if (mouse_check_button_pressed(mb_left)){
@@ -75,6 +72,7 @@ if (show_inventory) && (!show_slots){
 			page++;
 		}
 	}
+	//////////////////////////////////////////////////////////////////////////
 	
 	#endregion
 
