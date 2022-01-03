@@ -68,13 +68,30 @@ spr_inv_slot_nonexistent = spr_item_slot_nonexistent;
 spr_inv_slot_none = spr_item_slot_none;
 spr_inv_slot_selected = spr_item_slot_selected;
 
-invUI_width = sprite_get_width(spr_invUI);
-invUI_height = sprite_get_height(spr_invUI);
+///////////////
+//nowe ui
+spr_eq_back = spr_eq_ui_back;
+spr_eq_slotback = spr_eq_ui_slotback;
+spr_eq_arrow = spr_eq_ui_slotback_arrow;
 
-xUI = (gui_width/2) - ((invUI_width/2)*scale);
-yUI = (gui_height/2) - ((invUI_height/2)*scale);
+///////////////
 
 cell_size = 24;
+
+invUI_width = sprite_get_width(12 * cell_size);
+invUI_height = sprite_get_height(4 * cell_size);
+
+//xUI = (gui_width/2) - ((invUI_width/2)*scale);
+//yUI = (gui_height/2) - ((invUI_height/2)*scale);
+
+xUI = 96;
+yUI = 60;
+
+backslotUI_x = 92;
+backslotUI_y = 56;
+
+backUI_x = 85;
+backUI_y = 48;
 
 spr_inv_items_columns = sprite_get_width(spr_inv_items)/cell_size;
 spr_inv_items_rows = sprite_get_height(spr_inv_items)/cell_size;

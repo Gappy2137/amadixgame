@@ -25,7 +25,7 @@ if (show_inventory) && (!show_slots){
 	var endy = (gui_height - invUI_height)/2;
 	var endUIy = invUI_height + endy;
 
-	if (mousex >= xUI) && (mousex < endUIx) && (mousey >= yUI) && (mousey < endUIy){
+	if isbounded(mousex, xUI, endUIx) && isbounded(mousey, yUI, endUIy){
 		var sx = i_mousex - (numx * cell_xoffset);
 		var sy = i_mousey - (numy * cell_yoffset);
 	

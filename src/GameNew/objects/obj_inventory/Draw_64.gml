@@ -1,7 +1,7 @@
 if (show_inventory) && (!show_slots){
 
-	draw_sprite_ext(spr_invUI_back, 0, xUI, yUI - 4, scale, scale, 0, c_white, 1);
-	draw_sprite_ext(spr_invUI, 0, xUI, yUI, scale, scale, 0, c_white, 1);
+	draw_sprite_ext(spr_eq_back, 0, backUI_x, backUI_y, scale, scale, 0, c_white, 1);
+	draw_sprite_ext(spr_eq_slotback, 0, backslotUI_x, backslotUI_y, scale, scale, 0, c_white, 1);
 	
 	draw_text(0, 100, page);
 	
