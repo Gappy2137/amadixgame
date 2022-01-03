@@ -78,8 +78,8 @@ spr_eq_arrow = spr_eq_ui_slotback_arrow;
 
 cell_size = 24;
 
-invUI_width = sprite_get_width(12 * cell_size);
-invUI_height = sprite_get_height(4 * cell_size);
+invUI_width = 12 * cell_size;
+invUI_height = 4 * cell_size;
 
 //xUI = (gui_width/2) - ((invUI_width/2)*scale);
 //yUI = (gui_height/2) - ((invUI_height/2)*scale);
@@ -118,7 +118,6 @@ text_alpha = 1;
 
 ds_inventory = ds_grid_create(11, inv_slots);
 
-
 #region Przedmioty
 enum item{
 	none						= 0,
@@ -134,9 +133,20 @@ enum item{
 	strawberry					= 10,
 	lemon						= 11,
 	orange						= 12,
-	height						= 13,
+	height						= 13
 }
 #endregion
+
+enum itemtype{
+	resource			= 0,
+	food				= 1,
+	drink				= 2,
+	melee				= 3,
+	tool				= 4,
+	fruit				= 5,
+	vegetable			= 6,
+	dish				= 7
+}
 
 ds_item_info = ds_grid_create(3, item.height);
 

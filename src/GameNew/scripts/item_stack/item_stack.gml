@@ -15,7 +15,16 @@ function item_stack(iitem, amount, xx, ready){
 					if (inv[# ITEM, i] == item.none){
 						inv[# ITEM, i] = iitem;
 						inv[# AMOUNT, i] = amount;
-						item_at(iitem, i);
+						inv[# TYPE, i] = itemall[# TYPE, iitem];
+						inv[# MAXSTACK, i] = itemall[# MAXSTACK, iitem];
+						inv[# HP, i] = itemall[# HP, iitem];
+						inv[# STAMINA, i] = itemall[# STAMINA, iitem];
+						inv[# LEVEL, i] = itemall[# LEVEL, iitem];
+						inv[# DAMAGE, i] = itemall[# DAMAGE, iitem];
+						inv[# DEFENCE, i] = itemall[# DEFENCE, iitem];
+						inv[# EFFECT1, i] = itemall[# EFFECT1, iitem];
+						inv[# EFFECT2, i] = itemall[# EFFECT2, iitem];
+						inv[# EFFECT3, i] = itemall[# EFFECT3, iitem];
 						flag = true;
 					}else{
 						i++;	

@@ -35,13 +35,13 @@ ds_item_info[# in, i++] = json_read("itemDescOrange");
 #endregion
 
 #region Rodzaje przedmiotow
-var innn = 2; var j = 0;
-ds_item_info[# innn, j++] = json_read("itemTypeResource");
-ds_item_info[# innn, j++] = json_read("itemTypeFood");
-ds_item_info[# innn, j++] = json_read("itemTypeDrink");
-ds_item_info[# innn, j++] = json_read("itemTypeMeleeWeapon");
-ds_item_info[# innn, j++] = json_read("itemTypeTool");
-ds_item_info[# innn, j++] = json_read("itemTypeFruit");
-ds_item_info[# innn, j++] = json_read("itemTypeVegetable");
-ds_item_info[# innn, j++] = json_read("itemTypeDish");
+var in = 2; var i = 0;
+ds_item_info[# in, i++] = json_read("itemTypeResource");
+ds_item_info[# in, i++] = json_read("itemTypeFood");
+ds_item_info[# in, i++] = json_read("itemTypeDrink");
+ds_item_info[# in, i++] = json_read("itemTypeMeleeWeapon");
+ds_item_info[# in, i++] = json_read("itemTypeTool");
+ds_item_info[# in, i++] = json_read("itemTypeFruit");
+ds_item_info[# in, i++] = json_read("itemTypeVegetable");
+ds_item_info[# in, i++] = json_read("itemTypeDish");
 #endregion

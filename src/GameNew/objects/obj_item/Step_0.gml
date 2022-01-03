@@ -52,7 +52,7 @@ if (dropMove){
 				//Jezeli nie przypisz go do pierwszego wolnego slotu
 			
 				if (!picked_up){
-					item_stack(in, in_amount);
+					item_add(-1, in, in_amount);
 					picked_up = true;
 					/*
 					yy = 0; repeat(inv_slots){

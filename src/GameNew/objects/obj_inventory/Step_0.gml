@@ -20,10 +20,10 @@ if (show_inventory) && (!show_slots){
 	var numy = i_mousey div cell_yoffset;
 
 	var endx = (gui_width - invUI_width)/2;
-	var endUIx = invUI_width + endx;
+	var endUIx = xUI + invUI_width;
 
 	var endy = (gui_height - invUI_height)/2;
-	var endUIy = invUI_height + endy;
+	var endUIy = yUI + invUI_height;
 
 	if isbounded(mousex, xUI, endUIx) && isbounded(mousey, yUI, endUIy){
 		var sx = i_mousex - (numx * cell_xoffset);
@@ -133,8 +133,7 @@ if (show_inventory) && (!show_slots){
 						
 						inhand = -1;
 						
-						
-						onepicked_slot = 0;
+					
 						multipick = 0;
 						multipick_item = -1;
 						changeitem = false;
@@ -183,7 +182,6 @@ if (show_inventory) && (!show_slots){
 						
 						inhand = -1;
 						
-						onepicked_slot = 0;
 						picked_slot_right = -1;
 						changeitem = false;
 						
@@ -214,7 +212,6 @@ if (show_inventory) && (!show_slots){
 							
 							inhand = -1;
 							
-							onepicked_slot = 0;
 							multipick = 0;
 							multipick_item = -1;
 						}else if (inv_grid[# 1, selected_slot] < inv_grid[# 3, selected_slot]){
@@ -248,7 +245,7 @@ if (show_inventory) && (!show_slots){
 								
 								inhand = -1;
 								
-								onepicked_slot = 0;
+
 								picked_slot_right = -1;
 								changeitem = false;
 							}else if (inv_grid[# 1, selected_slot] < inv_grid[# 3, selected_slot]){
@@ -261,7 +258,7 @@ if (show_inventory) && (!show_slots){
 							
 							inhand = -1;
 							
-							onepicked_slot = 0;
+
 							picked_slot_right = -1;
 							changeitem = false;
 							
@@ -351,8 +348,7 @@ if (show_inventory) && (!show_slots){
 						inv_grid[# 11, picked_slot] = ss_item_effect3;
 					
 						inhand = ss_item;
-					
-						onepicked_slot = 0;
+
 						picked_slot_right = -1;
 						multipick_item = -1;
 						changeitem = false;
@@ -366,7 +362,6 @@ if (show_inventory) && (!show_slots){
 			if (mouse_check_button_pressed(mb_left)){
 				picked_slot = selected_slot;
 				inhand = inv_grid[# 0, picked_slot];
-				onepicked_slot = 0;
 			}
 		
 		}
@@ -378,7 +373,6 @@ if (show_inventory) && (!show_slots){
 						
 					}else{
 						if (ss_item_amount > 1){
-								onepicked_slot = 1;
 								picked_slot = selected_slot;
 								picked_slot_right = selected_slot;
 								multipick += 1;
@@ -400,7 +394,6 @@ if (show_inventory) && (!show_slots){
 							
 						}else if (ss_item_amount == 1){
 							if (picked_slot != selected_slot){
-								onepicked_slot = 1;
 								picked_slot = selected_slot;
 								picked_slot_right = selected_slot;
 								multipick += 1;
@@ -420,7 +413,6 @@ if (show_inventory) && (!show_slots){
 								multipick_10 = inv_grid[# 10, picked_slot];
 								multipick_11 = inv_grid[# 11, picked_slot];
 							}else{
-								onepicked_slot = 1;
 								picked_slot = selected_slot;
 								picked_slot_right = selected_slot;
 								multipick += 1;
@@ -449,7 +441,6 @@ if (show_inventory) && (!show_slots){
 
 				}else if (mouse_check_button_pressed(mb_right)) && (inhand == -1){
 						if (ss_item_amount > 1){
-								onepicked_slot = 1;
 								picked_slot = selected_slot;
 								picked_slot_right = selected_slot;
 								multipick += 1;
@@ -471,7 +462,6 @@ if (show_inventory) && (!show_slots){
 							
 						}else if (ss_item_amount == 1){
 							if (picked_slot != selected_slot){
-								onepicked_slot = 1;
 								picked_slot = selected_slot;
 								picked_slot_right = selected_slot;
 								multipick += 1;
@@ -491,7 +481,6 @@ if (show_inventory) && (!show_slots){
 								multipick_10 = inv_grid[# 10, picked_slot];
 								multipick_11 = inv_grid[# 11, picked_slot];
 							}else{
-								onepicked_slot = 1;
 								picked_slot = selected_slot;
 								picked_slot_right = selected_slot;
 								multipick += 1;
@@ -519,7 +508,7 @@ if (show_inventory) && (!show_slots){
 	}else{
 		if (selected_slot == -1){
 			if (mouse_check_button_pressed(mb_left)){
-				if (onepicked_slot == 0){
+				if (multipick == 0){
 					//--------------------------------------------
 						//Wyrzuc przedmiot i stworz go obok gracza (pelny stack)
 						if (picked_slot != -1){
@@ -538,7 +527,6 @@ if (show_inventory) && (!show_slots){
 							slot_remove(picked_slot);
 						}
 						picked_slot = -1;
-						onepicked_slot = 0;
 						multipick = 0;
 					//--------------------------------------------
 				}else{
@@ -559,7 +547,6 @@ if (show_inventory) && (!show_slots){
 							}
 						}
 						picked_slot = -1;
-						onepicked_slot = 0;
 						multipick = 0;
 					//--------------------------------------------
 				}
@@ -579,26 +566,6 @@ if (show_inventory) && (!show_slots){
 	if (inhand == -1){
 		multipick = 0;	
 	}
-	
-	/*
-	//Jezeli istnieje przedmiot o ilosci wiekszej niz maks stack tego przedmiotu, rozgrupuj go
-	for (var ii = 0; ii < inv_slots; ++ii) {
-	    if (inv_grid[# 1, ii] > inv_grid[# 3, ii]) && (multipick == 0){
-			var ds_inv = ds_inventory;
-			var yy = 0;
-				if (ds_inv[# 0, yy] == item.none){
-					ds_inv[# 0, yy] = inv_grid[# 0, ii];
-					ds_inv[# 1, yy] = inv_grid[# 1, ii];
-					ds_inv[# 2, yy] = inv_grid[# 2, ii];
-					ds_inv[# 3, yy] = inv_grid[# 3, ii];
-					break;
-				}else{
-					yy += 1;	
-				}
-			
-		}
-	}
-	*/
 }
 else if (!show_inventory) && (show_slots){
 	

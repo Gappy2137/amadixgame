@@ -56,21 +56,3 @@ if (show_hud == hud.inv) || (show_hud == hud.crafting) || (show_hud == hud.playe
 	draw_sprite(spr_hud_slot_backpack, backpack_frame, hud_slot_x + (24 * 0), hud_slot_y);
 	draw_sprite(spr_hud_slot_crafting, crafting_frame, hud_slot_x + (24 * 1), hud_slot_y);
 }
-
-//obj_inventory.show_inventory
-//obj_inventory.show_slots
-if (t==50) && obj_inventory.show_inventory{
-draw_set_font(font_item_desc);
-draw_text(8, 100, obj_inventory.selected_slot);
-draw_text(8, 120, obj_inventory.picked_slot);
-draw_text(8, 140, obj_inventory.multipick);
-draw_text(8, 160, obj_inventory.onepicked_slot);
-
-draw_text(8, 180, obj_inventory.ds_inventory[# 0, 12]);
-draw_text(24, 180, obj_inventory.ds_inventory[# 1, 12]);
-
-draw_text(8, 200, obj_inventory.ds_inventory[# 0, 13]);
-draw_text(32, 200, obj_inventory.ds_inventory[# 1, 13]);
-
-draw_text(8, 220, obj_inventory.inhand);
-}

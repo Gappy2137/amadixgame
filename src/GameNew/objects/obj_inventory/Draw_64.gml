@@ -1,14 +1,24 @@
 if (show_inventory) && (!show_slots){
 
+	draw_set_font(font_item);
+
+
+	////////////////
+	draw_text(16, 64, "page " + string(page));
+	draw_text(16, 64 + 12*1, "sel " + string(selected_slot));
+	draw_text(16, 64 + 12*2, "pckd " + string(picked_slot));
+	draw_text(16, 64 + 12*3, "onep " + string(onepicked_slot));
+	draw_text(16, 64 + 12*4, "mltp " + string(multipick));
+	draw_text(16, 64 + 12*5, "inh " + string(inhand));
+	////////////////
+
 	draw_sprite_ext(spr_eq_back, 0, backUI_x, backUI_y, scale, scale, 0, c_white, 1);
 	draw_sprite_ext(spr_eq_slotback, 0, backslotUI_x, backslotUI_y, scale, scale, 0, c_white, 1);
-	
-	draw_text(0, 100, page);
 	
 	draw_sprite_ext(spr_crafting_hud, 3, xUI - 16, yUI, scale, scale, 0, c_white, 1);
 	draw_sprite_ext(spr_crafting_hud, 4, xUI + 16, yUI, scale, scale, 0, c_white, 1);
 
-	draw_set_font(font_item);
+	
 
 	//Inventory
 	var ii, ix, iy, xx, yy, sx, sy, iitem, inv_grid;
@@ -35,47 +45,56 @@ if (show_inventory) && (!show_slots){
 				if (iitem > 0) && (inv_grid[# 1, ii] > 0){
 					switch(ii){
 						case selected_slot:
-
-										scr_draw_slot_selected(xx, yy, 1);
-										scr_draw_item(sx, sy, xx, yy, 1);
-										scr_draw_slot_none(xx, yy, .3, true);
-
+										//draw selected slot
+										draw_sprite_ext(spr_inv_slot_selected, 0, xx, yy, scale, scale, 0, c_white, 1);
+										//draw item
+										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
+										
+										gpu_set_blendmode(bm_add);
+										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, .2);
+										gpu_set_blendmode(bm_normal);
+										
 									if (selected_slot == picked_slot){
-										if (onepicked_slot == 1){
-											scr_draw_slot_selected(xx, yy, 1);
-											scr_draw_item(sx, sy, xx, yy, 1);
-											scr_draw_slot_none(xx, yy, .3, true);
+										if (multipick > 0){
+										//draw selected slot
+										draw_sprite_ext(spr_inv_slot_selected, 0, xx, yy, scale, scale, 0, c_white, 1);
+										//draw item
+										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
+										
+										gpu_set_blendmode(bm_add);
+										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, .2);
+										gpu_set_blendmode(bm_normal);
 										}else{
-											scr_draw_slot_none(xx, yy, 1, false);
+											draw_sprite_ext(spr_inv_slot_none, 0, xx, yy, scale, scale, 0, c_white, 1);
 										}
 									
 									}else if (selected_slot != picked_slot){
-										if (onepicked_slot == 1){
-											scr_draw_slot_selected(xx, yy, 1);
-											scr_draw_item(sx, sy, xx, yy, 1);
-											scr_draw_slot_none(xx, yy, .3, true);
+										if (multipick > 0){
+										//draw selected slot
+										draw_sprite_ext(spr_inv_slot_selected, 0, xx, yy, scale, scale, 0, c_white, 1);
+										//draw item
+										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
+										
+										gpu_set_blendmode(bm_add);
+										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, .2);
+										gpu_set_blendmode(bm_normal);
 										}else{
 											break;	
 										}
 									}
-							
-							
-
-							
-
 						break;
 						case picked_slot:
-									if (onepicked_slot == 1){
-										scr_draw_slot_item(xx, yy, 1);
-										scr_draw_item(sx, sy, xx, yy, 1);
+									if (multipick > 0){
+										draw_sprite_ext(spr_inv_slot_none, 0, xx, yy, scale, scale, 0, c_white, 1);
+										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
 									}else{
-										scr_draw_slot_none(xx, yy, .2, false);
+										draw_sprite_ext(spr_inv_slot_none, 0, xx, yy, scale, scale, 0, c_white, .2);
 									}
 						break;
 						default:
 									if (inv_grid[# 1, ii] > 0){
-										scr_draw_slot_item(xx, yy, 1);
-										scr_draw_item(sx, sy, xx, yy, 1);
+										draw_sprite_ext(spr_inv_slot_none, 0, xx, yy, scale, scale, 0, c_white, 1);
+										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
 									}
 						break;
 					}
@@ -87,14 +106,14 @@ if (show_inventory) && (!show_slots){
 					if (amount < 0) || (amount > 1){
 							switch(ii){
 								case selected_slot:
-									if (selected_slot == picked_slot) && (onepicked_slot == 0){
+									if (selected_slot == picked_slot) && (multipick == 0){
 										break;	
 									}
 									draw_text_transformed_color(xx + 16, yy + 12, string(amount), .75, .75, 0, bl, bl, bl, bl, 1);
 
 								break;
 								case picked_slot:
-									if (onepicked_slot == 1){
+									if (multipick > 0){
 										draw_text_transformed_color(xx + 16, yy + 12, string(amount), .75, .75, 0, bl, bl, bl, bl, 1);
 									}else{
 										break;
@@ -105,7 +124,6 @@ if (show_inventory) && (!show_slots){
 								break;
 							}
 					}
-
 				}
 
 		
@@ -145,7 +163,7 @@ if (show_inventory) && (!show_slots){
 		
 		//Rodzaj przedmiotu
 		draw_set_font(font_item_desc);
-		type = ds_inventory[# 2, selected_slot];
+		type = iinfo_grid[# 2, inv_grid[# TYPE, selected_slot]];
 		var type_scale = 0.25;
 		var type_sep = 6;
 		var type_width = 72 * 4;
@@ -242,7 +260,7 @@ if (show_inventory) && (!show_slots){
 
 
 	//Rysowanie przedmiotow przenoszonych
-	if (picked_slot != -1) && (onepicked_slot == 0){
+	if (picked_slot != -1) && (multipick == 0){
 			//Przedmiot
 			iitem = inhand;
 			sx = (iitem mod spr_inv_items_columns) * cell_size;
@@ -255,7 +273,7 @@ if (show_inventory) && (!show_slots){
 			}
 		
 	}
-	if (onepicked_slot != 0){
+	if (multipick != 0){
 	
 			//Przedmiot
 			iitem = inhand;
@@ -387,7 +405,7 @@ else if (!show_inventory) && (show_slots){
 									scr_draw_slot_none(xx, yy, .3, true);
 
 								if (selected_slot == picked_slot){
-									if (onepicked_slot == 1){
+									if (multipick > 0){
 										scr_draw_slot_selected(xx, yy, 1);
 										scr_draw_item(sx, sy, xx, yy, 1);
 										scr_draw_slot_none(xx, yy, .3, true);
@@ -396,7 +414,7 @@ else if (!show_inventory) && (show_slots){
 									}
 									
 								}else if (selected_slot != picked_slot){
-									if (onepicked_slot == 1){
+									if (multipick > 0){
 										scr_draw_slot_selected(xx, yy, 1);
 										scr_draw_item(sx, sy, xx, yy, 1);
 										scr_draw_slot_none(xx, yy, .3, true);
@@ -406,7 +424,7 @@ else if (!show_inventory) && (show_slots){
 								}
 					break;
 					case picked_slot:
-								if (onepicked_slot == 1){
+								if (multipick > 0){
 									scr_draw_slot_item(xx, yy, 1);
 									scr_draw_item(sx, sy, xx, yy, 1);
 								}else{
@@ -428,7 +446,7 @@ else if (!show_inventory) && (show_slots){
 						if (amount < 0) || (amount > 1){
 								switch(ii){
 									case selected_slot:
-										if (selected_slot == picked_slot) && (onepicked_slot == 0){
+										if (selected_slot == picked_slot) && (multipick == 0){
 											break;	
 										}
 										draw_set_halign(fa_right);
@@ -437,7 +455,7 @@ else if (!show_inventory) && (show_slots){
 
 									break;
 									case picked_slot:
-										if (onepicked_slot == 1){
+										if (multipick > 0){
 											draw_set_halign(fa_right);
 											draw_text_transformed_color(xx + 20, yy + 14, string(amount), .5, .5, 0, bl, bl, bl, bl, 1);
 											draw_set_halign(fa_left);
