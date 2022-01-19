@@ -87,34 +87,12 @@ if (show_hud == hud.crafting){
 
 
 #region Opcje HUD
-if (keyboard_check_pressed(ord("E"))){
+if (keyboard_check_pressed(ord("E"))) && (obj_inventory.picked_slot == -1){
 	if (show_hud == hud.slots){
 		show_hud = lasthud;	
 	}else{
-		if (show_hud == hud.inv){
-			show_hud = hud.slots;
-			lasthud = hud.inv;
-		}
-		if (show_hud == hud.crafting){
-			show_hud = hud.slots;
-			lasthud = hud.crafting;
-		}
-		if (show_hud == hud.player){
-			show_hud = hud.slots;
-			lasthud = hud.player;
-		}
-		if (show_hud == hud.map){
-			show_hud = hud.slots;
-			lasthud = hud.map;
-		}
-		if (show_hud == hud.journal){
-			show_hud = hud.slots;
-			lasthud = hud.journal;
-		}
-		if (show_hud == hud.options){
-			show_hud = hud.slots;
-			lasthud = hud.options;
-		}
+		lasthud = show_hud;
+		show_hud = hud.slots;
 	}
 }
 switch (show_hud){
@@ -165,9 +143,13 @@ if (hud_inner){
 	switch (selected_hud_slot){
 		case 0:
 			show_hud = hud.inv;
+			hud_slot_y_active[0] = 8;
+			hud_slot_y_active[1] = 0;
 		break;
 		case 1:
 			show_hud = hud.crafting;
+			hud_slot_y_active[0] = 0;
+			hud_slot_y_active[1] = 8;
 		break;
 		case 2:
 			show_hud = hud.player;
@@ -188,7 +170,7 @@ if (show_hud == hud.inv) || (show_hud == hud.crafting) || (show_hud == hud.playe
 	var mousey = device_mouse_y_to_gui(0);
 
 	var cell_xoffset = 24;
-	var cell_yoffset = 24;
+	var cell_yoffset = 42;
 
 	var i_mousex = mousex - slots_x;
 	var i_mousey = mousey - slots_y;
@@ -196,11 +178,11 @@ if (show_hud == hud.inv) || (show_hud == hud.crafting) || (show_hud == hud.playe
 	var numx = i_mousex div cell_xoffset;
 	var numy = i_mousey div cell_yoffset;
 
-	if (mousex >= hud_slot_x) && (mousex < (hud_slot_x + (24 * 6))) && (mousey >= hud_slot_y) && (mousey < (hud_slot_y + 24)){
+	if (mousex >= hud_slot_x) && (mousex < (hud_slot_x + (24 * 6))) && (mousey >= hud_slot_y) && (mousey < (hud_slot_y + 48)){
 		var sx = i_mousex - (numx * cell_xoffset);
 		var sy = i_mousey - (numy * cell_yoffset);
 	
-		if ((sx < 24) && (sy < 24)){
+		if ((sx < 24) && (sy < 48)){
 			mouse_slotx = numx;
 			mouse_sloty = numy;
 		}

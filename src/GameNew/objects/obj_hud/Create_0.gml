@@ -1,4 +1,4 @@
-
+depth = -2;
 
 hp_x = 440;
 hp_y = 60;
@@ -14,13 +14,16 @@ hud_slot_height = sprite_get_height(spr_hud_slot);
 
 lasthud = hud.inv;
 
-hud_slot_x = (gui_width/2) - ((hud_slot_width/2));
-hud_slot_y = 4;
+hud_slot_x = 108;
+hud_slot_y = 14;
 
 slots_x = hud_slot_x;
 slots_y = hud_slot_y;
 mouse_slotx = 0;
 mouse_sloty = 0;
+
+hud_slot_y_active[0] = 8;
+hud_slot_y_active[1] = 0;
 
 hpCoreColor = make_color_rgb(176, 35, 24);
 staminaCoreColor = make_color_rgb(249, 243, 89);

@@ -12,11 +12,11 @@ if (show_inventory) && (!show_slots){
 	draw_text(16, 64 + 12*5, "inh " + string(inhand));
 	////////////////
 
+	depth = -1;
 	draw_sprite_ext(spr_eq_back, 0, backUI_x, backUI_y, scale, scale, 0, c_white, 1);
+	draw_sprite_ext(spr_eq_back, 1, backUI_x, backUI_y, scale, scale, 0, c_white, 1);
+	depth = -3;
 	draw_sprite_ext(spr_eq_slotback, 0, backslotUI_x, backslotUI_y, scale, scale, 0, c_white, 1);
-	
-	draw_sprite_ext(spr_crafting_hud, 3, xUI - 16, yUI, scale, scale, 0, c_white, 1);
-	draw_sprite_ext(spr_crafting_hud, 4, xUI + 16, yUI, scale, scale, 0, c_white, 1);
 
 	
 
@@ -93,7 +93,7 @@ if (show_inventory) && (!show_slots){
 						break;
 						default:
 									if (inv_grid[# 1, ii] > 0){
-										draw_sprite_ext(spr_inv_slot_none, 0, xx, yy, scale, scale, 0, c_white, 1);
+										//draw_sprite_ext(spr_inv_slot_none, 0, xx, yy, scale, scale, 0, c_white, 1);
 										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
 									}
 						break;
@@ -109,20 +109,32 @@ if (show_inventory) && (!show_slots){
 									if (selected_slot == picked_slot) && (multipick == 0){
 										break;	
 									}
-									draw_text_transformed_color(xx + 16, yy + 12, string(amount), .75, .75, 0, bl, bl, bl, bl, 1);
-
+									draw_set_font(global.font_itemnum);
+									draw_set_halign(fa_right);
+									draw_text_transformed_color(xx + 22, yy + 16, string(amount), .5, .5, 0, wh, wh, wh, wh, 1);
+									draw_set_halign(fa_left);
+									draw_set_font(font_item);
 								break;
 								case picked_slot:
 									if (multipick > 0){
-										draw_text_transformed_color(xx + 16, yy + 12, string(amount), .75, .75, 0, bl, bl, bl, bl, 1);
+										draw_set_font(global.font_itemnum);
+										draw_set_halign(fa_right);
+										draw_text_transformed_color(xx + 22, yy + 16, string(amount), .5, .5, 0, wh, wh, wh, wh, 1);
+										draw_set_halign(fa_left);
+										draw_set_font(font_item);
 									}else{
 										break;
 									}
 								break;
 								default:
-									draw_text_transformed_color(xx + 16, yy + 12, string(amount), .75, .75, 0, bl, bl, bl, bl, 1);
+									draw_set_font(global.font_itemnum);
+									draw_set_halign(fa_right);
+									draw_text_transformed_color(xx + 22, yy + 16, string(amount), .5, .5, 0, wh, wh, wh, wh, 1);
+									draw_set_halign(fa_left);
+									draw_set_font(font_item);
 								break;
 							}
+
 					}
 				}
 
@@ -287,6 +299,7 @@ if (show_inventory) && (!show_slots){
 			}
 		
 	}
+	depth = -1;
 }
 else if (!show_inventory) && (show_slots){
 	
@@ -302,7 +315,7 @@ else if (!show_inventory) && (show_slots){
 	var wh = c_white;
 	var bl = c_black;
 	
-	draw_sprite_part_ext(spr_invUI, 1, 0, 0, 288, 24, xUI, pos, scale, scale, c_white, 1);
+	draw_sprite_ext(spr_eq_slotback_12slot, 0, xUI + 9, pos - 1, scale, scale, 0, c_white, 1);
 	
 	draw_set_font(font_item);
 	
@@ -396,49 +409,26 @@ else if (!show_inventory) && (show_slots){
 		
 			//Rysuj slot i przedmiot
 		
-			if (iitem > 0) && (inv_grid[# 1, ii] > 0){
-				switch(ii){
-					case selected_slot:
-
-									scr_draw_slot_selected(xx, yy, 1);
-									scr_draw_item(sx, sy, xx, yy, 1);
-									scr_draw_slot_none(xx, yy, .3, true);
-
-								if (selected_slot == picked_slot){
-									if (multipick > 0){
-										scr_draw_slot_selected(xx, yy, 1);
-										scr_draw_item(sx, sy, xx, yy, 1);
-										scr_draw_slot_none(xx, yy, .3, true);
-									}else{
-										scr_draw_slot_none(xx, yy, 1, false);
+				if (iitem > 0) && (inv_grid[# 1, ii] > 0){
+					switch(ii){
+						case selected_slot:
+										//draw selected slot
+										draw_sprite_ext(spr_inv_slot_selected, 0, xx, yy, scale, scale, 0, c_white, 1);
+										//draw item
+										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
+										
+										gpu_set_blendmode(bm_add);
+										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, .2);
+										gpu_set_blendmode(bm_normal);
+						break;
+						default:
+									if (inv_grid[# 1, ii] > 0){
+										draw_sprite_ext(spr_inv_slot_none, 0, xx, yy, scale, scale, 0, c_white, 1);
+										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
 									}
-									
-								}else if (selected_slot != picked_slot){
-									if (multipick > 0){
-										scr_draw_slot_selected(xx, yy, 1);
-										scr_draw_item(sx, sy, xx, yy, 1);
-										scr_draw_slot_none(xx, yy, .3, true);
-									}else{
-										break;	
-									}
-								}
-					break;
-					case picked_slot:
-								if (multipick > 0){
-									scr_draw_slot_item(xx, yy, 1);
-									scr_draw_item(sx, sy, xx, yy, 1);
-								}else{
-									scr_draw_slot_none(xx, yy, .2, false);
-								}
-					break;
-					default:
-								if (inv_grid[# 1, ii] > 0){
-									scr_draw_slot_item(xx, yy, 1);
-									scr_draw_item(sx, sy, xx, yy, 1);
-								}
-					break;
+						break;
+					}
 				}
-			}
 
 				//Rysuj liczbe przedmiotow
 					if (iitem > 0){
@@ -449,24 +439,30 @@ else if (!show_inventory) && (show_slots){
 										if (selected_slot == picked_slot) && (multipick == 0){
 											break;	
 										}
+										draw_set_font(global.font_itemnum);
 										draw_set_halign(fa_right);
-										draw_text_transformed_color(xx + 20, yy + 14, string(amount), .5, .5, 0, bl, bl, bl, bl, 1);
+										draw_text_transformed_color(xx + 22, yy + 16, string(amount), .5, .5, 0, wh, wh, wh, wh, 1);
 										draw_set_halign(fa_left);
+										draw_set_font(font_item);
 
 									break;
 									case picked_slot:
 										if (multipick > 0){
+											draw_set_font(global.font_itemnum);
 											draw_set_halign(fa_right);
-											draw_text_transformed_color(xx + 20, yy + 14, string(amount), .5, .5, 0, bl, bl, bl, bl, 1);
+											draw_text_transformed_color(xx + 22, yy + 16, string(amount), .5, .5, 0, wh, wh, wh, wh, 1);
 											draw_set_halign(fa_left);
+											draw_set_font(font_item);
 										}else{
 											break;
 										}
 									break;
 									default:
-									draw_set_halign(fa_right);
-										draw_text_transformed_color(xx + 20, yy + 14, string(amount), .5, .5, 0, bl, bl, bl, bl, 1);
+										draw_set_font(global.font_itemnum);
+										draw_set_halign(fa_right);
+										draw_text_transformed_color(xx + 22, yy + 16, string(amount), .5, .5, 0, wh, wh, wh, wh, 1);
 										draw_set_halign(fa_left);
+										draw_set_font(font_item);
 									break;
 								}
 						}
@@ -483,11 +479,11 @@ else if (!show_inventory) && (show_slots){
 	var num = 0;
 	repeat(inv_slots_width - 3){
 		num++;
-		draw_text_transformed_color(xUI + (cell_size * num) - cell_size + 4, pos + 4, num, 0.35, 0.35, 0, wh, wh, wh, wh, 1);
+		draw_text_transformed_color(xUI + (cell_size * num) - cell_size + 4, pos + 4, num, 0.35, 0.35, 0, bl, bl, bl, bl, 1);
 	}
-	draw_text_transformed_color(xUI + (cell_size * 10) - cell_size + 4, pos + 4, "0", 0.35, 0.35, 0, wh, wh, wh, wh, 1);
-	draw_text_transformed_color(xUI + (cell_size * 11) - cell_size + 4, pos + 4, "-", 0.35, 0.35, 0, wh, wh, wh, wh, 1);
-	draw_text_transformed_color(xUI + (cell_size * 12) - cell_size + 4, pos + 4, "=", 0.35, 0.35, 0, wh, wh, wh, wh, 1);
+	draw_text_transformed_color(xUI + (cell_size * 10) - cell_size + 4, pos + 4, "0", 0.35, 0.35, 0, bl, bl, bl, bl, 1);
+	draw_text_transformed_color(xUI + (cell_size * 11) - cell_size + 4, pos + 4, "-", 0.35, 0.35, 0, bl, bl, bl, bl, 1);
+	draw_text_transformed_color(xUI + (cell_size * 12) - cell_size + 4, pos + 4, "=", 0.35, 0.35, 0, bl, bl, bl, bl, 1);
 	
 	//Wybrany slot
 	var selslot_x = xUI + (mouse_slotx_second * cell_size);

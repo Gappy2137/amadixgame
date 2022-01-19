@@ -47,10 +47,10 @@ if (keyboard_check_pressed(ord("C"))){
 	room_speed = 60;	
 }
 if (keyboard_check(ord("O"))){
-	global.stamina -= 0.1;	
+	global.stamina -= 0.1;
 }
 if (keyboard_check(ord("P"))){
-	global.stamina += 0.1;		
+	global.stamina += 0.1;
 }
 
 depth = -(bbox_bottom - (sprite_height - yorigin));

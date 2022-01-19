@@ -73,6 +73,7 @@ spr_inv_slot_selected = spr_item_slot_selected;
 spr_eq_back = spr_eq_ui_back;
 spr_eq_slotback = spr_eq_ui_slotback;
 spr_eq_arrow = spr_eq_ui_slotback_arrow;
+spr_eq_slotback_12slot = spr_eq_ui_slotback_noneq;
 
 ///////////////
 

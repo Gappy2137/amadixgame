@@ -46,13 +46,6 @@ repeat(maxeffects){
 //Rysuj opcje ekwipunku
 
 if (show_hud == hud.inv) || (show_hud == hud.crafting) || (show_hud == hud.player) || (show_hud == hud.map) || (show_hud == hud.journal) || (show_hud == hud.options){
-	for (var i = 0; i < 6; ++i) {
-		draw_sprite(spr_hud_slot, 0, hud_slot_x + (24 * i), hud_slot_y);
-	}
-	gpu_set_blendmode(bm_max);
-	draw_sprite(spr_hud_slot, 0, hud_slot_x + (24 * selected_hud_slot), hud_slot_y);
-	gpu_set_blendmode(bm_normal);
-	
-	draw_sprite(spr_hud_slot_backpack, backpack_frame, hud_slot_x + (24 * 0), hud_slot_y);
-	draw_sprite(spr_hud_slot_crafting, crafting_frame, hud_slot_x + (24 * 1), hud_slot_y);
+	draw_sprite(spr_eq_menu, 0, hud_slot_x, hud_slot_y + hud_slot_y_active[0]);
+	draw_sprite(spr_eq_menu, 1, hud_slot_x + 24 + 12, hud_slot_y + hud_slot_y_active[1]);
 }

@@ -21,6 +21,9 @@
 #macro TIMER 3
 //
 //
+//CZCIONKI
+global.font_itemnum = font_add_sprite(spr_font_item_num, ord("0123456789-.%"), false, 1);
+//
 randomize();
 
 guiWidth = display_get_gui_width();

@@ -12,7 +12,7 @@ function item_action(){
 	//Prawy przycisk wscisniety
 	if (mouse_check_button_pressed(mb_right)){
 		if instance_exists(obj_amadix){
-			if (type == locals.itemTypeFood) || (type == locals.itemTypeFruit) || (type == locals.itemTypeVegetable) || (type == locals.itemTypeDish){
+			if (type == itemtype.food) || (type == itemtype.fruit) || (type == itemtype.vegetable) || (type == itemtype.dish){
 				if (amount > 0){
 					if (obj_amadix.actionstate != player_state_action.eating){
 						var iitem = obj_inventory.ds_inventory[# 0, obj_inventory.mouse_slotx_second];
@@ -40,7 +40,7 @@ function item_action(){
 					obj_inventory.text_alpha = 0;
 				}
 			}else
-			if (type == locals.itemTypeDrink){
+			if (type == itemtype.drink){
 				if (amount > 0){
 					if (obj_amadix.actionstate != player_state_action.drinking){
 						var iitem = obj_inventory.ds_inventory[# 0, obj_inventory.mouse_slotx_second];
@@ -73,7 +73,7 @@ function item_action(){
 	
 	//Lewy przycisk wscisniety
 	if (mouse_check_button_pressed(mb_left))  && (!inslots){
-		if (type == locals.itemTypeWeapon){
+		if (type == itemtype.melee){
 			if (amount > 0){
 				if (obj_amadix.actionstate != player_state_action.attacking_melee){
 					var iitem = obj_inventory.ds_inventory[# 0, obj_inventory.mouse_slotx_second];
