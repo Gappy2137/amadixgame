@@ -47,17 +47,8 @@ switch (actionstate){
 	case player_state_action.attacking_melee:
 				switch(facing){
 				case dirc.down:
+					
 					if (anim_frame_action == anim_speed_action){
-						var seq_down = seq_melee_attack_down;
-						var _seq = layer_sequence_create("Instances", x, y, seq_down);
-						layer_sequence_speedscale(_seq, anim_speed_action);
-						if (instance_exists(obj_seq_item)){
-							var itemUsed = itemeaten;
-							with (obj_seq_item){
-								item_id = itemUsed;
-							}
-						}
-						/*
 						var swing = instance_create_layer(x, y + 16, "Instances", obj_melee_swing);
 						var sp = anim_speed_action;
 						with (swing){
@@ -68,9 +59,14 @@ switch (actionstate){
 							animation_speed = sp;
 							face = dirc.down;
 						}
-						*/
 					}
-
+					if (anim_frame_action) <= 5{fixAngle -= 1;}
+					if (floor(anim_frame_action) == 0){itemUsedX = 25;itemUsedY = -7 + fixY;itemUsedAngle = 310 + fixAngle;itemUsedSx = 0;}
+					if (floor(anim_frame_action) == 1){itemUsedX = 26;itemUsedY = 7 + fixY;itemUsedAngle = 260 + fixAngle;itemUsedSx = 0;}
+					if (floor(anim_frame_action) == 2){itemUsedX = 23;itemUsedY = 14 + fixY;itemUsedAngle = 250 + fixAngle;itemUsedSx = 0;}
+					if (floor(anim_frame_action) == 3){itemUsedX = 20;itemUsedY = 22 + fixY;itemUsedAngle = 225 + fixAngle;itemUsedSx = 0;}
+					if (floor(anim_frame_action) == 4){itemUsedX = 10;itemUsedY = 28 + fixY;itemUsedAngle = 190 + fixAngle;itemUsedSx = 0;}
+					if (floor(anim_frame_action) == 5){itemUsedX = 3;itemUsedY = 30 + fixY;itemUsedAngle = 180 + fixAngle;itemUsedSx = 0;}
 				break;
 				case dirc.right:
 					if (anim_frame_action == anim_speed_action){

@@ -58,16 +58,18 @@ state = player_state.idle;
 actionstate = player_state_action.none;
 
 itemeaten = -1;
-eatingX = 0;
-eatingY = 0;
-eatingAngle = 0;
-eatingSx = 0;
-eatingYscale = 1;
+itemUsedX = 0;
+itemUsedY = 0;
+itemUsedAngle = 0;
+itemUsedSx = 0;
+itemUsedYscale = 1;
 attackSpeedFix = false;
 
 runningfix = true;
 movingfix = true;
 
 tenalarm = 0;
+
+oneStepEvent[0] = 1;
 
 if (obj_gamecontrol.doTransition  == true) scr_updatePlayerAnim();

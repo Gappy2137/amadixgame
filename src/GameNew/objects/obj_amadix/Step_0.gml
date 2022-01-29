@@ -36,7 +36,7 @@ if (keyboard_check_pressed(vk_space)){
 	item_add(-1, item.strawberry, 1);
 }
 if (keyboard_check_pressed(vk_enter)){
-	item_add(-1, item.lemon, 24);
+	item_add(-1, item.sword, 1);
 	//item_add(-1, item.log, -1);
 	//item_add(-1, item.lemon, -2);
 }

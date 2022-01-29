@@ -1,4 +1,5 @@
 
+
 if !surface_exists(surf){
 	surf = surface_create(room_width, room_height);	
 }
@@ -22,14 +23,15 @@ draw_tilemap(tiles, 0, 0);
 
 gpu_set_colorwriteenable(1, 1, 1, 0);
 
-draw_surface_ext(refsurf, 0, 0, 1, 1, 0, c_white, 0.25);
+draw_surface_ext(refsurf, 0, 0, 1, 1, 0, c_white, 0.2);
 
 gpu_set_colorwriteenable(1, 1, 1, 1);
 
 surface_reset_target();
 
-draw_surface_ext(surf, 0, 0, 1, 1, 0, c_white, 1);
 
+
+draw_surface_ext(surf, 0, 0, 1, 1, 0, c_white, 0.8);
 
 
 /*

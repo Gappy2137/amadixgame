@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_seqitem",
+    "path": "sprites/spr_seqitem/spr_seqitem.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
@@ -22,17 +25,17 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Item",
-    "path": "folders/Objects/World Objects/Item.yy",
+    "name": "Player_D",
+    "path": "folders/Objects/Dont Use/Player_D.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_item",
+  "name": "obj_seq_item",
   "tags": [],
   "resourceType": "GMObject",
 }

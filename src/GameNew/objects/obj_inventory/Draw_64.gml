@@ -2,7 +2,7 @@ if (show_inventory) && (!show_slots){
 
 	draw_set_font(font_item);
 
-
+	/*
 	////////////////
 	draw_text(16, 64, "page " + string(page));
 	draw_text(16, 64 + 12*1, "sel " + string(selected_slot));
@@ -11,6 +11,7 @@ if (show_inventory) && (!show_slots){
 	draw_text(16, 64 + 12*4, "mltp " + string(multipick));
 	draw_text(16, 64 + 12*5, "inh " + string(inhand));
 	////////////////
+	*/
 
 	depth = -1;
 	draw_sprite_ext(spr_eq_back, 0, backUI_x, backUI_y, scale, scale, 0, c_white, 1);

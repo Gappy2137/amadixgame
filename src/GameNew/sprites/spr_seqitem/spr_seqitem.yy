@@ -7,15 +7,15 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 2,
-  "bbox_right": 13,
-  "bbox_top": 3,
-  "bbox_bottom": 14,
+  "bbox_left": 4,
+  "bbox_right": 19,
+  "bbox_top": 4,
+  "bbox_bottom": 19,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 16,
-  "height": 16,
+  "width": 24,
+  "height": 24,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"dde056d0-e1d4-471e-8bce-08f8e22b6d2a","path":"sprites/spr_item_bucket/spr_item_bucket.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"dde056d0-e1d4-471e-8bce-08f8e22b6d2a","path":"sprites/spr_item_bucket/spr_item_bucket.yy",},"LayerId":{"name":"757bd55d-0a7e-4536-a34e-37c6d79fc002","path":"sprites/spr_item_bucket/spr_item_bucket.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_item_bucket","path":"sprites/spr_item_bucket/spr_item_bucket.yy",},"resourceVersion":"1.0","name":"dde056d0-e1d4-471e-8bce-08f8e22b6d2a","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"dde056d0-e1d4-471e-8bce-08f8e22b6d2a","path":"sprites/spr_seqitem/spr_seqitem.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"dde056d0-e1d4-471e-8bce-08f8e22b6d2a","path":"sprites/spr_seqitem/spr_seqitem.yy",},"LayerId":{"name":"757bd55d-0a7e-4536-a34e-37c6d79fc002","path":"sprites/spr_seqitem/spr_seqitem.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_seqitem","path":"sprites/spr_seqitem/spr_seqitem.yy",},"resourceVersion":"1.0","name":"dde056d0-e1d4-471e-8bce-08f8e22b6d2a","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_item_bucket","path":"sprites/spr_item_bucket/spr_item_bucket.yy",},
+    "spriteId": {"name":"spr_seqitem","path":"sprites/spr_seqitem/spr_seqitem.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 15.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"d39fcea2-67cf-4cb8-b0b5-8b813abe56b3","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"dde056d0-e1d4-471e-8bce-08f8e22b6d2a","path":"sprites/spr_item_bucket/spr_item_bucket.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"a5d142ec-b14f-4982-99e7-ac9a976fae77","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"dde056d0-e1d4-471e-8bce-08f8e22b6d2a","path":"sprites/spr_seqitem/spr_seqitem.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -58,9 +58,9 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_item_bucket","path":"sprites/spr_item_bucket/spr_item_bucket.yy",},
+    "parent": {"name":"spr_seqitem","path":"sprites/spr_seqitem/spr_seqitem.yy",},
     "resourceVersion": "1.3",
-    "name": "spr_item_bucket",
+    "name": "spr_seqitem",
     "tags": [],
     "resourceType": "GMSequence",
   },
@@ -73,7 +73,7 @@
     "path": "folders/Sprites/Inventory.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spr_item_bucket",
+  "name": "spr_seqitem",
   "tags": [],
   "resourceType": "GMSprite",
 }

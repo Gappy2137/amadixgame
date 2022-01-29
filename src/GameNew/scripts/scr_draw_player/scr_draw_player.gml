@@ -76,7 +76,7 @@ function scr_draw_player(px, py) {
 			
 			if (anim_frame_action >= 1) && (anim_frame_action <= 6){
 				//Przedmiot jedzony
-				draw_sprite_general(spr_inventory_items, 0, sx, sy + eatingSx, 24, 24 - eatingSx, px - 7 + (eatingX), py + 13 + (eatingY), .5, .5, eatingAngle, c_white, c_white, c_white, c_white, 1);
+				draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 24, 24 - itemUsedSx, px - 7 + (itemUsedX), py + 13 + (itemUsedY), .5, .5, itemUsedAngle, c_white, c_white, c_white, c_white, 1);
 			}
 			//Dlonie
 			draw_sprite_ext(hands_index,anim_frame_action,px,py,image_xscale,image_yscale,image_angle,c_white,image_alpha);
@@ -96,7 +96,7 @@ function scr_draw_player(px, py) {
 			
 			if (anim_frame_action >= 1) && (anim_frame_action <= 6){
 				//Przedmiot jedzony
-				draw_sprite_general(spr_inventory_items, 0, sx, sy + eatingSx, 24, 24 - eatingSx, px - 7 + (eatingX), py + 13 + (eatingY), .5, .5, eatingAngle, c_white, c_white, c_white, c_white, 1);
+				draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 24, 24 - itemUsedSx, px - 7 + (itemUsedX), py + 13 + (itemUsedY), .5, .5, itemUsedAngle, c_white, c_white, c_white, c_white, 1);
 			}
 			
 			//Dlonie
@@ -112,7 +112,7 @@ function scr_draw_player(px, py) {
 			
 			if (anim_frame_action >= 3) && (anim_frame_action <= 5){
 				//Przedmiot jedzony
-				draw_sprite_general(spr_inventory_items, 0, sx, sy + eatingSx, 24, 24 - eatingSx, px - 7 + (eatingX), py + 13 + (eatingY), .5, .5, eatingAngle, c_white, c_white, c_white, c_white, 1);
+				draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 24, 24 - itemUsedSx, px - 7 + (itemUsedX), py + 13 + (itemUsedY), .5, .5, itemUsedAngle, c_white, c_white, c_white, c_white, 1);
 			}
 			//Dlonie
 			draw_sprite_part_ext(hands_index,anim_frame_action, 0, sprite_yoffset, sprite_width, sprite_height - 16,px - sprite_xoffset,py + 16,image_xscale,image_yscale,c_white,image_alpha);	
@@ -134,7 +134,7 @@ function scr_draw_player(px, py) {
 			
 			if (anim_frame_action >= 1) && (anim_frame_action <= 8){
 				//Przedmiot pity
-				draw_sprite_general(spr_inventory_items, 0, sx, sy + eatingSx, 24, 24 - eatingSx, px - 7 + (eatingX), py + 13 + (eatingY), .5, (.5 * eatingYscale), eatingAngle, c_white, c_white, c_white, c_white, 1);
+				draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 24, 24 - itemUsedSx, px - 7 + (itemUsedX), py + 13 + (itemUsedY), .5, (.5 * itemUsedYscale), itemUsedAngle, c_white, c_white, c_white, c_white, 1);
 			}
 			
 			//Dlonie
@@ -155,7 +155,7 @@ function scr_draw_player(px, py) {
 			
 			if (anim_frame_action >= 1) && (anim_frame_action <= 8){
 				//Przedmiot pity
-				draw_sprite_general(spr_inventory_items, 0, sx, sy + eatingSx, 24, 24 - eatingSx, px - 7 + (eatingX), py + 13 + (eatingY), .5, (.5 * eatingYscale), eatingAngle, c_white, c_white, c_white, c_white, 1);
+				draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 24, 24 - itemUsedSx, px - 7 + (itemUsedX), py + 13 + (itemUsedY), .5, (.5 * itemUsedYscale), itemUsedAngle, c_white, c_white, c_white, c_white, 1);
 			}
 			
 			//Dlonie
@@ -176,7 +176,7 @@ function scr_draw_player(px, py) {
 			
 			if (anim_frame_action >= 3) && (anim_frame_action <= 7){
 				//Przedmiot pity
-				draw_sprite_general(spr_inventory_items, 0, sx, sy + eatingSx, 24, 24 - eatingSx, px - 7 + (eatingX), py + 13 + (eatingY), .5, (.5 * eatingYscale), eatingAngle, c_white, c_white, c_white, c_white, 1);
+				draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 24, 24 - itemUsedSx, px - 7 + (itemUsedX), py + 13 + (itemUsedY), .5, (.5 * itemUsedYscale), itemUsedAngle, c_white, c_white, c_white, c_white, 1);
 			}
 		}
 	}else
@@ -202,6 +202,7 @@ function scr_draw_player(px, py) {
 			
 					//Bron
 					if (anim_frame_action >= 0.1){
+						draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 24, 24 - itemUsedSx, px - 7 + (itemUsedX), py + 13 + (itemUsedY), 1, (itemUsedYscale), itemUsedAngle, c_white, c_white, c_white, c_white, 1);
 						if (instance_exists(obj_melee_attack)){
 							with (obj_melee_attack){
 								yorigin = obj_amadix.yorigin + 1;
@@ -211,12 +212,12 @@ function scr_draw_player(px, py) {
 					}
 					
 					//Dlonie
-					//draw_sprite_ext(hands_index,anim_frame_action,px,py,image_xscale,image_yscale,image_angle,c_white,image_alpha);
+					draw_sprite_ext(hands_index,anim_frame_action,px,py,image_xscale,image_yscale,image_angle,c_white,image_alpha);
 				break;
 				case dirc.left: // Roznie
 					//Bron klatka 0
 					if (anim_frame_action >= 0.1) && (anim_frame_action < 1){
-						draw_sprite_general(spr_inventory_items, 0, sx, sy + eatingSx, 24, 24 - eatingSx, px - 7 + (eatingX), py + 13 + (eatingY), 1, (eatingYscale), eatingAngle, c_white, c_white, c_white, c_white, 1);
+						draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 24, 24 - itemUsedSx, px - 7 + (itemUsedX), py + 13 + (itemUsedY), 1, (itemUsedYscale), itemUsedAngle, c_white, c_white, c_white, c_white, 1);
 					}
 			
 					//Glowa
@@ -233,7 +234,7 @@ function scr_draw_player(px, py) {
 			
 					//Bron klatka 1+
 					if (anim_frame_action >= 1){
-						draw_sprite_general(spr_inventory_items, 0, sx, sy + eatingSx, 24, 24 - eatingSx, px - 7 + (eatingX), py + 13 + (eatingY), 1, (eatingYscale), eatingAngle, c_white, c_white, c_white, c_white, 1);
+						draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 24, 24 - itemUsedSx, px - 7 + (itemUsedX), py + 13 + (itemUsedY), 1, (itemUsedYscale), itemUsedAngle, c_white, c_white, c_white, c_white, 1);
 					}
 					
 					//Dlonie
@@ -242,7 +243,7 @@ function scr_draw_player(px, py) {
 				case dirc.right: // Roznie
 					//Bron klatka 0
 					if (anim_frame_action >= 0.1) && (anim_frame_action < 1){
-						draw_sprite_general(spr_inventory_items, 0, sx, sy + eatingSx, 24, 24 - eatingSx, px - 7 + (eatingX), py + 13 + (eatingY), 1, (eatingYscale), eatingAngle, c_white, c_white, c_white, c_white, 1);
+						draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 24, 24 - itemUsedSx, px - 7 + (itemUsedX), py + 13 + (itemUsedY), 1, (itemUsedYscale), itemUsedAngle, c_white, c_white, c_white, c_white, 1);
 					}
 			
 					//Glowa
@@ -259,7 +260,7 @@ function scr_draw_player(px, py) {
 			
 					//Bron klatka 1+
 					if (anim_frame_action >= 1){
-						draw_sprite_general(spr_inventory_items, 0, sx, sy + eatingSx, 24, 24 - eatingSx, px - 7 + (eatingX), py + 13 + (eatingY), 1, (eatingYscale), eatingAngle, c_white, c_white, c_white, c_white, 1);
+						draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 24, 24 - itemUsedSx, px - 7 + (itemUsedX), py + 13 + (itemUsedY), 1, (itemUsedYscale), itemUsedAngle, c_white, c_white, c_white, c_white, 1);
 					}
 					
 					//Dlonie
@@ -269,7 +270,7 @@ function scr_draw_player(px, py) {
 				
 					//Bron
 					if (anim_frame_action >= 0.1){
-						draw_sprite_general(spr_inventory_items, 0, sx, sy + eatingSx, 24, 24 - eatingSx, px - 7 + (eatingX), py + 13 + (eatingY), 1, (eatingYscale), eatingAngle, c_white, c_white, c_white, c_white, 1);
+						draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 24, 24 - itemUsedSx, px - 7 + (itemUsedX), py + 13 + (itemUsedY), 1, (itemUsedYscale), itemUsedAngle, c_white, c_white, c_white, c_white, 1);
 					}
 			
 					//Glowa

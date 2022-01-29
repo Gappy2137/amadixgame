@@ -6,7 +6,7 @@ if (instance_exists(obj_amadix)){
 		case -1:
 		break;
 		case dirc.down:
-			draw_sprite_general(spr_inventory_items, 0, sx, sy + obj_amadix.eatingSx, 24, 24 - obj_amadix.eatingSx, obj_amadix.x - 7 + (obj_amadix.eatingX), obj_amadix.y + 13 + (obj_amadix.eatingY), 1, (obj_amadix.eatingYscale), obj_amadix.eatingAngle, c_white, c_white, c_white, c_white, 1);
+			draw_sprite_general(spr_inventory_items, 0, sx, sy + obj_amadix.itemUsedSx, 24, 24 - obj_amadix.itemUsedSx, obj_amadix.x - 7 + (obj_amadix.itemUsedX), obj_amadix.y + 13 + (obj_amadix.itemUsedY), 1, (obj_amadix.itemUsedYscale), obj_amadix.itemUsedAngle, c_white, c_white, c_white, c_white, 1);
 			draw_sprite_ext(obj_amadix.hands_index,obj_amadix.anim_frame_action,obj_amadix.x,obj_amadix.y,obj_amadix.image_xscale,obj_amadix.image_yscale,obj_amadix.image_angle,c_white,obj_amadix.image_alpha);
 		break;
 	}
