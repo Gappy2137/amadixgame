@@ -78,10 +78,12 @@ function item_action(){
 				if (obj_amadix.actionstate != player_state_action.attacking_melee){
 					var iitem = obj_inventory.ds_inventory[# 0, obj_inventory.mouse_slotx_second];
 					with (obj_amadix){
+						oneStepEvent[0] = true;
+						oneStepEvent[1] = true;
 						itemeaten = iitem;
 						actionstate = player_state_action.attacking_melee;
 						anim_frame_action = 0;
-						anim_speed_action = 0.2;
+						anim_speed_action = 0.4;
 						anim_frame = 0;
 						canmove = false;
 						moving = false;

@@ -11,3 +11,13 @@ cell_size = 24;
 x_offset = cell_size/2;
 
 y_offset = cell_size*(2/3);
+
+rot = 0;
+
+x_frame = 0;
+
+y_frame = 0;
+
+if (instance_exists(obj_amadix)){
+	yorigin = obj_amadix.yorigin;
+}

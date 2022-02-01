@@ -4,7 +4,7 @@
     "path": "sprites/spr_melee_swing_down/spr_melee_swing_down.yy",
   },
   "solid": false,
-  "visible": false,
+  "visible": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {

@@ -178,6 +178,7 @@
     {"id":{"name":"spr_slope_dl","path":"sprites/spr_slope_dl/spr_slope_dl.yy",},"order":4,},
     {"id":{"name":"__shdBulbHardShadows","path":"shaders/__shdBulbHardShadows/__shdBulbHardShadows.yy",},"order":2,},
     {"id":{"name":"scr_remove_key_time","path":"scripts/scr_remove_key_time/scr_remove_key_time.yy",},"order":3,},
+    {"id":{"name":"curve_attack_melee_down","path":"animcurves/curve_attack_melee_down/curve_attack_melee_down.yy",},"order":0,},
     {"id":{"name":"item_check_amount","path":"scripts/item_check_amount/item_check_amount.yy",},"order":18,},
     {"id":{"name":"spr_groudtype_dirt_light16","path":"sprites/spr_groudtype_dirt_light16/spr_groudtype_dirt_light16.yy",},"order":7,},
     {"id":{"name":"craft_info","path":"scripts/craft_info/craft_info.yy",},"order":14,},
@@ -528,6 +529,7 @@
     {"folderPath":"folders/Extensions/Bulb/(System)/(Pay no attention to that man behind the curtain).yy","order":1,"resourceVersion":"1.0","name":"(Pay no attention to that man behind the curtain)","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/World Objects/Other.yy","order":15,"resourceVersion":"1.0","name":"Other","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/Inventory/newgui.yy","order":13,"resourceVersion":"1.0","name":"newgui","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Animation Curves/Attacks.yy","order":4,"resourceVersion":"1.0","name":"Attacks","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

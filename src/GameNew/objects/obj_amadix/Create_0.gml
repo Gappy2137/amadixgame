@@ -70,6 +70,7 @@ movingfix = true;
 
 tenalarm = 0;
 
-oneStepEvent[0] = 1;
+oneStepEvent[0] = true;
+oneStepEvent[1] = true;
 
 if (obj_gamecontrol.doTransition  == true) scr_updatePlayerAnim();
