@@ -11,6 +11,15 @@ else {
     fixY = 0;
 }
 
+var alarmcurveAsset = curve_attack_delay;
+var alarmcurvePos = anim_speed_action;
+var alarmcurveStruct = animcurve_get(alarmcurveAsset);
+var alarmcurveChannel = animcurve_get_channel(alarmcurveStruct, "delay");
+
+var alarmcurveVal = animcurve_channel_evaluate(alarmcurveChannel, alarmcurvePos);
+
+var alarmval = clamp(alarmcurveVal, 1, 10);
+
 switch (actionstate){
 	case player_state_action.eating:
 			anim_frame_action_num = 8;
@@ -45,11 +54,13 @@ switch (actionstate){
 			if (floor(anim_frame_action) == 9){itemUsedYscale = 0;}
 	break;
 	case player_state_action.attacking_melee:
+	
 			anim_frame_action_num = 7;
-			if ((anim_frame_action) > (anim_frame_action_num)) && (!attackSpeedFix){
-				alarm[0] = 10;
+			if ((anim_frame_action) >= (anim_frame_action_num)) && (!attackSpeedFix){
+				alarm[0] = alarmval;
 				attackSpeedFix = true;
 			}
+			
 				switch(facing){
 				case dirc.down:
 				
@@ -85,45 +96,113 @@ switch (actionstate){
 								rot = curveRot;
 								
 								
-								if (other.anim_frame_action > other.anim_frame_action_num){
+								if (other.anim_frame_action >= other.anim_frame_action_num){
 									if (other.oneStepEvent[1] == true){
-										alarm[0] = 10;
+										alarm[0] = alarmval;
 										other.oneStepEvent[1] = false;
 									}
 								}
 							}
 						}
 
-						
-
-						
-					
-
 				break;
 				case dirc.right:
-					if (anim_frame_action == anim_speed_action){
-						var swing = instance_create_layer(x, y + 16, "Instances", obj_melee_swing);
-						var sp = anim_speed_action;
-						with (swing){
-							animation_speed = sp;
-						}	
-						instance_create_layer(x, y, "Instances", obj_melee_attack);
-						with (obj_melee_attack){
-							animation_speed = sp;
-							face = dirc.down;
+
+						if (oneStepEvent[0] == true){
+							instance_create_layer(x, y, "Instances", obj_seq_item);
+							/*
+							var swing = instance_create_layer(x, y + 16, "Instances", obj_melee_swing);
+							with (swing){
+								animation_speed = other.anim_speed_action;
+							}
+							*/
+							oneStepEvent[0] = false;
 						}
-					}
-					if (floor(anim_frame_action) == 0){itemUsedX = 1;itemUsedY = -18 + fixY;itemUsedAngle = 15;itemUsedSx = 0;}
-					if (floor(anim_frame_action) == 1){itemUsedX = 12;itemUsedY = -14 + fixY;itemUsedAngle = 340;itemUsedSx = 0;}
-					if (floor(anim_frame_action) == 2){itemUsedX = 24;itemUsedY = -12 + fixY;itemUsedAngle = 320;itemUsedSx = 0;}
-					if (floor(anim_frame_action) == 3){itemUsedX = 32;itemUsedY = -12 + fixY;itemUsedAngle = 270;itemUsedSx = 0;}
-					if (floor(anim_frame_action) == 4){itemUsedX = 24;itemUsedY = -12 + fixY;itemUsedAngle = 240;itemUsedSx = 0;}
-					if (floor(anim_frame_action) == 5){itemUsedX = 27;itemUsedY = 1.5 + fixY;itemUsedAngle = 200;itemUsedSx = 0;}
+						
+						var curveAsset = curve_attack_melee_right;
+						var curvePos = anim_frame_action/anim_frame_action_num;
+
+						curvePos = anim_frame_action/anim_frame_action_num;
+
+						var curveStruct = animcurve_get(curveAsset);
+						var curveXChannel = animcurve_get_channel(curveStruct, "x");
+						var curveYChannel = animcurve_get_channel(curveStruct, "y");
+						var curveRotChannel = animcurve_get_channel(curveStruct, "rot");
+
+						var curveX = animcurve_channel_evaluate(curveXChannel, curvePos);
+						var curveY = animcurve_channel_evaluate(curveYChannel, curvePos);
+						var curveRot = animcurve_channel_evaluate(curveRotChannel, curvePos);
+						
+						
+						if (instance_exists(obj_seq_item)){
+							with (obj_seq_item){
+								item_id = other.itemeaten;
+								x = obj_amadix.x + curveX;
+								y = obj_amadix.y + curveY;
+								rot = curveRot;
+								
+								
+								if (other.anim_frame_action >= other.anim_frame_action_num){
+									if (other.oneStepEvent[1] == true){
+										alarm[0] = alarmval;
+										other.oneStepEvent[1] = false;
+									}
+								}
+							}
+						}
+
+
 				break;
 				case dirc.left:
 				
 				break;
 				case dirc.up:
+				
+				
+						if (oneStepEvent[0] == true){
+							instance_create_layer(x, y, "Instances", obj_seq_item);
+							/*
+							var swing = instance_create_layer(x, y + 16, "Instances", obj_melee_swing);
+							with (swing){
+								animation_speed = other.anim_speed_action;
+							}
+							*/
+							oneStepEvent[0] = false;
+						}
+						
+						var curveAsset = curve_attack_melee_up;
+						var curvePos = anim_frame_action/anim_frame_action_num;
+
+						curvePos = anim_frame_action/anim_frame_action_num;
+
+						var curveStruct = animcurve_get(curveAsset);
+						var curveXChannel = animcurve_get_channel(curveStruct, "x");
+						var curveYChannel = animcurve_get_channel(curveStruct, "y");
+						var curveRotChannel = animcurve_get_channel(curveStruct, "rot");
+						var curveYoriginChannel = animcurve_get_channel(curveStruct, "yor");
+
+						var curveX = animcurve_channel_evaluate(curveXChannel, curvePos);
+						var curveY = animcurve_channel_evaluate(curveYChannel, curvePos);
+						var curveRot = animcurve_channel_evaluate(curveRotChannel, curvePos);
+						var curveYorigin = animcurve_channel_evaluate(curveYoriginChannel, curvePos);
+						
+						
+						if (instance_exists(obj_seq_item)){
+							with (obj_seq_item){
+								item_id = other.itemeaten;
+								x = obj_amadix.x + curveX;
+								y = obj_amadix.y + curveY;
+								rot = curveRot;
+								yorigin = other.yorigin + curveYorigin;
+								
+								if (other.anim_frame_action >= other.anim_frame_action_num){
+									if (other.oneStepEvent[1] == true){
+										alarm[0] = alarmval;
+										other.oneStepEvent[1] = false;
+									}
+								}
+							}
+						}
 				
 				break;
 			}

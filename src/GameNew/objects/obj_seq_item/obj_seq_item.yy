@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_seqitem",
+    "path": "sprites/spr_seqitem/spr_seqitem.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,

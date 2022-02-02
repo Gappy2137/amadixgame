@@ -243,10 +243,6 @@ function scr_draw_player(px, py) {
 					draw_sprite_ext(hands_index,anim_frame_action,px,py,image_xscale,image_yscale,image_angle,c_white,image_alpha);
 				break;
 				case dirc.right: // Roznie
-					//Bron klatka 0
-					if (anim_frame_action >= 0.1) && (anim_frame_action < 1){
-						draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 24, 24 - itemUsedSx, px - 7 + (itemUsedX), py + 13 + (itemUsedY), 1, (itemUsedYscale), itemUsedAngle, c_white, c_white, c_white, c_white, 1);
-					}
 			
 					//Glowa
 					draw_sprite_ext(head_index,anim_frame_action,px,py,image_xscale,image_yscale,image_angle,c_white,image_alpha);
@@ -259,21 +255,12 @@ function scr_draw_player(px, py) {
 
 					//Buty
 					draw_sprite_ext(boots_index,anim_frame_action,px,py,image_xscale,image_yscale,image_angle,c_white,image_alpha);	
-			
-					//Bron klatka 1+
-					if (anim_frame_action >= 1){
-						draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 24, 24 - itemUsedSx, px - 7 + (itemUsedX), py + 13 + (itemUsedY), 1, (itemUsedYscale), itemUsedAngle, c_white, c_white, c_white, c_white, 1);
-					}
+		
 					
 					//Dlonie
 					draw_sprite_ext(hands_index,anim_frame_action,px,py,image_xscale,image_yscale,image_angle,c_white,image_alpha);
 				break;
 				case dirc.up: // Za wszystkim
-				
-					//Bron
-					if (anim_frame_action >= 0.1){
-						draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 24, 24 - itemUsedSx, px - 7 + (itemUsedX), py + 13 + (itemUsedY), 1, (itemUsedYscale), itemUsedAngle, c_white, c_white, c_white, c_white, 1);
-					}
 			
 					//Glowa
 					draw_sprite_ext(head_index,anim_frame_action,px,py,image_xscale,image_yscale,image_angle,c_white,image_alpha);
