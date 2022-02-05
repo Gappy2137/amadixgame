@@ -109,41 +109,41 @@ function scr_setPlayerFacingAnim(facing){
 		if (!running){
 			switch(actionstate){
 				case player_state_action.eating:
-					boots_index = spr_amadix_classicB_d;
+					boots_index = spr_amadix_newB_d;
 				break;
 				case player_state_action.drinking:
-					boots_index = spr_amadix_classicB_d;
+					boots_index = spr_amadix_newB_d;
 				break;
 				case player_state_action.attacking_melee:
 					if facing == index_facing.right
-						boots_index = spr_amadix_classicB_attack_r;
+						boots_index = spr_amadix_newB_attack_r;
 					if facing == index_facing.up
-						boots_index = spr_amadix_classicB_attack_u;
+						boots_index = spr_amadix_newB_attack_u;
 					if facing == index_facing.left
-						boots_index = spr_amadix_classicB_attack_l;
+						boots_index = spr_amadix_newB_attack_l;
 					if facing == index_facing.down
-						boots_index = spr_amadix_classicB_attack_d;
+						boots_index = spr_amadix_newB_attack_d;
 				break;
 				case player_state_action.none:
 					if facing == index_facing.right
-						boots_index = spr_amadix_classicB_r;
+						boots_index = spr_amadix_newB_r;
 					if facing == index_facing.up
-						boots_index = spr_amadix_classicB_u;
+						boots_index = spr_amadix_newB_u;
 					if facing == index_facing.left
-						boots_index = spr_amadix_classicB_l;
+						boots_index = spr_amadix_newB_l;
 					if facing == index_facing.down
-						boots_index = spr_amadix_classicB_d;
+						boots_index = spr_amadix_newB_d;
 				break;
 			}
 		}else{
 				if facing == index_facing.right
-					boots_index = spr_amadix_classicB_run_r;
+					boots_index = spr_amadix_newB_run_r;
 				if facing == index_facing.up
-					boots_index = spr_amadix_classicB_run_u;
+					boots_index = spr_amadix_newB_run_u;
 				if facing == index_facing.left
-					boots_index = spr_amadix_classicB_run_l;
+					boots_index = spr_amadix_newB_run_l;
 				if facing == index_facing.down
-					boots_index = spr_amadix_classicB_run_d;
+					boots_index = spr_amadix_newB_run_d;
 		}
 	}
 	if (global.playerLegs == "classic_jeans"){
@@ -191,41 +191,41 @@ function scr_setPlayerFacingAnim(facing){
 		if (!running){
 			switch(actionstate){
 				case player_state_action.eating:
-					torso_index = spr_amadix_classicTC_eating;
+					torso_index = spr_amadix_newTC_eating;
 				break;
 				case player_state_action.drinking:
-					torso_index = spr_amadix_classicTC_drinking;
+					torso_index = spr_amadix_newTC_drinking;
 				break;
 				case player_state_action.attacking_melee:
 					if facing == index_facing.right
-						torso_index = spr_amadix_classicTC_attack_r;
+						torso_index = spr_amadix_newTC_attack_r;
 					if facing == index_facing.up
-						torso_index = spr_amadix_classicTC_attack_u;
+						torso_index = spr_amadix_newTC_attack_u;
 					if facing == index_facing.left
-						torso_index = spr_amadix_classicTC_attack_l;
+						torso_index = spr_amadix_newTC_attack_l;
 					if facing == index_facing.down
-						torso_index = spr_amadix_classicTC_attack_d;	
+						torso_index = spr_amadix_newTC_attack_d;	
 				break;
 				case player_state_action.none:
 					if facing == index_facing.right
-						torso_index = spr_amadix_classicTC_r;
+						torso_index = spr_amadix_newTC_r;
 					if facing == index_facing.up
-						torso_index = spr_amadix_classicTC_u;
+						torso_index = spr_amadix_newTC_u;
 					if facing == index_facing.left
-						torso_index = spr_amadix_classicTC_l;
+						torso_index = spr_amadix_newTC_l;
 					if facing == index_facing.down
-						torso_index = spr_amadix_classicTC_d;	
+						torso_index = spr_amadix_newTC_d;	
 				break;
 			}
 		}else{
 				if facing == index_facing.right
-					torso_index = spr_amadix_classicTC_run_r;
+					torso_index = spr_amadix_newTC_run_r;
 				if facing == index_facing.up
-					torso_index = spr_amadix_classicTC_run_u;
+					torso_index = spr_amadix_newTC_run_u;
 				if facing == index_facing.left
-					torso_index = spr_amadix_classicTC_run_l;
+					torso_index = spr_amadix_newTC_run_l;
 				if facing == index_facing.down
-					torso_index = spr_amadix_classicTC_run_d;	
+					torso_index = spr_amadix_newTC_run_d;	
 		}
 	}
 

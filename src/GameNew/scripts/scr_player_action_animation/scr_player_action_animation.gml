@@ -82,10 +82,12 @@ switch (actionstate){
 						var curveXChannel = animcurve_get_channel(curveStruct, "x");
 						var curveYChannel = animcurve_get_channel(curveStruct, "y");
 						var curveRotChannel = animcurve_get_channel(curveStruct, "rot");
+						var curveYoriginChannel = animcurve_get_channel(curveStruct, "yor");
 
 						var curveX = animcurve_channel_evaluate(curveXChannel, curvePos);
 						var curveY = animcurve_channel_evaluate(curveYChannel, curvePos);
 						var curveRot = animcurve_channel_evaluate(curveRotChannel, curvePos);
+						var curveYorigin = animcurve_channel_evaluate(curveYoriginChannel, curvePos);
 						
 						
 						if (instance_exists(obj_seq_item)){
@@ -94,7 +96,7 @@ switch (actionstate){
 								x = obj_amadix.x + curveX;
 								y = obj_amadix.y + curveY;
 								rot = curveRot;
-								
+								yorigin = other.yorigin + curveYorigin;
 								
 								if (other.anim_frame_action >= other.anim_frame_action_num){
 									if (other.oneStepEvent[1] == true){
@@ -128,10 +130,12 @@ switch (actionstate){
 						var curveXChannel = animcurve_get_channel(curveStruct, "x");
 						var curveYChannel = animcurve_get_channel(curveStruct, "y");
 						var curveRotChannel = animcurve_get_channel(curveStruct, "rot");
+						var curveYoriginChannel = animcurve_get_channel(curveStruct, "yor");
 
 						var curveX = animcurve_channel_evaluate(curveXChannel, curvePos);
 						var curveY = animcurve_channel_evaluate(curveYChannel, curvePos);
 						var curveRot = animcurve_channel_evaluate(curveRotChannel, curvePos);
+						var curveYorigin = animcurve_channel_evaluate(curveYoriginChannel, curvePos);
 						
 						
 						if (instance_exists(obj_seq_item)){
@@ -140,7 +144,7 @@ switch (actionstate){
 								x = obj_amadix.x + curveX;
 								y = obj_amadix.y + curveY;
 								rot = curveRot;
-								
+								yorigin = other.yorigin + curveYorigin;
 								
 								if (other.anim_frame_action >= other.anim_frame_action_num){
 									if (other.oneStepEvent[1] == true){
@@ -155,6 +159,52 @@ switch (actionstate){
 				break;
 				case dirc.left:
 				
+						if (oneStepEvent[0] == true){
+							instance_create_layer(x, y, "Instances", obj_seq_item);
+							/*
+							var swing = instance_create_layer(x, y + 16, "Instances", obj_melee_swing);
+							with (swing){
+								animation_speed = other.anim_speed_action;
+							}
+							*/
+							oneStepEvent[0] = false;
+						}
+						
+						var curveAsset = curve_attack_melee_left;
+						var curvePos = anim_frame_action/anim_frame_action_num;
+
+						curvePos = anim_frame_action/anim_frame_action_num;
+
+						var curveStruct = animcurve_get(curveAsset);
+						var curveXChannel = animcurve_get_channel(curveStruct, "x");
+						var curveYChannel = animcurve_get_channel(curveStruct, "y");
+						var curveRotChannel = animcurve_get_channel(curveStruct, "rot");
+						var curveYoriginChannel = animcurve_get_channel(curveStruct, "yor");
+
+						var curveX = animcurve_channel_evaluate(curveXChannel, curvePos);
+						var curveY = animcurve_channel_evaluate(curveYChannel, curvePos);
+						var curveRot = animcurve_channel_evaluate(curveRotChannel, curvePos);
+						var curveYorigin = animcurve_channel_evaluate(curveYoriginChannel, curvePos);
+						
+						
+						if (instance_exists(obj_seq_item)){
+							with (obj_seq_item){
+								item_id = other.itemeaten;
+								x = obj_amadix.x + curveX;
+								y = obj_amadix.y + curveY;
+								rot = curveRot;
+								yorigin = other.yorigin + curveYorigin;
+								
+								if (other.anim_frame_action >= other.anim_frame_action_num){
+									if (other.oneStepEvent[1] == true){
+										alarm[0] = alarmval;
+										other.oneStepEvent[1] = false;
+									}
+								}
+							}
+						}
+
+
 				break;
 				case dirc.up:
 				

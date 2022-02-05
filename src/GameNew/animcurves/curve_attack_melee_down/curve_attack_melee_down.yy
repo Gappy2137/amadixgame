@@ -31,6 +31,11 @@
         {"th0":-0.0300000068,"th1":0.0299999956,"tv0":0.0,"tv1":0.0,"x":0.85,"y":-180.0,},
         {"th0":-0.0299999956,"th1":0.0,"tv0":0.0,"tv1":0.0,"x":1.0,"y":-180.0,},
       ],"resourceVersion":"1.0","name":"rot","tags":[],"resourceType":"GMAnimCurveChannel",},
+    {"colour":4279234797,"visible":true,"points":[
+        {"th0":-0.1,"th1":0.1,"tv0":0.0,"tv1":0.0,"x":0.0,"y":0.0,},
+        {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.5076336,"y":-12.0,},
+        {"th0":-0.1,"th1":0.1,"tv0":0.0,"tv1":0.0,"x":1.0,"y":-26.0,},
+      ],"resourceVersion":"1.0","name":"yor","tags":[],"resourceType":"GMAnimCurveChannel",},
   ],
   "parent": {
     "name": "Attacks",
