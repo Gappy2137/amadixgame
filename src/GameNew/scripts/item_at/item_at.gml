@@ -1,5 +1,5 @@
 function item_at(iitem, itemslot){
-	//Atrybuty przedmiotow
+/*	//Atrybuty przedmiotow
 
 	#region Item Type Food
 	if (obj_inventory.ds_inventory[# TYPE, itemslot] = locals.itemTypeFood){
@@ -147,6 +147,6 @@ function item_at(iitem, itemslot){
 		obj_inventory.ds_inventory[# DEFENCE, itemslot] = 0;
 	}
 	#endregion
-
+*/
 	
 }

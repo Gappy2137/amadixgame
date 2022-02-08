@@ -84,9 +84,9 @@ enum effect{
 	stuffed =  2,
 	regeneration =  3,
 }
-global.playerTorso = item.none;
-global.playerLegs = item.none;
-global.playerBoots = item.none;
+global.playerTorso = item.classic_jacket;
+global.playerLegs = item.jeans;
+global.playerBoots = item.sneakers;
 global.playerHands = "short";
 global.playerHat = item.none;
 global.playerEyewear = item.none;
