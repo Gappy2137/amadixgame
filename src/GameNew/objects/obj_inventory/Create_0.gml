@@ -134,7 +134,11 @@ enum item{
 	strawberry					= 10,
 	lemon						= 11,
 	orange						= 12,
-	height						= 13
+	classic_jacket				= 13,
+	jeans						= 14,
+	sneakers					= 15,
+	panama_hat					= 16,
+	height						= 17
 }
 #endregion
 
@@ -146,7 +150,11 @@ enum itemtype{
 	tool				= 4,
 	fruit				= 5,
 	vegetable			= 6,
-	dish				= 7
+	dish				= 7,
+	clothing			= 8,
+	pants				= 9,
+	boots				= 10,
+	hat					= 11
 }
 
 ds_item_info = ds_grid_create(3, item.height);

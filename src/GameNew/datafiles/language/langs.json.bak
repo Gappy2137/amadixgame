@@ -14,6 +14,10 @@
 		"itemNameStrawberry":					"Strawberry",
 		"itemNameLemon":						"Lemon",
 		"itemNameOrange":						"Orange",
+		"itemNameClassicJacket":				"Brown Jacket",
+		"itemNameJeans":						"Jeans",
+		"itemNameSneakers":						"Sneakers",
+		"itemNamePanamaHat":					"Panama Hat",
 		
 		
 		
@@ -30,10 +34,24 @@
 		"itemDescStrawberry":					"Strawberry",
 		"itemDescLemon":						"Lemon",
 		"itemDescOrange":						"Orange",
+		"itemDescClassicJacket":				"Brown Jacket",
+		"itemDescJeans":						"Jeans",
+		"itemDescSneakers":						"Sneakers",
+		"itemDescPanamaHat":					"Panama Hat",
 		
 		
-		
-		"itemTypeResource":	"Resource",
+		"itemTypeResource":						"Resource",
+		"itemTypeFood":							"Food",
+		"itemTypeDrink":						"Drink",
+		"itemTypeMeleeWeapon":					"Melee Weapon",
+		"itemTypeTool":							"Tool",
+		"itemTypeFruit":						"Fruit",
+		"itemTypeVegetable":					"Vegetable",
+		"itemTypeDish":							"Dish",
+		"itemTypeClothing":						"Clothing",
+		"itemTypePants":						"Clothing",
+		"itemTypeBoots":						"Boots",
+		"itemTypeHat":							"Hat",
 		
 		
 		
@@ -54,6 +72,10 @@
 		"itemNameStrawberry":					"Truskawka",
 		"itemNameLemon":						"Cytryna",
 		"itemNameOrange":						"Pomarańcza",
+		"itemNameClassicJacket":				"Brązowa kurtka",
+		"itemNameJeans":						"Jeansy",
+		"itemNameSneakers":						"Trampki",
+		"itemNamePanamaHat":					"Kapelusz Panama",
 		
 		
 		
@@ -70,6 +92,25 @@
 		"itemDescStrawberry":					"Truskawka",
 		"itemDescLemon":						"Cytryna",
 		"itemDescOrange":						"Pomarańcza",
+		"itemDescClassicJacket":				"Brązowa kurtka",
+		"itemDescJeans":						"Jeansy",
+		"itemDescSneakers":						"Trampki",
+		"itemDescPanamaHat":					"Kapelusz z iniciałami R.M. Ciekawe do kogo należy?",
+		
+		
+		
+		"itemTypeResource":						"Materiał",
+		"itemTypeFood":							"Jedzenie",
+		"itemTypeDrink":						"Napój",
+		"itemTypeMeleeWeapon":					"Broń biała",
+		"itemTypeTool":							"Narzędzie",
+		"itemTypeFruit":						"Owoc",
+		"itemTypeVegetable":					"Warzywo",
+		"itemTypeDish":							"Danie",
+		"itemTypeClothing":						"Odzież wierzchnia",
+		"itemTypePants":						"Spodnie",
+		"itemTypeBoots":						"Obuwie",
+		"itemTypeHat":							"Czapka",
 		
 		
 		

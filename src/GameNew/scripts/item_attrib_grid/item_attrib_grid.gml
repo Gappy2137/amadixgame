@@ -68,6 +68,18 @@ function item_attrib_grid(){
 	grid[# HP, item.orange] = 10;
 	grid[# STAMINA, item.orange] = 5;
 	
+	//Kurtka amadixa
+	grid[# TYPE, item.classic_jacket] = itemtype.clothing;
+	
+	//Jeansy
+	grid[# TYPE, item.jeans] = itemtype.pants;
+	
+	//Trampki
+	grid[# TYPE, item.sneakers] = itemtype.boots;
+	
+	//Kapelusz maklowicza
+	grid[# TYPE, item.panama_hat] = itemtype.hat;
+	
 	//Sprawdzenie typow
 	for (var i = 0; i <= item.height; i++){
 		if (grid[# TYPE, i] == itemtype.dish){
@@ -118,6 +130,18 @@ function item_attrib_grid(){
 			grid[# MAXSTACK, i] = 1;
 			grid[# HP, i] = 0;
 			grid[# DEFENCE, i] = 0;
+		}
+		if (grid[# TYPE, i] == itemtype.clothing){
+			grid[# MAXSTACK, i] = 1;
+		}
+		if (grid[# TYPE, i] == itemtype.pants){
+			grid[# MAXSTACK, i] = 1;
+		}
+		if (grid[# TYPE, i] == itemtype.boots){
+			grid[# MAXSTACK, i] = 1;
+		}
+		if (grid[# TYPE, i] == itemtype.hat){
+			grid[# MAXSTACK, i] = 1;
 		}
 	}
 }

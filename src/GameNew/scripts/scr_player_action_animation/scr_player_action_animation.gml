@@ -18,15 +18,15 @@ var alarmcurveChannel = animcurve_get_channel(alarmcurveStruct, "delay");
 
 var alarmcurveVal = animcurve_channel_evaluate(alarmcurveChannel, alarmcurvePos);
 
-var alarmval = clamp(alarmcurveVal, 1, 10);
+var alarmval = clamp(round(alarmcurveVal), 1, 10);
 
 switch (actionstate){
 	case player_state_action.eating:
-			anim_frame_action_num = 8;
-			if (floor(anim_frame_action) == 0){itemUsedX = 1;itemUsedY = -1 + fixY;itemUsedAngle = -15;itemUsedSx = 0;}
-			if (floor(anim_frame_action) == 1){itemUsedX = 1;itemUsedY = -1.2 + fixY;itemUsedAngle = -10;itemUsedSx = 0;}
-			if (floor(anim_frame_action) == 2){itemUsedX = 0.75;itemUsedY = -3 + fixY;itemUsedAngle = -5;itemUsedSx = 0;}
-			if (floor(anim_frame_action) == 3){itemUsedX = 0.5;itemUsedY = -0.5 + fixY;itemUsedAngle = 0;itemUsedSx = 10;
+			anim_frame_action_num = 6;
+			if (floor(anim_frame_action) == 0){itemUsedX = 2;itemUsedY = -2 + fixY;itemUsedAngle = -15;itemUsedSx = 0;}
+			if (floor(anim_frame_action) == 1){itemUsedX = 1.4;itemUsedY = -1.4 + fixY;itemUsedAngle = 0;itemUsedSx = 0;}
+			if (floor(anim_frame_action) == 2){itemUsedX = 1.4;itemUsedY = -0.5 + fixY;itemUsedAngle = 0;itemUsedSx = 10;}
+			if (floor(anim_frame_action) == 3){itemUsedX = 1.4;itemUsedY = 0.1 + fixY;itemUsedAngle = 0;itemUsedSx = 14;
 				var part = instance_create_layer(x + itemUsedX - 2, y + itemUsedY + 13 + fixY, "Instances", obj_food_part);
 				with(part){
 					sx = (obj_amadix.itemeaten mod obj_inventory.spr_inv_items_columns) * 24;
@@ -36,22 +36,16 @@ switch (actionstate){
 				}
 		
 			}
-			if (floor(anim_frame_action) == 4){itemUsedX = 0.5;itemUsedY = -0.5 + fixY;itemUsedAngle = 0;itemUsedSx = 10;}
-			if (floor(anim_frame_action) == 5){itemUsedX = 0.75;itemUsedY = 0 + fixY;itemUsedAngle = -5;itemUsedSx = 14;}
-			if (floor(anim_frame_action) == 6){itemUsedX = 1;itemUsedY = 0 + fixY;itemUsedAngle = -10;itemUsedSx = 20;}
+			if (floor(anim_frame_action) == 4){itemUsedX = 1.4;itemUsedY = 0.2 + fixY;itemUsedAngle = 0;itemUsedSx = 20;}
 	break;
 	case player_state_action.drinking:
-			anim_frame_action_num = 11;
-			if (floor(anim_frame_action) == 0){itemUsedX = 0;itemUsedY = -1 + fixY;itemUsedAngle = -15;itemUsedYscale = 1;}
-			if (floor(anim_frame_action) == 1){itemUsedX = -0.25;itemUsedY = -1.25 + fixY;itemUsedAngle = -10;itemUsedYscale = 1;}
-			if (floor(anim_frame_action) == 2){itemUsedX = 0;itemUsedY = -1.5 + fixY;itemUsedAngle = -5;itemUsedYscale = 1;}
-			if (floor(anim_frame_action) == 3){itemUsedX = 0.5;itemUsedY = -0.25 + fixY;itemUsedAngle = 15;itemUsedYscale = -1;}
-			if (floor(anim_frame_action) == 4){itemUsedX = 1;itemUsedY = 0 + fixY;itemUsedAngle = 15;itemUsedYscale = -1;}
-			if (floor(anim_frame_action) == 5){itemUsedX = 1;itemUsedY = 0 + fixY;itemUsedAngle = 15;itemUsedYscale = -1;}
-			if (floor(anim_frame_action) == 6){itemUsedX = 1;itemUsedY = 0 + fixY;itemUsedAngle = 15;itemUsedYscale = -1;}
-			if (floor(anim_frame_action) == 7){itemUsedX = 0.5;itemUsedY = -0.25 + fixY;itemUsedAngle = 15;itemUsedYscale = -1;}
-			if (floor(anim_frame_action) == 8){itemUsedX = 0;itemUsedY = -1.5 + fixY;itemUsedAngle = -5;itemUsedYscale = 1;}
-			if (floor(anim_frame_action) == 9){itemUsedYscale = 0;}
+			anim_frame_action_num = 10;
+			if (floor(anim_frame_action) == 0){itemUsedX = 2;itemUsedY = -2 + fixY;itemUsedAngle = -15;itemUsedSx = 0;}
+			if (floor(anim_frame_action) == 1){itemUsedX = 1.4;itemUsedY = -1.4 + fixY;itemUsedAngle = 0;itemUsedSx = 0;}
+
+			if (floor(anim_frame_action) == 8){itemUsedX = 1.4;itemUsedY = -1.4 + fixY;itemUsedAngle = 0;itemUsedSx = 0;}
+			if (floor(anim_frame_action) == 9){itemUsedX = 2;itemUsedY = -2 + fixY;itemUsedAngle = -15;itemUsedSx = 0;}
+			if (floor(anim_frame_action) == 10){itemUsedX = 2;itemUsedY = -2 + fixY;itemUsedAngle = -15;itemUsedSx = 0;}
 	break;
 	case player_state_action.attacking_melee:
 	

@@ -14,6 +14,10 @@
 		"itemNameStrawberry":					"Strawberry",
 		"itemNameLemon":						"Lemon",
 		"itemNameOrange":						"Orange",
+		"itemNameClassicJacket":				"Brown Jacket",
+		"itemNameJeans":						"Jeans",
+		"itemNameSneakers":						"Sneakers",
+		"itemNamePanamaHat":					"Panama Hat",
 		
 		
 		
@@ -30,7 +34,10 @@
 		"itemDescStrawberry":					"Strawberry",
 		"itemDescLemon":						"Lemon",
 		"itemDescOrange":						"Orange",
-		
+		"itemDescClassicJacket":				"Brown Jacket",
+		"itemDescJeans":						"Jeans",
+		"itemDescSneakers":						"Sneakers",
+		"itemDescPanamaHat":					"Panama Hat",
 		
 		
 		"itemTypeResource":						"Resource",
@@ -41,6 +48,11 @@
 		"itemTypeFruit":						"Fruit",
 		"itemTypeVegetable":					"Vegetable",
 		"itemTypeDish":							"Dish",
+		"itemTypeClothing":						"Clothing",
+		"itemTypePants":						"Clothing",
+		"itemTypeBoots":						"Boots",
+		"itemTypeHat":							"Hat",
+		
 		
 		
 		"Hello":	"Hello!"
@@ -60,6 +72,10 @@
 		"itemNameStrawberry":					"Truskawka",
 		"itemNameLemon":						"Cytryna",
 		"itemNameOrange":						"Pomarańcza",
+		"itemNameClassicJacket":				"Brązowa kurtka",
+		"itemNameJeans":						"Jeansy",
+		"itemNameSneakers":						"Trampki",
+		"itemNamePanamaHat":					"Kapelusz Panama",
 		
 		
 		
@@ -76,6 +92,10 @@
 		"itemDescStrawberry":					"Truskawka",
 		"itemDescLemon":						"Cytryna",
 		"itemDescOrange":						"Pomarańcza",
+		"itemDescClassicJacket":				"Brązowa kurtka",
+		"itemDescJeans":						"Jeansy",
+		"itemDescSneakers":						"Trampki",
+		"itemDescPanamaHat":					"Kapelusz z iniciałami R.M. Ciekawe do kogo należy?",
 		
 		
 		
@@ -87,6 +107,10 @@
 		"itemTypeFruit":						"Owoc",
 		"itemTypeVegetable":					"Warzywo",
 		"itemTypeDish":							"Danie",
+		"itemTypeClothing":						"Odzież wierzchnia",
+		"itemTypePants":						"Spodnie",
+		"itemTypeBoots":						"Obuwie",
+		"itemTypeHat":							"Czapka",
 		
 		
 		

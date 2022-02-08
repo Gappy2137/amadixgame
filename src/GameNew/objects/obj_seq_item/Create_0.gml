@@ -18,6 +18,8 @@ x_frame = 0;
 
 y_frame = 0;
 
+scale = 1;
+
 if (instance_exists(obj_amadix)){
 	yorigin = obj_amadix.yorigin;
 }

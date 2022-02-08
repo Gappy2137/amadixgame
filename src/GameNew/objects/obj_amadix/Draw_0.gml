@@ -1,5 +1,5 @@
 if (playerVisible){
-	scr_draw_player(x, y);
+	scr_draw_player(x, y, z);
 }
 
 

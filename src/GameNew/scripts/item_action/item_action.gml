@@ -17,6 +17,7 @@ function item_action(){
 					if (obj_amadix.actionstate != player_state_action.eating){
 						var iitem = obj_inventory.ds_inventory[# 0, obj_inventory.mouse_slotx_second];
 						with (obj_amadix){
+							oneStepEvent[0] = true;
 							itemeaten = iitem;
 							actionstate = player_state_action.eating;
 							anim_frame_action = 0;
@@ -57,7 +58,7 @@ function item_action(){
 							vsp = 0;
 							facing = dirc.down;
 							scr_setPlayerFacingAnim(index_facing.down);
-							alarm[0] = 56;
+							alarm[0] = 65;
 						}
 						if (hp > 0){global.hp += hp;}
 						if (stamina > 0){global.stamina += stamina;}
