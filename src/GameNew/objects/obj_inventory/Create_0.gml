@@ -16,7 +16,7 @@ y_rel = 0;
 canUseInventory = true;
 
 page = 0;
-pages = 2;
+pages = 0;
 
 inv_slots = (48 * (pages + 1)) + 4;
 inv_slots_width = 12;

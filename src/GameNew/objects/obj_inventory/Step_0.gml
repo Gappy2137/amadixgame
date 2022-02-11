@@ -84,18 +84,53 @@ if (show_inventory) && (!show_slots){
 		}
 		ar++;
 	}
-	if ((selected_slot == (inv_slots - 4) + 0) && (ds_item_all[# TYPE, inhand] == itemtype.hat)) ||
-	   ((selected_slot == (inv_slots - 4) + 1) && (ds_item_all[# TYPE, inhand] == itemtype.clothing)) ||
-	   ((selected_slot == (inv_slots - 4) + 2) && (ds_item_all[# TYPE, inhand] == itemtype.pants)) ||
-	   ((selected_slot == (inv_slots - 4) + 3) && (ds_item_all[# TYPE, inhand] == itemtype.boots)) 
-	{
-		
-	}
 	#endregion
 
 
 	#region Operacje na przedmiotach
 	var inv_grid = ds_inventory;
+
+	function putitem(){
+		var inv_grid = ds_inventory;
+		inv_grid[# ITEM, selected_slot] = inhand;
+		inv_grid[# AMOUNT, selected_slot] = multipick;
+		inv_grid[# TYPE, selected_slot] = ds_item_all[# TYPE, inhand];
+		inv_grid[# MAXSTACK, selected_slot] = ds_item_all[# MAXSTACK, inhand];
+		inv_grid[# HP, selected_slot] = ds_item_all[# HP, inhand];
+		inv_grid[# STAMINA, selected_slot] = ds_item_all[# STAMINA, inhand];
+		inv_grid[# LEVEL, selected_slot] = ds_item_all[# LEVEL, inhand];
+		inv_grid[# DAMAGE, selected_slot] = ds_item_all[# DAMAGE, inhand];
+		inv_grid[# DEFENCE, selected_slot] = ds_item_all[# DEFENCE, inhand];
+		inv_grid[# EFFECT1, selected_slot] = ds_item_all[# EFFECT1, inhand];
+		inv_grid[# EFFECT2, selected_slot] = ds_item_all[# EFFECT2, inhand];
+		inv_grid[# EFFECT3, selected_slot] = ds_item_all[# EFFECT3, inhand];
+				
+		inhand = -1;
+		multipick = 0;
+	}
+	function changeitem(){
+		var inv_grid = ds_inventory;
+		//Zamieniamy przedmioty w rece i slocie
+		var temp0 = inv_grid[# ITEM, selected_slot];
+		var temp1 = inv_grid[# AMOUNT, selected_slot];
+				
+		inv_grid[# ITEM, selected_slot] = inhand;
+		inv_grid[# AMOUNT, selected_slot] = multipick;
+		inv_grid[# TYPE, selected_slot] = ds_item_all[# TYPE, inhand];
+		inv_grid[# MAXSTACK, selected_slot] = ds_item_all[# MAXSTACK, inhand];
+		inv_grid[# HP, selected_slot] = ds_item_all[# HP, inhand];
+		inv_grid[# STAMINA, selected_slot] = ds_item_all[# STAMINA, inhand];
+		inv_grid[# LEVEL, selected_slot] = ds_item_all[# LEVEL, inhand];
+		inv_grid[# DAMAGE, selected_slot] = ds_item_all[# DAMAGE, inhand];
+		inv_grid[# DEFENCE, selected_slot] = ds_item_all[# DEFENCE, inhand];
+		inv_grid[# EFFECT1, selected_slot] = ds_item_all[# EFFECT1, inhand];
+		inv_grid[# EFFECT2, selected_slot] = ds_item_all[# EFFECT2, inhand];
+		inv_grid[# EFFECT3, selected_slot] = ds_item_all[# EFFECT3, inhand];
+				
+		inhand = temp0;
+		multipick = temp1;	
+	}
+	
 
 	if ((mousex >= xUI) && (mousex < endUIx) && (mousey >= yUI) && (mousey < endUIy))
 	|| (isbounded(mousex, armor_x[0], armor_x[0] + 24) && (isbounded(mousey, armor_y[0], armor_y[1] + 24)))
@@ -113,22 +148,31 @@ if (show_inventory) && (!show_slots){
 			}else
 			//Jezeli mamy przedmiot w rece i klikamy na pusty slot
 			if (inhand != -1) && (inv_grid[# ITEM, selected_slot] == item.none){
-				//Kladziemy przedmiot na slot
-				inv_grid[# ITEM, selected_slot] = inhand;
-				inv_grid[# AMOUNT, selected_slot] = multipick;
-				inv_grid[# TYPE, selected_slot] = ds_item_all[# TYPE, inhand];
-				inv_grid[# MAXSTACK, selected_slot] = ds_item_all[# MAXSTACK, inhand];
-				inv_grid[# HP, selected_slot] = ds_item_all[# HP, inhand];
-				inv_grid[# STAMINA, selected_slot] = ds_item_all[# STAMINA, inhand];
-				inv_grid[# LEVEL, selected_slot] = ds_item_all[# LEVEL, inhand];
-				inv_grid[# DAMAGE, selected_slot] = ds_item_all[# DAMAGE, inhand];
-				inv_grid[# DEFENCE, selected_slot] = ds_item_all[# DEFENCE, inhand];
-				inv_grid[# EFFECT1, selected_slot] = ds_item_all[# EFFECT1, inhand];
-				inv_grid[# EFFECT2, selected_slot] = ds_item_all[# EFFECT2, inhand];
-				inv_grid[# EFFECT3, selected_slot] = ds_item_all[# EFFECT3, inhand];
-				
-				inhand = -1;
-				multipick = 0;
+				//Jezeli kladziemy przedmiot specjalny na slot specjalny
+				if (selected_slot == (inv_slots - 4) + 0){
+					if (ds_item_all[# TYPE, inhand] == itemtype.hat){
+						//Kladziemy przedmiot na slot
+						putitem();
+					}
+				}else if (selected_slot == (inv_slots - 4) + 1){
+					if (ds_item_all[# TYPE, inhand] == itemtype.clothing){
+						//Kladziemy przedmiot na slot
+						putitem();
+					}
+				}else if (selected_slot == (inv_slots - 4) + 2){
+					if (ds_item_all[# TYPE, inhand] == itemtype.pants){
+						//Kladziemy przedmiot na slot
+						putitem();
+					}
+				}else if (selected_slot == (inv_slots - 4) + 3){
+					if (ds_item_all[# TYPE, inhand] == itemtype.boots){
+						//Kladziemy przedmiot na slot
+						putitem();
+					}
+				}else{
+					//Kladziemy przedmiot na slot
+					putitem();
+				}
 			}else
 			//Jezeli mamy przedmiot w rece i klikamy na slot z tym samym przedmiotem
 			if (inhand != -1) && (inv_grid[# ITEM, selected_slot] == inhand){
@@ -166,25 +210,31 @@ if (show_inventory) && (!show_slots){
 			}else
 			//Jezeli mamy przedmiot w rece i klikamy na slot z innym przedmiotem
 			if (inhand != -1) && (inv_grid[# ITEM, selected_slot] != inhand) && (inv_grid[# ITEM, selected_slot] != item.none){
-				//Zamieniamy przedmioty w rece i slocie
-				var temp0 = inv_grid[# ITEM, selected_slot];
-				var temp1 = inv_grid[# AMOUNT, selected_slot];
-				
-				inv_grid[# ITEM, selected_slot] = inhand;
-				inv_grid[# AMOUNT, selected_slot] = multipick;
-				inv_grid[# TYPE, selected_slot] = ds_item_all[# TYPE, inhand];
-				inv_grid[# MAXSTACK, selected_slot] = ds_item_all[# MAXSTACK, inhand];
-				inv_grid[# HP, selected_slot] = ds_item_all[# HP, inhand];
-				inv_grid[# STAMINA, selected_slot] = ds_item_all[# STAMINA, inhand];
-				inv_grid[# LEVEL, selected_slot] = ds_item_all[# LEVEL, inhand];
-				inv_grid[# DAMAGE, selected_slot] = ds_item_all[# DAMAGE, inhand];
-				inv_grid[# DEFENCE, selected_slot] = ds_item_all[# DEFENCE, inhand];
-				inv_grid[# EFFECT1, selected_slot] = ds_item_all[# EFFECT1, inhand];
-				inv_grid[# EFFECT2, selected_slot] = ds_item_all[# EFFECT2, inhand];
-				inv_grid[# EFFECT3, selected_slot] = ds_item_all[# EFFECT3, inhand];
-				
-				inhand = temp0;
-				multipick = temp1;
+				//Jezeli kladziemy przedmiot specjalny na slot specjalny
+				if (selected_slot == (inv_slots - 4) + 0){
+					if (ds_item_all[# TYPE, inhand] == itemtype.hat){
+						//Zamieniamy przedmioty w rece i slocie
+						changeitem();
+					}
+				}else if (selected_slot == (inv_slots - 4) + 1){
+					if (ds_item_all[# TYPE, inhand] == itemtype.clothing){
+						//Zamieniamy przedmioty w rece i slocie
+						changeitem();
+					}
+				}else if (selected_slot == (inv_slots - 4) + 2){
+					if (ds_item_all[# TYPE, inhand] == itemtype.pants){
+						//Zamieniamy przedmioty w rece i slocie
+						changeitem();
+					}
+				}else if (selected_slot == (inv_slots - 4) + 3){
+					if (ds_item_all[# TYPE, inhand] == itemtype.boots){
+						//Zamieniamy przedmioty w rece i slocie
+						changeitem();
+					}
+				}else{
+					//Zamieniamy przedmioty w rece i slocie
+					changeitem();
+				}
 			}
 		}
 		//Branie przedmiotow prawym
@@ -231,7 +281,6 @@ if (show_inventory) && (!show_slots){
 				slot_remove(i);
 		}
 	}
-	
 	
 	if (inhand == -1){
 		multipick = 0;	
@@ -364,4 +413,8 @@ else if (!show_inventory) && (!show_slots){
 }
 #endregion
 
-//item_attrib_grid();
+//Logika ubran i akcesoriow
+global.playerHat = (ds_inventory[# ITEM, ((inv_slots - 4) + 0)]);
+global.playerTorso = (ds_inventory[# ITEM, ((inv_slots - 4) + 1)]);
+global.playerLegs = (ds_inventory[# ITEM, ((inv_slots - 4) + 2)]);
+global.playerBoots = (ds_inventory[# ITEM, ((inv_slots - 4) + 3)]);
