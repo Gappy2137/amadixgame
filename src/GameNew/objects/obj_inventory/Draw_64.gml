@@ -1,8 +1,10 @@
 if (show_inventory) && (!show_slots){
 
+
+	
 	draw_set_font(font_item);
 
-	/*
+	
 	////////////////
 	draw_text(16, 64, "page " + string(page));
 	draw_text(16, 64 + 12*1, "sel " + string(selected_slot));
@@ -11,12 +13,9 @@ if (show_inventory) && (!show_slots){
 	draw_text(16, 64 + 12*4, "mltp " + string(multipick));
 	draw_text(16, 64 + 12*5, "inh " + string(inhand));
 	////////////////
-	*/
+	
 
-	depth = -1;
-	draw_sprite_ext(spr_eq_back, 0, backUI_x, backUI_y, scale, scale, 0, c_white, 1);
-	draw_sprite_ext(spr_eq_back, 1, backUI_x, backUI_y, scale, scale, 0, c_white, 1);
-	depth = -3;
+	depth = -2;
 	draw_sprite_ext(spr_eq_slotback, 0, backslotUI_x, backslotUI_y, scale, scale, 0, c_white, 1);
 
 	
@@ -27,11 +26,11 @@ if (show_inventory) && (!show_slots){
 	var jj = 0;
 	var wh = c_white;
 	var bl = c_black;
-	ii = page * 84;
-	//Strony ekwipunku
+	ii = page * slots_onpage;
 	
 	#region Strona
-		repeat (84){
+		repeat (slots_onpage){
+			
 				//x,y slotow
 				xx = slots_x + ((cell_size+x_offset) * ix * scale);
 				yy = slots_y + ((cell_size+y_offset) * iy * scale);
@@ -146,11 +145,148 @@ if (show_inventory) && (!show_slots){
 						jj += 1;
 						ix = ii mod inv_slots_width;
 						iy = jj div inv_slots_width;
+		
 		}
 	
 	#endregion
 	
-	//Rysowanie nazwy i opisu przedmiotow oraz GUI opisu
+	#region Armor
+		draw_sprite_ext(spr_eq_slotback_armor, 0, armorUI_x, armorUI_y, scale, scale, 0, c_white, 1);
+		var kk = 1;
+		repeat(4){
+			if (inv_grid[# ITEM, (inv_slots - 4 + (kk - 1))] == item.none){
+				draw_sprite_ext(spr_eq_slotback_armor, kk, armorUI_x, armorUI_y, scale, scale, 0, c_white, 1);
+			}
+			kk++;
+		}
+		
+		
+		ii = inv_slots - 4;
+		jj = 0;
+		ix = 0;
+		iy = 0;
+		
+		repeat (4){
+			
+				//x,y slotow
+				xx = armor_x[jj];
+				yy = armor_y[jj];
+		
+				//Przedmiot
+				iitem = inv_grid[# 0, ii];
+				sx = (iitem mod spr_inv_items_columns) * cell_size;
+				sy = (iitem div spr_inv_items_columns) * cell_size;
+		
+				//Rysuj slot i przedmiot
+		
+				if (iitem > 0) && (inv_grid[# 1, ii] > 0){
+					switch(ii){
+						case selected_slot:
+										//draw selected slot
+										draw_sprite_ext(spr_inv_slot_selected, 0, xx, yy, scale, scale, 0, c_white, 1);
+										//draw item
+										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
+										
+										gpu_set_blendmode(bm_add);
+										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, .2);
+										gpu_set_blendmode(bm_normal);
+										
+									if (selected_slot == picked_slot){
+										if (multipick > 0){
+										//draw selected slot
+										draw_sprite_ext(spr_inv_slot_selected, 0, xx, yy, scale, scale, 0, c_white, 1);
+										//draw item
+										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
+										
+										gpu_set_blendmode(bm_add);
+										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, .2);
+										gpu_set_blendmode(bm_normal);
+										}else{
+											draw_sprite_ext(spr_inv_slot_none, 0, xx, yy, scale, scale, 0, c_white, 1);
+										}
+									
+									}else if (selected_slot != picked_slot){
+										if (multipick > 0){
+										//draw selected slot
+										draw_sprite_ext(spr_inv_slot_selected, 0, xx, yy, scale, scale, 0, c_white, 1);
+										//draw item
+										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
+										
+										gpu_set_blendmode(bm_add);
+										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, .2);
+										gpu_set_blendmode(bm_normal);
+										}else{
+											break;	
+										}
+									}
+						break;
+						case picked_slot:
+									if (multipick > 0){
+										draw_sprite_ext(spr_inv_slot_none, 0, xx, yy, scale, scale, 0, c_white, 1);
+										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
+									}else{
+										draw_sprite_ext(spr_inv_slot_none, 0, xx, yy, scale, scale, 0, c_white, .2);
+									}
+						break;
+						default:
+									if (inv_grid[# 1, ii] > 0){
+										//draw_sprite_ext(spr_inv_slot_none, 0, xx, yy, scale, scale, 0, c_white, 1);
+										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
+									}
+						break;
+					}
+				}
+		
+				//Rysuj liczbe przedmiotow
+				if (iitem > 0){
+					var amount = inv_grid[# 1, ii];
+					if (amount < 0) || (amount > 1){
+							switch(ii){
+								case selected_slot:
+									if (selected_slot == picked_slot) && (multipick == 0){
+										break;	
+									}
+									draw_set_font(global.font_itemnum);
+									draw_set_halign(fa_right);
+									draw_text_transformed_color(xx + 22, yy + 16, string(amount), .5, .5, 0, wh, wh, wh, wh, 1);
+									draw_set_halign(fa_left);
+									draw_set_font(font_item);
+								break;
+								case picked_slot:
+									if (multipick > 0){
+										draw_set_font(global.font_itemnum);
+										draw_set_halign(fa_right);
+										draw_text_transformed_color(xx + 22, yy + 16, string(amount), .5, .5, 0, wh, wh, wh, wh, 1);
+										draw_set_halign(fa_left);
+										draw_set_font(font_item);
+									}else{
+										break;
+									}
+								break;
+								default:
+									draw_set_font(global.font_itemnum);
+									draw_set_halign(fa_right);
+									draw_text_transformed_color(xx + 22, yy + 16, string(amount), .5, .5, 0, wh, wh, wh, wh, 1);
+									draw_set_halign(fa_left);
+									draw_set_font(font_item);
+								break;
+							}
+
+					}
+				}
+
+		
+		
+				//Przelec przez cala siatke przedmiotow
+						ii += 1;
+						jj += 1;
+						ix = ii mod inv_slots_width;
+						iy = jj div inv_slots_width;
+		
+		}
+	#endregion
+	
+	#region Rysowanie nazwy i opisu przedmiotow oraz GUI opisu
 
 	var iinfo_grid = ds_item_info;
 	var name = "";
@@ -268,11 +404,9 @@ if (show_inventory) && (!show_slots){
 		
 	}
 
+	#endregion
 
-
-
-
-	//Rysowanie przedmiotow przenoszonych
+	#region Rysowanie przedmiotow przenoszonych
 	if (picked_slot != -1) && (multipick == 0){
 			//Przedmiot
 			iitem = inhand;
@@ -282,7 +416,9 @@ if (show_inventory) && (!show_slots){
 		
 			var inum = inv_grid[# 1, picked_slot];
 			if (inum < 0) || (inum > 1){
-				draw_text_color(mousex + 16, mousey + 12, string(inum), c_black, c_black, c_black, c_black, 1);
+				draw_set_font(global.font_itemnum);
+				draw_text_transformed_color(mousex + 16, mousey + 16, string(inum), .5, .5, 0, wh, wh, wh, wh, 1);
+				draw_set_font(font_item);
 			}
 		
 	}
@@ -296,11 +432,15 @@ if (show_inventory) && (!show_slots){
 		
 			var inuma = multipick;
 			if (inuma < 0) || (inuma > 1){
-				draw_text_color(mousex + 16, mousey + 12, string(inuma), c_black, c_black, c_black, c_black, 1);
+				draw_set_font(global.font_itemnum);
+				draw_text_transformed_color(mousex + 16, mousey + 16, string(inuma), .5, .5, 0, wh, wh, wh, wh, 1);
+				draw_set_font(font_item);
 			}
 		
 	}
-	depth = -1;
+	#endregion
+	
+	
 }
 else if (!show_inventory) && (show_slots){
 	

@@ -1,4 +1,4 @@
-depth = -2;
+depth = -1;
 
 hp_x = 440;
 hp_y = 60;

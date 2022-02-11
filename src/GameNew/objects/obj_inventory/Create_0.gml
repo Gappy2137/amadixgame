@@ -18,9 +18,10 @@ canUseInventory = true;
 page = 0;
 pages = 2;
 
-inv_slots = 84 * (pages + 1);
+inv_slots = (48 * (pages + 1)) + 4;
 inv_slots_width = 12;
-inv_slots_height = 7;
+inv_slots_height = 4;
+slots_onpage = inv_slots_width * inv_slots_height;
 
 selected_slot = 0;
 picked_slot = -1;
@@ -75,6 +76,8 @@ spr_eq_slotback = spr_eq_ui_slotback;
 spr_eq_arrow = spr_eq_ui_slotback_arrow;
 spr_eq_slotback_12slot = spr_eq_ui_slotback_noneq;
 
+
+spr_eq_slotback_armor = spr_eq_ui_slotback_armor;
 ///////////////
 
 cell_size = 24;
@@ -92,7 +95,22 @@ backslotUI_x = 92;
 backslotUI_y = 56;
 
 backUI_x = 85;
-backUI_y = 48;
+backUI_y = 46;
+
+armorUI_x = 104;
+armorUI_y = 164;
+
+armor_x[0] = 108;
+armor_y[0] = 168;
+
+armor_x[1] = 108;
+armor_y[1] = 192;
+
+armor_x[2] = 168;
+armor_y[2] = 168;
+
+armor_x[3] = 168;
+armor_y[3] = 192;
 
 spr_inv_items_columns = sprite_get_width(spr_inv_items)/cell_size;
 spr_inv_items_rows = sprite_get_height(spr_inv_items)/cell_size;
@@ -160,6 +178,8 @@ enum itemtype{
 ds_item_info = ds_grid_create(3, item.height);
 
 ds_item_all = ds_grid_create(11, item.height);
+
+ds_armor = ds_grid_create(11, 4);
 
 //Siatka wszystkich przedmiotow
 var i = 0;

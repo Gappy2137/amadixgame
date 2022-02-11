@@ -1,4 +1,4 @@
-
+depth = -1;
 //Rysuj maks rdzen zdrowia
 draw_circle_segment(hp_x + 16, hp_y + 16, global.maxhp, global.maxhp, hpCoreColor, 18, 0.5);
 
@@ -42,10 +42,23 @@ repeat(maxeffects){
 	}
 	i++;
 }
+////////////////////////
+//Rysuj menu ekwipunku
+if (obj_inventory.show_inventory) && (!obj_inventory.show_slots){
+	draw_set_alpha(0.5);
+	draw_rectangle_color(-8, -8, obj_display.ideal_width + 8, obj_display.ideal_height + 8, c_black, c_black, c_black, c_black, false);
+	draw_set_alpha(1);
+	draw_sprite_ext(obj_inventory.spr_eq_back, 1, obj_inventory.backUI_x, obj_inventory.backUI_y, obj_inventory.scale, obj_inventory.scale, 0, c_white, 1);
+}
 
-//Rysuj opcje ekwipunku
 
 if (show_hud == hud.inv) || (show_hud == hud.crafting) || (show_hud == hud.player) || (show_hud == hud.map) || (show_hud == hud.journal) || (show_hud == hud.options){
 	draw_sprite(spr_eq_menu, 0, hud_slot_x, hud_slot_y + hud_slot_y_active[0]);
 	draw_sprite(spr_eq_menu, 1, hud_slot_x + 24 + 12, hud_slot_y + hud_slot_y_active[1]);
 }
+
+if (obj_inventory.show_inventory) && (!obj_inventory.show_slots){
+	draw_sprite_ext(obj_inventory.spr_eq_back, 0, obj_inventory.backUI_x, obj_inventory.backUI_y, obj_inventory.scale, obj_inventory.scale, 0, c_white, 1);
+	draw_sprite_ext(obj_inventory.spr_eq_back, 2, obj_inventory.backUI_x, obj_inventory.backUI_y, obj_inventory.scale, obj_inventory.scale, 0, c_white, 1);
+}
+////////////////////////

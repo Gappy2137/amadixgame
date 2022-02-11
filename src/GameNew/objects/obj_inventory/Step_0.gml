@@ -33,7 +33,7 @@ if (show_inventory) && (!show_slots){
 			mouse_slotx = numx;
 			mouse_sloty = numy;
 		}
-		selected_slot = min(inv_slots - 1 + (page * 84), mouse_slotx + (mouse_sloty * inv_slots_width) + (page * 84));
+		selected_slot = min(inv_slots - 1 + (page * slots_onpage), mouse_slotx + (mouse_sloty * inv_slots_width) + (page * slots_onpage));
 	
 	}else{
 		selected_slot = -1;
@@ -76,495 +76,168 @@ if (show_inventory) && (!show_slots){
 	
 	#endregion
 
+	#region Armor
+	var ar = 0;
+	repeat(4){
+		if isbounded(mousex, armor_x[ar], armor_x[ar] + 24) && isbounded(mousey, armor_y[ar], armor_y[ar] + 24){
+			selected_slot = (inv_slots - 4) + ar;
+		}
+		ar++;
+	}
+	if ((selected_slot == (inv_slots - 4) + 0) && (ds_item_all[# TYPE, inhand] == itemtype.hat)) ||
+	   ((selected_slot == (inv_slots - 4) + 1) && (ds_item_all[# TYPE, inhand] == itemtype.clothing)) ||
+	   ((selected_slot == (inv_slots - 4) + 2) && (ds_item_all[# TYPE, inhand] == itemtype.pants)) ||
+	   ((selected_slot == (inv_slots - 4) + 3) && (ds_item_all[# TYPE, inhand] == itemtype.boots)) 
+	{
+		
+	}
+	#endregion
+
 
 	#region Operacje na przedmiotach
 	var inv_grid = ds_inventory;
-	var ss_item = inv_grid[# 0, selected_slot];
-	var ss_item_amount = inv_grid[# 1, selected_slot];
-	var ss_item_type = inv_grid[# 2, selected_slot];
-	var ss_item_maxstack = inv_grid[# 3, selected_slot];
-	var ss_item_hp = inv_grid[# 4, selected_slot];
-	var ss_item_stamina = inv_grid[# 5, selected_slot];
-	var ss_item_level = inv_grid[# 6, selected_slot];
-	var ss_item_damage = inv_grid[# 7, selected_slot];
-	var ss_item_defence = inv_grid[# 8, selected_slot];
-	var ss_item_effect1 = inv_grid[# 9, selected_slot];
-	var ss_item_effect2 = inv_grid[# 10, selected_slot];
-	var ss_item_effect3 = inv_grid[# 11, selected_slot];
-	
-	var ss_item_pick = inv_grid[# 0, picked_slot];
-	var ss_item_pick_amount = inv_grid[# 1, picked_slot];
-	var ss_item_pick_type = inv_grid[# 2, picked_slot];
-	var ss_item_pick_maxstack = inv_grid[# 3, picked_slot];
-	var ss_item_pick_hp = inv_grid[# 4, picked_slot];
-	var ss_item_pick_stamina = inv_grid[# 5, picked_slot];
-	var ss_item_pick_level = inv_grid[# 6, picked_slot];
-	var ss_item_pick_damage = inv_grid[# 7, picked_slot];
-	var ss_item_pick_defence = inv_grid[# 8, picked_slot];
-	var ss_item_pick_effect1 = inv_grid[# 9, picked_slot];
-	var ss_item_pick_effect2 = inv_grid[# 10, picked_slot];
-	var ss_item_pick_effect3 = inv_grid[# 11, picked_slot];
 
-	if (mousex >= xUI) && (mousex < endUIx) && (mousey >= yUI) && (mousey < endUIy){
-		if(picked_slot != -1){
-			if (mouse_check_button_pressed(mb_left)){
-				if(ss_item == item.none){
+	if ((mousex >= xUI) && (mousex < endUIx) && (mousey >= yUI) && (mousey < endUIy))
+	|| (isbounded(mousex, armor_x[0], armor_x[0] + 24) && (isbounded(mousey, armor_y[0], armor_y[1] + 24)))
+	|| (isbounded(mousex, armor_x[2], armor_x[2] + 24) && (isbounded(mousey, armor_y[2], armor_y[3] + 24))){
+		
+		//Branie przedmiotow lewym
+		if (mouse_check_button_pressed(mb_left)){
+			//Jezeli nie mamy nic w rece i klikamy na slot z przedmiotem
+			if (inhand == -1) && (inv_grid[# ITEM, selected_slot] != item.none){
+				//Od teraz trzymamy w rece przedmiot ze slotu
+				inhand = inv_grid[# ITEM, selected_slot];
+				multipick = inv_grid[# AMOUNT, selected_slot];
 				
-					//Jezeli klikamy lewym na slot w ktorym nie ma nic
+				slot_remove(selected_slot);
+			}else
+			//Jezeli mamy przedmiot w rece i klikamy na pusty slot
+			if (inhand != -1) && (inv_grid[# ITEM, selected_slot] == item.none){
+				//Kladziemy przedmiot na slot
+				inv_grid[# ITEM, selected_slot] = inhand;
+				inv_grid[# AMOUNT, selected_slot] = multipick;
+				inv_grid[# TYPE, selected_slot] = ds_item_all[# TYPE, inhand];
+				inv_grid[# MAXSTACK, selected_slot] = ds_item_all[# MAXSTACK, inhand];
+				inv_grid[# HP, selected_slot] = ds_item_all[# HP, inhand];
+				inv_grid[# STAMINA, selected_slot] = ds_item_all[# STAMINA, inhand];
+				inv_grid[# LEVEL, selected_slot] = ds_item_all[# LEVEL, inhand];
+				inv_grid[# DAMAGE, selected_slot] = ds_item_all[# DAMAGE, inhand];
+				inv_grid[# DEFENCE, selected_slot] = ds_item_all[# DEFENCE, inhand];
+				inv_grid[# EFFECT1, selected_slot] = ds_item_all[# EFFECT1, inhand];
+				inv_grid[# EFFECT2, selected_slot] = ds_item_all[# EFFECT2, inhand];
+				inv_grid[# EFFECT3, selected_slot] = ds_item_all[# EFFECT3, inhand];
 				
-					if (multipick > 0){
-					
-						//Jezeli trzymamy jakas ilosc przedmiotow
-					
-						inv_grid[# 0, selected_slot] = inhand;
-						inv_grid[# 1, selected_slot] = multipick;
-						inv_grid[# 2, selected_slot] = multipick_2;
-						inv_grid[# 3, selected_slot] = multipick_3;
-						inv_grid[# 4, selected_slot] = multipick_4;
-						inv_grid[# 5, selected_slot] = multipick_5;
-						inv_grid[# 6, selected_slot] = multipick_6;
-						inv_grid[# 7, selected_slot] = multipick_7;
-						inv_grid[# 8, selected_slot] = multipick_8;
-						inv_grid[# 9, selected_slot] = multipick_9;
-						inv_grid[# 10, selected_slot] = multipick_10;
-						inv_grid[# 11, selected_slot] = multipick_11;
-
-						picked_slot = -1;
-						
-						inhand = -1;
-						
-					
-						multipick = 0;
-						multipick_item = -1;
-						changeitem = false;
-
-						multipick_2 = -1;
-						multipick_3 = -1;
-						multipick_4 = -1;
-						multipick_5 = -1;
-						multipick_6 = -1;
-						multipick_7 = -1;
-						multipick_8 = -1;
-						multipick_9 = -1;
-						multipick_10 = -1;
-						multipick_11 = -1;
-					}else{
-				
-						//Jezeli trzymamy caly stack
-				
-						inv_grid[# 0, selected_slot] = inv_grid[# 0, picked_slot];
-						inv_grid[# 1, selected_slot] = inv_grid[# 1, picked_slot];
-						inv_grid[# 2, selected_slot] = inv_grid[# 2, picked_slot];
-						inv_grid[# 3, selected_slot] = inv_grid[# 3, picked_slot];
-						inv_grid[# 4, selected_slot] = inv_grid[# 4, picked_slot];
-						inv_grid[# 5, selected_slot] = inv_grid[# 5, picked_slot];
-						inv_grid[# 6, selected_slot] = inv_grid[# 6, picked_slot];
-						inv_grid[# 7, selected_slot] = inv_grid[# 7, picked_slot];
-						inv_grid[# 8, selected_slot] = inv_grid[# 8, picked_slot];
-						inv_grid[# 9, selected_slot] = inv_grid[# 9, picked_slot];
-						inv_grid[# 10, selected_slot] = inv_grid[# 10, picked_slot];
-						inv_grid[# 11, selected_slot] = inv_grid[# 11, picked_slot];
-			
-						inv_grid[# 0, picked_slot] = item.none;
-						inv_grid[# 1, picked_slot] = 0;
-						inv_grid[# 2, picked_slot] = 0;
-						inv_grid[# 3, picked_slot] = 0;
-						inv_grid[# 4, picked_slot] = 0;
-						inv_grid[# 5, picked_slot] = 0;
-						inv_grid[# 6, picked_slot] = 0;
-						inv_grid[# 7, picked_slot] = 0;
-						inv_grid[# 8, picked_slot] = 0;
-						inv_grid[# 9, picked_slot] = 0;
-						inv_grid[# 10, picked_slot] = 0;
-						inv_grid[# 11, picked_slot] = 0;
-						
-						picked_slot = -1;
-						
-						inhand = -1;
-						
-						picked_slot_right = -1;
-						changeitem = false;
-						
-						multipick_2 = -1;
-						multipick_3 = -1;
-						multipick_4 = -1;
-						multipick_5 = -1;
-						multipick_6 = -1;
-						multipick_7 = -1;
-						multipick_8 = -1;
-						multipick_9 = -1;
-						multipick_10 = -1;
-						multipick_11 = -1;
-					}
-			
-				}else if (ss_item == inhand){
-				
-					//Jezeli klikamy lewym na slot w ktorym znajduje sie ten sam rodzaj przedmiotu
-				
-					if (multipick > 0){
-						if ((inv_grid[# 1, selected_slot] + multipick) <= inv_grid[# 3, selected_slot]){
-							//Jezeli trzymamy jakas ilosc przedmiotow
-					
-							inv_grid[# 0, selected_slot] = inhand;
-							inv_grid[# 1, selected_slot] += multipick;
-			
-							picked_slot = -1;
-							
-							inhand = -1;
-							
-							multipick = 0;
-							multipick_item = -1;
-						}else if (inv_grid[# 1, selected_slot] < inv_grid[# 3, selected_slot]){
-							var am = (inv_grid[# 3, selected_slot] - inv_grid[# 1, selected_slot]);
-							inv_grid[# 1, selected_slot] += am;
-							multipick -= am;
-						}
-					
-					}else{
-						
-						if (selected_slot != picked_slot){
-							if ((inv_grid[# 1, selected_slot] + inv_grid[# 1, picked_slot]) < inv_grid[# 3, selected_slot]){
-								//Jezeli trzymamy caly stack
-				
-								inv_grid[# 1, selected_slot] += inv_grid[# 1, picked_slot];
-				
-								inv_grid[# 0, picked_slot] = item.none;
-								inv_grid[# 1, picked_slot] = 0;
-								inv_grid[# 2, picked_slot] = 0;
-								inv_grid[# 3, picked_slot] = 0;
-								inv_grid[# 4, picked_slot] = 0;
-								inv_grid[# 5, picked_slot] = 0;
-								inv_grid[# 6, picked_slot] = 0;
-								inv_grid[# 7, picked_slot] = 0;
-								inv_grid[# 8, picked_slot] = 0;
-								inv_grid[# 9, picked_slot] = 0;
-								inv_grid[# 10, picked_slot] = 0;
-								inv_grid[# 11, picked_slot] = 0;
-								
-								picked_slot = -1;
-								
-								inhand = -1;
-								
-
-								picked_slot_right = -1;
-								changeitem = false;
-							}else if (inv_grid[# 1, selected_slot] < inv_grid[# 3, selected_slot]){
-									var am = (inv_grid[# 3, selected_slot] - inv_grid[# 1, selected_slot]);
-									inv_grid[# 1, selected_slot] += am;
-									inv_grid[# 1, picked_slot] -= am;
-								}
-							}else{
-							picked_slot = -1;
-							
-							inhand = -1;
-							
-
-							picked_slot_right = -1;
-							changeitem = false;
-							
-							multipick_2 = -1;
-							multipick_3 = -1;
-							multipick_4 = -1;
-							multipick_5 = -1;
-							multipick_6 = -1;
-							multipick_7 = -1;
-							multipick_8 = -1;
-							multipick_9 = -1;
-							multipick_10 = -1;
-							multipick_11 = -1;
-						}
-					}
-
+				inhand = -1;
+				multipick = 0;
+			}else
+			//Jezeli mamy przedmiot w rece i klikamy na slot z tym samym przedmiotem
+			if (inhand != -1) && (inv_grid[# ITEM, selected_slot] == inhand){
+				//Jezeli ilosc przedmiotu ktory trzymamy jest taka ze gdy go polozymy to przekroczymy maxstack
+				if (inv_grid[# AMOUNT, selected_slot] + multipick >= inv_grid[# MAXSTACK, selected_slot]){
+					//Na slocie maxstack, w rece reszta
+					var am = inv_grid[# AMOUNT, selected_slot];
+					var am2 = multipick;
+					inv_grid[# AMOUNT, selected_slot] = inv_grid[# MAXSTACK, selected_slot];
+					inv_grid[# MAXSTACK, selected_slot] = ds_item_all[# MAXSTACK, inhand];
+					inv_grid[# HP, selected_slot] = ds_item_all[# HP, inhand];
+					inv_grid[# STAMINA, selected_slot] = ds_item_all[# STAMINA, inhand];
+					inv_grid[# LEVEL, selected_slot] = ds_item_all[# LEVEL, inhand];
+					inv_grid[# DAMAGE, selected_slot] = ds_item_all[# DAMAGE, inhand];
+					inv_grid[# DEFENCE, selected_slot] = ds_item_all[# DEFENCE, inhand];
+					inv_grid[# EFFECT1, selected_slot] = ds_item_all[# EFFECT1, inhand];
+					inv_grid[# EFFECT2, selected_slot] = ds_item_all[# EFFECT2, inhand];
+					inv_grid[# EFFECT3, selected_slot] = ds_item_all[# EFFECT3, inhand];
+					multipick = am + am2 - inv_grid[# MAXSTACK, selected_slot];
 				}else{
-					//Zamiana przedmiotow
-					if (multipick > 0){
-						//Jezeli klikamy lewym na inny przedmiot w slocie trzymajac jakas ilosc przedmiotow
-						var temp0 = inv_grid[# 0, selected_slot];
-						var temp1 = inv_grid[# 1, selected_slot];
-						var temp2 = inv_grid[# 2, selected_slot];
-						var temp3 = inv_grid[# 3, selected_slot];
-						var temp4 = inv_grid[# 4, selected_slot];
-						var temp5 = inv_grid[# 5, selected_slot];
-						var temp6 = inv_grid[# 6, selected_slot];
-						var temp7 = inv_grid[# 7, selected_slot];
-						var temp8 = inv_grid[# 8, selected_slot];
-						var temp9 = inv_grid[# 9, selected_slot];
-						var temp10 = inv_grid[# 10, selected_slot];
-						var temp11 = inv_grid[# 11, selected_slot];
-						
-						inv_grid[# 0, selected_slot] = inhand;
-						inv_grid[# 1, selected_slot] = multipick;
-						inv_grid[# 2, selected_slot] = multipick_2;
-						inv_grid[# 3, selected_slot] = multipick_3;
-						inv_grid[# 4, selected_slot] = multipick_4;
-						inv_grid[# 5, selected_slot] = multipick_5;
-						inv_grid[# 6, selected_slot] = multipick_6;
-						inv_grid[# 7, selected_slot] = multipick_7;
-						inv_grid[# 8, selected_slot] = multipick_8;
-						inv_grid[# 9, selected_slot] = multipick_9;
-						inv_grid[# 10, selected_slot] = multipick_10;
-						inv_grid[# 11, selected_slot] = multipick_11;
-						
-						inhand = temp0;
-						multipick = temp1;
-						multipick_2 = temp2;
-						multipick_3 = temp3;
-						multipick_4 = temp4;
-						multipick_5 = temp5;
-						multipick_6 = temp6;
-						multipick_7 = temp7;
-						multipick_8 = temp8;
-						multipick_9 = temp9;
-						multipick_10 = temp10;
-						multipick_11 = temp11;
-					
-					}else{
-						//Jezeli klikamy lewym na inny przedmiot w slocie trzymajac caly stack
-				
-						inv_grid[# 0, selected_slot] = inv_grid[# 0, picked_slot];
-						inv_grid[# 1, selected_slot] = inv_grid[# 1, picked_slot];
-						inv_grid[# 2, selected_slot] = inv_grid[# 2, picked_slot];
-						inv_grid[# 3, selected_slot] = inv_grid[# 3, picked_slot];
-						inv_grid[# 4, selected_slot] = inv_grid[# 4, picked_slot];
-						inv_grid[# 5, selected_slot] = inv_grid[# 5, picked_slot];
-						inv_grid[# 6, selected_slot] = inv_grid[# 6, picked_slot];
-						inv_grid[# 7, selected_slot] = inv_grid[# 7, picked_slot];
-						inv_grid[# 8, selected_slot] = inv_grid[# 8, picked_slot];
-						inv_grid[# 9, selected_slot] = inv_grid[# 9, picked_slot];
-						inv_grid[# 10, selected_slot] = inv_grid[# 10, picked_slot];
-						inv_grid[# 11, selected_slot] = inv_grid[# 11, picked_slot];
-						
-						inv_grid[# 0, picked_slot] = ss_item;
-						inv_grid[# 1, picked_slot] = ss_item_amount;
-						inv_grid[# 2, picked_slot] = ss_item_type;
-						inv_grid[# 3, picked_slot] = ss_item_maxstack;
-						inv_grid[# 4, picked_slot] = ss_item_hp;
-						inv_grid[# 5, picked_slot] = ss_item_stamina;
-						inv_grid[# 6, picked_slot] = ss_item_level;
-						inv_grid[# 7, picked_slot] = ss_item_damage;
-						inv_grid[# 8, picked_slot] = ss_item_defence;
-						inv_grid[# 9, picked_slot] = ss_item_effect1;
-						inv_grid[# 10, picked_slot] = ss_item_effect2;
-						inv_grid[# 11, picked_slot] = ss_item_effect3;
-					
-						inhand = ss_item;
-
-						picked_slot_right = -1;
-						multipick_item = -1;
-						changeitem = false;
-					}
+					//Jezeli ilosc przedmiotu jest mniejsza kladziemy normalnie
+					inv_grid[# AMOUNT, selected_slot] += multipick;
+					inv_grid[# TYPE, selected_slot] = ds_item_all[# TYPE, inhand];
+					inv_grid[# MAXSTACK, selected_slot] = ds_item_all[# MAXSTACK, inhand];
+					inv_grid[# HP, selected_slot] = ds_item_all[# HP, inhand];
+					inv_grid[# STAMINA, selected_slot] = ds_item_all[# STAMINA, inhand];
+					inv_grid[# LEVEL, selected_slot] = ds_item_all[# LEVEL, inhand];
+					inv_grid[# DAMAGE, selected_slot] = ds_item_all[# DAMAGE, inhand];
+					inv_grid[# DEFENCE, selected_slot] = ds_item_all[# DEFENCE, inhand];
+					inv_grid[# EFFECT1, selected_slot] = ds_item_all[# EFFECT1, inhand];
+					inv_grid[# EFFECT2, selected_slot] = ds_item_all[# EFFECT2, inhand];
+					inv_grid[# EFFECT3, selected_slot] = ds_item_all[# EFFECT3, inhand];
+					multipick = 0;
 				}
+			}else
+			//Jezeli mamy przedmiot w rece i klikamy na slot z innym przedmiotem
+			if (inhand != -1) && (inv_grid[# ITEM, selected_slot] != inhand) && (inv_grid[# ITEM, selected_slot] != item.none){
+				//Zamieniamy przedmioty w rece i slocie
+				var temp0 = inv_grid[# ITEM, selected_slot];
+				var temp1 = inv_grid[# AMOUNT, selected_slot];
+				
+				inv_grid[# ITEM, selected_slot] = inhand;
+				inv_grid[# AMOUNT, selected_slot] = multipick;
+				inv_grid[# TYPE, selected_slot] = ds_item_all[# TYPE, inhand];
+				inv_grid[# MAXSTACK, selected_slot] = ds_item_all[# MAXSTACK, inhand];
+				inv_grid[# HP, selected_slot] = ds_item_all[# HP, inhand];
+				inv_grid[# STAMINA, selected_slot] = ds_item_all[# STAMINA, inhand];
+				inv_grid[# LEVEL, selected_slot] = ds_item_all[# LEVEL, inhand];
+				inv_grid[# DAMAGE, selected_slot] = ds_item_all[# DAMAGE, inhand];
+				inv_grid[# DEFENCE, selected_slot] = ds_item_all[# DEFENCE, inhand];
+				inv_grid[# EFFECT1, selected_slot] = ds_item_all[# EFFECT1, inhand];
+				inv_grid[# EFFECT2, selected_slot] = ds_item_all[# EFFECT2, inhand];
+				inv_grid[# EFFECT3, selected_slot] = ds_item_all[# EFFECT3, inhand];
+				
+				inhand = temp0;
+				multipick = temp1;
 			}
-		
 		}
-		else if (ss_item != item.none){
-	
-			if (mouse_check_button_pressed(mb_left)){
-				picked_slot = selected_slot;
-				inhand = inv_grid[# 0, picked_slot];
+		//Branie przedmiotow prawym
+		if (mouse_check_button_pressed(mb_right)){
+			//Jezeli klikamy prawym na przedmiot nie majac nic w rece
+			if (inhand == -1) && (inv_grid[# ITEM, selected_slot] != item.none) && (inv_grid[# AMOUNT, selected_slot] > 0) && (multipick < inv_grid[# MAXSTACK, selected_slot]){
+				//Od teraz trzymamy w rece przedmiot ze slotu
+				inhand = inv_grid[# ITEM, selected_slot];
+				multipick++;
+				inv_grid[# AMOUNT, selected_slot]--;
+			}else
+			//Jezeli klikamy prawym na przedmiot majac w rece ten sam przedmiot
+			if (inhand != -1) && (inv_grid[# ITEM, selected_slot] == inhand) && (inv_grid[# AMOUNT, selected_slot] > 0) && (multipick < inv_grid[# MAXSTACK, selected_slot]){
+				inhand = inv_grid[# ITEM, selected_slot];
+				multipick++;
+				inv_grid[# AMOUNT, selected_slot]--;
 			}
+		}
 		
-		}
-	
-		if (ss_item != item.none){
-				if (mouse_check_button_pressed(mb_right)) && (inhand != -1){
-				
-					if !(inhand == inv_grid[# 0, selected_slot]){
-						
-					}else{
-						if (ss_item_amount > 1){
-								picked_slot = selected_slot;
-								picked_slot_right = selected_slot;
-								multipick += 1;
-								multipick_zerobuffer = false;
-								inv_grid[# 1, picked_slot] -= 1;
-								multipick_item = inv_grid[# 0, picked_slot];
-								inhand = inv_grid[# 0, picked_slot];
-							
-								multipick_2 = inv_grid[# 2, picked_slot];
-								multipick_3 = inv_grid[# 3, picked_slot];
-								multipick_4 = inv_grid[# 4, picked_slot];
-								multipick_5 = inv_grid[# 5, picked_slot];
-								multipick_6 = inv_grid[# 6, picked_slot];
-								multipick_7 = inv_grid[# 7, picked_slot];
-								multipick_8 = inv_grid[# 8, picked_slot];
-								multipick_9 = inv_grid[# 9, picked_slot];
-								multipick_10 = inv_grid[# 10, picked_slot];
-								multipick_11 = inv_grid[# 11, picked_slot];
-							
-						}else if (ss_item_amount == 1){
-							if (picked_slot != selected_slot){
-								picked_slot = selected_slot;
-								picked_slot_right = selected_slot;
-								multipick += 1;
-								multipick_zerobuffer = true;
-								inv_grid[# 1, picked_slot] = 0;
-								multipick_item = inv_grid[# 0, picked_slot];
-								inhand = inv_grid[# 0, picked_slot];
-							
-								multipick_2 = inv_grid[# 2, picked_slot];
-								multipick_3 = inv_grid[# 3, picked_slot];
-								multipick_4 = inv_grid[# 4, picked_slot];
-								multipick_5 = inv_grid[# 5, picked_slot];
-								multipick_6 = inv_grid[# 6, picked_slot];
-								multipick_7 = inv_grid[# 7, picked_slot];
-								multipick_8 = inv_grid[# 8, picked_slot];
-								multipick_9 = inv_grid[# 9, picked_slot];
-								multipick_10 = inv_grid[# 10, picked_slot];
-								multipick_11 = inv_grid[# 11, picked_slot];
-							}else{
-								picked_slot = selected_slot;
-								picked_slot_right = selected_slot;
-								multipick += 1;
-								multipick_zerobuffer = true;
-								inv_grid[# 1, picked_slot] = 0;
-								multipick_item = inv_grid[# 0, picked_slot];
-								inhand = inv_grid[# 0, picked_slot];
-							
-								multipick_2 = inv_grid[# 2, picked_slot];
-								multipick_3 = inv_grid[# 3, picked_slot];
-								multipick_4 = inv_grid[# 4, picked_slot];
-								multipick_5 = inv_grid[# 5, picked_slot];
-								multipick_6 = inv_grid[# 6, picked_slot];
-								multipick_7 = inv_grid[# 7, picked_slot];
-								multipick_8 = inv_grid[# 8, picked_slot];
-								multipick_9 = inv_grid[# 9, picked_slot];
-								multipick_10 = inv_grid[# 10, picked_slot];
-								multipick_11 = inv_grid[# 11, picked_slot];
-							}
-						}
-				
-				
-				
-				
-					}
-
-				}else if (mouse_check_button_pressed(mb_right)) && (inhand == -1){
-						if (ss_item_amount > 1){
-								picked_slot = selected_slot;
-								picked_slot_right = selected_slot;
-								multipick += 1;
-								multipick_zerobuffer = false;
-								inv_grid[# 1, picked_slot] -= 1;
-								multipick_item = inv_grid[# 0, picked_slot];
-								inhand = inv_grid[# 0, picked_slot];
-							
-								multipick_2 = inv_grid[# 2, picked_slot];
-								multipick_3 = inv_grid[# 3, picked_slot];
-								multipick_4 = inv_grid[# 4, picked_slot];
-								multipick_5 = inv_grid[# 5, picked_slot];
-								multipick_6 = inv_grid[# 6, picked_slot];
-								multipick_7 = inv_grid[# 7, picked_slot];
-								multipick_8 = inv_grid[# 8, picked_slot];
-								multipick_9 = inv_grid[# 9, picked_slot];
-								multipick_10 = inv_grid[# 10, picked_slot];
-								multipick_11 = inv_grid[# 11, picked_slot];
-							
-						}else if (ss_item_amount == 1){
-							if (picked_slot != selected_slot){
-								picked_slot = selected_slot;
-								picked_slot_right = selected_slot;
-								multipick += 1;
-								multipick_zerobuffer = true;
-								inv_grid[# 1, picked_slot] = 0;
-								multipick_item = inv_grid[# 0, picked_slot];
-								inhand = inv_grid[# 0, picked_slot];
-							
-								multipick_2 = inv_grid[# 2, picked_slot];
-								multipick_3 = inv_grid[# 3, picked_slot];
-								multipick_4 = inv_grid[# 4, picked_slot];
-								multipick_5 = inv_grid[# 5, picked_slot];
-								multipick_6 = inv_grid[# 6, picked_slot];
-								multipick_7 = inv_grid[# 7, picked_slot];
-								multipick_8 = inv_grid[# 8, picked_slot];
-								multipick_9 = inv_grid[# 9, picked_slot];
-								multipick_10 = inv_grid[# 10, picked_slot];
-								multipick_11 = inv_grid[# 11, picked_slot];
-							}else{
-								picked_slot = selected_slot;
-								picked_slot_right = selected_slot;
-								multipick += 1;
-								multipick_zerobuffer = true;
-								inv_grid[# 1, picked_slot] = 0;
-								multipick_item = inv_grid[# 0, picked_slot];
-								inhand = inv_grid[# 0, picked_slot];
-							
-								multipick_2 = inv_grid[# 2, picked_slot];
-								multipick_3 = inv_grid[# 3, picked_slot];
-								multipick_4 = inv_grid[# 4, picked_slot];
-								multipick_5 = inv_grid[# 5, picked_slot];
-								multipick_6 = inv_grid[# 6, picked_slot];
-								multipick_7 = inv_grid[# 7, picked_slot];
-								multipick_8 = inv_grid[# 8, picked_slot];
-								multipick_9 = inv_grid[# 9, picked_slot];
-								multipick_10 = inv_grid[# 10, picked_slot];
-								multipick_11 = inv_grid[# 11, picked_slot];
-							}
-						}
-				}
-		}
-
-	
 	}else{
 		if (selected_slot == -1){
 			if (mouse_check_button_pressed(mb_left)){
-				if (multipick == 0){
-					//--------------------------------------------
-						//Wyrzuc przedmiot i stworz go obok gracza (pelny stack)
-						if (picked_slot != -1){
+				//Jezeli trzymasz cos w rece wyrzuc to
+					if (inhand != -1){
 							var inst = instance_create_layer(obj_amadix.x, obj_amadix.y, "Instances", obj_item);
 							with (inst){
-								item_num = ss_item_pick;
-								item_num_amount = ss_item_pick_amount;
-								item_num_type = ss_item_pick_type;
-								item_num_maxstack = ss_item_pick_maxstack;
-								item_num_hp = ss_item_pick_hp;
-								item_num_stamina = ss_item_pick_stamina;
+								item_num = other.inhand;
+								item_num_amount = other.multipick;
 								x_frame = item_num mod (spr_width/cell_size);
 								y_frame = item_num div (spr_width/cell_size);
 							}
-				
-							slot_remove(picked_slot);
-						}
-						picked_slot = -1;
-						multipick = 0;
-					//--------------------------------------------
-				}else{
-					//--------------------------------------------
-						//Wyrzuc przedmiot i stworz go obok gracza (pewna ilosc)
-						if (picked_slot != -1){
-							var inst = instance_create_layer(obj_amadix.x, obj_amadix.y, "Instances", obj_item);
-							var multi = multipick;
-							with (inst){
-								item_num = ss_item_pick;
-								item_num_amount = multi;
-								item_num_type = ss_item_pick_type;
-								item_num_maxstack = ss_item_pick_maxstack;
-								item_num_hp = ss_item_pick_hp;
-								item_num_stamina = ss_item_pick_stamina;
-								x_frame = item_num mod (spr_width/cell_size);
-								y_frame = item_num div (spr_width/cell_size);
-							}
-						}
-						picked_slot = -1;
-						multipick = 0;
-					//--------------------------------------------
-				}
+							inhand = -1;
+							multipick = 0;
+					}
 			}
 		}
 	}
 	#endregion
 
-
+	
 	//Jezeli istnieje w siatce przedmiot o ilosci zerowej usun go
 	for (var i = 0; i < inv_slots; ++i){
-	    if (inv_grid[# 1, i] == 0){
+	    if ((inv_grid[# AMOUNT, i] == 0) && (inv_grid[# ITEM, i] != item.none)){
 				slot_remove(i);
 		}
 	}
 	
+	
 	if (inhand == -1){
 		multipick = 0;	
+	}
+	if (multipick == 0){
+		inhand = -1;	
 	}
 }
 else if (!show_inventory) && (show_slots){

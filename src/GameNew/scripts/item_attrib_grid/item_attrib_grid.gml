@@ -2,7 +2,7 @@ function item_attrib_grid(){
 	var grid = obj_inventory.ds_item_all;
 	
 	//Nic
-	grid[# TYPE, item.none] = 0;
+	grid[# TYPE, item.none] = -1;
 	grid[# MAXSTACK, item.none] = 0;
 	grid[# HP, item.none] = 0;
 	grid[# STAMINA, item.none] = 0;
