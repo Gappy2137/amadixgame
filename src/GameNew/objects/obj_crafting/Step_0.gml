@@ -37,18 +37,18 @@ if (mousex >= craft_slot_x) && (mousex < endUIx) && (mousey >= craft_slot_y) && 
 
 #region Crafting
 if (mouse_check_button_pressed(mb_right)){
-	var citem_1 = global.recipes[# 0, selected_slot][? "ingredients"][# ITEM, 0];
-	var citem_2 = global.recipes[# 0, selected_slot][? "ingredients"][# ITEM, 1];
-	var citem_3 = global.recipes[# 0, selected_slot][? "ingredients"][# ITEM, 2];
-	var citem_4 = global.recipes[# 0, selected_slot][? "ingredients"][# ITEM, 3];
-	var citem_5 = global.recipes[# 0, selected_slot][? "ingredients"][# ITEM, 4];
-	var citem_6 = global.recipes[# 0, selected_slot][? "ingredients"][# ITEM, 5];
-	var camount_1 = global.recipes[# 0, selected_slot][? "ingredients"][# AMOUNT, 0];
-	var camount_2 = global.recipes[# 0, selected_slot][? "ingredients"][# AMOUNT, 1];
-	var camount_3 = global.recipes[# 0, selected_slot][? "ingredients"][# AMOUNT, 2];
-	var camount_4 = global.recipes[# 0, selected_slot][? "ingredients"][# AMOUNT, 3];
-	var camount_5 = global.recipes[# 0, selected_slot][? "ingredients"][# AMOUNT, 4];
-	var camount_6 = global.recipes[# 0, selected_slot][? "ingredients"][# AMOUNT, 5];
+	var citem_1 = global.recipes[# 0, selected_slot][? "ingredients"][# INVITEM, 0];
+	var citem_2 = global.recipes[# 0, selected_slot][? "ingredients"][# INVITEM, 1];
+	var citem_3 = global.recipes[# 0, selected_slot][? "ingredients"][# INVITEM, 2];
+	var citem_4 = global.recipes[# 0, selected_slot][? "ingredients"][# INVITEM, 3];
+	var citem_5 = global.recipes[# 0, selected_slot][? "ingredients"][# INVITEM, 4];
+	var citem_6 = global.recipes[# 0, selected_slot][? "ingredients"][# INVITEM, 5];
+	var camount_1 = global.recipes[# 0, selected_slot][? "ingredients"][# INVAMOUNT, 0];
+	var camount_2 = global.recipes[# 0, selected_slot][? "ingredients"][# INVAMOUNT, 1];
+	var camount_3 = global.recipes[# 0, selected_slot][? "ingredients"][# INVAMOUNT, 2];
+	var camount_4 = global.recipes[# 0, selected_slot][? "ingredients"][# INVAMOUNT, 3];
+	var camount_5 = global.recipes[# 0, selected_slot][? "ingredients"][# INVAMOUNT, 4];
+	var camount_6 = global.recipes[# 0, selected_slot][? "ingredients"][# INVAMOUNT, 5];
 	if (ds_grid_height(global.recipes[# 0, selected_slot][? "ingredients"]) == 1){
 		if (item_exists_amount(citem_1, camount_1)){
 			//slot_remove()

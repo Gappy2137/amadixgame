@@ -28,16 +28,16 @@ var i = 0;
 repeat(maxeffects){
 	var ef = -1;
 	var amp = 0;
-	if (effect_grid[# AMPLIFIER, i] == 1){amp = c_green;}
-	if (effect_grid[# AMPLIFIER, i] == 2){amp = c_yellow;}
-	if (effect_grid[# AMPLIFIER, i] == 3){amp = c_red;}
-	if (effect_grid[# EFFECT, i] == effect.speed_ef){ef = 1;}
-	if (effect_grid[# EFFECT, i] == effect.stuffed){ef = 2;}
-	if (effect_grid[# EFFECT, i] == effect.regeneration){ef = 3;}
+	if (effect_grid[# EF_AMPLIFIER, i] == 1){amp = c_green;}
+	if (effect_grid[# EF_AMPLIFIER, i] == 2){amp = c_yellow;}
+	if (effect_grid[# EF_AMPLIFIER, i] == 3){amp = c_red;}
+	if (effect_grid[# EF_EFFECT, i] == effect.speed_ef){ef = 1;}
+	if (effect_grid[# EF_EFFECT, i] == effect.stuffed){ef = 2;}
+	if (effect_grid[# EF_EFFECT, i] == effect.regeneration){ef = 3;}
 	
-	if (effect_grid[# DURATION, i] - effect_grid[# TIMER, i]){
+	if (effect_grid[# EF_DURATION, i] - effect_grid[# EF_TIMER, i]){
 		draw_sprite_ext(spr_health_hud_2, 0, effect_x, effect_y + (24 * i), .177, .177, 0, c_white, .5);
-		draw_circle_segment(effect_x, effect_y + (24 * i), effect_grid[# DURATION, i] - effect_grid[# TIMER, i], effect_grid[# DURATION, i], amp, 10, .5);
+		draw_circle_segment(effect_x, effect_y + (24 * i), effect_grid[# EF_DURATION, i] - effect_grid[# EF_TIMER, i], effect_grid[# EF_DURATION, i], amp, 10, .5);
 		draw_sprite_ext(spr_hud_effects, ef, effect_x, effect_y + (24 * i), .5, .5, 0, c_white, 1);
 	}
 	i++;

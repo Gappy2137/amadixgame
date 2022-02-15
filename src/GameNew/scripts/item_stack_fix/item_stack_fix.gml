@@ -12,10 +12,10 @@ function item_stack_fix(iitem, amount, xx, ready){
 				if (ds_grid_value_exists(inv, 0, 0, 0, slots, iitem)){
 					
 					var i = 0;
-					if (inv[# AMOUNT, i] == itemall[# MAXSTACK, iitem]){
+					if (inv[# INVAMOUNT, i] == itemall[# MAXSTACK, iitem]){
 						
 						repeat(slots){
-							if (inv[# AMOUNT, i] == itemall[# MAXSTACK, iitem]){
+							if (inv[# INVAMOUNT, i] == itemall[# MAXSTACK, iitem]){
 								i++;
 							}else{
 								xx = i;
@@ -25,21 +25,21 @@ function item_stack_fix(iitem, amount, xx, ready){
 						xx = ds_grid_value_y(inv, 0, 0, 0, slots, iitem);
 					}
 
-					if (am + inv[# AMOUNT, xx] <= itemall[# MAXSTACK, iitem]){
-						inv[# ITEM, xx] = iitem;
-						inv[# AMOUNT, xx] += am;
+					if (am + inv[# INVAMOUNT, xx] <= itemall[# MAXSTACK, iitem]){
+						inv[# INVITEM, xx] = iitem;
+						inv[# INVAMOUNT, xx] += am;
 						item_at(iitem, xx);
 					}else{
-						if (inv[# AMOUNT, xx] == itemall[# MAXSTACK, iitem]){
+						if (inv[# INVAMOUNT, xx] == itemall[# MAXSTACK, iitem]){
 							am = amount;	
-							inv[# ITEM, xx] = iitem;
-							inv[# AMOUNT, xx] = itemall[# MAXSTACK, iitem];
+							inv[# INVITEM, xx] = iitem;
+							inv[# INVAMOUNT, xx] = itemall[# MAXSTACK, iitem];
 							item_at(iitem, xx);
 							item_stack(iitem, am, 0, 2);
 						}else{
-							am = itemall[# MAXSTACK, iitem] - inv[# AMOUNT, xx];
-							inv[# ITEM, xx] = iitem;
-							inv[# AMOUNT, xx] = itemall[# MAXSTACK, iitem];
+							am = itemall[# MAXSTACK, iitem] - inv[# INVAMOUNT, xx];
+							inv[# INVITEM, xx] = iitem;
+							inv[# INVAMOUNT, xx] = itemall[# MAXSTACK, iitem];
 							item_at(iitem, xx);
 							item_stack(iitem, am, 0, 1);
 						}
@@ -47,30 +47,30 @@ function item_stack_fix(iitem, amount, xx, ready){
 		
 				}else if (ds_grid_value_exists(inv, 0, 0, 0, slots, item.none)){
 					xx = ds_grid_value_y(inv, 0, 0, 0, slots, item.none);
-					inv[# ITEM, xx] = iitem;
-					inv[# AMOUNT, xx] += am;
+					inv[# INVITEM, xx] = iitem;
+					inv[# INVAMOUNT, xx] += am;
 					item_at(iitem, xx);
 				}
 		break;
 		case 1:
 				var test = ds_grid_value_y(inv, 0, 0, 0, slots, iitem);
-				if (test) && (inv[# AMOUNT, test] != itemall[# MAXSTACK, iitem]){
+				if (test) && (inv[# INVAMOUNT, test] != itemall[# MAXSTACK, iitem]){
 					xx = ds_grid_value_y(inv, 0, 0, 0, slots, iitem);
-					inv[# ITEM, xx] = iitem;
-					inv[# AMOUNT, xx] += am;
+					inv[# INVITEM, xx] = iitem;
+					inv[# INVAMOUNT, xx] += am;
 					item_at(iitem, xx);
 				}else if (ds_grid_value_exists(inv, 0, 0, 0, slots, item.none)){
 					xx = ds_grid_value_y(inv, 0, 0, 0, slots, item.none);
-					inv[# ITEM, xx] = iitem;
-					inv[# AMOUNT, xx] += am;
+					inv[# INVITEM, xx] = iitem;
+					inv[# INVAMOUNT, xx] += am;
 					item_at(iitem, xx);
 				}
 		break;
 		case 2:
 				if (ds_grid_value_exists(inv, 0, 0, 0, slots, item.none)){
 					xx = ds_grid_value_y(inv, 0, 0, 0, slots, item.none);
-					inv[# ITEM, xx] = iitem;
-					inv[# AMOUNT, xx] += am;
+					inv[# INVITEM, xx] = iitem;
+					inv[# INVAMOUNT, xx] += am;
 					item_at(iitem, xx);
 				}
 		break;

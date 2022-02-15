@@ -154,7 +154,7 @@ if (show_inventory) && (!show_slots){
 		draw_sprite_ext(spr_eq_slotback_armor, 0, armorUI_x, armorUI_y, scale, scale, 0, c_white, 1);
 		var kk = 1;
 		repeat(4){
-			if (inv_grid[# ITEM, (inv_slots - 4 + (kk - 1))] == item.none){
+			if (inv_grid[# INVITEM, (inv_slots - 4 + (kk - 1))] == item.none){
 				draw_sprite_ext(spr_eq_slotback_armor, kk, armorUI_x, armorUI_y, scale, scale, 0, c_white, 1);
 			}
 			kk++;
@@ -294,52 +294,131 @@ if (show_inventory) && (!show_slots){
 	var type = "";
 	var hp = 0;
 	var stamina = 0;
-	iitem = inv_grid[# 0, selected_slot];
+	var defence = 0;
+	var damage = 0;
+	var level = 0;
+	var effect1 = 0;
+	var effect2 = 0;
+	var effect3 = 0;
+	iitem = inv_grid[# INVITEM, selected_slot];
 
 
-	if (iitem > 0) && (multipick == 0) && (picked_slot == -1){
+	if (iitem > 0) && (multipick == 0){
 		//GUI opisu
-		var ibox_x = xUI + (mouse_slotx * cell_size) + (cell_size)/2;//- 20 - 8;
-		var ibox_y = yUI + (mouse_sloty * cell_size) + 24;
+		//var ibox_x = xUI + (mouse_slotx * cell_size) + (cell_size)/2;//- 20 - 8;
+		//var ibox_y = yUI + (mouse_sloty * cell_size) + 24;
+	
+		//Infobox
+		var infobox_x, infobox_y, infobox_width, infobox_height,
+		name_x, name_y, type_x, type_y, desc_x, desc_y,
+		hp_x, hp_y, hp_h = 0, stamina_x, stamina_y, stamina_h = 0,
+		defence_x, defence_y, defence_h = 0, damage_x, damage_y, damage_h = 0,
+		level_x, level_y, level_h = 0,
+		effect1_x, effect1_y, effect1_h = 0,
+		effect2_x, effect2_y, effect2_h = 0,
+		effect3_x, effect3_y, effect3_h = 0;
+	
+		infobox_x = mousex + 8;
+		infobox_y = mousey + 8;
+		infobox_width = cell_size * 4;
+		var infobox_half = (infobox_x + infobox_width/2);
 	
 		//Nazwa przedmiotu
-		draw_set_font(font_item_desc);
-		name = iinfo_grid[# 0, iitem];
+		name = (iinfo_grid[# INVITEM, iitem]);
+		var namestr = scribble(name);
 		var name_scale = 0.75;
 		var name_sep = 12;
-		var name_width = 72 * (4/3);
+		var name_width = infobox_width - 8;
 		var name_height = string_height_ext(name, name_sep, name_width);
 		
 		//Rodzaj przedmiotu
-		draw_set_font(font_item_desc);
-		type = iinfo_grid[# 2, inv_grid[# TYPE, selected_slot]];
-		var type_scale = 0.25;
+		type = iinfo_grid[# 2, inv_grid[# INVTYPE, selected_slot]];
+		var typestr = scribble(type);
+		var type_scale = 0.6;
 		var type_sep = 6;
 		var type_width = 72 * 4;
-		var type_height = string_height(type);
+		var type_height = 6;
 		
 		//Opis przedmiotu
-		draw_set_font(font_item_desc);
 		description = iinfo_grid[# 1, iitem];
-		var desc_scale = 0.5;
+		var descstr = scribble(description);
+		var desc_scale = 0.4;
 		var desc_sep = 12;
-		var desc_width = 72 * 2;
-		var desc_height = string_height_ext(description, desc_sep, desc_width);
+		var desc_width = string_width(description);
+		var desc_height = string_height_ext(description, desc_sep, desc_width * desc_scale);
 		
 	
 	
 		//Leczone HP
-		draw_set_font(font_item_desc);
-		hp = ds_inventory[# 4, selected_slot];
+		hp = ds_inventory[# INVHP, selected_slot];
 	
 		//Leczona energia
-		draw_set_font(font_item_desc);
-		stamina = ds_inventory[# 5, selected_slot];
+		stamina = ds_inventory[# INVSTAMINA, selected_slot];
 		
-		//Efekt
-	
-	
-	
+		//Armor
+		defence = ds_inventory[# INVDEFENCE, selected_slot];
+		
+		//Damage
+		damage = ds_inventory[# INVDAMAGE, selected_slot];
+		
+		//Level
+		level = ds_inventory[# INVLEVEL, selected_slot];
+		
+		//Effect1
+		effect1 = ds_inventory[# INVEFFECT1, selected_slot];
+		
+		//Effect2
+		effect2 = ds_inventory[# INVEFFECT2, selected_slot];
+		
+		//Effect3
+		effect3 = ds_inventory[# INVEFFECT3, selected_slot];
+
+		
+		if (infobox_x + infobox_width > obj_display.ideal_width){
+			infobox_x = mousex - 8 - infobox_width;
+		}
+		
+		
+		if (hp != 0) && (stamina == 0){hp_x = infobox_half + 8; hp_y = 0; hp_h = 32;}
+		if (hp == 0) && (stamina != 0){hp_x = infobox_half + 8; hp_y = 0; hp_h = 32;}
+		if (hp != 0) && (stamina != 0){hp_x = infobox_x + 8; hp_y = 0; hp_h = 32; stamina_x = infobox_x + infobox_width - 8; stamina_y = 0; stamina_h = 32;}
+		
+		infobox_height = name_height + type_height + desc_height + hp_h + stamina_h + defence_h + damage_h + level_h + effect1_h + effect2_h + effect3_h;
+		
+		if (infobox_y + infobox_height > obj_display.ideal_height){
+			infobox_y = mousey - 8 - infobox_height;	
+		}
+		
+		//Rysuj tlo
+		draw_sprite_ext(spr_inventory_desc, 0, infobox_x, infobox_y, infobox_width/24, infobox_height/24, 0, c_white, 1);
+		
+		//Rysuj nazwe
+		namestr.starting_format("font_item", bl);
+		namestr.align(fa_center, fa_top);
+		namestr.transform(name_scale, name_scale, 0);
+		namestr.wrap(infobox_width - 8, 48, false);
+		namestr.scale_to_box(infobox_width - 8, 48);
+		namestr.draw(infobox_half, infobox_y + 4);
+		
+		//Rysuj typ
+		typestr.starting_format("font_item", bl);
+		typestr.align(fa_center, fa_top);
+		typestr.transform(type_scale, type_scale, 0);
+		typestr.wrap(infobox_width - 8, 8, false);
+		typestr.scale_to_box(infobox_width - 8, 8);
+		typestr.draw(infobox_half, infobox_y + namestr.get_height()*name_scale + 4);
+		
+		//Rysuj opis
+		descstr.starting_format("font_dialogue", bl);
+		descstr.align(fa_center, fa_top);
+		descstr.transform(desc_scale, desc_scale, 0);
+		descstr.wrap(infobox_width - 8, 96, false);
+		descstr.scale_to_box(infobox_width - 8, 96);
+		descstr.draw(infobox_half, infobox_y + namestr.get_height()*name_scale + typestr.get_height()*type_scale + 4);
+		
+		
+		infobox_height = namestr.get_height()*name_scale + typestr.get_height()*type_scale + descstr.get_height()*desc_scale + 12;
+		
 		//Rysuj ()
 		if (hp > 0) || (stamina > 0){
 			var ibox_height = name_height + type_height + desc_height + 8;
@@ -401,7 +480,7 @@ if (show_inventory) && (!show_slots){
 		draw_text_ext_transformed_color(ibox_x + .25, ibox_y + name_height + .75, type, type_sep, type_width, type_scale, type_scale, 0, c_gray, c_gray, c_gray, c_gray, .35);
 		draw_text_ext_transformed_color(ibox_x, ibox_y + name_height, type, type_sep, type_width, type_scale, type_scale, 0, wh, wh, wh, wh, 1);
 		draw_set_halign(fa_left);
-		
+		*/
 	}
 
 	#endregion

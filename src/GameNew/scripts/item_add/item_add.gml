@@ -6,17 +6,17 @@ function item_add(slot, iitem, amount){
 		item_stack(iitem, amount, 0);
 	}else{
 		itemslot = slot;
-		obj_inventory.ds_inventory[# ITEM, itemslot] = iitem;
-		obj_inventory.ds_inventory[# AMOUNT, itemslot] = amount;
-		obj_inventory.ds_inventory[# TYPE, itemslot] = obj_inventory.ds_item_all[# TYPE, iitem];
+		obj_inventory.ds_inventory[# INVITEM, itemslot] = iitem;
+		obj_inventory.ds_inventory[# INVAMOUNT, itemslot] = amount;
+		obj_inventory.ds_inventory[# INVTYPE, itemslot] = obj_inventory.ds_item_all[# INVTYPE, iitem];
 		obj_inventory.ds_inventory[# MAXSTACK, itemslot] = obj_inventory.ds_item_all[# MAXSTACK, iitem];
-		obj_inventory.ds_inventory[# HP, itemslot] = obj_inventory.ds_item_all[# HP, iitem];
-		obj_inventory.ds_inventory[# STAMINA, itemslot] = obj_inventory.ds_item_all[# STAMINA, iitem];
-		obj_inventory.ds_inventory[# LEVEL, itemslot] = obj_inventory.ds_item_all[# LEVEL, iitem];
-		obj_inventory.ds_inventory[# DAMAGE, itemslot] = obj_inventory.ds_item_all[# DAMAGE, iitem];
-		obj_inventory.ds_inventory[# DEFENCE, itemslot] = obj_inventory.ds_item_all[# DEFENCE, iitem];
-		obj_inventory.ds_inventory[# EFFECT1, itemslot] = obj_inventory.ds_item_all[# EFFECT1, iitem];
-		obj_inventory.ds_inventory[# EFFECT2, itemslot] = obj_inventory.ds_item_all[# EFFECT2, iitem];
-		obj_inventory.ds_inventory[# EFFECT3, itemslot] = obj_inventory.ds_item_all[# EFFECT3, iitem];
+		obj_inventory.ds_inventory[# INVHP, itemslot] = obj_inventory.ds_item_all[# INVHP, iitem];
+		obj_inventory.ds_inventory[# INVSTAMINA, itemslot] = obj_inventory.ds_item_all[# INVSTAMINA, iitem];
+		obj_inventory.ds_inventory[# INVLEVEL, itemslot] = obj_inventory.ds_item_all[# INVLEVEL, iitem];
+		obj_inventory.ds_inventory[# INVDAMAGE, itemslot] = obj_inventory.ds_item_all[# INVDAMAGE, iitem];
+		obj_inventory.ds_inventory[# INVDEFENCE, itemslot] = obj_inventory.ds_item_all[# INVDEFENCE, iitem];
+		obj_inventory.ds_inventory[# INVEFFECT1, itemslot] = obj_inventory.ds_item_all[# INVEFFECT1, iitem];
+		obj_inventory.ds_inventory[# INVEFFECT2, itemslot] = obj_inventory.ds_item_all[# INVEFFECT2, iitem];
+		obj_inventory.ds_inventory[# INVEFFECT3, itemslot] = obj_inventory.ds_item_all[# INVEFFECT3, iitem];
 	}
 }

@@ -1,14 +1,14 @@
 function item_action(){
-	var amount =		obj_inventory.ds_inventory[# AMOUNT, obj_inventory.mouse_slotx_second];
-	var type =			obj_inventory.ds_inventory[# TYPE, obj_inventory.mouse_slotx_second];
-	var hp =			obj_inventory.ds_inventory[# HP, obj_inventory.mouse_slotx_second];
-	var stamina =		obj_inventory.ds_inventory[# STAMINA, obj_inventory.mouse_slotx_second];
-	var level =			obj_inventory.ds_inventory[# LEVEL, obj_inventory.mouse_slotx_second];
-	var damage =		obj_inventory.ds_inventory[# DAMAGE, obj_inventory.mouse_slotx_second];
-	var defence =		obj_inventory.ds_inventory[# DEFENCE, obj_inventory.mouse_slotx_second];
-	var effect1 =		obj_inventory.ds_inventory[# EFFECT1, obj_inventory.mouse_slotx_second];
-	var effect2 =		obj_inventory.ds_inventory[# EFFECT2, obj_inventory.mouse_slotx_second];
-	var effect3 =		obj_inventory.ds_inventory[# EFFECT3, obj_inventory.mouse_slotx_second];
+	var amount =		obj_inventory.ds_inventory[# INVAMOUNT, obj_inventory.mouse_slotx_second];
+	var type =			obj_inventory.ds_inventory[# INVTYPE, obj_inventory.mouse_slotx_second];
+	var hp =			obj_inventory.ds_inventory[# INVHP, obj_inventory.mouse_slotx_second];
+	var stamina =		obj_inventory.ds_inventory[# INVSTAMINA, obj_inventory.mouse_slotx_second];
+	var level =			obj_inventory.ds_inventory[# INVLEVEL, obj_inventory.mouse_slotx_second];
+	var damage =		obj_inventory.ds_inventory[# INVDAMAGE, obj_inventory.mouse_slotx_second];
+	var defence =		obj_inventory.ds_inventory[# INVDEFENCE, obj_inventory.mouse_slotx_second];
+	var effect1 =		obj_inventory.ds_inventory[# INVEFFECT1, obj_inventory.mouse_slotx_second];
+	var effect2 =		obj_inventory.ds_inventory[# INVEFFECT2, obj_inventory.mouse_slotx_second];
+	var effect3 =		obj_inventory.ds_inventory[# INVEFFECT3, obj_inventory.mouse_slotx_second];
 	//Prawy przycisk wscisniety
 	if (mouse_check_button_pressed(mb_right)){
 		if instance_exists(obj_amadix){
@@ -34,7 +34,7 @@ function item_action(){
 						}
 						if (hp > 0){global.hp += hp;}
 						if (stamina > 0){global.stamina += stamina;}
-						obj_inventory.ds_inventory[# AMOUNT, obj_inventory.mouse_slotx_second] -= 1;
+						obj_inventory.ds_inventory[# INVAMOUNT, obj_inventory.mouse_slotx_second] -= 1;
 					}
 				}else{
 					slot_remove(obj_inventory.mouse_slotx_second);
@@ -62,7 +62,7 @@ function item_action(){
 						}
 						if (hp > 0){global.hp += hp;}
 						if (stamina > 0){global.stamina += stamina;}
-						obj_inventory.ds_inventory[# AMOUNT, obj_inventory.mouse_slotx_second] -= 1;
+						obj_inventory.ds_inventory[# INVAMOUNT, obj_inventory.mouse_slotx_second] -= 1;
 					}
 				}else{
 					slot_remove(obj_inventory.mouse_slotx_second);

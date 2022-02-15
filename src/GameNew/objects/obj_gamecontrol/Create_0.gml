@@ -1,24 +1,24 @@
 //MAKRA
 
 //EKWIPUNEK
-#macro ITEM 0
-#macro AMOUNT 1
-#macro TYPE 2
+#macro INVITEM 0
+#macro INVAMOUNT 1
+#macro INVTYPE 2
 #macro MAXSTACK 3
-#macro HP 4
-#macro STAMINA 5
-#macro LEVEL 6
-#macro DAMAGE 7
-#macro DEFENCE 8
-#macro EFFECT1 9
-#macro EFFECT2 10
-#macro EFFECT3 11
+#macro INVHP 4
+#macro INVSTAMINA 5
+#macro INVLEVEL 6
+#macro INVDAMAGE 7
+#macro INVDEFENCE 8
+#macro INVEFFECT1 9
+#macro INVEFFECT2 10
+#macro INVEFFECT3 11
 //
 //EFEKTY
-#macro EFFECT 0
-#macro DURATION 1
-#macro AMPLIFIER 2
-#macro TIMER 3
+#macro EF_EFFECT 0
+#macro EF_DURATION 1
+#macro EF_AMPLIFIER 2
+#macro EF_TIMER 3
 //
 //
 //CZCIONKI

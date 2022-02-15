@@ -84,10 +84,10 @@ if (show_inventory) && (!show_slots){
 		}
 		ar++;
 	}
-	if ((selected_slot == (inv_slots - 4) + 0) && (ds_item_all[# TYPE, inhand] == itemtype.hat)) ||
-	   ((selected_slot == (inv_slots - 4) + 1) && (ds_item_all[# TYPE, inhand] == itemtype.clothing)) ||
-	   ((selected_slot == (inv_slots - 4) + 2) && (ds_item_all[# TYPE, inhand] == itemtype.pants)) ||
-	   ((selected_slot == (inv_slots - 4) + 3) && (ds_item_all[# TYPE, inhand] == itemtype.boots)) 
+	if ((selected_slot == (inv_slots - 4) + 0) && (ds_item_all[# INVTYPE, inhand] == itemtype.hat)) ||
+	   ((selected_slot == (inv_slots - 4) + 1) && (ds_item_all[# INVTYPE, inhand] == itemtype.clothing)) ||
+	   ((selected_slot == (inv_slots - 4) + 2) && (ds_item_all[# INVTYPE, inhand] == itemtype.pants)) ||
+	   ((selected_slot == (inv_slots - 4) + 3) && (ds_item_all[# INVTYPE, inhand] == itemtype.boots)) 
 	{
 		
 	}

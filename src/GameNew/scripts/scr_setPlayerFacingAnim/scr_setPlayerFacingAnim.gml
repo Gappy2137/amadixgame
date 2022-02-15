@@ -103,7 +103,30 @@ function scr_setPlayerFacingAnim(facing){
 	}
 #endregion
 
-#region Classic Clothing Set
+#region Czapka
+	switch(global.playerHat){
+		case item.none:
+			hat_index = spr_item_none;
+		break;
+		case item.panama_hat:
+			hat_index = spr_panama_hat;
+			switch(facing){
+				case index_facing.down:
+					hat_frame = 0;
+				break;
+				case index_facing.left:
+					hat_frame = 1;
+				break;
+				case index_facing.right:
+					hat_frame = 2;
+				break;
+				case index_facing.up:
+					hat_frame = 3;
+				break;
+			}
+		break;
+	}
+#endregion
 
 
 switch(global.playerTorso){
@@ -1239,7 +1262,6 @@ switch(global.playerBoots){
 		}
 	}
 */
-#endregion
 
 
 }

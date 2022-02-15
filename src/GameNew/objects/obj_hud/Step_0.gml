@@ -24,33 +24,33 @@ if global.maxstamina <= 1{
 ds_grid_sort(effect_grid, 1, false);
 var i = 0;
 repeat(maxeffects){
-	if (effect_grid[# EFFECT, i] != effect.none){
-		effect_grid[# TIMER, i] ++;
+	if (effect_grid[# EF_EFFECT, i] != effect.none){
+		effect_grid[# EF_TIMER, i] ++;
 	}
 	/*
-	if (effect_grid[# EFFECT, i - 1] == effect.none){
-		var temp_effect = effect_grid[# EFFECT, i];
-		var temp_amp = effect_grid[# AMPLIFIER, i];
-		var temp_duration = effect_grid[# DURATION, i];
-		var temp_time = effect_grid[# TIMER, i];
+	if (effect_grid[# EF_EFFECT, i - 1] == effect.none){
+		var temp_effect = effect_grid[# EF_EFFECT, i];
+		var temp_amp = effect_grid[# EF_AMPLIFIER, i];
+		var temp_duration = effect_grid[# EF_DURATION, i];
+		var temp_time = effect_grid[# EF_TIMER, i];
 		effect_add(temp_effect, temp_duration,temp_amp, temp_time);
-		effect_grid[# DURATION, i] = 0;
-		effect_grid[# AMPLIFIER, i] = 0;
-		effect_grid[# TIMER, i] = 0;
-		effect_grid[# EFFECT, i] = effect.none;
+		effect_grid[# EF_DURATION, i] = 0;
+		effect_grid[# EF_AMPLIFIER, i] = 0;
+		effect_grid[# EF_TIMER, i] = 0;
+		effect_grid[# EF_EFFECT, i] = effect.none;
 	}
 	*/
 	
-	if (effect_grid[# DURATION, i] - effect_grid[# TIMER, i] <= 0){
+	if (effect_grid[# EF_DURATION, i] - effect_grid[# EF_TIMER, i] <= 0){
 		if instance_exists(obj_amadix){
-			if (effect_grid[# EFFECT, i] == effect.speed_ef){
+			if (effect_grid[# EF_EFFECT, i] == effect.speed_ef){
 				obj_amadix.speedEffect = 0;
 			}
 		}
-		effect_grid[# DURATION, i] = 0;
-		effect_grid[# AMPLIFIER, i] = 0;
-		effect_grid[# TIMER, i] = 0;
-		effect_grid[# EFFECT, i] = effect.none;
+		effect_grid[# EF_DURATION, i] = 0;
+		effect_grid[# EF_AMPLIFIER, i] = 0;
+		effect_grid[# EF_TIMER, i] = 0;
+		effect_grid[# EF_EFFECT, i] = effect.none;
 	}
 	i++;
 }

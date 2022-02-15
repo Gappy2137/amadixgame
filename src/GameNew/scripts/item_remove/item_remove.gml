@@ -4,15 +4,15 @@ function item_remove(iitem, amount, allitems){
 		var am = amount;
 		if (!picked){
 			repeat(obj_inventory.inv_slots){
-				if (obj_inventory.ds_inventory[# ITEM, xx] == iitem){
+				if (obj_inventory.ds_inventory[# INVITEM, xx] == iitem){
 					if (item_check_amount(iitem) >= amount){
 						if (!picked){
-							if (obj_inventory.ds_inventory[# AMOUNT, xx] >= amount){
-								obj_inventory.ds_inventory[# AMOUNT, xx] -= amount;
+							if (obj_inventory.ds_inventory[# INVAMOUNT, xx] >= amount){
+								obj_inventory.ds_inventory[# INVAMOUNT, xx] -= amount;
 							}else{
-								am = amount - obj_inventory.ds_inventory[# AMOUNT, xx];
-								obj_inventory.ds_inventory[# ITEM, xx] = item.none;
-								obj_inventory.ds_inventory[# AMOUNT, xx] = 0;
+								am = amount - obj_inventory.ds_inventory[# INVAMOUNT, xx];
+								obj_inventory.ds_inventory[# INVITEM, xx] = item.none;
+								obj_inventory.ds_inventory[# INVAMOUNT, xx] = 0;
 								item_remove(iitem, am, false);
 								xx++;
 							}

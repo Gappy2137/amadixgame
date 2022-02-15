@@ -29,6 +29,8 @@ if (rm_trans != noone){
 	}
 }
 
+scr_updateHatY();
+
 if (keyboard_check_pressed(vk_space)){
 	item_add(-1, item.bull_energy_drink, 1);
 	item_add(-1, item.lemon, 4);

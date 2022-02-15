@@ -8,7 +8,7 @@ function scr_playerMovingAnim() {
 	}else{
 		anim_frame += anim_speed;
 		if anim_frame > anim_frame_num{
-			anim_frame = anim_frame;	
+			anim_frame = 0;
 		}
 	}
 
@@ -95,5 +95,10 @@ function scr_playerMovingAnim() {
 		shadowEnable = true;	
 	}
 	
+	if (running){
+		anim_frame_num = 12;	
+	}else{
+		anim_frame_num = 4;	
+	}
 	
 }

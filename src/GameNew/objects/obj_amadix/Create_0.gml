@@ -47,6 +47,7 @@ hands_index = 0;
 torso_index = 0;
 legs_index = 0;
 boots_index = 0;
+hat_index = 0;
 
 shadowOriginY = 34;
 shadowStyle = spr_shadow_player;
@@ -76,4 +77,7 @@ oneStepEvent[1] = true;
 z = 0;
 zaxis = 0;
 
-if (obj_gamecontrol.doTransition  == true) scr_updatePlayerAnim();
+hat_frame = 0;
+hatY = 0;
+
+if (obj_gamecontrol.doTransition == true) scr_updatePlayerAnim();

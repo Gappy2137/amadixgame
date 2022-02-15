@@ -184,8 +184,8 @@ ds_armor = ds_grid_create(11, 4);
 //Siatka wszystkich przedmiotow
 var i = 0;
 repeat(item.height){
-	ds_item_all[# ITEM, i] = i;
-	ds_item_all[# AMOUNT, i] = 0;
+	ds_item_all[# INVITEM, i] = i;
+	ds_item_all[# INVAMOUNT, i] = 0;
 	i++;
 }
 

@@ -7,14 +7,14 @@ function item_stack(iitem, amount){
 				if (obj_inventory.ds_inventory[# 0, xx] == iitem){
 					if ((am + obj_inventory.ds_inventory[# 1, xx]) < obj_inventory.ds_item_all[# MAXSTACK, iitem]) || ((am + obj_inventory.ds_inventory[# 1, xx]) == obj_inventory.ds_item_all[# MAXSTACK, iitem]){
 						if (!picked){
-							obj_inventory.ds_inventory[# ITEM, xx] = iitem;
+							obj_inventory.ds_inventory[# INVITEM, xx] = iitem;
 							if (amount > obj_inventory.ds_inventory[# MAXSTACK, xx]){
 								am = obj_inventory.ds_item_all[# MAXSTACK, iitem] - obj_inventory.ds_inventory[# 1, xx];
 								obj_inventory.ds_inventory[# 1, xx] = obj_inventory.ds_item_all[# MAXSTACK, iitem];
 							}else{
 								repeat(amount){
 									am--;
-									obj_inventory.ds_inventory[# AMOUNT, xx] += 1;
+									obj_inventory.ds_inventory[# INVAMOUNT, xx] += 1;
 								}
 							}
 							item_at(iitem, xx);
@@ -35,15 +35,15 @@ function item_stack(iitem, amount){
 					}else{
 						if (obj_inventory.ds_inventory[# 0, xx] == item.none){
 								if (!picked){
-									obj_inventory.ds_inventory[# ITEM, xx] = iitem;
+									obj_inventory.ds_inventory[# INVITEM, xx] = iitem;
 									if (amount > obj_inventory.ds_item_all[# MAXSTACK, iitem]){
-										obj_inventory.ds_inventory[# AMOUNT, xx] = obj_inventory.ds_item_all[# MAXSTACK, iitem];
+										obj_inventory.ds_inventory[# INVAMOUNT, xx] = obj_inventory.ds_item_all[# MAXSTACK, iitem];
 										am = amount - obj_inventory.ds_item_all[# MAXSTACK, iitem];
 										item_stack(iitem, am);
 									}else{
 										repeat(amount){
 											am--;
-											obj_inventory.ds_inventory[# AMOUNT, xx] += 1;
+											obj_inventory.ds_inventory[# INVAMOUNT, xx] += 1;
 										}
 									}
 									item_at(iitem, xx);

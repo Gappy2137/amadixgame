@@ -19,6 +19,9 @@ function scr_draw_player(px, py, pz) {
 
 					//Buty
 					draw_sprite_ext(boots_index,anim_frame,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+					
+					//Czapka
+					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 					//----------------------------------------------------------------------------------------------------------------
 					
 				break;
@@ -38,6 +41,9 @@ function scr_draw_player(px, py, pz) {
 
 						//Buty
 						draw_sprite_ext(boots_index,anim_frame,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+						
+						//Czapka
+						draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				case player_state.wading_idle:
@@ -57,6 +63,9 @@ function scr_draw_player(px, py, pz) {
 
 						//Buty
 						draw_sprite_ext(boots_index,anim_frame,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+						
+						//Czapka
+						draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				case player_state.wading:
@@ -76,6 +85,9 @@ function scr_draw_player(px, py, pz) {
 
 						//Buty
 						draw_sprite_ext(boots_index,anim_frame,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+						
+						//Czapka
+						draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				case player_state.swimming_idle:
@@ -95,6 +107,9 @@ function scr_draw_player(px, py, pz) {
 
 						//Buty
 						draw_sprite_ext(boots_index,anim_frame,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+						
+						//Czapka
+						draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				case player_state.swimming:
@@ -114,6 +129,9 @@ function scr_draw_player(px, py, pz) {
 
 						//Buty
 						draw_sprite_ext(boots_index,anim_frame,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+						
+						//Czapka
+						draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				default:
@@ -132,6 +150,9 @@ function scr_draw_player(px, py, pz) {
 
 						//Buty
 						draw_sprite_ext(boots_index,anim_frame,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+						
+						//Czapka
+						draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 			}
@@ -160,6 +181,9 @@ function scr_draw_player(px, py, pz) {
 
 					//Buty
 					draw_sprite_ext(boots_index,0,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+					
+					//Czapka
+					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				case player_state.moving:
@@ -182,6 +206,9 @@ function scr_draw_player(px, py, pz) {
 
 					//Buty
 					draw_sprite_ext(boots_index,0,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+					
+					//Czapka
+					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				case player_state.wading_idle:
@@ -205,6 +232,9 @@ function scr_draw_player(px, py, pz) {
 
 					//Buty
 					draw_sprite_ext(boots_index,0,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+					
+					//Czapka
+					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				case player_state.wading:
@@ -228,6 +258,9 @@ function scr_draw_player(px, py, pz) {
 
 					//Buty
 					draw_sprite_ext(boots_index,0,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+					
+					//Czapka
+					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				case player_state.swimming_idle:
@@ -251,6 +284,9 @@ function scr_draw_player(px, py, pz) {
 
 					//Buty
 					draw_sprite_ext(boots_index,0,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+					
+					//Czapka
+					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				case player_state.swimming:
@@ -274,6 +310,9 @@ function scr_draw_player(px, py, pz) {
 
 					//Buty
 					draw_sprite_ext(boots_index,0,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+					
+					//Czapka
+					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				default:
@@ -296,6 +335,9 @@ function scr_draw_player(px, py, pz) {
 
 					//Buty
 					draw_sprite_ext(boots_index,0,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+					
+					//Czapka
+					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 			}
@@ -325,6 +367,9 @@ function scr_draw_player(px, py, pz) {
 
 					//Buty
 					draw_sprite_ext(boots_index,0,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+					
+					//Czapka
+					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				case player_state.moving:
@@ -348,6 +393,9 @@ function scr_draw_player(px, py, pz) {
 
 					//Buty
 					draw_sprite_ext(boots_index,0,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+					
+					//Czapka
+					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				case player_state.wading_idle:
@@ -372,6 +420,9 @@ function scr_draw_player(px, py, pz) {
 
 					//Buty
 					draw_sprite_ext(boots_index,0,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+					
+					//Czapka
+					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				case player_state.wading:
@@ -396,6 +447,9 @@ function scr_draw_player(px, py, pz) {
 
 					//Buty
 					draw_sprite_ext(boots_index,0,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+					
+					//Czapka
+					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				case player_state.swimming_idle:
@@ -420,6 +474,9 @@ function scr_draw_player(px, py, pz) {
 
 					//Buty
 					draw_sprite_ext(boots_index,0,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+					
+					//Czapka
+					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				case player_state.swimming:
@@ -444,6 +501,9 @@ function scr_draw_player(px, py, pz) {
 
 					//Buty
 					draw_sprite_ext(boots_index,0,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+					
+					//Czapka
+					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 			}
@@ -466,6 +526,9 @@ function scr_draw_player(px, py, pz) {
 
 					//Buty
 					draw_sprite_ext(boots_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+					
+					//Czapka
+					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				case player_state.moving:
@@ -484,6 +547,9 @@ function scr_draw_player(px, py, pz) {
 
 					//Buty
 					draw_sprite_ext(boots_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+					
+					//Czapka
+					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				case player_state.wading_idle:
@@ -503,6 +569,9 @@ function scr_draw_player(px, py, pz) {
 
 						//Buty
 						draw_sprite_ext(boots_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+						
+						//Czapka
+						draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				case player_state.wading:
@@ -522,6 +591,9 @@ function scr_draw_player(px, py, pz) {
 
 						//Buty
 						draw_sprite_ext(boots_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+						
+						//Czapka
+						draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				default:
@@ -540,6 +612,9 @@ function scr_draw_player(px, py, pz) {
 
 					//Buty
 					draw_sprite_ext(boots_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+					
+					//Czapka
+					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 			}

@@ -110,7 +110,7 @@ draw_set_font(font_item);
 		
 		//Rodzaj przedmiotu
 		draw_set_font(font_item_desc);
-		type = obj_inventory.ds_item_all[# TYPE, iitem_2];
+		type = obj_inventory.ds_item_all[# INVTYPE, iitem_2];
 		var type_scale = 0.25;
 		var type_sep = 6;
 		var type_width = 72 * 4;
@@ -128,11 +128,11 @@ draw_set_font(font_item);
 	
 		//Leczone HP
 		draw_set_font(font_item_desc);
-		hp = obj_inventory.ds_item_all[# HP, iitem_2];
+		hp = obj_inventory.ds_item_all[# INVHP, iitem_2];
 	
 		//Leczona energia
 		draw_set_font(font_item_desc);
-		stamina = obj_inventory.ds_item_all[# STAMINA, iitem_2];
+		stamina = obj_inventory.ds_item_all[# INVSTAMINA, iitem_2];
 		
 		
 		//Pobierz informacje o wyniku i ilosci przedmiotow z craftingu
@@ -146,41 +146,41 @@ draw_set_font(font_item);
 		
 		//1
 		if (ds_grid_height(global.recipes[# 0, selected_slot][? "ingredients"]) >= 1){
-			var citem_1 = global.recipes[# 0, selected_slot][? "ingredients"][# ITEM, 0];
-			var camount_1 = global.recipes[# 0, selected_slot][? "ingredients"][# AMOUNT, 0];
+			var citem_1 = global.recipes[# 0, selected_slot][? "ingredients"][# INVITEM, 0];
+			var camount_1 = global.recipes[# 0, selected_slot][? "ingredients"][# INVAMOUNT, 0];
 			var sx_1 = (citem_1 mod obj_inventory.spr_inv_items_columns) * 24;
 			var sy_1 = (citem_1 div obj_inventory.spr_inv_items_columns) * 24;
-			ing_1 = global.recipes[# 0, selected_slot][? "ingredients"][# ITEM, 0];
+			ing_1 = global.recipes[# 0, selected_slot][? "ingredients"][# INVITEM, 0];
 			height_var = 24;
 		}
 	
 		//2
 		if (ds_grid_height(global.recipes[# 0, selected_slot][? "ingredients"]) >= 2){
-			var citem_2 = global.recipes[# 0, selected_slot][? "ingredients"][# ITEM, 1];
-			var camount_2 = global.recipes[# 0, selected_slot][? "ingredients"][# AMOUNT, 1];
+			var citem_2 = global.recipes[# 0, selected_slot][? "ingredients"][# INVITEM, 1];
+			var camount_2 = global.recipes[# 0, selected_slot][? "ingredients"][# INVAMOUNT, 1];
 			var sx_2 = (citem_2 mod obj_inventory.spr_inv_items_columns) * 24;
 			var sy_2 = (citem_2 div obj_inventory.spr_inv_items_columns) * 24;
-			ing_2 = global.recipes[# 0, selected_slot][? "ingredients"][# ITEM, 1];
+			ing_2 = global.recipes[# 0, selected_slot][? "ingredients"][# INVITEM, 1];
 			height_var = 21 * 2;
 		}
 	
 		//3
 		if (ds_grid_height(global.recipes[# 0, selected_slot][? "ingredients"]) >= 3){
-			var citem_3 = global.recipes[# 0, selected_slot][? "ingredients"][# ITEM, 2];
-			var camount_3 = global.recipes[# 0, selected_slot][? "ingredients"][# AMOUNT, 2];
+			var citem_3 = global.recipes[# 0, selected_slot][? "ingredients"][# INVITEM, 2];
+			var camount_3 = global.recipes[# 0, selected_slot][? "ingredients"][# INVAMOUNT, 2];
 			var sx_3 = (citem_3 mod obj_inventory.spr_inv_items_columns) * 24;
 			var sy_3 = (citem_3 div obj_inventory.spr_inv_items_columns) * 24;
-			ing_3 = global.recipes[# 0, selected_slot][? "ingredients"][# ITEM, 2];
+			ing_3 = global.recipes[# 0, selected_slot][? "ingredients"][# INVITEM, 2];
 			height_var = 21 * 3;
 		}
 	
 		//4
 		if (ds_grid_height(global.recipes[# 0, selected_slot][? "ingredients"]) >= 4){
-			var citem_4 = global.recipes[# 0, selected_slot][? "ingredients"][# ITEM, 3];
-			var camount_4 = global.recipes[# 0, selected_slot][? "ingredients"][# AMOUNT, 3];
+			var citem_4 = global.recipes[# 0, selected_slot][? "ingredients"][# INVITEM, 3];
+			var camount_4 = global.recipes[# 0, selected_slot][? "ingredients"][# INVAMOUNT, 3];
 			var sx_4 = (citem_4 mod obj_inventory.spr_inv_items_columns) * 24;
 			var sy_4 = (citem_4 div obj_inventory.spr_inv_items_columns) * 24;
-			ing_4 = global.recipes[# 0, selected_slot][? "ingredients"][# ITEM, 3];
+			ing_4 = global.recipes[# 0, selected_slot][? "ingredients"][# INVITEM, 3];
 			height_var = 21 * 4;
 		}
 		#endregion
@@ -264,8 +264,8 @@ draw_set_font(font_item);
 		if (ds_grid_height(global.recipes[# 0, selected_slot][? "ingredients"]) == 1){
 			//Sprawdz czy istnieje przedmiot w ekwipunku
 			var item_alpha = 1;
-			if (item_exists_amount( (global.recipes[# 0, selected_slot][? "ingredients"][# ITEM, 0]) , (global.recipes[# 0, selected_slot][? "ingredients"][# AMOUNT, 0]))){
-				if (obj_inventory.ds_inventory[# 0, selected_slot] > 0) && (global.recipes[# 0, selected_slot][? "ingredients"][# AMOUNT, 0] < ds_grid_height(global.recipes[# 0, selected_slot][? "ingredients"])){
+			if (item_exists_amount( (global.recipes[# 0, selected_slot][? "ingredients"][# INVITEM, 0]) , (global.recipes[# 0, selected_slot][? "ingredients"][# INVAMOUNT, 0]))){
+				if (obj_inventory.ds_inventory[# 0, selected_slot] > 0) && (global.recipes[# 0, selected_slot][? "ingredients"][# INVAMOUNT, 0] < ds_grid_height(global.recipes[# 0, selected_slot][? "ingredients"])){
 					item_alpha = 0.75;
 				}else{
 					item_alpha = 1;	
@@ -287,8 +287,8 @@ draw_set_font(font_item);
 			//Sprawdz czy istnieje przedmiot w ekwipunku
 			var item_alpha = 1;
 			var item_alpha2 = 1;
-			if (item_exists_amount( (global.recipes[# 0, selected_slot][? "ingredients"][# ITEM, 0]) , (global.recipes[# 0, selected_slot][? "ingredients"][# AMOUNT, 0]))){item_alpha = 1;}else{item_alpha = 0.5;}
-			if (item_exists_amount( (global.recipes[# 0, selected_slot][? "ingredients"][# ITEM, 1]) , (global.recipes[# 0, selected_slot][? "ingredients"][# AMOUNT, 1]))){item_alpha2 = 1;}else{item_alpha2 = 0.5;}
+			if (item_exists_amount( (global.recipes[# 0, selected_slot][? "ingredients"][# INVITEM, 0]) , (global.recipes[# 0, selected_slot][? "ingredients"][# INVAMOUNT, 0]))){item_alpha = 1;}else{item_alpha = 0.5;}
+			if (item_exists_amount( (global.recipes[# 0, selected_slot][? "ingredients"][# INVITEM, 1]) , (global.recipes[# 0, selected_slot][? "ingredients"][# INVAMOUNT, 1]))){item_alpha2 = 1;}else{item_alpha2 = 0.5;}
 
 			
 			//1
@@ -306,9 +306,9 @@ draw_set_font(font_item);
 			var item_alpha = 1;
 			var item_alpha2 = 1;
 			var item_alpha3 = 1;
-			if (item_exists_amount( (global.recipes[# 0, selected_slot][? "ingredients"][# ITEM, 0]) , (global.recipes[# 0, selected_slot][? "ingredients"][# AMOUNT, 0]))){item_alpha = 1;}else{item_alpha = 0.5;}
-			if (item_exists_amount( (global.recipes[# 0, selected_slot][? "ingredients"][# ITEM, 1]) , (global.recipes[# 0, selected_slot][? "ingredients"][# AMOUNT, 1]))){item_alpha2 = 1;}else{item_alpha2 = 0.5;}
-			if (item_exists_amount( (global.recipes[# 0, selected_slot][? "ingredients"][# ITEM, 2]) , (global.recipes[# 0, selected_slot][? "ingredients"][# AMOUNT, 2]))){item_alpha3 = 1;}else{item_alpha3 = 0.5;}
+			if (item_exists_amount( (global.recipes[# 0, selected_slot][? "ingredients"][# INVITEM, 0]) , (global.recipes[# 0, selected_slot][? "ingredients"][# INVAMOUNT, 0]))){item_alpha = 1;}else{item_alpha = 0.5;}
+			if (item_exists_amount( (global.recipes[# 0, selected_slot][? "ingredients"][# INVITEM, 1]) , (global.recipes[# 0, selected_slot][? "ingredients"][# INVAMOUNT, 1]))){item_alpha2 = 1;}else{item_alpha2 = 0.5;}
+			if (item_exists_amount( (global.recipes[# 0, selected_slot][? "ingredients"][# INVITEM, 2]) , (global.recipes[# 0, selected_slot][? "ingredients"][# INVAMOUNT, 2]))){item_alpha3 = 1;}else{item_alpha3 = 0.5;}
 			//1
 			draw_sprite_part_ext(spr_inventory_items, 0, sx_1, sy_1, 24, 24, ibox_x + (ibox_width/2) - 12 - 24, ibox_y + ibox_height + 2 + 1, .75, .75, c_white, item_alpha);
 			draw_text_transformed_color(ibox_x + (ibox_width/2) - 3 - 27, ibox_y + ibox_height + 12 + 1, string(camount_1), .75, .75, 0, c_black, c_black, c_black, c_black, item_alpha);
@@ -329,10 +329,10 @@ draw_set_font(font_item);
 			var item_alpha2 = 1;
 			var item_alpha3 = 1;
 			var item_alpha4 = 1;
-			if (item_exists_amount( (global.recipes[# 0, selected_slot][? "ingredients"][# ITEM, 0]) , (global.recipes[# 0, selected_slot][? "ingredients"][# AMOUNT, 0]))){item_alpha = 1;}else{item_alpha = 0.5;}
-			if (item_exists_amount( (global.recipes[# 0, selected_slot][? "ingredients"][# ITEM, 1]) , (global.recipes[# 0, selected_slot][? "ingredients"][# AMOUNT, 1]))){item_alpha2 = 1;}else{item_alpha2 = 0.5;}
-			if (item_exists_amount( (global.recipes[# 0, selected_slot][? "ingredients"][# ITEM, 2]) , (global.recipes[# 0, selected_slot][? "ingredients"][# AMOUNT, 2]))){item_alpha3 = 1;}else{item_alpha3 = 0.5;}
-			if (item_exists_amount( (global.recipes[# 0, selected_slot][? "ingredients"][# ITEM, 3]) , (global.recipes[# 0, selected_slot][? "ingredients"][# AMOUNT, 3]))){item_alpha4 = 1;}else{item_alpha4 = 0.5;}
+			if (item_exists_amount( (global.recipes[# 0, selected_slot][? "ingredients"][# INVITEM, 0]) , (global.recipes[# 0, selected_slot][? "ingredients"][# INVAMOUNT, 0]))){item_alpha = 1;}else{item_alpha = 0.5;}
+			if (item_exists_amount( (global.recipes[# 0, selected_slot][? "ingredients"][# INVITEM, 1]) , (global.recipes[# 0, selected_slot][? "ingredients"][# INVAMOUNT, 1]))){item_alpha2 = 1;}else{item_alpha2 = 0.5;}
+			if (item_exists_amount( (global.recipes[# 0, selected_slot][? "ingredients"][# INVITEM, 2]) , (global.recipes[# 0, selected_slot][? "ingredients"][# INVAMOUNT, 2]))){item_alpha3 = 1;}else{item_alpha3 = 0.5;}
+			if (item_exists_amount( (global.recipes[# 0, selected_slot][? "ingredients"][# INVITEM, 3]) , (global.recipes[# 0, selected_slot][? "ingredients"][# INVAMOUNT, 3]))){item_alpha4 = 1;}else{item_alpha4 = 0.5;}
 			//1
 			draw_sprite_part_ext(spr_inventory_items, 0, sx_1, sy_1, 24, 24, ibox_x + (ibox_width/2) - 12 - 24, ibox_y + ibox_height + 2 + 1, .75, .75, c_white, item_alpha);
 			draw_text_transformed_color(ibox_x + (ibox_width/2) - 3 - 27, ibox_y + ibox_height + 12 + 1, string(camount_1), .75, .75, 0, c_black, c_black, c_black, c_black, item_alpha);

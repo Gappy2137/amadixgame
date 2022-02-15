@@ -46,39 +46,39 @@ value2 = 0;
 ds_result_info = ds_grid_create(11, item.height);
 
 var recipe_ss = ds_grid_create(2, 1);
-recipe_ss[# ITEM, 0] = item.none;
-recipe_ss[# AMOUNT, 0] = 0;
+recipe_ss[# INVITEM, 0] = item.none;
+recipe_ss[# INVAMOUNT, 0] = 0;
 recipe_add(recipe_ss, item.none, 0, recipe_type.none);
 
 
 var recipe_one = ds_grid_create(2, 4);
-recipe_one[# ITEM, 0] = item.lemon;
-recipe_one[# AMOUNT, 0] = 1;
-recipe_one[# ITEM, 1] = item.apple;
-recipe_one[# AMOUNT, 1] = 2;
-recipe_one[# ITEM, 2] = item.strawberry;
-recipe_one[# AMOUNT, 2] = 3;
-recipe_one[# ITEM, 3] = item.orange;
-recipe_one[# AMOUNT, 3] = 4;
+recipe_one[# INVITEM, 0] = item.lemon;
+recipe_one[# INVAMOUNT, 0] = 1;
+recipe_one[# INVITEM, 1] = item.apple;
+recipe_one[# INVAMOUNT, 1] = 2;
+recipe_one[# INVITEM, 2] = item.strawberry;
+recipe_one[# INVAMOUNT, 2] = 3;
+recipe_one[# INVITEM, 3] = item.orange;
+recipe_one[# INVAMOUNT, 3] = 4;
 recipe_add(recipe_one, item.bull_energy_drink, 1, recipe_type.cooking);
 
 var recipe_two = ds_grid_create(2, 1);
-recipe_two[# ITEM, 0] = item.log;
-recipe_two[# AMOUNT, 0] = 4;
+recipe_two[# INVITEM, 0] = item.log;
+recipe_two[# INVAMOUNT, 0] = 4;
 recipe_add(recipe_two, item.stick, 4, recipe_type.resources);
 
 var recipe_three = ds_grid_create(2, 3);
-recipe_three[# ITEM, 0] = item.orange;
-recipe_three[# AMOUNT, 0] = 2;
-recipe_three[# ITEM, 1] = item.apple;
-recipe_three[# AMOUNT, 1] = 2;
-recipe_three[# ITEM, 2] = item.strawberry;
-recipe_three[# AMOUNT, 2] = 2;
+recipe_three[# INVITEM, 0] = item.orange;
+recipe_three[# INVAMOUNT, 0] = 2;
+recipe_three[# INVITEM, 1] = item.apple;
+recipe_three[# INVAMOUNT, 1] = 2;
+recipe_three[# INVITEM, 2] = item.strawberry;
+recipe_three[# INVAMOUNT, 2] = 2;
 recipe_add(recipe_three, item.mango_salsa, 1, recipe_type.cooking);
 
 var recipe_four = ds_grid_create(2, 2);
-recipe_four[# ITEM, 0] = item.stick;
-recipe_four[# AMOUNT, 0] = 2;
-recipe_four[# ITEM, 1] = item.stone;
-recipe_four[# AMOUNT, 1] = 4;
+recipe_four[# INVITEM, 0] = item.stick;
+recipe_four[# INVAMOUNT, 0] = 2;
+recipe_four[# INVITEM, 1] = item.stone;
+recipe_four[# INVAMOUNT, 1] = 4;
 recipe_add(recipe_four, item.sword, 1, recipe_type.resources);

@@ -12,32 +12,32 @@ function item_stack(iitem, amount, xx, ready){
 		repeat(slots){
 			if (!flag){
 				if (ready){
-					if (inv[# ITEM, i] == item.none){
-						inv[# ITEM, i] = iitem;
-						inv[# AMOUNT, i] = amount;
-						inv[# TYPE, i] = itemall[# TYPE, iitem];
+					if (inv[# INVITEM, i] == item.none){
+						inv[# INVITEM, i] = iitem;
+						inv[# INVAMOUNT, i] = amount;
+						inv[# INVTYPE, i] = itemall[# INVTYPE, iitem];
 						inv[# MAXSTACK, i] = itemall[# MAXSTACK, iitem];
-						inv[# HP, i] = itemall[# HP, iitem];
-						inv[# STAMINA, i] = itemall[# STAMINA, iitem];
-						inv[# LEVEL, i] = itemall[# LEVEL, iitem];
-						inv[# DAMAGE, i] = itemall[# DAMAGE, iitem];
-						inv[# DEFENCE, i] = itemall[# DEFENCE, iitem];
-						inv[# EFFECT1, i] = itemall[# EFFECT1, iitem];
-						inv[# EFFECT2, i] = itemall[# EFFECT2, iitem];
-						inv[# EFFECT3, i] = itemall[# EFFECT3, iitem];
+						inv[# INVHP, i] = itemall[# INVHP, iitem];
+						inv[# INVSTAMINA, i] = itemall[# INVSTAMINA, iitem];
+						inv[# INVLEVEL, i] = itemall[# INVLEVEL, iitem];
+						inv[# INVDAMAGE, i] = itemall[# INVDAMAGE, iitem];
+						inv[# INVDEFENCE, i] = itemall[# INVDEFENCE, iitem];
+						inv[# INVEFFECT1, i] = itemall[# INVEFFECT1, iitem];
+						inv[# INVEFFECT2, i] = itemall[# INVEFFECT2, iitem];
+						inv[# INVEFFECT3, i] = itemall[# INVEFFECT3, iitem];
 						flag = true;
 					}else{
 						i++;	
 					}
 				}else{
-					if (inv[# ITEM, i] == iitem) && !(inv[# AMOUNT, i] == itemall[# MAXSTACK, iitem]){
-						if (inv[# AMOUNT, i] + am > itemall[# MAXSTACK, iitem]){
-							am = (inv[# AMOUNT, i] + amount) - itemall[# MAXSTACK, iitem];
-							inv[# AMOUNT, i] = itemall[# MAXSTACK, iitem];
+					if (inv[# INVITEM, i] == iitem) && !(inv[# INVAMOUNT, i] == itemall[# MAXSTACK, iitem]){
+						if (inv[# INVAMOUNT, i] + am > itemall[# MAXSTACK, iitem]){
+							am = (inv[# INVAMOUNT, i] + amount) - itemall[# MAXSTACK, iitem];
+							inv[# INVAMOUNT, i] = itemall[# MAXSTACK, iitem];
 							item_stack(iitem, am, 0, false);
 							flag = true;
 						}else{
-							inv[# AMOUNT, i]+=amount;
+							inv[# INVAMOUNT, i]+=amount;
 							flag = true;
 						}
 					}else{
