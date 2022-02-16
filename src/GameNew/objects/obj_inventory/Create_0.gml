@@ -46,7 +46,6 @@ multipick_11 = -1;
 picked_slot_right = -1;
 multipick_zerobuffer = false;
 multipick_item = -1;
-changeitem = false;
 
 mouse_slotx = 0;
 mouse_sloty = 0;
@@ -131,11 +130,9 @@ text_alpha = 1;
 //6 = POZIOM PRZEDMIOTU (BRON I UBRANIA)
 //7 = OBRAZENIA (BRON)
 //8 = OBRONA (UBRANIA)
-//9 = EFEKT 1 (JEDZENIE, PICIE, BRON, UBRANIA I AKCESORIA)
-//10 = EFEKT 2 (JEDZENIE, PICIE, BRON, UBRANIA I AKCESORIA)
-//11 = EFEKT 3 (JEDZENIE, PICIE, BRON, UBRANIA I AKCESORIA)
+//9 = EFEKTY (JEDZENIE, PICIE, BRON, UBRANIA I AKCESORIA)
 
-ds_inventory = ds_grid_create(11, inv_slots);
+ds_inventory = ds_grid_create(10, inv_slots);
 
 #region Przedmioty
 enum item{
@@ -177,9 +174,7 @@ enum itemtype{
 
 ds_item_info = ds_grid_create(3, item.height);
 
-ds_item_all = ds_grid_create(11, item.height);
-
-ds_armor = ds_grid_create(11, 4);
+ds_item_all = ds_grid_create(10, item.height);
 
 //Siatka wszystkich przedmiotow
 var i = 0;

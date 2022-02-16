@@ -9,19 +9,19 @@ function item_attrib_grid(){
 	grid[# INVLEVEL, item.none] = 0;
 	grid[# INVDAMAGE, item.none] = 0;
 	grid[# INVDEFENCE, item.none] = 0;
-	grid[# INVEFFECT1, item.none] = 0;
-	grid[# INVEFFECT2, item.none] = 0;
-	grid[# INVEFFECT3, item.none] = 0;
+	grid[# INVEFFECTS, item.none] = 0;
 
 	//Jablko
 	grid[# INVTYPE, item.apple] = itemtype.fruit;
 	grid[# INVHP, item.apple] = 5;
 	grid[# INVSTAMINA, item.apple] = 5;
+	grid[# INVEFFECTS, item.apple] = 0;
 	
 	//Wiadro
 	grid[# INVTYPE, item.bucket] = itemtype.tool;
 	grid[# INVDAMAGE, item.bucket] = 0;
 	grid[# INVSTAMINA, item.bucket] = 0;
+	
 	
 	//Kamien
 	grid[# INVTYPE, item.stone] = itemtype.resource;
@@ -36,6 +36,11 @@ function item_attrib_grid(){
 	grid[# INVTYPE, item.bull_energy_drink] = itemtype.drink;
 	grid[# INVHP, item.bull_energy_drink] = 5;
 	grid[# INVSTAMINA, item.bull_energy_drink] = 25;
+	var effect_1 = ds_grid_create(3, 1);
+	effect_1[# EF_EFFECT, 0] = effect.speed_ef;
+	effect_1[# EF_DURATION, 0] = 10;
+	effect_1[# EF_AMPLIFIER, 0] = 1;
+	grid[# INVEFFECTS, item.bull_energy_drink] = effect_1;
 	
 	//Mangosalsa
 	grid[# INVTYPE, item.mango_salsa] = itemtype.dish;
@@ -62,11 +67,13 @@ function item_attrib_grid(){
 	grid[# INVTYPE, item.lemon] = itemtype.fruit;
 	grid[# INVHP, item.lemon] = 5;
 	grid[# INVSTAMINA, item.lemon] = 10;
+	grid[# INVEFFECTS, item.lemon] = 0;
 	
 	//Pomarancza
 	grid[# INVTYPE, item.orange] = itemtype.fruit;
 	grid[# INVHP, item.orange] = 10;
 	grid[# INVSTAMINA, item.orange] = 5;
+	grid[# INVEFFECTS, item.orange] = 0;
 	
 	//Kurtka amadixa
 	grid[# INVTYPE, item.classic_jacket] = itemtype.clothing;

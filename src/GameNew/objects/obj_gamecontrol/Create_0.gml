@@ -10,9 +10,7 @@
 #macro INVLEVEL 6
 #macro INVDAMAGE 7
 #macro INVDEFENCE 8
-#macro INVEFFECT1 9
-#macro INVEFFECT2 10
-#macro INVEFFECT3 11
+#macro INVEFFECTS 9
 //
 //EFEKTY
 #macro EF_EFFECT 0

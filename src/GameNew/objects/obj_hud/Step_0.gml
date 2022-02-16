@@ -55,13 +55,13 @@ repeat(maxeffects){
 	i++;
 }
 if (keyboard_check_pressed(ord("I"))){
-	effect_add(effect.speed_ef, 2, 1, 0);	
+	effect_add(effect.speed_ef, 2, 1);	
 }
 if (keyboard_check_pressed(ord("O"))){
-	effect_add(effect.speed_ef, 6, 2, 0);	
+	effect_add(effect.speed_ef, 6, 2);	
 }
 if (keyboard_check_pressed(ord("P"))){
-	effect_add(effect.speed_ef, 15, 3, 0);	
+	effect_add(effect.speed_ef, 15, 3);	
 }
 
 if (show_hud == hud.inv){

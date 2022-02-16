@@ -1,6 +1,7 @@
-function effect_add(effectID, duration, amplifier, time){
+function effect_add(effectID, duration, amplifier){
 	var yy = 0;
 	var temp = false;
+	var time = 0;
 	if (!temp){
 		repeat(obj_hud.maxeffects){
 			if (obj_hud.effect_grid[# EF_EFFECT, yy] == effect.none){

@@ -6,9 +6,7 @@ function item_action(){
 	var level =			obj_inventory.ds_inventory[# INVLEVEL, obj_inventory.mouse_slotx_second];
 	var damage =		obj_inventory.ds_inventory[# INVDAMAGE, obj_inventory.mouse_slotx_second];
 	var defence =		obj_inventory.ds_inventory[# INVDEFENCE, obj_inventory.mouse_slotx_second];
-	var effect1 =		obj_inventory.ds_inventory[# INVEFFECT1, obj_inventory.mouse_slotx_second];
-	var effect2 =		obj_inventory.ds_inventory[# INVEFFECT2, obj_inventory.mouse_slotx_second];
-	var effect3 =		obj_inventory.ds_inventory[# INVEFFECT3, obj_inventory.mouse_slotx_second];
+	var effects =		obj_inventory.ds_inventory[# INVEFFECTS, obj_inventory.mouse_slotx_second];
 	//Prawy przycisk wscisniety
 	if (mouse_check_button_pressed(mb_right)){
 		if instance_exists(obj_amadix){

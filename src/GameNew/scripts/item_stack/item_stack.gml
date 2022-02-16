@@ -22,9 +22,7 @@ function item_stack(iitem, amount, xx, ready){
 						inv[# INVLEVEL, i] = itemall[# INVLEVEL, iitem];
 						inv[# INVDAMAGE, i] = itemall[# INVDAMAGE, iitem];
 						inv[# INVDEFENCE, i] = itemall[# INVDEFENCE, iitem];
-						inv[# INVEFFECT1, i] = itemall[# INVEFFECT1, iitem];
-						inv[# INVEFFECT2, i] = itemall[# INVEFFECT2, iitem];
-						inv[# INVEFFECT3, i] = itemall[# INVEFFECT3, iitem];
+						inv[# INVEFFECTS, i] = itemall[# INVEFFECTS, iitem];
 						flag = true;
 					}else{
 						i++;	

@@ -8,4 +8,5 @@ function slot_remove(slot){
 	obj_inventory.ds_inventory[# 6, slot] = 0;
 	obj_inventory.ds_inventory[# 7, slot] = 0;
 	obj_inventory.ds_inventory[# 8, slot] = 0;
+	obj_inventory.ds_inventory[# 9, slot] = 0;
 }

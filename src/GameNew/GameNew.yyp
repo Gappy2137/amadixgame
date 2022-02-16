@@ -674,7 +674,6 @@
   ],
   "IncludedFiles": [
     {"CopyToMask":-1,"filePath":"datafiles/sound/speech","resourceVersion":"1.0","name":"speech_default.wav","resourceType":"GMIncludedFile",},
-    {"CopyToMask":-1,"filePath":"datafiles/font","resourceVersion":"1.0","name":"font_dialogue.yy","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/sound/speech","resourceVersion":"1.0","name":"speech_retro.wav","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/language","resourceVersion":"1.0","name":"itemDesc_en.csv","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/language","resourceVersion":"1.0","name":"itemName_en.csv","resourceType":"GMIncludedFile",},

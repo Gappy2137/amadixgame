@@ -15,8 +15,6 @@ function item_add(slot, iitem, amount){
 		obj_inventory.ds_inventory[# INVLEVEL, itemslot] = obj_inventory.ds_item_all[# INVLEVEL, iitem];
 		obj_inventory.ds_inventory[# INVDAMAGE, itemslot] = obj_inventory.ds_item_all[# INVDAMAGE, iitem];
 		obj_inventory.ds_inventory[# INVDEFENCE, itemslot] = obj_inventory.ds_item_all[# INVDEFENCE, iitem];
-		obj_inventory.ds_inventory[# INVEFFECT1, itemslot] = obj_inventory.ds_item_all[# INVEFFECT1, iitem];
-		obj_inventory.ds_inventory[# INVEFFECT2, itemslot] = obj_inventory.ds_item_all[# INVEFFECT2, iitem];
-		obj_inventory.ds_inventory[# INVEFFECT3, itemslot] = obj_inventory.ds_item_all[# INVEFFECT3, iitem];
+		obj_inventory.ds_inventory[# INVEFFECTS, itemslot] = obj_inventory.ds_item_all[# INVEFFECTS, iitem];
 	}
 }
