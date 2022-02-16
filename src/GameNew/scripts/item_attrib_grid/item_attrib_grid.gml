@@ -15,7 +15,6 @@ function item_attrib_grid(){
 	grid[# INVTYPE, item.apple] = itemtype.fruit;
 	grid[# INVHP, item.apple] = 5;
 	grid[# INVSTAMINA, item.apple] = 5;
-	grid[# INVEFFECTS, item.apple] = 0;
 	
 	//Wiadro
 	grid[# INVTYPE, item.bucket] = itemtype.tool;
@@ -67,13 +66,11 @@ function item_attrib_grid(){
 	grid[# INVTYPE, item.lemon] = itemtype.fruit;
 	grid[# INVHP, item.lemon] = 5;
 	grid[# INVSTAMINA, item.lemon] = 10;
-	grid[# INVEFFECTS, item.lemon] = 0;
 	
 	//Pomarancza
 	grid[# INVTYPE, item.orange] = itemtype.fruit;
 	grid[# INVHP, item.orange] = 10;
 	grid[# INVSTAMINA, item.orange] = 5;
-	grid[# INVEFFECTS, item.orange] = 0;
 	
 	//Kurtka amadixa
 	grid[# INVTYPE, item.classic_jacket] = itemtype.clothing;
