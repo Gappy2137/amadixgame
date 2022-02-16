@@ -36,7 +36,7 @@ if (show_inventory) && (!show_slots){
 				yy = slots_y + ((cell_size+y_offset) * iy * scale);
 		
 				//Przedmiot
-				iitem = inv_grid[# 0, ii];
+				iitem = inv_grid[# INVITEM, ii];
 				sx = (iitem mod spr_inv_items_columns) * cell_size;
 				sy = (iitem div spr_inv_items_columns) * cell_size;
 		
@@ -103,35 +103,38 @@ if (show_inventory) && (!show_slots){
 				//Rysuj liczbe przedmiotow
 				if (iitem > 0){
 					var amount = inv_grid[# 1, ii];
-					if (amount < 0) || (amount > 1){
+					if (amount != 0){
 							switch(ii){
 								case selected_slot:
 									if (selected_slot == picked_slot) && (multipick == 0){
 										break;	
 									}
-									draw_set_font(global.font_itemnum);
-									draw_set_halign(fa_right);
-									draw_text_transformed_color(xx + 22, yy + 16, string(amount), .5, .5, 0, wh, wh, wh, wh, 1);
-									draw_set_halign(fa_left);
-									draw_set_font(font_item);
-								break;
-								case picked_slot:
-									if (multipick > 0){
-										draw_set_font(global.font_itemnum);
-										draw_set_halign(fa_right);
-										draw_text_transformed_color(xx + 22, yy + 16, string(amount), .5, .5, 0, wh, wh, wh, wh, 1);
-										draw_set_halign(fa_left);
-										draw_set_font(font_item);
+									if (inv_grid[# INVTYPE, ii] == itemtype.drink){
+										draw_rectangle_color(xx + 4, yy + 20, xx + 20, yy + 22, bl, bl, bl, bl, false);
+										draw_rectangle_color(xx + 4.5, yy + 20.5, xx + 3 + (amount*3.28) , yy + 21.5, wh, wh, wh, wh, false);
 									}else{
-										break;
+										if (amount > 1){
+											draw_set_font(global.font_itemnum);
+											draw_set_halign(fa_right);
+											draw_text_transformed_color(xx + 22, yy + 16, string(amount), .5, .5, 0, wh, wh, wh, wh, 1);
+											draw_set_halign(fa_left);
+											draw_set_font(font_item);
+										}
 									}
 								break;
 								default:
-									draw_set_font(global.font_itemnum);
-									draw_set_halign(fa_right);
-									draw_text_transformed_color(xx + 22, yy + 16, string(amount), .5, .5, 0, wh, wh, wh, wh, 1);
-									draw_set_halign(fa_left);
-									draw_set_font(font_item);
+									if (inv_grid[# INVTYPE, ii] == itemtype.drink){
+										draw_rectangle_color(xx + 4, yy + 20, xx + 20, yy + 22, bl, bl, bl, bl, false);
+										draw_rectangle_color(xx + 4.5, yy + 20.5, xx + 3 + (amount*3.28) , yy + 21.5, wh, wh, wh, wh, false);
+									}else{
+										if (amount > 1){
+											draw_set_font(global.font_itemnum);
+											draw_set_halign(fa_right);
+											draw_text_transformed_color(xx + 22, yy + 16, string(amount), .5, .5, 0, wh, wh, wh, wh, 1);
+											draw_set_halign(fa_left);
+											draw_set_font(font_item);
+										}
+									}
 								break;
 							}
 
@@ -532,21 +535,6 @@ if (show_inventory) && (!show_slots){
 	#endregion
 
 	#region Rysowanie przedmiotow przenoszonych
-	if (picked_slot != -1) && (multipick == 0){
-			//Przedmiot
-			iitem = inhand;
-			sx = (iitem mod spr_inv_items_columns) * cell_size;
-			sy = (iitem div spr_inv_items_columns) * cell_size;
-			scr_draw_item(sx, sy, mousex, mousey, 1);
-		
-			var inum = inv_grid[# 1, picked_slot];
-			if (inum < 0) || (inum > 1){
-				draw_set_font(global.font_itemnum);
-				draw_text_transformed_color(mousex + 16, mousey + 16, string(inum), .5, .5, 0, wh, wh, wh, wh, 1);
-				draw_set_font(font_item);
-			}
-		
-	}
 	if (multipick != 0){
 	
 			//Przedmiot
@@ -554,13 +542,20 @@ if (show_inventory) && (!show_slots){
 			sx = (iitem mod spr_inv_items_columns) * cell_size;
 			sy = (iitem div spr_inv_items_columns) * cell_size;
 			scr_draw_item(sx, sy, mousex, mousey, 1);
-		
 			var inuma = multipick;
-			if (inuma < 0) || (inuma > 1){
-				draw_set_font(global.font_itemnum);
-				draw_text_transformed_color(mousex + 16, mousey + 16, string(inuma), .5, .5, 0, wh, wh, wh, wh, 1);
-				draw_set_font(font_item);
+			
+			
+			if (ds_item_all[# INVTYPE, iitem] == itemtype.drink){
+				draw_rectangle_color(mousex + 4, mousey + 20, mousex + 20, mousey + 22, bl, bl, bl, bl, false);
+				draw_rectangle_color(mousex + 4.5, mousey + 20.5, mousex + 3 + (inuma*3.28) , mousey + 21.5, wh, wh, wh, wh, false);
+			}else{
+				if (inuma > 1){
+					draw_set_font(global.font_itemnum);
+					draw_text_transformed_color(mousex + 16, mousey + 16, string(inuma), .5, .5, 0, wh, wh, wh, wh, 1);
+					draw_set_font(font_item);
+				}
 			}
+
 		
 	}
 	#endregion
@@ -699,38 +694,40 @@ else if (!show_inventory) && (show_slots){
 				//Rysuj liczbe przedmiotow
 					if (iitem > 0){
 						var amount = inv_grid[# 1, ii];
-						if (amount < 0) || (amount > 1){
-								switch(ii){
-									case selected_slot:
-										if (selected_slot == picked_slot) && (multipick == 0){
-											break;	
-										}
-										draw_set_font(global.font_itemnum);
-										draw_set_halign(fa_right);
-										draw_text_transformed_color(xx + 22, yy + 16, string(amount), .5, .5, 0, wh, wh, wh, wh, 1);
-										draw_set_halign(fa_left);
-										draw_set_font(font_item);
-
-									break;
-									case picked_slot:
-										if (multipick > 0){
+						if (amount != 0){
+							switch(ii){
+								case selected_slot:
+									if (selected_slot == picked_slot) && (multipick == 0){
+										break;	
+									}
+									if (inv_grid[# INVTYPE, ii] == itemtype.drink){
+										draw_rectangle_color(xx + 4, yy + 20, xx + 20, yy + 22, bl, bl, bl, bl, false);
+										draw_rectangle_color(xx + 4.5, yy + 20.5, xx + 3 + (amount*3.28) , yy + 21.5, wh, wh, wh, wh, false);
+									}else{
+										if (amount > 1){
 											draw_set_font(global.font_itemnum);
 											draw_set_halign(fa_right);
 											draw_text_transformed_color(xx + 22, yy + 16, string(amount), .5, .5, 0, wh, wh, wh, wh, 1);
 											draw_set_halign(fa_left);
 											draw_set_font(font_item);
-										}else{
-											break;
 										}
-									break;
-									default:
-										draw_set_font(global.font_itemnum);
-										draw_set_halign(fa_right);
-										draw_text_transformed_color(xx + 22, yy + 16, string(amount), .5, .5, 0, wh, wh, wh, wh, 1);
-										draw_set_halign(fa_left);
-										draw_set_font(font_item);
-									break;
-								}
+									}
+								break;
+								default:
+									if (inv_grid[# INVTYPE, ii] == itemtype.drink){
+										draw_rectangle_color(xx + 4, yy + 20, xx + 20, yy + 22, bl, bl, bl, bl, false);
+										draw_rectangle_color(xx + 4.5, yy + 20.5, xx + 3 + (amount*3.28) , yy + 21.5, wh, wh, wh, wh, false);
+									}else{
+										if (amount > 1){
+											draw_set_font(global.font_itemnum);
+											draw_set_halign(fa_right);
+											draw_text_transformed_color(xx + 22, yy + 16, string(amount), .5, .5, 0, wh, wh, wh, wh, 1);
+											draw_set_halign(fa_left);
+											draw_set_font(font_item);
+										}
+									}
+								break;
+							}
 						}
 
 					}

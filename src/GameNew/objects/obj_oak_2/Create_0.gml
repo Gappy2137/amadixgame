@@ -2,21 +2,21 @@ event_inherited();
 
 image_speed = 0;
 
-yorigin = 162;
+yorigin = 88;
 
-itemDrop = -1;
+itemDrop = item.apple;
 
-itemNum = -1;
+itemNum = 3;
 
-itemNumMax = -1;
+itemNumMax = 3;
 
-itemRegTime = -1;
+itemRegTime = 1000;
 timer = itemRegTime;
 
-itemOverlay = -1;
+itemOverlay = spr_oak_overlay;
 
 shadowOriginX = 0;
-shadowOriginY = -5;
+shadowOriginY = 0;
 shadowStyle = spr_shadow_big;
 shadowAlpha = 0.6;
 

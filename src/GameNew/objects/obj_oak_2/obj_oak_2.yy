@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_pine",
-    "path": "sprites/spr_pine/spr_pine.yy",
+    "name": "spr_oak",
+    "path": "sprites/spr_oak/spr_oak.yy",
   },
   "solid": false,
   "visible": true,
@@ -33,7 +33,7 @@
     "path": "folders/Objects/World Objects/Trees.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_pine",
+  "name": "obj_oak_2",
   "tags": [],
   "resourceType": "GMObject",
 }

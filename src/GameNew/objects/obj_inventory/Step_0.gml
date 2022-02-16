@@ -102,6 +102,7 @@ if (show_inventory) && (!show_slots){
 		inv_grid[# INVDAMAGE, selected_slot] = ds_item_all[# INVDAMAGE, inhand];
 		inv_grid[# INVDEFENCE, selected_slot] = ds_item_all[# INVDEFENCE, inhand];
 		inv_grid[# INVEFFECTS, selected_slot] = ds_item_all[# INVEFFECTS, inhand];
+		inv_grid[# INVTEMPERATURE, selected_slot] = ds_item_all[# INVTEMPERATURE, inhand];
 				
 		inhand = -1;
 		multipick = 0;
@@ -122,6 +123,7 @@ if (show_inventory) && (!show_slots){
 		inv_grid[# INVDAMAGE, selected_slot] = ds_item_all[# INVDAMAGE, inhand];
 		inv_grid[# INVDEFENCE, selected_slot] = ds_item_all[# INVDEFENCE, inhand];
 		inv_grid[# INVEFFECTS, selected_slot] = ds_item_all[# INVEFFECTS, inhand];
+		inv_grid[# INVTEMPERATURE, selected_slot] = ds_item_all[# INVTEMPERATURE, inhand];
 				
 		inhand = temp0;
 		multipick = temp1;	
@@ -149,6 +151,7 @@ if (show_inventory) && (!show_slots){
 					inv_grid[# INVDAMAGE, clothslot] = inv_grid[# INVDAMAGE, selected_slot];
 					inv_grid[# INVDEFENCE, clothslot] = inv_grid[# INVDEFENCE, selected_slot];
 					inv_grid[# INVEFFECTS, clothslot] = inv_grid[# INVEFFECTS, selected_slot];
+					inv_grid[# INVTEMPERATURE, clothslot] = inv_grid[# INVTEMPERATURE, selected_slot];
 					
 					slot_remove(selected_slot);
 				}
@@ -166,6 +169,7 @@ if (show_inventory) && (!show_slots){
 					inv_grid[# INVDAMAGE, clothslot] = inv_grid[# INVDAMAGE, selected_slot];
 					inv_grid[# INVDEFENCE, clothslot] = inv_grid[# INVDEFENCE, selected_slot];
 					inv_grid[# INVEFFECTS, clothslot] = inv_grid[# INVEFFECTS, selected_slot];
+					inv_grid[# INVTEMPERATURE, clothslot] = inv_grid[# INVTEMPERATURE, selected_slot];
 					
 					slot_remove(selected_slot);
 				}
@@ -183,6 +187,7 @@ if (show_inventory) && (!show_slots){
 					inv_grid[# INVDAMAGE, clothslot] = inv_grid[# INVDAMAGE, selected_slot];
 					inv_grid[# INVDEFENCE, clothslot] = inv_grid[# INVDEFENCE, selected_slot];
 					inv_grid[# INVEFFECTS, clothslot] = inv_grid[# INVEFFECTS, selected_slot];
+					inv_grid[# INVTEMPERATURE, clothslot] = inv_grid[# INVTEMPERATURE, selected_slot];
 					
 					slot_remove(selected_slot);
 				}
@@ -200,6 +205,7 @@ if (show_inventory) && (!show_slots){
 					inv_grid[# INVDAMAGE, clothslot] = inv_grid[# INVDAMAGE, selected_slot];
 					inv_grid[# INVDEFENCE, clothslot] = inv_grid[# INVDEFENCE, selected_slot];
 					inv_grid[# INVEFFECTS, clothslot] = inv_grid[# INVEFFECTS, selected_slot];
+					inv_grid[# INVTEMPERATURE, clothslot] = inv_grid[# INVTEMPERATURE, selected_slot];
 					
 					slot_remove(selected_slot);
 				}
@@ -258,6 +264,7 @@ if (show_inventory) && (!show_slots){
 					inv_grid[# INVDAMAGE, selected_slot] = ds_item_all[# INVDAMAGE, inhand];
 					inv_grid[# INVDEFENCE, selected_slot] = ds_item_all[# INVDEFENCE, inhand];
 					inv_grid[# INVEFFECTS, selected_slot] = ds_item_all[# INVEFFECTS, inhand];
+					inv_grid[# INVTEMPERATURE, selected_slot] = ds_item_all[# INVTEMPERATURE, inhand];
 					multipick = am + am2 - inv_grid[# MAXSTACK, selected_slot];
 				}else{
 					//Jezeli ilosc przedmiotu jest mniejsza kladziemy normalnie
@@ -270,6 +277,7 @@ if (show_inventory) && (!show_slots){
 					inv_grid[# INVDAMAGE, selected_slot] = ds_item_all[# INVDAMAGE, inhand];
 					inv_grid[# INVDEFENCE, selected_slot] = ds_item_all[# INVDEFENCE, inhand];
 					inv_grid[# INVEFFECTS, selected_slot] = ds_item_all[# INVEFFECTS, inhand];
+					inv_grid[# INVTEMPERATURE, selected_slot] = ds_item_all[# INVTEMPERATURE, inhand];
 					multipick = 0;
 				}
 			}else

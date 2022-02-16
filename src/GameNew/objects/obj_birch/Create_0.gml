@@ -2,7 +2,7 @@ event_inherited();
 
 image_speed = 0;
 
-yorigin = 162;
+yorigin = 176;
 
 itemDrop = -1;
 
@@ -16,7 +16,7 @@ timer = itemRegTime;
 itemOverlay = -1;
 
 shadowOriginX = 0;
-shadowOriginY = -5;
+shadowOriginY = 0;
 shadowStyle = spr_shadow_big;
 shadowAlpha = 0.6;
 

@@ -11,6 +11,7 @@
 #macro INVDAMAGE 7
 #macro INVDEFENCE 8
 #macro INVEFFECTS 9
+#macro INVTEMPERATURE 10
 //
 //EFEKTY
 #macro EF_EFFECT 0

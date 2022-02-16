@@ -90,7 +90,7 @@ switch (actionstate){
 								x = obj_amadix.x + curveX;
 								y = obj_amadix.y + curveY;
 								rot = curveRot;
-								yorigin = other.yorigin + curveYorigin;
+								yorigin = obj_amadix.yorigin + curveYorigin;
 								
 								if (other.anim_frame_action >= other.anim_frame_action_num){
 									if (other.oneStepEvent[1] == true){

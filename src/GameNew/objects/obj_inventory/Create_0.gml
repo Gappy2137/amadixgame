@@ -131,8 +131,9 @@ text_alpha = 1;
 //7 = OBRAZENIA (BRON)
 //8 = OBRONA (UBRANIA)
 //9 = EFEKTY (JEDZENIE, PICIE, BRON, UBRANIA I AKCESORIA)
+//10 = TEMPERATURA (JEDZIENIE, PICIE, UBRANIA I AKCESORIA)
 
-ds_inventory = ds_grid_create(10, inv_slots);
+ds_inventory = ds_grid_create(11, inv_slots);
 
 #region Przedmioty
 enum item{
@@ -174,7 +175,7 @@ enum itemtype{
 
 ds_item_info = ds_grid_create(3, item.height);
 
-ds_item_all = ds_grid_create(10, item.height);
+ds_item_all = ds_grid_create(11, item.height);
 
 //Siatka wszystkich przedmiotow
 var i = 0;

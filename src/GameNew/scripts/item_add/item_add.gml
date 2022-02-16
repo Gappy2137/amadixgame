@@ -16,5 +16,6 @@ function item_add(slot, iitem, amount){
 		obj_inventory.ds_inventory[# INVDAMAGE, itemslot] = obj_inventory.ds_item_all[# INVDAMAGE, iitem];
 		obj_inventory.ds_inventory[# INVDEFENCE, itemslot] = obj_inventory.ds_item_all[# INVDEFENCE, iitem];
 		obj_inventory.ds_inventory[# INVEFFECTS, itemslot] = obj_inventory.ds_item_all[# INVEFFECTS, iitem];
+		obj_inventory.ds_inventory[# INVTEMPERATURE, itemslot] = obj_inventory.ds_item_all[# INVTEMPERATURE, iitem];
 	}
 }
