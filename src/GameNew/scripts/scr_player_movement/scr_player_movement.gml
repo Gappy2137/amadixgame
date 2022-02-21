@@ -8,18 +8,24 @@ function scr_player_movement() {
 	//------------------------------------------------------
 
 
+	if (key_run) && (moving){
+		running = true;	
+	}else{
+		running = false;	
+	}
+	
 	//Ustawia predkosc
+
+	var _spd = speedEffect + speedChange;
 
 	switch (state) {
 		case player_state.moving:
-					if (key_run){
-						spd = runspeed + speedEffect + speedChange;
+					if (running){
+						spd = runspeed + _spd;
 						anim_speed = 0.3;
-						running = true;
 					}else{
-						spd = walkspeed + speedEffect + speedChange;
+						spd = walkspeed + _spd;
 						anim_speed = 0.09;
-						running = false;
 					}
 	
 					//Na lodzie
@@ -27,14 +33,12 @@ function scr_player_movement() {
 					if (ice_collision){
 						accel = 0.04;
 						deccel = 0.04;
-							if (key_run){
-								spd = runspeed + speedEffect + speedChange;
+							if (running){
+								spd = runspeed + _spd;
 								anim_speed = 0.18;
-								running = true;
 							}else{
-								spd = walkspeed + speedEffect + speedChange;
+								spd = walkspeed + _spd;
 								anim_speed = 0.15;
-								running = false;
 							}
 					}else{
 						accel = 0.6;
@@ -42,14 +46,12 @@ function scr_player_movement() {
 					}
 		break;
 		case player_state.idle:
-					if (key_run){
-						spd = runspeed + speedEffect + speedChange;
+					if (running){
+						spd = runspeed + _spd;
 						anim_speed = 0.16;
-						running = true;
 					}else{
-						spd = walkspeed + speedEffect + speedChange;
+						spd = walkspeed + _spd;
 						anim_speed = 0.12;
-						running = false;
 					}
 	
 					//Na lodzie
@@ -57,14 +59,12 @@ function scr_player_movement() {
 					if (ice_collision){
 						accel = 0.04;
 						deccel = 0.04;
-							if (key_run){
-								spd = runspeed + speedEffect + speedChange;
+							if (running){
+								spd = runspeed + _spd;
 								anim_speed = 0.18;
-								running = true;
 							}else{
-								spd = walkspeed + speedEffect + speedChange;
+								spd = walkspeed + _spd;
 								anim_speed = 0.15;
-								running = false;
 							}
 					}else{
 						accel = 0.6;
@@ -72,50 +72,42 @@ function scr_player_movement() {
 					}
 		break;
 		case player_state.wading_idle:
-					if (key_run){
-						spd = runspeed + speedEffect + speedChange;
+					if (running){
+						spd = runspeed + _spd;
 						anim_speed = 0.16;
-						running = true;
 					}else{
-						spd = walkspeed + speedEffect + speedChange;
+						spd = walkspeed + _spd;
 						anim_speed = 0.12;
-						running = false;
 					}
 		break;
 		case player_state.swimming_idle:
-					if (key_run){
-						spd = runspeed + speedEffect + speedChange;
+					if (running){
+						spd = runspeed + _spd;
 						anim_speed = 0.16;
-						running = true;
 					}else{
-						spd = walkspeed + speedEffect + speedChange;
+						spd = walkspeed + _spd;
 						anim_speed = 0.12;
-						running = false;
 					}
 		break;
 		case player_state.wading:
-					if (key_run){
-						spd = runspeed - 0.35 + speedEffect + speedChange;
+					if (running){
+						spd = runspeed - 0.35 + _spd;
 						anim_speed = 0.1;
-						running = true;
 					}else{
-						spd = walkspeed - 0.3 + speedEffect + speedChange;
+						spd = walkspeed - 0.3 + _spd;
 						anim_speed = 0.08;
-						running = false;
 					}
 	
 					accel = 0.2;
 					deccel = 0.6;
 		break;
 		case player_state.swimming:
-					if (key_run){
-						spd = runspeed - 0.55 + speedEffect + speedChange;
+					if (running){
+						spd = runspeed - 0.55 + _spd;
 						anim_speed = 0.08;
-						running = true;
 					}else{
-						spd = walkspeed - 0.5 + speedEffect + speedChange;
+						spd = walkspeed - 0.5 + _spd;
 						anim_speed = 0.05;
-						running = false;
 					}
 	
 					accel = 0.15;
@@ -246,7 +238,7 @@ function scr_player_movement() {
 
 
 	if ((slope_collision != noone) && (slope_collision.cancollide == true)){
-		scr_player_movement_slope(true);
+		scr_player_movement_slope();
 	}
 
 	if (hsp != 0){
@@ -340,11 +332,6 @@ function scr_player_movement() {
 
 	//Ustawia zmienna moving
 	if ((round_ext(hsp, 0.1) != 0) || (round_ext(vsp, 0.1) != 0)){moving = true;}else{moving = false;}
-
-	//Naprawia animacje biegania
-	if (running) && (!moving){
-		running = false;
-	}
 
 	//Animacja gracza
 	scr_playerMovingAnim();

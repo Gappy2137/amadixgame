@@ -156,8 +156,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "tileset",
-    "path": "folders/Tile Sets/tileset.yy",
+    "name": "tileset_spr",
+    "path": "folders/Tile Sets/tileset_spr.yy",
   },
   "resourceVersion": "1.0",
   "name": "tileset_test33",

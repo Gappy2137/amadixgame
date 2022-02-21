@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_oak",
-    "path": "sprites/spr_oak/spr_oak.yy",
+    "name": "spr_oak_2",
+    "path": "sprites/spr_oak_2/spr_oak_2.yy",
   },
   "solid": false,
   "visible": true,

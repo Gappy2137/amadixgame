@@ -26,8 +26,8 @@
   "frames": [
     {"compositeImage":{"FrameId":{"name":"8c2bde56-44d5-42b0-aa0b-dffba762f7ca","path":"sprites/autotile_water/autotile_water.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"8c2bde56-44d5-42b0-aa0b-dffba762f7ca","path":"sprites/autotile_water/autotile_water.yy",},"LayerId":{"name":"74c12640-29fb-4a81-a6b3-a534e0b21256","path":"sprites/autotile_water/autotile_water.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"8c2bde56-44d5-42b0-aa0b-dffba762f7ca","path":"sprites/autotile_water/autotile_water.yy",},"LayerId":{"name":"d39aa336-0b61-4886-85b4-6d80be6fda85","path":"sprites/autotile_water/autotile_water.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"8c2bde56-44d5-42b0-aa0b-dffba762f7ca","path":"sprites/autotile_water/autotile_water.yy",},"LayerId":{"name":"051391df-59aa-4065-aa03-cad4e2faeab4","path":"sprites/autotile_water/autotile_water.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"8c2bde56-44d5-42b0-aa0b-dffba762f7ca","path":"sprites/autotile_water/autotile_water.yy",},"LayerId":{"name":"d39aa336-0b61-4886-85b4-6d80be6fda85","path":"sprites/autotile_water/autotile_water.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"autotile_water","path":"sprites/autotile_water/autotile_water.yy",},"resourceVersion":"1.0","name":"8c2bde56-44d5-42b0-aa0b-dffba762f7ca","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
@@ -73,8 +73,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "tileset",
-    "path": "folders/Tile Sets/tileset.yy",
+    "name": "tileset_spr",
+    "path": "folders/Tile Sets/tileset_spr.yy",
   },
   "resourceVersion": "1.0",
   "name": "autotile_water",

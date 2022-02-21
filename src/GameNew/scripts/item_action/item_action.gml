@@ -11,60 +11,64 @@ function item_action(){
 	if (mouse_check_button_pressed(mb_right)){
 		if instance_exists(obj_amadix){
 			if (type == itemtype.food) || (type == itemtype.fruit) || (type == itemtype.vegetable) || (type == itemtype.dish){
-				if (amount > 0){
-					if (obj_amadix.actionstate != player_state_action.eating){
-						var iitem = obj_inventory.ds_inventory[# 0, obj_inventory.mouse_slotx_second];
-						with (obj_amadix){
-							oneStepEvent[0] = true;
-							itemeaten = iitem;
-							actionstate = player_state_action.eating;
-							anim_frame_action = 0;
-							anim_speed_action = 0.12;
-							anim_frame = 0;
-							canmove = false;
-							moving = false;
-							running = false;
-							hsp = 0;
-							vsp = 0;
-							facing = dirc.down;
-							scr_setPlayerFacingAnim(index_facing.down);
-							alarm[0] = 55;
+				if (!obj_amadix.stuffed){
+					if (amount > 0){
+						if (obj_amadix.actionstate != player_state_action.eating){
+							var iitem = obj_inventory.ds_inventory[# 0, obj_inventory.mouse_slotx_second];
+							with (obj_amadix){
+								oneStepEvent[0] = true;
+								itemeaten = iitem;
+								actionstate = player_state_action.eating;
+								anim_frame_action = 0;
+								anim_speed_action = 0.12;
+								anim_frame = 0;
+								canmove = false;
+								moving = false;
+								running = false;
+								hsp = 0;
+								vsp = 0;
+								facing = dirc.down;
+								scr_setPlayerFacingAnim(index_facing.down);
+								alarm[0] = 55;
+							}
+							if (hp > 0){global.hp += hp;}
+							if (stamina > 0){global.stamina += stamina;}
+							obj_inventory.ds_inventory[# INVAMOUNT, obj_inventory.mouse_slotx_second] -= 1;
 						}
-						if (hp > 0){global.hp += hp;}
-						if (stamina > 0){global.stamina += stamina;}
-						obj_inventory.ds_inventory[# INVAMOUNT, obj_inventory.mouse_slotx_second] -= 1;
+					}else{
+						slot_remove(obj_inventory.mouse_slotx_second);
+						obj_inventory.text_alpha = 0;
 					}
-				}else{
-					slot_remove(obj_inventory.mouse_slotx_second);
-					obj_inventory.text_alpha = 0;
 				}
 			}else
 			if (type == itemtype.drink){
-				if (amount > 0){
-					if (obj_amadix.actionstate != player_state_action.drinking){
-						var iitem = obj_inventory.ds_inventory[# 0, obj_inventory.mouse_slotx_second];
-						with (obj_amadix){
-							itemeaten = iitem;
-							actionstate = player_state_action.drinking;
-							anim_frame_action = 0;
-							anim_speed_action = 0.16;
-							anim_frame = 0;
-							canmove = false;
-							moving = false;
-							running = false;
-							hsp = 0;
-							vsp = 0;
-							facing = dirc.down;
-							scr_setPlayerFacingAnim(index_facing.down);
-							alarm[0] = 65;
+				if (!obj_amadix.stuffed){
+					if (amount > 0){
+						if (obj_amadix.actionstate != player_state_action.drinking){
+							var iitem = obj_inventory.ds_inventory[# 0, obj_inventory.mouse_slotx_second];
+							with (obj_amadix){
+								itemeaten = iitem;
+								actionstate = player_state_action.drinking;
+								anim_frame_action = 0;
+								anim_speed_action = 0.16;
+								anim_frame = 0;
+								canmove = false;
+								moving = false;
+								running = false;
+								hsp = 0;
+								vsp = 0;
+								facing = dirc.down;
+								scr_setPlayerFacingAnim(index_facing.down);
+								alarm[0] = 65;
+							}
+							if (hp > 0){global.hp += hp;}
+							if (stamina > 0){global.stamina += stamina;}
+							obj_inventory.ds_inventory[# INVAMOUNT, obj_inventory.mouse_slotx_second] -= 1;
 						}
-						if (hp > 0){global.hp += hp;}
-						if (stamina > 0){global.stamina += stamina;}
-						obj_inventory.ds_inventory[# INVAMOUNT, obj_inventory.mouse_slotx_second] -= 1;
+					}else{
+						slot_remove(obj_inventory.mouse_slotx_second);
+						obj_inventory.text_alpha = 0;
 					}
-				}else{
-					slot_remove(obj_inventory.mouse_slotx_second);
-					obj_inventory.text_alpha = 0;
 				}
 			}
 		}

@@ -43,8 +43,13 @@ repeat(maxeffects){
 	
 	if (effect_grid[# EF_DURATION, i] - effect_grid[# EF_TIMER, i] <= 0){
 		if instance_exists(obj_amadix){
-			if (effect_grid[# EF_EFFECT, i] == effect.speed_ef){
-				obj_amadix.speedEffect = 0;
+			switch(effect_grid[# EF_EFFECT, i]){
+				case effect.speed_ef:
+					obj_amadix.speedEffect = 0;
+				break;
+				case effect.stuffed:
+					obj_amadix.stuffed = false;
+				break;
 			}
 		}
 		effect_grid[# EF_DURATION, i] = 0;

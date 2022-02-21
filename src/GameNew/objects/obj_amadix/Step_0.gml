@@ -58,3 +58,5 @@ if (keyboard_check(ord("P"))){
 }
 
 depth = -(bbox_bottom - (sprite_height - yorigin));
+
+z = zfloor;

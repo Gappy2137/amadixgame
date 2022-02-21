@@ -1,5 +1,4 @@
-function scr_player_movement_slope(argument0) {
-	if argument0 == true{
+function scr_player_movement_slope() {
 
 
 #region Rampy nachylone do podloza maks 1 piksel w gore
@@ -236,9 +235,6 @@ function scr_player_movement_slope(argument0) {
 	*/
 #endregion
 
-	}else{
-		exit;	
-	}
 
 
 

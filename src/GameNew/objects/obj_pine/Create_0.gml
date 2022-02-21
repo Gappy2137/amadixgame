@@ -2,7 +2,7 @@ event_inherited();
 
 image_speed = 0;
 
-yorigin = 162;
+yorigin = 168;
 
 itemDrop = -1;
 

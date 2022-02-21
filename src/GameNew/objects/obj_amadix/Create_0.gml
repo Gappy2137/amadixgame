@@ -76,8 +76,11 @@ oneStepEvent[1] = true;
 
 z = 0;
 zaxis = 0;
+zfloor = 0;
 
 hat_frame = 0;
 hatY = 0;
+
+stuffed = false;
 
 if (obj_gamecontrol.doTransition == true) scr_updatePlayerAnim();

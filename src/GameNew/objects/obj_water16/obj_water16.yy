@@ -28,7 +28,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Terrain Types",
-    "path": "folders/Objects/World Objects/Terrain Types.yy",
+    "path": "folders/Objects/DEV_/Terrain Types.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_water16",

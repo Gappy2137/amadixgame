@@ -3,6 +3,7 @@ event_inherited();
 yorigin = 0;
 
 zaxis = 0;
+zfloor = 0;
 
 shadowOriginY = 0;
 shadowOriginX = 0;

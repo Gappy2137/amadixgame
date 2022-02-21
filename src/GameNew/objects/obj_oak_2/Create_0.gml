@@ -2,7 +2,7 @@ event_inherited();
 
 image_speed = 0;
 
-yorigin = 88;
+yorigin = 148;
 
 itemDrop = item.apple;
 

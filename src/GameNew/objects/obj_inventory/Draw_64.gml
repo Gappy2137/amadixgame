@@ -302,6 +302,7 @@ if (show_inventory) && (!show_slots){
 	var level = 0;
 	iitem = inv_grid[# INVITEM, selected_slot];
 
+	var hflag = false;
 
 	if (iitem > 0) && (multipick == 0){
 		//GUI opisu
@@ -353,9 +354,17 @@ if (show_inventory) && (!show_slots){
 		//Effects
 		var effect1 = -1, effect2 = -1, effect3 = -1;
 		var effect1_x = 0, effect1_y = 0;
+		var effect2_x = 0, effect2_y = 0;
+		var effect3_x = 0, effect3_y = 0;
 		var effect_height = 0;
 		if (inv_grid[# INVEFFECTS, selected_slot] != 0){
 			effect1 = inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 0];
+			if (inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 1] != 0){
+				effect2 = inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 1];
+				if (inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 2] != 0){
+					effect3 = inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 2];
+				}
+			}
 		}
 		
 		
@@ -364,8 +373,7 @@ if (show_inventory) && (!show_slots){
 		}
 		var infobox_half = (infobox_x + infobox_width/2);
 		
-		var infobox_height = 0;
-		infobox_height = namestr.get_height()*name_scale + typestr.get_height()*type_scale + descstr.get_height()*desc_scale + 12;
+		var infobox_height = namestr.get_height()*name_scale + typestr.get_height()*type_scale + descstr.get_height()*desc_scale + 12;
 		
 		
 		if (infobox_y + infobox_height > obj_display.ideal_height){
@@ -391,26 +399,33 @@ if (show_inventory) && (!show_slots){
 				hp_x = infobox_half - 22;
 				stamina_x = hp_x + 34;
 				if (inv_grid[# INVEFFECTS, selected_slot] != 0){
-					effect1_x = infobox_half;
-					effect1_y = infobox_y + infobox_height - 12;
+					effect1_x = infobox_half - 8;
+					effect1_y = infobox_y + infobox_height + 10;
 					effect_height = 20;
+					if (inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 1] != 0){
+						effect1_x = infobox_half - 28;
+						effect2_x = infobox_half + 16;
+						effect2_y = infobox_y + infobox_height + 10;
+					}
 				}
+				
 				infobox_height = namestr.get_height()*name_scale + typestr.get_height()*type_scale + descstr.get_height()*desc_scale + 12 + 20 + effect_height;
+				
 				hp_y = infobox_y + infobox_height - 12;
 				stamina_y = infobox_y + infobox_height - 12;
 			}
-		}
+		}else
 		if (inv_grid[# INVTYPE, selected_slot] == itemtype.resource)
 		{
 			infobox_height = namestr.get_height()*name_scale + typestr.get_height()*type_scale + descstr.get_height()*desc_scale + 12;
-		}
+		}else
 		if (inv_grid[# INVTYPE, selected_slot] == itemtype.hat)
 		|| (inv_grid[# INVTYPE, selected_slot] == itemtype.clothing)
 		|| (inv_grid[# INVTYPE, selected_slot] == itemtype.pants)
 		|| (inv_grid[# INVTYPE, selected_slot] == itemtype.boots)
 		{
 			infobox_height = namestr.get_height()*name_scale + typestr.get_height()*type_scale + descstr.get_height()*desc_scale + 12;
-		}
+		}else
 		if (inv_grid[# INVTYPE, selected_slot] == itemtype.melee)
 		|| (inv_grid[# INVTYPE, selected_slot] == itemtype.tool)
 		{
@@ -418,7 +433,7 @@ if (show_inventory) && (!show_slots){
 		}
 		
 		//Rysuj tlo
-		draw_sprite_ext(spr_inventory_desc, 0, infobox_x, infobox_y, infobox_width/24, infobox_height/24, 0, c_white, 1);
+		draw_sprite_ext(spr_inventory_desc, 0, infobox_x, infobox_y, infobox_width/cell_size, infobox_height/cell_size, 0, c_white, 1);
 		
 		//Rysuj nazwe
 		namestr.starting_format("font_item", bl);
@@ -465,8 +480,33 @@ if (show_inventory) && (!show_slots){
 		
 		//Rysuj efekty
 		if (inv_grid[# INVEFFECTS, selected_slot] != 0){
-			draw_sprite(spr_hud_effects, (inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 0]), effect1_x, effect1_y);
+			draw_sprite(spr_inventory_item_effects, (inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 0]) - 1, effect1_x, effect1_y);
+			var ef1 = inv_grid[# INVEFFECTS, selected_slot][# EF_DURATION, 0];
+			var ef1a = (string_length(string(ef1 % 60)) == 1) ? "0" + string(ef1 % 60) : string(ef1 % 60);
+			var ef1_t = string(floor(ef1/60)) + ":" + ef1a;
+			var ef1str = scribble(ef1_t);
+			ef1str.starting_format("font_dialogue", bl);
+			ef1str.align(fa_left, fa_center);
+			ef1str.transform(.5, .5, 0);
+			ef1str.draw(effect1_x+ 10, effect1_y + 2);
+			draw_sprite(spr_inventory_item_effects_amp, (inv_grid[# INVEFFECTS, selected_slot][# EF_AMPLIFIER, 0]) - 1, effect1_x + 8, effect1_y + 8);
+			
+			if (inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 1] != 0){
+				draw_sprite(spr_inventory_item_effects, (inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 1]) - 1, effect2_x, effect2_y);
+				var ef2 = inv_grid[# INVEFFECTS, selected_slot][# EF_DURATION, 1];
+				var ef2a = (string_length(string(ef2 % 60)) == 1) ? "0" + string(ef2 % 60) : string(ef2 % 60);
+				var ef2_t = string(floor(ef2/60)) + ":" + ef2a;
+				var ef2str = scribble(ef2_t);
+				ef2str.starting_format("font_dialogue", bl);
+				ef2str.align(fa_left, fa_center);
+				ef2str.transform(.5, .5, 0);
+				ef2str.draw(effect2_x+ 10, effect2_y + 2);
+				draw_sprite(spr_inventory_item_effects_amp, (inv_grid[# INVEFFECTS, selected_slot][# EF_AMPLIFIER, 1]) - 1, effect2_x + 8, effect2_y + 8);
+			}
 		}
+		
+		hflag = true;
+		
 		/*
 		//Rysuj ()
 		if (hp > 0) || (stamina > 0){

@@ -47,7 +47,7 @@ function scr_draw_player(px, py, pz) {
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				case player_state.wading_idle:
-					var pzz = 4;
+					var pzz = 0;
 					//----------------------------------------------------------------------------------------------------------------
 						//Glowa
 						draw_sprite_ext(head_index,anim_frame,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
@@ -69,7 +69,7 @@ function scr_draw_player(px, py, pz) {
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				case player_state.wading:
-					var pzz = 4;
+					var pzz = 0;
 					//----------------------------------------------------------------------------------------------------------------
 						//Glowa
 						draw_sprite_ext(head_index,anim_frame,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
@@ -91,7 +91,7 @@ function scr_draw_player(px, py, pz) {
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				case player_state.swimming_idle:
-					var pzz = 16;
+					var pzz = 0;
 					//----------------------------------------------------------------------------------------------------------------
 						//Glowa
 						draw_sprite_ext(head_index,anim_frame,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
@@ -113,7 +113,7 @@ function scr_draw_player(px, py, pz) {
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				case player_state.swimming:
-					var pzz = 16;
+					var pzz = 0;
 					//----------------------------------------------------------------------------------------------------------------
 						//Glowa
 						draw_sprite_ext(head_index,anim_frame,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
@@ -212,7 +212,7 @@ function scr_draw_player(px, py, pz) {
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				case player_state.wading_idle:
-					var pzz = 4;
+					var pzz = 0;
 					//----------------------------------------------------------------------------------------------------------------
 					//Glowa
 					draw_sprite_ext(head_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
@@ -238,7 +238,7 @@ function scr_draw_player(px, py, pz) {
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				case player_state.wading:
-					var pzz = 4;
+					var pzz = 0;
 					//----------------------------------------------------------------------------------------------------------------
 					//Glowa
 					draw_sprite_ext(head_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
@@ -264,7 +264,7 @@ function scr_draw_player(px, py, pz) {
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				case player_state.swimming_idle:
-					var pzz = 16;
+					var pzz = 0;
 					//----------------------------------------------------------------------------------------------------------------
 					//Glowa
 					draw_sprite_ext(head_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
@@ -290,7 +290,7 @@ function scr_draw_player(px, py, pz) {
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				case player_state.swimming:
-					var pzz = 16;
+					var pzz = 0;
 					//----------------------------------------------------------------------------------------------------------------
 					//Glowa
 					draw_sprite_ext(head_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
@@ -399,7 +399,7 @@ function scr_draw_player(px, py, pz) {
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				case player_state.wading_idle:
-					var pzz = 4;
+					var pzz = 0;
 					//----------------------------------------------------------------------------------------------------------------
 					//Glowa
 					draw_sprite_ext(head_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
@@ -426,7 +426,7 @@ function scr_draw_player(px, py, pz) {
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				case player_state.wading:
-					var pzz = 4;
+					var pzz = 0;
 					//----------------------------------------------------------------------------------------------------------------
 					//Glowa
 					draw_sprite_ext(head_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
@@ -453,7 +453,7 @@ function scr_draw_player(px, py, pz) {
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				case player_state.swimming_idle:
-					var pzz = 16;
+					var pzz = 0;
 					//----------------------------------------------------------------------------------------------------------------
 					//Glowa
 					draw_sprite_ext(head_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
@@ -480,7 +480,7 @@ function scr_draw_player(px, py, pz) {
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				case player_state.swimming:
-					var pzz = 16;
+					var pzz = 0;
 					//----------------------------------------------------------------------------------------------------------------
 					//Glowa
 					draw_sprite_ext(head_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
@@ -553,7 +553,7 @@ function scr_draw_player(px, py, pz) {
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				case player_state.wading_idle:
-					var pzz = 4;
+					var pzz = 0;
 					//----------------------------------------------------------------------------------------------------------------
 						//Glowa
 						draw_sprite_ext(head_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
@@ -575,7 +575,7 @@ function scr_draw_player(px, py, pz) {
 					//----------------------------------------------------------------------------------------------------------------
 				break;
 				case player_state.wading:
-					var pzz = 4;
+					var pzz = 0;
 					//----------------------------------------------------------------------------------------------------------------
 						//Glowa
 						draw_sprite_ext(head_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);

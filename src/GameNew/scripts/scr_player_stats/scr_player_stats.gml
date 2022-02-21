@@ -35,7 +35,7 @@ function scr_player_stats(){
 			drain = .01;
 		break;
 		case player_state.ladder:
-			drain = .01;
+			drain = .0075;
 		break;
 	}
 	stamina_drain = drain;
