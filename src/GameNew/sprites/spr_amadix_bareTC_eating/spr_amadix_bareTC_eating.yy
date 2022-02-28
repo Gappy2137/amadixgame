@@ -83,7 +83,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_amadix_bareTC_eating","path":"sprites/spr_amadix_bareTC_eating/spr_amadix_bareTC_eating.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_amadix_bareTC_eating",
     "tags": [],
     "resourceType": "GMSequence",

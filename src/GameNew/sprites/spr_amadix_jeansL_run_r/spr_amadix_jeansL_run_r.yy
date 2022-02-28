@@ -103,7 +103,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_amadix_jeansL_run_r","path":"sprites/spr_amadix_jeansL_run_r/spr_amadix_jeansL_run_r.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_amadix_jeansL_run_r",
     "tags": [],
     "resourceType": "GMSequence",

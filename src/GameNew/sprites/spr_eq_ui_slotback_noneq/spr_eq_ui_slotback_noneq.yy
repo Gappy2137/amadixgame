@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_eq_ui_slotback_noneq","path":"sprites/spr_eq_ui_slotback_noneq/spr_eq_ui_slotback_noneq.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_eq_ui_slotback_noneq",
     "tags": [],
     "resourceType": "GMSequence",

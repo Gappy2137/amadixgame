@@ -107,7 +107,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_font_item_num","path":"sprites/spr_font_item_num/spr_font_item_num.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_font_item_num",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_jar_small","path":"sprites/spr_jar_small/spr_jar_small.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_jar_small",
     "tags": [],
     "resourceType": "GMSequence",

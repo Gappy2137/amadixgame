@@ -59,6 +59,18 @@ layer_script_end(reflection, scr_reset_alpha);
 
 u_alpha = shader_get_uniform(shader_alpha, "alpha");
 alpha = 0;
+/*
+					color[8,0] = 030/255;
+					color[8,1] = 100/255;
+					color[8,2] = 230/255;
+
+					con_sat_brt[8,0] = 0.30;
+					con_sat_brt[8,1] = 0.90;
+					con_sat_brt[8,2] = -0.45;
+
+					con_sat_brt[8,3] = 0.70;
+					con_sat_brt[8,4] = 0.65;
+*/
 #region Fix
 					color[0,0] = 030/255;
 					color[0,1] = 100/255;

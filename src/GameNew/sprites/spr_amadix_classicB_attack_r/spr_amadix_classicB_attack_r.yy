@@ -87,7 +87,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_amadix_classicB_attack_r","path":"sprites/spr_amadix_classicB_attack_r/spr_amadix_classicB_attack_r.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_amadix_classicB_attack_r",
     "tags": [],
     "resourceType": "GMSequence",

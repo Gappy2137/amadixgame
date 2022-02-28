@@ -71,7 +71,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_amadix_newB_r","path":"sprites/spr_amadix_newB_r/spr_amadix_newB_r.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_amadix_newB_r",
     "tags": [],
     "resourceType": "GMSequence",

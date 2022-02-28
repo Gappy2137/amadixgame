@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_oak","path":"sprites/spr_oak/spr_oak.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_oak",
     "tags": [],
     "resourceType": "GMSequence",

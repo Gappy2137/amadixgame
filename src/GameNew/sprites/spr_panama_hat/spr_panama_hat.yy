@@ -71,7 +71,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_panama_hat","path":"sprites/spr_panama_hat/spr_panama_hat.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_panama_hat",
     "tags": [],
     "resourceType": "GMSequence",

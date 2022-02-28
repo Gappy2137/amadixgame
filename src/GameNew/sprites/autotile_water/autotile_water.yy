@@ -61,7 +61,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"autotile_water","path":"sprites/autotile_water/autotile_water.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "autotile_water",
     "tags": [],
     "resourceType": "GMSequence",

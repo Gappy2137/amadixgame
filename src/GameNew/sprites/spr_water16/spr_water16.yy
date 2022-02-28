@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_water16","path":"sprites/spr_water16/spr_water16.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_water16",
     "tags": [],
     "resourceType": "GMSequence",

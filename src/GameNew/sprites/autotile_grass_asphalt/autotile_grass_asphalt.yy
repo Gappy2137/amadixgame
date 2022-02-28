@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"autotile_grass_asphalt","path":"sprites/autotile_grass_asphalt/autotile_grass_asphalt.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "autotile_grass_asphalt",
     "tags": [],
     "resourceType": "GMSequence",

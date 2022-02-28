@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_inventory_selected","path":"sprites/spr_inventory_selected/spr_inventory_selected.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_inventory_selected",
     "tags": [],
     "resourceType": "GMSequence",

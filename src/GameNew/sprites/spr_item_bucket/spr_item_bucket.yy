@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_item_bucket","path":"sprites/spr_item_bucket/spr_item_bucket.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_item_bucket",
     "tags": [],
     "resourceType": "GMSequence",

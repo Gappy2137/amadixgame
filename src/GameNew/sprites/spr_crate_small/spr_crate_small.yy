@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_crate_small","path":"sprites/spr_crate_small/spr_crate_small.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_crate_small",
     "tags": [],
     "resourceType": "GMSequence",

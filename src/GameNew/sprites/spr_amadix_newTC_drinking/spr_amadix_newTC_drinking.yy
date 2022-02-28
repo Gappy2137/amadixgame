@@ -95,7 +95,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_amadix_newTC_drinking","path":"sprites/spr_amadix_newTC_drinking/spr_amadix_newTC_drinking.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_amadix_newTC_drinking",
     "tags": [],
     "resourceType": "GMSequence",

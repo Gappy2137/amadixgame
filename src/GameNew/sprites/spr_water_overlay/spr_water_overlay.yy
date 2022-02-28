@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_water_overlay","path":"sprites/spr_water_overlay/spr_water_overlay.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_water_overlay",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_hazel_bush","path":"sprites/spr_hazel_bush/spr_hazel_bush.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_hazel_bush",
     "tags": [],
     "resourceType": "GMSequence",

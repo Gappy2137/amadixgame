@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_floor_m4","path":"sprites/spr_floor_m4/spr_floor_m4.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_floor_m4",
     "tags": [],
     "resourceType": "GMSequence",

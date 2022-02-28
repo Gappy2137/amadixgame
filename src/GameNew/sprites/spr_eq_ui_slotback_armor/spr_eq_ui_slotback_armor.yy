@@ -75,7 +75,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_eq_ui_slotback_armor","path":"sprites/spr_eq_ui_slotback_armor/spr_eq_ui_slotback_armor.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_eq_ui_slotback_armor",
     "tags": [],
     "resourceType": "GMSequence",

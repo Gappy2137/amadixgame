@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_dirt_basic_tt","path":"sprites/spr_dirt_basic_tt/spr_dirt_basic_tt.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_dirt_basic_tt",
     "tags": [],
     "resourceType": "GMSequence",

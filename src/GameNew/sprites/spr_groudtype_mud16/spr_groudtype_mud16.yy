@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_groudtype_mud16","path":"sprites/spr_groudtype_mud16/spr_groudtype_mud16.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_groudtype_mud16",
     "tags": [],
     "resourceType": "GMSequence",

@@ -91,7 +91,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_inventory_item_stat","path":"sprites/spr_inventory_item_stat/spr_inventory_item_stat.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_inventory_item_stat",
     "tags": [],
     "resourceType": "GMSequence",

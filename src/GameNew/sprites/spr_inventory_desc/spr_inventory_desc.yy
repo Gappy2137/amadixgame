@@ -71,7 +71,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_inventory_desc","path":"sprites/spr_inventory_desc/spr_inventory_desc.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_inventory_desc",
     "tags": [],
     "resourceType": "GMSequence",

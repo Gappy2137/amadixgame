@@ -103,7 +103,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_amadix_newTC_run_l","path":"sprites/spr_amadix_newTC_run_l/spr_amadix_newTC_run_l.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_amadix_newTC_run_l",
     "tags": [],
     "resourceType": "GMSequence",

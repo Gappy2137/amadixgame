@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_seqitem","path":"sprites/spr_seqitem/spr_seqitem.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_seqitem",
     "tags": [],
     "resourceType": "GMSequence",

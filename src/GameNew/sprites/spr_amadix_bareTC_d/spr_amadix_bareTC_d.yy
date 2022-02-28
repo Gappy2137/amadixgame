@@ -71,7 +71,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_amadix_bareTC_d","path":"sprites/spr_amadix_bareTC_d/spr_amadix_bareTC_d.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_amadix_bareTC_d",
     "tags": [],
     "resourceType": "GMSequence",

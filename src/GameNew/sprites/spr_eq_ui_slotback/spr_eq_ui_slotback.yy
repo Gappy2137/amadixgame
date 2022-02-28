@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_eq_ui_slotback","path":"sprites/spr_eq_ui_slotback/spr_eq_ui_slotback.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_eq_ui_slotback",
     "tags": [],
     "resourceType": "GMSequence",

@@ -138,7 +138,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"tileset_decor","path":"sprites/tileset_decor/tileset_decor.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "tileset_decor",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"tile_night_water_ref","path":"sprites/tile_night_water_ref/tile_night_water_ref.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "tile_night_water_ref",
     "tags": [],
     "resourceType": "GMSequence",

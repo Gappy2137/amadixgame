@@ -67,7 +67,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_eq_ui_back","path":"sprites/spr_eq_ui_back/spr_eq_ui_back.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_eq_ui_back",
     "tags": [],
     "resourceType": "GMSequence",

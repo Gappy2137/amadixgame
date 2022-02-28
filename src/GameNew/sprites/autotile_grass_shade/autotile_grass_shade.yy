@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"autotile_grass_shade","path":"sprites/autotile_grass_shade/autotile_grass_shade.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "autotile_grass_shade",
     "tags": [],
     "resourceType": "GMSequence",

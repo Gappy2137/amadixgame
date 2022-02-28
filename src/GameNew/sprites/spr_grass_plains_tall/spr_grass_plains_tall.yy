@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_grass_plains_tall","path":"sprites/spr_grass_plains_tall/spr_grass_plains_tall.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_grass_plains_tall",
     "tags": [],
     "resourceType": "GMSequence",

@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_rocks_plains_big","path":"sprites/spr_rocks_plains_big/spr_rocks_plains_big.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_rocks_plains_big",
     "tags": [],
     "resourceType": "GMSequence",

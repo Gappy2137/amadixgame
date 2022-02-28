@@ -1,11 +1,8 @@
-surf_normal = -1;
-surf_lighting = -1;
-
-texture	= 0;
-normal	= 0;
-
-mix = 0;
-
-u_normalmap		= shader_get_sampler_index(shader_light,"normalmap");
-u_lightpos		= shader_get_uniform(shader_light,"lightpos");
-u_resolution	= shader_get_uniform(shader_light,"resolution");
+renderer = new BulbRenderer(
+	light_ambient,
+	BULB_MODE.SOFT_BM_ADD,
+	true);
+	
+function setAmbientColor(_color){
+	obj_lighting.light_ambient = _color;
+}

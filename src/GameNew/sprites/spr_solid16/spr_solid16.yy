@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_solid16","path":"sprites/spr_solid16/spr_solid16.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_solid16",
     "tags": [],
     "resourceType": "GMSequence",

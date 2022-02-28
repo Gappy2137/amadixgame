@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"autotile_mud","path":"sprites/autotile_mud/autotile_mud.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "autotile_mud",
     "tags": [],
     "resourceType": "GMSequence",

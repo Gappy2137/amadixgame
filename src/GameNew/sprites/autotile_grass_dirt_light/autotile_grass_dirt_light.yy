@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"autotile_grass_dirt_light","path":"sprites/autotile_grass_dirt_light/autotile_grass_dirt_light.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "autotile_grass_dirt_light",
     "tags": [],
     "resourceType": "GMSequence",

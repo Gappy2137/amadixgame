@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_grass_plains_dark","path":"sprites/spr_grass_plains_dark/spr_grass_plains_dark.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_grass_plains_dark",
     "tags": [],
     "resourceType": "GMSequence",

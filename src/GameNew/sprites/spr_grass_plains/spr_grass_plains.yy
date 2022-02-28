@@ -75,7 +75,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_grass_plains","path":"sprites/spr_grass_plains/spr_grass_plains.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_grass_plains",
     "tags": [],
     "resourceType": "GMSequence",

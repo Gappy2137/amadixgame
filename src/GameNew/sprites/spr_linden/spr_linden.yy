@@ -60,7 +60,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_linden","path":"sprites/spr_linden/spr_linden.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_linden",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_birch","path":"sprites/spr_birch/spr_birch.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_birch",
     "tags": [],
     "resourceType": "GMSequence",

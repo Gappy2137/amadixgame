@@ -30,7 +30,7 @@ if (rm_trans != noone){
 }
 
 scr_updateHatY();
-
+/*
 if (keyboard_check_pressed(vk_space)){
 	item_add(-1, item.bull_energy_drink, 1);
 	item_add(-1, item.lemon, 4);
@@ -56,7 +56,7 @@ if (keyboard_check(ord("O"))){
 if (keyboard_check(ord("P"))){
 	global.stamina += 0.1;
 }
-
+*/
 depth = -(bbox_bottom - (sprite_height - yorigin));
 
 z = zfloor;

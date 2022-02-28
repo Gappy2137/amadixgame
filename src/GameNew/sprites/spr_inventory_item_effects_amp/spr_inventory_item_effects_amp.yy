@@ -67,7 +67,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_inventory_item_effects_amp","path":"sprites/spr_inventory_item_effects_amp/spr_inventory_item_effects_amp.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_inventory_item_effects_amp",
     "tags": [],
     "resourceType": "GMSequence",

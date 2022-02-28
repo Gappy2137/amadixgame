@@ -3,7 +3,7 @@ switch global.weather{
 	case weather.sun:
 		var i = 0;
 		repeat(24){
-			scr_set_daycycle(i, weather.sun);
+			scr_daycycle_smooth_transition(i, weather.sun, 1);
 			i++;
 		}
 	break;

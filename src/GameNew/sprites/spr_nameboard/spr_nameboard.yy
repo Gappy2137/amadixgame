@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_nameboard","path":"sprites/spr_nameboard/spr_nameboard.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_nameboard",
     "tags": [],
     "resourceType": "GMSequence",

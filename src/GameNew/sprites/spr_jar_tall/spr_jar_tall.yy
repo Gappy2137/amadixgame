@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_jar_tall","path":"sprites/spr_jar_tall/spr_jar_tall.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_jar_tall",
     "tags": [],
     "resourceType": "GMSequence",

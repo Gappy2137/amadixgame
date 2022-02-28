@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_groudtype_dirt_light16","path":"sprites/spr_groudtype_dirt_light16/spr_groudtype_dirt_light16.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_groudtype_dirt_light16",
     "tags": [],
     "resourceType": "GMSequence",

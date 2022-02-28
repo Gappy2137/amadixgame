@@ -79,7 +79,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_eq_ui_slot","path":"sprites/spr_eq_ui_slot/spr_eq_ui_slot.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_eq_ui_slot",
     "tags": [],
     "resourceType": "GMSequence",
