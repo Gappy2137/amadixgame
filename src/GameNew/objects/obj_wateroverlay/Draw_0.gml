@@ -2,23 +2,17 @@ if !surface_exists(surf){
 	surf = surface_create(obj_display.ideal_width*obj_display.window_size, obj_display.ideal_height*obj_display.window_size);	
 }
 if !surface_exists(refsurf){
-	refsurf = surface_create(obj_display.ideal_width*obj_display.window_size, obj_display.ideal_height*obj_display.window_size);	
+	refsurf = surface_create(obj_display.ideal_width, obj_display.ideal_height);	
 }
 
 var tiles = layer_tilemap_get_id(layer_get_id("Water"));
 
 surface_set_target(refsurf);
 
-var x1 = camera_get_view_x(view_camera[0]) - 16;
-var y1 = camera_get_view_y(view_camera[0]) - 16;
-var x2 = camera_get_view_x(view_camera[0]) + obj_display.ideal_width*obj_display.window_size + 16;
-var y2 = camera_get_view_y(view_camera[0]) + obj_display.ideal_height*obj_display.window_size + 16;
-
-
-
-draw_sprite_tiled_area(spr_water_overlay, 0, 0, 0, x1, y1, x2, y2);
+draw_sprite_tiled(spr_water_overlay, 0, 0, 0);
 
 surface_reset_target();
+
 
 
 surface_set_target(surf);
@@ -27,12 +21,16 @@ draw_tilemap(tiles, 0, 0);
 
 gpu_set_colorwriteenable(1, 1, 1, 0);
 
-draw_surface_ext(refsurf, xx, yy, 1, 1, 0, c_white, 0.3);
+draw_surface_ext(refsurf, 0, 0, 1, 1, 0, c_white, 0.3);
 
 gpu_set_colorwriteenable(1, 1, 1, 1);
 
 surface_reset_target();
 
+var cx = camera_get_view_x(view_camera[0]);
+var cy = camera_get_view_y(view_camera[0]);
+
+draw_surface_ext(refsurf, cx + xx, cy + yy, 1, 1, 0, c_white, 0.8);
 draw_surface_ext(surf, 0, 0, 1, 1, 0, c_white, 0.8);
 
 /*
