@@ -16,7 +16,7 @@ if (show_inventory) && (!show_slots){
 	
 
 	depth = -2;
-	draw_sprite_ext(spr_eq_slotback, 0, backslotUI_x, backslotUI_y, scale, scale, 0, c_white, 1);
+	draw_sprite_ext(spr_eq_slotback, 0, backslotUI_x, backslotUI_y + y_rel, scale, scale, 0, c_white, 1);
 
 	
 

@@ -23,7 +23,7 @@ inv_slots_width = 12;
 inv_slots_height = 4;
 slots_onpage = inv_slots_width * inv_slots_height;
 
-selected_slot = 0;
+selected_slot = -1;
 picked_slot = -1;
 onepicked_slot = 0;
 multipick = 0;
@@ -115,7 +115,7 @@ spr_inv_items_columns = sprite_get_width(spr_inv_items)/cell_size;
 spr_inv_items_rows = sprite_get_height(spr_inv_items)/cell_size;
 
 slots_x = xUI;
-slots_y = yUI;
+slots_y = yUI + y_rel;
 
 text_timer = 300;
 text_alpha = 1;

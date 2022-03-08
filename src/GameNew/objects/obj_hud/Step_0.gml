@@ -89,15 +89,19 @@ if (show_hud == hud.crafting){
 	crafting_frame = 0;	
 }
 
-
+var ins = instance_nearest(obj_amadix.x , obj_amadix.y, par_container);
 
 #region Opcje HUD
-if (keyboard_check_pressed(ord("E"))) && (obj_inventory.picked_slot == -1){
-	if (show_hud == hud.slots){
-		show_hud = lasthud;	
-	}else{
-		lasthud = show_hud;
-		show_hud = hud.slots;
+if (keyboard_check_pressed(ord("E"))) && (obj_inventory.inhand == -1){
+	if (instance_exists(par_container)){
+		if !(ins.show_container){
+			if (show_hud == hud.slots){
+				show_hud = lasthud;	
+			}else{
+				lasthud = show_hud;
+				show_hud = hud.slots;
+			}
+		}
 	}
 }
 switch (show_hud){

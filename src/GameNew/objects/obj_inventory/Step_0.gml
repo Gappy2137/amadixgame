@@ -2,7 +2,6 @@
 //if (keyboard_check_pressed(ord("R"))) {show_slots = !show_slots;}
 
 if (!canUseInventory){exit;}
-
 #region Operacje na przedmiotach
 if (show_inventory) && (!show_slots){
 
@@ -23,9 +22,9 @@ if (show_inventory) && (!show_slots){
 	var endUIx = xUI + invUI_width;
 
 	var endy = (gui_height - invUI_height)/2;
-	var endUIy = yUI + invUI_height;
+	var endUIy = yUI + invUI_height + y_rel;
 
-	if isbounded(mousex, xUI, endUIx) && isbounded(mousey, yUI, endUIy){
+	if isbounded(mousex, xUI, endUIx) && isbounded(mousey, yUI + y_rel, endUIy){
 		var sx = i_mousex - (numx * cell_xoffset);
 		var sy = i_mousey - (numy * cell_yoffset);
 	
@@ -130,7 +129,7 @@ if (show_inventory) && (!show_slots){
 	}
 	
 
-	if ((mousex >= xUI) && (mousex < endUIx) && (mousey >= yUI) && (mousey < endUIy))
+	if ((mousex >= xUI) && (mousex < endUIx) && (mousey >= yUI + y_rel) && (mousey < endUIy))
 	|| (isbounded(mousex, armor_x[0], armor_x[0] + 24) && (isbounded(mousey, armor_y[0], armor_y[1] + 24)))
 	|| (isbounded(mousex, armor_x[2], armor_x[2] + 24) && (isbounded(mousey, armor_y[2], armor_y[3] + 24))){
 		

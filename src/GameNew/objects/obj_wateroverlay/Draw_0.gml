@@ -1,3 +1,4 @@
+/*
 if !surface_exists(surf){
 	surf = surface_create(obj_display.ideal_width*obj_display.window_size, obj_display.ideal_height*obj_display.window_size);	
 }
@@ -33,7 +34,9 @@ var cy = camera_get_view_y(view_camera[0]);
 draw_surface_ext(refsurf, cx + xx, cy + yy, 1, 1, 0, c_white, 0.8);
 draw_surface_ext(surf, 0, 0, 1, 1, 0, c_white, 0.8);
 
-/*
+*/
+
+
 if !surface_exists(surf){
 	surf = surface_create(room_width, room_height);	
 }
@@ -98,4 +101,3 @@ surface_reset_target();
 draw_surface_ext(surf_reflection, 0, 0, 1, 1, 0, c_white, 1);
 
 draw_surface_ext(surf, 0, 0, 1, 1, 0, c_white, 0.8);
-*/
