@@ -155,7 +155,8 @@ if (instance_exists(obj_inventory)){
 	sx = 0;
 	sy = 0;
 	
-	draw_sprite_ext(spr_eq_ui_slot, 0, xUI, yUI, containerSlotWidth, containerSlotHeight, 0, c_white, 1);
+	
+	draw_sprite_ext(spr_hud_container, 0, xUI - 8, yUI - 8, containerSlotWidth, containerSlotHeight, 0, c_white, 1);
 	
 		repeat (containerSlots){
 			
@@ -174,7 +175,7 @@ if (instance_exists(obj_inventory)){
 					switch(ii){
 						case selected_slot:
 										//draw selected slot
-										draw_sprite_ext(obj_inventory.spr_inv_slot_selected, 0, xx, yy, 1, 1, 0, c_white, 1);
+										draw_sprite_ext(spr_inv_slot_selected, 0, xx, yy, 1, 1, 0, c_white, 1);
 										//draw item
 										draw_sprite_part_ext(obj_inventory.spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, 1, 1, c_white, 1);
 										
@@ -185,7 +186,7 @@ if (instance_exists(obj_inventory)){
 									if (selected_slot == obj_inventory.picked_slot){
 										if (multipick > 0){
 										//draw selected slot
-										draw_sprite_ext(obj_inventory.spr_inv_slot_selected, 0, xx, yy, 1, 1, 0, c_white, 1);
+										draw_sprite_ext(spr_inv_slot_selected, 0, xx, yy, 1, 1, 0, c_white, 1);
 										//draw item
 										draw_sprite_part_ext(obj_inventory.spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, 1, 1, c_white, 1);
 										
@@ -199,7 +200,7 @@ if (instance_exists(obj_inventory)){
 									}else if (selected_slot != obj_inventory.picked_slot){
 										if (multipick > 0){
 										//draw selected slot
-										draw_sprite_ext(obj_inventory.spr_inv_slot_selected, 0, xx, yy, 1, 1, 0, c_white, 1);
+										draw_sprite_ext(spr_inv_slot_selected, 0, xx, yy, 1, 1, 0, c_white, 1);
 										//draw item
 										draw_sprite_part_ext(obj_inventory.spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, 1, 1, c_white, 1);
 										
@@ -213,7 +214,7 @@ if (instance_exists(obj_inventory)){
 						break;
 						case obj_inventory.picked_slot:
 									if (multipick > 0){
-										draw_sprite_ext(obj_inventory.spr_inv_slot_none, 0, xx, yy, 1, 1, 0, c_white, 1);
+										draw_sprite_ext(spr_inv_slot_none, 0, xx, yy, 1, 1, 0, c_white, 1);
 										draw_sprite_part_ext(obj_inventory.spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, 1, 1, c_white, 1);
 									}else{
 										draw_sprite_ext(obj_inventory.spr_inv_slot_none, 0, xx, yy, 1, 1, 0, c_white, .2);

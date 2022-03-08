@@ -38,6 +38,8 @@ xUI_eq = 96;
 yUI_eq = 156;
 
 spr_inv_items = spr_inventory_items;
+spr_inv_slot_selected = spr_hud_container_slot;
+spr_inv_slot_none = spr_hud_container_slot_none;
 spr_inv_items_columns = sprite_get_width(spr_inv_items)/cell_size;
 spr_inv_items_rows = sprite_get_height(spr_inv_items)/cell_size;
 
