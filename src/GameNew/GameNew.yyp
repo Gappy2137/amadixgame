@@ -101,6 +101,7 @@
     {"id":{"name":"spr_amadix_shirtTC_d","path":"sprites/spr_amadix_shirtTC_d/spr_amadix_shirtTC_d.yy",},"order":3,},
     {"id":{"name":"shader_blur","path":"shaders/shader_blur/shader_blur.yy",},"order":0,},
     {"id":{"name":"spr_amadix_jeansL_r","path":"sprites/spr_amadix_jeansL_r/spr_amadix_jeansL_r.yy",},"order":0,},
+    {"id":{"name":"tileset_test_9","path":"tilesets/tileset_test_9/tileset_test_9.yy",},"order":14,},
     {"id":{"name":"spr_amadix_jeansL_u","path":"sprites/spr_amadix_jeansL_u/spr_amadix_jeansL_u.yy",},"order":1,},
     {"id":{"name":"__scribble_config_colours","path":"scripts/__scribble_config_colours/__scribble_config_colours.yy",},"order":1,},
     {"id":{"name":"obj_decor_nameboard","path":"objects/obj_decor_nameboard/obj_decor_nameboard.yy",},"order":0,},
@@ -717,7 +718,7 @@
     {"CopyToMask":-1,"filePath":"datafiles/language","resourceVersion":"1.0","name":"langs.json.bak","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
-    "IDEVersion": "2022.2.0.614",
+    "IDEVersion": "2022.2.1.618",
   },
   "resourceVersion": "1.5",
   "name": "GameNew",
