@@ -1,5 +1,6 @@
 event_inherited();
 
+
 if (instance_exists(obj_inventory)){
 	if (!obj_inventory.show_inventory) && (obj_inventory.show_slots) && (show_container){
 		

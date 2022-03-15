@@ -155,8 +155,17 @@ if (instance_exists(obj_inventory)){
 	sx = 0;
 	sy = 0;
 	
+	if (containerSlotWidth == 3){
+		scaleDesiredX = 2.22;	
+		scaleDesiredY = 2.22;	
+	}
 	
-	draw_sprite_ext(spr_hud_container, 0, xUI - 8, yUI - 8, containerSlotWidth, containerSlotHeight, 0, c_white, 1);
+	if (containerSlotWidth == 12){
+		scaleDesiredX = 7.63;	
+		scaleDesiredY = 2.82;	
+	}
+	
+	draw_sprite_ext(spr_hud_container, 0, xUI - 8, yUI - 8, scaleDesiredX, scaleDesiredY, 0, c_white, 1);
 	
 		repeat (containerSlots){
 			

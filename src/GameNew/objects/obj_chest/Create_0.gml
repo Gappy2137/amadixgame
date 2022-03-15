@@ -5,7 +5,5 @@ image_speed = 0;
 
 yorigin = 30;
 
-containerSlotWidth = 3;
-containerSlotHeight = 3;
-
-containerSlots = containerSlotWidth * containerSlotHeight;
+containerSlotWidth = 0;
+containerSlotHeight = 0;
