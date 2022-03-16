@@ -161,6 +161,7 @@
     {"id":{"name":"spr_amadix_l_old","path":"sprites/spr_amadix_l_old/spr_amadix_l_old.yy",},"order":2,},
     {"id":{"name":"spr_amadix_d_old","path":"sprites/spr_amadix_d_old/spr_amadix_d_old.yy",},"order":3,},
     {"id":{"name":"spr_rocks_plains","path":"sprites/spr_rocks_plains/spr_rocks_plains.yy",},"order":0,},
+    {"id":{"name":"Object85","path":"objects/Object85/Object85.yy",},"order":12,},
     {"id":{"name":"spr_amadix_bareTC_run_r","path":"sprites/spr_amadix_bareTC_run_r/spr_amadix_bareTC_run_r.yy",},"order":11,},
     {"id":{"name":"spr_rocks_plains_big","path":"sprites/spr_rocks_plains_big/spr_rocks_plains_big.yy",},"order":1,},
     {"id":{"name":"item_stack_fix","path":"scripts/item_stack_fix/item_stack_fix.yy",},"order":9,},
