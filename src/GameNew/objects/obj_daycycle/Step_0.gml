@@ -1,5 +1,5 @@
 var time = global.daycycletime;
-
+/*
 key_previous = min(floor(time * number_of_key_times), number_of_key_times - 1);
 key_next = (key_previous + 1) mod number_of_key_times;
 
@@ -16,6 +16,12 @@ con_sat_brt_mix = [	lerp(con_sat_brt[key_previous, 0], con_sat_brt[key_next, 0],
 					lerp(con_sat_brt[key_previous, 4], con_sat_brt[key_next, 4], lerp_)];
 					
 alpha	= clamp(sin((2 * global.daycycletime + 0.5) * 3.14) * 1.6 - 0.1, 0, 1);
+*/
+
+color_mix = [color[0][0], color[0][1], color[0][2]];
+con_sat_brt_mix = [con_sat_brt[0][0], con_sat_brt[0][1],
+					con_sat_brt[0][2], con_sat_brt[0][3], con_sat_brt[0][4] ];
+
 /*
 if (obj_weather.weatherchange < 200){
 	//Gladkie przejscie miedzy pogodami
@@ -40,22 +46,3 @@ if (obj_weather.weatherchange < 200){
 	alarm[0] = 1;	
 }
 */
-if (keyboard_check(ord("R"))){
-	color[12, 0] -= 0.01;
-}
-if (keyboard_check(ord("T"))){
-	color[12, 0] += 0.01;
-}
-
-if (keyboard_check(ord("G"))){
-	color[12, 1] -= 0.01;
-}
-if (keyboard_check(ord("H"))){
-	color[12, 1] += 0.01;
-}
-if (keyboard_check(ord("B"))){
-	color[12, 2] -= 0.01;
-}
-if (keyboard_check(ord("N"))){
-	color[12, 2] += 0.01;
-}

@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_light_normal",
-    "path": "sprites/spr_light_normal/spr_light_normal.yy",
+    "name": "spr_light_normal2",
+    "path": "sprites/spr_light_normal2/spr_light_normal2.yy",
   },
   "solid": false,
   "visible": false,

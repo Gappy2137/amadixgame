@@ -72,27 +72,17 @@ alpha = 0;
 					con_sat_brt[8,4] = 0.65;
 */
 #region Fix
-					color[0,0] = 030/255;
-					color[0,1] = 100/255;
-					color[0,2] = 230/255;
+					color[0,0] = 127/255;
+					color[0,1] = 127/255;
+					color[0,2] = 127/255;
 
-					con_sat_brt[0,0] = 0.30;
-					con_sat_brt[0,1] = 0.90;
-					con_sat_brt[0,2] = -0.45;
+					con_sat_brt[0,0] = 1.00;
+					con_sat_brt[0,1] = 1.00;
+					con_sat_brt[0,2] = 0.00;
 
-					con_sat_brt[0,3] = 0.70;
-					con_sat_brt[0,4] = 0.65;
+					con_sat_brt[0,3] = 1.00;
+					con_sat_brt[0,4] = 1.00;
 					
-					color[1,0] = 030/255;
-					color[1,1] = 100/255;
-					color[1,2] = 230/255;
-
-					con_sat_brt[1,0] = 0.30;
-					con_sat_brt[1,1] = 0.90;
-					con_sat_brt[1,2] = -0.45;
-
-					con_sat_brt[1,3] = 0.70;
-					con_sat_brt[1,4] = 0.65;
 #endregion
 
-alarm[0] = 1;
+//alarm[0] = 1;
