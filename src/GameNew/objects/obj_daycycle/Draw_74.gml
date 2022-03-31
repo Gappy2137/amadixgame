@@ -31,16 +31,16 @@ if surface_exists(application_surface){
 shader_reset();
 
 //Light curve
-var curveAsset = curve_lights_out;
-var curvePos = global.daycycletime;
+//var curveAsset = curve_lights_out;
+//var curvePos = global.daycycletime;
 
-curvePos = global.daycycletime;
+//curvePos = global.daycycletime;
 
-var curveStruct = animcurve_get(curveAsset);
-var curveChannel = animcurve_get_channel(curveStruct, "alphaval");
+//var curveStruct = animcurve_get(curveAsset);
+//var curveChannel = animcurve_get_channel(curveStruct, "alphaval");
 
-var curveValue = animcurve_channel_evaluate(curveChannel, curvePos);
+//var curveValue = animcurve_channel_evaluate(curveChannel, curvePos);
 
-gpu_set_blendmode(bm_add);
-draw_surface_ext(srf_lights, 0, 0, 1, 1, 0, c_white, curveValue);
-gpu_set_blendmode(bm_normal);
+//gpu_set_blendmode(bm_add);
+//draw_surface_ext(srf_lights, 0, 0, 1, 1, 0, c_white, 1);
+//gpu_set_blendmode(bm_normal);

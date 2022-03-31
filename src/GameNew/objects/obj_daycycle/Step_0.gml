@@ -14,9 +14,9 @@ con_sat_brt_mix = [	lerp(con_sat_brt[key_previous, 0], con_sat_brt[key_next, 0],
 					lerp(con_sat_brt[key_previous, 2], con_sat_brt[key_next, 2], lerp_),
 					lerp(con_sat_brt[key_previous, 3], con_sat_brt[key_next, 3], lerp_),
 					lerp(con_sat_brt[key_previous, 4], con_sat_brt[key_next, 4], lerp_)];
-					
+	*/				
 alpha	= clamp(sin((2 * global.daycycletime + 0.5) * 3.14) * 1.6 - 0.1, 0, 1);
-*/
+
 
 color_mix = [color[0][0], color[0][1], color[0][2]];
 con_sat_brt_mix = [con_sat_brt[0][0], con_sat_brt[0][1],

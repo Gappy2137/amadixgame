@@ -431,6 +431,7 @@
     {"id":{"name":"ChatterboxVariablesClearVisited","path":"scripts/ChatterboxVariablesClearVisited/ChatterboxVariablesClearVisited.yy",},"order":3,},
     {"id":{"name":"scr_add_key_time","path":"scripts/scr_add_key_time/scr_add_key_time.yy",},"order":0,},
     {"id":{"name":"curve_fade_alpha","path":"animcurves/curve_fade_alpha/curve_fade_alpha.yy",},"order":1,},
+    {"id":{"name":"scr_daycycle_params","path":"scripts/scr_daycycle_params/scr_daycycle_params.yy",},"order":7,},
     {"id":{"name":"ChatterboxVariableDefault","path":"scripts/ChatterboxVariableDefault/ChatterboxVariableDefault.yy",},"order":0,},
     {"id":{"name":"spr_amadix_d_melee","path":"sprites/spr_amadix_d_melee/spr_amadix_d_melee.yy",},"order":6,},
     {"id":{"name":"scr_draw_slot_none","path":"scripts/scr_draw_slot_none/scr_draw_slot_none.yy",},"order":0,},

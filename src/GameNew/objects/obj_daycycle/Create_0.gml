@@ -5,12 +5,12 @@ shader = shader_daycycle;
 u_col = shader_get_uniform(shader, "col");
 u_con_sat_brt = shader_get_uniform(shader, "con_sat_brt");
 
-color_mix = -1;
-color[0][0] = undefined;
-
 s_lights		= shader_get_sampler_index(shader, "lights");
 tex_lights		= -1;
 srf_lights		= -1;
+
+color_mix = -1;
+color[0][0] = undefined;
 
 con_sat_brt_mix = -1;
 
@@ -52,11 +52,11 @@ scr_add_key_time(118,	100,	165,	0.92,	0.93,  -0.15,	0.08,	0.80);	// Rain
 */
 
 number_of_key_times = 24;
-
+/*
 var reflection = layer_get_id("WaterRef");
 layer_script_begin(reflection, scr_set_alpha);
 layer_script_end(reflection, scr_reset_alpha);
-
+*/
 u_alpha = shader_get_uniform(shader_alpha, "alpha");
 alpha = 0;
 /*
@@ -85,4 +85,7 @@ alpha = 0;
 					
 #endregion
 
+ds_daycycle_info = ds_grid_create(12, 24);
+//ds_daycycle_hours = ds_list_create();
+scr_daycycle_params();
 //alarm[0] = 1;
