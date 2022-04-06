@@ -48,6 +48,7 @@ torso_index = 0;
 legs_index = 0;
 boots_index = 0;
 hat_index = 0;
+arms_index = 0;
 
 shadowOriginY = 34;
 shadowStyle = spr_shadow_player;

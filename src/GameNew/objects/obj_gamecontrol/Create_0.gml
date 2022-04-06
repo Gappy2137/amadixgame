@@ -67,8 +67,7 @@ enum player_state_action{
 	eating = 1,
 	drinking = 2,
 	attacking_melee = 3,
-	attacking_range = 4,
-	
+	handgun = 4,
 }
 
 enum lang{

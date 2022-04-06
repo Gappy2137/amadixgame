@@ -103,6 +103,9 @@ function item_attrib_grid(){
 	grid[# INVTEMPERATURE, item.panama_hat] = 0;
 	grid[# INVDEFENCE, item.panama_hat] = 0;
 	
+	//M1911
+	grid[# INVTYPE, item.m1911] = itemtype.handgun;
+	
 	//Sprawdzenie typow
 	for (var i = 0; i <= item.height; i++){
 		if (grid[# INVTYPE, i] == itemtype.dish){
@@ -167,6 +170,9 @@ function item_attrib_grid(){
 			grid[# MAXSTACK, i] = 1;
 		}
 		if (grid[# INVTYPE, i] == itemtype.hat){
+			grid[# MAXSTACK, i] = 1;
+		}
+		if (grid[# INVTYPE, i] == itemtype.handgun){
 			grid[# MAXSTACK, i] = 1;
 		}
 	}

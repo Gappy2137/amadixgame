@@ -1,621 +1,244 @@
 function scr_draw_player(px, py, pz) {
 
+function drawPlayerNormal(xx, yy, zz){
+	//----------------------------------------------------------------------------------------------------------------
+	//Glowa
+	draw_sprite_ext(head_index,anim_frame,xx,yy - zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+
+	//Dlonie
+	draw_sprite_ext(hands_index,anim_frame,xx,yy - zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+
+	//Gorne ubranie
+	draw_sprite_ext(torso_index,anim_frame,xx,yy - zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+
+	//Spodnie
+	draw_sprite_ext(legs_index,anim_frame,xx,yy - zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+
+	//Buty
+	draw_sprite_ext(boots_index,anim_frame,xx,yy - zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+					
+	//Czapka
+	draw_sprite_ext(hat_index,hat_frame,xx,yy - zz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+	//----------------------------------------------------------------------------------------------------------------
+}
+function drawPlayerEating(xx, yy, zz){
+	var sx = (itemeaten mod obj_inventory.spr_inv_items_columns) * 24;
+	var sy = (itemeaten div obj_inventory.spr_inv_items_columns) * 24;
+	//----------------------------------------------------------------------------------------------------------------
+	//Glowa
+	draw_sprite_ext(head_index,anim_frame,xx,yy - zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+	
+	//Gorne ubranie
+	draw_sprite_ext(torso_index,anim_frame,xx,yy - zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+	
+	//Spodnie
+	draw_sprite_ext(legs_index,anim_frame,xx,yy - zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+	
+	if (anim_frame_action >= 0.1) && (anim_frame_action <= 6){
+		//Przedmiot jedzony
+		draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 23, 24 - itemUsedSx, xx - 7 + (itemUsedX), yy - zz + 13 + (itemUsedY), .5, .5, itemUsedAngle, c_white, c_white, c_white, c_white, 1);
+	}
+	
+	//Dlonie
+	draw_sprite_ext(hands_index,anim_frame,xx,yy - zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+
+	//Buty
+	draw_sprite_ext(boots_index,anim_frame,xx,yy - zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+					
+	//Czapka
+	draw_sprite_ext(hat_index,hat_frame,xx,yy - zz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+	//----------------------------------------------------------------------------------------------------------------
+}
+function drawPlayerDrinking(xx, yy, zz){
+	var sx = (itemeaten mod obj_inventory.spr_inv_items_columns) * 24;
+	var sy = (itemeaten div obj_inventory.spr_inv_items_columns) * 24;
+	//----------------------------------------------------------------------------------------------------------------
+	//Glowa
+	draw_sprite_ext(head_index,anim_frame,xx,yy - zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+	
+	//Gorne ubranie
+	draw_sprite_ext(torso_index,anim_frame,xx,yy - zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+	
+	//Spodnie
+	draw_sprite_ext(legs_index,anim_frame,xx,yy - zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+	
+	if ((anim_frame_action >= 0.1) && (anim_frame_action <= 1.8)) || ((anim_frame_action >= 8) && (anim_frame_action <= 10)){
+		//Przedmiot pity
+		draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 24, 24 - itemUsedSx, xx - 7 + (itemUsedX), yy - zz + 13 + (itemUsedY), .5, (.5 * itemUsedYscale), itemUsedAngle, c_white, c_white, c_white, c_white, 1);
+	}
+	
+	//Dlonie
+	draw_sprite_ext(hands_index,anim_frame,xx,yy - zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+
+	//Buty
+	draw_sprite_ext(boots_index,anim_frame,xx,yy - zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+					
+	//Czapka
+	draw_sprite_ext(hat_index,hat_frame,xx,yy - zz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+	//----------------------------------------------------------------------------------------------------------------
+}
+function drawPlayerHandgun(xx, yy, zz, face){
+	//----------------------------------------------------------------------------------------------------------------
+	
+	//Rece i dlonie
+	if (face == index_facing.up){
+		draw_sprite_ext(arms_index,anim_frame,xx,yy - zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+		
+		draw_sprite_ext(hands_index,anim_frame,xx,yy - zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+		
+		//weapon
+	}
+	
+	//Glowa
+	draw_sprite_ext(head_index,anim_frame,xx,yy - zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+	
+	//Gorne ubranie
+	draw_sprite_ext(torso_index,anim_frame,xx,yy - zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+	
+	//Spodnie
+	draw_sprite_ext(legs_index,anim_frame,xx,yy - zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+
+	//Buty
+	draw_sprite_ext(boots_index,anim_frame,xx,yy - zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+					
+	//Czapka
+	draw_sprite_ext(hat_index,hat_frame,xx,yy - zz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+	
+	//Rece i dlonie
+	if ((face == index_facing.down) || (face == index_facing.right) || (face == index_facing.left)){
+		draw_sprite_ext(arms_index,anim_frame,xx,yy - zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+		
+		draw_sprite_ext(hands_index,anim_frame,xx,yy - zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+		
+		//weapon
+	}
+	//----------------------------------------------------------------------------------------------------------------
+}
+
+
 	switch(actionstate){
 		case player_state_action.none:
 			switch(state){
 				case player_state.idle:
-					//----------------------------------------------------------------------------------------------------------------
-					//Glowa
-					draw_sprite_ext(head_index,anim_frame,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Dlonie
-					draw_sprite_ext(hands_index,anim_frame,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Gorne ubranie
-					draw_sprite_ext(torso_index,anim_frame,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Spodnie
-					draw_sprite_ext(legs_index,anim_frame,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Buty
-					draw_sprite_ext(boots_index,anim_frame,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					
-					//Czapka
-					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					//----------------------------------------------------------------------------------------------------------------
-					
+					drawPlayerNormal(px, py, pz);
 				break;
 				case player_state.moving:
-					//----------------------------------------------------------------------------------------------------------------
-						//Glowa
-						draw_sprite_ext(head_index,anim_frame,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Dlonie
-						draw_sprite_ext(hands_index,anim_frame,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Gorne ubranie
-						draw_sprite_ext(torso_index,anim_frame,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Spodnie
-						draw_sprite_ext(legs_index,anim_frame,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Buty
-						draw_sprite_ext(boots_index,anim_frame,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-						
-						//Czapka
-						draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					//----------------------------------------------------------------------------------------------------------------
+					drawPlayerNormal(px, py, pz);
 				break;
 				case player_state.wading_idle:
-					var pzz = 0;
-					//----------------------------------------------------------------------------------------------------------------
-						//Glowa
-						draw_sprite_ext(head_index,anim_frame,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Dlonie
-						draw_sprite_ext(hands_index,anim_frame,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Gorne ubranie
-						draw_sprite_ext(torso_index,anim_frame,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Spodnie
-						draw_sprite_ext(legs_index,anim_frame,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Buty
-						draw_sprite_ext(boots_index,anim_frame,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-						
-						//Czapka
-						draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					//----------------------------------------------------------------------------------------------------------------
+					drawPlayerNormal(px, py, pz);
 				break;
 				case player_state.wading:
-					var pzz = 0;
-					//----------------------------------------------------------------------------------------------------------------
-						//Glowa
-						draw_sprite_ext(head_index,anim_frame,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Dlonie
-						draw_sprite_ext(hands_index,anim_frame,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Gorne ubranie
-						draw_sprite_ext(torso_index,anim_frame,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Spodnie
-						draw_sprite_ext(legs_index,anim_frame,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Buty
-						draw_sprite_ext(boots_index,anim_frame,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-						
-						//Czapka
-						draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					//----------------------------------------------------------------------------------------------------------------
+					drawPlayerNormal(px, py, pz);
 				break;
 				case player_state.swimming_idle:
-					var pzz = 0;
-					//----------------------------------------------------------------------------------------------------------------
-						//Glowa
-						draw_sprite_ext(head_index,anim_frame,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Dlonie
-						draw_sprite_ext(hands_index,anim_frame,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Gorne ubranie
-						draw_sprite_ext(torso_index,anim_frame,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Spodnie
-						draw_sprite_ext(legs_index,anim_frame,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Buty
-						draw_sprite_ext(boots_index,anim_frame,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-						
-						//Czapka
-						draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					//----------------------------------------------------------------------------------------------------------------
+					drawPlayerNormal(px, py, pz);
 				break;
 				case player_state.swimming:
-					var pzz = 0;
-					//----------------------------------------------------------------------------------------------------------------
-						//Glowa
-						draw_sprite_ext(head_index,anim_frame,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Dlonie
-						draw_sprite_ext(hands_index,anim_frame,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Gorne ubranie
-						draw_sprite_ext(torso_index,anim_frame,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Spodnie
-						draw_sprite_ext(legs_index,anim_frame,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Buty
-						draw_sprite_ext(boots_index,anim_frame,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-						
-						//Czapka
-						draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					//----------------------------------------------------------------------------------------------------------------
+					drawPlayerNormal(px, py, pz);
 				break;
 				default:
-					//----------------------------------------------------------------------------------------------------------------
-						//Glowa
-						draw_sprite_ext(head_index,anim_frame,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Dlonie
-						draw_sprite_ext(hands_index,anim_frame,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Gorne ubranie
-						draw_sprite_ext(torso_index,anim_frame,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Spodnie
-						draw_sprite_ext(legs_index,anim_frame,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Buty
-						draw_sprite_ext(boots_index,anim_frame,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-						
-						//Czapka
-						draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					//----------------------------------------------------------------------------------------------------------------
+					drawPlayerNormal(px, py, pz);
 				break;
 			}
 		break;
 		case player_state_action.eating:
-			var sx = (itemeaten mod obj_inventory.spr_inv_items_columns) * 24;
-			var sy = (itemeaten div obj_inventory.spr_inv_items_columns) * 24;
 			switch(state){
 				case player_state.idle:
-					//----------------------------------------------------------------------------------------------------------------
-					//Glowa
-					draw_sprite_ext(head_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Gorne ubranie
-					draw_sprite_ext(torso_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-			
-					//Spodnie
-					draw_sprite_ext(legs_index,0,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-			
-					if (anim_frame_action >= 0.1) && (anim_frame_action <= 6){
-						//Przedmiot jedzony
-						draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 23, 24 - itemUsedSx, px - 7 + (itemUsedX), py - pz + 13 + (itemUsedY), .5, .5, itemUsedAngle, c_white, c_white, c_white, c_white, 1);
-					}
-					//Dlonie
-					draw_sprite_ext(hands_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Buty
-					draw_sprite_ext(boots_index,0,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					
-					//Czapka
-					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					//----------------------------------------------------------------------------------------------------------------
+					drawPlayerEating(px, py, pz);
 				break;
 				case player_state.moving:
-					//----------------------------------------------------------------------------------------------------------------
-					//Glowa
-					draw_sprite_ext(head_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Gorne ubranie
-					draw_sprite_ext(torso_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-			
-					//Spodnie
-					draw_sprite_ext(legs_index,0,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-			
-					if (anim_frame_action >= 0.1) && (anim_frame_action <= 6){
-						//Przedmiot jedzony
-						draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 23, 24 - itemUsedSx, px - 7 + (itemUsedX), py - pz + 13 + (itemUsedY), .5, .5, itemUsedAngle, c_white, c_white, c_white, c_white, 1);
-					}
-					//Dlonie
-					draw_sprite_ext(hands_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Buty
-					draw_sprite_ext(boots_index,0,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					
-					//Czapka
-					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					//----------------------------------------------------------------------------------------------------------------
+					drawPlayerEating(px, py, pz);
 				break;
 				case player_state.wading_idle:
-					var pzz = 0;
-					//----------------------------------------------------------------------------------------------------------------
-					//Glowa
-					draw_sprite_ext(head_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Gorne ubranie
-					draw_sprite_ext(torso_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-			
-					//Spodnie
-					draw_sprite_ext(legs_index,0,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-			
-					if (anim_frame_action >= 0.1) && (anim_frame_action <= 6){
-						//Przedmiot jedzony
-						draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 23, 24 - itemUsedSx, px - 7 + (itemUsedX), py - pz + pzz + 13 + (itemUsedY), .5, .5, itemUsedAngle, c_white, c_white, c_white, c_white, 1);
-					}
-					//Dlonie
-					draw_sprite_ext(hands_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Buty
-					draw_sprite_ext(boots_index,0,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					
-					//Czapka
-					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					//----------------------------------------------------------------------------------------------------------------
+					drawPlayerEating(px, py, pz);
 				break;
 				case player_state.wading:
-					var pzz = 0;
-					//----------------------------------------------------------------------------------------------------------------
-					//Glowa
-					draw_sprite_ext(head_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Gorne ubranie
-					draw_sprite_ext(torso_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-			
-					//Spodnie
-					draw_sprite_ext(legs_index,0,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-			
-					if (anim_frame_action >= 0.1) && (anim_frame_action <= 6){
-						//Przedmiot jedzony
-						draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 23, 24 - itemUsedSx, px - 7 + (itemUsedX), py - pz + pzz + 13 + (itemUsedY), .5, .5, itemUsedAngle, c_white, c_white, c_white, c_white, 1);
-					}
-					//Dlonie
-					draw_sprite_ext(hands_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Buty
-					draw_sprite_ext(boots_index,0,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					
-					//Czapka
-					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					//----------------------------------------------------------------------------------------------------------------
+					drawPlayerEating(px, py, pz);
 				break;
 				case player_state.swimming_idle:
-					var pzz = 0;
-					//----------------------------------------------------------------------------------------------------------------
-					//Glowa
-					draw_sprite_ext(head_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Gorne ubranie
-					draw_sprite_ext(torso_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-			
-					//Spodnie
-					draw_sprite_ext(legs_index,0,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-			
-					if (anim_frame_action >= 0.1) && (anim_frame_action <= 6){
-						//Przedmiot jedzony
-						draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 23, 24 - itemUsedSx, px - 7 + (itemUsedX), py - pz + pzz + 13 + (itemUsedY), .5, .5, itemUsedAngle, c_white, c_white, c_white, c_white, 1);
-					}
-					//Dlonie
-					draw_sprite_ext(hands_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Buty
-					draw_sprite_ext(boots_index,0,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					
-					//Czapka
-					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					//----------------------------------------------------------------------------------------------------------------
+					drawPlayerEating(px, py, pz);
 				break;
 				case player_state.swimming:
-					var pzz = 0;
-					//----------------------------------------------------------------------------------------------------------------
-					//Glowa
-					draw_sprite_ext(head_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Gorne ubranie
-					draw_sprite_ext(torso_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-			
-					//Spodnie
-					draw_sprite_ext(legs_index,0,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-			
-					if (anim_frame_action >= 0.1) && (anim_frame_action <= 6){
-						//Przedmiot jedzony
-						draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 23, 24 - itemUsedSx, px - 7 + (itemUsedX), py - pz + pzz + 13 + (itemUsedY), .5, .5, itemUsedAngle, c_white, c_white, c_white, c_white, 1);
-					}
-					//Dlonie
-					draw_sprite_ext(hands_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Buty
-					draw_sprite_ext(boots_index,0,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					
-					//Czapka
-					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					//----------------------------------------------------------------------------------------------------------------
+					drawPlayerEating(px, py, pz);
 				break;
 				default:
-					//----------------------------------------------------------------------------------------------------------------
-					//Glowa
-					draw_sprite_ext(head_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Gorne ubranie
-					draw_sprite_ext(torso_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-			
-					//Spodnie
-					draw_sprite_ext(legs_index,0,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-			
-					if (anim_frame_action >= 0.1) && (anim_frame_action <= 6){
-						//Przedmiot jedzony
-						draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 23, 24 - itemUsedSx, px - 7 + (itemUsedX), py - pz + 13 + (itemUsedY), .5, .5, itemUsedAngle, c_white, c_white, c_white, c_white, 1);
-					}
-					//Dlonie
-					draw_sprite_ext(hands_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Buty
-					draw_sprite_ext(boots_index,0,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					
-					//Czapka
-					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					//----------------------------------------------------------------------------------------------------------------
+					drawPlayerEating(px, py, pz);
 				break;
 			}
 		break;
 		case player_state_action.drinking:
-			var sx = (itemeaten mod obj_inventory.spr_inv_items_columns) * 24;
-			var sy = (itemeaten div obj_inventory.spr_inv_items_columns) * 24;
 			switch(state){
 				case player_state.idle:
-					//----------------------------------------------------------------------------------------------------------------
-					//Glowa
-					draw_sprite_ext(head_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Gorne ubranie
-					draw_sprite_ext(torso_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-			
-					//Spodnie
-					draw_sprite_ext(legs_index,0,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-			
-					if ((anim_frame_action >= 0.1) && (anim_frame_action <= 1.8)) || ((anim_frame_action >= 8) && (anim_frame_action <= 10)){
-						//Przedmiot pity
-						draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 24, 24 - itemUsedSx, px - 7 + (itemUsedX), py - pz + 13 + (itemUsedY), .5, (.5 * itemUsedYscale), itemUsedAngle, c_white, c_white, c_white, c_white, 1);
-					}
-			
-					//Dlonie
-					draw_sprite_ext(hands_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Buty
-					draw_sprite_ext(boots_index,0,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					
-					//Czapka
-					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					//----------------------------------------------------------------------------------------------------------------
+					drawPlayerEating(px, py, pz);
 				break;
 				case player_state.moving:
-					//----------------------------------------------------------------------------------------------------------------
-					//Glowa
-					draw_sprite_ext(head_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Gorne ubranie
-					draw_sprite_ext(torso_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-			
-					//Spodnie
-					draw_sprite_ext(legs_index,0,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-			
-					if ((anim_frame_action >= 0.1) && (anim_frame_action <= 1.8)) || ((anim_frame_action >= 8) && (anim_frame_action <= 10)){
-						//Przedmiot pity
-						draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 24, 24 - itemUsedSx, px - 7 + (itemUsedX), py - pz + 13 + (itemUsedY), .5, (.5 * itemUsedYscale), itemUsedAngle, c_white, c_white, c_white, c_white, 1);
-					}
-			
-					//Dlonie
-					draw_sprite_ext(hands_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Buty
-					draw_sprite_ext(boots_index,0,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					
-					//Czapka
-					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					//----------------------------------------------------------------------------------------------------------------
+					drawPlayerEating(px, py, pz);
 				break;
 				case player_state.wading_idle:
-					var pzz = 0;
-					//----------------------------------------------------------------------------------------------------------------
-					//Glowa
-					draw_sprite_ext(head_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Gorne ubranie
-					draw_sprite_ext(torso_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-			
-					//Spodnie
-					draw_sprite_ext(legs_index,0,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-			
-					if ((anim_frame_action >= 0.1) && (anim_frame_action <= 1.8)) || ((anim_frame_action >= 8) && (anim_frame_action <= 10)){
-						//Przedmiot pity
-						draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 24, 24 - itemUsedSx, px - 7 + (itemUsedX), py - pz + pzz + 13 + (itemUsedY), .5, (.5 * itemUsedYscale), itemUsedAngle, c_white, c_white, c_white, c_white, 1);
-					}
-			
-					//Dlonie
-					draw_sprite_ext(hands_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Buty
-					draw_sprite_ext(boots_index,0,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					
-					//Czapka
-					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					//----------------------------------------------------------------------------------------------------------------
+					drawPlayerEating(px, py, pz);
 				break;
 				case player_state.wading:
-					var pzz = 0;
-					//----------------------------------------------------------------------------------------------------------------
-					//Glowa
-					draw_sprite_ext(head_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Gorne ubranie
-					draw_sprite_ext(torso_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-			
-					//Spodnie
-					draw_sprite_ext(legs_index,0,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-			
-					if ((anim_frame_action >= 0.1) && (anim_frame_action <= 1.8)) || ((anim_frame_action >= 8) && (anim_frame_action <= 10)){
-						//Przedmiot pity
-						draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 24, 24 - itemUsedSx, px - 7 + (itemUsedX), py - pz + pzz + 13 + (itemUsedY), .5, (.5 * itemUsedYscale), itemUsedAngle, c_white, c_white, c_white, c_white, 1);
-					}
-			
-					//Dlonie
-					draw_sprite_ext(hands_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Buty
-					draw_sprite_ext(boots_index,0,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					
-					//Czapka
-					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					//----------------------------------------------------------------------------------------------------------------
+					drawPlayerEating(px, py, pz);
 				break;
 				case player_state.swimming_idle:
-					var pzz = 0;
-					//----------------------------------------------------------------------------------------------------------------
-					//Glowa
-					draw_sprite_ext(head_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Gorne ubranie
-					draw_sprite_ext(torso_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-			
-					//Spodnie
-					draw_sprite_ext(legs_index,0,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-			
-					if ((anim_frame_action >= 0.1) && (anim_frame_action <= 1.8)) || ((anim_frame_action >= 8) && (anim_frame_action <= 10)){
-						//Przedmiot pity
-						draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 24, 24 - itemUsedSx, px - 7 + (itemUsedX), py - pz + pzz + 13 + (itemUsedY), .5, (.5 * itemUsedYscale), itemUsedAngle, c_white, c_white, c_white, c_white, 1);
-					}
-			
-					//Dlonie
-					draw_sprite_ext(hands_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Buty
-					draw_sprite_ext(boots_index,0,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					
-					//Czapka
-					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					//----------------------------------------------------------------------------------------------------------------
+					drawPlayerEating(px, py, pz);
 				break;
 				case player_state.swimming:
-					var pzz = 0;
-					//----------------------------------------------------------------------------------------------------------------
-					//Glowa
-					draw_sprite_ext(head_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Gorne ubranie
-					draw_sprite_ext(torso_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-			
-					//Spodnie
-					draw_sprite_ext(legs_index,0,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-			
-					if ((anim_frame_action >= 0.1) && (anim_frame_action <= 1.8)) || ((anim_frame_action >= 8) && (anim_frame_action <= 10)){
-						//Przedmiot pity
-						draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 24, 24 - itemUsedSx, px - 7 + (itemUsedX), py - pz + pzz + 13 + (itemUsedY), .5, (.5 * itemUsedYscale), itemUsedAngle, c_white, c_white, c_white, c_white, 1);
-					}
-			
-					//Dlonie
-					draw_sprite_ext(hands_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Buty
-					draw_sprite_ext(boots_index,0,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					
-					//Czapka
-					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					//----------------------------------------------------------------------------------------------------------------
+					drawPlayerEating(px, py, pz);
+				break;
+				default:
+					drawPlayerEating(px, py, pz);
 				break;
 			}
 		break;
 		case player_state_action.attacking_melee:
 			switch(state){
 				case player_state.idle:
-					//----------------------------------------------------------------------------------------------------------------
-					//Glowa
-					draw_sprite_ext(head_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Dlonie
-					draw_sprite_ext(hands_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Gorne ubranie
-					draw_sprite_ext(torso_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Spodnie
-					draw_sprite_ext(legs_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Buty
-					draw_sprite_ext(boots_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					
-					//Czapka
-					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					//----------------------------------------------------------------------------------------------------------------
+					drawPlayerNormal(px, py, pz);
 				break;
 				case player_state.moving:
-					//----------------------------------------------------------------------------------------------------------------
-					//Glowa
-					draw_sprite_ext(head_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Dlonie
-					draw_sprite_ext(hands_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Gorne ubranie
-					draw_sprite_ext(torso_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Spodnie
-					draw_sprite_ext(legs_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Buty
-					draw_sprite_ext(boots_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					
-					//Czapka
-					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					//----------------------------------------------------------------------------------------------------------------
+					drawPlayerNormal(px, py, pz);
 				break;
 				case player_state.wading_idle:
-					var pzz = 0;
-					//----------------------------------------------------------------------------------------------------------------
-						//Glowa
-						draw_sprite_ext(head_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Dlonie
-						draw_sprite_ext(hands_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Gorne ubranie
-						draw_sprite_ext(torso_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Spodnie
-						draw_sprite_ext(legs_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Buty
-						draw_sprite_ext(boots_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-						
-						//Czapka
-						draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					//----------------------------------------------------------------------------------------------------------------
+					drawPlayerNormal(px, py, pz);
 				break;
 				case player_state.wading:
-					var pzz = 0;
-					//----------------------------------------------------------------------------------------------------------------
-						//Glowa
-						draw_sprite_ext(head_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Dlonie
-						draw_sprite_ext(hands_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Gorne ubranie
-						draw_sprite_ext(torso_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Spodnie
-						draw_sprite_ext(legs_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-						//Buty
-						draw_sprite_ext(boots_index,anim_frame_action,px,py - pz + pzz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-						
-						//Czapka
-						draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					//----------------------------------------------------------------------------------------------------------------
+					drawPlayerNormal(px, py, pz);
+				break;
+				case player_state.swimming_idle:
+					drawPlayerNormal(px, py, pz);
+				break;
+				case player_state.swimming:
+					drawPlayerNormal(px, py, pz);
 				break;
 				default:
-					//----------------------------------------------------------------------------------------------------------------
-					//Glowa
-					draw_sprite_ext(head_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Dlonie
-					draw_sprite_ext(hands_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Gorne ubranie
-					draw_sprite_ext(torso_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Spodnie
-					draw_sprite_ext(legs_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Buty
-					draw_sprite_ext(boots_index,anim_frame_action,px,py - pz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					
-					//Czapka
-					draw_sprite_ext(hat_index,hat_frame,px,py - pz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					//----------------------------------------------------------------------------------------------------------------
+					drawPlayerNormal(px, py, pz);
+				break;
+			}
+		break;
+		case player_state_action.handgun:
+			switch(state){
+				case player_state.idle:
+					drawPlayerNormal(px, py, pz);
+				break;
+				case player_state.moving:
+					drawPlayerNormal(px, py, pz);
+				break;
+				case player_state.wading_idle:
+					drawPlayerNormal(px, py, pz);
+				break;
+				case player_state.wading:
+					drawPlayerNormal(px, py, pz);
+				break;
+				case player_state.swimming_idle:
+					drawPlayerNormal(px, py, pz);
+				break;
+				case player_state.swimming:
+					drawPlayerNormal(px, py, pz);
+				break;
+				default:
+					drawPlayerNormal(px, py, pz);
 				break;
 			}
 		break;

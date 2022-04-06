@@ -19,6 +19,7 @@ ds_item_info[# in, i++] = json_read("itemNameClassicJacket");
 ds_item_info[# in, i++] = json_read("itemNameJeans");
 ds_item_info[# in, i++] = json_read("itemNameSneakers");
 ds_item_info[# in, i++] = json_read("itemNamePanamaHat");
+ds_item_info[# in, i++] = json_read("itemNameM1911");
 #endregion
 
 #region Opisy przedmiotow
@@ -40,6 +41,7 @@ ds_item_info[# in, i++] = json_read("itemDescClassicJacket");
 ds_item_info[# in, i++] = json_read("itemDescJeans");
 ds_item_info[# in, i++] = json_read("itemDescSneakers");
 ds_item_info[# in, i++] = json_read("itemDescPanamaHat");
+ds_item_info[# in, i++] = json_read("itemDescM1911");
 #endregion
 
 #region Rodzaje przedmiotow
@@ -56,4 +58,5 @@ ds_item_info[# in, i++] = json_read("itemTypeClothing");
 ds_item_info[# in, i++] = json_read("itemTypePants");
 ds_item_info[# in, i++] = json_read("itemTypeBoots");
 ds_item_info[# in, i++] = json_read("itemTypeHat");
+ds_item_info[# in, i++] = json_read("itemTypeHandgun");
 #endregion

@@ -7,14 +7,15 @@ function item_action(){
 	var damage =		obj_inventory.ds_inventory[# INVDAMAGE, obj_inventory.mouse_slotx_second];
 	var defence =		obj_inventory.ds_inventory[# INVDEFENCE, obj_inventory.mouse_slotx_second];
 	var effects =		obj_inventory.ds_inventory[# INVEFFECTS, obj_inventory.mouse_slotx_second];
-	//Prawy przycisk wscisniety
+	
+	#region Prawy przycisk wscisniety
 	if (mouse_check_button_pressed(mb_right)){
 		if instance_exists(obj_amadix){
 			if (type == itemtype.food) || (type == itemtype.fruit) || (type == itemtype.vegetable) || (type == itemtype.dish){
 				if (!obj_amadix.stuffed){
 					if (amount > 0){
 						if (obj_amadix.actionstate != player_state_action.eating){
-							var iitem = obj_inventory.ds_inventory[# 0, obj_inventory.mouse_slotx_second];
+							var iitem = obj_inventory.ds_inventory[# INVITEM, obj_inventory.mouse_slotx_second];
 							with (obj_amadix){
 								oneStepEvent[0] = true;
 								itemeaten = iitem;
@@ -45,7 +46,7 @@ function item_action(){
 				if (!obj_amadix.stuffed){
 					if (amount > 0){
 						if (obj_amadix.actionstate != player_state_action.drinking){
-							var iitem = obj_inventory.ds_inventory[# 0, obj_inventory.mouse_slotx_second];
+							var iitem = obj_inventory.ds_inventory[# INVITEM, obj_inventory.mouse_slotx_second];
 							with (obj_amadix){
 								itemeaten = iitem;
 								actionstate = player_state_action.drinking;
@@ -73,13 +74,14 @@ function item_action(){
 			}
 		}
 	}
+	#endregion
 	
-	//Lewy przycisk wscisniety
+	#region Lewy przycisk wscisniety
 	if (mouse_check_button_pressed(mb_left))  && (!inslots){
 		if (type == itemtype.melee){
 			if (amount > 0){
 				if (obj_amadix.actionstate != player_state_action.attacking_melee){
-					var iitem = obj_inventory.ds_inventory[# 0, obj_inventory.mouse_slotx_second];
+					var iitem = obj_inventory.ds_inventory[# INVITEM, obj_inventory.mouse_slotx_second];
 					with (obj_amadix){
 						oneStepEvent[0] = true;
 						oneStepEvent[1] = true;
@@ -114,5 +116,22 @@ function item_action(){
 			}
 		}
 	}
+	#endregion
 	
+	#region Brak przycisku
+	if (!inslots){
+		if (type == itemtype.handgun){
+			if (amount > 0){
+					var iitem = obj_inventory.ds_inventory[# INVITEM, obj_inventory.mouse_slotx_second];
+					with (obj_amadix){
+						itemeaten = iitem;
+						actionstate = player_state_action.handgun;
+					}
+			}else{
+				slot_remove(obj_inventory.mouse_slotx_second);
+				obj_inventory.text_alpha = 0;
+			}
+		}
+	}
+	#endregion
 }

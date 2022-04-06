@@ -1,6 +1,7 @@
 function scr_playerMovingAnim() {
 
-	if (actionstate == player_state_action.eating) || (actionstate == player_state_action.drinking) || (actionstate == player_state_action.attacking_melee){
+	if (actionstate == player_state_action.eating) || (actionstate == player_state_action.drinking) 
+	|| (actionstate == player_state_action.attacking_melee){
 		anim_frame_action += anim_speed_action;
 		if anim_frame_action > (anim_frame_action_num + .9){
 			anim_frame_action = anim_frame_action_num;
@@ -30,6 +31,10 @@ function scr_playerMovingAnim() {
 			scr_setPlayerFacingAnim(index_facing.down);
 			facing = dirc.down;
 		}
+	}
+	
+	if (actionstate == player_state_action.handgun){
+			
 	}
 
 

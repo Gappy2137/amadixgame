@@ -102,6 +102,15 @@ if (keyboard_check_pressed(ord("E"))) && (obj_inventory.inhand == -1){
 				show_hud = hud.slots;
 			}
 		}
+	}else{
+
+			if (show_hud == hud.slots){
+				show_hud = lasthud;	
+			}else{
+				lasthud = show_hud;
+				show_hud = hud.slots;
+			}
+		
 	}
 }
 switch (show_hud){
