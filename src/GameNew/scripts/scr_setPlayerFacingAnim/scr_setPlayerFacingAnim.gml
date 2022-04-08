@@ -54,7 +54,7 @@ function scr_setPlayerFacingAnim(facing){
 #endregion
 
 #region Dlonie
-	if (global.playerHands = "short"){
+	if (global.playerHands == "short"){
 		if (!running){
 			switch(actionstate){
 				case player_state_action.eating:
@@ -74,38 +74,68 @@ function scr_setPlayerFacingAnim(facing){
 						hands_index = spr_amadix_hands_attack_d;
 				break;
 				case player_state_action.handgun:
-					if facing == index_facing.right
-						hands_index = spr_amadix_hands_gun_r;
-					if facing == index_facing.up
+					if (shootdir > 45) && (shootdir <= 135){
+						hand_rot = point_direction(x, y + hand_yoffset, mouse_x, mouse_y) - 90;
+						hand_xoffset = 0;
+						hand_yoffset = 18;
 						hands_index = spr_amadix_hands_gun_u;
-					if facing == index_facing.left
+					}else
+					if (shootdir > 135) && (shootdir <= 240){
+						hand_rot = point_direction(x, y + hand_yoffset, mouse_x, mouse_y) - 180;
+						hand_xoffset = 3;
+						hand_yoffset = 17;
 						hands_index = spr_amadix_hands_gun_l;
-					if facing == index_facing.down
+					}else
+					if (shootdir > 240) && (shootdir <= 300){
+						hand_rot = point_direction(x, y + hand_yoffset, mouse_x, mouse_y) + 90;
+						hand_xoffset = -3;
+						hand_yoffset = 14;
+						hand_xoffset2 = 3;
+						hand_yoffset2 = 14;
 						hands_index = spr_amadix_hands_gun_d;
+						hands2_index = spr_amadix_hands_gun_d2;
+					}else{
+						hand_rot = point_direction(x, y + hand_yoffset, mouse_x, mouse_y);
+						hand_xoffset = -3;
+						hand_yoffset = 17;
+						hands_index = spr_amadix_hands_gun_r;
+					}
 				break;
 				case player_state_action.none:
-					if facing == index_facing.right
-						hands_index = spr_amadix_hands_r;
-					if facing == index_facing.up
-						hands_index = spr_amadix_hands_u;
-					if facing == index_facing.left
-						hands_index = spr_amadix_hands_l;
-					if facing == index_facing.down
-						hands_index = spr_amadix_hands_d;
+					switch(facing){
+						case index_facing.down:
+							hands_index = spr_amadix_hands_d;
+						break;
+						case index_facing.left:
+							hands_index = spr_amadix_hands_l;
+						break;
+						case index_facing.right:
+							hands_index = spr_amadix_hands_r;
+						break;
+						case index_facing.up:
+							hands_index = spr_amadix_hands_u;
+						break;
+					}
 				break;
 			}
 		}else{
-				if facing == index_facing.right
-					hands_index = spr_amadix_hands_run_r;
-				if facing == index_facing.up
-					hands_index = spr_amadix_hands_run_u;
-				if facing == index_facing.left
-					hands_index = spr_amadix_hands_run_l;
-				if facing == index_facing.down
+			switch(facing){
+				case index_facing.down:
 					hands_index = spr_amadix_hands_run_d;
+				break;
+				case index_facing.left:
+					hands_index = spr_amadix_hands_run_l;
+				break;
+				case index_facing.right:
+					hands_index = spr_amadix_hands_run_r;
+				break;
+				case index_facing.up:
+					hands_index = spr_amadix_hands_run_u;
+						
+			}
 		}
 	}
-	if (global.playerHands = "long"){
+	if (global.playerHands == "long"){
 		if (actionstate == player_state_action.eating){
 			hands_index = spr_amadix_longhands_eating;
 		}else if (actionstate == player_state_action.drinking){
@@ -146,19 +176,6 @@ function scr_setPlayerFacingAnim(facing){
 			}
 		break;
 	}
-#endregion
-
-#region Rece
-if (actionstate == player_state_action.handgun){
-	if facing == index_facing.right
-		arms_index = spr_amadix_newA_gun_r;
-	if facing == index_facing.up
-		arms_index = spr_amadix_newA_gun_u;
-	if facing == index_facing.left
-		arms_index = spr_amadix_newA_gun_l;
-	if facing == index_facing.down
-		arms_index = spr_amadix_newA_gun_d;
-}
 #endregion
 
 switch(global.playerTorso){
@@ -365,8 +382,8 @@ switch(global.playerTorso){
 				break;
 				//--------------------------------------------------------------
 				
-				//attacking-----------------------------------------------------
-				case player_state_action.attacking_melee:
+				//handgun-----------------------------------------------------
+				case player_state_action.handgun:
 					switch(facing){
 						case index_facing.down:
 							torso_index = spr_amadix_newTC_gun_d;
@@ -380,6 +397,18 @@ switch(global.playerTorso){
 						case index_facing.up:
 							torso_index = spr_amadix_newTC_gun_u;
 						break;
+					}
+					if (shootdir > 45) && (shootdir <= 135){
+						arms_index = spr_amadix_newA_gun_u;
+					}else
+					if (shootdir > 135) && (shootdir <= 240){
+						arms_index = spr_amadix_newA_gun_l;
+					}else
+					if (shootdir > 240) && (shootdir <= 300){
+						arms_index = spr_amadix_newA_gun_d;
+						arms2_index = spr_amadix_newA_gun_d2;
+					}else{
+						arms_index = spr_amadix_newA_gun_r;
 					}
 				break;
 				//--------------------------------------------------------------
@@ -720,7 +749,7 @@ switch(global.playerLegs){
 				//--------------------------------------------------------------
 				
 				//handgun-----------------------------------------------------
-				case player_state_action.attacking_melee:
+				case player_state_action.handgun:
 					switch(facing){
 						case index_facing.down:
 							legs_index = spr_amadix_jeansL_gun_d;

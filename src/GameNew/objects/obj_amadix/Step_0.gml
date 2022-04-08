@@ -31,6 +31,11 @@ if (rm_trans != noone){
 
 scr_updateHatY();
 
+if (actionstate = player_state_action.handgun){
+	oneStepEvent[2] = 2;
+}else{
+	if (oneStepEvent[2] > 0) oneStepEvent[2]--;
+}
 
 if (keyboard_check_pressed(vk_space)){
 	item_add(-1, item.bull_energy_drink, 1);

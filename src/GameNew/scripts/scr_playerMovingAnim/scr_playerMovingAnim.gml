@@ -32,12 +32,55 @@ function scr_playerMovingAnim() {
 			facing = dirc.down;
 		}
 	}
-	
+		shootdir = (point_direction(x, y + 16, mouse_x, mouse_y));
 	if (actionstate == player_state_action.handgun){
-			
+		
+		
+		if (shootdir > 45) && (shootdir <= 135){
+			facing = dirc.up;	
+			scr_updatePlayerAnim();
+		}else
+		if (shootdir > 135) && (shootdir <= 240){
+			facing = dirc.left;	
+			scr_updatePlayerAnim();
+		}else
+		if (shootdir > 240) && (shootdir <= 300){
+			facing = dirc.down;	
+			scr_updatePlayerAnim();
+		}else{
+			facing = dirc.right;	
+			scr_updatePlayerAnim();
+		}
 	}
 
-
+	switch(facing){
+		case dirc.down:
+			 hand_xoffset = -3;
+			 hand_yoffset = 14;
+			 hand_xoffset2 = 3;
+			 hand_yoffset2 = 14;
+			if (isbounded(mouse_x, x - 6, x + 6) && isbounded(mouse_y, y + 6, y + 14)){
+				 hand_rot = 0;
+			}else{
+				 hand_rot = point_direction(x, y + hand_yoffset, mouse_x, mouse_y) + 90;
+			}
+		break;
+		case dirc.left:
+			 hand_xoffset = 3;
+			 hand_yoffset = 17;
+			 hand_rot = point_direction(x, y + hand_yoffset, mouse_x, mouse_y) - 180;
+		break;
+		case dirc.right:
+			 hand_xoffset = -3;
+			 hand_yoffset = 17;
+			 hand_rot = point_direction(x, y  + hand_yoffset, mouse_x, mouse_y);
+		break;
+		case dirc.up:
+			 hand_xoffset = 0;
+			 hand_yoffset = 18;
+			 hand_rot = point_direction(x, y  + hand_yoffset, mouse_x, mouse_y) - 90;
+		break;
+	}
 
 
 	if ((hsp == 0) && (vsp == 0)){

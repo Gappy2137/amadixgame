@@ -435,7 +435,16 @@ else if (!show_inventory) && (show_slots){
 			mouse_sloty = numy;
 		}
 		
-		if (mouse_check_button_pressed(mb_left)) && (obj_amadix.actionstate == player_state_action.none){
+		function canChange(){
+			if instance_exists(obj_amadix){
+				if (obj_amadix.actionstate == player_state_action.none)
+				|| (obj_amadix.actionstate == player_state_action.handgun){
+					return true;	
+				}
+			}
+		}
+		
+		if (mouse_check_button_pressed(mb_left)) && canChange(){
 			show_slots_mouse = true;
 			mouse_slotx_fix = false;
 			text_timer = 300;
@@ -450,7 +459,7 @@ else if (!show_inventory) && (show_slots){
 	}
 	
 	if instance_exists(obj_amadix){
-		if (obj_amadix.actionstate == player_state_action.none){
+		if canChange(){
 			if (mouse_wheel_down()){
 				mouse_slotx_second ++;	
 				if (mouse_slotx_second > 11){
@@ -478,7 +487,7 @@ else if (!show_inventory) && (show_slots){
 	}
 	#region Klawisze
 	if instance_exists(obj_amadix){
-		if (obj_amadix.actionstate == player_state_action.none){
+		if canChange(){
 			if (keyboard_check_pressed(ord("1"))){mouse_slotx_second = 0;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
 			if (keyboard_check_pressed(ord("2"))){mouse_slotx_second = 1;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
 			if (keyboard_check_pressed(ord("3"))){mouse_slotx_second = 2;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
@@ -500,7 +509,7 @@ else if (!show_inventory) && (show_slots){
 	
 	//Jezeli istnieje w siatce przedmiot o ilosci zerowej usun go
 	for (var i = 0; i < inv_slots_width; ++i) {
-	    if (ds_inventory[# 1, i] == 0) && (multipick == 0){
+	    if (ds_inventory[# 1, i] == 0) && (multipick == 0) && (ds_inventory[# 0, i] != 0){
 				slot_remove(i);
 		}
 	}

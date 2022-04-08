@@ -142,6 +142,8 @@ function scr_player_movement() {
 	
 	dir = point_direction(x, y, x + hsp, y + vsp);
 	
+
+	
 	//Naprawa poruszania sie po przekatnej
 	
 	//----kod

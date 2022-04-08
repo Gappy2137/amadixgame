@@ -44,11 +44,13 @@ playerVisible = true;
 
 head_index = 0;
 hands_index = 0;
+hands2_index = 0;
 torso_index = 0;
 legs_index = 0;
 boots_index = 0;
 hat_index = 0;
 arms_index = 0;
+arms2_index = 0;
 
 shadowOriginY = 34;
 shadowStyle = spr_shadow_player;
@@ -74,6 +76,7 @@ tenalarm = 0;
 
 oneStepEvent[0] = true;
 oneStepEvent[1] = true;
+oneStepEvent[2] = 2;
 
 z = 0;
 zaxis = 0;
@@ -83,5 +86,10 @@ hat_frame = 0;
 hatY = 0;
 
 stuffed = false;
+
+shootdir = 0;
+hand_xoffset = 0;
+hand_yoffset = 0;
+hand_rot = 0;
 
 if (obj_gamecontrol.doTransition == true) scr_updatePlayerAnim();

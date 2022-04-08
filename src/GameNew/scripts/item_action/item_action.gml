@@ -8,10 +8,38 @@ function item_action(){
 	var defence =		obj_inventory.ds_inventory[# INVDEFENCE, obj_inventory.mouse_slotx_second];
 	var effects =		obj_inventory.ds_inventory[# INVEFFECTS, obj_inventory.mouse_slotx_second];
 	
-	#region Prawy przycisk wscisniety
-	if (mouse_check_button_pressed(mb_right)){
-		if instance_exists(obj_amadix){
-			if (type == itemtype.food) || (type == itemtype.fruit) || (type == itemtype.vegetable) || (type == itemtype.dish){
+	if (instance_exists(obj_amadix)){
+		
+
+	if (!inslots){
+		if (type == itemtype.handgun){
+			if (amount > 0){
+					var iitem = obj_inventory.ds_inventory[# INVITEM, obj_inventory.mouse_slotx_second];
+					if (!instance_exists(obj_gun_logic)){instance_create_layer(x, y, "Instances", obj_gun_logic);}
+					with (obj_amadix){
+						itemeaten = iitem;
+						actionstate = player_state_action.handgun;
+						var face = 0;
+						if (shootdir > 45) && (shootdir <= 135){
+							face = index_facing.up;
+						}else
+						if (shootdir > 135) && (shootdir <= 240){
+							face = index_facing.left;
+						}else
+						if (shootdir > 240) && (shootdir <= 300){
+							face = index_facing.down;
+						}else{
+							face = index_facing.right;
+						}
+						scr_setPlayerFacingAnim(face);
+					}
+			}else{
+				slot_remove(obj_inventory.mouse_slotx_second);
+				obj_inventory.text_alpha = 0;
+			}
+		}else if ((type == itemtype.food) || (type == itemtype.fruit) || (type == itemtype.vegetable) || (type == itemtype.dish)){
+			if (obj_amadix.actionstate == player_state_action.handgun) obj_amadix.actionstate = player_state_action.none;
+			if (mouse_check_button_pressed(mb_right)){
 				if (!obj_amadix.stuffed){
 					if (amount > 0){
 						if (obj_amadix.actionstate != player_state_action.eating){
@@ -34,15 +62,16 @@ function item_action(){
 							}
 							if (hp > 0){global.hp += hp;}
 							if (stamina > 0){global.stamina += stamina;}
-							obj_inventory.ds_inventory[# INVAMOUNT, obj_inventory.mouse_slotx_second] -= 1;
 						}
 					}else{
 						slot_remove(obj_inventory.mouse_slotx_second);
 						obj_inventory.text_alpha = 0;
 					}
 				}
-			}else
-			if (type == itemtype.drink){
+			}
+		}else if (type == itemtype.drink){
+			if (obj_amadix.actionstate == player_state_action.handgun) obj_amadix.actionstate = player_state_action.none;
+			if (mouse_check_button_pressed(mb_right)){
 				if (!obj_amadix.stuffed){
 					if (amount > 0){
 						if (obj_amadix.actionstate != player_state_action.drinking){
@@ -64,7 +93,6 @@ function item_action(){
 							}
 							if (hp > 0){global.hp += hp;}
 							if (stamina > 0){global.stamina += stamina;}
-							obj_inventory.ds_inventory[# INVAMOUNT, obj_inventory.mouse_slotx_second] -= 1;
 						}
 					}else{
 						slot_remove(obj_inventory.mouse_slotx_second);
@@ -72,13 +100,9 @@ function item_action(){
 					}
 				}
 			}
-		}
-	}
-	#endregion
-	
-	#region Lewy przycisk wscisniety
-	if (mouse_check_button_pressed(mb_left))  && (!inslots){
-		if (type == itemtype.melee){
+		}else if (type == itemtype.melee){
+			if (obj_amadix.actionstate == player_state_action.handgun) obj_amadix.actionstate = player_state_action.none;
+			if (mouse_check_button_pressed(mb_left)){
 			if (amount > 0){
 				if (obj_amadix.actionstate != player_state_action.attacking_melee){
 					var iitem = obj_inventory.ds_inventory[# INVITEM, obj_inventory.mouse_slotx_second];
@@ -114,24 +138,31 @@ function item_action(){
 				slot_remove(obj_inventory.mouse_slotx_second);
 				obj_inventory.text_alpha = 0;
 			}
-		}
-	}
-	#endregion
-	
-	#region Brak przycisku
-	if (!inslots){
-		if (type == itemtype.handgun){
-			if (amount > 0){
-					var iitem = obj_inventory.ds_inventory[# INVITEM, obj_inventory.mouse_slotx_second];
-					with (obj_amadix){
-						itemeaten = iitem;
-						actionstate = player_state_action.handgun;
-					}
-			}else{
-				slot_remove(obj_inventory.mouse_slotx_second);
-				obj_inventory.text_alpha = 0;
 			}
+		}else{
+			obj_amadix.actionstate = player_state_action.none;
+			with(obj_amadix){
+				if (oneStepEvent[2] == 2){
+					switch(facing){
+						case dirc.down:
+							scr_setPlayerFacingAnim(index_facing.down);
+						break;
+						case dirc.left:
+							scr_setPlayerFacingAnim(index_facing.left);
+						break;
+						case dirc.right:
+							scr_setPlayerFacingAnim(index_facing.right);
+						break;
+						case dirc.up:
+							scr_setPlayerFacingAnim(index_facing.up);
+						break;
+					}
+				}
+			}
+			
 		}
 	}
-	#endregion
+	
+	
+	}
 }
