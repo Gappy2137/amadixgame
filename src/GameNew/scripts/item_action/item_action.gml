@@ -15,7 +15,10 @@ function item_action(){
 		if (type == itemtype.handgun){
 			if (amount > 0){
 					var iitem = obj_inventory.ds_inventory[# INVITEM, obj_inventory.mouse_slotx_second];
-					if (!instance_exists(obj_gun_logic)){instance_create_layer(x, y, "Instances", obj_gun_logic);}
+					if (!instance_exists(obj_gun_logic)){instance_create_layer(obj_amadix.x, obj_amadix.y, "Instances", obj_gun_logic);}
+					with (obj_gun_logic){
+						//ammo itd	
+					}
 					with (obj_amadix){
 						itemeaten = iitem;
 						actionstate = player_state_action.handgun;

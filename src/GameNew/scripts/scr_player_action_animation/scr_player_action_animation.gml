@@ -42,7 +42,7 @@ switch (actionstate){
 			anim_frame_action_num = 10;
 			if (floor(anim_frame_action) == 0){itemUsedX = 2;itemUsedY = -2 + fixY;itemUsedAngle = -15;itemUsedSx = 0;}
 			if (floor(anim_frame_action) == 1){itemUsedX = 1.4;itemUsedY = -1.4 + fixY;itemUsedAngle = 0;itemUsedSx = 0;}
-
+			
 			if (floor(anim_frame_action) == 8){itemUsedX = 1.4;itemUsedY = -1.4 + fixY;itemUsedAngle = 0;itemUsedSx = 0;}
 			if (floor(anim_frame_action) == 9){itemUsedX = 2;itemUsedY = -2 + fixY;itemUsedAngle = -15;itemUsedSx = 0;}
 			if (floor(anim_frame_action) == 10){itemUsedX = 2;itemUsedY = -2 + fixY;itemUsedAngle = -15;itemUsedSx = 0;}

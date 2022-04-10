@@ -269,25 +269,25 @@ function drawPlayerHandgun(xx, yy, zz){
 		case player_state_action.drinking:
 			switch(state){
 				case player_state.idle:
-					drawPlayerEating(px, py, pz);
+					drawPlayerDrinking(px, py, pz);
 				break;
 				case player_state.moving:
-					drawPlayerEating(px, py, pz);
+					drawPlayerDrinking(px, py, pz);
 				break;
 				case player_state.wading_idle:
-					drawPlayerEating(px, py, pz);
+					drawPlayerDrinking(px, py, pz);
 				break;
 				case player_state.wading:
-					drawPlayerEating(px, py, pz);
+					drawPlayerDrinking(px, py, pz);
 				break;
 				case player_state.swimming_idle:
-					drawPlayerEating(px, py, pz);
+					drawPlayerDrinking(px, py, pz);
 				break;
 				case player_state.swimming:
-					drawPlayerEating(px, py, pz);
+					drawPlayerDrinking(px, py, pz);
 				break;
 				default:
-					drawPlayerEating(px, py, pz);
+					drawPlayerDrinking(px, py, pz);
 				break;
 			}
 		break;

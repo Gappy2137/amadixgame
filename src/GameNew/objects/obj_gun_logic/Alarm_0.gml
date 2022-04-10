@@ -1,0 +1,2 @@
+shooting = false;
+canShoot = true;

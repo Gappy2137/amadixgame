@@ -439,6 +439,11 @@ else if (!show_inventory) && (show_slots){
 			if instance_exists(obj_amadix){
 				if (obj_amadix.actionstate == player_state_action.none)
 				|| (obj_amadix.actionstate == player_state_action.handgun){
+					if instance_exists(obj_gun_logic){
+						if (obj_gun_logic.reloading) || (obj_gun_logic.shooting){
+							return false;	
+						}
+					}
 					return true;	
 				}
 			}

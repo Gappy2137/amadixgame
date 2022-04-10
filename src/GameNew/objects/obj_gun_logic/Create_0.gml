@@ -13,5 +13,3 @@ shooting = false;
 type = 0;
 
 reloadTime = 2 * room_speed;
-
-eventStep = 1;
