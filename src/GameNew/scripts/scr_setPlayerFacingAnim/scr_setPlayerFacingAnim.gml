@@ -74,6 +74,7 @@ function scr_setPlayerFacingAnim(facing){
 						hands_index = spr_amadix_hands_attack_d;
 				break;
 				case player_state_action.handgun:
+				
 					if isLooking(index_facing.up){
 						if (instance_exists(obj_gun_logic)){
 							switch(itemeaten){

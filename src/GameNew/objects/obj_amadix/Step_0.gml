@@ -37,6 +37,23 @@ if (actionstate = player_state_action.handgun){
 	if (oneStepEvent[2] > 0) oneStepEvent[2]--;
 }
 
+if (oneStepEvent[2] == 2){
+	switch(facing){
+		case dirc.down:
+			scr_setPlayerFacingAnim(index_facing.down);
+		break;
+		case dirc.left:
+			scr_setPlayerFacingAnim(index_facing.left);
+		break;
+		case dirc.right:
+			scr_setPlayerFacingAnim(index_facing.right);
+		break;
+		case dirc.up:
+			scr_setPlayerFacingAnim(index_facing.up);
+		break;
+	}
+}
+
 if (keyboard_check_pressed(vk_space)){
 	item_add(-1, item.bull_energy_drink, 1);
 	item_add(-1, item.lemon, 4);

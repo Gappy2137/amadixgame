@@ -1,7 +1,7 @@
 
 ammoCap = 7;
 ammoLoaded = 7;
-ammoExtra = 13;
+ammoExtra = 7 * 8;
 
 isLoaded = true;
 canShoot = true;
@@ -14,11 +14,18 @@ standby = true;
 
 type = 0;
 
-shootingTime = 10;
-reloadTime = 1.8 * room_speed;
-reloadTimeEmpty = 2 * room_speed;
+shootingTime = 8;
+reloadTime = 1.5 * room_speed;
+reloadTimeEmpty = 1.8 * room_speed;
 
 heat = 0;
+
+soundSHOOT = snd_m1911_shoot;
+soundMAGOUT = snd_m1911_magout;
+soundMAGIN = snd_m1911_magin;
+soundBOLT = snd_m1911_bolt;
+
+
 
 enum gunState{
 	standby = 0,
