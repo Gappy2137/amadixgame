@@ -64,19 +64,34 @@ function scr_playerMovingAnim() {
 					anim_frame_action = anim_frame;
 				break;
 				case gunState.shooting:
-					anim_speed_action = 0.3;
-					anim_frame_action_num = 3;
-					anim_frame_action += anim_speed_action;
-					if anim_frame_action > (anim_frame_action_num + .9){
-						anim_frame_action = anim_frame_action_num;
+					anim_speed_action = 0.5;
+					if (obj_gun_logic.ammoLoaded <= 0.9){
+						anim_frame_action_num = 1.2;
+					}else{
+						anim_frame_action_num = 3;	
+					}
+					anim_frame_action += anim_speed_action;	
+					if anim_frame_action >= (anim_frame_action_num + .9){
+						anim_frame_action = anim_frame_action_num + .9;
+						anim_speed_action = 0;
 					}
 				break;
 				case gunState.reloading:
-					anim_frame_action_num = 12;
-					anim_speed_action = obj_gun_logic.reloadTime / anim_frame_action_num / room_speed;
+					anim_frame_action_num = 11;
+					anim_speed_action = (anim_frame_action_num + 1) / obj_gun_logic.reloadTime;
 					anim_frame_action += anim_speed_action;
-					if anim_frame_action > (anim_frame_action_num + .9){
-						anim_frame_action = anim_frame_action_num;
+					if anim_frame_action >= (anim_frame_action_num + .9){
+						anim_frame_action = anim_frame_action_num + .9;
+						anim_speed_action = 0;
+					}
+				break;
+				case gunState.reloading_empty:
+					anim_frame_action_num = 12;
+					anim_speed_action = (anim_frame_action_num + 1) / obj_gun_logic.reloadTimeEmpty;
+					anim_frame_action += anim_speed_action;
+					if anim_frame_action >= (anim_frame_action_num + .9){
+						anim_frame_action = anim_frame_action_num + .9;
+						anim_speed_action = 0;
 					}
 				break;
 				case gunState.empty:

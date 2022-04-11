@@ -23,13 +23,13 @@ function item_action(){
 						itemeaten = iitem;
 						actionstate = player_state_action.handgun;
 						var face = 0;
-						if (shootdir > 45) && (shootdir <= 135){
+						if isLooking(index_facing.up){
 							face = index_facing.up;
 						}else
-						if (shootdir > 135) && (shootdir <= 240){
+						if isLooking(index_facing.left){
 							face = index_facing.left;
 						}else
-						if (shootdir > 240) && (shootdir <= 300){
+						if isLooking(index_facing.down){
 							face = index_facing.down;
 						}else{
 							face = index_facing.right;
@@ -104,6 +104,26 @@ function item_action(){
 				}
 			}
 		}else if (type == itemtype.melee){
+			
+			with(obj_amadix){
+				if (oneStepEvent[2] == 2){
+					switch(facing){
+						case dirc.down:
+							scr_setPlayerFacingAnim(index_facing.down);
+						break;
+						case dirc.left:
+							scr_setPlayerFacingAnim(index_facing.left);
+						break;
+						case dirc.right:
+							scr_setPlayerFacingAnim(index_facing.right);
+						break;
+						case dirc.up:
+							scr_setPlayerFacingAnim(index_facing.up);
+						break;
+					}
+				}
+			}
+			
 			if (obj_amadix.actionstate == player_state_action.handgun) obj_amadix.actionstate = player_state_action.none;
 			if (mouse_check_button_pressed(mb_left)){
 			if (amount > 0){

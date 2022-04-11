@@ -119,7 +119,7 @@ function drawPlayerHandgun(xx, yy, zz){
 		
 		//Rece i dlonie
 		if (instance_exists(obj_gun_logic)){
-			if (obj_gun_logic.state == gunState.reloading){
+			if (obj_gun_logic.state == gunState.reloading) || (obj_gun_logic.state == gunState.reloading_empty){
 				draw_sprite_ext(arms_index,anim_frame_action,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
 		
 				draw_sprite_ext(hands_index,anim_frame_action,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
@@ -166,7 +166,7 @@ function drawPlayerHandgun(xx, yy, zz){
 		
 		//Rece i dlonie
 		if (instance_exists(obj_gun_logic)){
-			if (obj_gun_logic.state == gunState.reloading) || (obj_gun_logic.state == gunState.shooting){
+			if (obj_gun_logic.state == gunState.reloading) || (obj_gun_logic.state == gunState.shooting) || (obj_gun_logic.state == gunState.reloading_empty){
 				draw_sprite_ext(arms_index,anim_frame_action,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
 		
 				draw_sprite_ext(hands_index,anim_frame_action,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
@@ -203,7 +203,7 @@ function drawPlayerHandgun(xx, yy, zz){
 		
 		//Rece i dlonie
 		if (instance_exists(obj_gun_logic)){
-			if (obj_gun_logic.state == gunState.reloading) || (obj_gun_logic.state == gunState.shooting){
+			if (obj_gun_logic.state == gunState.reloading) || (obj_gun_logic.state == gunState.shooting) || (obj_gun_logic.state == gunState.reloading_empty){
 				draw_sprite_ext(arms_index,anim_frame_action,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
 		
 				draw_sprite_ext(hands_index,anim_frame_action,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
@@ -227,7 +227,7 @@ function drawPlayerHandgun(xx, yy, zz){
 		//----------------------------------------------------------------------------------------------------------------
 		//Rece i dlonie
 		if (instance_exists(obj_gun_logic)){
-			if (obj_gun_logic.state == gunState.reloading) || (obj_gun_logic.state == gunState.shooting){
+			if (obj_gun_logic.state == gunState.reloading) || (obj_gun_logic.state == gunState.shooting) || (obj_gun_logic.state == gunState.reloading_empty){
 				draw_sprite_ext(arms_index,anim_frame_action,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
 		
 				draw_sprite_ext(hands_index,anim_frame_action,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);

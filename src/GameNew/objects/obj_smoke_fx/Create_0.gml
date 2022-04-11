@@ -10,6 +10,7 @@ alpha = 1;
 
 _anim_frame = 0;
 _anim_frames = 0;
+_anim_speed = 0.08;
 
 type = 0;
 
@@ -21,6 +22,7 @@ curve_alpha_pos = 0;
 //0 - znikanie w miejscu
 //1 - 360 stopni
 //2 - podloze
+//3 - dir
 
 spd = 0;
 accel = 0;
