@@ -2,24 +2,35 @@
 x = obj_amadix.x;
 y = obj_amadix.y;
 
-if (reloading){
+if (state == gunState.reloading){
 	canShoot = false;	
 }
-if (shooting){
+
+if (state == gunState.shooting){
 	canReload = false;	
 }
+
 if (obj_amadix.actionstate != player_state_action.handgun){
 	canShoot = false;
 	canReload = false;
-	shooting = false;
-	reloading = false;
-}else if (!reloading) && (ammoLoaded != 0) & (!shooting){
-	canShoot = true;	
+}else if (state != gunState.reloading) && (ammoLoaded != 0) & (state != gunState.shooting){
+	canShoot = true;
 }
-if (!reloading) && (!shooting) && (ammoLoaded < ammoCap) && (ammoExtra != 0){
+
+if (state != gunState.reloading) && (state != gunState.shooting) && 
+	(ammoLoaded < ammoCap) && (ammoExtra != 0){
 	canReload = true;
 }
 
+//Czy komora jest pusta
+if (ammoLoaded == 0) && (state != gunState.shooting) && (state != gunState.reloading){
+	state = gunState.empty;
+}
+
+//Czy jest w stanie gotowosci do strzalu
+if (state != gunState.reloading) && (state != gunState.shooting) && (state != gunState.empty){
+	state = gunState.standby;
+}
 
 if (type == 0){
 	if (mouse_check_button_pressed(mb_left)){
@@ -34,22 +45,20 @@ if (type == 0){
 				angle = obj_amadix.shootdir;
 			}
 			
-			shooting = true;
+			state = gunState.shooting;
 			canShoot = false;
-			alarm[0] = 10;
+			alarm[0] = shootingTime;
 			ammoLoaded--;
 		}
 	}
 }
 if (canReload){
 	if (keyboard_check_pressed(ord("R"))){
+		
 		canShoot = false;
 		canReload = false;
-		reloading = true;
-		shooting = false;
-		
-		
-		
+		state = gunState.reloading;
+
 		alarm[1] = reloadTime;
 	}
 }

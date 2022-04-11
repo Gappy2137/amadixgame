@@ -1,6 +1,7 @@
 function scr_playerMovingAnim() {
 
-	if (actionstate == player_state_action.eating) || (actionstate == player_state_action.drinking) 
+	if (actionstate == player_state_action.eating)
+	|| (actionstate == player_state_action.drinking) 
 	|| (actionstate == player_state_action.attacking_melee){
 		anim_frame_action += anim_speed_action;
 		if anim_frame_action > (anim_frame_action_num + .9){
@@ -32,24 +33,56 @@ function scr_playerMovingAnim() {
 			facing = dirc.down;
 		}
 	}
-		shootdir = (point_direction(x, y + 16, mouse_x, mouse_y));
+	
+	
+	shootdir = (point_direction(x, y + 16, mouse_x, mouse_y));
+	
+	
 	if (actionstate == player_state_action.handgun){
 		
-		
-		if (shootdir > 45) && (shootdir <= 135){
+		//Update facing
+		if isLooking(index_facing.up){
 			facing = dirc.up;	
 			scr_updatePlayerAnim();
 		}else
-		if (shootdir > 135) && (shootdir <= 240){
+		if isLooking(index_facing.left){
 			facing = dirc.left;	
 			scr_updatePlayerAnim();
 		}else
-		if (shootdir > 240) && (shootdir <= 300){
+		if isLooking(index_facing.down){
 			facing = dirc.down;	
 			scr_updatePlayerAnim();
 		}else{
 			facing = dirc.right;	
 			scr_updatePlayerAnim();
+		}
+		
+		//Gun animation
+		if (instance_exists(obj_gun_logic)){
+			switch(obj_gun_logic.state){
+				case gunState.standby:
+					anim_frame_action = anim_frame;
+				break;
+				case gunState.shooting:
+					anim_speed_action = 0.3;
+					anim_frame_action_num = 3;
+					anim_frame_action += anim_speed_action;
+					if anim_frame_action > (anim_frame_action_num + .9){
+						anim_frame_action = anim_frame_action_num;
+					}
+				break;
+				case gunState.reloading:
+					anim_frame_action_num = 12;
+					anim_speed_action = obj_gun_logic.reloadTime / anim_frame_action_num / room_speed;
+					anim_frame_action += anim_speed_action;
+					if anim_frame_action > (anim_frame_action_num + .9){
+						anim_frame_action = anim_frame_action_num;
+					}
+				break;
+				case gunState.empty:
+					anim_frame_action = anim_frame;
+				break;
+			}
 		}
 	}
 

@@ -10,5 +10,5 @@ if (ammoExtra < ammo){
 
 }
 
-reloading = false;
 canShoot = true;
+state = gunState.standby;

@@ -51,6 +51,7 @@ boots_index = 0;
 hat_index = 0;
 arms_index = 0;
 arms2_index = 0;
+gun_index = 0;
 
 shadowOriginY = 34;
 shadowStyle = spr_shadow_player;

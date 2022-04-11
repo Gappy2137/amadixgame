@@ -81,8 +81,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Jacket",
-    "path": "folders/Sprites/Player/Arms/Jacket.yy",
+    "name": "Handgun",
+    "path": "folders/Sprites/Player/Arms/Jacket/Handgun.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_amadix_newA_gun_l",

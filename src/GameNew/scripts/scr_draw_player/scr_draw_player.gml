@@ -118,15 +118,32 @@ function drawPlayerHandgun(xx, yy, zz){
 		draw_sprite_ext(boots_index,anim_frame,xx,yy - zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 		
 		//Rece i dlonie
-		draw_sprite_ext(arms_index,anim_frame,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+		if (instance_exists(obj_gun_logic)){
+			if (obj_gun_logic.state == gunState.reloading){
+				draw_sprite_ext(arms_index,anim_frame_action,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
 		
-		draw_sprite_ext(hands_index,anim_frame,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+				draw_sprite_ext(hands_index,anim_frame_action,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
 		
-		draw_sprite_ext(arms2_index,anim_frame,xx + hand_xoffset2,yy - zz + hand_yoffset2,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+			}else if (obj_gun_logic.state == gunState.shooting){
+				draw_sprite_ext(arms_index,anim_frame_action,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
 		
-		draw_sprite_ext(hands2_index,anim_frame,xx + hand_xoffset2,yy - zz + hand_yoffset2,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+				draw_sprite_ext(hands_index,anim_frame_action,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
 		
+				draw_sprite_ext(arms2_index,anim_frame_action,xx + hand_xoffset2,yy - zz + hand_yoffset2,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+		
+				draw_sprite_ext(hands2_index,anim_frame_action,xx + hand_xoffset2,yy - zz + hand_yoffset2,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+			}else{
+				draw_sprite_ext(arms_index,anim_frame,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+		
+				draw_sprite_ext(hands_index,anim_frame,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+		
+				draw_sprite_ext(arms2_index,anim_frame,xx + hand_xoffset2,yy - zz + hand_yoffset2,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+		
+				draw_sprite_ext(hands2_index,anim_frame,xx + hand_xoffset2,yy - zz + hand_yoffset2,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+			}
+		}
 		//Bron
+		draw_sprite_ext(gun_index,anim_frame_action,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);	
 		
 		//Czapka
 		draw_sprite_ext(hat_index,hat_frame,xx,yy - zz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
@@ -148,11 +165,22 @@ function drawPlayerHandgun(xx, yy, zz){
 		draw_sprite_ext(boots_index,anim_frame,xx,yy - zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 		
 		//Rece i dlonie
-		draw_sprite_ext(arms_index,anim_frame,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+		if (instance_exists(obj_gun_logic)){
+			if (obj_gun_logic.state == gunState.reloading) || (obj_gun_logic.state == gunState.shooting){
+				draw_sprite_ext(arms_index,anim_frame_action,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
 		
-		draw_sprite_ext(hands_index,anim_frame,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+				draw_sprite_ext(hands_index,anim_frame_action,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+		
+			}else{
+				draw_sprite_ext(arms_index,anim_frame,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+		
+				draw_sprite_ext(hands_index,anim_frame,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+		
+			}
+		}
 		
 		//Bron
+		draw_sprite_ext(gun_index,anim_frame_action,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);	
 		
 		//Czapka
 		draw_sprite_ext(hat_index,hat_frame,xx,yy - zz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
@@ -174,11 +202,22 @@ function drawPlayerHandgun(xx, yy, zz){
 		draw_sprite_ext(boots_index,anim_frame,xx,yy - zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 		
 		//Rece i dlonie
-		draw_sprite_ext(arms_index,anim_frame,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+		if (instance_exists(obj_gun_logic)){
+			if (obj_gun_logic.state == gunState.reloading) || (obj_gun_logic.state == gunState.shooting){
+				draw_sprite_ext(arms_index,anim_frame_action,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
 		
-		draw_sprite_ext(hands_index,anim_frame,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+				draw_sprite_ext(hands_index,anim_frame_action,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+		
+			}else{
+				draw_sprite_ext(arms_index,anim_frame,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+		
+				draw_sprite_ext(hands_index,anim_frame,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+		
+			}
+		}
 		
 		//Bron
+		draw_sprite_ext(gun_index,anim_frame_action,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);	
 		
 		//Czapka
 		draw_sprite_ext(hat_index,hat_frame,xx,yy - zz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
@@ -187,11 +226,22 @@ function drawPlayerHandgun(xx, yy, zz){
 		case dirc.up:
 		//----------------------------------------------------------------------------------------------------------------
 		//Rece i dlonie
-		draw_sprite_ext(arms_index,anim_frame,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+		if (instance_exists(obj_gun_logic)){
+			if (obj_gun_logic.state == gunState.reloading) || (obj_gun_logic.state == gunState.shooting){
+				draw_sprite_ext(arms_index,anim_frame_action,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
 		
-		draw_sprite_ext(hands_index,anim_frame,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+				draw_sprite_ext(hands_index,anim_frame_action,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+		
+			}else{
+				draw_sprite_ext(arms_index,anim_frame,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+		
+				draw_sprite_ext(hands_index,anim_frame,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+		
+			}
+		}
 		
 		//Bron
+		draw_sprite_ext(gun_index,anim_frame_action,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);	
 		
 		//Glowa
 		draw_sprite_ext(head_index,anim_frame,xx,yy - zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);

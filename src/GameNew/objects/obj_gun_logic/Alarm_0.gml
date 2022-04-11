@@ -1,2 +1,2 @@
-shooting = false;
 canShoot = true;
+state = gunState.standby;

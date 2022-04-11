@@ -45,10 +45,6 @@ if (keyboard_check_pressed(vk_space)){
 }
 if (keyboard_check_pressed(vk_enter)){
 	item_add(-1, item.sword, 1);
-	item_add(-1, item.classic_jacket, 1);
-	item_add(-1, item.jeans, 1);
-	item_add(-1, item.sneakers, 1);
-	item_add(-1, item.panama_hat, 1);
 	item_add(-1, item.m1911, 1);
 }
 if (keyboard_check_pressed(ord("X"))){
