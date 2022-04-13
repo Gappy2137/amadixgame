@@ -96,21 +96,7 @@ if (type == 0){
 				
 				}
 			}
-			
-			var muzzleflash = instance_create_layer(fx_xx, fx_yy, "Instances", obj_smoke_fx);
-			with (muzzleflash){
-				type = 0;
-				_sprite = spr_gun_smoke;
-				rot = 0;
-				_anim = true;
-				_anim_frames = 9;
-				_anim_speed = 0.3;
-				if (obj_amadix.facing == index_facing.up){
-					depth = obj_amadix.depth + 1;	
-				}else{
-					depth = obj_amadix.depth - 1;	
-				}
-			}
+		
 			
 			var shell_xx = obj_amadix.x + lengthdir_x(7, obj_amadix.shootdir);
 			var shell_yy = obj_amadix.y + 32 + lengthdir_y(10, obj_amadix.shootdir);
@@ -127,6 +113,8 @@ if (type == 0){
 					depth = obj_amadix.depth - 1;
 				}
 			}
+		
+			
 			
 			state = gunState.shooting;
 			canShoot = false;
@@ -134,6 +122,27 @@ if (type == 0){
 			ammoLoaded--;
 		}
 	}
+	
+	if (!smokeflag){
+			var heat_x = obj_amadix.x + lengthdir_x(13, obj_amadix.shootdir);
+			var heat_y = obj_amadix.y + 16 + lengthdir_y(16, obj_amadix.shootdir);
+			var heatsmoke = instance_create_layer(heat_x, heat_y, "Instances", obj_smoke_fx);
+			with (heatsmoke){
+				type = 4;
+				_sprite = spr_gun_smoke;
+				rot = 0;
+				_anim = true;
+				_anim_frames = 9;
+				_anim_speed = 0.2;
+				if (obj_amadix.facing == index_facing.up){
+					depth = obj_amadix.depth + 1;	
+				}else{
+					depth = obj_amadix.depth - 1;	
+				}
+			}
+			smokeflag = true;
+	}
+	
 }
 if (canReload){
 	if (keyboard_check_pressed(ord("R"))){

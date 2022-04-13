@@ -19,6 +19,7 @@ reloadTime = 1.5 * room_speed;
 reloadTimeEmpty = 1.8 * room_speed;
 
 heat = 0;
+smokeflag = false;
 
 soundSHOOT = snd_m1911_shoot;
 soundMAGOUT = snd_m1911_magout;

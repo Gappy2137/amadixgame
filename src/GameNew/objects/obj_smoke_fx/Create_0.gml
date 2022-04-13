@@ -23,6 +23,7 @@ curve_alpha_pos = 0;
 //1 - 360 stopni
 //2 - podloze
 //3 - dir
+//4 - bez zanikania
 
 spd = 0;
 accel = 0;
