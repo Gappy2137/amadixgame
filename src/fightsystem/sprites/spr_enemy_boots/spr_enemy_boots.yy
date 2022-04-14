@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_enemy_boots","path":"sprites/spr_enemy_boots/spr_enemy_boots.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_enemy_boots",
     "tags": [],
     "resourceType": "GMSequence",

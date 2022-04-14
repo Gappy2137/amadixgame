@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_attack_ui_light","path":"sprites/spr_attack_ui_light/spr_attack_ui_light.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_attack_ui_light",
     "tags": [],
     "resourceType": "GMSequence",

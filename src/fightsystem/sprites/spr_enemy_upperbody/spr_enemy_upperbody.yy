@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_enemy_upperbody","path":"sprites/spr_enemy_upperbody/spr_enemy_upperbody.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_enemy_upperbody",
     "tags": [],
     "resourceType": "GMSequence",

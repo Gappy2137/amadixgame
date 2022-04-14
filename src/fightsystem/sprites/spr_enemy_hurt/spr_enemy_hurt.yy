@@ -25,8 +25,8 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"f0a5802b-d2b3-40e2-8d5b-42aa87f34277","path":"sprites/spr_enemy_hurt/spr_enemy_hurt.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"f0a5802b-d2b3-40e2-8d5b-42aa87f34277","path":"sprites/spr_enemy_hurt/spr_enemy_hurt.yy",},"LayerId":{"name":"aa0fec86-f255-4a92-9262-eb95451c8d59","path":"sprites/spr_enemy_hurt/spr_enemy_hurt.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"f0a5802b-d2b3-40e2-8d5b-42aa87f34277","path":"sprites/spr_enemy_hurt/spr_enemy_hurt.yy",},"LayerId":{"name":"22ce976a-9835-4ab3-967f-5d32da959a43","path":"sprites/spr_enemy_hurt/spr_enemy_hurt.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"f0a5802b-d2b3-40e2-8d5b-42aa87f34277","path":"sprites/spr_enemy_hurt/spr_enemy_hurt.yy",},"LayerId":{"name":"aa0fec86-f255-4a92-9262-eb95451c8d59","path":"sprites/spr_enemy_hurt/spr_enemy_hurt.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr_enemy_hurt","path":"sprites/spr_enemy_hurt/spr_enemy_hurt.yy",},"resourceVersion":"1.0","name":"f0a5802b-d2b3-40e2-8d5b-42aa87f34277","tags":[],"resourceType":"GMSpriteFrame",},
     {"compositeImage":{"FrameId":{"name":"989a7ce0-f105-4afc-a7aa-6a1ce3520113","path":"sprites/spr_enemy_hurt/spr_enemy_hurt.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"989a7ce0-f105-4afc-a7aa-6a1ce3520113","path":"sprites/spr_enemy_hurt/spr_enemy_hurt.yy",},"LayerId":{"name":"22ce976a-9835-4ab3-967f-5d32da959a43","path":"sprites/spr_enemy_hurt/spr_enemy_hurt.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
@@ -70,7 +70,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_enemy_hurt","path":"sprites/spr_enemy_hurt/spr_enemy_hurt.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_enemy_hurt",
     "tags": [],
     "resourceType": "GMSequence",

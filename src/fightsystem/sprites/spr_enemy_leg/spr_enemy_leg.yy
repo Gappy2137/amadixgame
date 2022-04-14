@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_enemy_leg","path":"sprites/spr_enemy_leg/spr_enemy_leg.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_enemy_leg",
     "tags": [],
     "resourceType": "GMSequence",

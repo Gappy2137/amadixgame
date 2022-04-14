@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_player_downleft","path":"sprites/spr_player_downleft/spr_player_downleft.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_player_downleft",
     "tags": [],
     "resourceType": "GMSequence",

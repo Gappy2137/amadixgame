@@ -60,7 +60,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_enemy_attack_right","path":"sprites/spr_enemy_attack_right/spr_enemy_attack_right.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_enemy_attack_right",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_enemy_lowerbody","path":"sprites/spr_enemy_lowerbody/spr_enemy_lowerbody.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_enemy_lowerbody",
     "tags": [],
     "resourceType": "GMSequence",

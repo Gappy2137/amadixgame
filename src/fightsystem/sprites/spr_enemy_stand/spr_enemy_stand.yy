@@ -70,7 +70,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_enemy_stand","path":"sprites/spr_enemy_stand/spr_enemy_stand.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_enemy_stand",
     "tags": [],
     "resourceType": "GMSequence",

@@ -65,7 +65,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_enemy_attack_all","path":"sprites/spr_enemy_attack_all/spr_enemy_attack_all.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_enemy_attack_all",
     "tags": [],
     "resourceType": "GMSequence",

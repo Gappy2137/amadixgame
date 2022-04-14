@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_foodone","path":"sprites/spr_foodone/spr_foodone.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_foodone",
     "tags": [],
     "resourceType": "GMSequence",
