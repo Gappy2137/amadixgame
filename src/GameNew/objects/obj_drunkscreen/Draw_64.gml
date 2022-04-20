@@ -1,20 +1,50 @@
 
 
+var width = obj_display.ideal_width * obj_display.window_size * xscale;
+var height = obj_display.ideal_height * obj_display.window_size * yscale;
+
+var scaled_x = (((obj_display.ideal_width * xscale) - obj_display.ideal_width) / 1.75);
+var scaled_y = (((obj_display.ideal_height * yscale) - obj_display.ideal_height) / 1.75);
+
 if !surface_exists(surf){
-	surf = surface_create(room_width, room_height);	
+	surf = surface_create(width, height);
 }
 
 
 surface_set_target(surf);
 
-//shader_set(shader_blur);
+gpu_set_fog(1, 1, 1, 1);
 
-draw_surface_ext(application_surface, xx, yy, xscale, yscale, angle, c_white, alpha);
+shader_set(shader_blur);
+	
+var uniform_texture_size = shader_get_uniform(shader_blur, "texture_size");
 
-//shader_reset();
+shader_set_uniform_f(uniform_texture_size, width, height);
+
+var uniform_window_size = shader_get_uniform(shader_blur, "window_size");
+
+shader_set_uniform_f(uniform_window_size, obj_display.window_size, obj_display.window_size);
+
+
+
+draw_surface_ext(application_surface, xx, yy, 1, 1, 0, c_white, 1);
+
+//draw_surface_ext(obj_daycycle.application_surface, xx, yy, 1, 1, 0, c_white, 1);
+
+//draw_surface_ext(application_surface, xx, yy, 1, 1, 0, c_white, 1);
+
+
+shader_reset();
+
+gpu_set_fog(0, 0, 0, 0);
 
 surface_reset_target();
 
 if (global.alcoholPoisoning >= 10){
-	draw_surface_ext(surf, 0, 0, 1/obj_display.window_size, 1/obj_display.window_size, 0, c_white, 1);
+	
+
+	
+	draw_surface_ext(surf, -scaled_x, -scaled_y, xscale/obj_display.window_size, yscale/obj_display.window_size, 0, c_white, alpha);
+	
+	
 }

@@ -436,6 +436,7 @@
     {"id":{"name":"spr_amadix_newA_gun_r","path":"sprites/spr_amadix_newA_gun_r/spr_amadix_newA_gun_r.yy",},"order":6,},
     {"id":{"name":"scr_playerPressingKeys","path":"scripts/scr_playerPressingKeys/scr_playerPressingKeys.yy",},"order":2,},
     {"id":{"name":"ChatterboxJump","path":"scripts/ChatterboxJump/ChatterboxJump.yy",},"order":4,},
+    {"id":{"name":"spr_extrabullet","path":"sprites/spr_extrabullet/spr_extrabullet.yy",},"order":14,},
     {"id":{"name":"scr_playerMovingAnim","path":"scripts/scr_playerMovingAnim/scr_playerMovingAnim.yy",},"order":3,},
     {"id":{"name":"tileset_test_7","path":"tilesets/tileset_test_7/tileset_test_7.yy",},"order":10,},
     {"id":{"name":"spr_amadix_newA_gun_l","path":"sprites/spr_amadix_newA_gun_l/spr_amadix_newA_gun_l.yy",},"order":4,},

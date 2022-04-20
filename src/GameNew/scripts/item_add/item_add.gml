@@ -3,7 +3,13 @@ function item_add(slot, iitem, amount){
 	var itemslot = 0;
 	
 	if (slot == -1){
-		item_stack(iitem, amount, 0);
+		if (item_exists(item.none, false)){
+			item_stack(iitem, amount, 0);	
+		}else{
+			if (instance_exists(obj_amadix)){
+				item_drop(iitem, amount, true, obj_amadix.x, obj_amadix.y, 5);		
+			}
+		}
 	}else{
 		itemslot = slot;
 		obj_inventory.ds_inventory[# INVITEM, itemslot] = iitem;

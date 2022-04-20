@@ -13,8 +13,8 @@ surface_set_target(shadowSurface);
 
 draw_clear_alpha(c_black, 0);
 
-var sx = skewX;
-var sy = shadowHeight;
+var skew = skewX;
+var h = shadowHeight;
 
 gpu_set_fog(true, c_black, 0, 1);
 
@@ -22,6 +22,21 @@ parent = par_objectdepth;
 
 with(parent){
 	if (shadowEnable){
+		if (sprite_index != -1){
+		draw_sprite_pos(
+			sprite_index,
+			image_index,
+			x + skew + shadowOriginX,
+			y + (sprite_height * 2) + h + shadowOriginY,
+			x + sprite_width + skew + shadowOriginX,
+			y + (sprite_height * 2) + h + shadowOriginY,
+			x + sprite_width + shadowOriginX,
+			y + sprite_height + shadowOriginY,
+			x + shadowOriginX,
+			y + sprite_height + shadowOriginY,
+			shadowAlpha
+		);
+		/*
 		if (!customSpr){
 			draw_sprite_pos(shadowStyle, image_index, 
 				(x)-(sprite_width/2)-viewX-sx+shadowOriginX,
@@ -44,6 +59,9 @@ with(parent){
 				(x)-(customSprWidth/2)-viewX+shadowOriginX,
 				(y)-viewY+shadowOriginY+4, 
 				shadowAlpha);
+		}
+		*/
+		
 		}
 	}
 }

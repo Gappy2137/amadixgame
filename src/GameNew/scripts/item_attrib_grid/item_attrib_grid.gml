@@ -110,7 +110,7 @@ function item_attrib_grid(){
 	grid[# INVTYPE, item.vodka] = itemtype.alcohol;
 	grid[# INVHP, item.vodka] = 5;
 	grid[# INVSTAMINA, item.vodka] = 25;
-	grid[# INVLEVEL, item.vodka] = 5;
+	grid[# INVLEVEL, item.vodka] = 15;
 	
 	//Sprawdzenie typow
 	for (var i = 0; i <= item.height; i++){

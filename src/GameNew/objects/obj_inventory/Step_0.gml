@@ -343,12 +343,23 @@ if (show_inventory) && (!show_slots){
 			if (inhand == -1) && (inv_grid[# INVITEM, selected_slot] != item.none) && (inv_grid[# INVAMOUNT, selected_slot] > 0) && (multipick < inv_grid[# MAXSTACK, selected_slot]){
 				//Od teraz trzymamy w rece przedmiot ze slotu
 				inhand = inv_grid[# INVITEM, selected_slot];
-				if (keyboard_check(vk_shift)){
-					multipick = floor((inv_grid[# INVAMOUNT, selected_slot])/2);
-					inv_grid[# INVAMOUNT, selected_slot] -= multipick;
+				if (inv_grid[# INVTYPE, selected_slot] == itemtype.magazine){
+					inhand = inv_grid[# INVITEM, selected_slot];
+					multipick = inv_grid[# INVAMOUNT, selected_slot];
+					if (inv_grid[# INVTYPE, selected_slot] == itemtype.magazine){
+						cap = inv_grid[# INVLEVEL, selected_slot];
+					}
+				
+					slot_remove(selected_slot);
 				}else{
-					multipick++;
-					inv_grid[# INVAMOUNT, selected_slot]--;
+					
+					if (keyboard_check(vk_shift)){
+						multipick = floor((inv_grid[# INVAMOUNT, selected_slot])/2);
+						inv_grid[# INVAMOUNT, selected_slot] -= multipick;
+					}else{
+						multipick++;
+						inv_grid[# INVAMOUNT, selected_slot]--;
+					}
 				}
 
 			}else
@@ -356,25 +367,30 @@ if (show_inventory) && (!show_slots){
 			if (inhand != -1) && (inv_grid[# INVITEM, selected_slot] == inhand) && (inv_grid[# INVAMOUNT, selected_slot] > 0) && (multipick < inv_grid[# MAXSTACK, selected_slot]){
 				inhand = inv_grid[# INVITEM, selected_slot];
 				
-				if (keyboard_check(vk_shift)){
-					if (inv_grid[# INVAMOUNT, selected_slot] == 1){
-						multipick++;
-						slot_remove(selected_slot);
-					}else{
-						var mm = floor((inv_grid[# INVAMOUNT, selected_slot])/2);
-						if (multipick + mm >= inv_grid[# MAXSTACK, selected_slot]){
-							var mi = (inv_grid[# MAXSTACK, selected_slot] - multipick);
-							inv_grid[# INVAMOUNT, selected_slot] -= mi;
-							multipick = inv_grid[# MAXSTACK, selected_slot];
-						}else{
-							multipick += mm;
-							inv_grid[# INVAMOUNT, selected_slot] -= mm;
-						}	
-					}
+				if (inv_grid[# INVTYPE, selected_slot] == itemtype.magazine){
+					changeitem();
 				}else{
-					multipick++;
-					inv_grid[# INVAMOUNT, selected_slot]--;
+					if (keyboard_check(vk_shift)){
+						if (inv_grid[# INVAMOUNT, selected_slot] == 1){
+							multipick++;
+							slot_remove(selected_slot);
+						}else{
+							var mm = floor((inv_grid[# INVAMOUNT, selected_slot])/2);
+							if (multipick + mm >= inv_grid[# MAXSTACK, selected_slot]){
+								var mi = (inv_grid[# MAXSTACK, selected_slot] - multipick);
+								inv_grid[# INVAMOUNT, selected_slot] -= mi;
+								multipick = inv_grid[# MAXSTACK, selected_slot];
+							}else{
+								multipick += mm;
+								inv_grid[# INVAMOUNT, selected_slot] -= mm;
+							}	
+						}
+					}else{
+						multipick++;
+						inv_grid[# INVAMOUNT, selected_slot]--;
+					}
 				}
+				
 			}
 		}
 		

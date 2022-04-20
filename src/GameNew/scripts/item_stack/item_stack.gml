@@ -1,6 +1,6 @@
 function item_stack(iitem, amount, xx, ready){
 	
-	if ready == undefined{ready = 0;}
+	if ready == undefined{ready = false;}
 	var slots = obj_inventory.inv_slots;
 	var inv = obj_inventory.ds_inventory;
 	var itemall = obj_inventory.ds_item_all;
