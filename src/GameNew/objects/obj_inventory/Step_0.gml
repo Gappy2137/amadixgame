@@ -97,20 +97,27 @@ if (show_inventory) && (!show_slots){
 		inv_grid[# MAXSTACK, selected_slot] = ds_item_all[# MAXSTACK, inhand];
 		inv_grid[# INVHP, selected_slot] = ds_item_all[# INVHP, inhand];
 		inv_grid[# INVSTAMINA, selected_slot] = ds_item_all[# INVSTAMINA, inhand];
-		inv_grid[# INVLEVEL, selected_slot] = ds_item_all[# INVLEVEL, inhand];
 		inv_grid[# INVDAMAGE, selected_slot] = ds_item_all[# INVDAMAGE, inhand];
 		inv_grid[# INVDEFENCE, selected_slot] = ds_item_all[# INVDEFENCE, inhand];
 		inv_grid[# INVEFFECTS, selected_slot] = ds_item_all[# INVEFFECTS, inhand];
 		inv_grid[# INVTEMPERATURE, selected_slot] = ds_item_all[# INVTEMPERATURE, inhand];
 				
+		if (inv_grid[# INVTYPE, selected_slot] == itemtype.magazine){
+			inv_grid[# INVLEVEL, selected_slot] = cap;
+		}else{
+			inv_grid[# INVLEVEL, selected_slot] = ds_item_all[# INVLEVEL, inhand];	
+		}
+				
 		inhand = -1;
 		multipick = 0;
+		cap = 0;
 	}
 	function changeitem(){
 		var inv_grid = ds_inventory;
 		//Zamieniamy przedmioty w rece i slocie
 		var temp0 = inv_grid[# INVITEM, selected_slot];
 		var temp1 = inv_grid[# INVAMOUNT, selected_slot];
+		var temp2 = inv_grid[# INVLEVEL, selected_slot];
 				
 		inv_grid[# INVITEM, selected_slot] = inhand;
 		inv_grid[# INVAMOUNT, selected_slot] = multipick;
@@ -118,14 +125,20 @@ if (show_inventory) && (!show_slots){
 		inv_grid[# MAXSTACK, selected_slot] = ds_item_all[# MAXSTACK, inhand];
 		inv_grid[# INVHP, selected_slot] = ds_item_all[# INVHP, inhand];
 		inv_grid[# INVSTAMINA, selected_slot] = ds_item_all[# INVSTAMINA, inhand];
-		inv_grid[# INVLEVEL, selected_slot] = ds_item_all[# INVLEVEL, inhand];
 		inv_grid[# INVDAMAGE, selected_slot] = ds_item_all[# INVDAMAGE, inhand];
 		inv_grid[# INVDEFENCE, selected_slot] = ds_item_all[# INVDEFENCE, inhand];
 		inv_grid[# INVEFFECTS, selected_slot] = ds_item_all[# INVEFFECTS, inhand];
 		inv_grid[# INVTEMPERATURE, selected_slot] = ds_item_all[# INVTEMPERATURE, inhand];
 				
+		if (inv_grid[# INVTYPE, selected_slot] == itemtype.magazine){
+			inv_grid[# INVLEVEL, selected_slot] = cap;	
+		}else{
+			inv_grid[# INVLEVEL, selected_slot] = ds_item_all[# INVLEVEL, inhand];	
+		}	
+				
 		inhand = temp0;
 		multipick = temp1;	
+		cap = temp2;
 	}
 	
 
@@ -217,6 +230,9 @@ if (show_inventory) && (!show_slots){
 				//Od teraz trzymamy w rece przedmiot ze slotu
 				inhand = inv_grid[# INVITEM, selected_slot];
 				multipick = inv_grid[# INVAMOUNT, selected_slot];
+				if (inv_grid[# INVTYPE, selected_slot] == itemtype.magazine){
+					cap = inv_grid[# INVLEVEL, selected_slot];
+				}
 				
 				slot_remove(selected_slot);
 			}else
@@ -259,11 +275,17 @@ if (show_inventory) && (!show_slots){
 					inv_grid[# MAXSTACK, selected_slot] = ds_item_all[# MAXSTACK, inhand];
 					inv_grid[# INVHP, selected_slot] = ds_item_all[# INVHP, inhand];
 					inv_grid[# INVSTAMINA, selected_slot] = ds_item_all[# INVSTAMINA, inhand];
-					inv_grid[# INVLEVEL, selected_slot] = ds_item_all[# INVLEVEL, inhand];
 					inv_grid[# INVDAMAGE, selected_slot] = ds_item_all[# INVDAMAGE, inhand];
 					inv_grid[# INVDEFENCE, selected_slot] = ds_item_all[# INVDEFENCE, inhand];
 					inv_grid[# INVEFFECTS, selected_slot] = ds_item_all[# INVEFFECTS, inhand];
 					inv_grid[# INVTEMPERATURE, selected_slot] = ds_item_all[# INVTEMPERATURE, inhand];
+					
+					if (inv_grid[# INVTYPE, selected_slot] == itemtype.magazine){
+						changeitem();
+					}else{
+						inv_grid[# INVLEVEL, selected_slot] = ds_item_all[# INVLEVEL, inhand];	
+					}
+					
 					multipick = am + am2 - inv_grid[# MAXSTACK, selected_slot];
 				}else{
 					//Jezeli ilosc przedmiotu jest mniejsza kladziemy normalnie
@@ -272,11 +294,17 @@ if (show_inventory) && (!show_slots){
 					inv_grid[# MAXSTACK, selected_slot] = ds_item_all[# MAXSTACK, inhand];
 					inv_grid[# INVHP, selected_slot] = ds_item_all[# INVHP, inhand];
 					inv_grid[# INVSTAMINA, selected_slot] = ds_item_all[# INVSTAMINA, inhand];
-					inv_grid[# INVLEVEL, selected_slot] = ds_item_all[# INVLEVEL, inhand];
 					inv_grid[# INVDAMAGE, selected_slot] = ds_item_all[# INVDAMAGE, inhand];
 					inv_grid[# INVDEFENCE, selected_slot] = ds_item_all[# INVDEFENCE, inhand];
 					inv_grid[# INVEFFECTS, selected_slot] = ds_item_all[# INVEFFECTS, inhand];
 					inv_grid[# INVTEMPERATURE, selected_slot] = ds_item_all[# INVTEMPERATURE, inhand];
+					
+					if (inv_grid[# INVTYPE, selected_slot] == itemtype.magazine){
+			
+					}else{
+						inv_grid[# INVLEVEL, selected_slot] = ds_item_all[# INVLEVEL, inhand];	
+					}
+					
 					multipick = 0;
 				}
 			}else
@@ -437,14 +465,20 @@ else if (!show_inventory) && (show_slots){
 		
 		function canChange(){
 			if instance_exists(obj_amadix){
-				if (obj_amadix.actionstate == player_state_action.none)
-				|| (obj_amadix.actionstate == player_state_action.handgun){
+				if (obj_amadix.actionstate == player_state_action.none){
+					return true;	
+				}else
+				if (obj_amadix.actionstate == player_state_action.handgun){
 					if instance_exists(obj_gun_logic){
-						if (obj_gun_logic.reloading) || (obj_gun_logic.shooting){
+						if ((obj_gun_logic.state == gunState.reloading)
+						|| (obj_gun_logic.state == gunState.shooting)
+						|| (obj_gun_logic.state == gunState.reloading_empty)){
 							return false;	
+						}else{
+							return true;	
 						}
 					}
-					return true;	
+						
 				}
 			}
 		}

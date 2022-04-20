@@ -1,7 +1,7 @@
 
-ammoCap = 7;
-ammoLoaded = 7;
-ammoExtra = 7 * 8;
+ammoCap = 0;
+ammoLoaded = 0;
+ammoExtra = 0;
 
 isLoaded = true;
 canShoot = true;
@@ -12,21 +12,41 @@ reloading = false;
 shooting = false;
 standby = true;
 
-type = 0;
+shootingTime = 0;
+reloadTime = 0;
+reloadTimeEmpty = 0;
 
-shootingTime = 8;
-reloadTime = 1.5 * room_speed;
-reloadTimeEmpty = 1.8 * room_speed;
+inChamber = false;
+chamberedRound = 0;
+chambered1 = false;
 
 heat = 0;
 smokeflag = false;
 
-soundSHOOT = snd_m1911_shoot;
-soundMAGOUT = snd_m1911_magout;
-soundMAGIN = snd_m1911_magin;
-soundBOLT = snd_m1911_bolt;
+soundSHOOT = -1;
+soundMAGOUT = -1;
+soundMAGIN = -1;
+soundBOLT = -1;
 
+type = 0;
 
+mag = 0;
+
+animFramesShooting = 0;
+animFramesShootingLast = 0;
+animFramesReload = 0;
+animFramesReloadEmpty = 0;
+
+//type
+//0 - semi-auto handgun
+//1 - single action revolver
+//2 - double action revolver
+//3 - automatic rifle
+//4 - bolt action rifle
+//5 - semi-auto rifle
+//6 - automatic submachine gun
+//7 - automatic rifle / semi-auto
+//8 - double barrel shotgun
 
 enum gunState{
 	standby = 0,

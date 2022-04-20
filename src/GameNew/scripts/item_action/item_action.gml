@@ -72,7 +72,7 @@ function item_action(){
 					}
 				}
 			}
-		}else if (type == itemtype.drink){
+		}else if (type == itemtype.drink) || (type == itemtype.alcohol){
 			if (obj_amadix.actionstate == player_state_action.handgun) obj_amadix.actionstate = player_state_action.none;
 			if (mouse_check_button_pressed(mb_right)){
 				if (!obj_amadix.stuffed){
@@ -96,6 +96,9 @@ function item_action(){
 							}
 							if (hp > 0){global.hp += hp;}
 							if (stamina > 0){global.stamina += stamina;}
+							if (type == itemtype.alcohol){
+								global.alcoholPoisoning += level;
+							}
 						}
 					}else{
 						slot_remove(obj_inventory.mouse_slotx_second);

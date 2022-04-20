@@ -1,5 +1,5 @@
 if (!show_crafting){exit;}
-
+/*
 draw_sprite_ext(spr_inventory_hud_back, 0, craft_slot_x, craft_slot_y - 4, 1, 1, 0, c_white, 1);
 draw_sprite_ext(spr_inventory_hud, 0, craft_slot_x, craft_slot_y, 1, 1, 0, c_white, 1);
 

@@ -106,6 +106,12 @@ function item_attrib_grid(){
 	//M1911
 	grid[# INVTYPE, item.m1911] = itemtype.handgun;
 	
+	//Wodka
+	grid[# INVTYPE, item.vodka] = itemtype.alcohol;
+	grid[# INVHP, item.vodka] = 5;
+	grid[# INVSTAMINA, item.vodka] = 25;
+	grid[# INVLEVEL, item.vodka] = 5;
+	
 	//Sprawdzenie typow
 	for (var i = 0; i <= item.height; i++){
 		if (grid[# INVTYPE, i] == itemtype.dish){
@@ -175,5 +181,21 @@ function item_attrib_grid(){
 		if (grid[# INVTYPE, i] == itemtype.handgun){
 			grid[# MAXSTACK, i] = 1;
 		}
+		if (grid[# INVTYPE, i] == itemtype.alcohol){
+			grid[# MAXSTACK, i] = 5;
+			grid[# INVDAMAGE, i] = 0;
+			grid[# INVDEFENCE, i] = 0;
+		}
 	}
+	
+	//Overrides
+	
+	//M1911 mag
+	grid[# INVTYPE, item.m1911mag] = itemtype.magazine;
+	grid[# MAXSTACK, item.m1911mag] = 1;
+	grid[# INVLEVEL, item.m1911mag] = 7;
+	
+	//45acp
+	grid[# INVTYPE, item.bullet45acp] = itemtype.resource;
+	grid[# MAXSTACK, item.bullet45acp] = 20;
 }

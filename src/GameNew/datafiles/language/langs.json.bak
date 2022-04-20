@@ -18,6 +18,10 @@
 		"itemNameJeans":						"Jeans",
 		"itemNameSneakers":						"Sneakers",
 		"itemNamePanamaHat":					"Panama Hat",
+		"itemNameM1911":						"M1911",
+		"itemNameM1911mag":						"M1911 magazine",
+		"itemName45ACP":						".45ACP bullet",
+		"itemNameVodka":						"Vodka",
 		
 		
 		
@@ -38,6 +42,11 @@
 		"itemDescJeans":						"Jeans",
 		"itemDescSneakers":						"Sneakers",
 		"itemDescPanamaHat":					"Panama Hat",
+		"itemDescM1911":						"M1911 handgun.",
+		"itemDescM1911mag":						"M1911 magazine",
+		"itemDesc45ACP":						".45ACP bullet",
+		"itemDescVodka":						"Vodka",
+		
 		
 		
 		"itemTypeResource":						"Resource",
@@ -52,6 +61,9 @@
 		"itemTypePants":						"Clothing",
 		"itemTypeBoots":						"Boots",
 		"itemTypeHat":							"Hat",
+		"itemTypeHandgun":						"Handgun",
+		"itemTypeMagazine":						"Magazine",
+		"itemTypeAlcohol":						"Alcohol",
 		
 		
 		
@@ -76,6 +88,10 @@
 		"itemNameJeans":						"Jeansy",
 		"itemNameSneakers":						"Lorem ipsum dolor sit amet, consectetur adipiscing elit",
 		"itemNamePanamaHat":					"Kapelusz Panama",
+		"itemNameM1911":						"M1911",
+		"itemNameM1911mag":						"M1911 magazine",
+		"itemName45ACP":						".45ACP bullet",
+		"itemNameVodka":						"Wódka",
 		
 		
 		
@@ -94,8 +110,12 @@
 		"itemDescOrange":						"Pomarańcza",
 		"itemDescClassicJacket":				"Brązowa kurtka",
 		"itemDescJeans":						"Jeansy",
-		"itemDescSneakers":						"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"itemDescSneakers":						"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 		"itemDescPanamaHat":					"Kapelusz z iniciałami R.M. Ciekawe do kogo należy?",
+		"itemDescM1911":						"Pistolet M1911.",
+		"itemDescM1911mag":						"M1911 magazine",
+		"itemDesc45ACP":						".45ACP bullet",
+		"itemDescVodka":						"Wódka",
 		
 		
 		
@@ -111,6 +131,8 @@
 		"itemTypePants":						"Spodnie",
 		"itemTypeBoots":						"Obuwie",
 		"itemTypeHat":							"Czapka",
+		"itemTypeHandgun":						"Pistolet",
+		"itemTypeMagazine":						"Magazynek",
 		
 		
 		

@@ -120,6 +120,8 @@ slots_y = yUI + y_rel;
 text_timer = 300;
 text_alpha = 1;
 
+cap = 0;
+
 //-------Ekwipunek
 //0 = PRZEDMIOT
 //1 = ILOSC
@@ -155,7 +157,10 @@ enum item{
 	sneakers					= 15,
 	panama_hat					= 16,
 	m1911						= 17,
-	height						= 18
+	m1911mag					= 18,
+	bullet45acp					= 19,
+	vodka						= 20,
+	height						= 21
 }
 #endregion
 
@@ -172,7 +177,9 @@ enum itemtype{
 	pants				= 9,
 	boots				= 10,
 	hat					= 11,
-	handgun				= 12
+	handgun				= 12,
+	magazine			= 13,
+	alcohol				= 14
 }
 
 ds_item_info = ds_grid_create(3, item.height);

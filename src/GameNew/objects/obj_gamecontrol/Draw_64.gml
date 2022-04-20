@@ -13,3 +13,5 @@ if (doTransition){
 	draw_set_alpha(1);
 }
 //draw_text(64, 96, hours + ":" + minutes);
+
+draw_text(64, 96, global.alcoholPoisoning);

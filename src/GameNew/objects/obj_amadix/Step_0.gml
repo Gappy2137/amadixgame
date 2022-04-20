@@ -55,10 +55,7 @@ if (oneStepEvent[2] == 2){
 }
 
 if (keyboard_check_pressed(vk_space)){
-	item_add(-1, item.bull_energy_drink, 1);
-	item_add(-1, item.lemon, 4);
-	item_add(-1, item.orange, 1);
-	item_add(-1, item.strawberry, 1);
+	item_add(-1, item.m1911mag, 1);
 }
 if (keyboard_check_pressed(vk_enter)){
 	item_add(-1, item.sword, 1);

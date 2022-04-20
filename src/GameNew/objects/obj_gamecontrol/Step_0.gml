@@ -11,3 +11,11 @@ minute			= (string_length(minute) == 1) ? "0" + minute : minute;
 
 hours = hour;
 minutes = minute;
+
+
+
+if (global.alcoholPoisoning > global.maxAlcoholPoisoning){
+	global.alcoholPoisoning = global.maxAlcoholPoisoning;
+}
+
+global.alcoholPoisoning = lerp(global.alcoholPoisoning, 0, 0.0001);

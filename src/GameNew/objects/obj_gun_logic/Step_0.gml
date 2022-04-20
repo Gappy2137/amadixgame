@@ -1,30 +1,42 @@
 if (!instance_exists(obj_amadix)){instance_destroy();}
 
 
-
-if (state == gunState.reloading) || (state == gunState.reloading_empty){
+// Nie mozna strzelac jezeli przeladowujemy albo nie mamy w reku broni
+if (state == gunState.reloading)
+|| (state == gunState.reloading_empty)
+|| (obj_amadix.actionstate != player_state_action.handgun){
 	canShoot = false;	
 }
 
-if (state == gunState.shooting){
+// Nie mozna przeladowac jezeli strzelamy albo nie mamy w reku broni
+if (state == gunState.shooting)
+|| (obj_amadix.actionstate != player_state_action.handgun)
+|| (ammoExtra == 0){
 	canReload = false;	
 }
 
-if (obj_amadix.actionstate != player_state_action.handgun){
-	canShoot = false;
-	canReload = false;
-}else if (state != gunState.reloading)
-	  && (state != gunState.reloading_empty)
-  	  && (ammoLoaded != 0)
-	  && (state != gunState.shooting){
+// Jezeli nie przeladowujemy 
+// i w komorze jest naboj
+// i nie strzelamy 
+// - mozemy strzelac
+if (state != gunState.reloading)
+&& (state != gunState.reloading_empty)
+&& (inChamber == true)
+&& (state != gunState.shooting)
+&& (obj_amadix.actionstate == player_state_action.handgun){
 	canShoot = true;
 }
 
+// Jezeli nie przeladowujemy
+// i nie strzelamy
+// i zaladowana amunicja < maks amunicji w magazynku
+// i mamy dodatkowa amunicje
 if (state != gunState.reloading)
 && (state != gunState.reloading_empty)
 && (state != gunState.shooting)
 && (ammoLoaded < ammoCap)
-&& (ammoExtra != 0){
+&& (ammoExtra != 0)
+&& (obj_amadix.actionstate == player_state_action.handgun){
 	canReload = true;
 }
 
@@ -34,6 +46,7 @@ if (ammoLoaded == 0)
 && (state != gunState.reloading)
 && (state != gunState.reloading_empty){
 	state = gunState.empty;
+	inChamber = false;
 }
 
 //Czy jest w stanie gotowosci do strzalu
@@ -46,9 +59,11 @@ if (state != gunState.reloading)
 
 if (type == 0){
 	if (mouse_check_button_pressed(mb_left)){
-		if ((ammoLoaded != 0) && (canShoot)){
+		if ((ammoLoaded != 0) && (canShoot) && (inChamber)){
 			
 			obj_amadix.anim_frame_action = 0;
+			
+			#region FX
 			
 			audio_play_sound(soundSHOOT, 10, false);
 			
@@ -114,8 +129,13 @@ if (type == 0){
 				}
 			}
 		
-			
-			
+			#endregion
+			/*
+			if (chambered1){
+				chamberedRound = 0;
+				chambered1 = false;
+			}
+			*/
 			state = gunState.shooting;
 			canShoot = false;
 			alarm[0] = shootingTime;
@@ -149,6 +169,7 @@ if (canReload){
 		
 		canShoot = false;
 		canReload = false;
+		
 		obj_amadix.anim_frame_action = 0;
 		
 		if (ammoLoaded == 0){
