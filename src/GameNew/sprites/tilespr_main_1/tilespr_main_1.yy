@@ -8,14 +8,14 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 0,
-  "bbox_right": 127,
+  "bbox_right": 1023,
   "bbox_top": 0,
-  "bbox_bottom": 95,
+  "bbox_bottom": 1023,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 128,
-  "height": 96,
+  "width": 1024,
+  "height": 1024,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"e96c2154-42ff-4b93-bcf8-a8402f2573de","path":"sprites/autotile_mud/autotile_mud.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"e96c2154-42ff-4b93-bcf8-a8402f2573de","path":"sprites/autotile_mud/autotile_mud.yy",},"LayerId":{"name":"bfc11579-1ce9-44f1-b8d8-e67a7b911fc0","path":"sprites/autotile_mud/autotile_mud.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"autotile_mud","path":"sprites/autotile_mud/autotile_mud.yy",},"resourceVersion":"1.0","name":"e96c2154-42ff-4b93-bcf8-a8402f2573de","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"1aa7d1e4-e13b-4051-b8ad-82fc79a13f35","path":"sprites/tilespr_main_1/tilespr_main_1.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"1aa7d1e4-e13b-4051-b8ad-82fc79a13f35","path":"sprites/tilespr_main_1/tilespr_main_1.yy",},"LayerId":{"name":"408d5d7f-4e2f-4ee2-aa28-73794cba8c36","path":"sprites/tilespr_main_1/tilespr_main_1.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"tilespr_main_1","path":"sprites/tilespr_main_1/tilespr_main_1.yy",},"resourceVersion":"1.0","name":"1aa7d1e4-e13b-4051-b8ad-82fc79a13f35","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"autotile_mud","path":"sprites/autotile_mud/autotile_mud.yy",},
+    "spriteId": {"name":"tilespr_main_1","path":"sprites/tilespr_main_1/tilespr_main_1.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"ca5b0b27-911e-42ff-83d1-075900a3601f","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"e96c2154-42ff-4b93-bcf8-a8402f2573de","path":"sprites/autotile_mud/autotile_mud.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"fc5a0c4f-aba7-40b9-93d1-1e407862bb28","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"1aa7d1e4-e13b-4051-b8ad-82fc79a13f35","path":"sprites/tilespr_main_1/tilespr_main_1.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -58,22 +58,22 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"autotile_mud","path":"sprites/autotile_mud/autotile_mud.yy",},
+    "parent": {"name":"tilespr_main_1","path":"sprites/tilespr_main_1/tilespr_main_1.yy",},
     "resourceVersion": "1.4",
-    "name": "autotile_mud",
+    "name": "tilespr_main_1",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"bfc11579-1ce9-44f1-b8d8-e67a7b911fc0","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"408d5d7f-4e2f-4ee2-aa28-73794cba8c36","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Tests",
-    "path": "folders/Tile Sets/tileset_spr/Tests.yy",
+    "name": "tileset_spr",
+    "path": "folders/Tile Sets/tileset_spr.yy",
   },
   "resourceVersion": "1.0",
-  "name": "autotile_mud",
+  "name": "tilespr_main_1",
   "tags": [],
   "resourceType": "GMSprite",
 }

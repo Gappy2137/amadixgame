@@ -56,6 +56,7 @@ if (oneStepEvent[2] == 2){
 
 if (keyboard_check_pressed(vk_space)){
 	item_add(-1, item.vodka, 1);
+	item_add(-1, item.m1911mag, 1);
 }
 if (keyboard_check_pressed(vk_enter)){
 	item_add(-1, item.sword, 1);

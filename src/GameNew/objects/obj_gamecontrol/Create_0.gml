@@ -98,6 +98,7 @@ global.maxstamina = 100;
 global.alcoholPoisoning = 0;
 global.maxAlcoholPoisoning = 100;
 
+
 global.time = 0;
 minutes = 0;
 hours = 0;

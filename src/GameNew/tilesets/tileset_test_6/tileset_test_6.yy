@@ -465,8 +465,8 @@
     ],
   },
   "parent": {
-    "name": "Tile Sets",
-    "path": "folders/Tile Sets.yy",
+    "name": "Tests",
+    "path": "folders/Tile Sets/Tests.yy",
   },
   "resourceVersion": "1.0",
   "name": "tileset_test_6",

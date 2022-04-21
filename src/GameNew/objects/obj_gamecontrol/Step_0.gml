@@ -13,9 +13,10 @@ hours = hour;
 minutes = minute;
 
 
-
 if (global.alcoholPoisoning > global.maxAlcoholPoisoning){
-	global.alcoholPoisoning = global.maxAlcoholPoisoning;
+	global.alcoholPoisoning = lerp(global.alcoholPoisoning, 0, 0.001);
+}else{
+	global.alcoholPoisoning = lerp(global.alcoholPoisoning, 0, 0.0001);
 }
 
-global.alcoholPoisoning = lerp(global.alcoholPoisoning, 0, 0.0001);
+
