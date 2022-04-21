@@ -22,7 +22,10 @@ parent = par_objectdepth;
 
 with(parent){
 	if (shadowEnable){
+		
+		
 		if (sprite_index != -1){
+		/*
 		draw_sprite_pos(
 			sprite_index,
 			image_index,
@@ -36,13 +39,15 @@ with(parent){
 			y + sprite_height + shadowOriginY,
 			shadowAlpha
 		);
-		/*
+		*/
+		
+		
 		if (!customSpr){
 			draw_sprite_pos(shadowStyle, image_index, 
-				(x)-(sprite_width/2)-viewX-sx+shadowOriginX,
-				(y)-viewY-sy+shadowOriginY+4, 
-				(x)+(sprite_width/2)-viewX-sx+shadowOriginX,
-				(y)-viewY-sy+shadowOriginY+4, 
+				(x)-(sprite_width/2)-viewX-skew+shadowOriginX,
+				(y)-viewY-h+shadowOriginY+4, 
+				(x)+(sprite_width/2)-viewX-skew+shadowOriginX,
+				(y)-viewY-h+shadowOriginY+4, 
 				(x)+(sprite_width/2)-viewX+shadowOriginX,
 				(y)-viewY+shadowOriginY+4, 
 				(x)-(sprite_width/2)-viewX+shadowOriginX,
@@ -50,17 +55,17 @@ with(parent){
 				shadowAlpha);
 		}else{
 			draw_sprite_pos(shadowStyle, image_index, 
-				(x)-(customSprWidth/2)-viewX-sx+shadowOriginX,
-				(y)-viewY-sy+shadowOriginY+4, 
-				(x)+(customSprWidth/2)-viewX-sx+shadowOriginX,
-				(y)-viewY-sy+shadowOriginY+4, 
+				(x)-(customSprWidth/2)-viewX-skew+shadowOriginX,
+				(y)-viewY-h+shadowOriginY+4, 
+				(x)+(customSprWidth/2)-viewX-skew+shadowOriginX,
+				(y)-viewY-h+shadowOriginY+4, 
 				(x)+(customSprWidth/2)-viewX+shadowOriginX,
 				(y)-viewY+shadowOriginY+4, 
 				(x)-(customSprWidth/2)-viewX+shadowOriginX,
 				(y)-viewY+shadowOriginY+4, 
 				shadowAlpha);
 		}
-		*/
+		
 		
 		}
 	}

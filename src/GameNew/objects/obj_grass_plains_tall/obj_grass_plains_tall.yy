@@ -4,7 +4,7 @@
     "path": "sprites/spr_grass_plains_tall/spr_grass_plains_tall.yy",
   },
   "solid": false,
-  "visible": false,
+  "visible": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
