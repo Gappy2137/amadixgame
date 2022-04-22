@@ -1,13 +1,13 @@
 //rot += 0.004;
-/*
+
 if keyboard_check(vk_left){
 	rot -= 1;	
-	//global.daycycletime -= .001;	
+	global.daycycletime -= .001;	
 }
 if keyboard_check(vk_right){
 	rot += 1;
-	//global.daycycletime += .001;	
-}*/
+	global.daycycletime += .001;	
+}
 
 
 if rot < 0{rot = 360;}

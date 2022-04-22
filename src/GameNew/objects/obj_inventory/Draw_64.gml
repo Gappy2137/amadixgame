@@ -105,7 +105,7 @@ if (show_inventory) && (!show_slots){
 					var amount = inv_grid[# 1, ii];
 					var level = inv_grid[# INVLEVEL, ii];
 					if (amount != 0){
-						if (inv_grid[# INVTYPE, ii] == itemtype.drink){
+						if (inv_grid[# INVTYPE, ii] == itemtype.drink) || (inv_grid[# INVTYPE, ii] == itemtype.alcohol){
 							draw_rectangle_color(xx + 4, yy + 20, xx + 20, yy + 22, bl, bl, bl, bl, false);
 							draw_rectangle_color(xx + 4.5, yy + 20.5, xx + 3 + (amount*3.28) , yy + 21.5, wh, wh, wh, wh, false);
 						}else if (inv_grid[# INVITEM, ii] == item.m1911mag){
@@ -375,7 +375,8 @@ if (show_inventory) && (!show_slots){
 		|| (inv_grid[# INVTYPE, selected_slot] == itemtype.fruit)
 		|| (inv_grid[# INVTYPE, selected_slot] == itemtype.vegetable)
 		|| (inv_grid[# INVTYPE, selected_slot] == itemtype.dish)
-		|| (inv_grid[# INVTYPE, selected_slot] == itemtype.drink){
+		|| (inv_grid[# INVTYPE, selected_slot] == itemtype.drink)
+		|| (inv_grid[# INVTYPE, selected_slot] == itemtype.alcohol){
 			if (hp != 0) && (stamina == 0){
 				hp_x = infobox_half - 8;
 				infobox_height = namestr.get_height()*name_scale + typestr.get_height()*type_scale + descstr.get_height()*desc_scale + 12 + 20;
@@ -576,7 +577,7 @@ if (show_inventory) && (!show_slots){
 			var inuma = multipick;
 			var _level = cap;
 			
-			if (ds_item_all[# INVTYPE, iitem] == itemtype.drink){
+			if (ds_item_all[# INVTYPE, iitem] == itemtype.drink) || (ds_item_all[# INVTYPE, iitem] == itemtype.alcohol){
 				draw_rectangle_color(mousex + 4, mousey + 20, mousex + 20, mousey + 22, bl, bl, bl, bl, false);
 				draw_rectangle_color(mousex + 4.5, mousey + 20.5, mousex + 3 + (inuma*3.28) , mousey + 21.5, wh, wh, wh, wh, false);
 			}else if (ds_item_all[# INVTYPE, iitem] == itemtype.magazine){
@@ -736,7 +737,7 @@ else if (!show_inventory) && (show_slots){
 						var amount = inv_grid[# 1, ii];
 						var level = inv_grid[# INVLEVEL, ii];
 						if (amount != 0){
-							if (inv_grid[# INVTYPE, ii] == itemtype.drink){
+							if (inv_grid[# INVTYPE, ii] == itemtype.drink) || (inv_grid[# INVTYPE, ii] == itemtype.drink){
 								draw_rectangle_color(xx + 4, yy + 20, xx + 20, yy + 22, bl, bl, bl, bl, false);
 								draw_rectangle_color(xx + 4.5, yy + 20.5, xx + 3 + (amount*3.28) , yy + 21.5, wh, wh, wh, wh, false);
 							}else if (inv_grid[# INVITEM, ii] == item.m1911mag){

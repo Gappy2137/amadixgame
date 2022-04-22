@@ -24,4 +24,3 @@ if (instance_exists(obj_amadix)){
 	yorigin = obj_amadix.yorigin;
 }
 
-testdp = instance_create_layer(x, y, "Instances", obj_testr);

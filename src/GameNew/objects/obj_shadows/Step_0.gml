@@ -1,6 +1,6 @@
 if (keyboard_check(ord("B"))){
-	skewX--;	
+	alpha-=0.01;	
 }
 if (keyboard_check(ord("N"))){
-	skewX++;	
+	alpha+=0.01;	
 }

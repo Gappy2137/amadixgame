@@ -14,4 +14,4 @@ if (doTransition){
 }
 //draw_text(64, 96, hours + ":" + minutes);
 
-draw_text(64, 96, global.alcoholPoisoning);
+//draw_text(64, 96, global.alcoholPoisoning);

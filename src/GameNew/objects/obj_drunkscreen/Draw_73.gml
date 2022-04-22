@@ -6,6 +6,9 @@ var height = obj_display.ideal_height * obj_display.window_size * yscale;
 var scaled_x = (((obj_display.ideal_width * xscale) - obj_display.ideal_width) / 1.75);
 var scaled_y = (((obj_display.ideal_height * yscale) - obj_display.ideal_height) / 1.75);
 
+var cam_x = camera_get_view_x(view_camera[0]);
+var cam_y = camera_get_view_y(view_camera[0]);
+
 if !surface_exists(surf){
 	surf = surface_create(width, height);
 }
@@ -40,11 +43,11 @@ gpu_set_fog(0, 0, 0, 0);
 
 surface_reset_target();
 
-if (global.alcoholPoisoning >= 10){
+if (global.alcoholPoisoning >= 5){
 	
 
 	
-	draw_surface_ext(surf, -scaled_x, -scaled_y, xscale/obj_display.window_size, yscale/obj_display.window_size, 0, c_white, alpha);
+	draw_surface_ext(surf, cam_x - scaled_x, cam_y - scaled_y, xscale/obj_display.window_size, yscale/obj_display.window_size, 0, c_white, alpha);
 	
 	
 }

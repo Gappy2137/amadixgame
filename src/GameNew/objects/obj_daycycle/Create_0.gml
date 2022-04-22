@@ -86,6 +86,6 @@ alpha = 0;
 #endregion
 
 ds_daycycle_info = ds_grid_create(12, 24);
-//ds_daycycle_hours = ds_list_create();
+ds_daycycle_hours = ds_list_create();
 scr_daycycle_params();
-//alarm[0] = 1;
+alarm[0] = 1;

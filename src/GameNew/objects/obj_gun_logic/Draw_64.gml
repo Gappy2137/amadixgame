@@ -7,6 +7,12 @@ draw_text(obj_amadix.x + 64, obj_amadix.y + 16, ammoExtra);
 draw_text(obj_amadix.x + 48, obj_amadix.y + 32, inChamber);
 */
 
+if (instance_exists(obj_amadix)){
+	if (obj_amadix.actionstate != player_state_action.handgun){
+		exit;	
+	}
+}
+
 var topColor = make_color_rgb(66, 56, 11);
 var bottomColor = make_color_rgb(54, 48, 14);
 
