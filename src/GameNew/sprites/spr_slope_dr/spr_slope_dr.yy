@@ -60,7 +60,7 @@
     "eventStubScript": null,
     "parent": {"name":"spr_slope_dr","path":"sprites/spr_slope_dr/spr_slope_dr.yy",},
     "resourceVersion": "1.4",
-    "name": "",
+    "name": "spr_slope_dr",
     "tags": [],
     "resourceType": "GMSequence",
   },
