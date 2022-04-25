@@ -1,3 +1,5 @@
+
+/*
 if obj_weather.weatherchange == 200{
 switch global.weather{
 	case weather.sun:
@@ -16,3 +18,4 @@ switch global.weather{
 	break;
 }
 }
+*/

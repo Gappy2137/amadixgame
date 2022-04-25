@@ -39,7 +39,7 @@ enum wind_dir{
 }
 
 global.fog = false;
-global.weather = weather.few_clouds;
+global.weather = weather.sun;
 global.biome = biome.plains;
 global.humidity = humidity.medium;
 global.wind = wind.none;

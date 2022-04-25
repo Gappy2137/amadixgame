@@ -10,7 +10,7 @@ function scr_set_daycycle(hour, weath){
 
 					con_sat_brt[hour,0] = 0.20;
 					con_sat_brt[hour,1] = 0.80;
-					con_sat_brt[hour,2] = -0.45;
+					con_sat_brt[hour,2] = -0.00;
 
 					con_sat_brt[hour,3] = 0.00;
 					con_sat_brt[hour,4] = 0.80;

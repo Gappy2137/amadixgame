@@ -1,3 +1,5 @@
+//application_surface_draw_enable(false);
+
 surf = -1;
 
 xx = 0;

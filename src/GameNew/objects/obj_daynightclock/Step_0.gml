@@ -1,4 +1,4 @@
-//rot += 0.004;
+rot += 0.004;
 
 if keyboard_check(vk_left){
 	rot -= 1;	

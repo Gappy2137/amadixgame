@@ -71,6 +71,8 @@ alpha = 0;
 					con_sat_brt[8,3] = 0.70;
 					con_sat_brt[8,4] = 0.65;
 */
+
+/*
 #region Fix
 					color[0,0] = 127/255;
 					color[0,1] = 127/255;
@@ -84,7 +86,7 @@ alpha = 0;
 					con_sat_brt[0,4] = 1.00;
 					
 #endregion
-
+*/
 ds_daycycle_info = ds_grid_create(12, 24);
 ds_daycycle_hours = ds_list_create();
 scr_daycycle_params();
