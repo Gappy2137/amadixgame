@@ -18,3 +18,15 @@ function meta_rgb() {
 		hidden: false
 	}
 }
+
+function sh_set_rot_val(arg) {
+	obj_daynightclock.rotval = arg[1];
+}
+
+function meta_set_rot_val() {
+	return {
+		description: "",
+		arguments: ["timeSpeed"],
+		hidden: false
+	}
+}

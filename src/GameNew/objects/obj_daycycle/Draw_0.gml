@@ -1,1 +1,0 @@
-draw_text(obj_amadix.x,obj_amadix.y,string(hour_check()));

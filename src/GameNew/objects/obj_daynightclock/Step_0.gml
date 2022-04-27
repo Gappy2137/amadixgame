@@ -1,12 +1,10 @@
-rot += 0.004;
+rot += rotval;
 
 if keyboard_check(vk_left){
-	rot -= 1;	
-	global.daycycletime -= .001;	
+	rot -= 0.5;	
 }
 if keyboard_check(vk_right){
-	rot += 1;
-	global.daycycletime += .001;	
+	rot += 0.5;
 }
 
 

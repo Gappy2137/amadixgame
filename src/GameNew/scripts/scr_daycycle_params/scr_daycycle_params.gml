@@ -1,6 +1,54 @@
 function scr_daycycle_params(){
 	var grid = obj_daycycle.ds_daycycle_info;
-	//var list = obj_daycycle.ds_daycycle_hours;
+	
+	var list0 = ds_list_create();
+	var list1 = ds_list_create();
+	var list2 = ds_list_create();
+	var list3 = ds_list_create();
+	var list4 = ds_list_create();
+	var list5 = ds_list_create();
+	var list6 = ds_list_create();
+	var list7 = ds_list_create();
+	var list8 = ds_list_create();
+	var list9 = ds_list_create();
+	var list10 = ds_list_create();
+	var list11 = ds_list_create();
+	var list12 = ds_list_create();
+	var list13 = ds_list_create();
+	var list14 = ds_list_create();
+	var list15 = ds_list_create();
+	var list16 = ds_list_create();
+	var list17 = ds_list_create();
+	var list18 = ds_list_create();
+	var list19 = ds_list_create();
+	var list20 = ds_list_create();
+	var list21 = ds_list_create();
+	var list22 = ds_list_create();
+	var list23 = ds_list_create();
+	grid[# 0, 0] = list0;
+	grid[# 0, 1] = list1;
+	grid[# 0, 2] = list2;
+	grid[# 0, 3] = list3;
+	grid[# 0, 4] = list4;
+	grid[# 0, 5] = list5;
+	grid[# 0, 6] = list6;
+	grid[# 0, 7] = list7;
+	grid[# 0, 8] = list8;
+	grid[# 0, 9] = list9;
+	grid[# 0, 10] = list10;
+	grid[# 0, 11] = list11;
+	grid[# 0, 12] = list12;
+	grid[# 0, 13] = list13;
+	grid[# 0, 14] = list14;
+	grid[# 0, 15] = list15;
+	grid[# 0, 16] = list16;
+	grid[# 0, 17] = list17;
+	grid[# 0, 18] = list18;
+	grid[# 0, 19] = list19;
+	grid[# 0, 20] = list20;
+	grid[# 0, 21] = list21;
+	grid[# 0, 22] = list22;
+	grid[# 0, 23] = list23;
 	#region Weather Sun
 	//------------------------------------------
 	//00:00

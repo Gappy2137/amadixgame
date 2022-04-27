@@ -21,7 +21,7 @@ con_sat_brt_mix = [	lerp(ds_daycycle_info[# wthr, key_previous][| 3], ds_daycycl
 alpha	= clamp(sin((2 * global.daycycletime + 0.5) * 3.14) * 1.6 - 0.1, 0, 1);
 
 
-
+/*
 color_mix = [ds_daycycle_info[# wthr, hour][| 0]
 			,ds_daycycle_info[# wthr, hour][| 1]
 			,ds_daycycle_info[# wthr, hour][| 2]
@@ -33,7 +33,7 @@ con_sat_brt_mix = [ds_daycycle_info[# wthr, hour][| 3]
 				  ,ds_daycycle_info[# wthr, hour][| 6]
 				  ,ds_daycycle_info[# wthr, hour][| 7]
 ];
-
+*/
 /*
 color_mix = [color[0][0], color[0][1], color[0][2]];
 con_sat_brt_mix = [con_sat_brt[0][0], con_sat_brt[0][1],
