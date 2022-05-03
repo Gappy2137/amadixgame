@@ -16,7 +16,7 @@ if !surface_exists(surf){
 
 surface_set_target(surf);
 
-gpu_set_fog(1, 1, 1, 1);
+//gpu_set_fog(1, 1, 1, 1);
 
 shader_set(shader_blur);
 	
@@ -39,7 +39,7 @@ draw_surface_ext(application_surface, xx, yy, 1, 1, 0, c_white, 1);
 
 shader_reset();
 
-gpu_set_fog(0, 0, 0, 0);
+//gpu_set_fog(0, 0, 0, 0);
 
 surface_reset_target();
 

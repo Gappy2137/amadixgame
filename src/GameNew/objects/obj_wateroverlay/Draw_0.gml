@@ -37,41 +37,40 @@ draw_surface_ext(surf, 0, 0, 1, 1, 0, c_white, 0.8);
 */
 
 
-if !surface_exists(surf){
-	surf = surface_create(room_width, room_height);	
+var width = obj_display.ideal_width * obj_display.window_size;
+var height = obj_display.ideal_height * obj_display.window_size;
+
+var cam_x = camera_get_view_x(view_camera[0]);
+var cam_y = camera_get_view_y(view_camera[0]);
+var cam_scale = 1/obj_display.window_size;
+
+var xy = -16;
+
+if !surface_exists(waterSurface){
+	waterSurface = surface_create(room_width, room_height);	
 }
-if !surface_exists(refsurf){
-	refsurf = surface_create(room_width, room_height);	
+if !surface_exists(overlaySurface){
+	overlaySurface = surface_create(room_width + 16, room_height + 16);	
 }
-if !surface_exists(tilesurf){
-	tilesurf = surface_create(room_width, room_height);	
-}
-if !surface_exists(surf_reflection){
-	surf_reflection = surface_create(room_width, room_height);	
-}
+
 var tiles = layer_tilemap_get_id(layer_get_id("Water"));
 
 
-surface_set_target(refsurf);
+surface_set_target(overlaySurface);
 
-draw_sprite_tiled(spr_water_overlay, 0, xx, yy);
+draw_sprite_tiled_ext(spr_water_overlay, 0, xy, xy, 1, 1, c_white, 1);
 
 surface_reset_target();
 
 
-surface_set_target(surf);
+
+surface_set_target(waterSurface);
 
 draw_tilemap(tiles, 0, 0);
 
-surface_reset_target();
-
-
-
-surface_set_target(surf);
-
 gpu_set_colorwriteenable(1, 1, 1, 0);
 
-draw_surface_ext(refsurf, 0, 0, 1, 1, 0, c_white, 0.2);
+draw_surface_ext(overlaySurface, xx + xy, yy + xy, 1, 1, 0, c_white, 0.2);
 
 gpu_set_colorwriteenable(1, 1, 1, 1);
 
@@ -80,24 +79,24 @@ surface_reset_target();
 
 
 
-surface_set_target(surf_reflection);
+//surface_set_target(surf_reflection);
 
-draw_tilemap(tiles, 0, 0);
+//draw_tilemap(tiles, 0, 0);
 
-var inst = obj_amadix;
+//var inst = obj_amadix;
 
-var yBuffer = (inst.sprite_height - inst.sprite_yoffset)*2;
+//var yBuffer = (inst.sprite_height - inst.sprite_yoffset)*2;
 
-gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_src_alpha);
+//gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_src_alpha);
 
-draw_sprite_ext(inst.sprite_index, inst.image_index, inst.x, (inst.y + yBuffer), inst.image_xscale, -inst.image_yscale, 0, c_white, 1);
+//draw_sprite_ext(inst.sprite_index, inst.image_index, inst.x, (inst.y + yBuffer), inst.image_xscale, -inst.image_yscale, 0, c_white, 1);
 
-gpu_set_blendmode(bm_normal);
+//gpu_set_blendmode(bm_normal);
 
-surface_reset_target();
+//surface_reset_target();
 
 
 
-draw_surface_ext(surf_reflection, 0, 0, 1, 1, 0, c_white, 1);
+//draw_surface_ext(surf_reflection, 0, 0, 1, 1, 0, c_white, 1);
 
-draw_surface_ext(surf, 0, 0, 1, 1, 0, c_white, 0.8);
+draw_surface_ext(waterSurface, 0, 0, 1, 1, 0, c_white, 0.8);

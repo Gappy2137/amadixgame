@@ -1,6 +1,6 @@
-surf = -1;
+waterSurface = -1;
 
-refsurf = -1;
+overlaySurface = -1;
 
 tilesurf = -1;
 
