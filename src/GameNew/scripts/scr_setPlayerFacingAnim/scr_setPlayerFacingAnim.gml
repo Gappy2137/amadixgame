@@ -102,6 +102,30 @@ function scr_setPlayerFacingAnim(facing){
 									}
 									
 								break;
+								case item.sawedoff:
+								
+									hand_rot = point_direction(x, y + hand_yoffset, mouse_x, mouse_y) - 90;
+									hand_xoffset = 0;
+									hand_yoffset = 18;
+									
+									switch(obj_gun_logic.state){
+										case gunState.standby:
+											hands_index = spr_amadix_hands_sawedoff_u;
+										break;
+										case gunState.shooting:
+											hands_index = spr_amadix_hands_sawedoff_u_shoot;
+										break;
+										case gunState.reloading:
+											hands_index = spr_amadix_hands_sawedoff_u_reload;
+										case gunState.reloading_empty:
+											hands_index = spr_amadix_hands_sawedoff_u_reload;
+										break;
+										case gunState.empty:
+											hands_index = spr_amadix_hands_sawedoff_u;
+										break;
+									}
+									
+								break;
 							}
 						}
 					}else
@@ -128,6 +152,30 @@ function scr_setPlayerFacingAnim(facing){
 										break;
 										case gunState.empty:
 											hands_index = spr_amadix_hands_gun_l;
+										break;
+									}
+									
+								break;
+								case item.sawedoff:
+								
+									hand_rot = point_direction(x, y + hand_yoffset, mouse_x, mouse_y) - 180;
+									hand_xoffset = 3;
+									hand_yoffset = 16;
+									
+									switch(obj_gun_logic.state){
+										case gunState.standby:
+											hands_index = spr_amadix_hands_sawedoff_l;
+										break;
+										case gunState.shooting:
+											hands_index = spr_amadix_hands_sawedoff_l_shoot;
+										break;
+										case gunState.reloading:
+											hands_index = spr_amadix_hands_sawedoff_l_reload;
+										case gunState.reloading_empty:
+											hands_index = spr_amadix_hands_sawedoff_l_reload;
+										break;
+										case gunState.empty:
+											hands_index = spr_amadix_hands_sawedoff_l;
 										break;
 									}
 									
@@ -170,6 +218,35 @@ function scr_setPlayerFacingAnim(facing){
 									}
 									
 								break;
+								case item.sawedoff:
+								
+									hand_rot = point_direction(x, y + hand_yoffset, mouse_x, mouse_y) + 90;
+									hand_xoffset = -3;
+									hand_yoffset = 14;
+									hand_xoffset2 = 3;
+									hand_yoffset2 = 14;
+									
+									switch(obj_gun_logic.state){
+										case gunState.standby:
+											hands_index = spr_amadix_hands_sawedoff_d;
+											hands2_index = spr_amadix_hands_sawedoff_d2;
+										break;
+										case gunState.shooting:
+											hands_index = spr_amadix_hands_sawedoff_d_shoot;
+											hands2_index = spr_amadix_hands_sawedoff_d2_shoot;
+										break;
+										case gunState.reloading:
+											hands_index = spr_amadix_hands_sawedoff_d_reload;
+										case gunState.reloading_empty:
+											hands_index = spr_amadix_hands_sawedoff_d_reload;
+										break;
+										case gunState.empty:
+											hands_index = spr_amadix_hands_sawedoff_d;
+											hands2_index = spr_amadix_hands_sawedoff_d2;
+										break;
+									}
+									
+								break;
 							}
 						}
 						
@@ -197,6 +274,30 @@ function scr_setPlayerFacingAnim(facing){
 										break;
 										case gunState.empty:
 											hands_index = spr_amadix_hands_gun_r;
+										break;
+									}
+									
+								break;
+								case item.sawedoff:
+								
+									hand_rot = point_direction(x, y + hand_yoffset, mouse_x, mouse_y);
+									hand_xoffset = -5;
+									hand_yoffset = 19;
+									
+									switch(obj_gun_logic.state){
+										case gunState.standby:
+											hands_index = spr_amadix_hands_sawedoff_r;
+										break;
+										case gunState.shooting:
+											hands_index = spr_amadix_hands_sawedoff_r_shoot;
+										break;
+										case gunState.reloading:
+											hands_index = spr_amadix_hands_sawedoff_r_reload;
+										case gunState.reloading_empty:
+											hands_index = spr_amadix_hands_sawedoff_r_reload;
+										break;
+										case gunState.empty:
+											hands_index = spr_amadix_hands_sawedoff_r;
 										break;
 									}
 									
@@ -289,7 +390,7 @@ switch(itemeaten){
 	case item.none:
 		gun_index = spr_item_none;
 	break;
-	
+	#region 1911
 	case item.m1911:
 		switch(obj_gun_logic.state){
 			case gunState.standby:
@@ -350,6 +451,72 @@ switch(itemeaten){
 		}
 
 	break;
+	#endregion
+	
+	#region sawed off
+	case item.sawedoff:
+		switch(obj_gun_logic.state){
+			case gunState.standby:
+					if isLooking(index_facing.up){
+						gun_index = spr_amadix_sawedoff_u;
+					}else if isLooking(index_facing.down){
+						gun_index = spr_amadix_sawedoff_d;
+					}else if isLooking(index_facing.left){
+						gun_index = spr_amadix_sawedoff_l;
+					}else{
+						gun_index = spr_amadix_sawedoff_r;
+					}
+			break;
+			case gunState.shooting:
+					if isLooking(index_facing.up){
+						gun_index = spr_amadix_sawedoff_u_shoot;
+					}else if isLooking(index_facing.down){
+						gun_index = spr_amadix_sawedoff_d_shoot;
+					}else if isLooking(index_facing.left){
+						gun_index = spr_amadix_sawedoff_l_shoot;
+					}else{
+						gun_index = spr_amadix_sawedoff_r_shoot;
+					}
+			break;
+			case gunState.reloading:
+					if isLooking(index_facing.up){
+						gun_index = spr_amadix_sawedoff_u_reload;
+					}else if isLooking(index_facing.down){
+						gun_index = spr_amadix_sawedoff_d_reload;
+					}else if isLooking(index_facing.left){
+						gun_index = spr_amadix_sawedoff_l_reload;
+					}else{
+						gun_index = spr_amadix_sawedoff_r_reload;
+					}
+			break;
+			case gunState.reloading_empty:
+					if isLooking(index_facing.up){
+						gun_index = spr_amadix_sawedoff_u_reload;
+					}else if isLooking(index_facing.down){
+						gun_index = spr_amadix_sawedoff_d_reload;
+					}else if isLooking(index_facing.left){
+						gun_index = spr_amadix_sawedoff_l_reload;
+					}else{
+						gun_index = spr_amadix_sawedoff_r_reload;
+					}
+			break;
+			case gunState.empty:
+					if isLooking(index_facing.up){
+						gun_index = spr_amadix_sawedoff_u;
+					}else if isLooking(index_facing.down){
+						gun_index = spr_amadix_sawedoff_d;
+					}else if isLooking(index_facing.left){
+						gun_index = spr_amadix_sawedoff_l;
+					}else{
+						gun_index = spr_amadix_sawedoff_r;
+					}
+			break;
+		}
+	#endregion
+	
+	
+	break;
+	
 }
 }
 #endregion
@@ -599,6 +766,26 @@ switch(global.playerTorso){
 									}
 									
 								break;
+								
+								case item.sawedoff:
+									switch(obj_gun_logic.state){
+										case gunState.standby:
+											arms_index = spr_amadix_newA_sawedoff_u;
+										break;
+										case gunState.shooting:
+											arms_index = spr_amadix_newA_sawedoff_u_shoot;
+										break;
+										case gunState.reloading:
+											arms_index = spr_amadix_newA_sawedoff_u_reload;
+										case gunState.reloading_empty:
+											arms_index = spr_amadix_newA_sawedoff_u_reload;
+										break;
+										case gunState.empty:
+											arms_index = spr_amadix_newA_sawedoff_u;
+										break;
+									}
+									
+								break;
 							}
 						}
 					}else
@@ -620,6 +807,26 @@ switch(global.playerTorso){
 										break;
 										case gunState.empty:
 											arms_index = spr_amadix_newA_gun_l;
+										break;
+									}
+									
+								break;
+								
+								case item.sawedoff:
+									switch(obj_gun_logic.state){
+										case gunState.standby:
+											arms_index = spr_amadix_newA_sawedoff_l;
+										break;
+										case gunState.shooting:
+											arms_index = spr_amadix_newA_sawedoff_l_shoot;
+										break;
+										case gunState.reloading:
+											arms_index = spr_amadix_newA_sawedoff_l_reload;
+										case gunState.reloading_empty:
+											arms_index = spr_amadix_newA_sawedoff_l_reload;
+										break;
+										case gunState.empty:
+											arms_index = spr_amadix_newA_sawedoff_l;
 										break;
 									}
 									
@@ -656,6 +863,31 @@ switch(global.playerTorso){
 									}
 									
 								break;
+								
+								case item.sawedoff:
+									
+									switch(obj_gun_logic.state){
+										case gunState.standby:
+											arms_index = spr_amadix_newA_sawedoff_d;
+											arms2_index = spr_amadix_newA_sawedoff_d2;
+										break;
+										case gunState.shooting:
+											arms_index = spr_amadix_newA_sawedoff_d_shoot;
+											arms2_index = spr_amadix_newA_sawedoff_d2_shoot;
+										break;
+										case gunState.reloading:
+											arms_index = spr_amadix_newA_sawedoff_d_reload;
+										case gunState.reloading_empty:
+											arms_index = spr_amadix_newA_sawedoff_d_reload;
+										break;
+										case gunState.empty:
+											arms_index = spr_amadix_newA_sawedoff_d;
+											arms2_index = spr_amadix_newA_sawedoff_d2;
+										break;
+									}
+									
+								break;
+								
 							}
 						}
 						
@@ -679,6 +911,27 @@ switch(global.playerTorso){
 										break;
 										case gunState.empty:
 											arms_index = spr_amadix_newA_gun_r;
+										break;
+									}
+									
+								break;
+								
+								case item.sawedoff:
+									
+									switch(obj_gun_logic.state){
+										case gunState.standby:
+											arms_index = spr_amadix_newA_sawedoff_r;
+										break;
+										case gunState.shooting:
+											arms_index = spr_amadix_newA_sawedoff_r_shoot;
+										break;
+										case gunState.reloading:
+											arms_index = spr_amadix_newA_sawedoff_r_reload;
+										case gunState.reloading_empty:
+											arms_index = spr_amadix_newA_sawedoff_r_reload;
+										break;
+										case gunState.empty:
+											arms_index = spr_amadix_newA_sawedoff_r;
 										break;
 									}
 									

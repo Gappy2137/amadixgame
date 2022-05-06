@@ -30,9 +30,9 @@ if (instance_exists(obj_amadix)){
 				ammoCap = 2;
 				ammoExtra = item_find_amount(mag);
 			//reload times
-				shootingTime = 8;
-				reloadTime = 1.5 * room_speed;
-				reloadTimeEmpty = 1.5 * room_speed;
+				shootingTime = 11;
+				reloadTime = 2.2 * room_speed;
+				reloadTimeEmpty = 2.2 * room_speed;
 			//sounds
 				soundSHOOT = snd_m1911_shoot;
 				soundMAGOUT = snd_m1911_magout;

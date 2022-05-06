@@ -25,7 +25,7 @@ with(obj_inventory){
 	
 	var ammo = 0;
 	
-	if (type == 0){
+	if (obj_gun_logic.type == 0){
 		if (obj_gun_logic.ammoLoaded >= 1){
 		
 			//Usuniecie magazynku z ekwipunku i podanie jego pojemnosci
@@ -51,22 +51,25 @@ with(obj_inventory){
 
 			obj_gun_logic.ammoLoaded = ammo;
 		}
-	}else if (type == 1){
-		if (ammoLoaded == 0){
-			if (ammoExtra >= 2){
+	}else if (obj_gun_logic.type == 1){
+		if (obj_gun_logic.ammoLoaded == 0){
+			if (obj_gun_logic.ammoExtra >= 2){
 				obj_gun_logic.ammoLoaded = 2;
 				item_remove(obj_gun_logic.mag, 2, false);	
-			}else if (ammoExtra == 1){
+			}else if (obj_gun_logic.ammoExtra == 1){
 				obj_gun_logic.ammoLoaded = 1;
-				item_remove(obj_gun_logic.mag, 1, false);		
+				item_remove(obj_gun_logic.mag, 1, false);
 			}
 
-		}else if (ammoLoaded == 1){
-			if (ammoExtra >= 1){
+		}else if (obj_gun_logic.ammoLoaded == 1){
+			if (obj_gun_logic.ammoExtra >= 1){
 				obj_gun_logic.ammoLoaded = 2;
 				item_remove(obj_gun_logic.mag, 1, false);	
 			}
 		}
+		
+		
+		
 	}
 	
 
@@ -77,3 +80,7 @@ with(obj_inventory){
 canShoot = true;
 inChamber = true;
 state = gunState.standby;
+
+
+
+shellfix = true;

@@ -12,7 +12,7 @@ function item_action(){
 		
 
 	if (!inslots){
-		if (type == itemtype.handgun){
+		if (type == itemtype.handgun) || (type == itemtype.shotgun){
 			if (amount > 0){
 					var iitem = obj_inventory.ds_inventory[# INVITEM, obj_inventory.mouse_slotx_second];
 					if (!instance_exists(obj_gun_logic)){instance_create_layer(obj_amadix.x, obj_amadix.y, "Instances", obj_gun_logic);}

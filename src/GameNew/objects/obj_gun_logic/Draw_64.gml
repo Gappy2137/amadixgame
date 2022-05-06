@@ -58,3 +58,4 @@ repeat(bulletsLoaded * 2){
 if (ammoLoaded == ammoCap + 1){
 	draw_sprite(spr_extrabullet, 0, (bgX + bgWidth/2), bgY - 4);
 }
+

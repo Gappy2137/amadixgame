@@ -112,6 +112,9 @@ function item_attrib_grid(){
 	grid[# INVSTAMINA, item.vodka] = 25;
 	grid[# INVLEVEL, item.vodka] = 15;
 	
+	//M1911
+	grid[# INVTYPE, item.sawedoff] = itemtype.shotgun;
+	
 	//Sprawdzenie typow
 	for (var i = 0; i <= item.height; i++){
 		if (grid[# INVTYPE, i] == itemtype.dish){
@@ -185,6 +188,9 @@ function item_attrib_grid(){
 			grid[# MAXSTACK, i] = 5;
 			grid[# INVDAMAGE, i] = 0;
 			grid[# INVDEFENCE, i] = 0;
+		}
+		if (grid[# INVTYPE, i] == itemtype.shotgun){
+			grid[# MAXSTACK, i] = 1;
 		}
 	}
 	
