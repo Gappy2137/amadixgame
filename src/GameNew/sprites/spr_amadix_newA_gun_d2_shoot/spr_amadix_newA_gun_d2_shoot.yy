@@ -7,10 +7,10 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 16,
+  "bbox_left": 14,
   "bbox_right": 20,
-  "bbox_top": 13,
-  "bbox_bottom": 21,
+  "bbox_top": 15,
+  "bbox_bottom": 23,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -24,18 +24,21 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"6f6ae47b-3cc8-4069-bfc0-6a154e4c29aa","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"6f6ae47b-3cc8-4069-bfc0-6a154e4c29aa","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"LayerId":{"name":"611f8f96-0ffe-4387-b521-c27f653c4a08","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_amadix_newA_gun_d2_shoot","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"resourceVersion":"1.0","name":"6f6ae47b-3cc8-4069-bfc0-6a154e4c29aa","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"6ff2db2c-057c-4b1d-b6fc-67c79b96f22a","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"6ff2db2c-057c-4b1d-b6fc-67c79b96f22a","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"LayerId":{"name":"611f8f96-0ffe-4387-b521-c27f653c4a08","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_amadix_newA_gun_d2_shoot","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"resourceVersion":"1.0","name":"6ff2db2c-057c-4b1d-b6fc-67c79b96f22a","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"7370ddaf-3b60-4eef-885b-460b8c7a8ef8","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"7370ddaf-3b60-4eef-885b-460b8c7a8ef8","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"LayerId":{"name":"611f8f96-0ffe-4387-b521-c27f653c4a08","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_amadix_newA_gun_d2_shoot","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"resourceVersion":"1.0","name":"7370ddaf-3b60-4eef-885b-460b8c7a8ef8","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"cdc85239-88a0-434e-ae82-d60d57ec9eda","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"cdc85239-88a0-434e-ae82-d60d57ec9eda","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"LayerId":{"name":"611f8f96-0ffe-4387-b521-c27f653c4a08","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_amadix_newA_gun_d2_shoot","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"resourceVersion":"1.0","name":"cdc85239-88a0-434e-ae82-d60d57ec9eda","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"14438443-f7b7-4370-8f37-9314c9fd4393","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"14438443-f7b7-4370-8f37-9314c9fd4393","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"LayerId":{"name":"936c6992-f3a0-4f49-9e16-b2f6910ca3d8","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_amadix_newA_gun_d2_shoot","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"resourceVersion":"1.0","name":"14438443-f7b7-4370-8f37-9314c9fd4393","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"ceae6ebe-6b56-4458-94bf-9fcb7a28e118","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"ceae6ebe-6b56-4458-94bf-9fcb7a28e118","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"LayerId":{"name":"936c6992-f3a0-4f49-9e16-b2f6910ca3d8","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_amadix_newA_gun_d2_shoot","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"resourceVersion":"1.0","name":"ceae6ebe-6b56-4458-94bf-9fcb7a28e118","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"9208c07f-96b4-439b-8e5a-25df244f89f6","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"9208c07f-96b4-439b-8e5a-25df244f89f6","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"LayerId":{"name":"936c6992-f3a0-4f49-9e16-b2f6910ca3d8","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_amadix_newA_gun_d2_shoot","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"resourceVersion":"1.0","name":"9208c07f-96b4-439b-8e5a-25df244f89f6","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"b908c442-2c0a-4412-a0f7-fc8c05ec5ef8","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"b908c442-2c0a-4412-a0f7-fc8c05ec5ef8","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"LayerId":{"name":"936c6992-f3a0-4f49-9e16-b2f6910ca3d8","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_amadix_newA_gun_d2_shoot","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"resourceVersion":"1.0","name":"b908c442-2c0a-4412-a0f7-fc8c05ec5ef8","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"b2a6670d-911d-40b6-a3db-2d8bf3660a28","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"b2a6670d-911d-40b6-a3db-2d8bf3660a28","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"LayerId":{"name":"936c6992-f3a0-4f49-9e16-b2f6910ca3d8","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_amadix_newA_gun_d2_shoot","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"resourceVersion":"1.0","name":"b2a6670d-911d-40b6-a3db-2d8bf3660a28","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_amadix_newA_gun_d2_shoot","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},
@@ -45,15 +48,16 @@
     "playbackSpeedType": 1,
     "autoRecord": true,
     "volume": 1.0,
-    "length": 4.0,
+    "length": 5.0,
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"ca836014-079f-4e3b-a58f-12e98beb83d7","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"6f6ae47b-3cc8-4069-bfc0-6a154e4c29aa","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"be9fbdda-df48-4aad-910a-2f4cef30da33","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"6ff2db2c-057c-4b1d-b6fc-67c79b96f22a","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"8c87827d-5bf4-4e8d-927c-f36bd4bc5116","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7370ddaf-3b60-4eef-885b-460b8c7a8ef8","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"6684529e-dacf-4018-880b-f493dea61494","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"cdc85239-88a0-434e-ae82-d60d57ec9eda","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"7dec9302-eed5-4eb2-ae6f-c5def39e667a","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"14438443-f7b7-4370-8f37-9314c9fd4393","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"2f4bf8d0-cfa9-4878-afd9-8f2823e7f6c0","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"ceae6ebe-6b56-4458-94bf-9fcb7a28e118","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"14441b04-1606-4bf5-bc84-abb9a6c62fef","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"9208c07f-96b4-439b-8e5a-25df244f89f6","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"9085f30a-918a-4b47-9878-12124271dd8d","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b908c442-2c0a-4412-a0f7-fc8c05ec5ef8","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"6be62c8d-4f8d-4f3d-a3f5-a86ee0c3333f","Key":4.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b2a6670d-911d-40b6-a3db-2d8bf3660a28","path":"sprites/spr_amadix_newA_gun_d2_shoot/spr_amadix_newA_gun_d2_shoot.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -77,12 +81,12 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"611f8f96-0ffe-4387-b521-c27f653c4a08","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"936c6992-f3a0-4f49-9e16-b2f6910ca3d8","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Handgun",
-    "path": "folders/Sprites/Player/Arms/Jacket/Handgun.yy",
+    "name": "M1911",
+    "path": "folders/Sprites/Player/Arms/Jacket/M1911.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_amadix_newA_gun_d2_shoot",

@@ -1,5 +1,6 @@
 if(keyboard_check_pressed(ord("Z")))
 {
+	zoomtrigger = true;
 	window_size++;
   
 	if(window_size > max_window_size){
@@ -20,7 +21,7 @@ if(keyboard_check_pressed(ord("Z")))
 	}
 }
 
-
+zoomtrigger = false;
 	
 if instance_number(obj_camera) > 1{
 	instance_destroy(obj_camera);

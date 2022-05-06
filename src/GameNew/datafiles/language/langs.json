@@ -22,6 +22,7 @@
 		"itemNameM1911mag":						"M1911 magazine",
 		"itemName45ACP":						".45ACP bullet",
 		"itemNameVodka":						"Vodka",
+		"itemNameSawedOff":						"Sawed Off",
 		
 		
 		
@@ -46,6 +47,7 @@
 		"itemDescM1911mag":						"M1911 magazine",
 		"itemDesc45ACP":						".45ACP bullet",
 		"itemDescVodka":						"Vodka",
+		"itemDescSawedOff":						"Sawed Off",
 		
 		
 		
@@ -64,6 +66,7 @@
 		"itemTypeHandgun":						"Handgun",
 		"itemTypeMagazine":						"Magazine",
 		"itemTypeAlcohol":						"Alcohol",
+		"itemTypeShotgun":						"Shotgun",
 		
 		
 		
@@ -92,6 +95,7 @@
 		"itemNameM1911mag":						"M1911 magazine",
 		"itemName45ACP":						".45ACP bullet",
 		"itemNameVodka":						"Wódka",
+		"itemNameSawedOff":						"Sawed Off",
 		
 		
 		
@@ -116,6 +120,7 @@
 		"itemDescM1911mag":						"M1911 magazine",
 		"itemDesc45ACP":						".45ACP bullet",
 		"itemDescVodka":						"Wódka",
+		"itemDescSawedOff":						"Sawed Off",
 		
 		
 		
@@ -134,6 +139,7 @@
 		"itemTypeHandgun":						"Pistolet",
 		"itemTypeMagazine":						"Magazynek",
 		"itemTypeAlcohol":						"Alkohol",
+		"itemTypeShotgun":						"Shotgun",
 		
 		
 		

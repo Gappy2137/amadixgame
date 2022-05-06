@@ -1,4 +1,4 @@
-
+if (obj_display.zoomtrigger){exit;}
 
 var width = obj_display.ideal_width * obj_display.window_size * xscale;
 var height = obj_display.ideal_height * obj_display.window_size * yscale;
@@ -47,7 +47,7 @@ if (global.alcoholPoisoning >= 5){
 	
 
 	
-	draw_surface_ext(surf, cam_x - scaled_x, cam_y - scaled_y, xscale/obj_display.window_size, yscale/obj_display.window_size, 0, c_white, alpha);
+	draw_surface_ext(surf, cam_x - scaled_x + 3, cam_y - scaled_y, xscale/obj_display.window_size, yscale/obj_display.window_size, 0, c_white, alpha);
 	
 	
 }

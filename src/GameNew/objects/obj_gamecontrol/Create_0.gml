@@ -96,7 +96,7 @@ global.stamina = 100;
 global.maxstamina = 100;
 
 global.alcoholPoisoning = 0;
-global.maxAlcoholPoisoning = 100;
+global.maxAlcoholPoisoning = 60;
 
 
 global.time = 0;

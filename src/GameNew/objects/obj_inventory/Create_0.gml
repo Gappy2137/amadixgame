@@ -160,7 +160,8 @@ enum item{
 	m1911mag					= 18,
 	bullet45acp					= 19,
 	vodka						= 20,
-	height						= 21
+	sawedoff					= 21,
+	height						= 22
 }
 #endregion
 
@@ -179,7 +180,8 @@ enum itemtype{
 	hat					= 11,
 	handgun				= 12,
 	magazine			= 13,
-	alcohol				= 14
+	alcohol				= 14,
+	shotgun				= 15
 }
 
 ds_item_info = ds_grid_create(3, item.height);

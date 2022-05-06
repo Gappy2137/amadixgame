@@ -21,8 +21,8 @@ switch (mode) {
 				
 
 					camera_set_view_pos(view_camera[0],
-								    	(lerp(cam_x_pos,cam_x,cam_speed)),
-										(lerp(cam_y_pos,cam_y,cam_speed)));
+								    	(round_to4(lerp(cam_x_pos,cam_x,cam_speed))),
+										(round_to4(lerp(cam_y_pos,cam_y,cam_speed))));
 
 					//camera_set_view_pos(view_camera[0], floor(cam_x), floor(cam_y));
 				

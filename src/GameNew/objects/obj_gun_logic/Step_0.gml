@@ -130,12 +130,7 @@ if (type == 0){
 			}
 		
 			#endregion
-			/*
-			if (chambered1){
-				chamberedRound = 0;
-				chambered1 = false;
-			}
-			*/
+
 			state = gunState.shooting;
 			canShoot = false;
 			alarm[0] = shootingTime;

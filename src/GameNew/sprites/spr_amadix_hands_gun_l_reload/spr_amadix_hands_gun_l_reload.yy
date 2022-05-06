@@ -118,7 +118,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Reload",
-    "path": "folders/Sprites/Player/Hands/Gun/Handgun/Reload.yy",
+    "path": "folders/Sprites/Player/Hands/Gun/M1911/Reload.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_amadix_hands_gun_l_reload",

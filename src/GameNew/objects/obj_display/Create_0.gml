@@ -8,6 +8,8 @@ global.gameWidth = 480;
 global.gameHeight = 270;
 global.zoom = 3;
 
+zoomtrigger = false;
+
 aspect_ratio = display_width/display_height;
 
 

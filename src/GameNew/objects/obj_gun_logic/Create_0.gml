@@ -39,14 +39,7 @@ animFramesReloadEmpty = 0;
 
 //type
 //0 - semi-auto handgun
-//1 - single action revolver
-//2 - double action revolver
-//3 - automatic rifle
-//4 - bolt action rifle
-//5 - semi-auto rifle
-//6 - automatic submachine gun
-//7 - automatic rifle / semi-auto
-//8 - double barrel shotgun
+//1 - sawed off
 
 enum gunState{
 	standby = 0,
