@@ -1,5 +1,3 @@
-depth = -3;
-
 isOpen = false;
 isAutocompleteOpen = false;
 
@@ -43,6 +41,26 @@ metaDeleted = false;
 metaMovedLeft = false;
 metaMovedRight = false;
 
+// Set up queue for deferred script calls
+deferredQueue = ds_queue_create();
+
+// Variables for the saved history feature
+savedHistoryFilePath = working_directory + "rt-shell-saved-history.data";
+loadedSavedHistory = false;
+loadedHistoryScrolled = false;
+
+// Mouse-argument data types
+enum mouseArgumentType {
+	worldX,
+	worldY,
+	guiX,
+	guiY,
+	instanceId,
+	objectId
+}
+activeMouseArgType = undefined;
+activeMouseArgValue = "";
+
 // Initialize native shell scripts
 event_user(0);
 
@@ -66,6 +84,17 @@ function close() {
 	isOpen = false;
 	if (!is_undefined(closeFunction)) {
 		closeFunction();
+	}
+	// Execute any deferred functions
+	// This should happen after the close function, as the canonical use-case is for 
+	// running scripts that must happen while the game is not paused
+	while (!ds_queue_empty(deferredQueue)) {
+		var args = ds_queue_dequeue(deferredQueue);
+		self._execute_script(args, true);
+	}
+	// Save the current history to disk, if enabled
+	if (saveHistory) {
+		self._save_history();
 	}
 }
 
@@ -118,6 +147,7 @@ function _update_filtered_suggestions() {
 	array_resize(filteredSuggestions, 0);
 	autocompleteMaxWidth = 0;
 	suggestionIndex = 0;
+	activeMouseArgType = undefined;
 	var inputString = string_lower(consoleString);
 	inputArray = self._input_string_split(inputString);
 	
@@ -152,6 +182,10 @@ function _update_filtered_suggestions() {
 				} else if (is_method(suggestionData[argumentIndex])) {
 					// #18: Suggestion data is a dynamic function that returns an array
 					argumentSuggestions = suggestionData[argumentIndex]();
+				} else if (is_int64(suggestionData[argumentIndex])) {
+					// int64 is the datatype of enum values, we can hopefully assume this means
+					// our argument suggestion is a mouseArgumentType
+					activeMouseArgType = suggestionData[argumentIndex];
 				}
 				var currentArgument = inputArray[array_length(inputArray) - 1];
 				for (var i = 0; i < array_length(argumentSuggestions); i++) {
@@ -317,6 +351,83 @@ function _confirm_current_suggestion() {
 	}
 	consoleString += filteredSuggestions[suggestionIndex] + " ";
 	cursorPos = string_length(consoleString) + 1;
+}
+
+function _confirm_current_mouse_argument_data() {
+	if (activeMouseArgValue != "") {
+		consoleString += string(activeMouseArgValue) + " ";
+		cursorPos = string_length(consoleString) + 1;
+	}
+}
+
+function _execute_script(args, deferred = false) {
+	var script = variable_global_get("sh_" + args[0]);
+	if (!is_undefined(script)) {
+		var response;
+		try {
+			response = script_execute(asset_get_index(script_get_name(script)), args);
+		} catch (_exception) {
+			response = "-- ERROR: see debug output for details --";
+			show_debug_message("---- ERROR executing rt-shell command [" + args[0] + "] ----");
+			show_debug_message(_exception.message);
+			show_debug_message(_exception.longMessage);
+			show_debug_message(_exception.script);
+			show_debug_message(_exception.stacktrace);
+			show_debug_message("----------------------------");
+		}
+		if (!deferred) {
+			array_push(history, consoleString);
+			if (response != "") { array_push(output, ">" + consoleString); }
+		}
+		if (response != 0) {
+			array_push(output, response);
+		}		
+		
+		self._update_positions();
+	} else {
+		array_push(output, ">" + consoleString);
+		array_push(output, "No such command: " + consoleString);
+		array_push(history, consoleString);
+		self._update_positions();
+	}
+}
+
+function _update_positions() {
+	historyPos = array_length(history);
+	consoleString = "";
+	savedConsoleString = "";
+	cursorPos = 1;
+}
+
+function _save_history() {
+	var truncatedHistory = [];
+	var truncatedOutput = [];
+	
+	array_copy(truncatedHistory, 0, history, max(0, array_length(history) - savedHistoryMaxSize),
+		min(array_length(history), savedHistoryMaxSize));
+	
+	array_copy(truncatedOutput, 0, output, max(0, array_length(output) - savedHistoryMaxSize), 
+		min(array_length(output), savedHistoryMaxSize));
+
+	var toSave = {
+		history: truncatedHistory,
+		output: truncatedOutput
+	}
+	var openFile = file_text_open_write(savedHistoryFilePath);
+	file_text_write_string(openFile, json_stringify(toSave));
+	file_text_close(openFile);
+}
+
+function _load_history() {
+	var saveDataFile = file_find_first(savedHistoryFilePath, fa_directory);
+	if (saveDataFile != "") {
+		var openFile = file_text_open_read(savedHistoryFilePath);
+		var tempData = json_parse(file_text_read_string(openFile));
+		file_text_close(openFile);
+		history = tempData.history;
+		output = tempData.output;
+		historyPos = array_length(history);
+	}
 }
 
 /// @function _input_string_split(_input)

@@ -1,6 +1,8 @@
 //if (keyboard_check_pressed(ord("E"))) {show_inventory = !show_inventory;}
 //if (keyboard_check_pressed(ord("R"))) {show_slots = !show_slots;}
 
+
+
 if (!canUseInventory){exit;}
 #region Operacje na przedmiotach
 if (show_inventory) && (!show_slots){
@@ -353,7 +355,7 @@ if (show_inventory) && (!show_slots){
 					slot_remove(selected_slot);
 				}else{
 					
-					if (keyboard_check(vk_shift)){
+					if (input_check("shift")){
 						multipick = floor((inv_grid[# INVAMOUNT, selected_slot])/2);
 						inv_grid[# INVAMOUNT, selected_slot] -= multipick;
 					}else{
@@ -370,7 +372,7 @@ if (show_inventory) && (!show_slots){
 				if (inv_grid[# INVTYPE, selected_slot] == itemtype.magazine){
 					changeitem();
 				}else{
-					if (keyboard_check(vk_shift)){
+					if (input_check("shift")){
 						if (inv_grid[# INVAMOUNT, selected_slot] == 1){
 							multipick++;
 							slot_remove(selected_slot);
@@ -543,18 +545,18 @@ else if (!show_inventory) && (show_slots){
 	#region Klawisze
 	if instance_exists(obj_amadix){
 		if canChange(){
-			if (keyboard_check_pressed(ord("1"))){mouse_slotx_second = 0;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
-			if (keyboard_check_pressed(ord("2"))){mouse_slotx_second = 1;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
-			if (keyboard_check_pressed(ord("3"))){mouse_slotx_second = 2;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
-			if (keyboard_check_pressed(ord("4"))){mouse_slotx_second = 3;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
-			if (keyboard_check_pressed(ord("5"))){mouse_slotx_second = 4;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
-			if (keyboard_check_pressed(ord("6"))){mouse_slotx_second = 5;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
-			if (keyboard_check_pressed(ord("7"))){mouse_slotx_second = 6;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
-			if (keyboard_check_pressed(ord("8"))){mouse_slotx_second = 7;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
-			if (keyboard_check_pressed(ord("9"))){mouse_slotx_second = 8;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
-			if (keyboard_check_pressed(ord("0"))){mouse_slotx_second = 9;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
-			if (keyboard_check_pressed(189)){mouse_slotx_second = 10;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
-			if (keyboard_check_pressed(187)){mouse_slotx_second = 11;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
+			if (input_check_pressed("inventory_1")){mouse_slotx_second = 0;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
+			if (input_check_pressed("inventory_2")){mouse_slotx_second = 1;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
+			if (input_check_pressed("inventory_3")){mouse_slotx_second = 2;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
+			if (input_check_pressed("inventory_4")){mouse_slotx_second = 3;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
+			if (input_check_pressed("inventory_5")){mouse_slotx_second = 4;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
+			if (input_check_pressed("inventory_6")){mouse_slotx_second = 5;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
+			if (input_check_pressed("inventory_7")){mouse_slotx_second = 6;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
+			if (input_check_pressed("inventory_8")){mouse_slotx_second = 7;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
+			if (input_check_pressed("inventory_9")){mouse_slotx_second = 8;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
+			if (input_check_pressed("inventory_0")){mouse_slotx_second = 9;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
+			if (input_check_pressed("inventory_-")){mouse_slotx_second = 10;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
+			if (input_check_pressed("inventory_=")){mouse_slotx_second = 11;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
 		}
 	}
 	#endregion

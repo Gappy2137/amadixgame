@@ -8,30 +8,44 @@ key_next = (key_previous + 1) mod number_of_key_times;
 
 var lerp_ = (time - key_previous/number_of_key_times) * number_of_key_times;
 
-color_mix = [	lerp(ds_daycycle_info[# wthr, key_previous][| 0], ds_daycycle_info[# wthr, key_next][| 0], lerp_),
-				lerp(ds_daycycle_info[# wthr, key_previous][| 1], ds_daycycle_info[# wthr, key_next][| 1], lerp_),
-				lerp(ds_daycycle_info[# wthr, key_previous][| 2], ds_daycycle_info[# wthr, key_next][| 2], lerp_)];
+
+if (obj_weather.weatherchange < obj_weather.weatherChangeAmount){
+	color_mix = [	lerp(color_mix[0], ds_daycycle_info[wthr][key_next][0], lerp_),
+					lerp(color_mix[1], ds_daycycle_info[wthr][key_next][1], lerp_),
+					lerp(color_mix[2], ds_daycycle_info[wthr][key_next][2], lerp_)];
 				
-con_sat_brt_mix = [	lerp(ds_daycycle_info[# wthr, key_previous][| 3], ds_daycycle_info[# wthr, key_next][| 3], lerp_),
-					lerp(ds_daycycle_info[# wthr, key_previous][| 4], ds_daycycle_info[# wthr, key_next][| 4], lerp_),
-					lerp(ds_daycycle_info[# wthr, key_previous][| 5], ds_daycycle_info[# wthr, key_next][| 5], lerp_),
-					lerp(ds_daycycle_info[# wthr, key_previous][| 6], ds_daycycle_info[# wthr, key_next][| 6], lerp_),
-					lerp(ds_daycycle_info[# wthr, key_previous][| 7], ds_daycycle_info[# wthr, key_next][| 7], lerp_)];
+	con_sat_brt_mix = [	lerp(con_sat_brt_mix[0], ds_daycycle_info[wthr][key_next][3], lerp_),
+						lerp(con_sat_brt_mix[1], ds_daycycle_info[wthr][key_next][4], lerp_),
+						lerp(con_sat_brt_mix[2], ds_daycycle_info[wthr][key_next][5], lerp_),
+						lerp(con_sat_brt_mix[3], ds_daycycle_info[wthr][key_next][6], lerp_),
+						lerp(con_sat_brt_mix[4], ds_daycycle_info[wthr][key_next][7], lerp_)];
+}else{
+	color_mix = [	lerp(ds_daycycle_info[wthr][key_previous][0], ds_daycycle_info[wthr][key_next][0], lerp_),
+					lerp(ds_daycycle_info[wthr][key_previous][1], ds_daycycle_info[wthr][key_next][1], lerp_),
+					lerp(ds_daycycle_info[wthr][key_previous][2], ds_daycycle_info[wthr][key_next][2], lerp_)];
+				
+	con_sat_brt_mix = [	lerp(ds_daycycle_info[wthr][key_previous][3], ds_daycycle_info[wthr][key_next][3], lerp_),
+						lerp(ds_daycycle_info[wthr][key_previous][4], ds_daycycle_info[wthr][key_next][4], lerp_),
+						lerp(ds_daycycle_info[wthr][key_previous][5], ds_daycycle_info[wthr][key_next][5], lerp_),
+						lerp(ds_daycycle_info[wthr][key_previous][6], ds_daycycle_info[wthr][key_next][6], lerp_),
+						lerp(ds_daycycle_info[wthr][key_previous][7], ds_daycycle_info[wthr][key_next][7], lerp_)];
+}
+
 			
 alpha	= clamp(sin((2 * global.daycycletime + 0.5) * 3.14) * 1.6 - 0.1, 0, 1);
 
 
 /*
-color_mix = [ds_daycycle_info[# wthr, hour][| 0]
-			,ds_daycycle_info[# wthr, hour][| 1]
-			,ds_daycycle_info[# wthr, hour][| 2]
+color_mix = [ds_daycycle_info[wthr][hour][0]
+			,ds_daycycle_info[wthr][hour][1]
+			,ds_daycycle_info[wthr][hour][2]
 ];
 
-con_sat_brt_mix = [ds_daycycle_info[# wthr, hour][| 3]
-			      ,ds_daycycle_info[# wthr, hour][| 4]
-				  ,ds_daycycle_info[# wthr, hour][| 5]
-				  ,ds_daycycle_info[# wthr, hour][| 6]
-				  ,ds_daycycle_info[# wthr, hour][| 7]
+con_sat_brt_mix = [ds_daycycle_info[wthr][hour][3]
+			      ,ds_daycycle_info[wthr][hour][4]
+				  ,ds_daycycle_info[wthr][hour][5]
+				  ,ds_daycycle_info[wthr][hour][6]
+				  ,ds_daycycle_info[wthr][hour][7]
 ];
 */
 /*

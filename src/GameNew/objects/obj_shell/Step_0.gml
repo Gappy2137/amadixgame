@@ -1,3 +1,14 @@
+if (saveHistory) {
+	if (!loadedSavedHistory) {
+		self._load_history();
+		loadedSavedHistory = true;
+	} else if (!loadedHistoryScrolled && isOpen) {
+		targetScrollPosition = maxScrollPosition;
+		scrollPosition = maxScrollPosition;
+		loadedHistoryScrolled = true;
+	}
+}
+
 if (!isOpen) {
 	if (self._key_combo_pressed(openModifiers, openKey)) {
 		self.open();
@@ -21,12 +32,12 @@ if (!isOpen) {
 		} else {
 			self.close()
 		}
-	} else if (self._key_combo_pressed([metaKey], ord("A"))) {
-		// bash-style jump to beginning of line
+	} else if (self._key_combo_pressed([metaKey], ord("A")) || keyboard_check_pressed(vk_home)) {
+		// Jump to beginning of line
 		cursorPos = 1;
 		targetScrollPosition = maxScrollPosition;
-	} else if (self._key_combo_pressed([metaKey], ord("E"))) {
-		// bash-style jump to end of line
+	} else if (self._key_combo_pressed([metaKey], ord("E")) || keyboard_check_pressed(vk_end)) {
+		// Jump to end of line
 		cursorPos = string_length(consoleString) + 1;
 		targetScrollPosition = maxScrollPosition;
 	} else if (self._key_combo_pressed([metaKey], ord("K"))) {
@@ -144,38 +155,23 @@ if (!isOpen) {
 		} else {
 			var args = self._input_string_split(consoleString);
 			if (array_length(args) > 0) {
-				var script = variable_global_get("sh_" + args[0]);
-				if (script != undefined) {
-					var response;
-					try {
-						response = script_execute(asset_get_index(script_get_name(script)), args);
-					} catch (_exception) {
-						response = "-- ERROR: see debug output for details --";
-						show_debug_message("---- ERROR executing rt-shell command [" + args[0] + "] ----");
-						show_debug_message(_exception.message);
-						show_debug_message(_exception.longMessage);
-						show_debug_message(_exception.script);
-						show_debug_message(_exception.stacktrace);
-						show_debug_message("----------------------------");
+				var metadata = functionData[$ args[0]];
+				if (!is_undefined(metadata)) {
+					var deferred = false;
+					if (variable_struct_exists(metadata, "deferred")) {
+						deferred = metadata.deferred;
 					}
-					array_push(history, consoleString);
-					if (response != "") { array_push(output, ">" + consoleString); }
-					if (response != 0) {
-						array_push(output, response);
+					if (deferred) {
+						ds_queue_enqueue(deferredQueue, args);
+						array_push(history, consoleString);
+						array_push(output, ">" + consoleString);
+						array_push(output, "Execution deferred until shell is closed.");
+						self._update_positions();
+					} else {
+						_execute_script(args);
 					}
-					
-					historyPos = array_length(history);
-					consoleString = "";
-					savedConsoleString = "";
-					cursorPos = 1;
 				} else {
-					array_push(output, ">" + consoleString);
-					array_push(output, "No such command: " + consoleString);
-					array_push(history, consoleString);
-					historyPos = array_length(history);
-					consoleString = "";
-					savedConsoleString = "";
-					cursorPos = 1;
+					_execute_script(args);
 				}
 			} else {
 				array_push(output, ">");
@@ -200,9 +196,11 @@ if (!isOpen) {
 			}
 		}
 	} else if (self._key_combo_pressed(cycleSuggestionsReverseModifiers, cycleSuggestionsReverseKey)) {
-		suggestionIndex = (suggestionIndex + array_length(filteredSuggestions) - 1) % array_length(filteredSuggestions);
-		if (isAutocompleteOpen) {
-			self._calculate_scroll_from_suggestion_index()
+		if (array_length(filteredSuggestions) != 0) {
+			suggestionIndex = (suggestionIndex + array_length(filteredSuggestions) - 1) % array_length(filteredSuggestions);
+			if (isAutocompleteOpen) {
+				self._calculate_scroll_from_suggestion_index()
+			}
 		}
 	} else if (keyboard_check_pressed(vk_insert)) {
 		insertMode = !insertMode;
@@ -267,5 +265,32 @@ if (!isOpen) {
 	// Recalculate shell properties if certain variables have changed
 	if (self._shell_properties_hash() != shellPropertiesHash) {
 		self._recalculate_shell_properties();
+	}
+}
+
+// Handle mouse argument data
+if (!is_undefined(activeMouseArgType)) {
+	if (activeMouseArgType == mouseArgumentType.worldX) {
+		activeMouseArgValue = mouse_x;
+	} else if (activeMouseArgType == mouseArgumentType.worldY) {
+		activeMouseArgValue = mouse_y;
+	} else if (activeMouseArgType == mouseArgumentType.guiX) {
+		activeMouseArgValue = device_mouse_x_to_gui(0);
+	} else if (activeMouseArgType == mouseArgumentType.guiY) {
+		activeMouseArgValue = device_mouse_y_to_gui(0);
+	} else if (activeMouseArgType == mouseArgumentType.instanceId) {
+		var instAtCursor = instance_position(mouse_x, mouse_y, all);
+		if (instAtCursor != noone) {
+			activeMouseArgValue = instAtCursor;
+		} else {
+			activeMouseArgValue = "";
+		}
+	} else if (activeMouseArgType == mouseArgumentType.objectId) {
+		var instAtCursor = instance_position(mouse_x, mouse_y, all);
+		if (instAtCursor != noone) {
+			activeMouseArgValue = instAtCursor.object_index;
+		} else {
+			activeMouseArgValue = "";
+		}
 	}
 }

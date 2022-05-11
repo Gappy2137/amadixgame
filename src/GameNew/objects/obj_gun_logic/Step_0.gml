@@ -250,7 +250,7 @@ if (type == 0){
 	}
 }
 if (canReload){
-	if (keyboard_check_pressed(ord("R"))){
+	if (input_check_pressed("reload")){
 		
 		canShoot = false;
 		canReload = false;

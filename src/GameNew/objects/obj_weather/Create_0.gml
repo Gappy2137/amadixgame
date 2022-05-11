@@ -11,31 +11,30 @@ enum weather{
 	heavy_storm = 8,
 	lil_snow = 9,
 	snow = 10,
-	blizzard = 11,
+	blizzard = 11
 }
 
 enum biome{
 	plains = 0,
 	forest = 1,
-	bog = 2,
+	swamp = 2
 }
 
 enum humidity{
 	low = 0,
 	medium = 1,
-	high = 2,
+	high = 2
 }
 
 enum wind{
 	none = 0,
 	light = 1,
 	moderate = 2,
-	strong = 3,
-	gale = 4,
+	strong = 3
 }
 enum wind_dir{
 	right = 0,
-	left = 180,
+	left = 180
 }
 
 global.fog = false;
@@ -46,6 +45,8 @@ global.wind = wind.none;
 global.temperature = 23;
 global.inside = false;
 global.cave = false;
-weatherchange = 200;
+
+weatherChangeAmount = 500;
+weatherchange = weatherChangeAmount;
 wch = false;
 alarm[0] = 1;

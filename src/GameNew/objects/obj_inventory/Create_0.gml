@@ -203,3 +203,5 @@ item_attrib_grid();
 item_add((inv_slots - 4) + 1, item.classic_jacket, 1);
 item_add((inv_slots - 4) + 2, item.jeans, 1);
 item_add((inv_slots - 4) + 3, item.sneakers, 1);
+
+

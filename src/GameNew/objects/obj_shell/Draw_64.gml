@@ -88,6 +88,17 @@ if (isOpen) {
 			var spaceCount = array_length(inputArray) - 1;
 			
 			var suggestion = spaceCount == 0 ? ff : "";
+			if (!is_undefined(activeMouseArgType) && spaceCount > 0) {
+				// If we have active mouse argument data, show that as the suggestion
+				// unless the user has started typing in an argument themselves
+				if ((inputArray[array_length(inputArray) - 1]) == "") {
+					suggestion = string(activeMouseArgValue);
+					if (mouse_check_button_pressed(mb_left)) {
+						self._confirm_current_mouse_argument_data();
+						self._update_filtered_suggestions();
+					}
+				}
+			} 
 			if (data != undefined) {
 				var args = "";
 				if (array_length(filteredSuggestions) > 0 && spaceCount > 0) {
@@ -118,9 +129,13 @@ if (isOpen) {
 	surface_set_target(shellSurface);
 		// Draw shell background
 		draw_clear_alpha(c_black, 0.0);
-		draw_set_alpha(consoleAlpha);
-		draw_set_color(consoleColor);
-		draw_roundrect_ext(shellOriginX, shellOriginY, shellOriginX + width, shellOriginY + height, cornerRadius, cornerRadius, false);
+		if (consoleBackground != noone) {
+			draw_sprite_stretched(consoleBackground, 0, shellOriginX, shellOriginY, width, height);
+		} else {
+			draw_set_alpha(consoleAlpha);
+			draw_set_color(consoleColor);
+			draw_roundrect_ext(shellOriginX, shellOriginY, shellOriginX + width, shellOriginY + height, cornerRadius, cornerRadius, false);
+		}
 		
 		// Draw the scroll surface
 		draw_surface(scrollSurface, 0, shellOriginY + 1 + consolePaddingV);
@@ -154,7 +169,13 @@ if (isOpen) {
 				isAutocompleteOpen = true;
 				var suggestionsAmount = min(autocompleteMaxLines, array_length(filteredSuggestions));
 				
-				var x1 = shellOriginX + promptXOffset - autocompletePadding;
+				var stringParts = self._input_string_split(consoleString);
+				var suggestXOffset = 0;
+				for (var i = 0; i < array_length(stringParts) - 1; i++) {
+					suggestXOffset += string_width(stringParts[i]) + emWidth;
+				}
+				
+				var x1 = shellOriginX + promptXOffset + suggestXOffset - autocompletePadding;
 				var y1 = shellOriginY + height - (emHeight) - (suggestionsAmount * emHeight) - (autocompletePadding * 2) - consolePaddingV;
 				var x2 = x1 + autocompleteMaxWidth + (autocompletePadding * 2) + ((suggestionsAmount < array_length(filteredSuggestions)) ? scrollbarWidth : 0);
 				var y2 = y1 + (suggestionsAmount * emHeight) + (autocompletePadding * 2);
@@ -168,11 +189,15 @@ if (isOpen) {
 				autocompleteOriginX = x1;
 				autocompleteOriginY = y1;
 				
-				// Draw autocomplete background & outline
-				draw_set_color(autocompleteBackgroundColor);
-				draw_rectangle(x1, y1, x2, y2, false);
-				draw_set_color(fontColorSecondary);
-				draw_rectangle(x1, y1, x2, y2, true);
+				// Draw autocomplete background
+				if (suggestionsBackground != noone) {
+					draw_sprite_stretched(suggestionsBackground, 0, x1, y1, x2 - x1, y2 - y1);
+				} else {
+					draw_set_color(autocompleteBackgroundColor);
+					draw_rectangle(x1, y1, x2, y2, false);
+					draw_set_color(fontColorSecondary);
+					draw_rectangle(x1, y1, x2, y2, true);
+				}
 				
 				// Draw autocomplete scrollbar
 				if (suggestionsAmount < array_length(filteredSuggestions)) {
