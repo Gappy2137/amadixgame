@@ -6,7 +6,7 @@ angle = 0;
 
 acc = 2;
 
-yorigin = 24;
+yorigin = 32;
 
 en = -1;
 
@@ -20,11 +20,3 @@ shadowEnable = true;
 anim_frame = choose(0, 1);
 anim_speed = 0.05;
 anim_frame_num = 4;
-var ins = instance_place(x, y, obj_grass_plains);
-if (ins){
-	if (ins.y == y){
-		with (ins){
-			y = y;
-		}
-	}
-}

@@ -60,7 +60,7 @@
     "eventStubScript": null,
     "parent": {"name":"spr_shallowwater16","path":"sprites/spr_shallowwater16/spr_shallowwater16.yy",},
     "resourceVersion": "1.4",
-    "name": "",
+    "name": "spr_shallowwater16",
     "tags": [],
     "resourceType": "GMSequence",
   },

@@ -236,9 +236,10 @@ function scr_player_movement() {
 
 	//Kolizje TESTOWE
 	//-----------------------------------------------------------------------------
-
-
 	
+	
+
+
 	var hor_collision = instance_place(x + hsp, y, par_collision);
 	var ver_collision = instance_place(x, y + vsp, par_collision);
 	var slope_collision = instance_place(x + hsp, y + vsp, par_slope);

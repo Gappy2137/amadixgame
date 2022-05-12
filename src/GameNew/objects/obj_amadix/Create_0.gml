@@ -93,4 +93,8 @@ hand_xoffset = 0;
 hand_yoffset = 0;
 hand_rot = 0;
 
+cx = 0;
+cy = 0;
+
 if (obj_gamecontrol.doTransition == true) scr_updatePlayerAnim();
+

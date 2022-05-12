@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_grass_plains",
-    "path": "sprites/spr_grass_plains/spr_grass_plains.yy",
+    "name": "spr_grass_light_1",
+    "path": "sprites/spr_grass_light_1/spr_grass_light_1.yy",
   },
   "solid": false,
   "visible": true,
