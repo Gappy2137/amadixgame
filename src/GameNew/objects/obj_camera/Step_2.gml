@@ -15,7 +15,7 @@ switch (mode) {
 				var cam_x_pos = camera_get_view_x(view_camera[0]);
 				var cam_y_pos = camera_get_view_y(view_camera[0]);
 				
-				var cam_speed = 0.3;
+				var cam_speed = 0.25;
 				
 
 				
@@ -23,9 +23,6 @@ switch (mode) {
 					camera_set_view_pos(view_camera[0],
 								    	(round_to4(lerp(cam_x_pos,cam_x,cam_speed))),
 										(round_to4(lerp(cam_y_pos,cam_y,cam_speed))));
-
-					//camera_set_view_pos(view_camera[0], floor(cam_x), floor(cam_y));
-				
 				
 
 									

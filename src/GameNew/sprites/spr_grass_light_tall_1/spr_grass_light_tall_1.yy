@@ -41,7 +41,7 @@
     "spriteId": {"name":"spr_grass_light_tall_1","path":"sprites/spr_grass_light_tall_1/spr_grass_light_tall_1.yy",},
     "timeUnits": 1,
     "playback": 1,
-    "playbackSpeed": 15.0,
+    "playbackSpeed": 10.0,
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,

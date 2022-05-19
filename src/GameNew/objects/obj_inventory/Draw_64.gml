@@ -18,7 +18,14 @@ if (show_inventory) && (!show_slots){
 	depth = -2;
 	draw_sprite_ext(spr_eq_slotback, 0, backslotUI_x, backslotUI_y + y_rel, scale, scale, 0, c_white, 1);
 
-	
+	var amx = 148;
+	var amy = 175;
+	draw_sprite(obj_amadix.head_index, 0, amx, amy);
+	draw_sprite(obj_amadix.hands_index, 0, amx, amy);
+	draw_sprite(obj_amadix.torso_index, 0, amx, amy);
+	draw_sprite(obj_amadix.legs_index, 0, amx, amy);
+	draw_sprite(obj_amadix.boots_index, 0, amx, amy);
+
 
 	//Inventory
 	var ii, ix, iy, xx, yy, sx, sy, iitem, inv_grid;

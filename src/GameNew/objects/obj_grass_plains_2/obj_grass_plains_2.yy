@@ -1,15 +1,15 @@
 {
   "spriteId": {
-    "name": "spr_grass_plains_tall_dark",
-    "path": "sprites/spr_grass_plains_tall_dark/spr_grass_plains_tall_dark.yy",
+    "name": "spr_grass_light_1",
+    "path": "sprites/spr_grass_light_1/spr_grass_light_1.yy",
   },
   "solid": false,
-  "visible": false,
+  "visible": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "obj_grass_plains",
-    "path": "objects/obj_grass_plains/obj_grass_plains.yy",
+    "name": "par_objectdepth",
+    "path": "objects/par_objectdepth/par_objectdepth.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -25,6 +25,10 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":12,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":10,"eventType":7,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -33,7 +37,7 @@
     "path": "folders/Objects/World Objects/Grass.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_grass_plains_tall_dark",
+  "name": "obj_grass_plains_2",
   "tags": [],
   "resourceType": "GMObject",
 }

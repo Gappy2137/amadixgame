@@ -103,4 +103,4 @@ surface_reset_target();
 
 draw_surface_ext(refSurf, cam_x, cam_y, cam_scale, cam_scale, 0, c_white, 1);
 
-draw_surface_ext(waterSurface, 0, 0, 1, 1, 0, c_white, 0.8);
+draw_surface_ext(waterSurface, 0, 0, 1, 1, 0, c_white, 1);

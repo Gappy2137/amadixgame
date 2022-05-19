@@ -30,35 +30,7 @@ if (instance_place(x, y, obj_melee_attack)){
 		angle = approach(angle, -25, acc);
 	}
 }
-
-
-/*
-if instance_exists(obj_amadix){
-	var p_collision = 0;
-	switch (obj_amadix.facing){
-		case dirc.down:
-			p_collision = collision_rectangle(bbox_left, bbox_top - 12, bbox_right, bbox_bottom - 12, obj_amadix, true, true);	
-		break;
-		case dirc.left:
-			p_collision = collision_rectangle(bbox_left + 12, bbox_top, bbox_right + 12, bbox_bottom, obj_amadix, true, true);	
-		break;
-		case dirc.right:
-			p_collision = collision_rectangle(bbox_left - 12, bbox_top, bbox_right - 12, bbox_bottom, obj_amadix, true, true);	
-		break;
-		case dirc.up:
-			p_collision = collision_rectangle(bbox_left, bbox_top + 12, bbox_right, bbox_bottom + 12, obj_amadix, true, true);	
-		break;
-	}
-		var i = random(1);
-		if (obj_amadix.actionstate == player_state_action.attacking_melee){
-			if (p_collision){
-				if (i == 0){
-					angle = approach(angle, -25, acc*.7);
-				}else if (i == 1){
-					angle = approach(angle, 25, acc*.7);
-				}
-			}else{
-				angle = approach(angle, 0, acc*.7);
-			}
-		}
-}*/
+if (!done){
+	event_user(0);
+	done = true;
+}

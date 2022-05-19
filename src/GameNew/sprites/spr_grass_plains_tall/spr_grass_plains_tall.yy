@@ -15,7 +15,7 @@
   "VTile": false,
   "For3D": false,
   "width": 16,
-  "height": 24,
+  "height": 32,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -55,7 +55,7 @@
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
     "xorigin": 8,
-    "yorigin": 23,
+    "yorigin": 30,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_grass_plains_tall","path":"sprites/spr_grass_plains_tall/spr_grass_plains_tall.yy",},

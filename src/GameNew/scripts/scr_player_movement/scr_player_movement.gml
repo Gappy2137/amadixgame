@@ -166,7 +166,7 @@ function scr_player_movement() {
 	}
 	
 	var plantcol = collision_rectangle(bbox_left + 4, bbox_bottom, bbox_right - 4, bbox_bottom, par_collectible, true, true);
-	var plantcol2 = collision_rectangle(bbox_left + 4, bbox_bottom, bbox_right - 4, bbox_bottom, obj_grass_plains, true, true);
+	var plantcol2 = collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom, obj_grass_plains, true, true);
 	if (plantcol) || (plantcol2){
 		speedChange = -0.25;
 	}else{

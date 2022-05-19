@@ -6,6 +6,8 @@ if (obj_inventory.show_inventory) && (!obj_inventory.show_slots){
 	draw_rectangle_color(-8, -8, obj_display.ideal_width + 8, obj_display.ideal_height + 8, c_black, c_black, c_black, c_black, false);
 	draw_set_alpha(1);
 	draw_sprite_ext(obj_inventory.spr_eq_back, 1, obj_inventory.backUI_x, obj_inventory.backUI_y, obj_inventory.scale, obj_inventory.scale, 0, c_white, 1);
+
+
 }
 
 //Rysuj maks rdzen zdrowia

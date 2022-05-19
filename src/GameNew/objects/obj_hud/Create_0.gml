@@ -66,7 +66,7 @@ function open(){
 	obj_crafting.show_crafting = false;
 }
 function close(){
-	obj_inventory.show_inventory = false;	
+	obj_inventory.show_inventory = false;
 	obj_crafting.show_crafting = false;
 }
 function close_slots(){
