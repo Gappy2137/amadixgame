@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_grass_light_tall_1",
-    "path": "sprites/spr_grass_light_tall_1/spr_grass_light_tall_1.yy",
+    "name": "spr_grass_light_3",
+    "path": "sprites/spr_grass_light_3/spr_grass_light_3.yy",
   },
   "solid": false,
   "visible": true,
@@ -31,7 +31,7 @@
     "path": "folders/Objects/World Objects/Grass.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_grass_plains_tall",
+  "name": "obj_grass_plains_3",
   "tags": [],
   "resourceType": "GMObject",
 }

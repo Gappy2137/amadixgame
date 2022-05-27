@@ -30,7 +30,14 @@ if (instance_place(x, y, obj_melee_attack)){
 		angle = approach(angle, -25, acc);
 	}
 }
-if (!done){
-	event_user(0);
-	done = true;
+
+if (anim_enable){
+	anim_frame += anim_speed;
+	
+	if (anim_frame > anim_frame_num){
+		anim_frame = 0;
+	}
 }
+
+event_user(0);
+

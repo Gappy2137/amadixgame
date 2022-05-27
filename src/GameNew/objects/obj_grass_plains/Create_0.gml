@@ -17,10 +17,15 @@ shadowAlpha = 0.6;
 
 shadowEnable = true;
 
-anim_frame = 0;
-anim_speed = 0.05;
+anim_enable = true;
 anim_frame_num = 4;
-
+anim_frame = 0;
+anim_speed = 0;
+if (anim_enable){
+	anim_frame = random(anim_frame_num);
+	anim_speed = 0.1;
+}
+/*
 _spr = sprite_index;
 
 _texture = sprite_get_texture(_spr, anim_frame);

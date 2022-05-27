@@ -1,15 +1,15 @@
 {
   "spriteId": {
-    "name": "spr_grass_light_1",
-    "path": "sprites/spr_grass_light_1/spr_grass_light_1.yy",
+    "name": "spr_grass_light_2",
+    "path": "sprites/spr_grass_light_2/spr_grass_light_2.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "par_objectdepth",
-    "path": "objects/par_objectdepth/par_objectdepth.yy",
+    "name": "obj_grass_plains",
+    "path": "objects/obj_grass_plains/obj_grass_plains.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -23,13 +23,7 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":12,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":10,"eventType":7,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-  ],
+  "eventList": [],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
