@@ -26,22 +26,13 @@ enum humidity{
 	high = 2
 }
 
-enum wind{
-	none = 0,
-	light = 1,
-	moderate = 2,
-	strong = 3
-}
-enum wind_dir{
-	right = 0,
-	left = 180
-}
 
 global.fog = false;
 global.weather = weather.sun;
 global.biome = biome.plains;
 global.humidity = humidity.medium;
-global.wind = wind.none;
+global.windStr = 0;
+global.windDir = -1;
 global.temperature = 23;
 global.inside = false;
 global.cave = false;

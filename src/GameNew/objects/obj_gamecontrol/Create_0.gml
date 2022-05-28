@@ -103,3 +103,5 @@ global.time = 0;
 minutes = 0;
 hours = 0;
 global.daycycletime = 0;
+
+refTimer = 0;

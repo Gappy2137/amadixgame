@@ -20,3 +20,7 @@ if (global.alcoholPoisoning > global.maxAlcoholPoisoning){
 }
 
 
+refTimer += 0.01;
+if (refTimer >= 1){
+	refTimer = 0;	
+}

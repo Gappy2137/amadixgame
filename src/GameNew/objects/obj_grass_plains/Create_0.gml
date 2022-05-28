@@ -4,6 +4,10 @@ collision = false;
 
 angle = 0;
 
+windangle = 0;
+
+finalangle = 0;
+
 acc = 2;
 
 yorigin = 30;
@@ -17,14 +21,19 @@ shadowAlpha = 0.6;
 
 shadowEnable = true;
 
-anim_enable = true;
+anim_enable = false;
 anim_frame_num = 4;
-anim_frame = 0;
+anim_frame = irandom(anim_frame_num);
 anim_speed = 0;
 if (anim_enable){
-	anim_frame = random(anim_frame_num);
+	anim_frame = irandom(anim_frame_num);
 	anim_speed = 0.1;
 }
+
+timer = 0;
+
+rnd = random_range(0.8, 1.3);
+
 /*
 _spr = sprite_index;
 

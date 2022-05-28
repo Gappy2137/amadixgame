@@ -1,5 +1,5 @@
 depth = -(bbox_bottom - (sprite_height - yorigin));
-
+/*
 instance_deactivate_layer("Instances");
 
 instance_activate_region(

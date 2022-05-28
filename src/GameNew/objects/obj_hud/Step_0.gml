@@ -89,10 +89,19 @@ if (show_hud == hud.crafting){
 	crafting_frame = 0;	
 }
 
-var ins = instance_nearest(obj_amadix.x , obj_amadix.y, par_container);
+	
+
+
 
 #region Opcje HUD
 if input_check_pressed("inventoryAccess") && (obj_inventory.inhand == -1){
+	
+	if (instance_exists(obj_amadix)){
+		var ins = instance_nearest(obj_amadix.x , obj_amadix.y, par_container);
+	}else{
+		var ins = 0;
+	}
+	
 	if (instance_exists(par_container)){
 		if !(ins.show_container){
 			if (show_hud == hud.slots){

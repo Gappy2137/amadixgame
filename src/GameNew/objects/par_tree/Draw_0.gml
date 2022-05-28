@@ -1,9 +1,9 @@
 event_inherited();
 
-draw_sprite_ext(sprite_index, image_index, x, y, 1, 1, angle, c_white, 1);
+draw_sprite_ext(sprite_index, image_index, x, y, 1, 1, finalangle, c_white, 1);
 
 if (itemOverlay != -1){
-	draw_sprite_ext(itemOverlay, itemOverlayState, x, y, 1, 1, angle, c_white, 1);
+	draw_sprite_ext(itemOverlay, itemOverlayState, x, y, 1, 1, finalangle, c_white, 1);
 }
 /*
 shadowOriginX = 0;

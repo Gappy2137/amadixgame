@@ -21,3 +21,5 @@ shadowStyle = spr_shadow_big;
 shadowAlpha = 0.6;
 
 shadowEnable = true;
+
+treeSize = 1;

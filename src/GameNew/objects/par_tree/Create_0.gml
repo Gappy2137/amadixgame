@@ -19,9 +19,19 @@ canclick = true;
 
 angle = 0;
 
+windangle = 0;
+
+finalangle = 0;
+
+treeSize = 1;
+
 itemOverlayState = 0;
 
 isanim = false;
 anim = 0;
 
 acc = .75;
+
+timer = 0;
+
+rnd = random_range(0.8, 1.3);

@@ -12,3 +12,12 @@ if (wch){
 		weatherchange = weatherChangeAmount;
 	}
 }
+
+global.windStr = clamp(global.windStr, 0, 100);
+
+if (keyboard_check(ord("J"))){
+	global.windStr--;	
+}
+if (keyboard_check(ord("K"))){
+	global.windStr++;	
+}
