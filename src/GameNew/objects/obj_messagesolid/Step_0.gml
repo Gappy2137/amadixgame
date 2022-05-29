@@ -1,3 +1,7 @@
 if ami_clicked(){
-	newdialogue(mes, myPortrait, myEmotion, myName, myChoice, message_next);
+	var d = instance_create_layer(x, y, "Instances", obj_chatterbox);
+	
+	with (d){
+		dialogueName = "test_en.yarn";	
+	}
 }
