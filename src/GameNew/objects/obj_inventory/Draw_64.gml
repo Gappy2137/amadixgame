@@ -12,6 +12,7 @@ if (show_inventory) && (!show_slots){
 	draw_text(16, 64 + 12*3, "onep " + string(onepicked_slot));
 	draw_text(16, 64 + 12*4, "mltp " + string(multipick));
 	draw_text(16, 64 + 12*5, "inh " + string(inhand));
+	draw_text(16, 64 + 12*6, "cap " + string(cap));
 	////////////////
 	
 

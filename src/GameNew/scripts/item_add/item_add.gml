@@ -2,6 +2,11 @@ function item_add(slot, iitem, amount){
 	
 	var itemslot = 0;
 	
+	if (obj_inventory.ds_item_all[# INVTYPE, iitem] == itemtype.magazine){
+		item_mag_add(iitem, amount);
+		exit;
+	}
+	
 	if (slot == -1){
 		if (item_exists(item.none, false)){
 			item_stack(iitem, amount, 0);	
