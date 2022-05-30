@@ -56,7 +56,7 @@ hud_inner = false;
 
 selected_hud_slot = 0;
 
-instance_create_layer(x, y, "Instances", obj_crafting);
+instance_create_layer(x, y, "Important", obj_crafting);
 
 t = 0;
 

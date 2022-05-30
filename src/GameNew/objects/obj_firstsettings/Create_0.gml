@@ -39,5 +39,5 @@ view_hport[0] = max_h;
 alarm[0] = 1;
 
 
-instance_create_layer(0,0,"Instances",obj_camera);
+instance_create_layer(0,0,"Important",obj_camera);
 

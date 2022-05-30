@@ -50,7 +50,7 @@ view_set_hport(0, ideal_height);
 window_set_size(ideal_width, ideal_height);
 display_set_gui_size(ideal_width, ideal_height);
 surface_resize(application_surface, ideal_width * window_size, ideal_height * window_size);
-instance_create_layer(0,0,"Instances",obj_camera); 
+instance_create_layer(0,0,"Important",obj_camera); 
 window_set_fullscreen(false);
 window_center();
 alarm[2] = 1;

@@ -31,7 +31,7 @@ portraitbox_wh = 64;
 
 textX = dialboxX + 4;
 textY = dialboxY + 8;
-
+/*
 //Emocje
 enum dialogueEmotion{
 	normal		= 0,

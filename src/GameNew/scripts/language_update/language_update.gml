@@ -1,6 +1,6 @@
 function language_update(language){
 	
-
+/*
 	switch (language){
 		case lang.english:
 			itemName = load_csv(working_directory + "/language/itemName_en.csv");
@@ -80,5 +80,5 @@ function language_update(language){
 		itemTypeDish		 = itemType[# 0, ++i];
 	
 	}
-	#endregion
+	#endregion*/
 }

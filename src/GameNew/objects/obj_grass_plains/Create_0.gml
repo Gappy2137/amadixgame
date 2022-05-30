@@ -34,13 +34,5 @@ timer = 0;
 
 rnd = random_range(0.8, 1.3);
 
-/*
-_spr = sprite_index;
-
-_texture = sprite_get_texture(_spr, anim_frame);
-
-
-_width = sprite_get_width(_spr);
-_height = sprite_get_height(_spr);
-
-done = false;
+shallowwater = collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, obj_shallowwater16, false, true);
+if (shallowwater){shadowEnable = false;}

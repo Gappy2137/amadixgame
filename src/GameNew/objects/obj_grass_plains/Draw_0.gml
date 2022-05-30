@@ -1,23 +1,23 @@
 
-/*
-gpu_set_ztestenable(true);
-gpu_set_alphatestenable(true);
+if (shallowwater){
+	
+	
+	var _left = 0;
+	var _top = 0;
+	var _width = sprite_width;
+	var _height = sprite_height;
 
-var t_matrix = matrix_build((x + lengthdir_x(0, angle)),(y + lengthdir_y(0, angle)),0,0,0,angle,1,1,1);
+	var waterangle = finalangle / 2;
 
-matrix_set(matrix_world,t_matrix);
-vertex_submit(vbuff, pr_trianglelist, _texture);
-matrix_set(matrix_world,matrix_build_identity());
+	var _c = dcos(waterangle);
+	var _s = dsin(waterangle);
+	var _x = _left - sprite_get_xoffset(sprite_index);
+	var _y = _width - sprite_get_yoffset(sprite_index) - (_height / 2);
 
-gpu_set_ztestenable(false);
-gpu_set_alphatestenable(false);
-*/
-
-
-var col = collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, obj_shallowwater16, false, true);
-if (col){
-	draw_sprite_general(sprite_index, anim_frame, 0, 0, 16, 18, x, y, 1, 1, finalangle, c_white, c_white, c_white, c_white, 1);
+	var posx = x + _c * _x + _s * _y;
+	var posy = y - _s * _x + _c * _y;
+	
+	draw_sprite_general(sprite_index, anim_frame, _left, _top, _width, _height - 5, posx, posy, 1, 1, waterangle, c_white, c_white, c_white, c_white, 1);
 }else{
 	draw_sprite_ext(sprite_index, anim_frame, (x), (y), 1, 1, finalangle, c_white, 1);
 }
-

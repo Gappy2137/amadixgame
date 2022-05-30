@@ -395,10 +395,6 @@ function drawPlayerHandgun(xx, yy, zz){
 		break;
 	}
 
-
-
-
-
 /*
 	if (actionstate == player_state_action.none){
 		if (state == player_state.idle){
