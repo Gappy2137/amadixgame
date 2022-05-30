@@ -12,8 +12,6 @@ acc = 2;
 
 yorigin = 30;
 
-en = -1;
-
 shadowOriginY = 2;
 shadowOriginX = 0;
 shadowStyle = spr_shadow_player;

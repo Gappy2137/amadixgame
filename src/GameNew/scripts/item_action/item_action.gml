@@ -18,7 +18,6 @@ function item_action(){
 	var type =			obj_inventory.ds_inventory[# INVTYPE, obj_inventory.mouse_slotx_second];
 			if (amount > 0){
 					var iitem = obj_inventory.ds_inventory[# INVITEM, obj_inventory.mouse_slotx_second];
-					if (!instance_exists(obj_gun_logic)){instance_create_layer(obj_amadix.x, obj_amadix.y, "Important", obj_gun_logic);}
 					with (obj_amadix){
 						itemeaten = iitem;
 						actionstate = player_state_action.handgun;
@@ -45,13 +44,34 @@ function item_action(){
 			}
 	}
 	
+	function itemActionNone(){
+		with (obj_amadix){actionstate = player_state_action.none;}
+			with(obj_amadix){
+				if (oneStepEvent[2] == 2){
+					switch(facing){
+						case dirc.down:
+							scr_setPlayerFacingAnim(index_facing.down);
+						break;
+						case dirc.left:
+							scr_setPlayerFacingAnim(index_facing.left);
+						break;
+						case dirc.right:
+							scr_setPlayerFacingAnim(index_facing.right);
+						break;
+						case dirc.up:
+							scr_setPlayerFacingAnim(index_facing.up);
+						break;
+					}
+				}
+			}
+	}
 	
 	function itemActionEat(){
 	var amount =		obj_inventory.ds_inventory[# INVAMOUNT, obj_inventory.mouse_slotx_second];
 	var hp =			obj_inventory.ds_inventory[# INVHP, obj_inventory.mouse_slotx_second];
 	var stamina =		obj_inventory.ds_inventory[# INVSTAMINA, obj_inventory.mouse_slotx_second];
 	var type =			obj_inventory.ds_inventory[# INVTYPE, obj_inventory.mouse_slotx_second];
-	actionstate = player_state_action.none;
+	
 			if (mouse_check_button_pressed(mb_right)){
 				if (!obj_amadix.stuffed){
 					if (amount > 0){
@@ -81,6 +101,8 @@ function item_action(){
 						obj_inventory.text_alpha = 0;
 					}
 				}
+			}else{
+				itemActionNone();
 			}
 	}
 	
@@ -90,7 +112,6 @@ function item_action(){
 	var stamina =		obj_inventory.ds_inventory[# INVSTAMINA, obj_inventory.mouse_slotx_second];
 	var level =			obj_inventory.ds_inventory[# INVLEVEL, obj_inventory.mouse_slotx_second];
 	var type =			obj_inventory.ds_inventory[# INVTYPE, obj_inventory.mouse_slotx_second];
-	actionstate = player_state_action.none;
 			if (mouse_check_button_pressed(mb_right)){
 				if (!obj_amadix.stuffed){
 					if (amount > 0){
@@ -122,6 +143,8 @@ function item_action(){
 						obj_inventory.text_alpha = 0;
 					}
 				}
+			}else{
+				itemActionNone();
 			}
 	}
 	
@@ -129,7 +152,6 @@ function item_action(){
 	var amount =		obj_inventory.ds_inventory[# INVAMOUNT, obj_inventory.mouse_slotx_second];
 	var hp =			obj_inventory.ds_inventory[# INVHP, obj_inventory.mouse_slotx_second];
 	var type =			obj_inventory.ds_inventory[# INVTYPE, obj_inventory.mouse_slotx_second];
-	actionstate = player_state_action.none;
 			if (mouse_check_button_pressed(mb_left)){
 			if (amount > 0){
 				if (obj_amadix.actionstate != player_state_action.attacking_melee){
@@ -166,12 +188,12 @@ function item_action(){
 				slot_remove(obj_inventory.mouse_slotx_second);
 				obj_inventory.text_alpha = 0;
 			}
+			}else{
+				itemActionNone();
 			}
 	}
 	
-	function itemActionNone(){
-		actionstate = player_state_action.none;
-	}
+
 
 
 
