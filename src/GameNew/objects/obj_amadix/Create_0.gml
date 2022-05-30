@@ -49,8 +49,8 @@ torso_index = 0;
 legs_index = 0;
 boots_index = 0;
 hat_index = 0;
-arms_index = 0;
-arms2_index = 0;
+arms_index = spr_none;
+arms2_index = spr_none;
 gun_index = 0;
 
 shadowOriginY = 34;

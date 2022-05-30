@@ -402,6 +402,7 @@
     {"id":{"name":"spr_amadix_m1911_l_reload","path":"sprites/spr_amadix_m1911_l_reload/spr_amadix_m1911_l_reload.yy",},"order":1,},
     {"id":{"name":"scribble_font_duplicate","path":"scripts/scribble_font_duplicate/scribble_font_duplicate.yy",},"order":5,},
     {"id":{"name":"tileset_test158","path":"sprites/tileset_test158/tileset_test158.yy",},"order":10,},
+    {"id":{"name":"spr_none","path":"sprites/spr_none/spr_none.yy",},"order":13,},
     {"id":{"name":"spr_amadix_classicB_attack_l","path":"sprites/spr_amadix_classicB_attack_l/spr_amadix_classicB_attack_l.yy",},"order":5,},
     {"id":{"name":"seq_test3","path":"sequences/seq_test3/seq_test3.yy",},"order":2,},
     {"id":{"name":"spr_light_normal","path":"sprites/spr_light_normal/spr_light_normal.yy",},"order":0,},

@@ -16,13 +16,13 @@ function item_action(){
 	function itemActionGun(){
 	var amount =		obj_inventory.ds_inventory[# INVAMOUNT, obj_inventory.mouse_slotx_second];
 	var type =			obj_inventory.ds_inventory[# INVTYPE, obj_inventory.mouse_slotx_second];
+	var face = 0;
 			if (amount > 0){
 					var iitem = obj_inventory.ds_inventory[# INVITEM, obj_inventory.mouse_slotx_second];
 					with (obj_amadix){
 						itemeaten = iitem;
 						actionstate = player_state_action.handgun;
-					
-						var face = 0;
+						
 						
 						if isLooking(index_facing.up){
 							face = index_facing.up;
