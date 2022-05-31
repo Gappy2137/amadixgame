@@ -1,6 +1,7 @@
 ///@description scr_setPlayerFacingAnim(facing)
 function scr_setPlayerFacingAnim(facing){
-
+	
+	//wtfffff
 #region Glowa
 	if (!running){
 		switch(actionstate){
@@ -11,45 +12,69 @@ function scr_setPlayerFacingAnim(facing){
 					head_index = spr_amadix_head_drinking;
 				break;
 				case player_state_action.attacking_melee:
-					if facing == index_facing.right
-						head_index = spr_amadix_head_attack_r;
-					if facing == index_facing.up
-						head_index = spr_amadix_head_attack_u;
-					if facing == index_facing.left
-						head_index = spr_amadix_head_attack_l;
-					if facing == index_facing.down
-						head_index = spr_amadix_head_attack_d;
+					switch(facing){
+						case index_facing.right:
+							head_index = spr_amadix_head_attack_r;
+						break;
+						case index_facing.up:
+							head_index = spr_amadix_head_attack_u;
+						break;
+						case index_facing.left:
+							head_index = spr_amadix_head_attack_l;
+						break;
+						case index_facing.down:
+							head_index = spr_amadix_head_attack_d;
+						break;
+					}
 				break;
 				case player_state_action.handgun:
-					if facing == index_facing.right
-						head_index = spr_amadix_head_r;
-					if facing == index_facing.up
-						head_index = spr_amadix_head_u;
-					if facing == index_facing.left
-						head_index = spr_amadix_head_l;
-					if facing == index_facing.down
-						head_index = spr_amadix_head_d;
+					switch(facing){
+						case index_facing.right:
+							head_index = spr_amadix_head_r;
+						break;
+						case index_facing.up:
+							head_index = spr_amadix_head_u;
+						break;
+						case index_facing.left:
+							head_index = spr_amadix_head_l;
+						break;
+						case index_facing.down:
+							head_index = spr_amadix_head_d;
+						break;
+					}
 				break;
 				case player_state_action.none:
-					if facing == index_facing.right
-						head_index = spr_amadix_head_r;
-					if facing == index_facing.up
-						head_index = spr_amadix_head_u;
-					if facing == index_facing.left
-						head_index = spr_amadix_head_l;
-					if facing == index_facing.down
-						head_index = spr_amadix_head_d;
+					switch(facing){
+						case index_facing.right:
+							head_index = spr_amadix_head_r;
+						break;
+						case index_facing.up:
+							head_index = spr_amadix_head_u;
+						break;
+						case index_facing.left:
+							head_index = spr_amadix_head_l;
+						break;
+						case index_facing.down:
+							head_index = spr_amadix_head_d;
+						break;
+					}
 				break;
 			}
 		}else{
-				if facing == index_facing.right
+			switch(facing){
+				case index_facing.right:
 					head_index = spr_amadix_head_run_r;
-				if facing == index_facing.up
+				break;
+				case index_facing.up:
 					head_index = spr_amadix_head_run_u;
-				if facing == index_facing.left
+				break;
+				case index_facing.left:
 					head_index = spr_amadix_head_run_l;
-				if facing == index_facing.down
+				break;
+				case index_facing.down:
 					head_index = spr_amadix_head_run_d;
+				break;
+			}
 	}
 #endregion
 
@@ -64,22 +89,26 @@ function scr_setPlayerFacingAnim(facing){
 					hands_index = spr_amadix_hands_drinking;
 				break;
 				case player_state_action.attacking_melee:
-					if facing == index_facing.right
-						hands_index = spr_amadix_hands_attack_r;
-					if facing == index_facing.up
-						hands_index = spr_amadix_hands_attack_u;
-					if facing == index_facing.left
-						hands_index = spr_amadix_hands_attack_l;
-					if facing == index_facing.down
-						hands_index = spr_amadix_hands_attack_d;
+					switch(facing){
+						case index_facing.right:
+							head_index = spr_amadix_hands_attack_r;
+						break;
+						case index_facing.up:
+							head_index = spr_amadix_hands_attack_u;
+						break;
+						case index_facing.left:
+							head_index = spr_amadix_hands_attack_l;
+						break;
+						case index_facing.down:
+							head_index = spr_amadix_hands_attack_d;
+						break;
+					}
 				break;
 				case player_state_action.handgun:
 				
-					if isLooking(index_facing.up){
-						if (instance_exists(obj_gun_logic)){
-							switch(itemeaten){
-								case item.m1911:
-								
+					switch(itemeaten){
+						case item.m1911:
+							if (isLooking(index_facing.up)){
 									hand_rot = point_direction(x, y + hand_yoffset, mouse_x, mouse_y) - 90;
 									hand_xoffset = 0;
 									hand_yoffset = 18;
@@ -87,53 +116,26 @@ function scr_setPlayerFacingAnim(facing){
 									switch(obj_gun_logic.state){
 										case gunState.standby:
 											hands_index = spr_amadix_hands_gun_u;
+											hands2_index = spr_none;
 										break;
 										case gunState.shooting:
 											hands_index = spr_amadix_hands_gun_u_shoot;
+											hands2_index = spr_none;
 										break;
 										case gunState.reloading:
 											hands_index = spr_amadix_hands_gun_u_reload;
+											hands2_index = spr_none;
 										case gunState.reloading_empty:
 											hands_index = spr_amadix_hands_gun_u_reload;
+											hands2_index = spr_none;
 										break;
 										case gunState.empty:
 											hands_index = spr_amadix_hands_gun_u;
+											hands2_index = spr_none;
 										break;
 									}
-									
-								break;
-								case item.sawedoff:
-								
-									hand_rot = point_direction(x, y + hand_yoffset, mouse_x, mouse_y) - 90;
-									hand_xoffset = 0;
-									hand_yoffset = 18;
-									
-									switch(obj_gun_logic.state){
-										case gunState.standby:
-											hands_index = spr_amadix_hands_sawedoff_u;
-										break;
-										case gunState.shooting:
-											hands_index = spr_amadix_hands_sawedoff_u_shoot;
-										break;
-										case gunState.reloading:
-											hands_index = spr_amadix_hands_sawedoff_u_reload;
-										case gunState.reloading_empty:
-											hands_index = spr_amadix_hands_sawedoff_u_reload;
-										break;
-										case gunState.empty:
-											hands_index = spr_amadix_hands_sawedoff_u;
-										break;
-									}
-									
-								break;
-							}
-						}
-					}else
-					if isLooking(index_facing.left){
-						if (instance_exists(obj_gun_logic)){
-							switch(itemeaten){
-								case item.m1911:
-								
+							}else
+							if (isLooking(index_facing.left)){
 									hand_rot = point_direction(x, y + hand_yoffset, mouse_x, mouse_y) - 180;
 									hand_xoffset = 3;
 									hand_yoffset = 17;
@@ -141,56 +143,26 @@ function scr_setPlayerFacingAnim(facing){
 									switch(obj_gun_logic.state){
 										case gunState.standby:
 											hands_index = spr_amadix_hands_gun_l;
+											hands2_index = spr_none;
 										break;
 										case gunState.shooting:
 											hands_index = spr_amadix_hands_gun_l_shoot;
+											hands2_index = spr_none;
 										break;
 										case gunState.reloading:
 											hands_index = spr_amadix_hands_gun_l_reload;
+											hands2_index = spr_none;
 										case gunState.reloading_empty:
 											hands_index = spr_amadix_hands_gun_l_reload;
+											hands2_index = spr_none;
 										break;
 										case gunState.empty:
 											hands_index = spr_amadix_hands_gun_l;
+											hands2_index = spr_none;
 										break;
 									}
-									
-								break;
-								case item.sawedoff:
-								
-									hand_rot = point_direction(x, y + hand_yoffset, mouse_x, mouse_y) - 180;
-									hand_xoffset = 3;
-									hand_yoffset = 16;
-									
-									switch(obj_gun_logic.state){
-										case gunState.standby:
-											hands_index = spr_amadix_hands_sawedoff_l;
-										break;
-										case gunState.shooting:
-											hands_index = spr_amadix_hands_sawedoff_l_shoot;
-										break;
-										case gunState.reloading:
-											hands_index = spr_amadix_hands_sawedoff_l_reload;
-										case gunState.reloading_empty:
-											hands_index = spr_amadix_hands_sawedoff_l_reload;
-										break;
-										case gunState.empty:
-											hands_index = spr_amadix_hands_sawedoff_l;
-										break;
-									}
-									
-								break;
-							}
-						}
-
-						
-					}else
-					if isLooking(index_facing.down){
-						
-						if (instance_exists(obj_gun_logic)){
-							switch(itemeaten){
-								case item.m1911:
-								
+							}else
+							if (isLooking(index_facing.down)){
 									hand_rot = point_direction(x, y + hand_yoffset, mouse_x, mouse_y) + 90;
 									hand_xoffset = -3;
 									hand_yoffset = 14;
@@ -208,18 +180,100 @@ function scr_setPlayerFacingAnim(facing){
 										break;
 										case gunState.reloading:
 											hands_index = spr_amadix_hands_gun_d_reload;
+											hands2_index = spr_none;
 										case gunState.reloading_empty:
 											hands_index = spr_amadix_hands_gun_d_reload;
+											hands2_index = spr_none;
 										break;
 										case gunState.empty:
 											hands_index = spr_amadix_hands_gun_d;
 											hands2_index = spr_amadix_hands_gun_d2;
 										break;
 									}
+							}else{
+									hand_rot = point_direction(x, y + hand_yoffset, mouse_x, mouse_y);
+									hand_xoffset = -3;
+									hand_yoffset = 17;
 									
-								break;
-								case item.sawedoff:
-								
+									switch(obj_gun_logic.state){
+										case gunState.standby:
+											hands_index = spr_amadix_hands_gun_r;
+											hands2_index = spr_none;
+										break;
+										case gunState.shooting:
+											hands_index = spr_amadix_hands_gun_r_shoot;
+											hands2_index = spr_none;
+										break;
+										case gunState.reloading:
+											hands_index = spr_amadix_hands_gun_r_reload;
+											hands2_index = spr_none;
+										case gunState.reloading_empty:
+											hands_index = spr_amadix_hands_gun_r_reload;
+											hands2_index = spr_none;
+										break;
+										case gunState.empty:
+											hands_index = spr_amadix_hands_gun_r;
+											hands2_index = spr_none;
+										break;
+									}
+							}
+						break;
+						case item.sawedoff:
+							if (isLooking(index_facing.up)){
+									hand_rot = point_direction(x, y + hand_yoffset, mouse_x, mouse_y) - 90;
+									hand_xoffset = 0;
+									hand_yoffset = 18;
+									
+									switch(obj_gun_logic.state){
+										case gunState.standby:
+											hands_index = spr_amadix_hands_sawedoff_u;
+											hands2_index = spr_none;
+										break;
+										case gunState.shooting:
+											hands_index = spr_amadix_hands_sawedoff_u_shoot;
+											hands2_index = spr_none;
+										break;
+										case gunState.reloading:
+											hands_index = spr_amadix_hands_sawedoff_u_reload;
+											hands2_index = spr_none;
+										case gunState.reloading_empty:
+											hands_index = spr_amadix_hands_sawedoff_u_reload;
+											hands2_index = spr_none;
+										break;
+										case gunState.empty:
+											hands_index = spr_amadix_hands_sawedoff_u;
+											hands2_index = spr_none;
+										break;
+									}
+							}else
+							if (isLooking(index_facing.left)){
+									hand_rot = point_direction(x, y + hand_yoffset, mouse_x, mouse_y) - 180;
+									hand_xoffset = 3;
+									hand_yoffset = 16;
+									
+									switch(obj_gun_logic.state){
+										case gunState.standby:
+											hands_index = spr_amadix_hands_sawedoff_l;
+											hands2_index = spr_none;
+										break;
+										case gunState.shooting:
+											hands_index = spr_amadix_hands_sawedoff_l_shoot;
+											hands2_index = spr_none;
+										break;
+										case gunState.reloading:
+											hands_index = spr_amadix_hands_sawedoff_l_reload;
+											hands2_index = spr_none;
+										case gunState.reloading_empty:
+											hands_index = spr_amadix_hands_sawedoff_l_reload;
+											hands2_index = spr_none;
+										break;
+										case gunState.empty:
+											hands_index = spr_amadix_hands_sawedoff_l;
+											hands2_index = spr_none;
+										break;
+									}
+							}else
+							if (isLooking(index_facing.down)){
 									hand_rot = point_direction(x, y + hand_yoffset, mouse_x, mouse_y) + 90;
 									hand_xoffset = -3;
 									hand_yoffset = 14;
@@ -237,49 +291,17 @@ function scr_setPlayerFacingAnim(facing){
 										break;
 										case gunState.reloading:
 											hands_index = spr_amadix_hands_sawedoff_d_reload;
+											hands2_index = spr_none;
 										case gunState.reloading_empty:
 											hands_index = spr_amadix_hands_sawedoff_d_reload;
+											hands2_index = spr_none;
 										break;
 										case gunState.empty:
 											hands_index = spr_amadix_hands_sawedoff_d;
 											hands2_index = spr_amadix_hands_sawedoff_d2;
 										break;
 									}
-									
-								break;
-							}
-						}
-						
-					}else{
-						
-						if (instance_exists(obj_gun_logic)){
-							switch(itemeaten){
-								case item.m1911:
-								
-									hand_rot = point_direction(x, y + hand_yoffset, mouse_x, mouse_y);
-									hand_xoffset = -3;
-									hand_yoffset = 17;
-									
-									switch(obj_gun_logic.state){
-										case gunState.standby:
-											hands_index = spr_amadix_hands_gun_r;
-										break;
-										case gunState.shooting:
-											hands_index = spr_amadix_hands_gun_r_shoot;
-										break;
-										case gunState.reloading:
-											hands_index = spr_amadix_hands_gun_r_reload;
-										case gunState.reloading_empty:
-											hands_index = spr_amadix_hands_gun_r_reload;
-										break;
-										case gunState.empty:
-											hands_index = spr_amadix_hands_gun_r;
-										break;
-									}
-									
-								break;
-								case item.sawedoff:
-								
+							}else{
 									hand_rot = point_direction(x, y + hand_yoffset, mouse_x, mouse_y);
 									hand_xoffset = -5;
 									hand_yoffset = 19;
@@ -287,23 +309,26 @@ function scr_setPlayerFacingAnim(facing){
 									switch(obj_gun_logic.state){
 										case gunState.standby:
 											hands_index = spr_amadix_hands_sawedoff_r;
+											hands2_index = spr_none;
 										break;
 										case gunState.shooting:
 											hands_index = spr_amadix_hands_sawedoff_r_shoot;
+											hands2_index = spr_none;
 										break;
 										case gunState.reloading:
 											hands_index = spr_amadix_hands_sawedoff_r_reload;
+											hands2_index = spr_none;
 										case gunState.reloading_empty:
 											hands_index = spr_amadix_hands_sawedoff_r_reload;
+											hands2_index = spr_none;
 										break;
 										case gunState.empty:
 											hands_index = spr_amadix_hands_sawedoff_r;
+											hands2_index = spr_none;
 										break;
 									}
-									
-								break;
 							}
-						}
+						break;
 					}
 				break;
 				case player_state_action.none:
@@ -385,7 +410,6 @@ function scr_setPlayerFacingAnim(facing){
 
 #region Bron
 
-if (instance_exists(obj_gun_logic)){
 switch(itemeaten){
 	case item.none:
 		gun_index = spr_item_none;
@@ -518,7 +542,7 @@ switch(itemeaten){
 	break;
 	
 }
-}
+
 #endregion
 
 switch(global.playerTorso){
@@ -1264,7 +1288,7 @@ switch(global.playerLegs){
 					switch(facing){
 						case index_facing.down:
 							legs_index = spr_amadix_jeansL_attack_d;
-						break;
+						break;s
 						case index_facing.left:
 							legs_index = spr_amadix_jeansL_attack_l;
 						break;
@@ -1784,6 +1808,5 @@ switch(global.playerBoots){
 			}
 	break;
 }
-
 
 }
