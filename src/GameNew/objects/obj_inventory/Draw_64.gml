@@ -372,8 +372,7 @@ if (show_inventory) && (!show_slots){
 		}
 		var infobox_half = (infobox_x + infobox_width/2);
 		
-		var infobox_height = namestr.get_height()*name_scale + typestr.get_height()*type_scale + descstr.get_height()*desc_scale + 12;
-		
+		infobox_height = namestr.get_height()*name_scale + typestr.get_height()*type_scale + descstr.get_height()*desc_scale + 12;
 		
 		if (infobox_y + infobox_height > obj_display.ideal_height){
 			infobox_y = mousey - 8 - infobox_height;

@@ -1,7 +1,7 @@
 ///@description scr_setPlayerFacingAnim(facing)
 function scr_setPlayerFacingAnim(facing){
 	
-	//wtfffff
+
 #region Glowa
 	if (!running){
 		switch(actionstate){
@@ -84,23 +84,29 @@ function scr_setPlayerFacingAnim(facing){
 			switch(actionstate){
 				case player_state_action.eating:
 					hands_index = spr_amadix_hands_eating;
+					hands2_index = spr_none;
 				break;
 				case player_state_action.drinking:
 					hands_index = spr_amadix_hands_drinking;
+					hands2_index = spr_none;
 				break;
 				case player_state_action.attacking_melee:
 					switch(facing){
 						case index_facing.right:
-							head_index = spr_amadix_hands_attack_r;
+							hands_index = spr_amadix_hands_attack_r;
+							hands2_index = spr_none;
 						break;
 						case index_facing.up:
-							head_index = spr_amadix_hands_attack_u;
+							hands_index = spr_amadix_hands_attack_u;
+							hands2_index = spr_none;
 						break;
 						case index_facing.left:
-							head_index = spr_amadix_hands_attack_l;
+							hands_index = spr_amadix_hands_attack_l;
+							hands2_index = spr_none;
 						break;
 						case index_facing.down:
-							head_index = spr_amadix_hands_attack_d;
+							hands_index = spr_amadix_hands_attack_d;
+							hands2_index = spr_none;
 						break;
 					}
 				break;
@@ -335,15 +341,19 @@ function scr_setPlayerFacingAnim(facing){
 					switch(facing){
 						case index_facing.down:
 							hands_index = spr_amadix_hands_d;
+							hands2_index = spr_none;
 						break;
 						case index_facing.left:
 							hands_index = spr_amadix_hands_l;
+							hands2_index = spr_none;
 						break;
 						case index_facing.right:
 							hands_index = spr_amadix_hands_r;
+							hands2_index = spr_none;
 						break;
 						case index_facing.up:
 							hands_index = spr_amadix_hands_u;
+							hands2_index = spr_none;
 						break;
 					}
 				break;
@@ -545,6 +555,203 @@ switch(itemeaten){
 
 #endregion
 
+#region Rece
+
+switch(itemeaten){
+	case item.m1911:
+		if (isLooking(index_facing.up)){				
+				switch(obj_gun_logic.state){
+					case gunState.standby:
+						arms_index = spr_amadix_newA_gun_u;
+						arms2_index = spr_none;
+					break;
+					case gunState.shooting:
+						arms_index = spr_amadix_newA_gun_u_shoot;
+						arms2_index = spr_none;
+					break;
+					case gunState.reloading:
+						arms_index = spr_amadix_newA_gun_u_reload;
+						arms2_index = spr_none;
+					case gunState.reloading_empty:
+						arms_index = spr_amadix_newA_gun_u_reload;
+						arms2_index = spr_none;
+					break;
+					case gunState.empty:
+						arms_index = spr_amadix_newA_gun_u;
+						arms2_index = spr_none;
+					break;
+				}
+		}else
+		if (isLooking(index_facing.left)){		
+				switch(obj_gun_logic.state){
+					case gunState.standby:
+						arms_index = spr_amadix_newA_gun_l;
+						arms2_index = spr_none;
+					break;
+					case gunState.shooting:
+						arms_index = spr_amadix_newA_gun_l_shoot;
+						arms2_index = spr_none;
+					break;
+					case gunState.reloading:
+						arms_index = spr_amadix_newA_gun_l_reload;
+						arms2_index = spr_none;
+					case gunState.reloading_empty:
+						arms_index = spr_amadix_newA_gun_l_reload;
+						arms2_index = spr_none;
+					break;
+					case gunState.empty:
+						arms_index = spr_amadix_newA_gun_l;
+						arms2_index = spr_none;
+					break;
+				}
+		}else
+		if (isLooking(index_facing.down)){
+				switch(obj_gun_logic.state){
+					case gunState.standby:
+						arms_index = spr_amadix_newA_gun_d;
+						arms2_index = spr_amadix_newA_gun_d2;
+					break;
+					case gunState.shooting:
+						arms_index = spr_amadix_newA_gun_d_shoot;
+						arms2_index = spr_amadix_newA_gun_d2_shoot;
+					break;
+					case gunState.reloading:
+						arms_index = spr_amadix_newA_gun_d_reload;
+						arms2_index = spr_none;
+					case gunState.reloading_empty:
+						arms_index = spr_amadix_newA_gun_d_reload;
+						arms2_index = spr_none;
+					break;
+					case gunState.empty:
+						arms_index = spr_amadix_newA_gun_d;
+						arms2_index = spr_amadix_newA_gun_d2;
+					break;
+				}
+		}else{				
+				switch(obj_gun_logic.state){
+					case gunState.standby:
+						arms_index = spr_amadix_newA_gun_r;
+						arms2_index = spr_none;
+					break;
+					case gunState.shooting:
+						arms_index = spr_amadix_newA_gun_r_shoot;
+						arms2_index = spr_none;
+					break;
+					case gunState.reloading:
+						arms_index = spr_amadix_newA_gun_r_reload;
+						arms2_index = spr_none;
+					case gunState.reloading_empty:
+						arms_index = spr_amadix_newA_gun_r_reload;
+						arms2_index = spr_none;
+					break;
+					case gunState.empty:
+						arms_index = spr_amadix_newA_gun_r;
+						arms2_index = spr_none;
+					break;
+				}
+		}
+	break;
+	case item.sawedoff:
+		if (isLooking(index_facing.up)){				
+				switch(obj_gun_logic.state){
+					case gunState.standby:
+						arms_index = spr_amadix_newA_sawedoff_u;
+						arms2_index = spr_none;
+					break;
+					case gunState.shooting:
+						arms_index = spr_amadix_newA_sawedoff_u_shoot;
+						arms2_index = spr_none;
+					break;
+					case gunState.reloading:
+						arms_index = spr_amadix_newA_sawedoff_u_reload;
+						arms2_index = spr_none;
+					case gunState.reloading_empty:
+						arms_index = spr_amadix_newA_sawedoff_u_reload;
+						arms2_index = spr_none;
+					break;
+					case gunState.empty:
+						arms_index = spr_amadix_newA_sawedoff_u;
+						arms2_index = spr_none;
+					break;
+				}
+		}else
+		if (isLooking(index_facing.left)){		
+				switch(obj_gun_logic.state){
+					case gunState.standby:
+						arms_index = spr_amadix_newA_sawedoff_l;
+						arms2_index = spr_none;
+					break;
+					case gunState.shooting:
+						arms_index = spr_amadix_newA_sawedoff_l_shoot;
+						arms2_index = spr_none;
+					break;
+					case gunState.reloading:
+						arms_index = spr_amadix_newA_sawedoff_l_reload;
+						arms2_index = spr_none;
+					case gunState.reloading_empty:
+						arms_index = spr_amadix_newA_sawedoff_l_reload;
+						arms2_index = spr_none;
+					break;
+					case gunState.empty:
+						arms_index = spr_amadix_newA_sawedoff_l;
+						arms2_index = spr_none;
+					break;
+				}
+		}else
+		if (isLooking(index_facing.down)){
+				switch(obj_gun_logic.state){
+					case gunState.standby:
+						arms_index = spr_amadix_newA_sawedoff_d;
+						arms2_index = spr_amadix_newA_sawedoff_d2;
+					break;
+					case gunState.shooting:
+						arms_index = spr_amadix_newA_sawedoff_d_shoot;
+						arms2_index = spr_amadix_newA_sawedoff_d2_shoot;
+					break;
+					case gunState.reloading:
+						arms_index = spr_amadix_newA_sawedoff_d_reload;
+						arms2_index = spr_none;
+					case gunState.reloading_empty:
+						arms_index = spr_amadix_newA_sawedoff_d_reload;
+						arms2_index = spr_none;
+					break;
+					case gunState.empty:
+						arms_index = spr_amadix_newA_sawedoff_d;
+						arms2_index = spr_amadix_newA_sawedoff_d2;
+					break;
+				}
+		}else{				
+				switch(obj_gun_logic.state){
+					case gunState.standby:
+						arms_index = spr_amadix_newA_sawedoff_r;
+						arms2_index = spr_none;
+					break;
+					case gunState.shooting:
+						arms_index = spr_amadix_newA_sawedoff_r_shoot;
+						arms2_index = spr_none;
+					break;
+					case gunState.reloading:
+						arms_index = spr_amadix_newA_sawedoff_r_reload;
+						arms2_index = spr_none;
+					case gunState.reloading_empty:
+						arms_index = spr_amadix_newA_sawedoff_r_reload;
+						arms2_index = spr_none;
+					break;
+					case gunState.empty:
+						arms_index = spr_amadix_newA_sawedoff_r;
+						arms2_index = spr_none;
+					break;
+				}
+		}
+	break;
+	default:
+		arms_index = spr_none;
+		arms2_index = spr_none;
+	break;
+}
+#endregion
+
+#region Torso
 switch(global.playerTorso){
 	case item.none:
 			switch(actionstate){
@@ -766,204 +973,6 @@ switch(global.playerTorso){
 						break;
 					}
 					
-				
-					
-					if isLooking(index_facing.up){
-						if (instance_exists(obj_gun_logic)){
-							switch(itemeaten){
-								case item.m1911:
-									switch(obj_gun_logic.state){
-										case gunState.standby:
-											arms_index = spr_amadix_newA_gun_u;
-										break;
-										case gunState.shooting:
-											arms_index = spr_amadix_newA_gun_u_shoot;
-										break;
-										case gunState.reloading:
-											arms_index = spr_amadix_newA_gun_u_reload;
-										case gunState.reloading_empty:
-											arms_index = spr_amadix_newA_gun_u_reload;
-										break;
-										case gunState.empty:
-											arms_index = spr_amadix_newA_gun_u;
-										break;
-									}
-									
-								break;
-								
-								case item.sawedoff:
-									switch(obj_gun_logic.state){
-										case gunState.standby:
-											arms_index = spr_amadix_newA_sawedoff_u;
-										break;
-										case gunState.shooting:
-											arms_index = spr_amadix_newA_sawedoff_u_shoot;
-										break;
-										case gunState.reloading:
-											arms_index = spr_amadix_newA_sawedoff_u_reload;
-										case gunState.reloading_empty:
-											arms_index = spr_amadix_newA_sawedoff_u_reload;
-										break;
-										case gunState.empty:
-											arms_index = spr_amadix_newA_sawedoff_u;
-										break;
-									}
-									
-								break;
-							}
-						}
-					}else
-					if isLooking(index_facing.left){
-						if (instance_exists(obj_gun_logic)){
-							switch(itemeaten){
-								case item.m1911:
-									switch(obj_gun_logic.state){
-										case gunState.standby:
-											arms_index = spr_amadix_newA_gun_l;
-										break;
-										case gunState.shooting:
-											arms_index = spr_amadix_newA_gun_l_shoot;
-										break;
-										case gunState.reloading:
-											arms_index = spr_amadix_newA_gun_l_reload;
-										case gunState.reloading_empty:
-											arms_index = spr_amadix_newA_gun_l_reload;
-										break;
-										case gunState.empty:
-											arms_index = spr_amadix_newA_gun_l;
-										break;
-									}
-									
-								break;
-								
-								case item.sawedoff:
-									switch(obj_gun_logic.state){
-										case gunState.standby:
-											arms_index = spr_amadix_newA_sawedoff_l;
-										break;
-										case gunState.shooting:
-											arms_index = spr_amadix_newA_sawedoff_l_shoot;
-										break;
-										case gunState.reloading:
-											arms_index = spr_amadix_newA_sawedoff_l_reload;
-										case gunState.reloading_empty:
-											arms_index = spr_amadix_newA_sawedoff_l_reload;
-										break;
-										case gunState.empty:
-											arms_index = spr_amadix_newA_sawedoff_l;
-										break;
-									}
-									
-								break;
-							}
-						}
-
-						
-					}else
-					if isLooking(index_facing.down){
-						
-						if (instance_exists(obj_gun_logic)){
-							switch(itemeaten){
-								case item.m1911:
-									
-									switch(obj_gun_logic.state){
-										case gunState.standby:
-											arms_index = spr_amadix_newA_gun_d;
-											arms2_index = spr_amadix_newA_gun_d2;
-										break;
-										case gunState.shooting:
-											arms_index = spr_amadix_newA_gun_d_shoot;
-											arms2_index = spr_amadix_newA_gun_d2_shoot;
-										break;
-										case gunState.reloading:
-											arms_index = spr_amadix_newA_gun_d_reload;
-										case gunState.reloading_empty:
-											arms_index = spr_amadix_newA_gun_d_reload;
-										break;
-										case gunState.empty:
-											arms_index = spr_amadix_newA_gun_d;
-											arms2_index = spr_amadix_newA_gun_d2;
-										break;
-									}
-									
-								break;
-								
-								case item.sawedoff:
-									
-									switch(obj_gun_logic.state){
-										case gunState.standby:
-											arms_index = spr_amadix_newA_sawedoff_d;
-											arms2_index = spr_amadix_newA_sawedoff_d2;
-										break;
-										case gunState.shooting:
-											arms_index = spr_amadix_newA_sawedoff_d_shoot;
-											arms2_index = spr_amadix_newA_sawedoff_d2_shoot;
-										break;
-										case gunState.reloading:
-											arms_index = spr_amadix_newA_sawedoff_d_reload;
-										case gunState.reloading_empty:
-											arms_index = spr_amadix_newA_sawedoff_d_reload;
-										break;
-										case gunState.empty:
-											arms_index = spr_amadix_newA_sawedoff_d;
-											arms2_index = spr_amadix_newA_sawedoff_d2;
-										break;
-									}
-									
-								break;
-								
-							}
-						}
-						
-					}else{
-						
-						if (instance_exists(obj_gun_logic)){
-							switch(itemeaten){
-								case item.m1911:
-									
-									switch(obj_gun_logic.state){
-										case gunState.standby:
-											arms_index = spr_amadix_newA_gun_r;
-										break;
-										case gunState.shooting:
-											arms_index = spr_amadix_newA_gun_r_shoot;
-										break;
-										case gunState.reloading:
-											arms_index = spr_amadix_newA_gun_r_reload;
-										case gunState.reloading_empty:
-											arms_index = spr_amadix_newA_gun_r_reload;
-										break;
-										case gunState.empty:
-											arms_index = spr_amadix_newA_gun_r;
-										break;
-									}
-									
-								break;
-								
-								case item.sawedoff:
-									
-									switch(obj_gun_logic.state){
-										case gunState.standby:
-											arms_index = spr_amadix_newA_sawedoff_r;
-										break;
-										case gunState.shooting:
-											arms_index = spr_amadix_newA_sawedoff_r_shoot;
-										break;
-										case gunState.reloading:
-											arms_index = spr_amadix_newA_sawedoff_r_reload;
-										case gunState.reloading_empty:
-											arms_index = spr_amadix_newA_sawedoff_r_reload;
-										break;
-										case gunState.empty:
-											arms_index = spr_amadix_newA_sawedoff_r;
-										break;
-									}
-									
-								break;
-							}
-						}
-					}
-					
 				break;
 				//--------------------------------------------------------------
 				
@@ -1102,6 +1111,9 @@ switch(global.playerTorso){
 	
 	break;
 }
+#endregion
+
+#region Nogi
 switch(global.playerLegs){
 	case item.none:
 			switch(actionstate){
@@ -1288,7 +1300,7 @@ switch(global.playerLegs){
 					switch(facing){
 						case index_facing.down:
 							legs_index = spr_amadix_jeansL_attack_d;
-						break;s
+						break;
 						case index_facing.left:
 							legs_index = spr_amadix_jeansL_attack_l;
 						break;
@@ -1455,6 +1467,9 @@ switch(global.playerLegs){
 			}
 	break;
 }
+#endregion
+
+#region Buty
 switch(global.playerBoots){
 	case item.none:
 			switch(actionstate){
@@ -1808,5 +1823,6 @@ switch(global.playerBoots){
 			}
 	break;
 }
+#endregion
 
 }

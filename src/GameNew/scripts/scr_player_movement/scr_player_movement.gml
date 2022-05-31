@@ -114,14 +114,6 @@ function scr_player_movement() {
 					deccel = 0.2;
 		break;
 	}
-	
-
-	if (obj_inputmanager.inputPriority == 3){
-		canmove = false;	
-	}else{
-		canmove = true;	
-	}
-
 
 	if (canmove){
 		//Dzialanie klawiszy
@@ -259,9 +251,7 @@ function scr_player_movement() {
 		        hsp = 0;
 		    }
 	}
-	if canmove == true{
-		x += hsp;
-	}
+	x += hsp;
 	if (vsp != 0){
 		    if ((ver_collision != noone) && (ver_collision.cancollide)){
 		        repeat(abs(vsp)){
@@ -272,9 +262,7 @@ function scr_player_movement() {
 		        vsp = 0;
 		    }
 	}
-	if canmove == true{
-		y += vsp;
-	}
+	y += vsp;
 
 
 

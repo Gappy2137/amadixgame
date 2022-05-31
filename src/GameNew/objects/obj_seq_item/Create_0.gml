@@ -23,4 +23,3 @@ scale = 1;
 if (instance_exists(obj_amadix)){
 	yorigin = obj_amadix.yorigin;
 }
-

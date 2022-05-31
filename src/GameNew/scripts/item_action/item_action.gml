@@ -72,7 +72,6 @@ function item_action(){
 	var stamina =		obj_inventory.ds_inventory[# INVSTAMINA, obj_inventory.mouse_slotx_second];
 	var type =			obj_inventory.ds_inventory[# INVTYPE, obj_inventory.mouse_slotx_second];
 	
-			if (mouse_check_button_pressed(mb_right)){
 				if (!obj_amadix.stuffed){
 					if (amount > 0){
 						if (obj_amadix.actionstate != player_state_action.eating){
@@ -97,13 +96,10 @@ function item_action(){
 							if (stamina > 0){global.stamina += stamina;}
 						}
 					}else{
-						slot_remove(obj_inventory.mouse_slotx_second);
 						obj_inventory.text_alpha = 0;
 					}
 				}
-			}else{
-				itemActionNone();
-			}
+			
 	}
 	
 	function itemActionDrink(){
@@ -112,7 +108,6 @@ function item_action(){
 	var stamina =		obj_inventory.ds_inventory[# INVSTAMINA, obj_inventory.mouse_slotx_second];
 	var level =			obj_inventory.ds_inventory[# INVLEVEL, obj_inventory.mouse_slotx_second];
 	var type =			obj_inventory.ds_inventory[# INVTYPE, obj_inventory.mouse_slotx_second];
-			if (mouse_check_button_pressed(mb_right)){
 				if (!obj_amadix.stuffed){
 					if (amount > 0){
 						if (obj_amadix.actionstate != player_state_action.drinking){
@@ -143,16 +138,13 @@ function item_action(){
 						obj_inventory.text_alpha = 0;
 					}
 				}
-			}else{
-				itemActionNone();
-			}
+			
 	}
 	
 	function itemActionSword(){
 	var amount =		obj_inventory.ds_inventory[# INVAMOUNT, obj_inventory.mouse_slotx_second];
 	var hp =			obj_inventory.ds_inventory[# INVHP, obj_inventory.mouse_slotx_second];
 	var type =			obj_inventory.ds_inventory[# INVTYPE, obj_inventory.mouse_slotx_second];
-			if (mouse_check_button_pressed(mb_left)){
 			if (amount > 0){
 				if (obj_amadix.actionstate != player_state_action.attacking_melee){
 					var iitem = obj_inventory.ds_inventory[# INVITEM, obj_inventory.mouse_slotx_second];
@@ -188,9 +180,7 @@ function item_action(){
 				slot_remove(obj_inventory.mouse_slotx_second);
 				obj_inventory.text_alpha = 0;
 			}
-			}else{
-				itemActionNone();
-			}
+			
 	}
 	
 
@@ -211,22 +201,52 @@ function item_action(){
 				itemActionNone();
 			break;
 			case itemtype.food:
-				itemActionEat();
+				if (mouse_check_button_pressed(mb_right)){
+					itemActionEat();
+				}else{
+					if (obj_amadix.actionstate != player_state_action.eating)
+					itemActionNone();
+				}
 			break;
 			case itemtype.dish:
-				itemActionEat();
+				if (mouse_check_button_pressed(mb_right)){
+					itemActionEat();
+				}else{
+					if (obj_amadix.actionstate != player_state_action.eating)
+					itemActionNone();
+				}
 			break;
 			case itemtype.fruit:
-				itemActionEat();
+				if (mouse_check_button_pressed(mb_right)){
+					itemActionEat();
+				}else{
+					if (obj_amadix.actionstate != player_state_action.eating)
+					itemActionNone();
+				}
 			break;
 			case itemtype.vegetable:
-				itemActionEat();
+				if (mouse_check_button_pressed(mb_right)){
+					itemActionEat();
+				}else{
+					if (obj_amadix.actionstate != player_state_action.eating)
+					itemActionNone();
+				}
 			break;
 			case itemtype.drink:
-				itemActionDrink();
+				if (mouse_check_button_pressed(mb_right)){
+					itemActionDrink();
+				}else{
+					if (obj_amadix.actionstate != player_state_action.drinking)
+					itemActionNone();
+				}
 			break;
 			case itemtype.alcohol:
-				itemActionDrink();
+				if (mouse_check_button_pressed(mb_right)){
+					itemActionDrink();
+				}else{
+					if (obj_amadix.actionstate != player_state_action.drinking)
+					itemActionNone();
+				}
 			break;
 			case itemtype.resource:
 				itemActionNone();
@@ -235,7 +255,12 @@ function item_action(){
 				itemActionNone();
 			break;
 			case itemtype.melee:
-				itemActionSword();
+				if (mouse_check_button_pressed(mb_left)){
+					itemActionSword();
+				}else{
+					if (obj_amadix.actionstate != player_state_action.attacking_melee)
+					itemActionNone();
+				}
 			break;
 			case itemtype.hat:
 				itemActionNone();

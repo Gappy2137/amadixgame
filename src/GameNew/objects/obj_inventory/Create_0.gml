@@ -122,6 +122,8 @@ text_alpha = 1;
 
 cap = 0;
 
+infobox_height = 0;
+
 //-------Ekwipunek
 //0 = PRZEDMIOT
 //1 = ILOSC

@@ -1,5 +1,13 @@
 event_inherited();
 
+
+
+resetAngleTimer--;
+if (resetAngleTimer == 0){
+	resetAngleTimer = 10;	
+	resetAngle = true;
+}
+
 /*
 if (instance_place(x, y, obj_melee_attack)){
 	if (chance(0.075)) && (other.image_index < 5){
@@ -79,3 +87,7 @@ if (anim_enable){
 }
 
 finalangle = clamp((angle + windangle), -75, 75);
+
+if (resetAngle){
+	angle = approach(angle, 0, acc);	
+}

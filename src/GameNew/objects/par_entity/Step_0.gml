@@ -15,5 +15,8 @@ if (grassCollision){
 		}else{
 			angle = approach(angle, 0, acc);	
 		}
+		
+		resetAngle = false;
+
 	}
 }
