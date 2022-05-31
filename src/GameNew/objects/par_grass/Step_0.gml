@@ -1,7 +1,5 @@
 event_inherited();
 
-
-
 /*
 if (instance_place(x, y, obj_melee_attack)){
 	if (chance(0.075)) && (other.image_index < 5){

@@ -10,7 +10,6 @@ else if (state == player_state.swimming) || (state == player_state.swimming_idle
 else {
     fixY = 0;
 }
-
 var alarmcurveAsset = curve_attack_delay;
 var alarmcurvePos = anim_speed_action;
 var alarmcurveStruct = animcurve_get(alarmcurveAsset);
