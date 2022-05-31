@@ -2,6 +2,7 @@
   "spriteId": null,
   "solid": false,
   "visible": true,
+  "managed": true,
   "spriteMaskId": {
     "name": "spr_particle_mask",
     "path": "sprites/spr_particle_mask/spr_particle_mask.yy",

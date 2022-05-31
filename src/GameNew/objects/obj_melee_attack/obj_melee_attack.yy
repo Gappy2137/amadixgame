@@ -5,6 +5,7 @@
   },
   "solid": false,
   "visible": false,
+  "managed": true,
   "spriteMaskId": {
     "name": "spr_melee_attack_down",
     "path": "sprites/spr_melee_attack_down/spr_melee_attack_down.yy",

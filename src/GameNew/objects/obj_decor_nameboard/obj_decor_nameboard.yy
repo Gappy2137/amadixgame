@@ -5,6 +5,7 @@
   },
   "solid": false,
   "visible": false,
+  "managed": true,
   "spriteMaskId": {
     "name": "spr_wobj16_mask",
     "path": "sprites/spr_wobj16_mask/spr_wobj16_mask.yy",
