@@ -574,7 +574,7 @@
     {"id":{"name":"spr_hud_container","path":"sprites/spr_hud_container/spr_hud_container.yy",},"order":11,},
     {"id":{"name":"spr_amadix_head_attack_u","path":"sprites/spr_amadix_head_attack_u/spr_amadix_head_attack_u.yy",},"order":9,},
     {"id":{"name":"autotile_water_2","path":"sprites/autotile_water_2/autotile_water_2.yy",},"order":6,},
-    {"id":{"name":"scr_setPlayerFacingAnims","path":"scripts/scr_setPlayerFacingAnims/scr_setPlayerFacingAnims.yy",},"order":5,},
+    {"id":{"name":"scr_setPlayerFacingAnim","path":"scripts/scr_setPlayerFacingAnim/scr_setPlayerFacingAnim.yy",},"order":5,},
     {"id":{"name":"spr_amadix_newA_sawedoff_l","path":"sprites/spr_amadix_newA_sawedoff_l/spr_amadix_newA_sawedoff_l.yy",},"order":5,},
     {"id":{"name":"tileset_leaves_green","path":"tilesets/tileset_leaves_green/tileset_leaves_green.yy",},"order":3,},
     {"id":{"name":"__shd_scribble_bake_outline_8dir_2px","path":"shaders/__shd_scribble_bake_outline_8dir_2px/__shd_scribble_bake_outline_8dir_2px.yy",},"order":3,},
