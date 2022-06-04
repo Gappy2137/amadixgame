@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_slope_dl",
-    "path": "sprites/spr_slope_dl/spr_slope_dl.yy",
+    "name": "spr_slope_dl_med",
+    "path": "sprites/spr_slope_dl_med/spr_slope_dl_med.yy",
   },
   "solid": false,
   "visible": true,
@@ -9,8 +9,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "par_collision",
-    "path": "objects/par_collision/par_collision.yy",
+    "name": "par_slope",
+    "path": "objects/par_slope/par_slope.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -24,9 +24,7 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-  ],
+  "eventList": [],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
@@ -34,7 +32,7 @@
     "path": "folders/Objects/DEV_.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_slope_dl",
+  "name": "obj_slope_dl_med",
   "tags": [],
   "resourceType": "GMObject",
 }

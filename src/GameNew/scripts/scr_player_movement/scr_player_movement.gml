@@ -232,16 +232,140 @@ function scr_player_movement() {
 	
 
 
-	var hor_collision = instance_place(x + hsp, y, par_collision);
-	var ver_collision = instance_place(x, y + vsp, par_collision);
-	var slope_collision = instance_place(x + hsp, y + vsp, par_slope);
+
+	
+	//var slope_collision = instance_place(x + hsp, y + vsp, par_slope);
+	
 	slopefix = false;
 
-
+	/*
 	if ((slope_collision != noone) && (slope_collision.cancollide == true)){
 		scr_player_movement_slope();
 	}
+	*/
+	/*
+	if (hsp != 0){
+		if ((instance_place(x + 1, y, par_slope)) && (!instance_place(x + 1, y - 1, par_slope))){
+				if !((key_right) && (key_down)){
+						if (key_right){
+							hsp = slope_spd;
+							vsp = -slope_spd;
+						}
+						if (key_down){
+							hsp = -slope_spd;
+							vsp = slope_spd;
+						}
+				}
+		}
+	}
+	*/
+	/*
+	
+	if (hor_collision){
+		if ((hor_collision != noone) && (hor_collision.cancollide)){
+		    var yplus = 0;
+		
+		    while (place_meeting(x + hsp, y - yplus, par_collision) && yplus <= abs(1 * hsp))
+			yplus += 1;
+		
+		    if place_meeting(x + hsp, y - yplus, par_collision){
+		        while (!place_meeting(x + sign(hsp), y, par_collision)) x += sign(hsp);
+		        hsp = 0;
+		    }else{
+		        y -= yplus;
+		    }
+		}
+	}
+	x += hsp;
+	
+	if (ver_collision){
+		if ((ver_collision != noone) && (ver_collision.cancollide)){
+		    var xplus = 0;
+		
+		    while (place_meeting(x - xplus, y + vsp, par_collision) && xplus <= abs(1 * vsp))
+			xplus += 1;
+		
+		    if place_meeting(x + xplus, y + vsp, par_collision){
+		        while (!place_meeting(x, y + sign(vsp), par_collision)) y += sign(vsp);
+		        vsp = 0;
+		    }else{
+		        x += xplus;
+		    }
+		}
+	}
+	y += vsp;
+*/
 
+var hor_collision = instance_place(x + hsp, y, par_collision);
+var ver_collision = instance_place(x, y + vsp, par_collision);
+
+//if the colision is horisontal   
+if (hor_collision) {
+	if ((hor_collision != noone) && (hor_collision.cancollide)){
+	    var yplus = 0;
+
+	    //can we go above?
+	    while (place_meeting(x + hsp, y - yplus, par_collision) && yplus <= abs(hsp)) yplus += .5;
+	    if ((!place_meeting(x + hsp, y - yplus, par_collision)) && (!key_down)) {
+	        //if you can go up, then go up
+	        y -= yplus;
+	    } else {
+	        //we can't go above it   
+	        //can we go below?
+	        while (place_meeting(x + hsp, y + yplus, par_collision) && yplus <= abs(hsp)) yplus += .5;
+	        if ((!place_meeting(x + hsp, y + yplus, par_collision)) && (!key_up)) {
+	            //if we can go down, then we'll go down
+	            y += yplus;
+	        } else {
+	            //we can't go below it
+	            //we get as close as we can to the wall and stop
+	            while (!place_meeting(x + sign(hsp), y, par_collision))
+	                x += sign(hsp);
+	            hsp = 0;
+	        }
+	    }
+	}
+}
+
+x += hsp;	
+
+
+
+
+//if the colision is vertical   
+if (ver_collision) {
+	if ((ver_collision != noone) && (ver_collision.cancollide)){
+		var xplus = 0;
+
+	    //can we go to the left?
+	    while (place_meeting(x - xplus, y + vsp, par_collision) && xplus <= abs(vsp)) xplus += .5;
+	    if ((!place_meeting(x - xplus, y + vsp, par_collision)) && (!key_right)) {
+	        //if you can go to the left, then go to the left
+	        x -= xplus;
+	    } else {
+	        //we can't go to the left   
+	        //can we go to the right?
+	        while (place_meeting(x + xplus, y + vsp, par_collision) && xplus <= abs(vsp)) xplus += .5;
+	        if ((!place_meeting(x + xplus, y + vsp, par_collision)) && (!key_left)) {
+	            //if we can go to the right, then we'll go right
+	            x += xplus;
+	        } else {
+	            //we can't go right
+	            //we get as close as we can to the wall and stop
+	            while (!place_meeting(x, y + sign(vsp), par_collision))
+	                y += sign(vsp);
+	            vsp = 0;
+	        }
+	    }	
+	}
+}
+
+y += vsp;	
+
+
+
+
+/*
 	if (hsp != 0){
 		    if ((hor_collision != noone) && (hor_collision.cancollide)){
 		        repeat(abs(hsp)){
@@ -251,6 +375,7 @@ function scr_player_movement() {
 		        hsp = 0;
 		    }
 	}
+	
 	x += hsp;
 	if (vsp != 0){
 		    if ((ver_collision != noone) && (ver_collision.cancollide)){
@@ -264,7 +389,7 @@ function scr_player_movement() {
 	}
 	y += vsp;
 
-
+*/
 
 /*
 	if (hsp != 0){
@@ -322,7 +447,7 @@ function scr_player_movement() {
 		}
 	}*/
 
-	scr_player_unstuck();
+	//scr_player_unstuck();
 
 	//-----------------------------------------------------------------------------
 

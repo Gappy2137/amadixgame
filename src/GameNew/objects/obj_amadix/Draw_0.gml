@@ -18,6 +18,6 @@ draw_sprite(arms_index, 0, x + 32, y + 32);
 draw_sprite(arms2_index, 0, x + 32, y + 48);
 */
 
-draw_text(x + 16, y, state);
-draw_text(x + 16, y + 8, actionstate);
+draw_text(x + 32, y, hsp);
+draw_text(x + 32, y + 8, vsp);
 event_inherited();

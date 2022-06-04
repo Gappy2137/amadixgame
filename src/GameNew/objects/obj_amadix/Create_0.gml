@@ -9,6 +9,8 @@ hsp = 0;
 vsp = 0;
 spd = 0;
 dir = 270;
+_spd = 0;
+_dir = 0;
 
 accel = 0.6;
 deccel = 0.32;
