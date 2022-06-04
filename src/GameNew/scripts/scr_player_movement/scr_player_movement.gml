@@ -160,7 +160,7 @@ function scr_player_movement() {
 	var plantcol = collision_rectangle(bbox_left + 4, bbox_bottom, bbox_right - 4, bbox_bottom, par_collectible, true, true);
 	var plantcol2 = collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom, obj_grass_plains, true, true);
 	if (plantcol) || (plantcol2){
-		speedChange = -0.25;
+		speedChange = -.25;
 	}else{
 		speedChange = 0;	
 	}
@@ -236,7 +236,6 @@ function scr_player_movement() {
 	
 	//var slope_collision = instance_place(x + hsp, y + vsp, par_slope);
 	
-	slopefix = false;
 
 	/*
 	if ((slope_collision != noone) && (slope_collision.cancollide == true)){
