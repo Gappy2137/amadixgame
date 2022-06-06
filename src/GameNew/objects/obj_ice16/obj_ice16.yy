@@ -4,7 +4,7 @@
     "path": "sprites/spr_ice16/spr_ice16.yy",
   },
   "solid": false,
-  "visible": true,
+  "visible": false,
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,

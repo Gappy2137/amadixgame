@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_shallowwater16",
-    "path": "sprites/spr_shallowwater16/spr_shallowwater16.yy",
+    "name": "spr_stairs16",
+    "path": "sprites/spr_stairs16/spr_stairs16.yy",
   },
   "solid": false,
   "visible": false,
@@ -29,7 +29,7 @@
     "path": "folders/Objects/DEV_/Terrain Types.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_shallowwater16",
+  "name": "obj_stairs16",
   "tags": [],
   "resourceType": "GMObject",
 }

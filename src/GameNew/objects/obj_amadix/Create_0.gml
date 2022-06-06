@@ -23,7 +23,7 @@ walkspeed = 0.9;
 runspeed = 1.55;
 
 moving = false;
-running = false;
+running = 0;
 
 canmove = true;
 

@@ -4,7 +4,7 @@
     "path": "sprites/spr_poison16/spr_poison16.yy",
   },
   "solid": false,
-  "visible": true,
+  "visible": false,
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,

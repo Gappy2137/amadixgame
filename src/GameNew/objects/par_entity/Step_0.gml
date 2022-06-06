@@ -20,3 +20,12 @@ if (grassCollision){
 
 	}
 }
+
+var stairs = instance_place(x, y, obj_stairs16);
+
+if (stairs){
+	//var stairs_top = stairs.y;
+	//var stairs_bottom = stairs.sprite_height;
+	
+	vsp /= 2;
+}

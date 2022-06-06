@@ -150,7 +150,7 @@ function scr_playerMovingAnim() {
 		}
 	}
 
-	var slippery = collision_rectangle(bbox_left + 4, bbox_bottom, bbox_right - 4, bbox_bottom, obj_ice16, true, true);
+	//var slippery = collision_rectangle(bbox_left + 4, bbox_bottom, bbox_right - 4, bbox_bottom, obj_ice16, false, true);
 	
 	if (!moving){
 		if (movingfix){
@@ -164,14 +164,14 @@ function scr_playerMovingAnim() {
 		movingfix = true;
 	}
 
-	if (((key_right) || (key_left) || (key_up) || (key_down)) && (!collision_rectangle(bbox_left - 1, bbox_top - 1, bbox_right + 1, bbox_bottom + 1, par_collision, true, true))){
+	if (((key_right) || (key_left) || (key_up) || (key_down)) && (!collision_rectangle(bbox_left - 1, bbox_top - 1, bbox_right + 1, bbox_bottom + 1, par_collision, false, true))){
 		if !(anim_fix){
 			anim_frame = 1;
 			anim_fix = true;
 		}
 	}
 
-
+	/*
 	if (!scr_playerPressingKeys()){
 		anim_speed = 0;
 		if (!running){
@@ -190,6 +190,23 @@ function scr_playerMovingAnim() {
 		}
 	}else{
 		runningfix = true;	
+	}
+	*/
+	/*
+	if (running) && ( (abs(hsp) < .1) && (abs(vsp) < .1) ){
+		running = false;
+	}
+	*/
+	if ( (abs(hsp) < .3) && (abs(vsp) < .3) ){
+		anim_speed = 0;
+		anim_frame = 0;
+	}
+	
+	if (!scr_playerPressingKeys()) && (key_run){
+		if ((hsp != 0) || (vsp != 0)){
+			anim_speed = 0;
+			anim_frame = 1;
+		}
 	}
 
 	//Shadow fix

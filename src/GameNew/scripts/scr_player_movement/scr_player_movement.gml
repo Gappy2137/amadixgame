@@ -9,25 +9,17 @@ function scr_player_movement() {
 
 
 	if (key_run) && (moving){
-		running = true;	
+		running = 1;
 	}else{
-		running = false;	
+		running = 0;
 	}
 	
 	//Ustawia predkosc
 
 	var _spd = speedEffect + speedChange;
-
+	
 	switch (state) {
 		case player_state.moving:
-					if (running){
-						spd = runspeed + _spd;
-						anim_speed = 0.3;
-					}else{
-						spd = walkspeed + _spd;
-						anim_speed = 0.09;
-					}
-	
 					//Na lodzie
 					var ice_collision = collision_rectangle(bbox_left + 4, bbox_bottom, bbox_right - 4, bbox_bottom, obj_ice16, true, true);
 					if (ice_collision){
@@ -36,24 +28,50 @@ function scr_player_movement() {
 							if (running){
 								spd = runspeed + _spd;
 								anim_speed = 0.18;
+							}else if (running){
+								spd = walkspeed + _spd;
+								anim_speed = 0.15;
 							}else{
 								spd = walkspeed + _spd;
 								anim_speed = 0.15;
 							}
 					}else{
-						accel = 0.6;
-						deccel = 0.32;
+						
+						if (spd >= runspeed + _spd - 0.1){
+							running = 2;	
+						}else if (spd >= walkspeed + _spd) < (spd >= runspeed + _spd - 0.1){
+							running = 1;
+						}else{
+							running = 0;	
+						}
+						
+						if (running == 2){
+							spd = runspeed + _spd;
+							anim_speed = 0.3;
+							accel = 0.075;
+							deccel = 0.25;
+						}else if (running == 1){
+							accel = 0.15;
+							deccel = 0.35;
+							
+							spd = lerp(spd, (runspeed + _spd), 0.05);
+							
+							anim_speed = lerp(anim_speed, 0.3, 0.05);
+							
+							clamp(spd, (walkspeed + _spd), (runspeed + _spd));
+							clamp(anim_speed, 0.09, 0.10);
+							
+
+						}else{
+							spd = walkspeed + _spd;
+							anim_speed = 0.09;
+							accel = 0.3;
+							deccel = 0.35;
+						}
+
 					}
 		break;
 		case player_state.idle:
-					if (running){
-						spd = runspeed + _spd;
-						anim_speed = 0.16;
-					}else{
-						spd = walkspeed + _spd;
-						anim_speed = 0.12;
-					}
-	
 					//Na lodzie
 					var ice_collision = collision_rectangle(bbox_left + 4, bbox_bottom, bbox_right - 4, bbox_bottom, obj_ice16, true, true);
 					if (ice_collision){
@@ -62,13 +80,42 @@ function scr_player_movement() {
 							if (running){
 								spd = runspeed + _spd;
 								anim_speed = 0.18;
+							}else if (running){
+								spd = walkspeed + _spd;
+								anim_speed = 0.15;
 							}else{
 								spd = walkspeed + _spd;
 								anim_speed = 0.15;
 							}
 					}else{
-						accel = 0.6;
-						deccel = 0.32;
+						if (running == 2){
+							spd = runspeed + _spd;
+							anim_speed = 0.3;
+							accel = 0.075;
+							deccel = 0.25;
+						}else if (running == 1){
+							accel = 0.15;
+							deccel = 0.35;
+							spd = lerp(spd, (runspeed + _spd), 0.05);
+							anim_speed = lerp(anim_speed, 0.3, 0.05);
+							
+							clamp(spd, (walkspeed + _spd), (runspeed + _spd));
+							clamp(anim_speed, 0.09, 0.10);
+							
+							if (spd >= runspeed + _spd - 0.1){
+								running = 2;	
+							}else if (spd >= walkspeed + _spd) < (spd >= runspeed + _spd - 0.1){
+								running = 1;
+							}else{
+								running = 0;	
+							}
+						}else{
+							spd = walkspeed + _spd;
+							anim_speed = 0.09;
+							accel = 0.2;
+							deccel = 0.35;
+						}
+
 					}
 		break;
 		case player_state.wading_idle:
@@ -125,6 +172,9 @@ function scr_player_movement() {
 		if (scr_playerPressingKeys()){
 			hsp = lerp(hsp, spd*hor_keyPress, accel);
 			vsp = lerp(vsp, spd*ver_keyPress, accel);
+			
+			clamp(hsp, .35, 3);
+			clamp(vsp, .35, 3);
 		}else{
 			hsp = lerp(hsp, 0, deccel);
 			vsp = lerp(vsp, 0, deccel);
@@ -144,13 +194,13 @@ function scr_player_movement() {
 	
 	//Naprawa poruszania sie po przekatnej
 	
-	//----kod
+	
 	var ice = collision_rectangle(bbox_left + 4, bbox_bottom, bbox_right - 4, bbox_bottom, obj_ice16, true, true);
 	var diagonal = hor_keyPress != 0 && ver_keyPress != 0;
 	if (diagonal) && (!ice){
-		hsp *= 0.8;
-		vsp *= 0.8;
-		anim_speed *= 0.8;
+		hsp *= 0.9;
+		vsp *= 0.9;
+		anim_speed *= 0.9;
 	}
 	
 	if (speedEffect > 0){
