@@ -1,3 +1,4 @@
+event_inherited();
 
 if (ami_clicked()){
 	if (canclick){
@@ -46,9 +47,14 @@ if (ami_clicked()){
 					item_add(-1, itemDrop, amount);
 					instance_destroy();
 				break;
+				case 6:
+					item_add(-1, itemDrop, amount);
+					instance_destroy();
+				break;
 			}
 	}
 }
+
 
 if (flag) && (itemRegTime != -1){
 	timer--;
@@ -65,6 +71,7 @@ if (flag) && (itemRegTime != -1){
 	}
 }
 
+
 if (itemOverlay != -1){
 	if (itemNum <= itemNumMax){
 		itemOverlayState = itemNum;	
@@ -73,35 +80,11 @@ if (itemOverlay != -1){
 	}
 }
 
-itemNum = clamp(itemNum, 0, itemNumMax);
 
-switch (type){
-	case 0:
-			cancollide = true;
-			alarm[0] = 5;
-	break;
-	case 1:
-			cancollide = true;
-			alarm[0] = 5;
-	break;
-	case 2:
-			cancollide = true;
-			alarm[0] = 5;
-	break;
-	case 3:
-			cancollide = false;
-			alarm[0] = 5;
-	break;
-	case 4:
-			cancollide = false;
-			alarm[0] = 5;
-	break;
-	case 5:
-			cancollide = true;
-			alarm[0] = 5;
-	break;
-}
+clamp(itemNum, 0, itemNumMax);
 
+
+/*
 en = instance_place(x, y, par_entity);
 if (en){
 	collision = true;
@@ -126,9 +109,97 @@ if (rotoncol){
 		angle = approach(angle, 0, acc);
 	}
 }
+*/
+
+#region Wind Effects
+
+if (enableWind){
+	resetAngleTimer--;
+	if (resetAngleTimer == 0){
+		resetAngleTimer = 10;	
+		resetAngle = true;
+	}
+
+	windTimer += 0.01 * rnd;
+	if (windTimer >= 1){
+		windTimer = 0;
+	}
+
+	var wnd = global.windStr/100;
+	var wndir = global.windDir;
+	var tmr = windTimer;
+
+	var curveAsset = curve_wind_anim;
+	var curveSpdPos = wnd;
+
+
+
+	var curveSpdStruct = animcurve_get(curveAsset);
+	var curveSpdChannel = animcurve_get_channel(curveSpdStruct, "spd");
+
+	var curveSpdValue = animcurve_channel_evaluate(curveSpdChannel, curveSpdPos);
+
+
+
+	var curveRotPos = tmr;
+
+	var curveRotStruct = animcurve_get(curveAsset);
+	var curveRotChannel = animcurve_get_channel(curveRotStruct, "rot");
+
+	var curveRotValue = animcurve_channel_evaluate(curveRotChannel, curveRotPos);
+
+
+
+	var curveRot2Pos = tmr;
+
+	var curveRot2Struct = animcurve_get(curveAsset);
+	var curveRot2Channel = animcurve_get_channel(curveRot2Struct, "rot2");
+
+	var curveRot2Value = animcurve_channel_evaluate(curveRot2Channel, curveRot2Pos);
+
+
+	
+	if ((wnd*100) > 5){
+		anim_speed = curveSpdValue;
+	}else{
+		anim_speed = 0;	
+	}
+	
+	
+	if ((wnd*100) > 10) && ((wnd*100) < 60){
+		windangle = approach(windangle, (curveRotValue * (wnd * 50 * wndir)), 1);
+	}else if ((wnd*100) >= 60){
+		windangle = approach(windangle, (curveRot2Value * (wnd * 50 * wndir)), 1);
+	}else{
+		windangle = lerp(windangle, 0, 0.1);
+	}
+		
+	if (anim_enable){
+		
+		anim_frame += anim_speed;
+	
+		if (anim_frame > anim_frame_num){
+			anim_frame = 0;
+		}
+	
+	}
+	
+}
+
+#endregion
+
+finalangle = clamp((angle + windangle + angle2), -75, 75);
+
+if (resetAngle){
+	angle = approach(angle, 0, acc);
+}
+
+// Obrot przy klikaniu
 if (rotate){
 	event_user(0);	
 }
+
+// Potrzas
 if (shake){
 	if (ami_clicked()){
 		if (canclick){

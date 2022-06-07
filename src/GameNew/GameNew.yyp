@@ -253,6 +253,7 @@
     {"id":{"name":"__scribble_font_add_sprite","path":"scripts/__scribble_font_add_sprite/__scribble_font_add_sprite.yy",},"order":8,},
     {"id":{"name":"spr_amadix_jeansL_gun_r","path":"sprites/spr_amadix_jeansL_gun_r/spr_amadix_jeansL_gun_r.yy",},"order":14,},
     {"id":{"name":"spr_player_mask","path":"sprites/spr_player_mask/spr_player_mask.yy",},"order":0,},
+    {"id":{"name":"obj_dandelion","path":"objects/obj_dandelion/obj_dandelion.yy",},"order":2,},
     {"id":{"name":"spr_amadix_sawedoff_r_shoot","path":"sprites/spr_amadix_sawedoff_r_shoot/spr_amadix_sawedoff_r_shoot.yy",},"order":5,},
     {"id":{"name":"spr_wobj16_mask","path":"sprites/spr_wobj16_mask/spr_wobj16_mask.yy",},"order":1,},
     {"id":{"name":"obj_groundtype_dirt_light16","path":"objects/obj_groundtype_dirt_light16/obj_groundtype_dirt_light16.yy",},"order":4,},

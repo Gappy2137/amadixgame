@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_strawberry_bush",
-    "path": "sprites/spr_strawberry_bush/spr_strawberry_bush.yy",
+    "name": "spr_dandelion",
+    "path": "sprites/spr_dandelion/spr_dandelion.yy",
   },
   "solid": false,
   "visible": true,
@@ -34,7 +34,7 @@
     "path": "folders/Objects/World Objects/Plants.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_strawberry_bush",
+  "name": "obj_dandelion",
   "tags": [],
   "resourceType": "GMObject",
 }

@@ -14,14 +14,15 @@ function scr_player_movement() {
 		running = 0;
 	}
 	
+	var ice_collision = collision_rectangle(bbox_left + 4, bbox_bottom, bbox_right - 4, bbox_bottom, obj_ice16, false, true);
+	
 	//Ustawia predkosc
-
 	var _spd = speedEffect + speedChange;
 	
 	switch (state) {
 		case player_state.moving:
 					//Na lodzie
-					var ice_collision = collision_rectangle(bbox_left + 4, bbox_bottom, bbox_right - 4, bbox_bottom, obj_ice16, true, true);
+					
 					if (ice_collision){
 						accel = 0.04;
 						deccel = 0.04;
@@ -37,20 +38,40 @@ function scr_player_movement() {
 							}
 					}else{
 						
-						if (spd >= runspeed + _spd - 0.1){
-							running = 2;	
-						}else if (spd >= walkspeed + _spd) < (spd >= runspeed + _spd - 0.1){
-							running = 1;
-						}else{
-							running = 0;	
+						switch(running){
+							case 0:
+								spd = walkspeed + _spd;
+								anim_speed = 0.09;
+								accel = 0.6;
+								deccel = 0.35;
+							break;
+							case 1:
+								spd = lerp(spd, (runspeed + _spd), 0.025);
+								anim_speed = lerp(anim_speed, 0.3, 0.01);
+								accel = 0.15;
+								deccel = 0.35;
+								
+								if (spd >= (runspeed + _spd) - 0.1){
+									running = 2;	
+								}
+							break;
+							case 2:
+								spd = runspeed + _spd;
+								anim_speed = 0.3;
+								accel = 0.075;
+								deccel = 0.25;
+							break;
 						}
-						
+
+						/*
 						if (running == 2){
 							spd = runspeed + _spd;
 							anim_speed = 0.3;
 							accel = 0.075;
 							deccel = 0.25;
 						}else if (running == 1){
+							
+							
 							accel = 0.15;
 							deccel = 0.35;
 							
@@ -61,19 +82,27 @@ function scr_player_movement() {
 							clamp(spd, (walkspeed + _spd), (runspeed + _spd));
 							clamp(anim_speed, 0.09, 0.10);
 							
-
+						if (spd >= runspeed + _spd - 0.1){
+							running = 2;	
+						}else if (spd >= walkspeed + _spd) < (spd >= runspeed + _spd - 0.1){
+							running = 1;
+						}else{
+							running = 0;	
+						}
+						
+						
 						}else{
 							spd = walkspeed + _spd;
 							anim_speed = 0.09;
-							accel = 0.3;
+							accel = 0.6;
 							deccel = 0.35;
 						}
+						*/
 
 					}
 		break;
 		case player_state.idle:
 					//Na lodzie
-					var ice_collision = collision_rectangle(bbox_left + 4, bbox_bottom, bbox_right - 4, bbox_bottom, obj_ice16, true, true);
 					if (ice_collision){
 						accel = 0.04;
 						deccel = 0.04;
@@ -194,10 +223,9 @@ function scr_player_movement() {
 	
 	//Naprawa poruszania sie po przekatnej
 	
-	
-	var ice = collision_rectangle(bbox_left + 4, bbox_bottom, bbox_right - 4, bbox_bottom, obj_ice16, true, true);
+
 	var diagonal = hor_keyPress != 0 && ver_keyPress != 0;
-	if (diagonal) && (!ice){
+	if (diagonal) && (!ice_collision){
 		hsp *= 0.9;
 		vsp *= 0.9;
 		anim_speed *= 0.9;
