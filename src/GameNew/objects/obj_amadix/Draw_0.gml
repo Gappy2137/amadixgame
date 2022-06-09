@@ -24,5 +24,7 @@ draw_text(x + 32, y + 8, vsp);
 draw_text(x + 32, y + 24, running);
 draw_text(x + 32, y + 32, anim_speed);
 
+draw_text(x - 32, y, spd);
+
 
 event_inherited();

@@ -1,15 +1,6 @@
 function scr_player_action_animation(){
 var fixY = 0;
 var fixAngle = 0;
-if (state == player_state.wading) || (state == player_state.wading_idle) {
-    fixY = 4;
-}
-else if (state == player_state.swimming) || (state == player_state.swimming_idle) {
-    fixY = 16;
-}
-else {
-    fixY = 0;
-}
 var alarmcurveAsset = curve_attack_delay;
 var alarmcurvePos = anim_speed_action;
 var alarmcurveStruct = animcurve_get(alarmcurveAsset);

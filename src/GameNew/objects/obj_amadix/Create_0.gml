@@ -12,6 +12,8 @@ dir = 270;
 _spd = 0;
 _dir = 0;
 
+
+
 accel = 0.6;
 deccel = 0.32;
 
@@ -21,6 +23,8 @@ speedChange = 0;
 
 walkspeed = 0.9;
 runspeed = 1.55;
+
+max_spd = 0;
 
 moving = false;
 running = 0;

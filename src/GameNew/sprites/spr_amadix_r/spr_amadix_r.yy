@@ -41,7 +41,7 @@
     "spriteId": {"name":"spr_amadix_r","path":"sprites/spr_amadix_r/spr_amadix_r.yy",},
     "timeUnits": 1,
     "playback": 1,
-    "playbackSpeed": 0.1,
+    "playbackSpeed": 0.3,
     "playbackSpeedType": 1,
     "autoRecord": true,
     "volume": 1.0,

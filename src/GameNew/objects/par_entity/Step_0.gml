@@ -55,4 +55,5 @@ if (stairs){
 	//var stairs_bottom = stairs.sprite_height;
 	
 	vsp /= 2;
+	running = 0;
 }
