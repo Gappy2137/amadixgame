@@ -1,4 +1,4 @@
-dialogueName = ("test_en.yarn");
+
 
 //show_message(filename_dir(dialogueName));
 

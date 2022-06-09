@@ -1,7 +1,9 @@
 if ami_clicked(){
-	var d = instance_create_layer(x, y, "Important", obj_chatterbox);
 	
-	with (d){
-		dialogueName = 0;	
-	}
+	instance_create_layer(x, y, "Important", obj_chatterbox, {
+		dialogueName: "test_en.yarn"
+	});
+	
+	
+	
 }

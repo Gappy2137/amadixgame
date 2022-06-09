@@ -21,7 +21,7 @@ if (_complete)
     
     if (ChatterboxIsWaiting(chatterbox)) //If Chatterbox is waiting for the user to press space... then... check for... that..
     {
-        if (keyboard_check_pressed(vk_space))
+        if (input_check("mouseLeft"))
         {
             ChatterboxContinue(chatterbox);
             //Always update your text elements after advancing chatterbox!
@@ -48,7 +48,7 @@ if (_complete)
 else
 {
     //If the text elements *haven't* all finished fading in...
-    if (keyboard_check_pressed(vk_space))
+    if (input_check("mouseLeft"))
     {
         //...and the player has pressed space then tell our Scribble typisy to skip the fade in and just display all the text
         var _i = 0;
