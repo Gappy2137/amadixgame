@@ -1,4 +1,6 @@
-dialogueName = undefined;
+dialogueName = ("test_en.yarn");
+
+//show_message(filename_dir(dialogueName));
 
 //Set the default font for Scribble to use
 scribble_font_set_default("font_dialogue");

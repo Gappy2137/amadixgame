@@ -17,7 +17,7 @@ function scr_player_movement() {
 	
 	if (key_run) && (moving){
 		if (spd >= (runspeed + _spd) - 0.3){
-			if (round(anim_frame) == 0)
+			if ((round(anim_frame) == 0) || (round(anim_frame) == 2))
 				running = 2;	
 		}else{
 			running = 1;
@@ -28,6 +28,10 @@ function scr_player_movement() {
 	
 	if (key_run) && (running == 2){
 		running = 2;	
+	}
+	
+	if (spd > max_spd){
+		spd = max_spd;	
 	}
 	
 	switch (state) {
@@ -185,24 +189,35 @@ function scr_player_movement() {
 	
 	dir = point_direction(x, y, x + hsp, y + vsp);
 	
-	if (spd > max_spd){
-		spd = max_spd;	
-	}
 	
 	//Naprawa poruszania sie po przekatnej
-	
-	
 	var diagonal = hor_keyPress != 0 && ver_keyPress != 0;
 	if (diagonal) && (!ice_collision){
-		if (running == 0){
-			hsp *= 0.8;
-			vsp *= 0.8;
-			anim_speed *= 0.8;	
+		if (state == player_state.wading)
+		|| (state == player_state.wading_idle)
+		|| (state == player_state.swimming)
+		|| (state == player_state.swimming_idle){
+			if (running == 0){
+				hsp *= 0.9;
+				vsp *= 0.9;
+				//anim_speed *= 0.8;	
+			}else{
+				hsp *= 0.9;
+				vsp *= 0.9;
+				//anim_speed *= 0.95;	
+			}
 		}else{
-			hsp *= 0.9;
-			vsp *= 0.9;
-			//anim_speed *= 0.95;	
+			if (running == 0){
+				hsp *= 0.8;
+				vsp *= 0.8;
+				anim_speed *= 0.8;	
+			}else{
+				hsp *= 0.9;
+				vsp *= 0.9;
+				//anim_speed *= 0.95;	
+			}
 		}
+
 
 	}
 	

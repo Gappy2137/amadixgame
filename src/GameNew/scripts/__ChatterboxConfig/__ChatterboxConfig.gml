@@ -16,7 +16,7 @@
 #macro CHATTERBOX_ESCAPE_CONTENT                  true
 #macro CHATTERBOX_ESCAPE_EXPRESSION_STRINGS       false
 
-#macro CHATTERBOX_INCLUDED_FILES_SUBDIRECTORY     ""
+#macro CHATTERBOX_INCLUDED_FILES_SUBDIRECTORY     "language/dialogue"
 
 #region Advanced
 

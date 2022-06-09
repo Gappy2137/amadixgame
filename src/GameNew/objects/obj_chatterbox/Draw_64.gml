@@ -1,4 +1,4 @@
-
+/*
 if (myPortrait[message_current] == -1){
 	scr_draw_gui_box_stretch(spr_dialoguebox, dialboxX, dialboxY, dialboxX + dialbox_width, dialboxY + dialbox_height);
 	textX = dialboxX + 4;	
@@ -39,7 +39,7 @@ if (myPortrait[message_current] == -1){
 	draw_sprite(myPortrait[message_current], myEmotion[message_current], portraitboxX, dialboxY);
 }
 
-
+*/
 
 
 if (ChatterboxIsStopped(chatterbox))

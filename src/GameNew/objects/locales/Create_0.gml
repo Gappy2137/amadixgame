@@ -1,4 +1,4 @@
-text = file_text_open_read(working_directory + "langs.json");
+text = file_text_open_read(working_directory + "language/langs.json");
 root = json_decode(text);
 global.lang_map = ds_map_find_value(root, "English");
 

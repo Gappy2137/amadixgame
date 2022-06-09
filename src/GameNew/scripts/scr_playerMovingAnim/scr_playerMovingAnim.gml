@@ -197,7 +197,7 @@ function scr_playerMovingAnim() {
 		running = false;
 	}
 	*/
-	if ( (abs(hsp) < .3) && (abs(vsp) < .3) ){
+	if ( (abs(hsp) < .05) && (abs(vsp) < .05) ){
 		anim_speed = 0;
 		anim_frame = 0;
 	}
@@ -208,9 +208,12 @@ function scr_playerMovingAnim() {
 			anim_frame = 1;
 		}
 	}
-
+	
 	//Shadow fix
-	if (state = player_state.wading) || (state = player_state.swimming) || (state = player_state.swimming_idle) || (state = player_state.wading_idle){
+	if (state = player_state.wading) 
+	|| (state = player_state.swimming) 
+	|| (state = player_state.swimming_idle) 
+	|| (state = player_state.wading_idle){
 		shadowEnable = false;
 	}else{
 		shadowEnable = true;	
