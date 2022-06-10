@@ -658,6 +658,7 @@
     {"id":{"name":"input_value_is_binding","path":"scripts/input_value_is_binding/input_value_is_binding.yy",},"order":9,},
     {"id":{"name":"obj_light_source","path":"objects/obj_light_source/obj_light_source.yy",},"order":0,},
     {"id":{"name":"snd_speech_retro","path":"sounds/snd_speech_retro/snd_speech_retro.yy",},"order":1,},
+    {"id":{"name":"spr_dialoguebox_arrow","path":"sprites/spr_dialoguebox_arrow/spr_dialoguebox_arrow.yy",},"order":15,},
     {"id":{"name":"scr_draw_item","path":"scripts/scr_draw_item/scr_draw_item.yy",},"order":3,},
     {"id":{"name":"__scribble_gen_7_build_pages","path":"scripts/__scribble_gen_7_build_pages/__scribble_gen_7_build_pages.yy",},"order":7,},
     {"id":{"name":"spr_amadix_classicTC_attack_r","path":"sprites/spr_amadix_classicTC_attack_r/spr_amadix_classicTC_attack_r.yy",},"order":8,},

@@ -21,11 +21,11 @@ if (_complete)
     
     if (ChatterboxIsWaiting(chatterbox)) //If Chatterbox is waiting for the user to press space... then... check for... that..
     {
-        if (input_check("mouseLeft"))
+        if (mouse_check_button_pressed(mb_left))
         {
-            ChatterboxContinue(chatterbox);
-            //Always update your text elements after advancing chatterbox!
-            refresh_text_elements();
+		    ChatterboxContinue(chatterbox);
+		    //Always update your text elements after advancing chatterbox!
+		    refresh_text_elements();
         }
     }
     else if (ChatterboxGetOptionCount(chatterbox)) //If Chatterbox is presenting the user with some options, check for that
@@ -48,7 +48,7 @@ if (_complete)
 else
 {
     //If the text elements *haven't* all finished fading in...
-    if (input_check("mouseLeft"))
+    if (mouse_check_button_pressed(mb_left))
     {
         //...and the player has pressed space then tell our Scribble typisy to skip the fade in and just display all the text
         var _i = 0;

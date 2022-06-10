@@ -1,18 +1,10 @@
 #__PrivCrochet_version:1
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: -855,-637
+__PrivCrochet_position: -709,-564
 __PrivCrochet_tags: 
 title: Start
 ---
-Hi, welcome to the [rainbow]Scribblebox[/rainbow] example! [slant](Scribble 8.0.1 + Chatterbox 2.2.1)[/slant]
-This project shows you how to set up the two libraries and how to get them working with each other.
-
--> Scribblewhat?
-    <<jump Scribblebox>>
--> Cool! Let's get started!
-    <<jump Tutorial>>
--> Oh uh... I accidentally opened this project...
-Um... Bye then...
+[speaker,spr_portrait_test,0,"Walter"]My name is [$ffdd30]Walter Hartwell White[/c]. I live at 308 Negra Arroyo Lane, Albuquerque, New Mexico, 87104.
 <<stop>>
 ===
 __PrivCrochet_colorID: 0
@@ -29,7 +21,6 @@ Lemme open up the GitHub repos for them.
 Uh, if you're ok with that?
 -> Sure, go right ahead.
 	Okey dokey, let me know when you come back...
-	<<wait>>
 	Pretty cool huh?
 	Wouldn't it be great if you could put them together?
 	-> Yes! How? I must know!
@@ -51,12 +42,10 @@ title: Tutorial
 [$9090FF]Scribble[/c] and [$FFFF90]Chatterbox[/c] are two different libraries that can be used separately or combined together.
 -> What's Chatterbox?
 	[$FFFF90]Chatterbox[/c] handles what text to show to you and also allows the player to choose options. [$FFFF90]Chatterbox[/c] is based on a narrative design language called "Yarn" which has been used for lots of professional/commercial games.
-	<<wait>>
 	<<jump Tutorial>>
 -> What's Scribble?
 	[$9090FF]Scribble[/c] draws the text itself. It does [wave]animation[/wave] and [cycle,0,20,70,40]colours[/cycle] and lots of other things.
 	What [$9090FF]Scribble[/c] draws is dictated by what [$FFFF90]Chatterbox[/c] passes to it.
-	<<wait>>
 	<<jump Tutorial>>
 -> Go on...
 <<jump TheBasicIdea>>

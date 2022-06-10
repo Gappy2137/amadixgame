@@ -39,9 +39,9 @@ input_default_key(ord("R"), "reload");
 input_default_key(vk_bslash, "console");
 
 // General
-input_default_key(mb_left, "mouseLeft");
-input_default_key(mb_right, "mouseRight");
-input_default_key(mb_middle, "mouseMiddle");
+input_default_mouse_button(mb_left, "mouseLeft");
+input_default_mouse_button(mb_right, "mouseRight");
+input_default_mouse_button(mb_middle, "mouseMiddle");
 
 // Keyboard and mouse
 input_player_source_set(INPUT_SOURCE.KEYBOARD_AND_MOUSE);

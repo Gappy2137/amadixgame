@@ -26,7 +26,7 @@ draw_sprite(legs_index, 0, x + 32, y + 16);
 draw_sprite(arms_index, 0, x + 32, y + 32);
 
 draw_sprite(arms2_index, 0, x + 32, y + 48);
-*/
+
 
 draw_text(x + 32, y, hsp);
 draw_text(x + 32, y + 8, vsp);
@@ -35,6 +35,6 @@ draw_text(x + 32, y + 24, running);
 draw_text(x + 32, y + 32, anim_speed);
 
 draw_text(x - 32, y, spd);
-
+*/
 
 event_inherited();

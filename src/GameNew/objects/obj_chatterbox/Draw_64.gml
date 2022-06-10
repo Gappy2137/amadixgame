@@ -46,10 +46,27 @@ if (ChatterboxIsStopped(chatterbox))
 {
     //If we've stopped we should say so
     //In a real game you'd close the dialogue system and permit user interaction again
-    scribble("(Chatterbox stopped)").draw(10, 10);
+    instance_destroy();
 }
 else
 {
+	
+	// Draw dialogue box
+	scr_draw_gui_box_stretch(spr_dialoguebox, dialboxX, dialboxY, dialboxX + dialbox_width, dialboxY + dialbox_height);
+	
+	if ((myPortrait != -1) && (myEmotion != -1)){
+		if (myPortrait != "spr_portrait_amadix"){
+			scr_draw_gui_box_stretch(spr_dialoguebox, dialboxX - portraitbox_width, dialboxY, dialboxX, dialboxY + dialbox_height);
+			draw_sprite(spr_portrait_amadix,
+			real(myEmotion),
+			dialboxX - portraitbox_width, dialboxY);
+		}else{
+			scr_draw_gui_box_stretch(spr_dialoguebox, dialboxX + dialbox_width, dialboxY, dialboxX + dialbox_width + portraitbox_width, dialboxY + dialbox_height);
+			draw_sprite(asset_get_index(myPortrait),
+			real(myEmotion),
+			dialboxX + dialbox_width, dialboxY);
+		}
+	}
     //Iterate over all of our text elements and draw them
     //We cache text elements for drawing in refresh_text_elements()
     var _i = 0;
@@ -61,9 +78,22 @@ else
         var _y       = _struct.y;
         var _element = _struct.element;
         var _typist  = _struct.typist;
+		
+		var _scale = 0.75;
         
         //Draw the text element
-        _element.draw(_x, _y, _typist);
+		_element.transform(_scale, _scale, 0);
+		_element.wrap((text_width * 1/_scale), (text_height * 1/_scale), false);
+		//_element.scale_to_box((text_width * 1/_scale), (text_height * 1/_scale));
+       
+	    _element.blend(c_white, 0.5);
+		_element.starting_format("font_dialogue", shadowColor);
+		_element.draw(_x + .5, _y + .5, _typist);
+		
+		_element.blend(c_white, 1);
+		_element.starting_format("font_dialogue", textColor);
+		_element.draw(_x, _y, _typist);
+		
         
         //Break out of the loop if this text element hasn't finished fading in
         if (_typist.get_state() < 1.0) break;
@@ -72,4 +102,9 @@ else
         
         ++_i;
     }
+	
+	if (ChatterboxIsWaiting(chatterbox)){
+		draw_sprite(spr_dialoguebox_arrow, 0, dialboxX + dialbox_width - 4, dialboxY + dialbox_height - 4);
+	}
+	
 }

@@ -3,8 +3,10 @@ function refresh_text_elements()
     text_elements = [];
     
     //Set all the Scribble t
-    var _x = 100;
-    var _y = 100;
+    var _x = textX;
+    var _y = textY;
+	
+	var _typist_speed = 0.5;
     
     //Iterate over all the content strings
     var _i = 0;
@@ -13,11 +15,8 @@ function refresh_text_elements()
         //Cache a new text element using the content text Chatterbox found
         var _element = scribble(ChatterboxGetContent(chatterbox, _i));
         
-        //Wrap our text so that it doesn't exceed the room's width
-        _element.wrap(room_width - 200);
-        
         //Create a new typist for the text element, and tell it to start typing in
-        var _typist = scribble_typist().in(1, 5);
+        var _typist = scribble_typist().in(_typist_speed, 0);
         
         //Store our new text element and typist
         array_push(text_elements, {
@@ -28,18 +27,19 @@ function refresh_text_elements()
         });
         
         //Move down a bit to make each content string look like a paragraph
-        _y += _element.get_height(_element) + 25;
+        _y += _element.get_height(_element);
         ++_i;
     }
     
     //Ident our options slightly
-    _x += 30;
+    _x += 10;
     
     //Space out the options from the content a little too
-    _y += 10;
+    _y -= 32;
     
     if (ChatterboxIsWaiting(chatterbox))
     {
+		/*
         //If we're in a waiting state (no options) then we should prompt the user to press space
         array_push(text_elements, {
             x: _x,
@@ -47,6 +47,9 @@ function refresh_text_elements()
             element: scribble("(Press space)"),
             typist: scribble_typist().in(1, 5)
         });
+		*/
+		
+		
     }
     else
     {
@@ -71,11 +74,8 @@ function refresh_text_elements()
             //Cache a new text element using our formatted string
             var _element = scribble(_string);
             
-            //Wrap our text so that it doesn't exceed the room's width
-            _element.wrap(room_width - 200);
-            
             //Create a new typist for the text element, and tell it to start typing in
-            var _typist = scribble_typist().in(1, 5);
+            var _typist = scribble_typist().in(_typist_speed, 0);
             
             //Store our new text element and typist
             array_push(text_elements, {
