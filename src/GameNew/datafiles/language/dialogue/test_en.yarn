@@ -4,7 +4,7 @@ __PrivCrochet_position: -709,-564
 __PrivCrochet_tags: 
 title: Start
 ---
-[speaker,spr_portrait_test,0,"Walter"]My name is [$ffdd30]Walter Hartwell White[/c]. I live at 308 Negra Arroyo Lane, Albuquerque, New Mexico, 87104.
+[speaker,spr_portrait_walter,0,"Walter",snd_speech_walter]My name is [$ffdd30]Walter Hartwell White[/c]. I live at 308 Negra Arroyo Lane, Albuquerque, New Mexico, 87104.
 <<stop>>
 ===
 __PrivCrochet_colorID: 0

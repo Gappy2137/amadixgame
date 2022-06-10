@@ -55,16 +55,18 @@ else
 	scr_draw_gui_box_stretch(spr_dialoguebox, dialboxX, dialboxY, dialboxX + dialbox_width, dialboxY + dialbox_height);
 	
 	if ((myPortrait != -1) && (myEmotion != -1)){
-		if (myPortrait != "spr_portrait_amadix"){
+		if (myPortrait == "spr_portrait_amadix"){
 			scr_draw_gui_box_stretch(spr_dialoguebox, dialboxX - portraitbox_width, dialboxY, dialboxX, dialboxY + dialbox_height);
 			draw_sprite(spr_portrait_amadix,
 			real(myEmotion),
 			dialboxX - portraitbox_width, dialboxY);
+			scr_draw_gui_box_stretch(spr_dialoguebox_edge, dialboxX - portraitbox_width, dialboxY, dialboxX, dialboxY + dialbox_height);
 		}else{
 			scr_draw_gui_box_stretch(spr_dialoguebox, dialboxX + dialbox_width, dialboxY, dialboxX + dialbox_width + portraitbox_width, dialboxY + dialbox_height);
 			draw_sprite(asset_get_index(myPortrait),
 			real(myEmotion),
 			dialboxX + dialbox_width, dialboxY);
+			scr_draw_gui_box_stretch(spr_dialoguebox_edge, dialboxX + dialbox_width, dialboxY, dialboxX + dialbox_width + portraitbox_width, dialboxY + dialbox_height);
 		}
 	}
     //Iterate over all of our text elements and draw them
@@ -94,6 +96,9 @@ else
 		_element.starting_format("font_dialogue", textColor);
 		_element.draw(_x, _y, _typist);
 		
+		if (mySound != -1)
+			_typist.sound(asset_get_index(mySound), 10, 1, 1);
+		
         
         //Break out of the loop if this text element hasn't finished fading in
         if (_typist.get_state() < 1.0) break;
@@ -102,9 +107,9 @@ else
         
         ++_i;
     }
-	
+	/*
 	if (ChatterboxIsWaiting(chatterbox)){
 		draw_sprite(spr_dialoguebox_arrow, 0, dialboxX + dialbox_width - 4, dialboxY + dialbox_height - 4);
 	}
-	
+	*/
 }

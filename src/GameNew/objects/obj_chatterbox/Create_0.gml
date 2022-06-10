@@ -5,6 +5,8 @@ myEmotion = -1;
 
 myName = -1;
 
+mySound = -1;
+
 dialboxX = 145;
 dialboxY = 200;
 dialbox_width = 192;
