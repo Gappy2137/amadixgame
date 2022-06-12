@@ -15,38 +15,40 @@ repeat(array_length(text_elements))
 
 #endregion
 
-if (_complete)
-{
+
+
+if (_complete){
     //If all of the text element have faded in, allow for user input
     
-    if (ChatterboxIsWaiting(chatterbox)) //If Chatterbox is waiting for the user to press space... then... check for... that..
-    {
-        if (mouse_check_button_pressed(mb_left))
-        {
+    if (ChatterboxIsWaiting(chatterbox)){
+		waitArrow = true;
+		
+        if (mouse_check_button_pressed(mb_left)){
 		    ChatterboxContinue(chatterbox);
-		    //Always update your text elements after advancing chatterbox!
+			
 		    refresh_text_elements();
         }
-    }
-    else if (ChatterboxGetOptionCount(chatterbox)) //If Chatterbox is presenting the user with some options, check for that
-    {
+    }else if (ChatterboxGetOptionCount(chatterbox)){
+		waitArrow = false;
         var _index = undefined;
         if (keyboard_check_pressed(ord("1"))) _index = 0;
         if (keyboard_check_pressed(ord("2"))) _index = 1;
         if (keyboard_check_pressed(ord("3"))) _index = 2;
         if (keyboard_check_pressed(ord("4"))) _index = 3;
         
-        if (_index != undefined)
-        {
+        if (_index != undefined){
             //If the player pressed a number key, choose the corresponding option
             ChatterboxSelect(chatterbox, _index);
             //Always update your text elements after advancing chatterbox!
             refresh_text_elements();
         }
-    }
+    }else{
+		waitArrow = false;	
+	}
 }
-else
-{
+else{
+	waitArrow = false;
+	
     //If the text elements *haven't* all finished fading in...
     if (mouse_check_button_pressed(mb_left))
     {

@@ -7,21 +7,41 @@ myName = -1;
 
 mySound = -1;
 
-dialboxX = 145;
+dialboxX = 176;
 dialboxY = 200;
+
+dialboxX_amadix = 112;
+dialboxX_empty = 144;
+
 dialbox_width = 192;
 dialbox_height = 64;
 
 portraitboxX = 112;
+portraitboxX_amadix = 304;
 portraitbox_width = 64;
 
 textX = dialboxX + 4;
 textY = dialboxY + 4;
+
+textfix = 0;
+
 text_width = dialbox_width - 6;
 text_height = dialbox_height - 4;
 
+nameboxY = 184;
+namebox_height = 16;
+
 textColor = #FFFFFF;
 shadowColor = #000000;
+
+waitArrow = false;
+boxType = 0;
+
+/*
+0 - amadix
+1 - inna osoba
+2 - wiadomosc
+*/
 
 //show_message(filename_dir(dialogueName));
 

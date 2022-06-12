@@ -1,17 +1,15 @@
-function refresh_text_elements()
-{
+function refresh_text_elements(){
     text_elements = [];
     
     //Set all the Scribble t
-    var _x = textX;
+	var _x = textX;
     var _y = textY;
 	
 	var _typist_speed = 0.5;
     
     //Iterate over all the content strings
     var _i = 0;
-    repeat(ChatterboxGetContentCount(chatterbox))
-    {
+    repeat(ChatterboxGetContentCount(chatterbox)){
         //Cache a new text element using the content text Chatterbox found
         var _element = scribble(ChatterboxGetContent(chatterbox, _i));
         
@@ -37,8 +35,7 @@ function refresh_text_elements()
     //Space out the options from the content a little too
     _y -= 32;
     
-    if (ChatterboxIsWaiting(chatterbox))
-    {
+    if (ChatterboxIsWaiting(chatterbox)){
 		/*
         //If we're in a waiting state (no options) then we should prompt the user to press space
         array_push(text_elements, {
@@ -48,17 +45,12 @@ function refresh_text_elements()
             typist: scribble_typist().in(1, 5)
         });
 		*/
+    }else{
 		
-		
-    }
-    else
-    {
         var _i = 0;
-        repeat(ChatterboxGetOptionCount(chatterbox))
-        {
+        repeat(ChatterboxGetOptionCount(chatterbox)){
             //Start formatting our string with some colour!
-            switch(_i)
-            {
+            switch(_i){
                 case 0: var _string = "[#90FF90]"; break;
                 case 1: var _string = "[#FF9090]"; break;
                 case 2: var _string = "[#FFFF90]"; break;
@@ -86,7 +78,7 @@ function refresh_text_elements()
             });
             
             //Move down a bit to visually separate each option
-            _y += _element.get_height() + 10;
+            _y += _element.get_height() + 8;
             ++_i;
         }
     }

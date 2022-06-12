@@ -4,11 +4,12 @@ __PrivCrochet_position: -709,-564
 __PrivCrochet_tags: 
 title: Start
 ---
-[speaker,spr_portrait_walter,0,"Walter",snd_speech_walter]My name is [$ffdd30]Walter Hartwell White[/c]. I live at 308 Negra Arroyo Lane, Albuquerque, New Mexico, 87104.
-<<stop>>
+[speaker,spr_portrait_walter,0,Walter,snd_speech_walter]My name is [$ffdd30]Walter Hartwell White[/c]. I live at 308 Negra Arroyo Lane, Albuquerque, New Mexico, 87104. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+<<wait>>
+<<jump AmadixResponse>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 54,-462
+__PrivCrochet_position: 98,-149
 __PrivCrochet_tags: 
 title: Scribblebox
 ---
@@ -78,4 +79,21 @@ I guess that's everything then...
 Let me know what you get up to!
 Bye!
 -> See ya~
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: -324,-735
+__PrivCrochet_tags: 
+title: AmadixResponse
+---
+[speaker,spr_portrait_amadix,0,Amadeusz,snd_speech_retro]Lorem ipsum dolor sit amet, consectetur adipiscing elit. [jitter]Nullam[/jitter] vulputate elit in fermentum egestas.
+<<wait>>
+<<jump EmptySpeaker>>
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 73,-513
+__PrivCrochet_tags: 
+title: EmptySpeaker
+---
+[speaker,-1,-1,-1,snd_speech_default]Lorem ipsum dolor sit amet, consectetur adipiscing elit. [shake]Nullam[/shake] vulputate elit in fermentum egestas.
+<<stop>>
 ===
