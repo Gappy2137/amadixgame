@@ -183,12 +183,13 @@ enum itemtype{
 	handgun				= 12,
 	magazine			= 13,
 	alcohol				= 14,
-	shotgun				= 15
+	shotgun				= 15,
+	height				= 16
 }
 
 ds_item_info = ds_grid_create(3, item.height);
 
-ds_item_all = ds_grid_create(11, item.height - 1);
+ds_item_all = ds_grid_create(11, item.height);
 
 //Siatka wszystkich przedmiotow
 var i = 0;
