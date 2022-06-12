@@ -356,6 +356,27 @@ if (show_inventory) && (!show_slots){
 		var effect2_x = 0, effect2_y = 0;
 		var effect3_x = 0, effect3_y = 0;
 		var effect_height = 0;
+		
+		var efx_num = ds_grid_height(inv_grid[# INVEFFECTS, selected_slot]);
+		
+		switch(efx_num){
+			case 0:
+				
+			break;
+			case 1:
+				effect1 = inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 0];
+			break;
+			case 2:
+				effect1 = inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 0];
+				effect2 = inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 1];
+			break;
+			case 3:
+				effect1 = inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 0];
+				effect2 = inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 1];
+				effect3 = inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 2];
+			break;
+		}
+		/*
 		if (inv_grid[# INVEFFECTS, selected_slot] != 0){
 			effect1 = inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 0];
 			if (inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 1] != 0){
@@ -365,7 +386,7 @@ if (show_inventory) && (!show_slots){
 				}
 			}
 		}
-		
+		*/
 		
 		if (infobox_x + infobox_width > obj_display.ideal_width){
 			infobox_x = mousex - 8 - infobox_width;

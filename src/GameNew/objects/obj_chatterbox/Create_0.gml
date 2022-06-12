@@ -41,6 +41,7 @@ boxType = 0;
 0 - amadix
 1 - inna osoba
 2 - wiadomosc
+3 - wybor
 */
 
 //show_message(filename_dir(dialogueName));
