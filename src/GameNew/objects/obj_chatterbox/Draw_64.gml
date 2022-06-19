@@ -4,7 +4,7 @@ if (ChatterboxIsStopped(chatterbox)){
     instance_destroy();
 }else{
 	
-
+if (!show)exit;
 	
 	switch(boxType){
 		case 0:
@@ -101,6 +101,57 @@ if (ChatterboxIsStopped(chatterbox)){
 				draw_sprite(spr_dialoguebox_arrow, 0, dialboxX_empty + dialbox_width, dialboxY + dialbox_height);	
 			}
 		break;
+		case 3:
+		
+			if (choiceAnim){
+
+				
+				
+				// Portraitbox
+				scr_draw_gui_box_stretch(spr_dialoguebox, choiceport_x, dialboxY, choiceport_x + portraitbox_width, dialboxY + dialbox_height);
+			
+				// Portrait
+				if ((choiceAnimMid) || (choiceAnimDone)){
+					draw_sprite(spr_portrait_amadix,
+					0,
+					choiceport_x, dialboxY);
+				}else{
+					draw_sprite(asset_get_index(myPortrait),
+					real(myEmotion),
+					choiceport_x, dialboxY);
+				}
+				// Portrait edge
+				scr_draw_gui_box_stretch(spr_dialoguebox_edge, choiceport_x, dialboxY, choiceport_x + portraitbox_width, dialboxY + dialbox_height);
+				
+				
+				// Main dialoguebox
+				scr_draw_gui_box_stretch(spr_dialoguebox, choicebox1_x, dialboxY, choicebox1_x + dialbox_width, dialboxY + dialbox_height);	
+				
+				// Choicebox
+				scr_draw_gui_box_stretch(spr_dialoguebox, choicebox2_x, dialboxY, choicebox2_x + dialbox_width, dialboxY + dialbox_height);	
+
+
+				
+			}else{
+				// Main dialoguebox
+				scr_draw_gui_box_stretch(spr_dialoguebox, dialboxX_choice, dialboxY, dialboxX_choice + dialbox_width, dialboxY + dialbox_height);	
+			
+				// Choicebox
+				scr_draw_gui_box_stretch(spr_dialoguebox, choiceboxX, dialboxY, choiceboxX + dialbox_width, dialboxY + dialbox_height);	
+			
+				// Portraitbox
+				scr_draw_gui_box_stretch(spr_dialoguebox, portraitboxX_choice, dialboxY, portraitboxX_choice + portraitbox_width, dialboxY + dialbox_height);
+			
+				// Portrait
+				draw_sprite(spr_portrait_amadix,
+				0,
+				portraitboxX_choice, dialboxY);
+			
+				// Portrait edge
+				scr_draw_gui_box_stretch(spr_dialoguebox_edge, portraitboxX_choice, dialboxY, portraitboxX_choice + portraitbox_width, dialboxY + dialbox_height);
+			}
+
+		break;
 	}
 	
 	var _i = 0;
@@ -123,11 +174,19 @@ if (ChatterboxIsStopped(chatterbox)){
        
 	    _element.blend(c_white, 0.5);
 		_element.starting_format("font_dialogue", shadowColor);
-		_element.draw(_x + .5  - textfix, _y + .5, _typist);
+		if (choiceAnim)
+			_element.draw(choicebox1_x + 4 + .5, _y + .5, _typist);	
+		else
+			_element.draw(_x + .5  - textfix, _y + .5, _typist);	
+		
 		
 		_element.blend(c_white, 1);
 		_element.starting_format("font_dialogue", textColor);
-		_element.draw(_x - textfix, _y, _typist);
+		if (choiceAnim)
+			_element.draw(choicebox1_x + 4, _y, _typist);
+		else
+			_element.draw(_x - textfix, _y, _typist);
+		
 		
 		if (mySound != -1)
 			_typist.sound(asset_get_index(mySound), 10, 1, 1);
@@ -143,3 +202,6 @@ if (ChatterboxIsStopped(chatterbox)){
 	
 	
 }
+draw_text(128, 128, choiceAnim);
+draw_text(128, 148, boxType);
+draw_text(128, 164, choicebox1_x);

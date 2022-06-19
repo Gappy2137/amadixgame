@@ -25,7 +25,6 @@ if (_complete){
 		
         if (mouse_check_button_pressed(mb_left)){
 		    ChatterboxContinue(chatterbox);
-			
 		    refresh_text_elements();
         }
     }else if (ChatterboxGetOptionCount(chatterbox)){
@@ -50,14 +49,67 @@ else{
 	waitArrow = false;
 	
     //If the text elements *haven't* all finished fading in...
-    if (mouse_check_button_pressed(mb_left))
-    {
+    if (mouse_check_button_pressed(mb_left)){
         //...and the player has pressed space then tell our Scribble typisy to skip the fade in and just display all the text
         var _i = 0;
-        repeat(array_length(text_elements))
-        {
+        repeat(array_length(text_elements)){
             text_elements[_i].typist.skip();
             ++_i;
         }
     }
+}
+
+switch(myPortrait){
+	case "-1":
+		if (choiceStop == "0"){
+			boxType = 2;
+			textfix = 32;
+			choiceAnim = false;
+		}else{
+			boxType = 3;
+			choiceAnim = true;
+		}
+	break;
+	case "spr_portrait_amadix":
+		boxType = 0;	
+		textfix = 64;
+		choiceAnim = false;
+	break;
+	default:
+		if (choiceStop == "0"){
+			boxType = 1;	
+			textfix = 0;
+			choiceAnim = false;
+		}else{
+			boxType = 3;
+			choiceAnim = true;
+		}
+	break;
+}
+
+var _mid = 24;
+
+if (choiceAnim){
+	choicebox1_x = lerp(choicebox1_x, choicebox1_tox, .3);
+	choicebox2_x = lerp(choicebox2_x, choicebox2_tox, .3);
+	choiceport_x = lerp(choiceport_x, choiceport_tox, .3);
+	
+	if ((round(choicebox1_x) >= choicebox1_tox + _mid) && (round(choicebox1_x) <= choicebox1_tox + _mid + 8)){
+		choiceAnimMid = true;	
+	}
+	if (round(choicebox1_x) == choicebox1_tox){
+
+		choicebox1_x = choicebox1_fromx;
+		choicebox2_x = choicebox2_fromx;
+		choiceport_x = choiceport_fromx;
+		
+		choiceAnimDone = true;
+		choiceAnimMid = false;
+		choiceAnim = false;
+	}
+	
+}
+if (choiceAnimDone){
+	choiceAnim = false;
+	textfix = 160;	
 }

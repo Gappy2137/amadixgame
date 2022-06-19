@@ -119,6 +119,7 @@
     {"id":{"name":"time_set","path":"scripts/time_set/time_set.yy",},"order":6,},
     {"id":{"name":"input_binding_set_safe","path":"scripts/input_binding_set_safe/input_binding_set_safe.yy",},"order":7,},
     {"id":{"name":"obj_daynightfade","path":"objects/obj_daynightfade/obj_daynightfade.yy",},"order":13,},
+    {"id":{"name":"dialogue_choice","path":"scripts/dialogue_choice/dialogue_choice.yy",},"order":2,},
     {"id":{"name":"spr_portrait_test2","path":"sprites/spr_portrait_test2/spr_portrait_test2.yy",},"order":3,},
     {"id":{"name":"spr_amadix_sawedoff_d_shoot","path":"sprites/spr_amadix_sawedoff_d_shoot/spr_amadix_sawedoff_d_shoot.yy",},"order":7,},
     {"id":{"name":"spr_pine_2","path":"sprites/spr_pine_2/spr_pine_2.yy",},"order":9,},
