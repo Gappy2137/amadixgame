@@ -199,9 +199,7 @@ if (!show)exit;
         
         ++_i;
     }
-	
-	
+
 }
 draw_text(128, 128, choiceAnim);
 draw_text(128, 148, boxType);
-draw_text(128, 164, choicebox1_x);

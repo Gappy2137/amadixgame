@@ -62,6 +62,7 @@ choiceport_tox = 208;
 choiceport_x = portraitboxX;
 
 show = false;
+
 alarm[0] = 2;
 
 /*

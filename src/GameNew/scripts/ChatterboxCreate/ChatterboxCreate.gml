@@ -48,11 +48,18 @@ function __ChatterboxClass(_filename, _singleton, _local_scope) constructor
     singleton_text      = _singleton;
     filename            = _filename;
     file                = global.chatterboxFiles[? filename];
-    content             = [];
-    contentMetadata     = [];
+    
+    content              = [];
+    contentConditionBool = [];
+    contentMetadata      = [];
+    contentStructArray   = [];
+    
     option              = [];
+    optionConditionBool = [];
     optionMetadata      = [];
-    option_instruction  = [];
+    optionInstruction   = [];
+    optionStructArray   = [];
+    
     current_node        = undefined;
     current_instruction = undefined;
     stopped             = true;
@@ -123,7 +130,7 @@ function __ChatterboxClass(_filename, _singleton, _local_scope) constructor
             
             if (optionConditionBool[_index])
             {
-                current_instruction = option_instruction[_index];
+                current_instruction = optionInstruction[_index];
                 __ChatterboxVM();
             }
             else
@@ -150,6 +157,50 @@ function __ChatterboxClass(_filename, _singleton, _local_scope) constructor
             
             current_instruction = wait_instruction;
             __ChatterboxVM();
+        }
+    }
+    
+    static Wait = function()
+    {
+        if (!VerifyIsLoaded())
+        {
+            __ChatterboxError("Could not continue because \"", filename, "\" is not loaded");
+            return undefined;
+        }
+        else
+        {
+            if (waiting)
+            {
+                __ChatterboxError("Can't wait, provided chatterbox is already waiting");
+                return undefined;
+            }
+            
+            //Figure out if we're currently processing this chatterbox in a VM
+            var _currentlyProcessing = false;
+            var _i = 0;
+            repeat(array_length(global.__chatterboxVMInstanceStack))
+            {
+                if (global.__chatterboxVMInstanceStack[_i] == self)
+                {
+                    _currentlyProcessing = true;
+                    break;
+                }
+                
+                ++_i;
+            }
+            
+            if (_currentlyProcessing)
+            {
+                //If we *are* processing this chatterbox then set this particular global to <true>
+                //We pick this global up at the bottom of the VM
+                global.__chatterboxVMForceWait = true;
+            }
+            else
+            {
+                //Otherwise set up a waiting state
+                waiting = true;
+                wait_instruction = current_instruction;
+            }
         }
     }
     
@@ -217,6 +268,12 @@ function __ChatterboxClass(_filename, _singleton, _local_scope) constructor
         return contentMetadata[_index];
     }
     
+    static GetContentArray = function()
+    {
+        VerifyIsLoaded();
+        return contentStructArray;
+    }
+    
     #endregion
     
     
@@ -248,6 +305,12 @@ function __ChatterboxClass(_filename, _singleton, _local_scope) constructor
         VerifyIsLoaded();
         if ((_index < 0) || (_index >= array_length(option))) return undefined;
         return optionConditionBool[_index];
+    }
+    
+    static GetOptionArray = function()
+    {
+        VerifyIsLoaded();
+        return optionStructArray;
     }
     
     #endregion
@@ -287,7 +350,7 @@ function __ChatterboxClass(_filename, _singleton, _local_scope) constructor
                 
                 content             = [];
                 option              = [];
-                option_instruction  = [];
+                optionInstruction  = [];
                 current_node        = undefined;
                 current_instruction = undefined;
                 stopped             = true;

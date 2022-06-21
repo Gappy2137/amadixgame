@@ -1,7 +1,9 @@
 #region Internal Macro Definitions
 
-#macro __CHATTERBOX_VERSION  "2.2.3"
-#macro __CHATTERBOX_DATE     "2022-02-02"
+#macro __CHATTERBOX_VERSION  "2.4.0"
+#macro __CHATTERBOX_DATE     "2022-06-18"
+
+#macro CHATTERBOX_CURRENT  global.__chatterboxCurrent
 
 #macro __CHATTERBOX_DEBUG_INIT      false
 #macro __CHATTERBOX_DEBUG_LOADER    false
@@ -80,6 +82,9 @@ global.__chatterboxDefaultFile          = "";
 global.__chatterboxIndentSize           = 0;
 global.__chatterboxFindReplaceOldString = ds_list_create();
 global.__chatterboxFindReplaceNewString = ds_list_create();
+global.__chatterboxVMInstanceStack      = [];
+global.__chatterboxVMForceWait          = false;
+global.__chatterboxCurrent              = undefined;
 if (!variable_global_exists("__chatterbox_functions")) global.__chatterboxFunctions = ds_map_create();
 
 //Big ol' list of operators. Operators at the top at processed first
@@ -168,7 +173,7 @@ function __ChatterboxError()
 
 /// @param string
 /// @param leading
-function __ChatterboxRemoveWhitespace(_string, _leading)
+function __ChatterboxCompilerRemoveWhitespace(_string, _leading)
 {
     global.__chatterboxIndentSize = 0;
     
@@ -306,6 +311,35 @@ function __ChatterboxStringLimit(_string, _max_length)
     if (string_length(_string) <= 20) return _string;
     
     return string_copy(_string, 1, _max_length-3) + "...";
+}
+
+function __ChatterboxStripOuterWhitespace(_string)
+{
+    return __ChatterboxStripLeadingWhitespace(__ChatterboxStripTrailingWhitespace(_string));
+}
+
+function __ChatterboxStripLeadingWhitespace(_string)
+{
+    var _i = 0;
+    repeat(string_length(_string))
+    {
+        if (ord(string_char_at(_string, _i+1)) > 32) break;
+        ++_i;
+    }
+    
+    return string_delete(_string, 1, _i);
+}
+
+function __ChatterboxStripTrailingWhitespace(_string)
+{
+    var _i = string_length(_string);
+    repeat(_i)
+    {
+        if (ord(string_char_at(_string, _i)) > 32) break;
+        --_i;
+    }
+    
+    return string_copy(_string, 1, _i);
 }
 
 #endregion

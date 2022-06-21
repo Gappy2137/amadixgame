@@ -3,10 +3,13 @@ function __ChatterboxVM()
     content              = [];
     contentConditionBool = [];
     contentMetadata      = [];
+    contentStructArray   = [];
+    
     option               = [];
     optionConditionBool  = [];
     optionMetadata       = [];
-    option_instruction   = [];
+    optionInstruction    = [];
+    optionStructArray    = [];
     
     stopped          = false;
     waiting          = false;
@@ -22,7 +25,14 @@ function __ChatterboxVM()
         return undefined;
     }
     
+    array_push(global.__chatterboxVMInstanceStack, self);
+    global.__chatterboxCurrent = self;
+    
     __ChatterboxVMInner(current_instruction);
+    
+    array_pop(global.__chatterboxVMInstanceStack);
+    global.__chatterboxCurrent = (array_length(global.__chatterboxVMInstanceStack) <= 0)? undefined : global.__chatterboxVMInstanceStack[array_length(global.__chatterboxVMInstanceStack)-1];
+    
     if (__CHATTERBOX_DEBUG_VM) __ChatterboxTrace("HALT");
 }
 
@@ -51,10 +61,17 @@ function __ChatterboxVMInner(_instruction)
                     var _branch = variable_struct_get(_instruction, "option_branch");
                     if (_branch == undefined) _branch = variable_struct_get(_instruction, "next");
                     
-                    array_push(option, _instruction.text.Evaluate(local_scope, filename, false));
+                    var _optionString = _instruction.text.Evaluate(local_scope, filename, false);
+                    array_push(option, _optionString);
                     array_push(optionConditionBool, !_condition_failed);
                     array_push(optionMetadata, _instruction.metadata);
-                    array_push(option_instruction, _branch);
+                    array_push(optionInstruction, _branch);
+                    
+                    array_push(optionStructArray, {
+                        text: _optionString,
+                        conditionBool: !_condition_failed,
+                        metadata: _instruction.metadata,
+                    });
                     
                     if (__CHATTERBOX_DEBUG_VM) __ChatterboxTrace(__ChatterboxGenerateIndent(_instruction.indent), (_condition_failed? "<false> " : ""), "-> \"", _instruction.text.raw_string, "\"    ", instanceof(_branch));
                 }
@@ -76,9 +93,16 @@ function __ChatterboxVMInner(_instruction)
                 switch(_instruction.type)
                 {
                     case "content":
-                        array_push(content, _instruction.text.Evaluate(local_scope, filename, false));
+                        var _contentString = _instruction.text.Evaluate(local_scope, filename, false);
+                        array_push(content, _contentString);
                         array_push(contentConditionBool, !_condition_failed);
                         array_push(contentMetadata, _instruction.metadata);
+                        
+                        array_push(contentStructArray, {
+                            text: _contentString,
+                            conditionBool: !_condition_failed,
+                            metadata: _instruction.metadata,
+                        });
                         
                         if (__CHATTERBOX_DEBUG_VM) __ChatterboxTrace(__ChatterboxGenerateIndent(_instruction.indent), (_condition_failed? "<false> " : ""), _instruction.text.raw_string);
                         
@@ -99,9 +123,7 @@ function __ChatterboxVMInner(_instruction)
                     break;
                     
                     case "wait":
-                        waiting = true;
-                        wait_instruction = _instruction.next;
-                        _do_next = false;
+                        global.__chatterboxVMForceWait = true;
                         if (__CHATTERBOX_DEBUG_VM) __ChatterboxTrace(__ChatterboxGenerateIndent(_instruction.indent), "<<wait>>");
                     break;
                     
@@ -208,10 +230,8 @@ function __ChatterboxVMInner(_instruction)
                         
                         if (is_string(_result) && (_result == "<<wait>>"))
                         {
-                            waiting = true;
-                            wait_instruction = _instruction.next;
-                            _do_next = false;
-                            if (__CHATTERBOX_DEBUG_VM) __ChatterboxTrace(__ChatterboxGenerateIndent(_instruction.indent), "<<wait>> (returned by function)");
+                            global.__chatterboxVMForceWait = true;
+                            if (__CHATTERBOX_DEBUG_VM) __ChatterboxTrace(__ChatterboxGenerateIndent(_instruction.indent), "<<wait>> returned by function");
                         }
                     break;
                     
@@ -262,6 +282,16 @@ function __ChatterboxVMInner(_instruction)
                 }
             }
         }
+    }
+    
+    if (global.__chatterboxVMForceWait)
+    {
+        global.__chatterboxVMForceWait = false;
+        __ChatterboxTrace(__ChatterboxGenerateIndent(_instruction.indent), "<<wait>> (forced)");
+        
+        waiting = true;
+        wait_instruction = _instruction.next;
+        _do_next = false;
     }
     
     if (_do_next)

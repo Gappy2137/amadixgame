@@ -6,22 +6,18 @@ title: Start
 ---
 [choice,0][speaker,spr_portrait_walter,0,Walter,snd_speech_walter]My name is [$ffdd30]Walter Hartwell White[/c]. I live at 308 Negra Arroyo Lane, Albuquerque, New Mexico, 87104.[delay,100][speed,0.5] I'm [shake]coming after you[/shake].[/speed]
 <<wait>>
-[choice,1]
-//[speaker,spr_portrait_walter,0,Walter,snd_speech_default]
+[choice,1][speaker,spr_portrait_walter,0,Walter,snd_speech_walter]My name is [$ffdd30]Walter Hartwell White[/c]. I live at 308 Negra Arroyo Lane, Albuquerque, New Mexico, 87104.[delay,100][speed,0.5] I'm [shake]coming after you[/shake].[/speed]
 -> What?
-    [choice,0]
-    [speaker,spr_portrait_amadix,0,Amadeusz,snd_speech_retro]What do you mean by this?
+    [speaker,spr_portrait_amadix,0,Amadeusz,snd_speech_retro][choice,0]What do you mean by this?
     <<wait>>
     [speaker,spr_portrait_walter,0,Walter,snd_speech_walter]Bravo Vince!
     <<stop>>
 -> Try me.
-    [choice,0]
-    [speaker,spr_portrait_amadix,0,Amadeusz,snd_speech_retro]Try me, bitch!
+    [speaker,spr_portrait_amadix,0,Amadeusz,snd_speech_retro][choice,0]Try me, bitch!
     <<wait>>
     <<jump AmadixResponse>>
 -> Chill out...
-    [choice,0]
-    [speaker,spr_portrait_amadix,0,Amadeusz,snd_speech_retro]Maybe you should try to chill out?
+    [speaker,spr_portrait_amadix,0,Amadeusz,snd_speech_retro][choice,0]Maybe you should try to chill out?
     <<wait>>
     <<jump EmptySpeaker>>
 ===

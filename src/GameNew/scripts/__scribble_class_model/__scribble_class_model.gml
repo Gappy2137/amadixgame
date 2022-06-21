@@ -52,6 +52,7 @@ function __scribble_class_model(_element, _model_cache_name) constructor
     __has_thai       = false;
     __has_hebrew     = false;
     __has_devanagari = false;
+    __has_animation  = false;
     
     __pages_array = []; //Stores each page of text
     
@@ -63,7 +64,7 @@ function __scribble_class_model(_element, _model_cache_name) constructor
         
         __last_drawn = current_time;
         
-        __pages_array[_page].__submit(_msdf_feather_thickness, (__has_arabic || __has_thai) && _double_draw);
+        __pages_array[_page].__submit(_msdf_feather_thickness, (__has_arabic || __has_thai || SCRIBBLE_ALWAYS_DOUBLE_DRAW) && _double_draw);
     }
     
     static __freeze = function()
@@ -172,17 +173,17 @@ function __scribble_class_model(_element, _model_cache_name) constructor
         
         if (_end < 0)
         {
-            var _left   = _glyph_grid[# 0, __SCRIBBLE_GLYPH_LAYOUT.LEFT  ];
-            var _top    = _glyph_grid[# 0, __SCRIBBLE_GLYPH_LAYOUT.TOP   ];
-            var _right  = _glyph_grid[# 0, __SCRIBBLE_GLYPH_LAYOUT.LEFT  ];
-            var _bottom = _glyph_grid[# 0, __SCRIBBLE_GLYPH_LAYOUT.BOTTOM];
+            var _left   = _glyph_grid[# 0, __SCRIBBLE_GLYPH_LAYOUT.__LEFT  ];
+            var _top    = _glyph_grid[# 0, __SCRIBBLE_GLYPH_LAYOUT.__TOP   ];
+            var _right  = _glyph_grid[# 0, __SCRIBBLE_GLYPH_LAYOUT.__LEFT  ];
+            var _bottom = _glyph_grid[# 0, __SCRIBBLE_GLYPH_LAYOUT.__BOTTOM];
         }
         else
         {
-            var _left   = ds_grid_get_min(_glyph_grid, _start, __SCRIBBLE_GLYPH_LAYOUT.LEFT,   _end, __SCRIBBLE_GLYPH_LAYOUT.LEFT  );
-            var _top    = ds_grid_get_min(_glyph_grid, _start, __SCRIBBLE_GLYPH_LAYOUT.TOP,    _end, __SCRIBBLE_GLYPH_LAYOUT.TOP   );
-            var _right  = ds_grid_get_max(_glyph_grid, _start, __SCRIBBLE_GLYPH_LAYOUT.RIGHT,  _end, __SCRIBBLE_GLYPH_LAYOUT.RIGHT );
-            var _bottom = ds_grid_get_max(_glyph_grid, _start, __SCRIBBLE_GLYPH_LAYOUT.BOTTOM, _end, __SCRIBBLE_GLYPH_LAYOUT.BOTTOM);
+            var _left   = ds_grid_get_min(_glyph_grid, _start, __SCRIBBLE_GLYPH_LAYOUT.__LEFT,   _end, __SCRIBBLE_GLYPH_LAYOUT.__LEFT  );
+            var _top    = ds_grid_get_min(_glyph_grid, _start, __SCRIBBLE_GLYPH_LAYOUT.__TOP,    _end, __SCRIBBLE_GLYPH_LAYOUT.__TOP   );
+            var _right  = ds_grid_get_max(_glyph_grid, _start, __SCRIBBLE_GLYPH_LAYOUT.__RIGHT,  _end, __SCRIBBLE_GLYPH_LAYOUT.__RIGHT );
+            var _bottom = ds_grid_get_max(_glyph_grid, _start, __SCRIBBLE_GLYPH_LAYOUT.__BOTTOM, _end, __SCRIBBLE_GLYPH_LAYOUT.__BOTTOM);
         }
         
         if (__pad_bbox_l) _left   -= _padding_l; else _right  += _padding_l;

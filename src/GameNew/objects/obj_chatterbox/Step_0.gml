@@ -16,7 +16,6 @@ repeat(array_length(text_elements))
 #endregion
 
 
-
 if (_complete){
     //If all of the text element have faded in, allow for user input
     
@@ -65,6 +64,7 @@ switch(myPortrait){
 			boxType = 2;
 			textfix = 32;
 			choiceAnim = false;
+			choiceAnimDone = false;
 		}else{
 			boxType = 3;
 			choiceAnim = true;
@@ -74,18 +74,22 @@ switch(myPortrait){
 		boxType = 0;	
 		textfix = 64;
 		choiceAnim = false;
+		choiceAnimDone = false;
 	break;
 	default:
 		if (choiceStop == "0"){
 			boxType = 1;	
 			textfix = 0;
 			choiceAnim = false;
+			choiceAnimDone = false;
 		}else{
 			boxType = 3;
 			choiceAnim = true;
 		}
 	break;
 }
+
+
 
 var _mid = 24;
 

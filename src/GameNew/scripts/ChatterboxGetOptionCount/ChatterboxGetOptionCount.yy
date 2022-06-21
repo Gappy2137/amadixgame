@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Getters",
-    "path": "folders/Extensions/Chatterbox/Getters.yy",
+    "name": "Options",
+    "path": "folders/Extensions/Chatterbox/Getters/Options.yy",
   },
   "resourceVersion": "1.0",
   "name": "ChatterboxGetOptionCount",

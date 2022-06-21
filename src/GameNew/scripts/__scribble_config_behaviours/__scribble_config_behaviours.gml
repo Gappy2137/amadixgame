@@ -15,7 +15,8 @@
 #macro SCRIBBLE_PIN_ALIGNMENT_USES_PAGE_SIZE  false  //Sets whether pin alignments use the size of the page for positioning, or the size of the text element (the bounding box across all pages)
 #macro SCRIBBLE_ALLOW_TEXT_GETTER             false  //Set to <true> to enable the .get_text() method on text elements. This will apply to all text elements and carries a performance penalty
 #macro SCRIBBLE_ALLOW_GLYPH_DATA_GETTER       false  //Set to <true> to enable the .get_glyph_data() method on text elements (and a few other features too). This will apply to all text elements and carries a performance penalty
-
+#macro SCRIBBLE_AUTOFIT_INLINE_SPRITES        false  //Whether to automatically scale sprites to fit into the line of text. This is based on the font height of the current font
+#macro SCRIBBLE_AUTOFIT_INLINE_SURFACES       false  //Whether to automatically scale surfaces to fit into the line of text. This is based on the font height of the current font
 
 
 #region Advanced Features
@@ -32,7 +33,8 @@
 #macro SCRIBBLE_INCREMENTAL_FREEZE             true      //Whether text models should freeze their vertex buffers one frame after the text model is created. This leads to increased performance, especially with large amounts of text
 #macro SCRIBBLE_SPRITEFONT_IGNORE_ORIGIN       false     //Set to <true> to ignore a sprite origin's contribution to its spritefont glyph x/y offsets
 #macro SCRIBBLE_SPRITEFONT_LEGACY_HEIGHT       false     //Version 8 uses GameMaker's native spritefont dimensions. Older versions used the tight bounding box leading to narrower lines. Set this macro to <true> to use the tighter legacy behaviour
-#macro SCRIBBLE_MSDF_BORDER_TRIM               4         //
+#macro SCRIBBLE_MSDF_BORDER_TRIM               0         //
+#macro SCRIBBLE_ALWAYS_DOUBLE_DRAW             false
 
 #macro SCRIBBLE_COMMAND_TAG_OPEN          ord("[") //Character used to open a command tag. First 127 ASCII chars only
 #macro SCRIBBLE_COMMAND_TAG_CLOSE         ord("]") //Character used to close a command tag. First 127 ASCII chars only
