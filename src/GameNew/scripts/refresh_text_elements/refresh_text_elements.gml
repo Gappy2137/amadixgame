@@ -33,7 +33,7 @@ function refresh_text_elements(){
         ++_i;
     }
 	
-	_y = textY;
+	_y = textY - 2;
     
     if (ChatterboxIsWaiting(chatterbox)){
 
@@ -41,14 +41,9 @@ function refresh_text_elements(){
 		
         var _i = 0;
         repeat(ChatterboxGetOptionCount(chatterbox)){
+		
 			
-            //Start formatting our string with some colour!
-            switch(_i){
-                case 0: var _string = "[#FFFFFF]"; break;
-                case 1: var _string = "[#FFFFFF]"; break;
-                case 2: var _string = "[#FFFFFF]"; break;
-                case 3: var _string = "[#FFFFFF]"; break;
-            }
+			_string = "";
             
             //Add a number prompt
             //_string += string(_i+1) + ") ";
@@ -71,7 +66,7 @@ function refresh_text_elements(){
             });
             
             //Move down a bit to visually separate each option
-            _y += 12;
+            _y += 16;
             ++_i;
         }
     }

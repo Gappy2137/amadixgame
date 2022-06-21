@@ -510,7 +510,7 @@ function scr_player_movement() {
 		}
 	}*/
 
-	//scr_player_unstuck();
+	scr_player_unstuck();
 
 	//-----------------------------------------------------------------------------
 

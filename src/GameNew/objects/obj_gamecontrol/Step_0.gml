@@ -26,6 +26,12 @@ if (refTimer >= 1){
 }
 
 
+if (instance_exists(obj_chatterbox)){
+	global.inDialogue = true;	
+}else{
+	global.inDialogue = false;	
+}
+
 instance_deactivate_layer("Instances");
 instance_activate_object(obj_amadix);
 

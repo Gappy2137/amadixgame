@@ -104,4 +104,6 @@ minutes = 0;
 hours = 0;
 global.daycycletime = 0;
 
+global.inDialogue = false;
+
 refTimer = 0;

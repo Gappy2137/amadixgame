@@ -70,6 +70,11 @@ choiceboxX2[0] = choicebox2_x;
 choiceboxX2[1] = choicebox2_x;
 choiceboxX2[2] = choicebox2_x;
 choiceboxX2[3] = choicebox2_x;
+choicebox_height = 16;
+onChoice[0] = 0;
+onChoice[1] = 0;
+onChoice[2] = 0;
+onChoice[3] = 0;
 /*
 0 - amadix
 1 - inna osoba

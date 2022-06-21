@@ -18,7 +18,6 @@ function choiceshow(){
 		
 		var _scale = 0.75;
 		
-		
         //Draw the text element
 		_element.transform(_scale, _scale, 0);
 		_element.wrap((text_width * 1/_scale), (text_height * 1/_scale) + 4, false);
@@ -155,10 +154,26 @@ function choiceshow(){
 			if (choiceAnim){
 
 				// Choicebox	
-				draw_sprite(spr_dialoguebox_choice, 0, choiceboxX2[0], dialboxY);
-				draw_sprite(spr_dialoguebox_choice, 0, choiceboxX2[1], dialboxY + 16);
-				draw_sprite(spr_dialoguebox_choice, 0, choiceboxX2[2], dialboxY + 32);
-				draw_sprite(spr_dialoguebox_choice, 0, choiceboxX2[3], dialboxY + 48);
+				switch(choiceNum){
+					case 1:
+						draw_sprite(spr_dialoguebox_choice, onChoice[0], choiceboxX2[0], dialboxY);
+					break;
+					case 2:
+						draw_sprite(spr_dialoguebox_choice, onChoice[0], choiceboxX2[0], dialboxY);
+						draw_sprite(spr_dialoguebox_choice, onChoice[1], choiceboxX2[1], dialboxY + 16);
+					break;
+					case 3:
+						draw_sprite(spr_dialoguebox_choice, onChoice[0], choiceboxX2[0], dialboxY);
+						draw_sprite(spr_dialoguebox_choice, onChoice[1], choiceboxX2[1], dialboxY + 16);
+						draw_sprite(spr_dialoguebox_choice, onChoice[2], choiceboxX2[2], dialboxY + 32);
+					break;
+					case 4:
+						draw_sprite(spr_dialoguebox_choice, onChoice[0], choiceboxX2[0], dialboxY);
+						draw_sprite(spr_dialoguebox_choice, onChoice[1], choiceboxX2[1], dialboxY + 16);
+						draw_sprite(spr_dialoguebox_choice, onChoice[2], choiceboxX2[2], dialboxY + 32);
+						draw_sprite(spr_dialoguebox_choice, onChoice[3], choiceboxX2[3], dialboxY + 48);
+					break;
+				}
 				
 				choiceshow();
 				
@@ -191,10 +206,27 @@ function choiceshow(){
 				scr_draw_gui_box_stretch(spr_dialoguebox, dialboxX_choice, dialboxY, dialboxX_choice + dialbox_width, dialboxY + dialbox_height);	
 			
 				// Choicebox
-				draw_sprite(spr_dialoguebox_choice, 0, choiceboxX, dialboxY);
-				draw_sprite(spr_dialoguebox_choice, 0, choiceboxX, dialboxY + 16);
-				draw_sprite(spr_dialoguebox_choice, 0, choiceboxX, dialboxY + 32);
-				draw_sprite(spr_dialoguebox_choice, 0, choiceboxX, dialboxY + 48);
+				switch(choiceNum){
+					case 1:
+						draw_sprite(spr_dialoguebox_choice, onChoice[0], choiceboxX, dialboxY);
+					break;
+					case 2:
+						draw_sprite(spr_dialoguebox_choice, onChoice[0], choiceboxX, dialboxY);
+						draw_sprite(spr_dialoguebox_choice, onChoice[1], choiceboxX, dialboxY + 16);
+					break;
+					case 3:
+						draw_sprite(spr_dialoguebox_choice, onChoice[0], choiceboxX, dialboxY);
+						draw_sprite(spr_dialoguebox_choice, onChoice[1], choiceboxX, dialboxY + 16);
+						draw_sprite(spr_dialoguebox_choice, onChoice[2], choiceboxX, dialboxY + 32);
+					break;
+					case 4:
+						draw_sprite(spr_dialoguebox_choice, onChoice[0], choiceboxX, dialboxY);
+						draw_sprite(spr_dialoguebox_choice, onChoice[1], choiceboxX, dialboxY + 16);
+						draw_sprite(spr_dialoguebox_choice, onChoice[2], choiceboxX, dialboxY + 32);
+						draw_sprite(spr_dialoguebox_choice, onChoice[3], choiceboxX, dialboxY + 48);
+					break;
+				}
+
 				
 				choiceshow();
 
@@ -264,6 +296,8 @@ function choiceshow(){
 
 
 }
+/*
 draw_text(128, 128, choiceAnim);
 draw_text(128, 148, boxType);
 draw_text(128, 164, choiceStop);
+*/

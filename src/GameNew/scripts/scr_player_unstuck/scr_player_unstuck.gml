@@ -1,6 +1,11 @@
 function scr_player_unstuck() {
-	if instance_place(x, y, par_collision){
-			for(var i = 0; i < 1000; ++i;){
+	
+	if instance_place(x, y, par_collision)
+	&& instance_place(x + 1, y, par_collision)
+	&& instance_place(x - 1, y, par_collision)
+	&& instance_place(x, y + 1, par_collision)
+	&& instance_place(x, y - 1, par_collision){
+			for(var i = 0; i < 10; ++i;){
 					if (!instance_place(x + i, y, par_collision)){
 							x += i;
 							break;
