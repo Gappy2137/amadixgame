@@ -16,12 +16,7 @@ function refresh_text_elements(){
         
         //Create a new typist for the text element, and tell it to start typing in
         
-        
-		if (boxType == 3){
-			var _typist = scribble_typist().skip();
-		}else{
-			var _typist = scribble_typist().in(_typist_speed, 0);
-		}
+		var _typist = scribble_typist().in(_typist_speed, 0);
 		
         //Store our new text element and typist
         array_push(text_elements, {
@@ -37,12 +32,8 @@ function refresh_text_elements(){
         _y += _element.get_height(_element);
         ++_i;
     }
-    
-    //Ident our options slightly
-    _x = choicebox2_x + 4;
-    
-    //Space out the options from the content a little too
-    //_y -= 32;
+	
+	_y = textY;
     
     if (ChatterboxIsWaiting(chatterbox)){
 
@@ -60,7 +51,7 @@ function refresh_text_elements(){
             }
             
             //Add a number prompt
-            _string += string(_i+1) + ") ";
+            //_string += string(_i+1) + ") ";
             
             //aaaand add the actual option string too
             _string += ChatterboxGetOption(chatterbox, _i);
@@ -80,7 +71,7 @@ function refresh_text_elements(){
             });
             
             //Move down a bit to visually separate each option
-            _y += _element.get_height();
+            _y += 12;
             ++_i;
         }
     }

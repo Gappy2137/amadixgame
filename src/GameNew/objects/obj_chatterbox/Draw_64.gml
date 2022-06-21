@@ -6,6 +6,55 @@ if (ChatterboxIsStopped(chatterbox)){
 	
 if (!show)exit;
 	
+function choiceshow(){
+	var _j = 0;
+    repeat(array_length(choice_elements)){
+        //Get our text element and position
+        var _struct = choice_elements[_j];
+        var _x       = choicebox2_tox + 4;
+        var _y       = _struct.y;
+        var _element = _struct.element;
+        var _typist  = _struct.typist;
+		
+		var _scale = 0.75;
+		
+		
+        //Draw the text element
+		_element.transform(_scale, _scale, 0);
+		_element.wrap((text_width * 1/_scale), (text_height * 1/_scale) + 4, false);
+		//_element.scale_to_box((text_width * 1/_scale), (text_height * 1/_scale));
+       
+	    _element.blend(c_white, 0.5);
+		_element.starting_format("font_dialogue", shadowColor);
+		if (choiceAnim)
+			_element.draw(choicebox2_x + 4 + .5, _y + .5, _typist);	
+		else
+			_element.draw(choicebox2_tox + 4 + .5, _y + .5, _typist);	
+		
+		
+		_element.blend(c_white, 1);
+		_element.starting_format("font_dialogue", textColor);
+		if (choiceAnim)
+			_element.draw(choicebox2_x + 4, _y, _typist);
+		else
+			_element.draw(choicebox2_tox + 4, _y, _typist);
+		
+		
+		if (mySound != -1)
+			_typist.sound(asset_get_index(mySound), 10, 1, 1);
+		
+        
+        //Break out of the loop if this text element hasn't finished fading in
+        if (_typist.get_state() < 1.0) break;
+        //Autotype will only happen when you actually draw the text element
+        //This means if we don't want to fade text in we can just... not draw it
+        
+        ++_j;
+    }
+}
+	
+	
+	
 	switch(boxType){
 		case 0:
 			
@@ -105,7 +154,13 @@ if (!show)exit;
 		
 			if (choiceAnim){
 
+				// Choicebox	
+				draw_sprite(spr_dialoguebox_choice, 0, choiceboxX2[0], dialboxY);
+				draw_sprite(spr_dialoguebox_choice, 0, choiceboxX2[1], dialboxY + 16);
+				draw_sprite(spr_dialoguebox_choice, 0, choiceboxX2[2], dialboxY + 32);
+				draw_sprite(spr_dialoguebox_choice, 0, choiceboxX2[3], dialboxY + 48);
 				
+				choiceshow();
 				
 				// Portraitbox
 				scr_draw_gui_box_stretch(spr_dialoguebox, choiceport_x, dialboxY, choiceport_x + portraitbox_width, dialboxY + dialbox_height);
@@ -127,8 +182,7 @@ if (!show)exit;
 				// Main dialoguebox
 				scr_draw_gui_box_stretch(spr_dialoguebox, choicebox1_x, dialboxY, choicebox1_x + dialbox_width, dialboxY + dialbox_height);	
 				
-				// Choicebox
-				scr_draw_gui_box_stretch(spr_dialoguebox, choicebox2_x, dialboxY, choicebox2_x + dialbox_width, dialboxY + dialbox_height);	
+
 
 
 				
@@ -137,7 +191,13 @@ if (!show)exit;
 				scr_draw_gui_box_stretch(spr_dialoguebox, dialboxX_choice, dialboxY, dialboxX_choice + dialbox_width, dialboxY + dialbox_height);	
 			
 				// Choicebox
-				scr_draw_gui_box_stretch(spr_dialoguebox, choiceboxX, dialboxY, choiceboxX + dialbox_width, dialboxY + dialbox_height);	
+				draw_sprite(spr_dialoguebox_choice, 0, choiceboxX, dialboxY);
+				draw_sprite(spr_dialoguebox_choice, 0, choiceboxX, dialboxY + 16);
+				draw_sprite(spr_dialoguebox_choice, 0, choiceboxX, dialboxY + 32);
+				draw_sprite(spr_dialoguebox_choice, 0, choiceboxX, dialboxY + 48);
+				
+				choiceshow();
+
 			
 				// Portraitbox
 				scr_draw_gui_box_stretch(spr_dialoguebox, portraitboxX_choice, dialboxY, portraitboxX_choice + portraitbox_width, dialboxY + dialbox_height);
@@ -199,7 +259,11 @@ if (!show)exit;
         
         ++_i;
     }
+	
+	
+
 
 }
 draw_text(128, 128, choiceAnim);
 draw_text(128, 148, boxType);
+draw_text(128, 164, choiceStop);

@@ -15,6 +15,13 @@ repeat(array_length(text_elements))
 
 #endregion
 
+if (ChatterboxGetOptionCount(chatterbox)){
+        var _i = 0;
+        repeat(array_length(text_elements)){
+            text_elements[_i].typist.skip();
+            ++_i;
+        }
+}
 
 if (_complete){
     //If all of the text element have faded in, allow for user input
@@ -27,6 +34,9 @@ if (_complete){
 		    refresh_text_elements();
         }
     }else if (ChatterboxGetOptionCount(chatterbox)){
+		
+		choiceNum = (ChatterboxGetOptionCount(chatterbox));
+		
 		waitArrow = false;
         var _index = undefined;
         if (keyboard_check_pressed(ord("1"))) _index = 0;
@@ -98,6 +108,11 @@ if (choiceAnim){
 	choicebox2_x = lerp(choicebox2_x, choicebox2_tox, .3);
 	choiceport_x = lerp(choiceport_x, choiceport_tox, .3);
 	
+	choiceboxX2[0] = lerp(choiceboxX2[0], choicebox2_tox, .45);
+	choiceboxX2[1] = lerp(choiceboxX2[1], choicebox2_tox, .4);
+	choiceboxX2[2] = lerp(choiceboxX2[2], choicebox2_tox, .35);
+	choiceboxX2[3] = lerp(choiceboxX2[3], choicebox2_tox, .3);
+	
 	if ((round(choicebox1_x) >= choicebox1_tox + _mid) && (round(choicebox1_x) <= choicebox1_tox + _mid + 8)){
 		choiceAnimMid = true;	
 	}
@@ -106,7 +121,11 @@ if (choiceAnim){
 		choicebox1_x = choicebox1_fromx;
 		choicebox2_x = choicebox2_fromx;
 		choiceport_x = choiceport_fromx;
-		
+		choiceboxX2[0] = choicebox2_fromx;
+		choiceboxX2[1] = choicebox2_fromx;
+		choiceboxX2[2] = choicebox2_fromx;
+		choiceboxX2[3] = choicebox2_fromx;
+	
 		choiceAnimDone = true;
 		choiceAnimMid = false;
 		choiceAnim = false;

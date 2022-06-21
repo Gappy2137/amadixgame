@@ -59,12 +59,17 @@ choicebox2_x = dialboxX;
 
 choiceport_fromx = 112;
 choiceport_tox = 208;
-choiceport_x = portraitboxX;
+choiceport_x = portraitboxX - 32;
 
 show = false;
 
-alarm[0] = 2;
+alarm[0] = 1;
 
+choiceNum = 0;
+choiceboxX2[0] = choicebox2_x;
+choiceboxX2[1] = choicebox2_x;
+choiceboxX2[2] = choicebox2_x;
+choiceboxX2[3] = choicebox2_x;
 /*
 0 - amadix
 1 - inna osoba

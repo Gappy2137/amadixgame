@@ -143,6 +143,7 @@
     {"id":{"name":"spr_amadix_shirtTC_u","path":"sprites/spr_amadix_shirtTC_u/spr_amadix_shirtTC_u.yy",},"order":1,},
     {"id":{"name":"spr_shadow_big","path":"sprites/spr_shadow_big/spr_shadow_big.yy",},"order":4,},
     {"id":{"name":"scr_set_daycycle","path":"scripts/scr_set_daycycle/scr_set_daycycle.yy",},"order":4,},
+    {"id":{"name":"spr_dialoguebox_choice","path":"sprites/spr_dialoguebox_choice/spr_dialoguebox_choice.yy",},"order":17,},
     {"id":{"name":"__scribble_gen_8_position_glyphs","path":"scripts/__scribble_gen_8_position_glyphs/__scribble_gen_8_position_glyphs.yy",},"order":8,},
     {"id":{"name":"spr_amadix_shirtTC_l","path":"sprites/spr_amadix_shirtTC_l/spr_amadix_shirtTC_l.yy",},"order":2,},
     {"id":{"name":"spr_amadix_newTC_attack_u","path":"sprites/spr_amadix_newTC_attack_u/spr_amadix_newTC_attack_u.yy",},"order":3,},
