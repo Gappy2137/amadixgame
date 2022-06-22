@@ -12,7 +12,7 @@ dir = 270;
 _spd = 0;
 _dir = 0;
 
-
+cancollide = false;
 
 accel = 0.6;
 deccel = 0.32;
@@ -104,3 +104,23 @@ cy = 0;
 
 if (obj_gamecontrol.doTransition == true) scr_updatePlayerAnim();
 
+// Top boundary
+instance_create_layer(-16, -16,"Invisible", obj_solid1, {
+	image_xscale: room_width + 16,
+	image_yscale: 16
+});
+// Left boundary
+instance_create_layer(-16, -16,"Invisible", obj_solid1, {
+	image_xscale: 16,
+	image_yscale: room_height + 16
+});
+// Right boundary
+instance_create_layer(room_width - 1, -16,"Invisible", obj_solid1, {
+	image_xscale: 16,
+	image_yscale: room_height + 16
+});
+// Bottom boundary
+instance_create_layer(-16, room_height - 1,"Invisible", obj_solid1, {
+	image_xscale: room_width + 16,
+	image_yscale: 16
+});

@@ -18,8 +18,6 @@ shadowAlpha = 0.5;
 
 shadowEnable = true;
 
-sol = -1;
-
 dialogue = "test_en.yarn";
 
 // Zachowanie

@@ -1,11 +1,11 @@
 function scr_player_unstuck() {
 	
-	if instance_place(x, y, par_collision)
-	&& instance_place(x + 1, y, par_collision)
-	&& instance_place(x - 1, y, par_collision)
-	&& instance_place(x, y + 1, par_collision)
-	&& instance_place(x, y - 1, par_collision){
+	var maincollision = instance_place(x, y, par_collision);
+	
+	if (maincollision){
+		if ((maincollision != noone) && (maincollision.cancollide)){
 			for(var i = 0; i < 10; ++i;){
+				
 					if (!instance_place(x + i, y, par_collision)){
 							x += i;
 							break;
@@ -44,6 +44,7 @@ function scr_player_unstuck() {
 					}
 
 			}
+		}
 	}
 
 

@@ -8,16 +8,6 @@ if (resetAngleTimer == 0){
 	resetAngle = true;
 }
 
-/*
-if (instance_place(x, y, obj_melee_attack)){
-	if (chance(0.075)) && (other.image_index < 5){
-		instance_destroy();	
-	}else{
-		angle = approach(angle, -25, acc);
-	}
-}
-*/
-
 timer += 0.01 * rnd;
 if (timer >= 1){
 	timer = 0;

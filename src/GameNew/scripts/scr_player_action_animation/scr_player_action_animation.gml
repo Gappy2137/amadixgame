@@ -241,6 +241,10 @@ switch (actionstate){
 				break;
 			}
 	break;
+	case player_state_action.pickup:
+		anim_frame_action_num = 6;
+		
+	break;
 	default:
 		itemUsedX = 0;
 		itemUsedY = 0;

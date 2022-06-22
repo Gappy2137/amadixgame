@@ -74,8 +74,6 @@ if (anim_enable){
 	anim_speed = 0.1;
 }
 
-sol = -1;
-
 enableWind = false;
 
 windangle = 0;
@@ -93,7 +91,6 @@ if (shallowwater){shadowEnable = false;}
 
 if (type == 0) || (type == 1) || (type == 2) || (type == 5){
 	cancollide = true;
-	alarm[0] = 5;
 }else{
 	cancollide = false;	
 }

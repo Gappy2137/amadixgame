@@ -68,6 +68,7 @@ enum player_state_action{
 	drinking = 2,
 	attacking_melee = 3,
 	handgun = 4,
+	pickup = 5,
 }
 
 enum lang{
@@ -82,6 +83,7 @@ enum effect{
 	stuffed =  2,
 	regeneration =  3,
 }
+
 global.playerTorso = item.classic_jacket;
 global.playerLegs = item.jeans;
 global.playerBoots = item.sneakers;

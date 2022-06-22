@@ -34,6 +34,8 @@ rnd = random_range(0.8, 1.3);
 
 resetAngle = true;
 resetAngleTimer = 10;
+wtr = false;
 
 shallowwater = collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, obj_shallowwater16, false, true);
+if (shallowwater) wtr = true;
 if (shallowwater){shadowEnable = false;}

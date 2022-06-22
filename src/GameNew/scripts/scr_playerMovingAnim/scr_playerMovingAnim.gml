@@ -1,37 +1,122 @@
 function scr_playerMovingAnim() {
-
-	if (actionstate == player_state_action.eating)
-	|| (actionstate == player_state_action.drinking) 
-	|| (actionstate == player_state_action.attacking_melee){
-		anim_frame_action += anim_speed_action;
-		if anim_frame_action > (anim_frame_action_num + .9){
-			anim_frame_action = anim_frame_action_num;
-		}
-	}else{
-		anim_frame += anim_speed;
-		if anim_frame > anim_frame_num{
-			anim_frame = 0;
-		}
-	}
-
-
-	if (actionstate == player_state_action.none){
-		if (key_right){ 
-			scr_setPlayerFacingAnim(index_facing.right);
-			facing = dirc.right;
-		}
-		if (key_left){
-			scr_setPlayerFacingAnim(index_facing.left);
-			facing = dirc.left;
-		}
-		if (key_up){
-			scr_setPlayerFacingAnim(index_facing.up);
-			facing = dirc.up;
-		}
-		if (key_down){
-			scr_setPlayerFacingAnim(index_facing.down);
-			facing = dirc.down;
-		}
+	
+	switch (actionstate){
+		case player_state_action.none:
+				anim_frame += anim_speed;
+				if anim_frame > anim_frame_num{
+					anim_frame = 0;
+				}
+			
+				if (key_right){ 
+					scr_setPlayerFacingAnim(index_facing.right);
+					facing = dirc.right;
+				}
+				if (key_left){
+					scr_setPlayerFacingAnim(index_facing.left);
+					facing = dirc.left;
+				}
+				if (key_up){
+					scr_setPlayerFacingAnim(index_facing.up);
+					facing = dirc.up;
+				}
+				if (key_down){
+					scr_setPlayerFacingAnim(index_facing.down);
+					facing = dirc.down;
+				}
+			
+		break;
+		case player_state_action.eating:
+				anim_frame_action += anim_speed_action;
+				if anim_frame_action > (anim_frame_action_num + .9){
+					anim_frame_action = anim_frame_action_num;
+				}
+		break;
+		case player_state_action.drinking:
+				anim_frame_action += anim_speed_action;
+				if anim_frame_action > (anim_frame_action_num + .9){
+					anim_frame_action = anim_frame_action_num;
+				}
+		break;
+		case player_state_action.attacking_melee:
+				anim_frame_action += anim_speed_action;
+				if anim_frame_action > (anim_frame_action_num + .9){
+					anim_frame_action = anim_frame_action_num;
+				}
+		break;
+		case player_state_action.handgun:
+				anim_frame += anim_speed;
+				if anim_frame > anim_frame_num{
+					anim_frame = 0;
+				}
+			
+			//Update facing
+			if isLooking(index_facing.up){
+				facing = dirc.up;	
+				scr_updatePlayerAnim();
+			}else
+			if isLooking(index_facing.left){
+				facing = dirc.left;	
+				scr_updatePlayerAnim();
+			}else
+			if isLooking(index_facing.down){
+				facing = dirc.down;	
+				scr_updatePlayerAnim();
+			}else{
+				facing = dirc.right;	
+				scr_updatePlayerAnim();
+			}
+		
+			//Gun animation
+			if (instance_exists(obj_gun_logic)){
+				switch(obj_gun_logic.state){
+					case gunState.standby:
+						anim_frame_action = anim_frame;
+					break;
+					case gunState.shooting:
+						anim_speed_action = 0.5;
+						if (obj_gun_logic.ammoLoaded <= 0.9){
+							anim_frame_action_num = obj_gun_logic.animFramesShootingLast;
+						}else{
+							anim_frame_action_num = obj_gun_logic.animFramesShooting;	
+						}
+						anim_frame_action += anim_speed_action;	
+						if anim_frame_action >= (anim_frame_action_num + .9){
+							anim_frame_action = anim_frame_action_num + .9;
+							anim_speed_action = 0;
+						}
+					break;
+					case gunState.reloading:
+						anim_frame_action_num = obj_gun_logic.animFramesReload;
+						anim_speed_action = (anim_frame_action_num + 1) / obj_gun_logic.reloadTime;
+						anim_frame_action += anim_speed_action;
+						if anim_frame_action >= (anim_frame_action_num + .9){
+							anim_frame_action = anim_frame_action_num + .9;
+							anim_speed_action = 0;
+						}
+					break;
+					case gunState.reloading_empty:
+						anim_frame_action_num = obj_gun_logic.animFramesReloadEmpty;
+						anim_speed_action = (anim_frame_action_num + 1) / obj_gun_logic.reloadTimeEmpty;
+						anim_frame_action += anim_speed_action;
+						if anim_frame_action >= (anim_frame_action_num + .9){
+							anim_frame_action = anim_frame_action_num + .9;
+							anim_speed_action = 0;
+						}
+					break;
+					case gunState.empty:
+						anim_frame_action = anim_frame;
+					break;
+				}
+			}
+			
+			
+		break;
+		case player_state_action.pickup:
+				anim_frame_action += anim_speed_action;
+				if anim_frame_action > (anim_frame_action_num + .9){
+					anim_frame_action = anim_frame_action_num;
+				}
+		break;
 	}
 	
 	
@@ -45,69 +130,6 @@ function scr_playerMovingAnim() {
 		}
 	}
 	
-	
-	if (actionstate == player_state_action.handgun){
-		
-		//Update facing
-		if isLooking(index_facing.up){
-			facing = dirc.up;	
-			scr_updatePlayerAnim();
-		}else
-		if isLooking(index_facing.left){
-			facing = dirc.left;	
-			scr_updatePlayerAnim();
-		}else
-		if isLooking(index_facing.down){
-			facing = dirc.down;	
-			scr_updatePlayerAnim();
-		}else{
-			facing = dirc.right;	
-			scr_updatePlayerAnim();
-		}
-		
-		//Gun animation
-		if (instance_exists(obj_gun_logic)){
-			switch(obj_gun_logic.state){
-				case gunState.standby:
-					anim_frame_action = anim_frame;
-				break;
-				case gunState.shooting:
-					anim_speed_action = 0.5;
-					if (obj_gun_logic.ammoLoaded <= 0.9){
-						anim_frame_action_num = obj_gun_logic.animFramesShootingLast;
-					}else{
-						anim_frame_action_num = obj_gun_logic.animFramesShooting;	
-					}
-					anim_frame_action += anim_speed_action;	
-					if anim_frame_action >= (anim_frame_action_num + .9){
-						anim_frame_action = anim_frame_action_num + .9;
-						anim_speed_action = 0;
-					}
-				break;
-				case gunState.reloading:
-					anim_frame_action_num = obj_gun_logic.animFramesReload;
-					anim_speed_action = (anim_frame_action_num + 1) / obj_gun_logic.reloadTime;
-					anim_frame_action += anim_speed_action;
-					if anim_frame_action >= (anim_frame_action_num + .9){
-						anim_frame_action = anim_frame_action_num + .9;
-						anim_speed_action = 0;
-					}
-				break;
-				case gunState.reloading_empty:
-					anim_frame_action_num = obj_gun_logic.animFramesReloadEmpty;
-					anim_speed_action = (anim_frame_action_num + 1) / obj_gun_logic.reloadTimeEmpty;
-					anim_frame_action += anim_speed_action;
-					if anim_frame_action >= (anim_frame_action_num + .9){
-						anim_frame_action = anim_frame_action_num + .9;
-						anim_speed_action = 0;
-					}
-				break;
-				case gunState.empty:
-					anim_frame_action = anim_frame;
-				break;
-			}
-		}
-	}
 
 	switch(facing){
 		case dirc.down:

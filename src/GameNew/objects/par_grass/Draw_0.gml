@@ -1,5 +1,5 @@
 
-if (shallowwater){
+if (wtr){
 	
 	
 	var _left = 0;

@@ -359,8 +359,11 @@ function scr_player_movement() {
 	y += vsp;
 */
 
+	scr_player_unstuck();
+
 	var hor_collision = instance_place(x + hsp, y, par_collision);
 	var ver_collision = instance_place(x, y + vsp, par_collision);
+	
 
 	//if the colision is horisontal   
 	if (hor_collision) {
@@ -510,7 +513,7 @@ function scr_player_movement() {
 		}
 	}*/
 
-	scr_player_unstuck();
+	
 
 	//-----------------------------------------------------------------------------
 
@@ -521,6 +524,7 @@ function scr_player_movement() {
 	//Animacja gracza
 	scr_playerMovingAnim();
 
+	/*
 	//Blokuje wychodzenie poza pokoj
 	if ((x < 0) || (x > room_width)){
 		x = xprevious;
@@ -528,7 +532,8 @@ function scr_player_movement() {
 	if ((y < -8) || (y > room_height - 24)){
 		y = yprevious;
 	}
-
+	*/
+	
 	//Efekty podloza
 	scr_groundtype_fx();
 
