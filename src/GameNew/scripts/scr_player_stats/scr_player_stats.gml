@@ -5,14 +5,14 @@ function scr_player_stats(){
 			drain = 0;
 		break;
 		case player_state.moving:
-			if (running = true){
+			if (running == 2){
 				drain = .001;	
 			}else{
 				drain = 0;
 			}
 		break;
 		case player_state.wading:
-			if (running = true){
+			if (running == 2){
 				drain = .0075;	
 			}else{
 				drain = .005;
