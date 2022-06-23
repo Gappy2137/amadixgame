@@ -37,6 +37,37 @@ switch (actionstate){
 			if (floor(anim_frame_action) == 9){itemUsedX = 2;itemUsedY = -2 + fixY;itemUsedAngle = -15;itemUsedSx = 0;}
 			if (floor(anim_frame_action) == 10){itemUsedX = 2;itemUsedY = -2 + fixY;itemUsedAngle = -15;itemUsedSx = 0;}
 	break;
+	case player_state_action.pickup:
+	
+				switch(facing){
+					case dirc.down:
+						if (floor(anim_frame_action) == 1){itemUsedX = 0;itemUsedY = 1.5 + fixY;itemUsedAngle = 0;itemUsedSx = 0;}
+						if (floor(anim_frame_action) == 2){itemUsedX = 0;itemUsedY = 2 + fixY;itemUsedAngle = 0;itemUsedSx = 0;}
+					break;
+					case dirc.left:
+						if (floor(anim_frame_action) == 1){itemUsedX = -5;itemUsedY = 1.5 + fixY;itemUsedAngle = 0;itemUsedSx = 0;}
+						if (floor(anim_frame_action) == 2){itemUsedX = -5;itemUsedY = 2 + fixY;itemUsedAngle = 0;itemUsedSx = 0;}
+					break;
+					case dirc.right:
+						if (floor(anim_frame_action) == 1){itemUsedX = 5;itemUsedY = 1.5 + fixY;itemUsedAngle = 0;itemUsedSx = 0;}
+						if (floor(anim_frame_action) == 2){itemUsedX = 5.5;itemUsedY = 2 + fixY;itemUsedAngle = 0;itemUsedSx = 0;}
+					break;
+					case dirc.up:
+						itemUsedX = 1000;itemUsedY = 2 + fixY;itemUsedAngle = 0;itemUsedSx = 0;
+					break;
+				}
+	
+			if (pickupTrigger){
+
+			}else{
+
+				if (floor(anim_frame_action) == 2){
+					if (instance_exists(pickupid)){
+						instance_destroy(pickupid);
+					}
+				}
+			}
+	break;
 	case player_state_action.attacking_melee:
 	
 			anim_frame_action_num = 7;
@@ -240,10 +271,6 @@ switch (actionstate){
 				
 				break;
 			}
-	break;
-	case player_state_action.pickup:
-		anim_frame_action_num = 5;
-		
 	break;
 	default:
 		itemUsedX = 0;

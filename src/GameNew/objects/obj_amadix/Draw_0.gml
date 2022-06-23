@@ -36,5 +36,5 @@ draw_text(x + 32, y + 32, anim_speed);
 
 draw_text(x - 32, y, spd);
 */
-
+draw_text(x - 32, y, anim_frame_action);
 event_inherited();

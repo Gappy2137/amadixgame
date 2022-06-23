@@ -33,15 +33,7 @@ amount = 1;
 6 - krzak 5 (bez kolizji + usuniecie)
 */
 
-enum collectible_type{
-	col_nostage		= 0,
-	col_overlay		= 1,
-	col_stage		= 2,
-	nocol_overlay	= 3,
-	nocol_stage		= 4,
-	col_delete		= 5,
-	nocol_delete	= 6
-}
+
 
 type = collectible_type.col_nostage;
 shake = false;

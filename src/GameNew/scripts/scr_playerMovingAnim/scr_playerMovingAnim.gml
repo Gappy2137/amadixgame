@@ -46,8 +46,6 @@ function scr_playerMovingAnim() {
 				}
 		break;
 		case player_state_action.pickup:
-		
-				anim_frame_action += anim_speed_action;
 				
 				if (pickupTrigger){
 					anim_speed_action = -0.2;
@@ -58,7 +56,9 @@ function scr_playerMovingAnim() {
 					anim_speed_action = 0.2;
 				}
 				
-				if anim_frame_action > (2 + .9){
+				anim_frame_action += anim_speed_action;
+				
+				if anim_frame_action > (2.7){
 					pickupTrigger = true;
 				}
 				

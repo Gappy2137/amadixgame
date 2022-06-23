@@ -101,6 +101,7 @@ hand_yoffset = 0;
 hand_rot = 0;
 
 pickupTrigger = false;
+pickupid = -1;
 
 cx = 0;
 cy = 0;

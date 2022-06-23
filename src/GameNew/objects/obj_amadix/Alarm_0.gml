@@ -24,6 +24,8 @@ switch(actionstate){
 		item_add(-1, itemeaten, itemamount);
 		itemeaten = -1;
 		itemamount = 0;
+		pickupid = -1;
+		pickupTrigger = false;
 	break;
 }
 

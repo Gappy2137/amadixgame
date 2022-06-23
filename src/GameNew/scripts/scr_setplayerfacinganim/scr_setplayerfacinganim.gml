@@ -997,7 +997,7 @@ switch(global.playerTorso){
 				//--------------------------------------------------------------
 				
 				//pickup-----------------------------------------------------
-				case player_state_action.attacking_melee:
+				case player_state_action.pickup:
 					switch(facing){
 						case index_facing.down:
 							torso_index = spr_amadix_newTC_pick_d;
@@ -1373,7 +1373,7 @@ switch(global.playerLegs){
 				//--------------------------------------------------------------
 				
 				//pickup-----------------------------------------------------
-				case player_state_action.attacking_melee:
+				case player_state_action.pickup:
 					switch(facing){
 						case index_facing.down:
 							legs_index = spr_amadix_jeansL_pick_d;
@@ -1748,7 +1748,7 @@ switch(global.playerBoots){
 				//--------------------------------------------------------------
 				
 				//pickup-----------------------------------------------------
-				case player_state_action.attacking_melee:
+				case player_state_action.pickup:
 					switch(facing){
 						case index_facing.down:
 							boots_index = spr_amadix_newB_pick_d;

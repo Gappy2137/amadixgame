@@ -84,6 +84,16 @@ enum effect{
 	regeneration =  3,
 }
 
+enum collectible_type{
+	col_nostage		= 0,
+	col_overlay		= 1,
+	col_stage		= 2,
+	nocol_overlay	= 3,
+	nocol_stage		= 4,
+	col_delete		= 5,
+	nocol_delete	= 6
+}
+
 global.playerTorso = item.classic_jacket;
 global.playerLegs = item.jeans;
 global.playerBoots = item.sneakers;

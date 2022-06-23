@@ -50,29 +50,32 @@ function item_action(){
 	}
 	
 	function itemActionNone(){
-		with (obj_amadix){actionstate = player_state_action.none;}
-			with(obj_amadix){
-				if (oneStepEvent[2] == 2){
-					switch(facing){
-						case dirc.down:
-							scr_setPlayerFacingAnim(index_facing.down);
-						break;
-						case dirc.left:
-							scr_setPlayerFacingAnim(index_facing.left);
-						break;
-						case dirc.right:
-							scr_setPlayerFacingAnim(index_facing.right);
-						break;
-						case dirc.up:
-							scr_setPlayerFacingAnim(index_facing.up);
-						break;
+		if (obj_amadix.actionstate != player_state_action.pickup){
+			with (obj_amadix){actionstate = player_state_action.none;}
+				with(obj_amadix){
+					if (oneStepEvent[2] == 2){
+						switch(facing){
+							case dirc.down:
+								scr_setPlayerFacingAnim(index_facing.down);
+							break;
+							case dirc.left:
+								scr_setPlayerFacingAnim(index_facing.left);
+							break;
+							case dirc.right:
+								scr_setPlayerFacingAnim(index_facing.right);
+							break;
+							case dirc.up:
+								scr_setPlayerFacingAnim(index_facing.up);
+							break;
+						}
 					}
 				}
-			}
+		}
+
 	}
 	
 	function itemActionEat(){
-		
+		if (obj_amadix.actionstate != player_state_action.pickup){
 		if (obj_amadix.state == player_state.idle)
 		|| (obj_amadix.state == player_state.moving) 
 		|| (obj_amadix.state == player_state.wading_idle) 
@@ -112,11 +115,11 @@ function item_action(){
 				}
 		}
 
-			
+		}
 	}
 	
 	function itemActionDrink(){
-		
+		if (obj_amadix.actionstate != player_state_action.pickup){
 		if (obj_amadix.state == player_state.idle)
 		|| (obj_amadix.state == player_state.moving) 
 		|| (obj_amadix.state == player_state.wading_idle) 
@@ -158,7 +161,7 @@ function item_action(){
 				}
 			}
 		}
-
+		}
 			
 	}
 	
@@ -304,7 +307,9 @@ function item_action(){
 				itemActionNone();
 			break;
 			default:
-				itemActionNone();
+				if (obj_amadix.actionstate != player_state_action.pickup){
+					itemActionNone();
+				}
 			break;
 		}
 		

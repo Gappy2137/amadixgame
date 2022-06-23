@@ -49,16 +49,18 @@ if (ami_clicked()){
 				break;
 				case 6:
 				
+						
 						var idrop = itemDrop;
 						var im = amount;
+						var idd = id;
 				
 						with (obj_inventory){
-							if (!item_exists(item.none, false)){
+							if (item_exists(item.none, false)){
 								with (obj_amadix){
 									itemeaten = idrop;
 									itemamount = im;
+									pickupid = idd;
 									actionstate = player_state_action.pickup;
-									facing = checkFacing(other.id);	
 									oneStepEvent[0] = true;
 									oneStepEvent[1] = true;
 									anim_frame_action = 0;
@@ -67,11 +69,12 @@ if (ami_clicked()){
 									moving = false;
 									hsp = 0;
 									vsp = 0;
-									alarm[0] = (room_speed);
+									scr_setPlayerFacingAnim(checkFacing(idd));
+									alarm[0] = 28;
 								}
 							}
 						}
-					
+					canclick = false;
 				break;
 			}
 	}
