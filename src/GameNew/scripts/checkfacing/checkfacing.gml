@@ -3,10 +3,10 @@ function checkFacing(obj){
 		if (angle > 45) && (angle <= 135){
 			return index_facing.up;
 		}else
-		if (angle > 135) && (angle <= 240){
+		if (angle > 135) && (angle <= 225){
 			return index_facing.left;
 		}else
-		if (angle > 240) && (angle <= 300){
+		if (angle > 225) && (angle <= 315){
 			return index_facing.down;
 		}else{
 			return index_facing.right;

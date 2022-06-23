@@ -43,6 +43,22 @@ function scr_setPlayerFacingAnim(facing){
 						break;
 					}
 				break;
+				case player_state_action.pickup:
+					switch(facing){
+						case index_facing.right:
+							head_index = spr_amadix_head_pick_r;
+						break;
+						case index_facing.up:
+							head_index = spr_amadix_head_pick_u;
+						break;
+						case index_facing.left:
+							head_index = spr_amadix_head_pick_l;
+						break;
+						case index_facing.down:
+							head_index = spr_amadix_head_pick_d;
+						break;
+					}
+				break;
 				case player_state_action.none:
 					switch(facing){
 						case index_facing.right:
@@ -337,6 +353,26 @@ function scr_setPlayerFacingAnim(facing){
 						break;
 					}
 				break;
+				case player_state_action.pickup:
+					switch(facing){
+						case index_facing.right:
+							hands_index = spr_amadix_hands_pick_r;
+							hands2_index = spr_none;
+						break;
+						case index_facing.up:
+							hands_index = spr_none;
+							hands2_index = spr_none;
+						break;
+						case index_facing.left:
+							hands_index = spr_amadix_hands_pick_l;
+							hands2_index = spr_none;
+						break;
+						case index_facing.down:
+							hands_index = spr_amadix_hands_pick_d;
+							hands2_index = spr_none;
+						break;
+					}
+				break;
 				case player_state_action.none:
 					switch(facing){
 						case index_facing.down:
@@ -373,22 +409,6 @@ function scr_setPlayerFacingAnim(facing){
 					hands_index = spr_amadix_hands_run_u;
 						
 			}
-		}
-	}
-	if (global.playerHands == "long"){
-		if (actionstate == player_state_action.eating){
-			hands_index = spr_amadix_longhands_eating;
-		}else if (actionstate == player_state_action.drinking){
-			hands_index = spr_amadix_longhands_eating;
-		}else{
-			if facing == index_facing.right
-				hands_index = spr_amadix_longhands_r;
-			if facing == index_facing.up
-				hands_index = spr_amadix_longhands_u;
-			if facing == index_facing.left
-				hands_index = spr_amadix_longhands_l;
-			if facing == index_facing.down
-				hands_index = spr_amadix_longhands_d;
 		}
 	}
 #endregion
@@ -976,6 +996,25 @@ switch(global.playerTorso){
 				break;
 				//--------------------------------------------------------------
 				
+				//pickup-----------------------------------------------------
+				case player_state_action.attacking_melee:
+					switch(facing){
+						case index_facing.down:
+							torso_index = spr_amadix_newTC_pick_d;
+						break;
+						case index_facing.left:
+							torso_index = spr_amadix_newTC_pick_l;
+						break;
+						case index_facing.right:
+							torso_index = spr_amadix_newTC_pick_r;
+						break;
+						case index_facing.up:
+							torso_index = spr_amadix_newTC_pick_u;
+						break;
+					}
+				break;
+				//--------------------------------------------------------------
+				
 				//none----------------------------------------------------------
 				case player_state_action.none:
 					switch(state){
@@ -1333,6 +1372,25 @@ switch(global.playerLegs){
 				break;
 				//--------------------------------------------------------------
 				
+				//pickup-----------------------------------------------------
+				case player_state_action.attacking_melee:
+					switch(facing){
+						case index_facing.down:
+							legs_index = spr_amadix_jeansL_pick_d;
+						break;
+						case index_facing.left:
+							legs_index = spr_amadix_jeansL_pick_l;
+						break;
+						case index_facing.right:
+							legs_index = spr_amadix_jeansL_pick_r;
+						break;
+						case index_facing.up:
+							legs_index = spr_amadix_jeansL_pick_u;
+						break;
+					}
+				break;
+				//--------------------------------------------------------------
+				
 				//none----------------------------------------------------------
 				case player_state_action.none:
 					switch(state){
@@ -1670,7 +1728,7 @@ switch(global.playerBoots){
 				break;
 				//--------------------------------------------------------------
 				
-				//attacking-----------------------------------------------------
+				//gun-----------------------------------------------------
 				case player_state_action.handgun:
 					switch(facing){
 						case index_facing.down:
@@ -1684,6 +1742,25 @@ switch(global.playerBoots){
 						break;
 						case index_facing.up:
 							boots_index = spr_amadix_newB_gun_u;
+						break;
+					}
+				break;
+				//--------------------------------------------------------------
+				
+				//pickup-----------------------------------------------------
+				case player_state_action.attacking_melee:
+					switch(facing){
+						case index_facing.down:
+							boots_index = spr_amadix_newB_pick_d;
+						break;
+						case index_facing.left:
+							boots_index = spr_amadix_newB_pick_l;
+						break;
+						case index_facing.right:
+							boots_index = spr_amadix_newB_pick_r;
+						break;
+						case index_facing.up:
+							boots_index = spr_amadix_newB_pick_u;
 						break;
 					}
 				break;

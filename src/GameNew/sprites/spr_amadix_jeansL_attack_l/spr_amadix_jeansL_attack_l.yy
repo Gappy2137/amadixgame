@@ -97,8 +97,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Jeans",
-    "path": "folders/Sprites/Player/Legs/Jeans.yy",
+    "name": "Attack",
+    "path": "folders/Sprites/Player/Legs/Jeans/Attack.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_amadix_jeansL_attack_l",

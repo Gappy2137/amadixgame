@@ -97,8 +97,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "NewBoots",
-    "path": "folders/Sprites/Player/Boots/NewBoots.yy",
+    "name": "Attack",
+    "path": "folders/Sprites/Player/Boots/NewBoots/Attack.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_amadix_newB_attack_d",

@@ -97,8 +97,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Jacket",
-    "path": "folders/Sprites/Player/Torso/Jacket.yy",
+    "name": "Attack",
+    "path": "folders/Sprites/Player/Torso/Jacket/Attack.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_amadix_newTC_attack_l",

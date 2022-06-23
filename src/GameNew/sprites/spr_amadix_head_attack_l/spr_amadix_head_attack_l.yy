@@ -97,8 +97,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Head",
-    "path": "folders/Sprites/Player/Head.yy",
+    "name": "Attack",
+    "path": "folders/Sprites/Player/Head/Attack.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_amadix_head_attack_l",

@@ -69,6 +69,7 @@ state = player_state.idle;
 actionstate = player_state_action.none;
 
 itemeaten = -1;
+itemamount = 0;
 itemUsedX = 0;
 itemUsedY = 0;
 itemUsedAngle = 0;
@@ -98,6 +99,8 @@ shootdir = 0;
 hand_xoffset = 0;
 hand_yoffset = 0;
 hand_rot = 0;
+
+pickupTrigger = false;
 
 cx = 0;
 cy = 0;

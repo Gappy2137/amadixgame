@@ -48,8 +48,30 @@ if (ami_clicked()){
 					instance_destroy();
 				break;
 				case 6:
-					item_add(-1, itemDrop, amount);
-					instance_destroy();
+				
+						var idrop = itemDrop;
+						var im = amount;
+				
+						with (obj_inventory){
+							if (!item_exists(item.none, false)){
+								with (obj_amadix){
+									itemeaten = idrop;
+									itemamount = im;
+									actionstate = player_state_action.pickup;
+									facing = checkFacing(other.id);	
+									oneStepEvent[0] = true;
+									oneStepEvent[1] = true;
+									anim_frame_action = 0;
+									anim_frame = 0;
+									canmove = false;
+									moving = false;
+									hsp = 0;
+									vsp = 0;
+									alarm[0] = (room_speed);
+								}
+							}
+						}
+					
 				break;
 			}
 	}

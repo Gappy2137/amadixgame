@@ -242,7 +242,7 @@ switch (actionstate){
 			}
 	break;
 	case player_state_action.pickup:
-		anim_frame_action_num = 6;
+		anim_frame_action_num = 5;
 		
 	break;
 	default:

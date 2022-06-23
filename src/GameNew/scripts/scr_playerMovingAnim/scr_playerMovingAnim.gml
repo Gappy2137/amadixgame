@@ -45,6 +45,26 @@ function scr_playerMovingAnim() {
 					anim_frame_action = anim_frame_action_num;
 				}
 		break;
+		case player_state_action.pickup:
+		
+				anim_frame_action += anim_speed_action;
+				
+				if (pickupTrigger){
+					anim_speed_action = -0.2;
+					if (anim_frame_action <= 0){
+						anim_frame_action = 0;	
+					}
+				}else{
+					anim_speed_action = 0.2;
+				}
+				
+				if anim_frame_action > (2 + .9){
+					pickupTrigger = true;
+				}
+				
+				
+				
+		break;
 		case player_state_action.handgun:
 				anim_frame += anim_speed;
 				if anim_frame > anim_frame_num{
@@ -112,13 +132,6 @@ function scr_playerMovingAnim() {
 			}
 			
 			
-		break;
-		case player_state_action.pickup:
-				anim_speed_action = 0.2;
-				anim_frame_action += anim_speed_action;
-				if anim_frame_action > (anim_frame_action_num + .9){
-					anim_frame_action = anim_frame_action_num;
-				}
 		break;
 	}
 	
