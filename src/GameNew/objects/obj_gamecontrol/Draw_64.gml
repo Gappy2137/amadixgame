@@ -16,6 +16,6 @@ if (doTransition){
 
 //draw_text(64, 96, global.alcoholPoisoning);
 
-var in = instance_count;
+//var in = instance_count;
 
-draw_text(48, 48, in);
+//draw_text(48, 48, in);

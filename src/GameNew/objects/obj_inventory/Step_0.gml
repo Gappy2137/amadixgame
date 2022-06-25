@@ -421,7 +421,7 @@ else if (!show_inventory) && (show_slots){
 	
 
 	if (instance_exists(obj_amadix)){
-		if (obj_amadix.y > (room_height - 132)){
+		if (obj_amadix.y > (room_height - 132)) || (global.inDialogue){
 			slots_position_up = true;
 		}else{
 			slots_position_up = false;	
@@ -430,7 +430,7 @@ else if (!show_inventory) && (show_slots){
 	
 	#region Pozycja myszki
 	
-	if (slots_position_up){
+	if (slots_position_up) || (global.inDialogue){
 		var pos = 12;
 	}else{
 		var pos = 237;
@@ -467,7 +467,8 @@ else if (!show_inventory) && (show_slots){
 		function canChange(){
 			if instance_exists(obj_amadix){
 				if (obj_amadix.actionstate == player_state_action.none){
-					return true;	
+					if (!global.inDialogue)
+						return true;	
 				}else
 				if (obj_amadix.actionstate == player_state_action.handgun){
 					if instance_exists(obj_gun_logic){
@@ -476,7 +477,8 @@ else if (!show_inventory) && (show_slots){
 						|| (obj_gun_logic.state == gunState.reloading_empty)){
 							return false;	
 						}else{
-							return true;	
+							if (!global.inDialogue)
+								return true;	
 						}
 					}
 						

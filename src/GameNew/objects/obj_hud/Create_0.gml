@@ -6,6 +6,12 @@ hp_y = 60;
 stamina_x = 440;
 stamina_y = 100;
 
+clock_x = -8;
+clock_y = -8;
+
+clockArrow_x = clock_x + 32;
+clockArrow_y = clock_y + 32;
+
 gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();
 
@@ -29,7 +35,7 @@ hpCoreColor = make_color_rgb(176, 35, 24);
 staminaCoreColor = make_color_rgb(249, 243, 89);
 
 effect_x = 16;
-effect_y = 16;
+effect_y = 80;
 
 maxeffects = 16;
 effect_grid = ds_grid_create(4, maxeffects);

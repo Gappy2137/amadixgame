@@ -26,14 +26,12 @@ function scr_playerMovingAnim() {
 			
 		break;
 		case player_state_action.eating:
-				anim_speed_action = 0.12;
 				anim_frame_action += anim_speed_action;
 				if anim_frame_action > (anim_frame_action_num + .9){
 					anim_frame_action = anim_frame_action_num;
 				}
 		break;
 		case player_state_action.drinking:
-				anim_speed_action = 0.12;
 				anim_frame_action += anim_speed_action;
 				if anim_frame_action > (anim_frame_action_num + .9){
 					anim_frame_action = anim_frame_action_num;

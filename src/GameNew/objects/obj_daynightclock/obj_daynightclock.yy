@@ -1,10 +1,7 @@
 {
-  "spriteId": {
-    "name": "spr_hud_clock",
-    "path": "sprites/spr_hud_clock/spr_hud_clock.yy",
-  },
+  "spriteId": null,
   "solid": false,
-  "visible": true,
+  "visible": false,
   "managed": true,
   "spriteMaskId": null,
   "persistent": true,

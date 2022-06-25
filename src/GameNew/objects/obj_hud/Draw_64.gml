@@ -69,3 +69,20 @@ if (obj_inventory.show_inventory) && (!obj_inventory.show_slots){
 	draw_sprite_ext(obj_inventory.spr_eq_back, 2, obj_inventory.backUI_x, obj_inventory.backUI_y, obj_inventory.scale, obj_inventory.scale, 0, c_white, 1);
 }
 ////////////////////////
+
+
+// Rysuj zegar
+
+if instance_exists(obj_daynightclock){
+	var arrow_angle = -obj_daynightclock.rot*2;
+}else{
+	var arrow_angle = 0;	
+}
+
+// Zegar
+draw_sprite_ext(spr_hud_clock, 0, clock_x, clock_y, 1, 1, 0, c_white, 1);
+
+// Wskazowka
+draw_sprite_ext(spr_hud_clock_arrow, 0, clockArrow_x, clockArrow_y, .5, .5, arrow_angle, c_white, 1);
+
+//

@@ -1,5 +1,31 @@
 event_inherited();
 
+
+function canPickup(){
+	if instance_exists(obj_amadix){
+		if (obj_amadix.actionstate == player_state_action.none){
+			if (!global.inDialogue)
+				return true;
+		}else{
+			if (instance_exists(obj_gun_logic)){
+				if (obj_amadix.actionstate == player_state_action.handgun){
+					if ((obj_gun_logic.state == gunState.reloading)
+					|| (obj_gun_logic.state == gunState.shooting)
+					|| (obj_gun_logic.state == gunState.reloading_empty)){
+						if (!global.inDialogue)
+							return true;
+					}else{
+						return false;	
+					}
+				}
+			}
+
+		}
+	}else{
+		return false;	
+	}
+}
+
 if (ami_clicked()){
 	if (canclick){
 			switch(type){
@@ -49,32 +75,34 @@ if (ami_clicked()){
 				break;
 				case 6:
 				
-						
-						var idrop = itemDrop;
-						var im = amount;
-						var idd = id;
+						if (canPickup()){
+							var idrop = itemDrop;
+							var im = amount;
+							var idd = id;
 				
-						with (obj_inventory){
-							if (item_exists(item.none, false)){
-								with (obj_amadix){
-									itemeaten = idrop;
-									itemamount = im;
-									pickupid = idd;
-									actionstate = player_state_action.pickup;
-									oneStepEvent[0] = true;
-									oneStepEvent[1] = true;
-									anim_frame_action = 0;
-									anim_frame = 0;
-									canmove = false;
-									moving = false;
-									hsp = 0;
-									vsp = 0;
-									scr_setPlayerFacingAnim(checkFacing(idd));
-									alarm[0] = 28;
+							with (obj_inventory){
+								if (item_exists(item.none, false)){
+									with (obj_amadix){
+										itemeaten = idrop;
+										itemamount = im;
+										pickupid = idd;
+										actionstate = player_state_action.pickup;
+										oneStepEvent[0] = true;
+										oneStepEvent[1] = true;
+										anim_frame_action = 0;
+										anim_frame = 0;
+										canmove = false;
+										moving = false;
+										hsp = 0;
+										vsp = 0;
+										scr_setPlayerFacingAnim(checkFacing(idd));
+										alarm[0] = 28;
+									}
 								}
 							}
+						canclick = false;
 						}
-					canclick = false;
+
 				break;
 			}
 	}
