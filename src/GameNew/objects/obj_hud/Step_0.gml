@@ -222,3 +222,10 @@ if (show_hud == hud.inv) || (show_hud == hud.crafting) || (show_hud == hud.playe
 	
 }
 #endregion
+
+if (keyboard_check(vk_left)){
+	global.hp--;	
+}
+if (keyboard_check(vk_right)){
+	global.hp++;	
+}

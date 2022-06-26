@@ -9,7 +9,7 @@ if (obj_inventory.show_inventory) && (!obj_inventory.show_slots){
 
 
 }
-
+/*
 //Rysuj maks rdzen zdrowia
 draw_circle_segment(hp_x + 16, hp_y + 16, global.maxhp, global.maxhp, hpCoreColor, 18, 0.5);
 
@@ -33,6 +33,40 @@ draw_circle_segment(stamina_x + 16, stamina_y + 16, global.stamina, global.maxst
 draw_sprite_ext(spr_health_hud_2, 0, stamina_x + 16, stamina_y + 16, .25, .25, 0, c_white, 1);
 
 draw_sprite_ext(spr_health_hud_2, 2, stamina_x + 16, stamina_y + 16, .25, .25, 0, c_white, 1);
+*/
+
+//-----------------------------------------------
+// Health back
+
+draw_sprite(spr_hud_stats, 1, hp_x, hp_y);
+
+// Health main
+
+var hp_y_real = 6 + 20 - ((global.hp / global.maxhp) * 20);
+draw_sprite_part(spr_hud_stats, 2, 0, hp_y_real, 32, 26, hp_x, hp_y + hp_y_real);
+
+// Health frame
+
+draw_sprite(spr_hud_stats, 0, hp_x, hp_y);
+
+//-----------------------------------------------
+
+//-----------------------------------------------
+// Stamina back
+
+draw_sprite(spr_hud_stats, 4, stamina_x, stamina_y);
+
+// Stamina main
+
+var stamina_y_real = 3 + 20 - ((global.stamina / global.maxstamina) * 22);
+draw_sprite_part(spr_hud_stats, 5, 0, stamina_y_real, 32, 25, stamina_x, stamina_y + stamina_y_real);
+
+// Stamina frame
+
+draw_sprite(spr_hud_stats, 3, stamina_x, stamina_y);
+
+//-----------------------------------------------
+
 
 //Rysuj efekty
 var i = 0;

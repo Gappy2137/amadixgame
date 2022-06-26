@@ -1,10 +1,10 @@
 depth = -1;
 
-hp_x = 440;
-hp_y = 60;
+hp_x = 8;
+hp_y = 55;
 
-stamina_x = 440;
-stamina_y = 100;
+stamina_x = 8;
+stamina_y = 87;
 
 clock_x = -8;
 clock_y = -8;

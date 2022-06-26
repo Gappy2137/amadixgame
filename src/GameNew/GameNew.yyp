@@ -594,6 +594,7 @@
     {"id":{"name":"tileset_leaves_green","path":"tilesets/tileset_leaves_green/tileset_leaves_green.yy",},"order":3,},
     {"id":{"name":"input_y","path":"scripts/input_y/input_y.yy",},"order":4,},
     {"id":{"name":"scribble_glyph_set","path":"scripts/scribble_glyph_set/scribble_glyph_set.yy",},"order":14,},
+    {"id":{"name":"spr_hud_stats","path":"sprites/spr_hud_stats/spr_hud_stats.yy",},"order":20,},
     {"id":{"name":"curve_lights_out","path":"animcurves/curve_lights_out/curve_lights_out.yy",},"order":0,},
     {"id":{"name":"spr_amadix_m1911_l_reload_empty","path":"sprites/spr_amadix_m1911_l_reload_empty/spr_amadix_m1911_l_reload_empty.yy",},"order":4,},
     {"id":{"name":"spr_amadix_newTC_attack_l","path":"sprites/spr_amadix_newTC_attack_l/spr_amadix_newTC_attack_l.yy",},"order":1,},
