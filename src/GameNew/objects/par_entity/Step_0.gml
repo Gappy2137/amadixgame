@@ -5,8 +5,8 @@ var grassCollision = instance_place(x, y, par_grass);
 
 if (grassCollision){
 	with (grassCollision){
-		var left_collision = collision_rectangle(bbox_left, bbox_top, bbox_right - 8, bbox_bottom, other, false, true);
-		var right_collision = collision_rectangle(bbox_left + 8, bbox_top, bbox_right, bbox_bottom, other, false, true);
+		var left_collision = collision_rectangle(bbox_left, bbox_top, bbox_right - (sprite_width/2), bbox_bottom, other, false, true);
+		var right_collision = collision_rectangle(bbox_left + (sprite_width/2), bbox_top, bbox_right, bbox_bottom, other, false, true);
 	
 		if (left_collision){
 			angle = approach(angle, -25, acc);	

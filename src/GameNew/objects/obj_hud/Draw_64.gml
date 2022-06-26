@@ -85,4 +85,26 @@ draw_sprite_ext(spr_hud_clock, 0, clock_x, clock_y, 1, 1, 0, c_white, 1);
 // Wskazowka
 draw_sprite_ext(spr_hud_clock_arrow, 0, clockArrow_x, clockArrow_y, .5, .5, arrow_angle, c_white, 1);
 
+// Liczby
+var i = 1;
+var size = .25;
+
+repeat(12){
+	
+	if ((i) mod 3 == 0){
+		size = .25;	
+	}else{
+		size = .1875;	
+	}
+	
+	draw_set_font(clockFont);
+	draw_set_color(#202027);
+	draw_set_alpha(1);
+	draw_text_transformed(clockArrow_x + clockNumX[i - 1] + .5, clockArrow_y + clockNumY[i - 1], string(i), size, size, 0);
+	draw_set_font(font_item);
+	
+	
+	i++;
+}
+
 //

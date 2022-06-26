@@ -40,5 +40,6 @@ shallowwater = collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom,
 if (shallowwater) wtr = true;
 if (shallowwater){
 	shadowEnable = false;
-	yorigin = 28;	
+	//yorigin = 28;	
+	y += 4;
 }

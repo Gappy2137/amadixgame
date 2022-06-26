@@ -66,6 +66,22 @@ instance_create_layer(x, y, "Important", obj_crafting);
 
 t = 0;
 
+clockFont = font_add_sprite_ext(spr_hud_clock_font, "1234567890", true, 2);
+
+clockNumX = [];
+clockNumY = [];
+clockNumDist = 10;
+
+var i = 1;
+
+repeat(12){
+	
+	clockNumX[i - 1] = lengthdir_x(clockNumDist, 60 - ((i - 1) * 30));
+	clockNumY[i - 1] = lengthdir_y(clockNumDist, 60 - ((i - 1) * 30));
+	
+	i++;
+}
+
 function open(){
 	obj_inventory.show_inventory = true;	
 	obj_inventory.show_slots = true;	

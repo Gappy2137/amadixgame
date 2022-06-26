@@ -26,8 +26,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Dont Use",
-    "path": "folders/Objects/Dont Use.yy",
+    "name": "Important Objects",
+    "path": "folders/Objects/Important Objects.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_daynightclock",
