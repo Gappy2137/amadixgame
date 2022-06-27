@@ -6,6 +6,9 @@ hp_y = 55;
 stamina_x = 8;
 stamina_y = 87;
 
+hpCoreColor = make_color_rgb(176, 35, 24);
+staminaCoreColor = make_color_rgb(249, 243, 89);
+
 clock_x = -8;
 clock_y = -8;
 
@@ -30,9 +33,6 @@ mouse_sloty = 0;
 
 hud_slot_y_active[0] = 8;
 hud_slot_y_active[1] = 0;
-
-hpCoreColor = make_color_rgb(176, 35, 24);
-staminaCoreColor = make_color_rgb(249, 243, 89);
 
 effect_x = 16;
 effect_y = 80;
@@ -66,11 +66,12 @@ instance_create_layer(x, y, "Important", obj_crafting);
 
 t = 0;
 
-clockFont = font_add_sprite_ext(spr_hud_clock_font, "1234567890", true, 2);
+clockFont = font_add_sprite_ext(spr_hud_clock_font, "1234567890DN", true, 2);
 
 clockNumX = [];
 clockNumY = [];
 clockNumDist = 10;
+nght = "";
 
 var i = 1;
 

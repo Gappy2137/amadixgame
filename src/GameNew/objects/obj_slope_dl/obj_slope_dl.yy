@@ -9,8 +9,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "par_collision",
-    "path": "objects/par_collision/par_collision.yy",
+    "name": "par_slope",
+    "path": "objects/par_slope/par_slope.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,

@@ -1,4 +1,12 @@
 
+if (instance_exists(obj_daynightclock)){
+	if (obj_daynightclock.rot > 180) && (obj_daynightclock.rot < 360){
+		nght = "N";	
+	}else{
+		nght = "D";	
+	}
+}
+
 if (t < 50){t++;}
 if (t > 50){t = 50;}
 
@@ -224,8 +232,8 @@ if (show_hud == hud.inv) || (show_hud == hud.crafting) || (show_hud == hud.playe
 #endregion
 
 if (keyboard_check(vk_left)){
-	global.hp--;	
+	global.stamina--;	
 }
 if (keyboard_check(vk_right)){
-	global.hp++;	
+	global.stamina++;	
 }

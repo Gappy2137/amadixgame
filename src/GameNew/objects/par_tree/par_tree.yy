@@ -6,8 +6,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "par_slope",
-    "path": "objects/par_slope/par_slope.yy",
+    "name": "par_collision",
+    "path": "objects/par_collision/par_collision.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,

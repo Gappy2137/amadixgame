@@ -51,9 +51,9 @@ if (collectibleCollision){
 var stairs = instance_place(x, y, obj_stairs16);
 
 if (stairs){
-	//var stairs_top = stairs.y;
-	//var stairs_bottom = stairs.sprite_height;
-	
-	vsp /= 2;
-	running = 0;
+	if (running > 0){
+		vsp /= 1.25;
+	}else{
+		vsp /= 2;
+	}
 }

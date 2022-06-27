@@ -7,8 +7,8 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 2,
-  "bbox_right": 13,
+  "bbox_left": 1,
+  "bbox_right": 14,
   "bbox_top": 1,
   "bbox_bottom": 14,
   "HTile": false,
@@ -54,6 +54,12 @@
     {"compositeImage":{"FrameId":{"name":"2ba5da5f-32d2-40c9-9262-32b6dccfd569","path":"sprites/spr_hud_clock_font/spr_hud_clock_font.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"2ba5da5f-32d2-40c9-9262-32b6dccfd569","path":"sprites/spr_hud_clock_font/spr_hud_clock_font.yy",},"LayerId":{"name":"a5ff6d89-4581-4378-b087-62433bb7260e","path":"sprites/spr_hud_clock_font/spr_hud_clock_font.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr_hud_clock_font","path":"sprites/spr_hud_clock_font/spr_hud_clock_font.yy",},"resourceVersion":"1.0","name":"2ba5da5f-32d2-40c9-9262-32b6dccfd569","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"57c3ccb9-da7c-4a02-bd56-70a90ef1ea3a","path":"sprites/spr_hud_clock_font/spr_hud_clock_font.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"57c3ccb9-da7c-4a02-bd56-70a90ef1ea3a","path":"sprites/spr_hud_clock_font/spr_hud_clock_font.yy",},"LayerId":{"name":"a5ff6d89-4581-4378-b087-62433bb7260e","path":"sprites/spr_hud_clock_font/spr_hud_clock_font.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_hud_clock_font","path":"sprites/spr_hud_clock_font/spr_hud_clock_font.yy",},"resourceVersion":"1.0","name":"57c3ccb9-da7c-4a02-bd56-70a90ef1ea3a","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"f305af32-918e-4630-b7db-7f5b9eb2b820","path":"sprites/spr_hud_clock_font/spr_hud_clock_font.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"f305af32-918e-4630-b7db-7f5b9eb2b820","path":"sprites/spr_hud_clock_font/spr_hud_clock_font.yy",},"LayerId":{"name":"a5ff6d89-4581-4378-b087-62433bb7260e","path":"sprites/spr_hud_clock_font/spr_hud_clock_font.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_hud_clock_font","path":"sprites/spr_hud_clock_font/spr_hud_clock_font.yy",},"resourceVersion":"1.0","name":"f305af32-918e-4630-b7db-7f5b9eb2b820","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_hud_clock_font","path":"sprites/spr_hud_clock_font/spr_hud_clock_font.yy",},
@@ -63,7 +69,7 @@
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
-    "length": 10.0,
+    "length": 12.0,
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
@@ -78,6 +84,8 @@
             {"id":"200b374d-7bb4-4076-9cc3-f146e5443399","Key":7.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"5da15e10-2a55-415a-a721-0db72981bce3","path":"sprites/spr_hud_clock_font/spr_hud_clock_font.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"77b8a5a5-f7ee-4518-ab0b-8b7cf256483e","Key":8.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"d636c127-eddb-4d57-89b8-d295e230a8bc","path":"sprites/spr_hud_clock_font/spr_hud_clock_font.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"c9b5dcd3-6d13-477c-a650-3d69b44146f1","Key":9.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"2ba5da5f-32d2-40c9-9262-32b6dccfd569","path":"sprites/spr_hud_clock_font/spr_hud_clock_font.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"6d176ca0-1def-44db-8240-5409862f5b57","Key":10.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"57c3ccb9-da7c-4a02-bd56-70a90ef1ea3a","path":"sprites/spr_hud_clock_font/spr_hud_clock_font.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"e2608a8f-f440-41aa-99af-b90463da7cb8","Key":11.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f305af32-918e-4630-b7db-7f5b9eb2b820","path":"sprites/spr_hud_clock_font/spr_hud_clock_font.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,

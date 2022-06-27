@@ -43,6 +43,29 @@ draw_sprite(spr_hud_stats, 1, hp_x, hp_y);
 // Health main
 
 var hp_y_real = 6 + 20 - ((global.hp / global.maxhp) * 20);
+if (global.hp > 0){
+	
+	shader_set(shader_ov);
+	
+	var u_Overlay = shader_get_sampler_index(shader_ov, "u_Overlay");
+	var u_OverlayUV = shader_get_uniform(shader_ov, "u_OverlayUV");
+	var u_SpriteUV = shader_get_uniform(shader_ov, "u_SpriteUV");
+
+	var lineTex = sprite_get_texture(spr_hud_stats_line, 0);
+	var lineUV = sprite_get_uvs(spr_hud_stats_line, 0);
+
+	texture_set_stage(u_Overlay, lineTex);
+
+	shader_set_uniform_f(u_OverlayUV, lineUV[0], lineUV[1], lineUV[2], lineUV[3]);
+
+	var spriteUV = sprite_get_uvs(spr_hud_stats, 2);
+	shader_set_uniform_f(u_SpriteUV, spriteUV[0], spriteUV[1], spriteUV[2], spriteUV[3]);
+
+	draw_sprite_part(spr_hud_stats, 2, 0, hp_y_real, 32, 26, hp_x, hp_y + hp_y_real - 1);
+
+	shader_reset();
+}
+
 draw_sprite_part(spr_hud_stats, 2, 0, hp_y_real, 32, 26, hp_x, hp_y + hp_y_real);
 
 // Health frame
@@ -58,7 +81,30 @@ draw_sprite(spr_hud_stats, 4, stamina_x, stamina_y);
 
 // Stamina main
 
-var stamina_y_real = 3 + 20 - ((global.stamina / global.maxstamina) * 22);
+var stamina_y_real = 3 + 22 - ((global.stamina / global.maxstamina) * 22);
+if (global.stamina > 1){
+	
+	shader_set(shader_ov);
+	
+	var u_Overlay = shader_get_sampler_index(shader_ov, "u_Overlay");
+	var u_OverlayUV = shader_get_uniform(shader_ov, "u_OverlayUV");
+	var u_SpriteUV = shader_get_uniform(shader_ov, "u_SpriteUV");
+
+	var lineTex = sprite_get_texture(spr_hud_stats_line, 1);
+	var lineUV = sprite_get_uvs(spr_hud_stats_line, 1);
+
+	texture_set_stage(u_Overlay, lineTex);
+
+	shader_set_uniform_f(u_OverlayUV, lineUV[0], lineUV[1], lineUV[2], lineUV[3]);
+
+	var spriteUV = sprite_get_uvs(spr_hud_stats, 5);
+	shader_set_uniform_f(u_SpriteUV, spriteUV[0], spriteUV[1], spriteUV[2], spriteUV[3]);
+
+	draw_sprite_part(spr_hud_stats, 5, 0, stamina_y_real, 32, 25, stamina_x, stamina_y + stamina_y_real - 1);
+
+	shader_reset();
+}
+
 draw_sprite_part(spr_hud_stats, 5, 0, stamina_y_real, 32, 25, stamina_x, stamina_y + stamina_y_real);
 
 // Stamina frame
@@ -141,4 +187,9 @@ repeat(12){
 	i++;
 }
 
+draw_set_font(clockFont);
+draw_set_color(#202027);
+draw_set_alpha(1);
+draw_text_transformed(clockArrow_x, clockArrow_y + 6, nght, .25, .25, 0);
+draw_set_font(font_item);
 //

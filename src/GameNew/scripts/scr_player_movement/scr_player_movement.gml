@@ -360,7 +360,8 @@ function scr_player_movement() {
 */
 
 	scr_player_unstuck();
-
+	scr_player_walkaround();
+	
 	var hor_collision = instance_place(x + hsp, y, par_collision);
 	var ver_collision = instance_place(x, y + vsp, par_collision);
 	
@@ -428,7 +429,7 @@ function scr_player_movement() {
 
 	y += vsp;	
 
-
+	
 
 
 /*
