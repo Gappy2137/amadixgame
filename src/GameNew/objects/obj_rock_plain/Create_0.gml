@@ -11,3 +11,5 @@ shadowStyle = spr_shadow_big;
 shadowAlpha = 0.8;
 
 shadowEnable = true;
+
+cancollide = true;

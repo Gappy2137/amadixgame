@@ -74,7 +74,7 @@ if (type == 0){
 			with (bullet){
 				_sprite = spr_bullet_shot;
 				spd = 20;
-				angle = obj_amadix.shootdir + random_range(-3, 3);
+				angle = obj_amadix.shootdir + random_range(-6, 6);
 			}
 			
 			var fx_xx = obj_amadix.x + lengthdir_x(12, obj_amadix.shootdir);

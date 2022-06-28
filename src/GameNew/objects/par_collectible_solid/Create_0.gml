@@ -1,5 +1,7 @@
 event_inherited();
 
+cancollide = true;
+
 image_speed = 0;
 
 itemDrop = -1;

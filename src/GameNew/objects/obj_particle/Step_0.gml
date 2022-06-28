@@ -49,11 +49,14 @@ if (z == 0){
 
 x += lengthdir_x(spd, direction);
 y += lengthdir_y(spd, direction);
-if (instance_place(x, y - z, par_collision)){
-	frict = 0.02;
-	if (bounceCount == 0){
-		alpha -= 0.1;
-		unstuck_me();
+var col = instance_place(x, y - z, par_collision);
+if (col) && (!instance_place(x, y - z, par_entity)){
+	if (col != noone) && (col.cancollide){
+		frict = 0.02;
+		if (bounceCount == 0){
+			alpha -= 0.1;
+			unstuck_me();
+		}
 	}
 }
 spd = max(spd - frict, 0);

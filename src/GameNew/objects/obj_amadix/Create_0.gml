@@ -108,6 +108,7 @@ cy = 0;
 
 if (obj_gamecontrol.doTransition == true) scr_updatePlayerAnim();
 
+
 // Top boundary
 instance_create_layer(-16, -16,"Invisible", obj_solid1, {
 	image_xscale: room_width + 16,

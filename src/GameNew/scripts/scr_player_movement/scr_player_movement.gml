@@ -358,77 +358,171 @@ function scr_player_movement() {
 	}
 	y += vsp;
 */
-
+	/*
+	var hor_list = ds_list_create();
+	var hor_collision = instance_place_list(x + hsp, y, par_collision, hor_list, false);
+	
+	var inst = noone;
+	
+	var __i = 0;
+	repeat(hor_collision - 1){
+		if (hor_list[| __i].cancollide == false){
+			ds_list_delete(hor_list, __i);
+			inst = hor_list[| __i];
+		}
+		__i++;
+	}
+	
+	var ver_collision = instance_place(x, y + vsp, par_collision);
+	*/
+	
 	scr_player_unstuck();
-	scr_player_walkaround();
 	
 	var hor_collision = instance_place(x + hsp, y, par_collision);
 	var ver_collision = instance_place(x, y + vsp, par_collision);
 	
+	var hor_list = ds_list_create();
+	var hor_num = instance_place_list(x + hsp, y, par_collision, hor_list, false);
+	
+	if (hor_num != noone){
+		var __i = 0;
+		repeat(hor_num){
+			if (variable_instance_exists(hor_list[| __i], "cancollide")){
+				if (hor_list[| __i].cancollide == true){
+						var yplus = 0;
 
-	//if the colision is horisontal   
+						//can we go above?
+						while (instance_place(x + hsp, y - yplus, par_collision) && yplus <= abs(hsp)) yplus += 1;
+						if ((!instance_place(x + hsp, y - yplus, par_collision)) && (!key_down)) {
+							//if you can go up, then go up
+							y -= yplus;
+						} else {
+							//we can't go above it   
+							//can we go below?
+							while (instance_place(x + hsp, y + yplus, par_collision) && yplus <= abs(hsp)) yplus += 1;
+							if ((!instance_place(x + hsp, y + yplus, par_collision)) && (!key_up)) {
+							    //if we can go down, then we'll go down
+							    y += yplus;
+							} else {
+							    //we can't go below it
+							    //we get as close as we can to the wall and stop
+							    while (!instance_place(x + sign(hsp), y, par_collision))
+							        x += sign(hsp);
+							    hsp = 0;
+							}
+						}
+				}
+			}
+			__i++;
+		}
+		ds_list_destroy(hor_list);
+	}
+
+/*
+	//if the colision is horizontal   
 	if (hor_collision) {
 		if ((hor_collision != noone) && (hor_collision.cancollide)){
 		    var yplus = 0;
 
 		    //can we go above?
-		    while (place_meeting(x + hsp, y - yplus, par_collision) && yplus <= abs(hsp)) yplus += 1;
-		    if ((!place_meeting(x + hsp, y - yplus, par_collision)) && (!key_down)) {
+		    while (instance_place(x + hsp, y - yplus, par_collision) && yplus <= abs(hsp)) yplus += 1;
+		    if ((!instance_place(x + hsp, y - yplus, par_collision)) && (!key_down)) {
 		        //if you can go up, then go up
 		        y -= yplus;
 		    } else {
 		        //we can't go above it   
 		        //can we go below?
-		        while (place_meeting(x + hsp, y + yplus, par_collision) && yplus <= abs(hsp)) yplus += 1;
-		        if ((!place_meeting(x + hsp, y + yplus, par_collision)) && (!key_up)) {
+		        while (instance_place(x + hsp, y + yplus, par_collision) && yplus <= abs(hsp)) yplus += 1;
+		        if ((!instance_place(x + hsp, y + yplus, par_collision)) && (!key_up)) {
 		            //if we can go down, then we'll go down
 		            y += yplus;
 		        } else {
 		            //we can't go below it
 		            //we get as close as we can to the wall and stop
-		            while (!place_meeting(x + sign(hsp), y, par_collision))
+		            while (!instance_place(x + sign(hsp), y, par_collision))
 		                x += sign(hsp);
 		            hsp = 0;
 		        }
 		    }
 		}
 	}
-
+*/
 	x += hsp;	
 
 
+	var ver_list = ds_list_create();
+	var ver_num = instance_place_list(x, y + vsp, par_collision, ver_list, false);
+	
+	if (ver_num != noone){
+		var __i = 0;
+		repeat(ver_num){
+			if (variable_instance_exists(ver_list[| __i], "cancollide")){
+				if (ver_list[| __i].cancollide == true){
+						var xplus = 0;
 
+						//can we go to the left?
+						while (instance_place(x - xplus, y + vsp, par_collision) && xplus <= abs(vsp)) xplus += 1;
+						if ((!instance_place(x - xplus, y + vsp, par_collision)) && (!key_right)) {
+						    //if you can go to the left, then go to the left
+						    x -= xplus;
+						} else {
+						    //we can't go to the left   
+						    //can we go to the right?
+						    while (instance_place(x + xplus, y + vsp, par_collision) && xplus <= abs(vsp)) xplus += 1;
+						    if ((!instance_place(x + xplus, y + vsp, par_collision)) && (!key_left)) {
+						        //if we can go to the right, then we'll go right
+						        x += xplus;
+						    } else {
+						        //we can't go right
+						        //we get as close as we can to the wall and stop
+						        while (!instance_place(x, y + sign(vsp), par_collision))
+						            y += sign(vsp);
+						        vsp = 0;
+						    }
+						}
+				}
+			}
+			__i++;
+		}
+		ds_list_destroy(ver_list);
+	}
 
-	//if the colision is vertical   
+	//if the colision is vertical  
+	/*
 	if (ver_collision) {
 		if ((ver_collision != noone) && (ver_collision.cancollide)){
 			var xplus = 0;
 
 		    //can we go to the left?
-		    while (place_meeting(x - xplus, y + vsp, par_collision) && xplus <= abs(vsp)) xplus += 1;
-		    if ((!place_meeting(x - xplus, y + vsp, par_collision)) && (!key_right)) {
+		    while (instance_place(x - xplus, y + vsp, par_collision) && xplus <= abs(vsp)) xplus += 1;
+		    if ((!instance_place(x - xplus, y + vsp, par_collision)) && (!key_right)) {
 		        //if you can go to the left, then go to the left
 		        x -= xplus;
 		    } else {
 		        //we can't go to the left   
 		        //can we go to the right?
-		        while (place_meeting(x + xplus, y + vsp, par_collision) && xplus <= abs(vsp)) xplus += 1;
-		        if ((!place_meeting(x + xplus, y + vsp, par_collision)) && (!key_left)) {
+		        while (instance_place(x + xplus, y + vsp, par_collision) && xplus <= abs(vsp)) xplus += 1;
+		        if ((!instance_place(x + xplus, y + vsp, par_collision)) && (!key_left)) {
 		            //if we can go to the right, then we'll go right
 		            x += xplus;
 		        } else {
 		            //we can't go right
 		            //we get as close as we can to the wall and stop
-		            while (!place_meeting(x, y + sign(vsp), par_collision))
+		            while (!instance_place(x, y + sign(vsp), par_collision))
 		                y += sign(vsp);
 		            vsp = 0;
 		        }
 		    }	
 		}
 	}
-
+*/
 	y += vsp;	
-
+	scr_player_unstuck();
+	scr_player_walkaround();
+	
+	
+	
+	
 	
 
 
