@@ -35,11 +35,3 @@ portraitbox_wh = 64;
 depth = -2;
 
 alarm[0] = 1;
-
-//Emocje
-enum dialogueEmotion{
-	normal		= 0,
-	happy		= 1,
-	angry		= 2,
-	sad			= 3
-}

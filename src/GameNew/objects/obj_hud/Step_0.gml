@@ -76,27 +76,6 @@ if (keyboard_check_pressed(ord("O"))){
 if (keyboard_check_pressed(ord("P"))){
 	effect_add(effect.speed_ef, 15, 3);	
 }
-
-if (show_hud == hud.inv){
-	if backpack_frame >= backpack_frames{
-		backpack_frame = backpack_frames - 1;	
-	}else{
-		backpack_frame += .2;
-	}
-}else{
-	backpack_frame = 0;	
-}
-
-if (show_hud == hud.crafting){
-	if crafting_frame >= crafting_frames{
-		crafting_frame = crafting_frames - 1;	
-	}else{
-		crafting_frame += .2;	
-	}
-}else{
-	crafting_frame = 0;	
-}
-
 	
 
 
@@ -178,25 +157,57 @@ if (hud_inner){
 	switch (selected_hud_slot){
 		case 0:
 			show_hud = hud.inv;
-			hud_slot_y_active[0] = 8;
+			hud_slot_y_active[0] = 6;
 			hud_slot_y_active[1] = 0;
+			hud_slot_y_active[2] = 0;
+			hud_slot_y_active[3] = 0;
+			hud_slot_y_active[4] = 0;
+			hud_slot_y_active[5] = 0;
 		break;
 		case 1:
-			show_hud = hud.crafting;
+			show_hud = hud.player;
 			hud_slot_y_active[0] = 0;
-			hud_slot_y_active[1] = 8;
+			hud_slot_y_active[1] = 6;
+			hud_slot_y_active[2] = 0;
+			hud_slot_y_active[3] = 0;
+			hud_slot_y_active[4] = 0;
+			hud_slot_y_active[5] = 0;
 		break;
 		case 2:
-			show_hud = hud.player;
+			show_hud = hud.crafting;
+			hud_slot_y_active[0] = 0;
+			hud_slot_y_active[1] = 0;
+			hud_slot_y_active[2] = 6;
+			hud_slot_y_active[3] = 0;
+			hud_slot_y_active[4] = 0;
+			hud_slot_y_active[5] = 0;
 		break;
 		case 3:
 			show_hud = hud.map;
+			hud_slot_y_active[0] = 0;
+			hud_slot_y_active[1] = 0;
+			hud_slot_y_active[2] = 0;
+			hud_slot_y_active[3] = 6;
+			hud_slot_y_active[4] = 0;
+			hud_slot_y_active[5] = 0;
 		break;
 		case 4:
 			show_hud = hud.journal;
+			hud_slot_y_active[0] = 0;
+			hud_slot_y_active[1] = 0;
+			hud_slot_y_active[2] = 0;
+			hud_slot_y_active[3] = 0;
+			hud_slot_y_active[4] = 6;
+			hud_slot_y_active[5] = 0;
 		break;
 		case 5:
 			show_hud = hud.options;
+			hud_slot_y_active[0] = 0;
+			hud_slot_y_active[1] = 0;
+			hud_slot_y_active[2] = 0;
+			hud_slot_y_active[3] = 0;
+			hud_slot_y_active[4] = 0;
+			hud_slot_y_active[5] = 6;
 		break;
 	}
 }
@@ -204,7 +215,7 @@ if (show_hud == hud.inv) || (show_hud == hud.crafting) || (show_hud == hud.playe
 	var mousex = device_mouse_x_to_gui(0);
 	var mousey = device_mouse_y_to_gui(0);
 
-	var cell_xoffset = 24;
+	var cell_xoffset = 24 + 12;
 	var cell_yoffset = 42;
 
 	var i_mousex = mousex - slots_x;
@@ -213,16 +224,16 @@ if (show_hud == hud.inv) || (show_hud == hud.crafting) || (show_hud == hud.playe
 	var numx = i_mousex div cell_xoffset;
 	var numy = i_mousey div cell_yoffset;
 
-	if (mousex >= hud_slot_x) && (mousex < (hud_slot_x + (24 * 6))) && (mousey >= hud_slot_y) && (mousey < (hud_slot_y + 48)){
+	if (mousex >= hud_slot_x) && (mousex < (hud_slot_x + (24 * 6))) && (mousey >= hud_slot_y) && (mousey < (hud_slot_y + 42)){
 		var sx = i_mousex - (numx * cell_xoffset);
 		var sy = i_mousey - (numy * cell_yoffset);
 	
-		if ((sx < 24) && (sy < 48)){
+		if ((sx < 24) && (sy < 42)){
 			mouse_slotx = numx;
 			mouse_sloty = numy;
 		}
 	
-		if (mouse_check_button_pressed(mb_left)) && (obj_amadix.actionstate == player_state_action.none){
+		if (mouse_check_button_pressed(mb_left)){
 			selected_hud_slot = mouse_slotx;
 		}
 	

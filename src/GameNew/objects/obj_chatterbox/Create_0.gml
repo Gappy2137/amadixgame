@@ -1,4 +1,6 @@
 
+depth = -10;
+
 myPortrait = -1;
 
 myEmotion = -1;
@@ -100,13 +102,3 @@ ChatterboxJump(chatterbox, "Start");
 
 //Update our text elements
 refresh_text_elements();
-
-
-/*
-//Emocje
-enum dialogueEmotion{
-	normal		= 0,
-	happy		= 1,
-	angry		= 2,
-	sad			= 3
-}

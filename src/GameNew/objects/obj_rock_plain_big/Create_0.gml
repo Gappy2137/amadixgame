@@ -5,7 +5,7 @@ image_speed = 0;
 
 cancollide = true;
 
-yorigin = 16;
+yorigin = 30;
 
 shadowOriginX = 16;
 shadowOriginY = 32;

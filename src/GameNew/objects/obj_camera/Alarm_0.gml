@@ -1,0 +1,1 @@
+mode = camera_mode.follow_player;

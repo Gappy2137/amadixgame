@@ -117,5 +117,9 @@ hours = 0;
 global.daycycletime = 0;
 
 global.inDialogue = false;
+global.pickUp = false;
+global.inEq = false;
+global.inConsole = false;
 
 refTimer = 0;
+

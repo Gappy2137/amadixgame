@@ -11,8 +11,10 @@ enum camera_mode{
 	follow_player_precise,
 }
 
-mode = camera_mode.follow_player;
+mode = camera_mode.follow_player_precise;
 
 camera = camera_create_view(0, 0, view_width, view_height, 0, obj_amadix, -1, -1, 32, 32);
 
 camera_apply(camera);
+
+alarm[0] = 5;

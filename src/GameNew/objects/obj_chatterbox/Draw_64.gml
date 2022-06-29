@@ -88,7 +88,7 @@ function choiceshow(){
 			
 			// Portrait
 			draw_sprite(spr_portrait_amadix,
-			real(myEmotion),
+			dialogue_emotion_convert(myEmotion),
 			portraitboxX_amadix, dialboxY);
 			
 			// Portrait edge
@@ -131,7 +131,7 @@ function choiceshow(){
 			
 			// Portrait
 			draw_sprite(asset_get_index(myPortrait),
-			real(myEmotion),
+			dialogue_emotion_convert(myEmotion),
 			portraitboxX, dialboxY);
 			
 			// Portrait edge
@@ -187,7 +187,7 @@ function choiceshow(){
 					choiceport_x, dialboxY);
 				}else{
 					draw_sprite(asset_get_index(myPortrait),
-					real(myEmotion),
+					dialogue_emotion_convert(myEmotion),
 					choiceport_x, dialboxY);
 				}
 				// Portrait edge
