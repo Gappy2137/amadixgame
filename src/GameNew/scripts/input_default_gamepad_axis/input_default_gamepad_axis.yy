@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "Default Bindings",
-    "path": "folders/Extensions/Input/Default Bindings.yy",
+    "path": "folders/Extensions/Input/(System)/Deprecated/Default Bindings.yy",
   },
   "resourceVersion": "1.0",
   "name": "input_default_gamepad_axis",

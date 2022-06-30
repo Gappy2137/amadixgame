@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Other",
-    "path": "folders/Extensions/Input/Other.yy",
+    "name": "Verbs",
+    "path": "folders/Extensions/Input/Verbs.yy",
   },
   "resourceVersion": "1.0",
   "name": "input_consume",

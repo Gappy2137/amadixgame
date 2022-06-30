@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "Cursor",
-    "path": "folders/Extensions/Input/(System)/Deprecated/Cursor.yy",
+    "path": "folders/Extensions/Input/Cursor.yy",
   },
   "resourceVersion": "1.0",
   "name": "input_cursor_limit_circle",

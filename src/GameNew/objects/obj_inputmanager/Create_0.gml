@@ -1,4 +1,4 @@
-
+/*
 //--------------------
 // 0 - no input
 // 1 - main game screen

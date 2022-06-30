@@ -10,25 +10,7 @@ if (instance_exists(obj_daynightclock)){
 if (t < 50){t++;}
 if (t > 50){t = 50;}
 
-if global.hp > global.maxhp{
-	global.hp = global.maxhp;	
-}
-if global.hp <= 0{
-	global.hp = 0;	
-}
-if global.maxhp <= 1{
-	global.maxhp = 1;	
-}
 
-if global.stamina > global.maxstamina{
-	global.stamina = global.maxstamina;	
-}
-if global.stamina <= 0{
-	global.stamina = 0;	
-}
-if global.maxstamina <= 1{
-	global.maxstamina = 1;	
-}
 ds_grid_sort(effect_grid, 1, false);
 var i = 0;
 repeat(maxeffects){

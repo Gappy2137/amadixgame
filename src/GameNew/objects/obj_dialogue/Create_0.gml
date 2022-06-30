@@ -1,4 +1,4 @@
-if (instance_number(obj_dialogue) > 1){instance_destroy(); exit;}
+/*if (instance_number(obj_dialogue) > 1){instance_destroy(); exit;}
 
 mes[0] = -1;
 

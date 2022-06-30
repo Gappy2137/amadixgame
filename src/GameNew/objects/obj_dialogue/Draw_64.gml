@@ -1,4 +1,4 @@
-if (timer <= 1){exit}
+/*if (timer <= 1){exit}
 message_end = array_length_1d(mes);
 	
 if (myPortrait[message_current] == -1){

@@ -87,7 +87,6 @@ alpha = 0;
 					
 #endregion
 */
-ds_daycycle_info[0][0][0] = 060.00/255;
-ds_daycycle_info[1][0][0] = 060.00/255;
+ds_daycycle_info[0][0][0] = [];
 scr_daycycle_params();
 alarm[0] = 1;

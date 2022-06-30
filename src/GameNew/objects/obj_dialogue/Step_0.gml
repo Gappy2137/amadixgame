@@ -1,4 +1,4 @@
-//Zakoncz tekst po przeczytaniu wszystkich wiadomosci
+/*//Zakoncz tekst po przeczytaniu wszystkich wiadomosci
 if (mouse_check_button_pressed(mb_left)){
 	
 	if (write.get_typewriter_state() < 1){
@@ -13,7 +13,7 @@ if (mouse_check_button_pressed(mb_left)){
 			write.typewriter_reset();
 			instance_destroy();
 		}
-		*/
+		
 		var xx = message_current;
 		if (message_next[xx] == -1){
 			write.typewriter_reset();

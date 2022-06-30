@@ -540,8 +540,8 @@ else if (!show_inventory) && (show_slots){
 			if (input_check_pressed("inventory_8")){mouse_slotx_second = 7;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
 			if (input_check_pressed("inventory_9")){mouse_slotx_second = 8;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
 			if (input_check_pressed("inventory_0")){mouse_slotx_second = 9;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
-			if (input_check_pressed("inventory_-")){mouse_slotx_second = 10;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
-			if (input_check_pressed("inventory_=")){mouse_slotx_second = 11;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
+			if (input_check_pressed("inventory_hyphen")){mouse_slotx_second = 10;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
+			if (input_check_pressed("inventory_equals")){mouse_slotx_second = 11;selected_slot = mouse_slotx_second;show_slots_mouse = true;mouse_slotx_fix = false;text_timer = 300;text_alpha = 1;}
 		}
 	}
 	#endregion

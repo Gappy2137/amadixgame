@@ -1,1 +1,1 @@
-input_tick();
+/*input_tick();

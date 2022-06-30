@@ -1,4 +1,4 @@
-if(keyboard_check_pressed(ord("Z"))) && (obj_inputmanager.inputPriority != 3)
+if(keyboard_check_pressed(ord("Z")))
 {
 	zoomtrigger = true;
 	window_size++;

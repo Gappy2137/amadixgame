@@ -1,1 +1,0 @@
-mes = "Mój stary to fanatyk wędkarstwa. Pół mieszkania zajebane wędkami najgorsze.";

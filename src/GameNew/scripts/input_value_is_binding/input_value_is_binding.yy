@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Bindings",
-    "path": "folders/Extensions/Input/Bindings.yy",
+    "name": "Binding Creators",
+    "path": "folders/Extensions/Input/Binding Creators.yy",
   },
   "resourceVersion": "1.0",
   "name": "input_value_is_binding",

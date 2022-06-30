@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Source Assignment",
-    "path": "folders/Extensions/Input/Source Assignment.yy",
+    "name": "Deprecated",
+    "path": "folders/Extensions/Input/(System)/Deprecated.yy",
   },
   "resourceVersion": "1.0",
   "name": "input_source_hotswap_tick",

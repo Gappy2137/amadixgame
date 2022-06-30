@@ -32,7 +32,25 @@ if (instance_exists(obj_chatterbox)){
 	global.inDialogue = false;	
 }
 
+if ((global.hp) > (global.maxhp)){
+	global.hp = global.maxhp;	
+}
+if global.hp <= 0{
+	global.hp = 0;	
+}
+if global.maxhp <= 1{
+	global.maxhp = 1;	
+}
 
+if global.stamina > global.maxstamina{
+	global.stamina = global.maxstamina;	
+}
+if global.stamina <= 0{
+	global.stamina = 0;	
+}
+if global.maxstamina <= 1{
+	global.maxstamina = 1;	
+}
 
 //instance_deactivate_layer("Instances");
 //instance_deactivate_layer("Invisible");
@@ -61,10 +79,10 @@ instance_activate_object(obj_chatterbox);
 instance_activate_object(obj_cursor);
 
 instance_activate_region(
-camera_get_view_x(view_camera[0]) - 64,
-camera_get_view_y(view_camera[0]) - 64,
-camera_get_view_width(view_camera[0]) + 64,
-camera_get_view_height(view_camera[0]) + 64,
+camera_get_view_x(view_camera[0]) - INSTANCE_LOAD_DISTANCE,
+camera_get_view_y(view_camera[0]) - INSTANCE_LOAD_DISTANCE/64,
+camera_get_view_width(view_camera[0]) + INSTANCE_LOAD_DISTANCE*2,
+camera_get_view_height(view_camera[0]) + INSTANCE_LOAD_DISTANCE*3,
 true
 );
 

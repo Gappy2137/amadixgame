@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Input",
-    "path": "folders/Extensions/Input.yy",
+    "name": "Deprecated",
+    "path": "folders/Extensions/Input/(System)/Deprecated.yy",
   },
   "resourceVersion": "1.0",
   "name": "input_tick",

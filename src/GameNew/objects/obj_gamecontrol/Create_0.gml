@@ -23,7 +23,11 @@
 //CZCIONKI
 global.font_itemnum = font_add_sprite(spr_font_item_num, ord("0123456789-.%"), false, 1);
 //
+#macro GAMESPEED 60
+#macro INSTANCE_LOAD_DISTANCE 128
 randomize();
+
+game_set_speed(GAMESPEED, gamespeed_fps);
 
 guiWidth = display_get_gui_width();
 guiHeight = display_get_gui_height();

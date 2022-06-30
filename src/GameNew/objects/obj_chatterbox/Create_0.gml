@@ -84,6 +84,7 @@ onChoice[3] = 0;
 3 - wybor
 */
 
+
 //show_message(filename_dir(dialogueName));
 
 //Set the default font for Scribble to use
