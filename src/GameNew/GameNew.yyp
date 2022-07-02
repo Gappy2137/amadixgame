@@ -703,6 +703,7 @@
     {"id":{"name":"spr_amadix_newA_gun_l_reload","path":"sprites/spr_amadix_newA_gun_l_reload/spr_amadix_newA_gun_l_reload.yy",},"order":1,},
     {"id":{"name":"scr_draw_slot_none","path":"scripts/scr_draw_slot_none/scr_draw_slot_none.yy",},"order":0,},
     {"id":{"name":"spr_eq_ui_back","path":"sprites/spr_eq_ui_back/spr_eq_ui_back.yy",},"order":0,},
+    {"id":{"name":"obj_surftest","path":"objects/obj_surftest/obj_surftest.yy",},"order":14,},
     {"id":{"name":"hour_check","path":"scripts/hour_check/hour_check.yy",},"order":8,},
     {"id":{"name":"input_cursor_y","path":"scripts/input_cursor_y/input_cursor_y.yy",},"order":13,},
     {"id":{"name":"spr_amadix_sawedoff_u_shoot","path":"sprites/spr_amadix_sawedoff_u_shoot/spr_amadix_sawedoff_u_shoot.yy",},"order":6,},

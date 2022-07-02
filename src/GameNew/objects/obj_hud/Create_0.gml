@@ -80,17 +80,3 @@ repeat(12){
 	
 	i++;
 }
-
-function open(){
-	obj_inventory.show_inventory = true;	
-	obj_inventory.show_slots = true;	
-	obj_crafting.show_crafting = false;
-}
-function close(){
-	obj_inventory.show_inventory = false;
-	obj_crafting.show_crafting = false;
-}
-function close_slots(){
-	obj_inventory.show_slots = false;	
-	obj_crafting.show_crafting = false;
-}

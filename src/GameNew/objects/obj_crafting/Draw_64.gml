@@ -194,7 +194,7 @@ draw_set_font(font_item);
 			var ibox_height = name_height + type_height + desc_height - 8;
 		}
 		
-		if (ibox_y + ibox_height > obj_display.ideal_height){
+		if (ibox_y + ibox_height > GAMEHEIGHT){
 			ibox_y = craft_slot_y + (mouse_sloty * cell_size) - ibox_height;
 		}
 		

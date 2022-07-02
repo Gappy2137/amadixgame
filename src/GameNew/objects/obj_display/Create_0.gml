@@ -1,3 +1,5 @@
+
+
 ideal_width = 480;
 ideal_height = 270;
 display_width = display_get_width();
@@ -39,17 +41,17 @@ for(var i=1; i<=room_last; i++)
 {
   if(room_exists(i))
   {
-    room_set_view(i,0,true,0,0,ideal_width,ideal_height,0,0,ideal_width,ideal_height,0,0,0,0,-1);
+    room_set_view(i,0,true,0,0,GAMEWIDTH,GAMEHEIGHT,0,0,GAMEWIDTH,GAMEHEIGHT,0,0,0,0,-1);
     room_set_view_enabled(i,true);
   }
 }
 
-view_set_wport(0, ideal_width);
-view_set_hport(0, ideal_height);
+view_set_wport(0, GAMEWIDTH);
+view_set_hport(0, GAMEHEIGHT);
 
-window_set_size(ideal_width, ideal_height);
-display_set_gui_size(ideal_width, ideal_height);
-surface_resize(application_surface, ideal_width * window_size, ideal_height * window_size);
+window_set_size(GAMEWIDTH, GAMEHEIGHT);
+display_set_gui_size(GAMEWIDTH, GAMEHEIGHT);
+surface_resize(application_surface, GAMEWIDTH * window_size, GAMEHEIGHT * window_size);
 instance_create_layer(0,0,"Important",obj_camera); 
 window_set_fullscreen(false);
 window_center();

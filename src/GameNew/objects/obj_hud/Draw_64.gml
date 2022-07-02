@@ -3,7 +3,7 @@ depth = -1;
 //Rysuj menu ekwipunku
 if (obj_inventory.show_inventory) && (!obj_inventory.show_slots){
 	draw_set_alpha(0.5);
-	draw_rectangle_color(-8, -8, obj_display.ideal_width + 8, obj_display.ideal_height + 8, c_black, c_black, c_black, c_black, false);
+	draw_rectangle_color(-8, -8, GAMEWIDTH + 8, GAMEHEIGHT + 8, c_black, c_black, c_black, c_black, false);
 	draw_set_alpha(1);
 	draw_sprite_ext(obj_inventory.spr_eq_back, 1, obj_inventory.backUI_x, obj_inventory.backUI_y, obj_inventory.scale, obj_inventory.scale, 0, c_white, 1);
 

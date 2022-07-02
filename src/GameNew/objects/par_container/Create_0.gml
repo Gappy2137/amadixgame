@@ -31,7 +31,7 @@ cell_size = 24;
 invUI_width = containerSlotWidth * cell_size;
 invUI_height = containerSlotHeight * cell_size;
 
-xUI = (obj_display.ideal_width/2) - (containerSlotWidth * cell_size/2);
+xUI = (GAMEWIDTH/2) - (containerSlotWidth * cell_size/2);
 yUI = 72 - (containerSlotHeight * cell_size/2);
 
 xUI_eq = 96;
@@ -55,3 +55,9 @@ slots_y_eq = yUI_eq;
 ds_container = ds_grid_create(11, containerSlots);
 
 canUseContainter = false;
+
+anim_frame = 0;
+anim_frame_num = 0;
+anim_speed = 0;
+
+opened = false;

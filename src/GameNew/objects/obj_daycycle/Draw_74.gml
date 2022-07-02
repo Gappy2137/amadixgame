@@ -1,5 +1,5 @@
 if (!surface_exists(srf_lights)) {
-	srf_lights = surface_create(obj_display.ideal_width, obj_display.ideal_height);
+	srf_lights = surface_create(GAMEWIDTH, GAMEHEIGHT);
 	tex_lights = surface_get_texture(srf_lights);
 }
 surface_set_target(srf_lights);

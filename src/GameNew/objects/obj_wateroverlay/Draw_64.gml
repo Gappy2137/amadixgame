@@ -1,9 +1,9 @@
 /*
 if !surface_exists(surf){
-	surf = surface_create(obj_display.ideal_width*obj_display.window_size, obj_display.ideal_height*obj_display.window_size);	
+	surf = surface_create(GAMEWIDTH*obj_display.window_size, GAMEHEIGHT*obj_display.window_size);	
 }
 if !surface_exists(refsurf){
-	refsurf = surface_create(obj_display.ideal_width, obj_display.ideal_height);	
+	refsurf = surface_create(GAMEWIDTH, GAMEHEIGHT);	
 }
 
 var tiles = layer_tilemap_get_id(layer_get_id("Water"));
@@ -37,8 +37,8 @@ draw_surface_ext(surf, 0, 0, 1, 1, 0, c_white, 0.8);
 */
 
 
-var width = obj_display.ideal_width * obj_display.window_size;
-var height = obj_display.ideal_height * obj_display.window_size;
+var width = GAMEWIDTH * obj_display.window_size;
+var height = GAMEHEIGHT * obj_display.window_size;
 
 var cam_x = camera_get_view_x(view_camera[0]);
 var cam_y = camera_get_view_y(view_camera[0]);
@@ -47,22 +47,24 @@ var cam_scale = obj_display.window_size;
 var xy = -16;
 
 if !surface_exists(waterSurface){
-	waterSurface = surface_create(room_width, room_height);	
+	waterSurface = surface_create(width, height);	
 }
 if !surface_exists(overlaySurface){
-	overlaySurface = surface_create((room_width + 16), (room_height + 16));	
+	overlaySurface = surface_create((width + 16), (height + 16));	
 }
 
 var tiles = layer_tilemap_get_id(layer_get_id("Water"));
+var watertileset = tileset_main_1;
 
 
 surface_set_target(overlaySurface);
 
-draw_sprite_tiled_ext(spr_water_overlay, 0, xy, xy, 1, 1, c_white, 1);
+draw_sprite_tiled_ext(spr_water_overlay, 0, 0, 0, 1, 1, c_white, 1);
 
 surface_reset_target();
 
 
+/*
 
 surface_set_target(waterSurface);
 
@@ -75,7 +77,27 @@ draw_surface_ext(overlaySurface, xx + xy, yy + xy, 1, 1, 0, c_white, 0.2);
 gpu_set_colorwriteenable(1, 1, 1, 1);
 
 surface_reset_target();
+*/
 
+shader_set(shader_ov);
+	
+var u_Overlay = shader_get_sampler_index(shader_ov, "u_Overlay");
+var u_OverlayUV = shader_get_uniform(shader_ov, "u_OverlayUV");
+var u_TilemapUV = shader_get_uniform(shader_ov, "u_SpriteUV");
+
+var waterTex = surface_get_texture(overlaySurface);
+var waterUV = texture_get_uvs(waterTex);
+
+texture_set_stage(u_Overlay, waterTex);
+
+shader_set_uniform_f(u_OverlayUV, waterUV[0], waterUV[1], waterUV[2], waterUV[3]);
+
+var tilemapUV = tileset_get_uvs(watertileset);
+shader_set_uniform_f(u_TilemapUV, tilemapUV[0], tilemapUV[1], tilemapUV[2], tilemapUV[3]);
+
+draw_tilemap(tiles, 0, 0);
+
+shader_reset();
 
 
 /*
@@ -103,4 +125,4 @@ surface_reset_target();
 
 draw_surface_ext(refSurf, cam_x, cam_y, cam_scale, cam_scale, 0, c_white, 1);
 */
-draw_surface_ext(waterSurface, 0, 0, 1, 1, 0, c_white, 1);
+//draw_surface_ext(waterSurface, 0, 0, 1, 1, 0, c_white, 1);

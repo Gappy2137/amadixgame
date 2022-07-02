@@ -1,10 +1,10 @@
 if (obj_display.zoomtrigger){exit;}
 
-var width = obj_display.ideal_width * obj_display.window_size * xscale;
-var height = obj_display.ideal_height * obj_display.window_size * yscale;
+var width = GAMEWIDTH * obj_display.window_size * xscale;
+var height = GAMEHEIGHT * obj_display.window_size * yscale;
 
-var scaled_x = (((obj_display.ideal_width * xscale) - obj_display.ideal_width) / 1.75);
-var scaled_y = (((obj_display.ideal_height * yscale) - obj_display.ideal_height) / 1.75);
+var scaled_x = (((GAMEWIDTH * xscale) - GAMEWIDTH) / 1.75);
+var scaled_y = (((GAMEHEIGHT * yscale) - GAMEHEIGHT) / 1.75);
 
 var cam_x = camera_get_view_x(view_camera[0]);
 var cam_y = camera_get_view_y(view_camera[0]);

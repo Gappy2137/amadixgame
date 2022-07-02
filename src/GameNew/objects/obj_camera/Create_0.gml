@@ -1,6 +1,6 @@
 
-view_width = obj_display.ideal_width;
-view_height = obj_display.ideal_height;
+view_width = GAMEWIDTH;
+view_height = GAMEHEIGHT;
 
 following = obj_amadix;
 

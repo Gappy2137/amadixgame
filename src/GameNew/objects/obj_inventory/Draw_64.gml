@@ -388,14 +388,14 @@ if (show_inventory) && (!show_slots){
 		}
 		*/
 		
-		if (infobox_x + infobox_width > obj_display.ideal_width){
+		if (infobox_x + infobox_width > GAMEWIDTH){
 			infobox_x = mousex - 8 - infobox_width;
 		}
 		var infobox_half = (infobox_x + infobox_width/2);
 		
 		infobox_height = namestr.get_height()*name_scale + typestr.get_height()*type_scale + descstr.get_height()*desc_scale + 12;
 		
-		if (infobox_y + infobox_height > obj_display.ideal_height){
+		if (infobox_y + infobox_height > GAMEHEIGHT){
 			infobox_y = mousey - 8 - infobox_height;
 		}
 		
@@ -535,7 +535,7 @@ if (show_inventory) && (!show_slots){
 			var ibox_height = name_height + type_height + desc_height - 8;
 		}
 		
-		if (ibox_y + ibox_height > obj_display.ideal_height){
+		if (ibox_y + ibox_height > GAMEHEIGHT){
 			ibox_y = yUI + (mouse_sloty * cell_size) - ibox_height;
 		}
 		

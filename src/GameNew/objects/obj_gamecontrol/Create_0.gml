@@ -25,6 +25,8 @@ global.font_itemnum = font_add_sprite(spr_font_item_num, ord("0123456789-.%"), f
 //
 #macro GAMESPEED 60
 #macro INSTANCE_LOAD_DISTANCE 128
+#macro GAMEWIDTH 480
+#macro GAMEHEIGHT 270
 randomize();
 
 game_set_speed(GAMESPEED, gamespeed_fps);
@@ -127,3 +129,4 @@ global.inConsole = false;
 
 refTimer = 0;
 
+alarm[0] = 5;

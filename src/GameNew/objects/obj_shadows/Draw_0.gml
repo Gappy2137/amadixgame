@@ -75,6 +75,6 @@ gpu_set_fog(false, c_white, 0, 0);
 
 surface_reset_target();
 
-//surface_resize(shadowSurface, obj_display.ideal_width * obj_display.window_size, obj_display.ideal_height * obj_display.window_size);
+//surface_resize(shadowSurface, GAMEWIDTH * obj_display.window_size, GAMEHEIGHT * obj_display.window_size);
 
 draw_surface_ext(shadowSurface, 0, 0, 1, 1, 0, c_white, 1);
