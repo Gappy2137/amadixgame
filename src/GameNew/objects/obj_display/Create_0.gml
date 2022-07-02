@@ -4,15 +4,19 @@ ideal_width = 480;
 ideal_height = 270;
 display_width = display_get_width();
 display_height = display_get_height();
+
 window_size = 1;
 max_window_size = 4;
-global.gameWidth = 480;
-global.gameHeight = 270;
-global.zoom = 3;
 
 zoomtrigger = false;
 
 aspect_ratio = display_width/display_height;
+
+fullscreen = false;
+
+windowWidth = window_get_width();
+windowHeight = window_get_height();
+
 
 
 //ideal_width = round(ideal_height*aspect_ratio);
@@ -37,7 +41,7 @@ if(ideal_width & 1)
 if(ideal_height & 1)
   ideal_height++;  
   */
-for(var i=1; i<=room_last; i++)
+for(var i=1; i<=real(room_last); i++)
 {
   if(room_exists(i))
   {
@@ -50,10 +54,17 @@ view_set_wport(0, GAMEWIDTH);
 view_set_hport(0, GAMEHEIGHT);
 
 window_set_size(GAMEWIDTH, GAMEHEIGHT);
+
 display_set_gui_size(GAMEWIDTH, GAMEHEIGHT);
+
 surface_resize(application_surface, GAMEWIDTH * window_size, GAMEHEIGHT * window_size);
+
 instance_create_layer(0,0,"Important",obj_camera); 
+
 window_set_fullscreen(false);
+
 window_center();
-alarm[2] = 1;
+
+//alarm[2] = 1;
+
 room_goto(rm_devroom_3);

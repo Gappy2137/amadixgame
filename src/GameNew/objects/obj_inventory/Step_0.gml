@@ -338,7 +338,7 @@ if (show_inventory) && (!show_slots){
 					slot_remove(selected_slot);
 				}else{
 					
-					if (input_check("shift")){
+					if (input_check("inventory_shift")){
 						multipick = floor((inv_grid[# INVAMOUNT, selected_slot])/2);
 						inv_grid[# INVAMOUNT, selected_slot] -= multipick;
 					}else{
@@ -355,7 +355,7 @@ if (show_inventory) && (!show_slots){
 				if (inv_grid[# INVLEVEL, selected_slot] != cap){
 					changeitem();
 				}else{
-					if (input_check("shift")){
+					if (input_check("inventory_shift")){
 						if (inv_grid[# INVAMOUNT, selected_slot] == 1){
 							multipick++;
 							slot_remove(selected_slot);
