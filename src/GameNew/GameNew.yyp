@@ -546,6 +546,7 @@
     {"id":{"name":"spr_amadix_hands_sawedoff_u","path":"sprites/spr_amadix_hands_sawedoff_u/spr_amadix_hands_sawedoff_u.yy",},"order":9,},
     {"id":{"name":"input_mouse_y","path":"scripts/input_mouse_y/input_mouse_y.yy",},"order":11,},
     {"id":{"name":"spr_amadix_m1911_d_empty","path":"sprites/spr_amadix_m1911_d_empty/spr_amadix_m1911_d_empty.yy",},"order":9,},
+    {"id":{"name":"obj_dandelion_white","path":"objects/obj_dandelion_white/obj_dandelion_white.yy",},"order":3,},
     {"id":{"name":"scribble_msdf_thickness_offset","path":"scripts/scribble_msdf_thickness_offset/scribble_msdf_thickness_offset.yy",},"order":5,},
     {"id":{"name":"spr_amadix_bareTC_run_l","path":"sprites/spr_amadix_bareTC_run_l/spr_amadix_bareTC_run_l.yy",},"order":10,},
     {"id":{"name":"spr_item_none","path":"sprites/spr_item_none/spr_item_none.yy",},"order":6,},

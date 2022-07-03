@@ -1,3 +1,4 @@
+event_inherited();
 
 var _curve_alpha = animcurve_get(curve_alpha);
 var _channel = animcurve_get_channel(_curve_alpha, "alp");
@@ -11,10 +12,15 @@ switch(type){
 		
 	break;
 	case 1:
-	
+		rot += rotSpeed;
+		
+		x += lengthdir_x(spd, angle) + (-global.windDir * global.windStr/75);
+		y += lengthdir_y(spd, angle) - (global.windStr/200);
+		
+		alpha -= fadeoutSpeed;
 	break;
 	case 2:
-		curve_alpha_pos += 0.04;
+		curve_alpha_pos += fadeoutSpeed;
 		x += (player_sign * spd);
 		accel += 0.02;
 		y -= spd * accel;
@@ -22,7 +28,7 @@ switch(type){
 		alpha = _alpha;
 	break;
 	case 3:
-		x += lengthdir_x(spd, rot);
+		x += lengthdir_x(spd, rot) + (-global.windDir * global.windStr/75);
 		y += lengthdir_y(spd, rot);
 	break;
 	case 4:
@@ -47,12 +53,12 @@ if (_anim){
 	_anim_frame += _anim_speed;	
 }
 
-if (type != 4){
+if (type != 4) || (type != 1){
 	if (_anim_frame > _anim_frames){
 		instance_destroy();
 	}
-	
+}
+
 if (alpha == 0){
 	instance_destroy();	
-}
 }

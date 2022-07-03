@@ -19,7 +19,9 @@ shadowAlpha = 0.6;
 
 shadowEnable = true;
 
+wind_enable = true;
 anim_enable = false;
+isWind = false;
 anim_frame_num = 4;
 anim_frame = irandom(anim_frame_num);
 anim_speed = 0;
@@ -37,8 +39,8 @@ resetAngleTimer = 10;
 wtr = false;
 
 shallowwater = collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, obj_shallowwater16, false, true);
-if (shallowwater) wtr = true;
 if (shallowwater){
+	wtr = true;
 	shadowEnable = false;
 	//yorigin = 28;	
 	y += 4;

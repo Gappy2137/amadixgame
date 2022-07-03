@@ -47,12 +47,13 @@ var curveRot2Value = animcurve_channel_evaluate(curveRot2Channel, curveRot2Pos);
 
 
 if (wnd >= 0){
-	anim_enable = true;
+	if (wind_enable)
+		isWind = true;
 }else{
-	anim_enable = false;
+	isWind = false;
 }
 
-if (anim_enable){
+if (isWind){
 	
 	if ((wnd*100) > 5){
 		anim_speed = curveSpdValue;
@@ -69,10 +70,12 @@ if (anim_enable){
 		windangle = lerp(windangle, 0, 0.1);
 	}
 	
-	anim_frame += anim_speed;
+	if (anim_enable){
+		anim_frame += anim_speed;
 	
-	if (anim_frame > anim_frame_num){
-		anim_frame = 0;
+		if (anim_frame > anim_frame_num){
+			anim_frame = 0;
+		}
 	}
 }
 

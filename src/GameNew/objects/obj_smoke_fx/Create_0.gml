@@ -5,8 +5,12 @@ _anim = false;
 xscale = 1;
 yscale = 1;
 rot = 0;
+angle = 0;
+rotSpeed = 0;
 col = c_white;
 alpha = 1;
+fadeoutSpeed = 0.04;
+yorigin = sprite_height/2;
 
 _anim_frame = 0;
 _anim_frames = 0;
@@ -20,7 +24,7 @@ curve_alpha_pos = 0;
 ////////////////////
 //type
 //0 - znikanie w miejscu
-//1 - 360 stopni
+//1 - 360 stopni zanikanie
 //2 - podloze
 //3 - dir
 //4 - bez zanikania

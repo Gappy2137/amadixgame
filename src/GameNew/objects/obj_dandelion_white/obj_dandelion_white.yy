@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_grass_light_3",
-    "path": "sprites/spr_grass_light_3/spr_grass_light_3.yy",
+    "name": "spr_dandelion_white",
+    "path": "sprites/spr_dandelion_white/spr_dandelion_white.yy",
   },
   "solid": false,
   "visible": true,
@@ -15,7 +15,7 @@
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
-  "physicsGroup": 0,
+  "physicsGroup": 1,
   "physicsDensity": 0.5,
   "physicsRestitution": 0.1,
   "physicsLinearDamping": 0.1,
@@ -25,16 +25,17 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Grass",
-    "path": "folders/Objects/World Objects/Grass.yy",
+    "name": "Plants",
+    "path": "folders/Objects/World Objects/Plants.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_grass_plains_3",
+  "name": "obj_dandelion_white",
   "tags": [],
   "resourceType": "GMObject",
 }
