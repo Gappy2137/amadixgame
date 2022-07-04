@@ -47,9 +47,13 @@ angle2 = 0;
 
 collision = false;
 
+cancollide = false;
+
 acc = 2;
 
 en = -1;
+
+sol = noone;
 
 isanim = false;
 anim = 0;
@@ -76,6 +80,13 @@ rnd = random_range(0.8, 1.3);
 resetAngle = true;
 resetAngleTimer = 10;
 
+var zf = instance_place(x, y, par_zfloor);
+if (zf){
+	zfloor = zf.zflr;	
+}else{
+	zfloor = 0;	
+}
+
 shallowwater = collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, obj_shallowwater16, false, true);
 if (shallowwater){shadowEnable = false;}
 
@@ -83,4 +94,8 @@ if (type == 0) || (type == 1) || (type == 2) || (type == 5){
 	cancollide = true;
 }else{
 	cancollide = false;	
+}
+
+if (cancollide){
+	alarm[0] = 1;	
 }

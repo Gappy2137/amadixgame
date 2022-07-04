@@ -38,6 +38,13 @@ resetAngle = true;
 resetAngleTimer = 10;
 wtr = false;
 
+var zf = instance_place(x, y, par_zfloor);
+if (zf){
+	zfloor = zf.zflr;	
+}else{
+	zfloor = 0;	
+}
+
 shallowwater = collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, obj_shallowwater16, false, true);
 if (shallowwater){
 	wtr = true;

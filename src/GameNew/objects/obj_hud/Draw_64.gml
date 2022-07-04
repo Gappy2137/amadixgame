@@ -180,7 +180,7 @@ repeat(12){
 	draw_set_font(clockFont);
 	draw_set_color(#202027);
 	draw_set_alpha(1);
-	draw_text_transformed(clockArrow_x + clockNumX[i - 1] + .5, clockArrow_y + clockNumY[i - 1], string(i), size, size, 0);
+	draw_text_transformed(clockArrow_x + clockNumX[i - 1] - 1, clockArrow_y + clockNumY[i - 1] - 1.5, string(i), size, size, 0);
 	draw_set_font(font_item);
 	
 	

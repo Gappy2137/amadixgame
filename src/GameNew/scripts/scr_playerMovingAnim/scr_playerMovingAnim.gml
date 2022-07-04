@@ -261,13 +261,5 @@ function scr_playerMovingAnim() {
 		anim_frame_num = 4;	
 	}
 	
-	//Z axis
-	var zfloorm4 = instance_place(x, y, obj_floor_m4);
-	var zfloorm16 = instance_place(x, y, obj_floor_m16);
-	var zfloor16 = instance_place(x, y, obj_floor_16);
-	
-	if (zfloorm4){zfloor = zfloorm4.zflr;}
-	else if(zfloorm16){zfloor = zfloorm16.zflr;}
-	else if(zfloor16){zfloor = zfloor16.zflr;}
-	else{zfloor = 0;}
+
 }

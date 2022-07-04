@@ -73,6 +73,6 @@ if (keyboard_check(ord("P"))){
 	global.stamina += 0.1;
 }
 
-depth = -(bbox_bottom - (sprite_height - yorigin));
+depth = -(bbox_bottom - (sprite_height - yorigin) + zfloor);
 
-z = zfloor;
+//z = zfloor;

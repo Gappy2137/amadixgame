@@ -1,13 +1,16 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_floor_48",
+    "path": "sprites/spr_floor_48/spr_floor_48.yy",
+  },
   "solid": false,
-  "visible": true,
+  "visible": false,
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "par_collision",
-    "path": "objects/par_collision/par_collision.yy",
+    "name": "par_zfloor",
+    "path": "objects/par_zfloor/par_zfloor.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -23,18 +26,15 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":10,"eventType":7,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Parents",
-    "path": "folders/Objects/Parents.yy",
+    "name": "Floor",
+    "path": "folders/Objects/DEV_/Floor.yy",
   },
   "resourceVersion": "1.0",
-  "name": "par_collectible_solid",
+  "name": "obj_floor_48",
   "tags": [],
   "resourceType": "GMObject",
 }

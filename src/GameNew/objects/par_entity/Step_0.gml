@@ -1,7 +1,6 @@
 // Inherit the parent event
 event_inherited();
 
-
 	var _list = ds_list_create();
 	var _num = instance_place_list(x, y, par_grass, _list, false);
 	var _id = id;
@@ -59,6 +58,10 @@ event_inherited();
 		}
 		ds_list_destroy(_list);
 	}
+
+
+
+
 
 /*
 var grassCollision = instance_place(x, y, par_grass);
