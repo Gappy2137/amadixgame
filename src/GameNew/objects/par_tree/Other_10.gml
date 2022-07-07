@@ -2,13 +2,13 @@ if (isanim){
 		if (anim == 0){
 			canclick = false;
 			angle = approach(angle, -5, acc);
-			if (angle == -5){
+			if (angle <= -5){
 				anim = 1;	
 			}
 		}
 		if (anim == 1){
 			angle = approach(angle, 5, acc);
-			if (angle == 5){
+			if (angle >= 5){
 				anim = 2;	
 			}
 		}

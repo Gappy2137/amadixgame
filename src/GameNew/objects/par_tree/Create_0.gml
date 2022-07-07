@@ -2,6 +2,8 @@ event_inherited();
 
 image_speed = 0;
 
+alpha = 1;
+
 itemDrop = -1;
 
 itemNum = 0;
