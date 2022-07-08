@@ -5,8 +5,8 @@ _trigNow = false;
 
 cutsceneID = seq_test4;
 
-cutsceneX = x;
-cutsceneY = y;
+cutsceneX = x + (sprite_width * 1/image_xscale);
+cutsceneY = y + (sprite_height * 1/image_yscale);
 
 global.inCutscene = false;
 
