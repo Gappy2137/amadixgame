@@ -91,7 +91,6 @@ if (ami_clicked()){
 										oneStepEvent[1] = true;
 										anim_frame_action = 0;
 										anim_frame = 0;
-										canmove = false;
 										moving = false;
 										hsp = 0;
 										vsp = 0;

@@ -29,6 +29,19 @@ if (rm_trans != noone){
 	}
 }
 
+// Kontrola cutscenek
+
+var _scene = instance_place(x, y, obj_cutscene_trigger);
+
+if (_scene){
+	if (_scene.active){
+		_scene.active = false;
+		_scene.triggered = true;
+		_scene._trigNow = true;
+	}
+}
+
+// Pozycja czapki
 scr_updateHatY();
 
 if (actionstate = player_state_action.handgun){

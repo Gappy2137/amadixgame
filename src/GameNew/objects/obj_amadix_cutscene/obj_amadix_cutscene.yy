@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_amadix_d",
-    "path": "sprites/spr_amadix_d/spr_amadix_d.yy",
+    "name": "spr_amadix_cutscene",
+    "path": "sprites/spr_amadix_cutscene/spr_amadix_cutscene.yy",
   },
   "solid": false,
   "visible": true,

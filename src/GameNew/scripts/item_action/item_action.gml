@@ -97,7 +97,6 @@ function item_action(){
 								anim_frame_action = 0;
 								anim_speed_action = 0.12;
 								anim_frame = 0;
-								canmove = false;
 								moving = false;
 								running = false;
 								hsp = 0;
@@ -140,8 +139,6 @@ function item_action(){
 							anim_frame_action = 0;
 							anim_speed_action = 0.16;
 							anim_frame = 0;
-							canmove = false;
-							moving = false;
 							running = false;
 							hsp = 0;
 							vsp = 0;
@@ -185,7 +182,6 @@ function item_action(){
 						anim_frame_action = 0;
 						anim_speed_action = 0.4;
 						anim_frame = 0;
-						canmove = false;
 						moving = false;
 						hsp = 0;
 						vsp = 0;

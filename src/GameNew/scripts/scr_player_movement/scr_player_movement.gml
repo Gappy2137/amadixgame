@@ -12,6 +12,29 @@ function scr_player_movement() {
 	
 	var ice_collision = collision_rectangle(bbox_left + 4, bbox_bottom, bbox_right - 4, bbox_bottom, obj_ice16, false, true);
 	
+	// Czy moze sie poruszac
+	
+	if (actionstate == player_state_action.attacking_melee)
+	|| (actionstate == player_state_action.eating)
+	|| (actionstate == player_state_action.drinking)
+	|| (actionstate == player_state_action.pickup)
+	|| (global.inDialogue)
+	|| (global.inConsole)
+	|| (global.inEq)
+	|| (global.inCutscene){
+		if (hsp != 0){
+			hsp = lerp(hsp, 0, 0.5);
+		}
+		if (vsp != 0){
+			vsp = lerp(vsp, 0, 0.5);
+		}
+		anim_frame = 0;
+		anim_speed = 0;
+		canmove = false;
+	}else{
+		canmove = true;	
+	}
+	
 	//Ustawia predkosc
 	var _spd = speedEffect + speedChange;
 	

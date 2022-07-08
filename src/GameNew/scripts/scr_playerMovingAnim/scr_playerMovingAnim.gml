@@ -187,26 +187,26 @@ function scr_playerMovingAnim() {
 	}
 
 	//var slippery = collision_rectangle(bbox_left + 4, bbox_bottom, bbox_right - 4, bbox_bottom, obj_ice16, false, true);
-	
-	if (!moving){
-		if (movingfix){
-			anim_frame = 1;
-			movingfix = false;
+	if (canmove){
+		if (!moving){
+			if (movingfix){
+				anim_frame = 1;
+				movingfix = false;
+			}else{
+				anim_frame = 0;
+			}
+			anim_speed = 0;
 		}else{
-			anim_frame = 0;
+			movingfix = true;
 		}
-		anim_speed = 0;
-	}else{
-		movingfix = true;
-	}
 
-	if (((key_right) || (key_left) || (key_up) || (key_down)) && (!collision_rectangle(bbox_left - 1, bbox_top - 1, bbox_right + 1, bbox_bottom + 1, par_collision, false, true))){
-		if !(anim_fix){
-			anim_frame = 1;
-			anim_fix = true;
+		if (((key_right) || (key_left) || (key_up) || (key_down)) && (!collision_rectangle(bbox_left - 1, bbox_top - 1, bbox_right + 1, bbox_bottom + 1, par_collision, false, true))){
+			if !(anim_fix){
+				anim_frame = 1;
+				anim_fix = true;
+			}
 		}
 	}
-
 	/*
 	if (!scr_playerPressingKeys()){
 		anim_speed = 0;
@@ -233,19 +233,20 @@ function scr_playerMovingAnim() {
 		running = false;
 	}
 	*/
+	
 	if ( (abs(hsp) < .05) && (abs(vsp) < .05) ){
 		anim_speed = 0;
 		anim_frame = 0;
 	}
-	
-	if (!scr_playerPressingKeys()) && (key_run){
-		if ((hsp != 0) || (vsp != 0)){
-			anim_speed = 0;
-			anim_frame = 1;
+	if (canmove){
+		if (!scr_playerPressingKeys()) && (key_run){
+			if ((hsp != 0) || (vsp != 0)){
+				anim_speed = 0;
+				anim_frame = 1;
+			}
 		}
 	}
-	
-	//Shadow fix
+	// Shadows
 	if (state = player_state.wading) 
 	|| (state = player_state.swimming) 
 	|| (state = player_state.swimming_idle) 
@@ -254,12 +255,11 @@ function scr_playerMovingAnim() {
 	}else{
 		shadowEnable = true;	
 	}
-	
-	if (running){
-		anim_frame_num = 12;	
-	}else{
-		anim_frame_num = 4;	
+	if (canmove){
+		if (running){
+			anim_frame_num = 12;	
+		}else{
+			anim_frame_num = 4;	
+		}
 	}
-	
-
 }

@@ -27,3 +27,4 @@ shadowEnable = true;
 shadowOriginY = 34;
 shadowStyle = spr_shadow_player;
 shadowAlpha = 0.5;
+
