@@ -6,6 +6,8 @@ following = obj_amadix;
 
 bounded = true;
 
+stop = false;
+
 enum camera_mode{
 	follow_player,
 	follow_player_precise,

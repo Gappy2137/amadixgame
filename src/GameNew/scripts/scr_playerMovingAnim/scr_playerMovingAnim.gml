@@ -246,15 +246,18 @@ function scr_playerMovingAnim() {
 			}
 		}
 	}
+	
 	// Shadows
 	if (state = player_state.wading) 
 	|| (state = player_state.swimming) 
 	|| (state = player_state.swimming_idle) 
-	|| (state = player_state.wading_idle){
+	|| (state = player_state.wading_idle)
+	|| (!visible){
 		shadowEnable = false;
 	}else{
 		shadowEnable = true;	
 	}
+	
 	if (canmove){
 		if (running){
 			anim_frame_num = 12;	

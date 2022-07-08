@@ -14,7 +14,14 @@
     "elementType": "MessageEventKeyframe",
   },
   "moments": {
-    "Keyframes": [],
+    "Keyframes": [
+      {"id":"a864e3eb-4fda-4472-8102-8b0e2f484a63","Key":253.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Events":[
+              "sequence_camera_stop",
+            ],"resourceVersion":"1.0","resourceType":"MomentsEventKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe`1","elementType":"MomentsEventKeyframe",},
+      {"id":"427d10bf-99cf-4b13-ab3b-d4178afd5bac","Key":359.99982,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Events":[
+              "sequence_camera_toplayer",
+            ],"resourceVersion":"1.0","resourceType":"MomentsEventKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe`1","elementType":"MomentsEventKeyframe",},
+    ],
     "resourceVersion": "1.0",
     "resourceType": "KeyframeStore`1",
     "elementType": "MomentsEventKeyframe",
@@ -97,7 +104,10 @@
     "5": "",
     "6": "",
   },
-  "eventStubScript": null,
+  "eventStubScript": {
+    "name": "sequence_scripts",
+    "path": "scripts/sequence_scripts/sequence_scripts.yy",
+  },
   "parent": {
     "name": "Sequences",
     "path": "folders/Sequences.yy",

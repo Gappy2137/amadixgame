@@ -8,6 +8,10 @@ _cutsceneID = 0;
 _cutsceneX = 0;
 _cutsceneY = 0;
 
+_invisArray[0] = id;
+
+_amadixStayInPlace = false;
+
 
 #macro SEQTRACK_STRING_SEPERATOR ";"
 #macro SEQTRACK_VARIABLE_SEPERATOR "$"

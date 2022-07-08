@@ -1,0 +1,1 @@
+invisArray[0] = obj_amadix;

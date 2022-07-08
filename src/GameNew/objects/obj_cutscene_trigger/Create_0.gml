@@ -11,3 +11,6 @@ cutsceneY = y + (sprite_height * 1/image_yscale);
 global.inCutscene = false;
 
 _cutscene = 0;
+
+invisArray[0] = [];
+amadixStayInPlace = false;
