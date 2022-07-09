@@ -1,3 +1,3 @@
-draw_self();
-
 event_inherited();
+
+draw_self();

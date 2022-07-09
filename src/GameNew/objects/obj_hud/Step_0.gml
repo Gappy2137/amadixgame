@@ -1,4 +1,5 @@
 
+#region Pora dnia na zegarze
 if (instance_exists(obj_daynightclock)){
 	if (obj_daynightclock.rot > 180) && (obj_daynightclock.rot < 360){
 		nght = "N";	
@@ -6,11 +7,13 @@ if (instance_exists(obj_daynightclock)){
 		nght = "D";	
 	}
 }
+#endregion
+
 
 if (t < 50){t++;}
 if (t > 50){t = 50;}
 
-
+#region Efekty
 ds_grid_sort(effect_grid, 1, false);
 var i = 0;
 repeat(maxeffects){
@@ -49,21 +52,10 @@ repeat(maxeffects){
 	}
 	i++;
 }
-if (keyboard_check_pressed(ord("I"))){
-	effect_add(effect.speed_ef, 2, 1);	
-}
-if (keyboard_check_pressed(ord("O"))){
-	effect_add(effect.speed_ef, 6, 2);	
-}
-if (keyboard_check_pressed(ord("P"))){
-	effect_add(effect.speed_ef, 15, 3);	
-}
-	
-
-
+#endregion
 
 #region Opcje HUD
-if input_check_pressed("inventoryAccess") && (obj_inventory.inhand == -1){
+if input_check_pressed("inventoryAccess") && (obj_inventory.inhand == -1) && (canOpenInv){
 	
 	if (instance_exists(obj_amadix)){
 		var ins = instance_nearest(obj_amadix.x , obj_amadix.y, par_container);
@@ -134,6 +126,12 @@ switch (show_hud){
 		obj_crafting.show_crafting = false;
 		hud_inner = false;
 	break;
+	case hud.none:
+		obj_inventory.show_inventory = false;
+		obj_inventory.show_slots = false;
+		obj_crafting.show_crafting = false;
+		hud_inner = false;
+	break;
 }
 if (hud_inner){
 	switch (selected_hud_slot){
@@ -193,40 +191,55 @@ if (hud_inner){
 		break;
 	}
 }
-if (show_hud == hud.inv) || (show_hud == hud.crafting) || (show_hud == hud.player) || (show_hud == hud.map) || (show_hud == hud.journal) || (show_hud == hud.options){
+if (show_hud == hud.inv) 
+|| (show_hud == hud.crafting) 
+|| (show_hud == hud.player) 
+|| (show_hud == hud.map)
+|| (show_hud == hud.journal)
+|| (show_hud == hud.options){
+	
+	global.inEq = true;
+	
 	var mousex = device_mouse_x_to_gui(0);
 	var mousey = device_mouse_y_to_gui(0);
-
-	var cell_xoffset = 24 + 12;
-	var cell_yoffset = 42;
-
-	var i_mousex = mousex - slots_x;
-	var i_mousey = mousey - slots_y;
-
-	var numx = i_mousex div cell_xoffset;
-	var numy = i_mousey div cell_yoffset;
-
-	if (mousex >= hud_slot_x) && (mousex < (hud_slot_x + (24 * 6))) && (mousey >= hud_slot_y) && (mousey < (hud_slot_y + 42)){
-		var sx = i_mousex - (numx * cell_xoffset);
-		var sy = i_mousey - (numy * cell_yoffset);
+	var _width = 24;
+	var _height = 42;
 	
-		if ((sx < 24) && (sy < 42)){
-			mouse_slotx = numx;
-			mouse_sloty = numy;
+	var _i = 0;
+	repeat(6){
+		if ( (isbounded(mousex, tabX[_i], tabX[_i] + _width) ) && (isbounded(mousey, tabY[_i], tabY[_i] + _height) ) ){
+			if (input_check("mouseLeft")){
+				selected_hud_slot = _i;
+				tabY_active[_i] = true;
+			}else{
+				if (tabY_active[_i] == false)
+					tabY_hover[_i] = true;
+			}
+		}else{
+			tabY_hover[_i] = false;	
 		}
-	
-		if (mouse_check_button_pressed(mb_left)){
-			selected_hud_slot = mouse_slotx;
+		
+		if (selected_hud_slot != _i){
+			tabY_active[_i] = false;
 		}
-	
+		
+		if (tabY_hover[_i] == true) && (tabY_active[_i] == false){
+			if (tabY_add[_i] != 3)
+				tabY_add[_i] = lerp(tabY_add[_i], 3, 0.5);	
+		}
+		if (tabY_active[_i] == true){
+			if (tabY_add[_i] != 6)
+				tabY_add[_i] = lerp(tabY_add[_i], 6, 0.5);	
+		}
+		if (tabY_hover[_i] == false) && (tabY_active[_i] == false){
+			if (tabY_add[_i] != 0)
+				tabY_add[_i] = lerp(tabY_add[_i], 0, 0.5);	
+		}
+		
+		_i++;
 	}
 	
+}else{
+	global.inEq = false;	
 }
 #endregion
-
-if (keyboard_check(vk_left)){
-	global.stamina--;	
-}
-if (keyboard_check(vk_right)){
-	global.stamina++;	
-}

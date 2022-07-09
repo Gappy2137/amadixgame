@@ -1,3 +1,5 @@
+event_inherited();
+
 if (playerVisible){
 	scr_draw_player(x, y, z);
 	
@@ -36,4 +38,3 @@ if (playerVisible){
 
 draw_text(x - 32, y + 48, depth);
 draw_text(x + 32, y + 48, zfloor);
-event_inherited();

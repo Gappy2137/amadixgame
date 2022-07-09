@@ -4,9 +4,10 @@ yorigin = 0;
 
 zaxis = 0;
 zfloor = 0;
-
+shadowAlpha = 0.25;
+shadowHeight = 16;
 shadowOriginY = 0;
 shadowOriginX = 0;
 customSpr = false;
-shadowStyle = spr_shadow_big;
+shadowStyle = spr_shadow_player;
 shadowEnable = false;

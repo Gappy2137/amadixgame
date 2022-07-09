@@ -18,9 +18,6 @@ itemeaten = -1;
 
 yorigin = 31;
 
-zaxis = 0;
-zfloor = 0;
-
 shadowOriginX = 0;
 customSpr = false;
 shadowEnable = true;

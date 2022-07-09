@@ -27,6 +27,6 @@ rotoncol = true;
 shadowOriginX = 1;
 shadowOriginY = 0;
 shadowStyle = spr_shadow_big;
-shadowAlpha = 0.6;
+shadowAlpha = 0.25;
 
 shadowEnable = true;

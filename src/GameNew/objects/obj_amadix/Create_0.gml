@@ -62,7 +62,7 @@ gun_index = 0;
 shadowOriginY = 34;
 shadowStyle = spr_shadow_player;
 shadowAlpha = 0.5;
-
+customSpr = false;
 shadowEnable = true;
 
 state = player_state.idle;

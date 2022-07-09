@@ -3,7 +3,7 @@ event_inherited();
 
 if (intact){
 	if (abs(angle) > 10) && (abs(angle) < 15){
-		if (chance(50)){
+		if (chance(30)){
 			sprite_index = spr_dandelion_noflower;
 			repeat(irandom_range(4, 8)){
 				var ID = instance_create_layer(x - round(finalangle/8), y - 9 + random_range(-2, 2), "Instances", obj_smoke_fx);

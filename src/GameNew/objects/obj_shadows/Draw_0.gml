@@ -1,10 +1,12 @@
+/*
+
 if(!surface_exists(shadowSurface)){
-	shadowSurface = surface_create(room_width, room_height);
+	shadowSurface = surface_create(GAMEWIDTH, GAMEHEIGHT);
 }
 
 
-var viewX = 0;
-var viewY = 0;
+var viewX = camera_get_view_x(view_camera[0]);
+var viewY = camera_get_view_y(view_camera[0]);
 
 //var viewX = 0;
 //var viewY = 0;
@@ -25,21 +27,6 @@ with(parent){
 		
 		
 		if (sprite_index != -1){
-		/*
-		draw_sprite_pos(
-			sprite_index,
-			image_index,
-			x + skew + shadowOriginX,
-			y + (sprite_height * 2) + h + shadowOriginY,
-			x + sprite_width + skew + shadowOriginX,
-			y + (sprite_height * 2) + h + shadowOriginY,
-			x + sprite_width + shadowOriginX,
-			y + sprite_height + shadowOriginY,
-			x + shadowOriginX,
-			y + sprite_height + shadowOriginY,
-			shadowAlpha
-		);
-		*/
 		
 		
 		if (!customSpr){
@@ -77,4 +64,4 @@ surface_reset_target();
 
 //surface_resize(shadowSurface, GAMEWIDTH * obj_display.window_size, GAMEHEIGHT * obj_display.window_size);
 
-draw_surface_ext(shadowSurface, 0, 0, 1, 1, 0, c_white, 1);
+draw_surface_ext(shadowSurface, viewX, viewY, 1, 1, 0, c_white, 1);

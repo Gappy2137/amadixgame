@@ -713,6 +713,7 @@
     {"id":{"name":"spr_amadix_d_melee","path":"sprites/spr_amadix_d_melee/spr_amadix_d_melee.yy",},"order":6,},
     {"id":{"name":"spr_amadix_hands_gun_d_shoot","path":"sprites/spr_amadix_hands_gun_d_shoot/spr_amadix_hands_gun_d_shoot.yy",},"order":9,},
     {"id":{"name":"spr_amadix_newA_gun_l_reload","path":"sprites/spr_amadix_newA_gun_l_reload/spr_amadix_newA_gun_l_reload.yy",},"order":1,},
+    {"id":{"name":"obj_questmanager","path":"objects/obj_questmanager/obj_questmanager.yy",},"order":25,},
     {"id":{"name":"scr_draw_slot_none","path":"scripts/scr_draw_slot_none/scr_draw_slot_none.yy",},"order":0,},
     {"id":{"name":"spr_eq_ui_back","path":"sprites/spr_eq_ui_back/spr_eq_ui_back.yy",},"order":0,},
     {"id":{"name":"obj_surftest","path":"objects/obj_surftest/obj_surftest.yy",},"order":14,},

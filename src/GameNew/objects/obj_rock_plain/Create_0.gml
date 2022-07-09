@@ -8,7 +8,7 @@ yorigin = 8;
 shadowOriginX = 8;
 shadowOriginY = 16;
 shadowStyle = spr_shadow_big;
-shadowAlpha = 0.8;
+shadowAlpha = 0.3;
 
 shadowEnable = true;
 

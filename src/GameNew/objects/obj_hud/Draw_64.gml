@@ -140,8 +140,14 @@ repeat(maxeffects){
 
 
 if (show_hud == hud.inv) || (show_hud == hud.crafting) || (show_hud == hud.player) || (show_hud == hud.map) || (show_hud == hud.journal) || (show_hud == hud.options){
-	draw_sprite(spr_eq_menu, 0, hud_slot_x, hud_slot_y + hud_slot_y_active[0]);
-	draw_sprite(spr_eq_menu, 1, hud_slot_x + 24 + 12, hud_slot_y + hud_slot_y_active[1]);
+	
+	var _i = 0;
+	repeat(6){
+		
+		draw_sprite(spr_eq_menu, _i, tabX[_i], tabY[_i] + tabY_add[_i]);
+		
+		_i++;
+	}
 }
 
 if (obj_inventory.show_inventory) && (!obj_inventory.show_slots){

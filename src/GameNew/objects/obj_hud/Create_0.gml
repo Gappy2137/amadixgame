@@ -21,6 +21,45 @@ gui_height = display_get_gui_height();
 hud_slot_width = sprite_get_width(spr_hud_slot) * 6;
 hud_slot_height = sprite_get_height(spr_hud_slot);
 
+canOpenInv = true;
+
+tabX[0] = 108;
+tabY[0] = 12;
+tabY_add[0] = 0;
+tabY_hover[0] = false;
+tabY_active[0] = true;
+
+tabX[1] = 144;
+tabY[1] = 12;
+tabY_add[1] = 0;
+tabY_hover[1] = false;
+tabY_active[1] = false;
+
+tabX[2] = 180;
+tabY[2] = 12;
+tabY_add[2] = 0;
+tabY_hover[2] = false;
+tabY_active[2] = false;
+
+tabX[3] = 276;
+tabY[3] = 12;
+tabY_add[3] = 0;
+tabY_hover[3] = false;
+tabY_active[3] = false;
+
+tabX[4] = 312;
+tabY[4] = 12;
+tabY_add[4] = 0;
+tabY_hover[4] = false;
+tabY_active[4] = false;
+
+tabX[5] = 348;
+tabY[5] = 12;
+tabY_add[5] = 0;
+tabY_hover[5] = false;
+tabY_active[5] = false;
+
+
 lasthud = hud.inv;
 
 hud_slot_x = 108;
