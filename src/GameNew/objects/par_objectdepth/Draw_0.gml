@@ -16,7 +16,7 @@ if (instance_exists(obj_shadows)){
 		
 		gpu_set_fog(true, c_black, 0, 1);
 		//gpu_set_blendmode(bm_max);
-
+		
 		draw_sprite_pos(shadowStyle, 0, 
 			(x)-(sprite_width/2)-_skew+shadowOriginX,
 			(y)-_h+shadowOriginY + 4, 
@@ -27,6 +27,7 @@ if (instance_exists(obj_shadows)){
 			(x)-(sprite_width/2)+shadowOriginX,
 			(y)+shadowOriginY + 4, 
 			shadowAlpha);
+			
 		
 		//gpu_set_blendmode(bm_normal);
 		gpu_set_fog(false, c_white, 0, 0);

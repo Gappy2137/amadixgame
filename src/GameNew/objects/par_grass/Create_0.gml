@@ -10,12 +10,12 @@ finalangle = 0;
 
 acc = 2;
 
-yorigin = 30;
+yorigin = 31;
 
 shadowOriginY = 2;
 shadowOriginX = 0;
-shadowStyle = spr_shadow_player;
-shadowAlpha = 0.6;
+shadowStyle = spr_shadow_big;
+shadowAlpha = 0.2;
 
 shadowEnable = true;
 
@@ -49,6 +49,6 @@ shallowwater = collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom,
 if (shallowwater){
 	wtr = true;
 	shadowEnable = false;
-	//yorigin = 28;	
-	y += 4;
+	yorigin = 30;	
+	//y += 4;
 }

@@ -639,6 +639,7 @@
     {"id":{"name":"spr_cursor_lookup","path":"sprites/spr_cursor_lookup/spr_cursor_lookup.yy",},"order":2,},
     {"id":{"name":"scr_player_unstuck","path":"scripts/scr_player_unstuck/scr_player_unstuck.yy",},"order":4,},
     {"id":{"name":"spr_hud_container","path":"sprites/spr_hud_container/spr_hud_container.yy",},"order":11,},
+    {"id":{"name":"draw_sprite_ext_skew","path":"scripts/draw_sprite_ext_skew/draw_sprite_ext_skew.yy",},"order":21,},
     {"id":{"name":"spr_amadix_head_attack_u","path":"sprites/spr_amadix_head_attack_u/spr_amadix_head_attack_u.yy",},"order":3,},
     {"id":{"name":"input_check_repeat_opposing","path":"scripts/input_check_repeat_opposing/input_check_repeat_opposing.yy",},"order":12,},
     {"id":{"name":"sequence_instance_variable_set","path":"scripts/sequence_instance_variable_set/sequence_instance_variable_set.yy",},"order":1,},
