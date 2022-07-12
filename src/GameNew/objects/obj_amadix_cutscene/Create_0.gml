@@ -18,10 +18,8 @@ itemeaten = -1;
 
 yorigin = 31;
 
-shadowOriginX = 0;
-customSpr = false;
-shadowEnable = true;
 shadowOriginY = 34;
 shadowStyle = spr_shadow_player;
 shadowAlpha = 0.5;
-
+customSpr = false;
+shadowEnable = true;

@@ -1,5 +1,19 @@
 if (global.inCutscene){
 	
+	if (stop){
+		if (!layer_sequence_is_paused(currentSequenceElementID)){
+			layer_sequence_pause(currentSequenceElementID);	
+		}
+		
+		if (!instance_exists(obj_chatterbox)){
+			stop = false;
+		}
+	}else{
+		if (!layer_sequence_is_finished(currentSequenceElementID)){
+			layer_sequence_play(currentSequenceElementID);	
+		}
+	}
+	
 	var _length = array_length(_invisArray);
 	
 	if (_length > 0){

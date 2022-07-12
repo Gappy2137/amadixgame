@@ -1,3 +1,5 @@
+if (cutsceneStep != 0){exit;}
+
 if (ChatterboxIsStopped(chatterbox)){
     //If we've stopped we should say so
     //In a real game you'd close the dialogue system and permit user interaction again

@@ -12,6 +12,9 @@ _invisArray[0] = id;
 
 _amadixStayInPlace = false;
 
+stop = false;
+
+global.inCutscene = false;
 
 #macro SEQTRACK_STRING_SEPERATOR ";"
 #macro SEQTRACK_VARIABLE_SEPERATOR "$"

@@ -1,3 +1,5 @@
+event_inherited();
+
 //Glowa
 draw_sprite_ext(head_index,anim_frame,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 

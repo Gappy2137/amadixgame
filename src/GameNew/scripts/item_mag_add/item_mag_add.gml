@@ -1,4 +1,4 @@
-function item_mag_add(iitem, cap){
+function item_mag_add(iitem, cap, level){
 	var xx = 0;
 	var flag = false;
 	var _inv = obj_inventory.ds_inventory;
@@ -12,7 +12,8 @@ function item_mag_add(iitem, cap){
 				_inv[# MAXSTACK, xx] = itemall[# MAXSTACK, iitem];
 				_inv[# INVHP, xx] = itemall[# INVHP, iitem];
 				_inv[# INVSTAMINA, xx] = itemall[# INVSTAMINA, iitem];
-				_inv[# INVLEVEL, xx] = cap;
+				_inv[# INVLEVEL, xx] = level;
+				_inv[# INVCAP, xx] = cap;
 				_inv[# INVDAMAGE, xx] = itemall[# INVDAMAGE, iitem];
 				_inv[# INVDEFENCE, xx] = itemall[# INVDEFENCE, iitem];
 				_inv[# INVEFFECTS, xx] = itemall[# INVEFFECTS, iitem];

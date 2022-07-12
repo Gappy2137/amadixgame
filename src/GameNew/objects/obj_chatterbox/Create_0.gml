@@ -85,21 +85,47 @@ onChoice[3] = 0;
 */
 
 
-//show_message(filename_dir(dialogueName));
 
-//Set the default font for Scribble to use
-scribble_font_set_default("font_dialogue");
+cutsceneStep = 0;
 
-//Load in our source file from Chatterbox
-ChatterboxLoadFromFile(dialogueName);
+if (global.inCutscene){
+	if (!variable_instance_exists(id, "dialogueName")){
+		variable_instance_set(id, "dialogueName", "test_en.yarn");
+	}
+	cutsceneStep = 2;
+	
+	//Set the default font for Scribble to use
+	scribble_font_set_default("font_dialogue");
 
-scribble_typists_add_event("speaker", speaker_change);
+	//Load in our source file from Chatterbox
+	ChatterboxLoadFromFile(dialogueName);
 
-scribble_typists_add_event("choice", dialogue_choice);
+	scribble_typists_add_event("speaker", speaker_change);
 
-//Create a new chatterbox and jump to the Start node
-chatterbox = ChatterboxCreate(dialogueName, false);
-ChatterboxJump(chatterbox, "Start");
+	scribble_typists_add_event("choice", dialogue_choice);
 
-//Update our text elements
-refresh_text_elements();
+	//Create a new chatterbox and jump to the Start node
+	chatterbox = ChatterboxCreate(dialogueName, false);
+	ChatterboxJump(chatterbox, "Start");
+
+	//Update our text elements
+	refresh_text_elements();
+}else{
+	//Set the default font for Scribble to use
+	scribble_font_set_default("font_dialogue");
+
+	//Load in our source file from Chatterbox
+	ChatterboxLoadFromFile(dialogueName);
+
+	scribble_typists_add_event("speaker", speaker_change);
+
+	scribble_typists_add_event("choice", dialogue_choice);
+
+	//Create a new chatterbox and jump to the Start node
+	chatterbox = ChatterboxCreate(dialogueName, false);
+	ChatterboxJump(chatterbox, "Start");
+
+	//Update our text elements
+	refresh_text_elements();
+
+}

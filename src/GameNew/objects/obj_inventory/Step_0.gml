@@ -95,7 +95,7 @@ if (show_inventory) && (!show_slots){
 		var inv_grid = ds_inventory;
 		inv_grid[# INVITEM, selected_slot] = inhand;
 		inv_grid[# INVAMOUNT, selected_slot] = multipick;
-		inv_grid[# INVLEVEL, selected_slot] = cap;
+		inv_grid[# INVLEVEL, selected_slot] = lvl;
 		inv_grid[# INVTYPE, selected_slot] = ds_item_all[# INVTYPE, inhand];
 		inv_grid[# MAXSTACK, selected_slot] = ds_item_all[# MAXSTACK, inhand];
 		inv_grid[# INVHP, selected_slot] = ds_item_all[# INVHP, inhand];
@@ -104,11 +104,12 @@ if (show_inventory) && (!show_slots){
 		inv_grid[# INVDEFENCE, selected_slot] = ds_item_all[# INVDEFENCE, inhand];
 		inv_grid[# INVEFFECTS, selected_slot] = ds_item_all[# INVEFFECTS, inhand];
 		inv_grid[# INVTEMPERATURE, selected_slot] = ds_item_all[# INVTEMPERATURE, inhand];	
+		inv_grid[# INVCAP, selected_slot] = cap;
 		
-				
 		inhand = -1;
 		multipick = 0;
 		cap = 0;
+		lvl = 0;
 	}
 	function changeitem(){
 		var inv_grid = ds_inventory;
@@ -116,10 +117,11 @@ if (show_inventory) && (!show_slots){
 		var temp0 = inv_grid[# INVITEM, selected_slot];
 		var temp1 = inv_grid[# INVAMOUNT, selected_slot];
 		var temp2 = inv_grid[# INVLEVEL, selected_slot];
+		var temp3 = inv_grid[# INVCAP, selected_slot];
 				
 		inv_grid[# INVITEM, selected_slot] = inhand;
 		inv_grid[# INVAMOUNT, selected_slot] = multipick;
-		inv_grid[# INVLEVEL, selected_slot] = cap;	
+		inv_grid[# INVLEVEL, selected_slot] = lvl;	
 		inv_grid[# INVTYPE, selected_slot] = ds_item_all[# INVTYPE, inhand];
 		inv_grid[# MAXSTACK, selected_slot] = ds_item_all[# MAXSTACK, inhand];
 		inv_grid[# INVHP, selected_slot] = ds_item_all[# INVHP, inhand];
@@ -128,10 +130,12 @@ if (show_inventory) && (!show_slots){
 		inv_grid[# INVDEFENCE, selected_slot] = ds_item_all[# INVDEFENCE, inhand];
 		inv_grid[# INVEFFECTS, selected_slot] = ds_item_all[# INVEFFECTS, inhand];
 		inv_grid[# INVTEMPERATURE, selected_slot] = ds_item_all[# INVTEMPERATURE, inhand];
+		inv_grid[# INVTEMPERATURE, selected_slot] = cap;
 				
 		inhand = temp0;
 		multipick = temp1;	
 		cap = temp2;
+		lvl = temp3;
 	}
 	
 
@@ -217,13 +221,14 @@ if (show_inventory) && (!show_slots){
 		}
 		
 		//Branie przedmiotow lewym
-		if (mouse_check_button_pressed(mb_left)) && !(keyboard_check(vk_shift)){
+		if (mouse_check_button_pressed(mb_left)) && (!keyboard_check(vk_shift)){
 			//Jezeli nie mamy nic w rece i klikamy na slot z przedmiotem
 			if (inhand == -1) && (inv_grid[# INVITEM, selected_slot] != item.none){
 				//Od teraz trzymamy w rece przedmiot ze slotu
 				inhand = inv_grid[# INVITEM, selected_slot];
 				multipick = inv_grid[# INVAMOUNT, selected_slot];
-				cap = inv_grid[# INVLEVEL, selected_slot];
+				cap = inv_grid[# INVCAP, selected_slot];
+				lvl = inv_grid[# INVLEVEL, selected_slot];
 				
 				slot_remove(selected_slot);
 			}else
@@ -271,7 +276,10 @@ if (show_inventory) && (!show_slots){
 					inv_grid[# INVEFFECTS, selected_slot] = ds_item_all[# INVEFFECTS, inhand];
 					inv_grid[# INVTEMPERATURE, selected_slot] = ds_item_all[# INVTEMPERATURE, inhand];
 					
-					if (inv_grid[# INVLEVEL, selected_slot] != cap){
+					if (inv_grid[# INVCAP, selected_slot] != cap){
+						changeitem();
+					}
+					if (inv_grid[# INVLEVEL, selected_slot] != lvl){
 						changeitem();
 					}
 					
@@ -288,7 +296,10 @@ if (show_inventory) && (!show_slots){
 					inv_grid[# INVEFFECTS, selected_slot] = ds_item_all[# INVEFFECTS, inhand];
 					inv_grid[# INVTEMPERATURE, selected_slot] = ds_item_all[# INVTEMPERATURE, inhand];
 					
-					if (inv_grid[# INVLEVEL, selected_slot] != cap){
+					if (inv_grid[# INVCAP, selected_slot] != cap){
+						changeitem();
+					}
+					if (inv_grid[# INVLEVEL, selected_slot] != lvl){
 						changeitem();
 					}
 					
@@ -333,7 +344,8 @@ if (show_inventory) && (!show_slots){
 				if (inv_grid[# INVTYPE, selected_slot] == itemtype.magazine){
 					inhand = inv_grid[# INVITEM, selected_slot];
 					multipick = inv_grid[# INVAMOUNT, selected_slot];
-					cap = inv_grid[# INVLEVEL, selected_slot];
+					cap = inv_grid[# INVCAP, selected_slot];
+					lvl = inv_grid[# INVLEVEL, selected_slot];
 				
 					slot_remove(selected_slot);
 				}else{
@@ -352,7 +364,7 @@ if (show_inventory) && (!show_slots){
 			if (inhand != -1) && (inv_grid[# INVITEM, selected_slot] == inhand) && (inv_grid[# INVAMOUNT, selected_slot] > 0) && (multipick < inv_grid[# MAXSTACK, selected_slot]){
 				inhand = inv_grid[# INVITEM, selected_slot];
 				
-				if (inv_grid[# INVLEVEL, selected_slot] != cap){
+				if (inv_grid[# INVCAP, selected_slot] != cap) || (inv_grid[# INVLEVEL, selected_slot] != lvl){
 					changeitem();
 				}else{
 					if (input_check("inventory_shift")){

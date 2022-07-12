@@ -1,4 +1,4 @@
-function item_stack(iitem, amount, xx, ready){
+function item_stack(iitem, amount, xx, ready, level, capacity){
 	
 	if ready == undefined{ready = false;}
 	var slots = obj_inventory.inv_slots;
@@ -24,6 +24,7 @@ function item_stack(iitem, amount, xx, ready){
 						_inv[# INVDEFENCE, i] = itemall[# INVDEFENCE, iitem];
 						_inv[# INVEFFECTS, i] = itemall[# INVEFFECTS, iitem];
 						_inv[# INVTEMPERATURE, i] = itemall[# INVTEMPERATURE, iitem];
+						_inv[# INVCAP, i] = itemall[# INVCAP, iitem];
 						flag = true;
 					}else{
 						i++;	

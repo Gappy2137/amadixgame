@@ -21,3 +21,16 @@ function sequence_camera_toplayer(){
 	}
 }
 
+function sequence_stop(){
+	if (instance_exists(obj_chatterbox)){
+		with (obj_cutscene_controller){
+			stop = true;
+		}
+	}
+}
+
+function sequence_resume(){
+	with (obj_cutscene_controller){
+		stop = false;
+	}
+}

@@ -4,7 +4,7 @@ if (_trigNow){
 		
 		global.inCutscene = true;
 		
-
+		
 		
 		var _cts = cutsceneID;
 		var _x = cutsceneX;

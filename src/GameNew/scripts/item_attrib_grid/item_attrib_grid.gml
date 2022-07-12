@@ -30,7 +30,6 @@ function item_attrib_grid(){
 	//Miecz
 	grid[# INVTYPE, item.sword] = itemtype.melee;
 	grid[# INVSTAMINA, item.sword] = 0;
-	grid[# INVLEVEL, item.sword] = 1;
 	grid[# INVDAMAGE, item.sword] = 5;
 	
 	//Byczek
@@ -204,7 +203,7 @@ function item_attrib_grid(){
 	//M1911 mag
 	grid[# INVTYPE, item.m1911mag] = itemtype.magazine;
 	grid[# MAXSTACK, item.m1911mag] = 1;
-	grid[# INVLEVEL, item.m1911mag] = 7;
+	grid[# INVCAP, item.m1911mag] = 7;
 	
 	//45acp
 	grid[# INVTYPE, item.bullet45acp] = itemtype.resource;

@@ -1,3 +1,6 @@
+if (cutsceneStep <= 0){cutsceneStep = 0;}else{cutsceneStep--;}
+if (cutsceneStep != 0){exit;}
+
 #region Work out if all of our text elements have stopped fading in
 
 var _complete = true;
