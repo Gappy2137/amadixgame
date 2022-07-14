@@ -9,7 +9,7 @@ function item_mag_add(iitem, cap, level){
 				_inv[# INVITEM, xx] = iitem;
 				_inv[# INVAMOUNT, xx] = 1;
 				_inv[# INVTYPE, xx] = itemall[# INVTYPE, iitem];
-				_inv[# MAXSTACK, xx] = itemall[# MAXSTACK, iitem];
+				_inv[# MAXSTACK, xx] = 1;
 				_inv[# INVHP, xx] = itemall[# INVHP, iitem];
 				_inv[# INVSTAMINA, xx] = itemall[# INVSTAMINA, iitem];
 				_inv[# INVLEVEL, xx] = level;

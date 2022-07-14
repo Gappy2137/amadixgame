@@ -1,16 +1,16 @@
 event_inherited();
 
-image_index = 0;
-image_speed = 0;
+anim_frame = 0;
+anim_frame_num = 5;
 
 cancollide = true;
 
-yorigin = 13;
+yorigin = 30;
 
-containerSlotWidth = 0;
-containerSlotHeight = 0;
+containerSlotWidth = 3;
+containerSlotHeight = 3;
 
-shadowOriginY = 16;
+shadowOriginY = 0;
 shadowStyle = spr_shadow_small;
 shadowAlpha = 0.5;
 

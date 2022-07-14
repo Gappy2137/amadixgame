@@ -52,7 +52,7 @@ slots_y = yUI;
 slots_x_eq = xUI_eq;
 slots_y_eq = yUI_eq;
 
-ds_container = ds_grid_create(11, containerSlots);
+ds_container = ds_grid_create(12, containerSlots);
 
 canUseContainter = false;
 

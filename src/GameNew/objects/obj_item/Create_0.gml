@@ -7,11 +7,9 @@ spr_width = sprite_get_width(item_sprite);
 spr_height = sprite_get_height(item_sprite);
 
 item_num = -1;
-item_num_amount = -1;
-item_num_type = -1;
-item_num_maxstack = -1;
-item_num_hp = -1;
-item_num_stamina = -1;
+item_amount = -1;
+item_level = -1;
+item_capacity = -1;
 x_frame = 0;
 y_frame = 0;
 

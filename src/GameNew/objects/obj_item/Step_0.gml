@@ -27,49 +27,15 @@ if (dropMove){
 			}
 		}else{
 			var in = item_num;
-			var in_amount = item_num_amount;
+			var in_amount = item_amount;
+			var in_lv = item_level;
+			var in_cap = item_capacity;
 		
 			with(obj_inventory){
 				var picked_up = false;
-			
-				//Podnies przedmiot kiedy istnieje juz taki w ekwipunku
-				//item_stack(in, in_amount);
-				/*
-				var yy = 0; repeat(inv_slots){
-					if (ds_inv[# 0, yy] == in){
-						ds_inv[# 1, yy] += in_amount;
-						ds_inv[# 2, yy] = in_type;
-						ds_inv[# 3, yy] = in_maxstack;
-						ds_inv[# 4, yy] = in_hp;
-						ds_inv[# 5, yy] = in_stamina;
-						picked_up = true;
-						break;
-					}else{
-						yy += 1;
-					}
-				}*/
-			
-				//Jezeli nie przypisz go do pierwszego wolnego slotu
-			
 				if (!picked_up){
-					item_add(-1, in, in_amount);
+					item_add(-1, in, in_amount, in_lv, in_cap);
 					picked_up = true;
-					/*
-					yy = 0; repeat(inv_slots){
-						if (ds_inv[# 0, yy] == item.none){
-							ds_inv[# 0, yy] = in;
-							ds_inv[# 1, yy] += in_amount;
-							ds_inv[# 2, yy] = in_type;
-							ds_inv[# 3, yy] = in_maxstack;
-							ds_inv[# 4, yy] = in_hp;
-							ds_inv[# 5, yy] = in_stamina;
-							picked_up = true;
-							break;
-						}else{
-							yy += 1;	
-						}
-					}
-					*/
 				}
 			}
 		
@@ -119,7 +85,9 @@ if (z == 0){
 
 x += lengthdir_x(spd, direction);
 y += lengthdir_y(spd, direction);
-if (instance_place(x, y, par_collision)){
-	spd = 0;
+if (instance_number(object_index) < 32){
+	if (instance_place(x, y, par_collision)){
+		spd = 0;
+	}
 }
 spd = max(spd - frict, 0);

@@ -4,7 +4,7 @@ if (ami_clicked()){
 	if (canclick){
 		isanim = true;
 		if (itemDrop != -1) && (itemDrop != 0) && (itemNum != 0){
-			item_drop(itemDrop, 1, false, x + choose(-16, 16, 8, -8), y - 32 + choose(4, -4, 8, 0), 40 + choose(4, -4, 8, 0));
+			item_drop(itemDrop, 1, 0, -1, false, x + choose(-16, 16, 8, -8), y - 32 + choose(4, -4, 8, 0), 40 + choose(4, -4, 8, 0));
 			itemNum--;
 			flag = true;
 		}
