@@ -51,9 +51,3 @@ if global.stamina <= 0{
 if global.maxstamina <= 1{
 	global.maxstamina = 1;	
 }
-
-//instance_deactivate_layer("Instances");
-//instance_deactivate_layer("Invisible");
-
-
-

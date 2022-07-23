@@ -1,3 +1,8 @@
 if (keyboard_check_pressed(ord("L"))){
-	alarm[0] = 1;	
+	global.lang ++;
+	if (global.lang > 1){
+		global.lang = 0;	
+	}
+	
+	language_update(global.lang);
 }

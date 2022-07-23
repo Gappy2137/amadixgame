@@ -196,6 +196,6 @@ repeat(12){
 draw_set_font(clockFont);
 draw_set_color(#202027);
 draw_set_alpha(1);
-draw_text_transformed(clockArrow_x, clockArrow_y + 6, nght, .25, .25, 0);
+draw_text_transformed(clockArrow_x - 1, clockArrow_y + 6, nght, .25, .25, 0);
 draw_set_font(font_item);
 //

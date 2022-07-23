@@ -149,7 +149,7 @@ function item_action(){
 						if (hp > 0){global.hp += hp;}
 						if (stamina > 0){global.stamina += stamina;}
 						if (type == itemtype.alcohol){
-							global.alcoholPoisoning += level;
+							global.alcoholPoisoning += alcohol_read_power(iitem);
 						}
 					}
 				}else{

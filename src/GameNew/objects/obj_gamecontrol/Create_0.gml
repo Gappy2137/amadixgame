@@ -13,6 +13,7 @@
 #macro INVEFFECTS 9
 #macro INVTEMPERATURE 10
 #macro INVCAP 11
+#macro MAXCAP 12
 //
 //EFEKTY
 #macro EF_EFFECT 0
@@ -28,9 +29,11 @@ global.font_itemnum = font_add_sprite(spr_font_item_num, ord("0123456789-.%"), f
 #macro INSTANCE_LOAD_DISTANCE 128
 #macro GAMEWIDTH 480
 #macro GAMEHEIGHT 270
-randomize();
 
 game_set_speed(GAMESPEED, gamespeed_fps);
+
+// New seed
+randomize();
 
 guiWidth = display_get_gui_width();
 guiHeight = display_get_gui_height();

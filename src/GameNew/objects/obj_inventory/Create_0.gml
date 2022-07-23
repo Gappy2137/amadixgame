@@ -30,6 +30,8 @@ multipick = 0;
 inhand = -1;
 pick = -1;
 
+mousex = 0;
+mousey = 0;
 
 multipick_2 = -1;
 multipick_3 = -1;
@@ -130,16 +132,17 @@ infobox_height = 0;
 //1 = ILOSC
 //2 = RODZAJ
 //3 = MAKS. STACK
-//4 = HP (JEDZENIE I PICIE)
-//5 = ENERGIA (JEDZENIE I PICIE)
-//6 = POZIOM PRZEDMIOTU (BRON I UBRANIA)
-//7 = OBRAZENIA (BRON)
-//8 = OBRONA (UBRANIA)
-//9 = EFEKTY (JEDZENIE, PICIE, BRON, UBRANIA I AKCESORIA)
-//10 = TEMPERATURA (JEDZIENIE, PICIE, UBRANIA I AKCESORIA)
+//4 = HP
+//5 = ENERGIA
+//6 = POZIOM PRZEDMIOTU
+//7 = OBRAZENIA
+//8 = OBRONA
+//9 = EFEKTY
+//10 = TEMPERATURA
 //11 = POJEMNOSC
+//12 = MAKS. POJEMNOSC
 
-ds_inventory = ds_grid_create(12, inv_slots);
+ds_inventory = ds_grid_create(13, inv_slots);
 
 #region Przedmioty
 enum item{
@@ -191,7 +194,7 @@ enum itemtype{
 
 ds_item_info = ds_grid_create(3, item.height);
 
-ds_item_all = ds_grid_create(12, item.height);
+ds_item_all = ds_grid_create(13, item.height);
 
 //Siatka wszystkich przedmiotow
 var i = 0;
@@ -205,8 +208,8 @@ alarm[0] = 1; //Nazwy i opisy przedmiotow
 
 item_attrib_grid();
 
-item_add((inv_slots - 4) + 1, item.classic_jacket, 1);
-item_add((inv_slots - 4) + 2, item.jeans, 1);
-item_add((inv_slots - 4) + 3, item.sneakers, 1);
+item_add((inv_slots - 4) + 1, item.classic_jacket, 1, 0, -1);
+item_add((inv_slots - 4) + 2, item.jeans, 1, 0, -1);
+item_add((inv_slots - 4) + 3, item.sneakers, 1, 0, -1);
 
 

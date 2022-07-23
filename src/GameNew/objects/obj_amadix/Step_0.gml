@@ -20,11 +20,13 @@ var rm_trans = instance_place(x, y, obj_room_transition);
 if (rm_trans != noone){
 	with (obj_gamecontrol){
 		if (!doTransition){
-			newRoom = rm_trans.targetRoom;	
-			newX = rm_trans.targetX;
-			newY = rm_trans.targetY;
-			doTransition = true;
-			oldfacing = obj_amadix.facing;
+			if (instance_exists(obj_amadix)){
+				newRoom = rm_trans.targetRoom;	
+				newX = rm_trans.targetX;
+				newY = rm_trans.targetY;
+				doTransition = true;
+				oldfacing = obj_amadix.facing;
+			}
 		}
 	}
 }
@@ -68,7 +70,7 @@ if (oneStepEvent[2] == 2){
 }
 
 if (keyboard_check_pressed(vk_space)){
-	item_add(-1, item.m1911mag, 7);
+	item_add(-1, item.vodka, 1, 0, 5);
 }
 if (keyboard_check_pressed(vk_enter)){
 	item_add(-1, item.m1911, 1);

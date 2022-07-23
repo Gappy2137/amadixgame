@@ -34,7 +34,7 @@ function item_stack(iitem, amount, xx, ready, level, capacity){
 						if (_inv[# INVAMOUNT, i] + am > itemall[# MAXSTACK, iitem]){
 							am = (_inv[# INVAMOUNT, i] + amount) - itemall[# MAXSTACK, iitem];
 							_inv[# INVAMOUNT, i] = itemall[# MAXSTACK, iitem];
-							item_stack(iitem, am, 0, false);
+							item_stack(iitem, am, 0, false, level, capacity);
 							flag = true;
 						}else{
 							_inv[# INVAMOUNT, i]+=amount;
@@ -43,7 +43,7 @@ function item_stack(iitem, amount, xx, ready, level, capacity){
 					}else{
 						i++;
 						if (i >= slots){
-							item_stack(iitem, am, 0, true);
+							item_stack(iitem, am, 0, true, level, capacity);
 						}
 					}
 				}

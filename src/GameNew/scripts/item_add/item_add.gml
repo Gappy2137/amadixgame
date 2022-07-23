@@ -1,16 +1,16 @@
 function item_add(slot, iitem, amount, level, capacity){
-	/*
-	if (capacity > -1){
+	
+	if (capacity > -1) && (slot == -1){
 		if (item_exists(item.none, false)){
 			item_mag_add(iitem, capacity, level);
 		}else{
 			if (instance_exists(obj_amadix)){
-				item_drop(iitem, amount, true, obj_amadix.x, obj_amadix.y, 5);		
+				item_drop(iitem, amount, level, capacity, true, obj_amadix.x, obj_amadix.y, 5);		
 			}
 		}
 		exit;
 	}
-	*/
+	
 	if (slot == -1){
 		if (item_exists(item.none, false)){
 			item_stack(iitem, amount, 0, false, level, capacity);

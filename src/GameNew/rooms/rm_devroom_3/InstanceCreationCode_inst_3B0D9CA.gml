@@ -1,1 +1,1 @@
-containter_additem(item.orange, 7, 0);
+containter_additem(item.vodka, 1, 0);

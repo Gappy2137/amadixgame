@@ -23,7 +23,6 @@ function item_attrib_grid(){
 	grid[# INVDAMAGE, item.bucket] = 0;
 	grid[# INVSTAMINA, item.bucket] = 0;
 	
-	
 	//Kamien
 	grid[# INVTYPE, item.stone] = itemtype.resource;
 	
@@ -109,11 +108,13 @@ function item_attrib_grid(){
 	grid[# INVTYPE, item.vodka] = itemtype.alcohol;
 	grid[# INVHP, item.vodka] = 5;
 	grid[# INVSTAMINA, item.vodka] = 25;
-	grid[# INVLEVEL, item.vodka] = 15;
 	
 	//Sawed off
 	grid[# INVTYPE, item.sawedoff] = itemtype.shotgun;
 	
+	//M1911 mag
+	grid[# INVTYPE, item.m1911mag] = itemtype.magazine;
+	grid[# MAXCAP, item.m1911mag] = 7;
 	
 	var i = 0;
 	
@@ -187,11 +188,15 @@ function item_attrib_grid(){
 			grid[# MAXSTACK, i] = 1;
 		}
 		if (grid[# INVTYPE, i] == itemtype.alcohol){
-			grid[# MAXSTACK, i] = 5;
+			grid[# MAXSTACK, i] = 1;
 			grid[# INVDAMAGE, i] = 0;
 			grid[# INVDEFENCE, i] = 0;
+			grid[# MAXCAP, i] = 5;
 		}
 		if (grid[# INVTYPE, i] == itemtype.shotgun){
+			grid[# MAXSTACK, i] = 1;
+		}
+		if (grid[# INVTYPE, i] == itemtype.magazine){
 			grid[# MAXSTACK, i] = 1;
 		}
 		
@@ -200,11 +205,7 @@ function item_attrib_grid(){
 	
 	//Overrides
 	
-	//M1911 mag
-	grid[# INVTYPE, item.m1911mag] = itemtype.magazine;
-	grid[# MAXSTACK, item.m1911mag] = 1;
-	grid[# INVCAP, item.m1911mag] = 7;
-	
+
 	//45acp
 	grid[# INVTYPE, item.bullet45acp] = itemtype.resource;
 	grid[# MAXSTACK, item.bullet45acp] = 20;

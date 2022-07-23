@@ -1,4 +1,5 @@
 function scr_player_movement() {
+	
 	//------------------------------------------------------
 	key_right =     input_check("right");
 	key_left =      input_check("left");
@@ -201,6 +202,9 @@ function scr_player_movement() {
 			hsp = lerp(hsp, 0, deccel);
 			vsp = lerp(vsp, 0, deccel);
 		}
+	}else{
+		hor_keyPress = 0;
+		ver_keyPress = 0;	
 	}
 	
 	if (abs(hsp) < 0.001){
