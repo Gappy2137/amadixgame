@@ -69,7 +69,6 @@ enum player_state{
 	swimming_idle = 5,
 	hurt = 6,
 	ladder = 7,
-	
 }
 
 enum player_state_action{

@@ -92,6 +92,11 @@ function scr_setPlayerFacingAnim(facing){
 				break;
 			}
 	}
+	
+	if (skid){
+		head_index = spr_amadix_head_skid;	
+	}
+	
 #endregion
 
 #region Dlonie
@@ -409,6 +414,9 @@ function scr_setPlayerFacingAnim(facing){
 					hands_index = spr_amadix_hands_run_u;
 						
 			}
+		}
+		if (skid){
+			hands_index = spr_amadix_hands_skid;	
 		}
 	}
 #endregion
@@ -1147,6 +1155,10 @@ switch(global.playerTorso){
 				//--------------------------------------------------------------
 				
 			}
+			
+			if (skid){
+				torso_index = spr_amadix_newTC_skid;	
+			}
 	
 	break;
 }
@@ -1523,6 +1535,11 @@ switch(global.playerLegs){
 				//--------------------------------------------------------------
 				
 			}
+			
+			if (skid){
+				legs_index = spr_amadix_jeansL_skid;	
+			}
+			
 	break;
 }
 #endregion
@@ -1898,8 +1915,14 @@ switch(global.playerBoots){
 				//--------------------------------------------------------------
 				
 			}
+			
+			if (skid){
+				boots_index = spr_amadix_newB_skid;	
+			}
+			
 	break;
 }
 #endregion
+
 
 }

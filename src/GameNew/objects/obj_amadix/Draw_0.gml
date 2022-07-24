@@ -34,7 +34,8 @@ if (playerVisible){
 //draw_text(x + 32, y + 8, vsp);
 
 //draw_text(x + 32, y + 24, running);
+//draw_text(x + 32, y + 32, spd);
 //draw_text(x + 32, y + 32, anim_speed);
 
-draw_text(x - 32, y + 48, depth);
-draw_text(x + 32, y + 48, zfloor);
+//draw_text(x - 32, y + 48, depth);
+//draw_text(x + 32, y + 48, zfloor);

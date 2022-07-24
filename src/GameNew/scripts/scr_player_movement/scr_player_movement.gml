@@ -1,5 +1,6 @@
 function scr_player_movement() {
 	
+with (obj_amadix){
 	//------------------------------------------------------
 	key_right =     input_check("right");
 	key_left =      input_check("left");
@@ -39,16 +40,17 @@ function scr_player_movement() {
 	//Ustawia predkosc
 	var _spd = speedEffect + speedChange;
 	
-	if (key_run) && (moving){
-		if (spd >= (runspeed + _spd) - 0.3){
-			if ((round(anim_frame) == 0) || (round(anim_frame) == 2))
-				running = 2;	
-		}else{
-			running = 1;
-		}
-	}else{
-		running = 0;
-	}
+	//if (key_run) && (moving){
+	//	if (spd >= (runspeed + _spd) - 0.3){
+	//		if ((round(anim_frame) == 0) || (round(anim_frame) == 2)){
+	//			running = 2;	
+	//		}
+	//	}else{
+	//		running = 1;
+	//	}
+	//}else{
+	//	running = 0;
+	//}
 	
 	if (key_run) && (running == 2){
 		running = 2;	
@@ -57,6 +59,8 @@ function scr_player_movement() {
 	if (spd > max_spd){
 		spd = max_spd;	
 	}
+	
+
 	
 	switch (state) {
 		case player_state.moving:
@@ -67,6 +71,15 @@ function scr_player_movement() {
 								anim_speed = 0.09;
 								accel = 0.6;
 								deccel = 0.35;
+								
+								runningTimer = timeToRun;
+								
+								if (key_run){
+									running = 1;
+								}else{
+									running = 0;	
+								}
+								
 						}else if (running == 1){
 								max_spd = runspeed + _spd;
 								spd = lerp(spd, (runspeed + _spd), 0.1);
@@ -74,23 +87,49 @@ function scr_player_movement() {
 								
 								accel = 0.3;
 								deccel = 0.3;
+							
+								
+								if (!key_run){
+									running = 0;	
+								}else{
+									if (runningTimer <= 0){
+										if ((round(anim_frame) == 0) || (round(anim_frame) == 2)){
+											runningTimer = 0;
+										}
+									}else{
+										runningTimer--;	
+									}
+									
+									if (runningTimer == 0){
+										anim_frame = 0;
+										running = 2;	
+									}
+								}
+								
 						}else{
 								max_spd = runspeed + _spd;
 								spd = runspeed + _spd;
 								anim_speed = 0.3;
 								accel = 0.3;
 								deccel = 0.25;
+								
+								runningTimer = timeToRun;
+								
+								if (!key_run){
+									running = 0;	
+								}else{
+									running = 2;	
+								}
 						}
-						
 
 					}else{
 						
 						accel = 0.04;
 						deccel = 0.04;
-							if (running){
+							if (running == 0){
 								spd = runspeed + _spd;
 								anim_speed = 0.18;
-							}else if (running){
+							}else if (running == 1){
 								spd = walkspeed + _spd;
 								anim_speed = 0.15;
 							}else{
@@ -108,6 +147,9 @@ function scr_player_movement() {
 								anim_speed = 0.09;
 								accel = 0.6;
 								deccel = 0.35;
+								
+								runningTimer = timeToRun;
+								
 						}else if (running == 1){
 								max_spd = runspeed + _spd;
 								spd = lerp(spd, (runspeed + _spd), 0.1);
@@ -115,12 +157,15 @@ function scr_player_movement() {
 								
 								accel = 0.3;
 								deccel = 0.3;
+								
 						}else{
 								max_spd = runspeed + _spd;
 								spd = runspeed + _spd;
 								anim_speed = 0.3;
 								accel = 0.3;
 								deccel = 0.25;
+								
+								runningTimer = timeToRun;
 						}
 						
 
@@ -183,6 +228,14 @@ function scr_player_movement() {
 					accel = 0.15;
 					deccel = 0.2;
 		break;
+	}
+
+	if (!key_run){
+		running = 0;	
+	}
+	
+	if (running == 2) && (!moving){
+		running = 0;	
 	}
 
 	if (canmove){
@@ -658,5 +711,11 @@ function scr_player_movement() {
 	
 	//Efekty podloza
 	scr_groundtype_fx();
+
+
+
+
+}
+	
 
 }

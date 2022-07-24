@@ -25,9 +25,16 @@ walkspeed = 0.9;
 runspeed = 1.55;
 
 max_spd = 0;
+timeToRun = 20;
+runningTimer = timeToRun;
 
 moving = false;
 running = 0;
+skid = false;
+skidTime = 8;
+skidTimer = skidTime;
+timeToStop = 8;
+stoppingTimer = timeToStop;
 
 canmove = true;
 

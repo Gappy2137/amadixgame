@@ -1,7 +1,7 @@
 #region Internal Macro Definitions
 
-#macro __CHATTERBOX_VERSION  "2.4.0"
-#macro __CHATTERBOX_DATE     "2022-06-18"
+#macro __CHATTERBOX_VERSION  "2.6.1"
+#macro __CHATTERBOX_DATE     "2022-07-22"
 
 #macro CHATTERBOX_CURRENT  global.__chatterboxCurrent
 
@@ -83,6 +83,7 @@ global.__chatterboxIndentSize           = 0;
 global.__chatterboxFindReplaceOldString = ds_list_create();
 global.__chatterboxFindReplaceNewString = ds_list_create();
 global.__chatterboxVMInstanceStack      = [];
+global.__chatterboxVMWait               = false;
 global.__chatterboxVMForceWait          = false;
 global.__chatterboxCurrent              = undefined;
 if (!variable_global_exists("__chatterbox_functions")) global.__chatterboxFunctions = ds_map_create();

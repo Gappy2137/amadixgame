@@ -1,5 +1,6 @@
 function scr_playerMovingAnim() {
 	
+with(obj_amadix){
 	switch (actionstate){
 		case player_state_action.none:
 				anim_frame += anim_speed;
@@ -7,22 +8,7 @@ function scr_playerMovingAnim() {
 					anim_frame = 0;
 				}
 			
-				if (key_right){ 
-					scr_setPlayerFacingAnim(index_facing.right);
-					facing = dirc.right;
-				}
-				if (key_left){
-					scr_setPlayerFacingAnim(index_facing.left);
-					facing = dirc.left;
-				}
-				if (key_up){
-					scr_setPlayerFacingAnim(index_facing.up);
-					facing = dirc.up;
-				}
-				if (key_down){
-					scr_setPlayerFacingAnim(index_facing.down);
-					facing = dirc.down;
-				}
+
 			
 		break;
 		case player_state_action.eating:
@@ -241,11 +227,38 @@ function scr_playerMovingAnim() {
 	if (canmove){
 		if (!scr_playerPressingKeys()) && (key_run){
 			if ((hsp != 0) || (vsp != 0)){
-				anim_speed = 0;
-				anim_frame = 1;
+				//skid = true;
 			}
 		}
 	}
+	
+	if (canmove){
+		if (running == 2){
+			if (key_left) && (hsp > 0){
+				skid = true;
+			}
+			if (key_right) && (hsp < 0){
+				skid = true;
+			}
+			if (key_up) && (vsp > 0){
+				skid = true;
+			}
+			if (key_down) && (vsp < 0){
+				skid = true;
+			}
+
+		}
+		if (running == 1) || (running == 2){
+			if (!scr_playerPressingKeys()){
+				//if ( (abs(hsp) != 0) && (abs(vsp) != 0 ) ){
+					skid = true;
+					running = 0;
+				//}
+			}
+		}
+	}
+	
+
 	
 	// Shadows
 	if (state = player_state.wading) 
@@ -264,5 +277,51 @@ function scr_playerMovingAnim() {
 		}else{
 			anim_frame_num = 4;	
 		}
+	}	
+	
+	if (skid){
+		switch(facing){
+			case dirc.down:
+				anim_frame = 0;
+			break;
+			case dirc.left:
+				anim_frame = 0;
+			break;
+			case dirc.right:
+				anim_frame = 1;
+			break;
+			case dirc.up:
+				anim_frame = 2;
+			break;
+		}
+		anim_speed = 0;
+		anim_frame_num = 0;
+		if (skidTimer <= 0){
+			skidTimer = skidTime;
+			skid = false;
+		}else{
+			skidTimer--;
+		}
 	}
+	
+	if (actionstate == player_state_action.none){
+				if (key_right){ 
+					scr_setPlayerFacingAnim(index_facing.right);
+					facing = dirc.right;
+				}
+				if (key_left){
+					scr_setPlayerFacingAnim(index_facing.left);
+					facing = dirc.left;
+				}
+				if (key_up){
+					scr_setPlayerFacingAnim(index_facing.up);
+					facing = dirc.up;
+				}
+				if (key_down){
+					scr_setPlayerFacingAnim(index_facing.down);
+					facing = dirc.down;
+				}	
+	}
+	
+}
 }
