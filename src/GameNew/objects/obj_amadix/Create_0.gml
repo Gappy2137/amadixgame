@@ -12,6 +12,9 @@ dir = 270;
 _spd = 0;
 _dir = 0;
 
+hsp_prev = 0;
+vsp_prev = 0;
+
 cancollide = false;
 
 accel = 0.6;
@@ -31,7 +34,7 @@ runningTimer = timeToRun;
 moving = false;
 running = 0;
 skid = false;
-skidTime = 8;
+skidTime = 10;
 skidTimer = skidTime;
 timeToStop = 8;
 stoppingTimer = timeToStop;

@@ -219,43 +219,46 @@ with(obj_amadix){
 		running = false;
 	}
 	*/
-	
+	/*
 	if ( (abs(hsp) < .05) && (abs(vsp) < .05) ){
 		anim_speed = 0;
 		anim_frame = 0;
 	}
+	*/
 	if (canmove){
-		if (!scr_playerPressingKeys()) && (key_run){
+		if (running == 2) && ((abs(hsp) < .9) && (abs(vsp) < .9)){
 			if ((hsp != 0) || (vsp != 0)){
-				//skid = true;
+				skid = true;
 			}
 		}
 	}
 	
 	if (canmove){
 		if (running == 2){
-			if (key_left) && (hsp > 0){
-				skid = true;
+			if (hsp_prev < hsp){
+				//skid = true;
 			}
 			if (key_right) && (hsp < 0){
-				skid = true;
+				//skid = true;
 			}
 			if (key_up) && (vsp > 0){
-				skid = true;
+				//skid = true;
 			}
 			if (key_down) && (vsp < 0){
-				skid = true;
+				//skid = true;
 			}
 
 		}
+		/*
 		if (running == 1) || (running == 2){
 			if (!scr_playerPressingKeys()){
-				//if ( (abs(hsp) != 0) && (abs(vsp) != 0 ) ){
+				if ( (abs(hsp) != 0) && (abs(vsp) != 0 ) ){
 					skid = true;
-					running = 0;
-				//}
+				}
 			}
 		}
+		*/
+		
 	}
 	
 

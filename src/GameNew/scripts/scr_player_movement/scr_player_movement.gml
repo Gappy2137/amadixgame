@@ -34,7 +34,17 @@ with (obj_amadix){
 		anim_speed = 0;
 		canmove = false;
 	}else{
-		canmove = true;	
+		canmove = true;
+	}
+	
+	if (skid){
+		canmove = true;
+		if (hsp != 0){
+			hsp = lerp(hsp, 0, 0.1);
+		}
+		if (vsp != 0){
+			vsp = lerp(vsp, 0, 0.1);
+		}
 	}
 	
 	//Ustawia predkosc
