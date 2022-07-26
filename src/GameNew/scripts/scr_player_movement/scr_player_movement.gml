@@ -37,15 +37,17 @@ with (obj_amadix){
 		canmove = true;
 	}
 	
-	if (skid){
+	if (isbounded(skidTimer, 1, skidTime - 1)){
 		canmove = true;
 		if (hsp != 0){
-			hsp = lerp(hsp, 0, 0.1);
+			hsp = lerp(hsp, 0, .15);
 		}
 		if (vsp != 0){
-			vsp = lerp(vsp, 0, 0.1);
+			vsp = lerp(vsp, 0, .15);
 		}
 	}
+	
+
 	
 	//Ustawia predkosc
 	var _spd = speedEffect + speedChange;

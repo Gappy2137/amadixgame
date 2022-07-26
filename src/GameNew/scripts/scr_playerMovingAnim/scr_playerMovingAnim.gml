@@ -176,12 +176,12 @@ with(obj_amadix){
 	if (canmove){
 		if (!moving){
 			if (movingfix){
-				anim_frame = 1;
+				//anim_frame = 1;
 				movingfix = false;
 			}else{
-				anim_frame = 0;
+				//anim_frame = 0;
 			}
-			anim_speed = 0;
+			//anim_speed = 0;
 		}else{
 			movingfix = true;
 		}
@@ -192,6 +192,22 @@ with(obj_amadix){
 				anim_fix = true;
 			}
 		}
+		
+		if (running == 2) && ((!scr_playerPressingKeys()) || ((abs(hsp) < .3) && (abs(vsp) < .3)) ){
+			if ((hsp != 0) || (vsp != 0)){
+				if (timeSinceRunning >= timeToRun){
+					skid = true;
+				}
+			}
+		}
+		if (running != 2) && (!scr_playerPressingKeys()){
+			if ((hsp != 0) || (vsp != 0)){
+				if (frac(anim_frame) != 0){
+					
+				}
+			}
+		}
+		
 	}
 	/*
 	if (!scr_playerPressingKeys()){
@@ -225,43 +241,6 @@ with(obj_amadix){
 		anim_frame = 0;
 	}
 	*/
-	if (canmove){
-		if (running == 2) && ((abs(hsp) < .9) && (abs(vsp) < .9)){
-			if ((hsp != 0) || (vsp != 0)){
-				skid = true;
-			}
-		}
-	}
-	
-	if (canmove){
-		if (running == 2){
-			if (hsp_prev < hsp){
-				//skid = true;
-			}
-			if (key_right) && (hsp < 0){
-				//skid = true;
-			}
-			if (key_up) && (vsp > 0){
-				//skid = true;
-			}
-			if (key_down) && (vsp < 0){
-				//skid = true;
-			}
-
-		}
-		/*
-		if (running == 1) || (running == 2){
-			if (!scr_playerPressingKeys()){
-				if ( (abs(hsp) != 0) && (abs(vsp) != 0 ) ){
-					skid = true;
-				}
-			}
-		}
-		*/
-		
-	}
-	
-
 	
 	// Shadows
 	if (state = player_state.wading) 
@@ -282,19 +261,33 @@ with(obj_amadix){
 		}
 	}	
 	
+	if (running == 2){
+		if (timeSinceRunning >= timeToRun){
+			timeSinceRunning = timeToRun;
+		}else{
+			timeSinceRunning++;
+		}
+	}else{
+		timeSinceRunning = lerp(timeSinceRunning, 0, .2);
+	}
+	
 	if (skid){
 		switch(facing){
 			case dirc.down:
 				anim_frame = 0;
+				scr_setPlayerFacingAnim(index_facing.down);
 			break;
 			case dirc.left:
 				anim_frame = 0;
+				scr_setPlayerFacingAnim(index_facing.left);
 			break;
 			case dirc.right:
 				anim_frame = 1;
+				scr_setPlayerFacingAnim(index_facing.right);
 			break;
 			case dirc.up:
 				anim_frame = 2;
+				scr_setPlayerFacingAnim(index_facing.up);
 			break;
 		}
 		anim_speed = 0;

@@ -31,13 +31,13 @@ max_spd = 0;
 timeToRun = 20;
 runningTimer = timeToRun;
 
+timeSinceRunning = 0;
+
 moving = false;
 running = 0;
 skid = false;
-skidTime = 10;
+skidTime = 15;
 skidTimer = skidTime;
-timeToStop = 8;
-stoppingTimer = timeToStop;
 
 canmove = true;
 

@@ -23,3 +23,15 @@ shadowStyle = spr_shadow_player;
 shadowAlpha = 0.5;
 customSpr = false;
 shadowEnable = true;
+
+max_spd = 0;
+timeToRun = 20;
+runningTimer = timeToRun;
+
+timeSinceRunning = 0;
+
+moving = false;
+running = 0;
+skid = false;
+skidTime = 15;
+skidTimer = skidTime;

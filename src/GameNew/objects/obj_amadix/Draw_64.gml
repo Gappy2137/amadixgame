@@ -7,3 +7,4 @@ draw_text_transformed(16, 128 + 8 * 5, "hsp	 " + string(hsp), .5, .5, 0);
 draw_text_transformed(16, 128 + 8 * 6, "vsp	 " + string(vsp), .5, .5, 0);
 draw_text_transformed(16, 128 + 8 * 7, "skid	 " + string(skid), .5, .5, 0);
 draw_text_transformed(16, 128 + 8 * 8, "skidTimer	 " + string(skidTimer), .5, .5, 0);
+draw_text_transformed(16, 128 + 8 * 9, "timeSinceRunning	 " + string(timeSinceRunning), .5, .5, 0);
