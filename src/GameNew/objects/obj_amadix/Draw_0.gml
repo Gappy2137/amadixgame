@@ -1,7 +1,7 @@
 event_inherited();
 
 if (playerVisible){
-	scr_draw_player(x, y, z);
+	scr_draw_player(round_to4(x), round_to4(y), round_to4(z));
 	
 	if (state == player_state.wading) || (state == player_state.wading_idle){
 		draw_sprite_ext(spr_entity_water_shallow, (obj_gamecontrol.refTimer * 4), x, y + sprite_height, 1, 1, 0, c_white, .5);

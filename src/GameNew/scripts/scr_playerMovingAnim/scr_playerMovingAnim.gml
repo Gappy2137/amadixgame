@@ -161,10 +161,6 @@ with(obj_amadix){
 	}
 
 
-	if ((hsp == 0) && (vsp == 0)){
-		scr_setPlayerFacing();
-	}
-
 
 	if obj_gamecontrol.doTransition == false{
 		if ((hsp == 0) && (vsp == 0)){
@@ -200,14 +196,13 @@ with(obj_amadix){
 				}
 			}
 		}
-		if (running != 2) && (!scr_playerPressingKeys()){
-			if ((hsp != 0) || (vsp != 0)){
-				if (frac(anim_frame) != 0){
-					
-				}
-			}
+	}
+	if ((hsp == 0) && (vsp == 0)){
+		scr_setPlayerFacing();
+		if ((floor(anim_frame) == 0) || (floor(anim_frame) == 2)){
+			anim_speed = 0;
+			anim_frame = 0;
 		}
-		
 	}
 	/*
 	if (!scr_playerPressingKeys()){
