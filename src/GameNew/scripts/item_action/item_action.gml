@@ -7,6 +7,7 @@ function item_action(){
 	var damage =		obj_inventory.ds_inventory[# INVDAMAGE, obj_inventory.mouse_slotx_second];
 	var defence =		obj_inventory.ds_inventory[# INVDEFENCE, obj_inventory.mouse_slotx_second];
 	var effects =		obj_inventory.ds_inventory[# INVEFFECTS, obj_inventory.mouse_slotx_second];
+	var cap		=		obj_inventory.ds_inventory[# INVCAP, obj_inventory.mouse_slotx_second];
 	
 	if (instance_exists(obj_amadix)){
 		
@@ -75,7 +76,7 @@ function item_action(){
 	}
 	
 	function itemActionEat(){
-		if (obj_amadix.actionstate != player_state_action.pickup){
+		if (obj_amadix.actionstate != player_state_action.pickup) || (!obj_amadix.skid){
 		if (obj_amadix.state == player_state.idle)
 		|| (obj_amadix.state == player_state.moving) 
 		|| (obj_amadix.state == player_state.wading_idle) 
@@ -118,7 +119,7 @@ function item_action(){
 	}
 	
 	function itemActionDrink(){
-		if (obj_amadix.actionstate != player_state_action.pickup){
+		if (obj_amadix.actionstate != player_state_action.pickup) || (!obj_amadix.skid){
 		if (obj_amadix.state == player_state.idle)
 		|| (obj_amadix.state == player_state.moving) 
 		|| (obj_amadix.state == player_state.wading_idle) 
@@ -129,8 +130,12 @@ function item_action(){
 			var stamina =		obj_inventory.ds_inventory[# INVSTAMINA, obj_inventory.mouse_slotx_second];
 			var level =			obj_inventory.ds_inventory[# INVLEVEL, obj_inventory.mouse_slotx_second];
 			var type =			obj_inventory.ds_inventory[# INVTYPE, obj_inventory.mouse_slotx_second];
+			var cap =			obj_inventory.ds_inventory[# INVCAP, obj_inventory.mouse_slotx_second];
+			var type =			obj_inventory.ds_inventory[# INVTYPE, obj_inventory.mouse_slotx_second];
+			
 			if (!obj_amadix.stuffed){
-				if (amount > 0){
+				if ((amount > 0) && ((type != itemtype.drink) && (type != itemtype.alcohol)))
+				|| ((cap > 0) && ((type == itemtype.drink) || (type == itemtype.alcohol))){
 					if (obj_amadix.actionstate != player_state_action.drinking){
 						var iitem = obj_inventory.ds_inventory[# INVITEM, obj_inventory.mouse_slotx_second];
 						with (obj_amadix){
@@ -153,8 +158,10 @@ function item_action(){
 						}
 					}
 				}else{
-					slot_remove(obj_inventory.mouse_slotx_second);
-					obj_inventory.text_alpha = 0;
+					if ((type != itemtype.drink) && (type != itemtype.alcohol)){
+						slot_remove(obj_inventory.mouse_slotx_second);
+						obj_inventory.text_alpha = 0;
+					}
 				}
 			}
 		}
@@ -172,7 +179,7 @@ function item_action(){
 			var hp =			obj_inventory.ds_inventory[# INVHP, obj_inventory.mouse_slotx_second];
 			var type =			obj_inventory.ds_inventory[# INVTYPE, obj_inventory.mouse_slotx_second];
 			if (amount > 0){
-				if (obj_amadix.actionstate != player_state_action.attacking_melee){
+				if (obj_amadix.actionstate != player_state_action.attacking_melee) || (!obj_amadix.skid){
 					var iitem = obj_inventory.ds_inventory[# INVITEM, obj_inventory.mouse_slotx_second];
 					with (obj_amadix){
 						oneStepEvent[0] = true;

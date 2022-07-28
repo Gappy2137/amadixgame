@@ -105,6 +105,7 @@ if (show_inventory) && (!show_slots){
 		inv_grid[# INVEFFECTS, selected_slot] = ds_item_all[# INVEFFECTS, inhand];
 		inv_grid[# INVTEMPERATURE, selected_slot] = ds_item_all[# INVTEMPERATURE, inhand];	
 		inv_grid[# INVCAP, selected_slot] = cap;
+		inv_grid[# MAXCAP, selected_slot] = ds_item_all[# MAXCAP, inhand];	
 		
 		inhand = -1;
 		multipick = 0;
@@ -130,12 +131,13 @@ if (show_inventory) && (!show_slots){
 		inv_grid[# INVDEFENCE, selected_slot] = ds_item_all[# INVDEFENCE, inhand];
 		inv_grid[# INVEFFECTS, selected_slot] = ds_item_all[# INVEFFECTS, inhand];
 		inv_grid[# INVTEMPERATURE, selected_slot] = ds_item_all[# INVTEMPERATURE, inhand];
-		inv_grid[# INVTEMPERATURE, selected_slot] = cap;
+		inv_grid[# INVCAP, selected_slot] = cap;
+		inv_grid[# MAXCAP, selected_slot] = ds_item_all[# MAXCAP, inhand];
 				
 		inhand = temp0;
 		multipick = temp1;	
-		cap = temp2;
-		lvl = temp3;
+		cap = temp3;
+		lvl = temp2;
 	}
 	
 
@@ -335,13 +337,14 @@ if (show_inventory) && (!show_slots){
 				}
 			}
 		}
+			
 		//Branie przedmiotow prawym
 		if (mouse_check_button_pressed(mb_right)){
 			//Jezeli klikamy prawym na przedmiot nie majac nic w rece
 			if (inhand == -1) && (inv_grid[# INVITEM, selected_slot] != item.none) && (inv_grid[# INVAMOUNT, selected_slot] > 0) && (multipick < inv_grid[# MAXSTACK, selected_slot]){
 				//Od teraz trzymamy w rece przedmiot ze slotu
 				inhand = inv_grid[# INVITEM, selected_slot];
-				if (inv_grid[# INVTYPE, selected_slot] == itemtype.magazine){
+				if (inv_grid[# MAXCAP, selected_slot] != -1){
 					inhand = inv_grid[# INVITEM, selected_slot];
 					multipick = inv_grid[# INVAMOUNT, selected_slot];
 					cap = inv_grid[# INVCAP, selected_slot];
@@ -419,6 +422,9 @@ if (show_inventory) && (!show_slots){
 	for (var i = 0; i < inv_slots; ++i){
 	    if ((inv_grid[# INVAMOUNT, i] == 0) && (inv_grid[# INVITEM, i] != item.none)){
 				slot_remove(i);
+		}
+		if (inv_grid[# INVCAP, i] < 0){
+			inv_grid[# INVCAP, i] = 0;	
 		}
 	}
 	

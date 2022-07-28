@@ -18,6 +18,7 @@ function item_mag_add(iitem, cap, level){
 				_inv[# INVDEFENCE, xx] = itemall[# INVDEFENCE, iitem];
 				_inv[# INVEFFECTS, xx] = itemall[# INVEFFECTS, iitem];
 				_inv[# INVTEMPERATURE, xx] = itemall[# INVTEMPERATURE, iitem];
+				_inv[# MAXCAP, xx] = itemall[# MAXCAP, iitem];
 				flag = true;
 				exit;
 			}else{

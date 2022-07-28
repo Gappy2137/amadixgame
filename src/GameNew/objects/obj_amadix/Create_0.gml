@@ -36,7 +36,7 @@ timeSinceRunning = 0;
 moving = false;
 running = 0;
 skid = false;
-skidTime = 15;
+skidTime = 12;
 skidTimer = skidTime;
 
 canmove = true;

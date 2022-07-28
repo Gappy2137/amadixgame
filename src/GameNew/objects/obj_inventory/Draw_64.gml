@@ -6,13 +6,15 @@ if (show_inventory) && (!show_slots){
 
 	
 	////////////////
-	//draw_text(16, 64, "page " + string(page));
-	//draw_text(16, 64 + 12*1, "sel " + string(selected_slot));
-	//draw_text(16, 64 + 12*2, "pckd " + string(picked_slot));
-	//draw_text(16, 64 + 12*3, "onep " + string(onepicked_slot));
-	//draw_text(16, 64 + 12*4, "mltp " + string(multipick));
-	//draw_text(16, 64 + 12*5, "inh " + string(inhand));
-	//draw_text(16, 64 + 12*6, "cap " + string(cap));
+	draw_set_color(c_yellow);
+	draw_text(16, 64, "page " + string(page));
+	draw_text(16, 64 + 12*1, "sel " + string(selected_slot));
+	draw_text(16, 64 + 12*2, "pckd " + string(picked_slot));
+	draw_text(16, 64 + 12*3, "mltp " + string(multipick));
+	draw_text(16, 64 + 12*4, "inh " + string(inhand));
+	draw_text(16, 64 + 12*5, "cap " + string(cap));
+	draw_text(16, 64 + 12*6, "invcap " + string(ds_inventory[# INVCAP, abs(selected_slot)]));
+	draw_text(16, 64 + 12*7, "maxcap " + string(ds_inventory[# MAXCAP, abs(selected_slot)]));
 	////////////////
 	
 
@@ -50,7 +52,7 @@ if (show_inventory) && (!show_slots){
 		
 				//Rysuj slot i przedmiot
 		
-				if (iitem > 0) && (inv_grid[# 1, ii] > 0){
+				if (iitem > 0) && (inv_grid[# INVAMOUNT, ii] > 0){
 					switch(ii){
 						case selected_slot:
 										//draw selected slot
@@ -100,7 +102,7 @@ if (show_inventory) && (!show_slots){
 									}
 						break;
 						default:
-									if (inv_grid[# 1, ii] > 0){
+									if (inv_grid[# INVAMOUNT, ii] > 0){
 										//draw_sprite_ext(spr_inv_slot_none, 0, xx, yy, scale, scale, 0, c_white, 1);
 										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
 									}
@@ -110,17 +112,14 @@ if (show_inventory) && (!show_slots){
 		
 				//Rysuj liczbe przedmiotow
 				if (iitem > 0){
-					var amount = inv_grid[# 1, ii];
+					var amount = inv_grid[# INVAMOUNT, ii];
 					var _cap = inv_grid[# INVCAP, ii];
 					if (amount != 0){
-						if (inv_grid[# INVTYPE, ii] == itemtype.drink) || (inv_grid[# INVTYPE, ii] == itemtype.alcohol){
-							//draw_rectangle_color(xx + 4, yy + 20, xx + 20, yy + 22, bl, bl, bl, bl, false);
-							//draw_rectangle_color(xx + 4.5, yy + 20.5, xx + 3 + (amount*3.28) , yy + 21.5, wh, wh, wh, wh, false);
-								draw_set_font(global.font_itemnum);
-								draw_set_halign(fa_right);
-								draw_text_transformed_color(xx + 22, yy + 16, string(_cap), .5, .5, 0, wh, wh, wh, wh, 1);
-								draw_set_halign(fa_left);
-								draw_set_font(font_item);
+						if (inv_grid[# INVTYPE, ii] == itemtype.drink) 
+						|| (inv_grid[# INVTYPE, ii] == itemtype.alcohol){
+								draw_rectangle_color(xx + 4, yy + 20, xx + 20, yy + 22, bl, bl, bl, bl, false);
+								draw_rectangle_color(xx + 4.5, yy + 20.5, xx + 3 + (_cap*3.28) , yy + 21.5, wh, wh, wh, wh, false);
+								
 						}else if (inv_grid[# INVITEM, ii] == item.m1911mag){
 								draw_set_font(global.font_itemnum);
 								draw_set_halign(fa_right);
@@ -608,14 +607,11 @@ if (show_inventory) && (!show_slots){
 			sy = (iitem div spr_inv_items_columns) * cell_size;
 			scr_draw_item(sx, sy, mousex, mousey, 1);
 			var inuma = multipick;
-			var _cap = inv_grid[# INVCAP, ii];
+			var _cap = cap;
 			
 			if (ds_item_all[# INVTYPE, iitem] == itemtype.drink) || (ds_item_all[# INVTYPE, iitem] == itemtype.alcohol){
-				//draw_rectangle_color(mousex + 4, mousey + 20, mousex + 20, mousey + 22, bl, bl, bl, bl, false);
-				//draw_rectangle_color(mousex + 4.5, mousey + 20.5, mousex + 3 + (_cap*3.28) , mousey + 21.5, wh, wh, wh, wh, false);
-					draw_set_font(global.font_itemnum);
-					draw_text_transformed_color(mousex + 16, mousey + 16, string(_cap), .5, .5, 0, wh, wh, wh, wh, 1);
-					draw_set_font(font_item);
+					draw_rectangle_color(mousex + 4, mousey + 20, mousex + 20, mousey + 22, bl, bl, bl, bl, false);
+					draw_rectangle_color(mousex + 4.5, mousey + 20.5, mousex + 3 + (_cap*3.28) , mousey + 21.5, wh, wh, wh, wh, false);
 			}else if (ds_item_all[# INVTYPE, iitem] == itemtype.magazine){
 					draw_set_font(global.font_itemnum);
 					draw_text_transformed_color(mousex + 16, mousey + 16, string(_cap), .5, .5, 0, wh, wh, wh, wh, 1);
@@ -772,11 +768,13 @@ else if (!show_inventory) && (show_slots){
 					if (iitem > 0){
 						var amount = inv_grid[# 1, ii];
 						var level = inv_grid[# INVLEVEL, ii];
+						var _cap = inv_grid[# INVCAP, ii];
 						if (amount != 0){
-							if (inv_grid[# INVTYPE, ii] == itemtype.drink) || (inv_grid[# INVTYPE, ii] == itemtype.drink){
+							if (inv_grid[# INVTYPE, ii] == itemtype.drink)
+							|| (inv_grid[# INVTYPE, ii] == itemtype.alcohol){
 								draw_rectangle_color(xx + 4, yy + 20, xx + 20, yy + 22, bl, bl, bl, bl, false);
-								draw_rectangle_color(xx + 4.5, yy + 20.5, xx + 3 + (amount*3.28) , yy + 21.5, wh, wh, wh, wh, false);
-							}else if (inv_grid[# INVITEM, ii] == item.m1911mag){
+								draw_rectangle_color(xx + 4.5, yy + 20.5, xx + 3 + (_cap*3.28) , yy + 21.5, wh, wh, wh, wh, false);
+							}else if (inv_grid[# INVTYPE, ii] == itemtype.magazine){
 									draw_set_font(global.font_itemnum);
 									draw_set_halign(fa_right);
 									draw_text_transformed_color(xx + 22, yy + 16, string(level), .5, .5, 0, wh, wh, wh, wh, 1);

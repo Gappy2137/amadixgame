@@ -6,7 +6,11 @@ switch(actionstate){
 		itemeaten = -1;
 	break;
 	case player_state_action.drinking:
-		obj_inventory.ds_inventory[# INVAMOUNT, obj_inventory.mouse_slotx_second] -= 1;	
+		if (obj_inventory.ds_inventory[# MAXCAP, obj_inventory.mouse_slotx_second] == -1){
+			obj_inventory.ds_inventory[# INVAMOUNT, obj_inventory.mouse_slotx_second] -= 1;	
+		}else{
+			obj_inventory.ds_inventory[# INVCAP, obj_inventory.mouse_slotx_second] -= 1;	
+		}
 		actionstate = player_state_action.none;
 		item_add_effect(itemeaten);
 		itemeaten = -1;

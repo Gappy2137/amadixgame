@@ -1,14 +1,15 @@
 function slot_remove(slot){
-	obj_inventory.ds_inventory[# 0, slot] = item.none;
-	obj_inventory.ds_inventory[# 1, slot] = 0;
-	obj_inventory.ds_inventory[# 2, slot] = -1;
-	obj_inventory.ds_inventory[# 3, slot] = 0;
-	obj_inventory.ds_inventory[# 4, slot] = 0;
-	obj_inventory.ds_inventory[# 5, slot] = 0;
-	obj_inventory.ds_inventory[# 6, slot] = 0;
-	obj_inventory.ds_inventory[# 7, slot] = 0;
-	obj_inventory.ds_inventory[# 8, slot] = 0;
-	obj_inventory.ds_inventory[# 9, slot] = 0;
-	obj_inventory.ds_inventory[# 10, slot] = 0;
-	obj_inventory.ds_inventory[# 11, slot] = 0;
+	obj_inventory.ds_inventory[# INVITEM, slot] = item.none;
+	obj_inventory.ds_inventory[# INVAMOUNT, slot] = 0;
+	obj_inventory.ds_inventory[# INVTYPE, slot] = -1;
+	obj_inventory.ds_inventory[# MAXSTACK, slot] = 0;
+	obj_inventory.ds_inventory[# INVHP, slot] = 0;
+	obj_inventory.ds_inventory[# INVSTAMINA, slot] = 0;
+	obj_inventory.ds_inventory[# INVLEVEL, slot] = 0;
+	obj_inventory.ds_inventory[# INVDAMAGE, slot] = 0;
+	obj_inventory.ds_inventory[# INVDEFENCE, slot] = 0;
+	obj_inventory.ds_inventory[# INVEFFECTS, slot] = 0;
+	obj_inventory.ds_inventory[# INVTEMPERATURE, slot] = 0;
+	obj_inventory.ds_inventory[# INVCAP, slot] = 0;
+	obj_inventory.ds_inventory[# MAXCAP, slot] = -1;
 }
