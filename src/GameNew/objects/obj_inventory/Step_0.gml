@@ -109,7 +109,7 @@ if (show_inventory) && (!show_slots){
 		
 		inhand = -1;
 		multipick = 0;
-		cap = 0;
+		cap = -1;
 		lvl = 0;
 	}
 	function changeitem(){
@@ -402,15 +402,11 @@ if (show_inventory) && (!show_slots){
 			if (mouse_check_button_pressed(mb_left)){
 				//Jezeli trzymasz cos w rece wyrzuc to
 				if (inhand != -1){
-					var inst = instance_create_layer(obj_amadix.x, obj_amadix.y, "Instances", obj_item);
-					with (inst){
-						item_num = other.inhand;
-						item_num_amount = other.multipick;
-						x_frame = item_num mod (spr_width/cell_size);
-						y_frame = item_num div (spr_width/cell_size);
-					}
+					item_drop(inhand, multipick, lvl, cap, true, obj_amadix.x, obj_amadix.y, 5);		
 					inhand = -1;
 					multipick = 0;
+					cap = -1;
+					lvl = 0;
 				}
 			}
 		}
