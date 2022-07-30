@@ -87,7 +87,6 @@ if (show_inventory) && (!show_slots){
 	}
 	#endregion
 
-
 	#region Operacje na przedmiotach
 	var inv_grid = ds_inventory;
 
@@ -435,7 +434,7 @@ else if (!show_inventory) && (show_slots){
 	
 
 	if (instance_exists(obj_amadix)){
-		if (obj_amadix.y > (room_height - 132)) || (global.inDialogue){
+		if (obj_amadix.y > (room_height - 132)){
 			slots_position_up = true;
 		}else{
 			slots_position_up = false;	
@@ -444,10 +443,18 @@ else if (!show_inventory) && (show_slots){
 	
 	#region Pozycja myszki
 	
-	if (slots_position_up) || (global.inDialogue){
-		var pos = 12;
+	if (!global.eqSlots){
+		if (slots_position_up){
+			ypos = lerp(ypos, -16, .3);
+		}else{
+			ypos = lerp(ypos, GAMEHEIGHT + 16, .3);
+		}
 	}else{
-		var pos = 237;
+		if (slots_position_up){
+			ypos = 12;
+		}else{
+			ypos = 237;
+		}
 	}
 	
 	mousex = device_mouse_x_to_gui(0);
@@ -457,7 +464,7 @@ else if (!show_inventory) && (show_slots){
 	var cell_yoffset = (cell_size + y_offset)*scale;
 
 	var i_mousex = mousex - slots_x;
-	var i_mousey = mousey - pos;
+	var i_mousey = mousey - ypos;
 
 	var numx = i_mousex div cell_xoffset;
 	var numy = i_mousey div cell_yoffset;
@@ -465,10 +472,10 @@ else if (!show_inventory) && (show_slots){
 	var endx = (gui_width - invUI_width)/2;
 	var endUIx = invUI_width + endx;
 
-	var endy = pos;
+	var endy = ypos;
 	var endUIy = cell_size + endy;
 
-	if (mousex >= xUI) && (mousex < endUIx) && (mousey >= pos) && (mousey < endUIy){
+	if (mousex >= xUI) && (mousex < endUIx) && (mousey >= ypos) && (mousey < endUIy){
 		var sx = i_mousex - (numx * cell_xoffset);
 		var sy = i_mousey - (numy * cell_yoffset);
 		inslots = true;

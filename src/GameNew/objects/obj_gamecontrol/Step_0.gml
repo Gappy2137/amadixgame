@@ -32,6 +32,14 @@ if (instance_exists(obj_chatterbox)){
 	global.inDialogue = false;	
 }
 
+if (global.inDialogue)
+|| (global.inEq)
+|| (global.inCutscene){
+	global.eqSlots = false;
+}else{
+	global.eqSlots = true;
+}
+
 if ((global.hp) > (global.maxhp)){
 	global.hp = global.maxhp;	
 }

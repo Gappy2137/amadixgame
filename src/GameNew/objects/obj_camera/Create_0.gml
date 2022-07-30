@@ -8,6 +8,8 @@ bounded = true;
 
 stop = false;
 
+_y = 16;
+
 enum camera_mode{
 	follow_player,
 	follow_player_precise,

@@ -632,11 +632,7 @@ if (show_inventory) && (!show_slots){
 }
 else if (!show_inventory) && (show_slots){
 	
-	if (slots_position_up){
-		var pos = 12;
-	}else{
-		var pos = 237;
-	}
+
 	
 	//Inventory
 	var ii, ix, iy, xx, yy, sx, sy, iitem, inv_grid;
@@ -644,7 +640,7 @@ else if (!show_inventory) && (show_slots){
 	var wh = c_white;
 	var bl = c_black;
 	
-	draw_sprite_ext(spr_eq_slotback_12slot, 0, xUI + 9, pos - 1, scale, scale, 0, c_white, 1);
+	draw_sprite_ext(spr_eq_slotback_12slot, 0, xUI + 9, ypos - 1, scale, scale, 0, c_white, 1);
 	
 	draw_set_font(font_item);
 	
@@ -721,9 +717,9 @@ else if (!show_inventory) && (show_slots){
 		draw_set_font(font_item_desc);
 		draw_set_halign(fa_center);
 		if (!slots_position_up){
-			draw_text_transformed_color(name_x, (pos - name_height), name, name_scale, name_scale, 0, wh, wh, wh, wh, text_alpha);
+			draw_text_transformed_color(name_x, (ypos - name_height), name, name_scale, name_scale, 0, wh, wh, wh, wh, text_alpha);
 		}else{
-			draw_text_transformed_color(name_x, (pos - name_height) + 44, name, name_scale, name_scale, 0, wh, wh, wh, wh, text_alpha);
+			draw_text_transformed_color(name_x, (ypos - name_height) + 44, name, name_scale, name_scale, 0, wh, wh, wh, wh, text_alpha);
 		}
 		draw_set_halign(fa_left);
 		
@@ -734,7 +730,7 @@ else if (!show_inventory) && (show_slots){
 	repeat (12){
 			//x,y slotow
 			xx = slots_x + ((cell_size+x_offset) * ix * scale);
-			yy = pos + ((cell_size+y_offset) * iy * scale);
+			yy = ypos + ((cell_size+y_offset) * iy * scale);
 		
 			//Przedmiot
 			iitem = inv_grid[# 0, ii];
@@ -804,15 +800,15 @@ else if (!show_inventory) && (show_slots){
 	var num = 0;
 	repeat(inv_slots_width - 3){
 		num++;
-		draw_text_transformed_color(xUI + (cell_size * num) - cell_size + 4, pos + 4, num, 0.35, 0.35, 0, bl, bl, bl, bl, 1);
+		draw_text_transformed_color(xUI + (cell_size * num) - cell_size + 4, ypos + 4, num, 0.35, 0.35, 0, bl, bl, bl, bl, 1);
 	}
-	draw_text_transformed_color(xUI + (cell_size * 10) - cell_size + 4, pos + 4, "0", 0.35, 0.35, 0, bl, bl, bl, bl, 1);
-	draw_text_transformed_color(xUI + (cell_size * 11) - cell_size + 4, pos + 4, "-", 0.35, 0.35, 0, bl, bl, bl, bl, 1);
-	draw_text_transformed_color(xUI + (cell_size * 12) - cell_size + 4, pos + 4, "=", 0.35, 0.35, 0, bl, bl, bl, bl, 1);
+	draw_text_transformed_color(xUI + (cell_size * 10) - cell_size + 4, ypos + 4, "0", 0.35, 0.35, 0, bl, bl, bl, bl, 1);
+	draw_text_transformed_color(xUI + (cell_size * 11) - cell_size + 4, ypos + 4, "-", 0.35, 0.35, 0, bl, bl, bl, bl, 1);
+	draw_text_transformed_color(xUI + (cell_size * 12) - cell_size + 4, ypos + 4, "=", 0.35, 0.35, 0, bl, bl, bl, bl, 1);
 	
 	//Wybrany slot
 	var selslot_x = xUI + (mouse_slotx_second * cell_size);
-	draw_sprite(spr_inventory_selected, 0, selslot_x - 4, pos - 4);
+	draw_sprite(spr_inventory_selected, 0, selslot_x - 4, ypos - 4);
 	
 }
 else if (!show_inventory) && (!show_slots){

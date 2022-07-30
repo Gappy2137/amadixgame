@@ -13,6 +13,8 @@ slots_position_up = false;
 x_rel = 0;
 y_rel = 0;
 
+ypos = 0;
+
 canUseInventory = true;
 
 page = 0;

@@ -129,6 +129,7 @@ global.inDialogue = false;
 global.pickUp = false;
 global.inEq = false;
 global.inConsole = false;
+global.eqSlots = true;
 
 refTimer = 0;
 

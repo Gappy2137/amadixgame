@@ -16,7 +16,7 @@ switch (mode) {
 					bounded = true;
 				
 					var cam_x = clamp((following.x-(view_width/2)),0 , room_width-(view_width));
-					var cam_y = clamp((following.y-(view_height/2)),0, room_height-(view_height));
+					var cam_y = clamp((following.y-(view_height/2) + _y),0, room_height-(view_height));
 				
 					var cam_x_pos = camera_get_view_x(view_camera[0]);
 					var cam_y_pos = camera_get_view_y(view_camera[0]);
@@ -41,7 +41,7 @@ switch (mode) {
 				bounded = true;
 				
 				var cam_x = clamp((following.x-(view_width/2)),0 , room_width-(view_width));
-				var cam_y = clamp((following.y-(view_height/2)),0, room_height-(view_height));
+				var cam_y = clamp((following.y-(view_height/2) + _y),0, room_height-(view_height));
 
 				camera_set_view_pos(view_camera[0], (cam_x), (cam_y));
 									
