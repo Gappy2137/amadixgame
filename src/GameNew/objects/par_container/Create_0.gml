@@ -11,7 +11,7 @@ selected_slot = -1;
 inhand = -1;
 multipick = 0;
 lvl = 0;
-cap = 0;
+cap = -1;
 
 selected_slot_eq = -1;
 

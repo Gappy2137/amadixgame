@@ -763,7 +763,6 @@ else if (!show_inventory) && (show_slots){
 				//Rysuj liczbe przedmiotow
 					if (iitem > 0){
 						var amount = inv_grid[# 1, ii];
-						var level = inv_grid[# INVLEVEL, ii];
 						var _cap = inv_grid[# INVCAP, ii];
 						if (amount != 0){
 							if (inv_grid[# INVTYPE, ii] == itemtype.drink)
@@ -773,7 +772,7 @@ else if (!show_inventory) && (show_slots){
 							}else if (inv_grid[# INVTYPE, ii] == itemtype.magazine){
 									draw_set_font(global.font_itemnum);
 									draw_set_halign(fa_right);
-									draw_text_transformed_color(xx + 22, yy + 16, string(level), .5, .5, 0, wh, wh, wh, wh, 1);
+									draw_text_transformed_color(xx + 22, yy + 16, string(_cap), .5, .5, 0, wh, wh, wh, wh, 1);
 									draw_set_halign(fa_left);
 									draw_set_font(font_item);
 							}else{

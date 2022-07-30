@@ -124,7 +124,7 @@ slots_y = yUI + y_rel;
 text_timer = 300;
 text_alpha = 1;
 
-cap = 0;
+cap = -1;
 lvl = 0;
 
 infobox_height = 0;
@@ -209,6 +209,25 @@ repeat(item.height){
 alarm[0] = 1; //Nazwy i opisy przedmiotow
 
 item_attrib_grid();
+
+
+i = 0;
+repeat(inv_slots){
+	ds_inventory[# INVTYPE, i] = -1;
+	ds_inventory[# INVAMOUNT, i] = 0;
+	ds_inventory[# INVTYPE, i] = -1;
+	ds_inventory[# MAXSTACK, i] = 0;
+	ds_inventory[# INVHP, i] = 0;
+	ds_inventory[# INVSTAMINA, i] = 0;
+	ds_inventory[# INVLEVEL, i] = 0;
+	ds_inventory[# INVDAMAGE, i] = 0;
+	ds_inventory[# INVDEFENCE, i] = 0;
+	ds_inventory[# INVEFFECTS, i] = 0;
+	ds_inventory[# INVTEMPERATURE, i] = 0;
+	ds_inventory[# INVCAP, i] = -1;
+	ds_inventory[# MAXCAP, i] = -1;
+	i++;
+}
 
 item_add((inv_slots - 4) + 1, item.classic_jacket, 1, 0, -1);
 item_add((inv_slots - 4) + 2, item.jeans, 1, 0, -1);

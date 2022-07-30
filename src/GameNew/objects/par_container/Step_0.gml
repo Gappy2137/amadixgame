@@ -229,7 +229,9 @@ if (canUseContainter){
 				//Od teraz trzymamy w rece przedmiot ze slotu
 				inhand = inv_grid[# INVITEM, selected_slot_eq];
 				
-				if (inv_grid[# MAXCAP, selected_slot_eq] != -1){
+				if (inv_grid[# INVTYPE, selected_slot_eq] == itemtype.alcohol)
+				|| (inv_grid[# INVTYPE, selected_slot_eq] == itemtype.drink)
+				|| (inv_grid[# INVTYPE, selected_slot_eq] == itemtype.magazine){
 					inhand = inv_grid[# INVITEM, selected_slot_eq];
 					multipick = inv_grid[# INVAMOUNT, selected_slot_eq];
 					cap = inv_grid[# INVCAP, selected_slot_eq];
@@ -304,7 +306,6 @@ if (canUseContainter){
 		
 	}else if ((mousex >= xUI) && (mousex < endx) && (mousey >= yUI) && (mousey < endy)){
 
-	
 		
 		//Uzywanie shifta
 		if (mouse_check_button_pressed(mb_left)) && (keyboard_check(vk_shift)){
@@ -317,40 +318,40 @@ if (canUseContainter){
 				//Od teraz trzymamy w rece przedmiot ze slotu
 				inhand = con_grid[# INVITEM, selected_slot];
 				multipick = con_grid[# INVAMOUNT, selected_slot];
-				cap = inv_grid[# INVCAP, selected_slot];
-				lvl = inv_grid[# INVLEVEL, selected_slot];
+				cap = con_grid[# INVCAP, selected_slot];
+				lvl = con_grid[# INVLEVEL, selected_slot];
 				
-				con_grid[# 0, selected_slot] = item.none;
-				con_grid[# 1, selected_slot] = 0;
-				con_grid[# 2, selected_slot] = -1;
-				con_grid[# 3, selected_slot] = 0;
-				con_grid[# 4, selected_slot] = 0;
-				con_grid[# 5, selected_slot] = 0;
-				con_grid[# 6, selected_slot] = 0;
-				con_grid[# 7, selected_slot] = 0;
-				con_grid[# 8, selected_slot] = 0;
-				con_grid[# 9, selected_slot] = 0;
-				con_grid[# 10, selected_slot] = 0;
-				con_grid[# 11, selected_slot] = -1;
-				con_grid[# 12, selected_slot] = -1;
+				con_grid[# INVITEM, selected_slot] = item.none;
+				con_grid[# INVAMOUNT, selected_slot] = 0;
+				con_grid[# INVTYPE, selected_slot] = -1;
+				con_grid[# MAXSTACK, selected_slot] = 0;
+				con_grid[# INVHP, selected_slot] = 0;
+				con_grid[# INVSTAMINA, selected_slot] = 0;
+				con_grid[# INVLEVEL, selected_slot] = 0;
+				con_grid[# INVDAMAGE, selected_slot] = 0;
+				con_grid[# INVDEFENCE, selected_slot] = 0;
+				con_grid[# INVEFFECTS, selected_slot] = 0;
+				con_grid[# INVTEMPERATURE, selected_slot] = 0;
+				con_grid[# INVCAP, selected_slot] = -1;
+				con_grid[# MAXCAP, selected_slot] = -1;
 			}else
 			//Jezeli mamy przedmiot w rece i klikamy na pusty slot
 			if (inhand != -1) && (con_grid[# INVITEM, selected_slot] == item.none){
 				//Kladziemy przedmiot na slot
 				con_grid[# INVITEM, selected_slot] = inhand;
 				con_grid[# INVAMOUNT, selected_slot] = multipick;
-				con_grid[# INVLEVEL, selected_slot] = lvl;
 				con_grid[# INVTYPE, selected_slot] = obj_inventory.ds_item_all[# INVTYPE, inhand];
 				con_grid[# MAXSTACK, selected_slot] = obj_inventory.ds_item_all[# MAXSTACK, inhand];
 				con_grid[# INVHP, selected_slot] = obj_inventory.ds_item_all[# INVHP, inhand];
 				con_grid[# INVSTAMINA, selected_slot] = obj_inventory.ds_item_all[# INVSTAMINA, inhand];
+				con_grid[# INVLEVEL, selected_slot] = lvl;
 				con_grid[# INVDAMAGE, selected_slot] = obj_inventory.ds_item_all[# INVDAMAGE, inhand];
 				con_grid[# INVDEFENCE, selected_slot] = obj_inventory.ds_item_all[# INVDEFENCE, inhand];
 				con_grid[# INVEFFECTS, selected_slot] = obj_inventory.ds_item_all[# INVEFFECTS, inhand];
-				con_grid[# INVTEMPERATURE, selected_slot] = obj_inventory.ds_item_all[# INVTEMPERATURE, inhand];	
+				con_grid[# INVTEMPERATURE, selected_slot] = obj_inventory.ds_item_all[# INVTEMPERATURE, inhand];
 				con_grid[# INVCAP, selected_slot] = cap;
 				con_grid[# MAXCAP, selected_slot] = obj_inventory.ds_item_all[# MAXCAP, inhand];	
-		
+				
 				inhand = -1;
 				multipick = 0;
 				cap = -1;
@@ -371,8 +372,9 @@ if (canUseContainter){
 					con_grid[# INVDEFENCE, selected_slot] = obj_inventory.ds_item_all[# INVDEFENCE, inhand];
 					con_grid[# INVEFFECTS, selected_slot] = obj_inventory.ds_item_all[# INVEFFECTS, inhand];
 					con_grid[# INVTEMPERATURE, selected_slot] = obj_inventory.ds_item_all[# INVTEMPERATURE, inhand];
+					con_grid[# MAXCAP, selected_slot] = obj_inventory.ds_item_all[# MAXCAP, inhand];
 					
-					if (inv_grid[# INVCAP, selected_slot_eq] != cap) || (inv_grid[# INVLEVEL, selected_slot_eq] != lvl){
+					if (con_grid[# INVCAP, selected_slot] != cap) || (con_grid[# INVLEVEL, selected_slot] != lvl){
 						var temp0 = con_grid[# INVITEM, selected_slot];
 						var temp1 = con_grid[# INVAMOUNT, selected_slot];
 						var temp2 = con_grid[# INVLEVEL, selected_slot];
@@ -410,8 +412,9 @@ if (canUseContainter){
 					con_grid[# INVDEFENCE, selected_slot] = obj_inventory.ds_item_all[# INVDEFENCE, inhand];
 					con_grid[# INVEFFECTS, selected_slot] = obj_inventory.ds_item_all[# INVEFFECTS, inhand];
 					con_grid[# INVTEMPERATURE, selected_slot] = obj_inventory.ds_item_all[# INVTEMPERATURE, inhand];
+					con_grid[# MAXCAP, selected_slot] = obj_inventory.ds_item_all[# MAXCAP, inhand];
 					
-					if (inv_grid[# INVCAP, selected_slot_eq] != cap) || (inv_grid[# INVLEVEL, selected_slot_eq] != lvl){
+					if (con_grid[# INVCAP, selected_slot] != cap) || (con_grid[# INVLEVEL, selected_slot] != lvl){
 						var temp0 = con_grid[# INVITEM, selected_slot];
 						var temp1 = con_grid[# INVAMOUNT, selected_slot];
 						var temp2 = con_grid[# INVLEVEL, selected_slot];
@@ -474,38 +477,27 @@ if (canUseContainter){
 			if (inhand == -1) && (con_grid[# INVITEM, selected_slot] != item.none) && (con_grid[# INVAMOUNT, selected_slot] > 0) && (multipick < con_grid[# MAXSTACK, selected_slot]){
 				//Od teraz trzymamy w rece przedmiot ze slotu
 				inhand = con_grid[# INVITEM, selected_slot];
-				if (keyboard_check(vk_shift)){
-					multipick = floor((con_grid[# INVAMOUNT, selected_slot])/2);
-					con_grid[# INVAMOUNT, selected_slot] -= multipick;
-				}else{
-					multipick++;
-					con_grid[# INVAMOUNT, selected_slot]--;
-				}
-
-			}else
-			//Jezeli klikamy prawym na przedmiot majac w rece ten sam przedmiot
-			if (inhand != -1) && (con_grid[# INVITEM, selected_slot] == inhand) && (con_grid[# INVAMOUNT, selected_slot] > 0) && (multipick < con_grid[# MAXSTACK, selected_slot]){
-				inhand = con_grid[# INVITEM, selected_slot];
 				
-				if (con_grid[# MAXCAP, selected_slot] != -1){
-					inhand = con_grid[# INVITEM, selected_slot];
+				if (inv_grid[# INVTYPE, selected_slot] == itemtype.alcohol)
+				|| (inv_grid[# INVTYPE, selected_slot] == itemtype.drink)
+				|| (inv_grid[# INVTYPE, selected_slot] == itemtype.magazine){
 					multipick = con_grid[# INVAMOUNT, selected_slot];
 					cap = con_grid[# INVCAP, selected_slot];
 					lvl = con_grid[# INVLEVEL, selected_slot];
 				
-					con_grid[# 0, selected_slot] = item.none;
-					con_grid[# 1, selected_slot] = 0;
-					con_grid[# 2, selected_slot] = -1;
-					con_grid[# 3, selected_slot] = 0;
-					con_grid[# 4, selected_slot] = 0;
-					con_grid[# 5, selected_slot] = 0;
-					con_grid[# 6, selected_slot] = 0;
-					con_grid[# 7, selected_slot] = 0;
-					con_grid[# 8, selected_slot] = 0;
-					con_grid[# 9, selected_slot] = 0;
-					con_grid[# 10, selected_slot] = 0;
-					con_grid[# 11, selected_slot] = -1;
-					con_grid[# 12, selected_slot] = -1;
+					con_grid[# INVITEM, selected_slot] = item.none;
+					con_grid[# INVAMOUNT, selected_slot] = 0;
+					con_grid[# INVTYPE, selected_slot] = -1;
+					con_grid[# MAXSTACK, selected_slot] = 0;
+					con_grid[# INVHP, selected_slot] = 0;
+					con_grid[# INVSTAMINA, selected_slot] = 0;
+					con_grid[# INVLEVEL, selected_slot] = 0;
+					con_grid[# INVDAMAGE, selected_slot] = 0;
+					con_grid[# INVDEFENCE, selected_slot] = 0;
+					con_grid[# INVEFFECTS, selected_slot] = 0;
+					con_grid[# INVTEMPERATURE, selected_slot] = 0;
+					con_grid[# INVCAP, selected_slot] = -1;
+					con_grid[# MAXCAP, selected_slot] = -1;
 				}else{
 					
 					if (input_check("inventory_shift")){
@@ -516,8 +508,73 @@ if (canUseContainter){
 						con_grid[# INVAMOUNT, selected_slot]--;
 					}
 				}
+
+			}else
+			//Jezeli klikamy prawym na przedmiot majac w rece ten sam przedmiot
+			if (inhand != -1) && (con_grid[# INVITEM, selected_slot] == inhand) && (con_grid[# INVAMOUNT, selected_slot] > 0) && (multipick < con_grid[# MAXSTACK, selected_slot]){
+				inhand = con_grid[# INVITEM, selected_slot];
+				
+				if (con_grid[# INVCAP, selected_slot] != cap) || (con_grid[# INVLEVEL, selected_slot] != lvl){
+						var temp0 = con_grid[# INVITEM, selected_slot];
+						var temp1 = con_grid[# INVAMOUNT, selected_slot];
+						var temp2 = con_grid[# INVLEVEL, selected_slot];
+						var temp3 = con_grid[# INVCAP, selected_slot];
+				
+						con_grid[# INVITEM, selected_slot] = inhand;
+						con_grid[# INVAMOUNT, selected_slot] = multipick;
+						con_grid[# INVTYPE, selected_slot] = obj_inventory.ds_item_all[# INVTYPE, inhand];
+						con_grid[# MAXSTACK, selected_slot] = obj_inventory.ds_item_all[# MAXSTACK, inhand];
+						con_grid[# INVHP, selected_slot] = obj_inventory.ds_item_all[# INVHP, inhand];
+						con_grid[# INVSTAMINA, selected_slot] = obj_inventory.ds_item_all[# INVSTAMINA, inhand];
+						con_grid[# INVDAMAGE, selected_slot] = obj_inventory.ds_item_all[# INVDAMAGE, inhand];
+						con_grid[# INVDEFENCE, selected_slot] = obj_inventory.ds_item_all[# INVDEFENCE, inhand];
+						con_grid[# INVEFFECTS, selected_slot] = obj_inventory.ds_item_all[# INVEFFECTS, inhand];
+						con_grid[# INVTEMPERATURE, selected_slot] = obj_inventory.ds_item_all[# INVTEMPERATURE, inhand];
+						con_grid[# INVLEVEL, selected_slot] = lvl;
+						con_grid[# INVCAP, selected_slot] = cap;
+						con_grid[# MAXCAP, selected_slot] = obj_inventory.ds_item_all[# MAXCAP, inhand];
+				
+						inhand = temp0;
+						multipick = temp1;	
+						lvl = temp2;	
+						cap = temp3;	
+				}else{
+					if (input_check("inventory_shift")){
+						if (con_grid[# INVAMOUNT, selected_slot] == 1){
+							multipick++;
+							con_grid[# INVITEM, selected_slot] = item.none;
+							con_grid[# INVAMOUNT, selected_slot] = 0;
+							con_grid[# INVTYPE, selected_slot] = -1;
+							con_grid[# MAXSTACK, selected_slot] = 0;
+							con_grid[# INVHP, selected_slot] = 0;
+							con_grid[# INVSTAMINA, selected_slot] = 0;
+							con_grid[# INVLEVEL, selected_slot] = 0;
+							con_grid[# INVDAMAGE, selected_slot] = 0;
+							con_grid[# INVDEFENCE, selected_slot] = 0;
+							con_grid[# INVEFFECTS, selected_slot] = 0;
+							con_grid[# INVTEMPERATURE, selected_slot] = 0;
+							con_grid[# INVCAP, selected_slot] = -1;
+							con_grid[# MAXCAP, selected_slot] = -1;
+						}else{
+							var mm = floor((con_grid[# INVAMOUNT, selected_slot])/2);
+							if (multipick + mm >= con_grid[# MAXSTACK, selected_slot]){
+								var mi = (con_grid[# MAXSTACK, selected_slot] - multipick);
+								con_grid[# INVAMOUNT, selected_slot] -= mi;
+								multipick = con_grid[# MAXSTACK, selected_slot];
+							}else{
+								multipick += mm;
+								con_grid[# INVAMOUNT, selected_slot] -= mm;
+							}	
+						}
+					}else{
+						multipick++;
+						con_grid[# INVAMOUNT, selected_slot]--;
+					}
+				}
 			}
 		}
+		
+
 
 	}else{
 		//Jezeli myszka jest poza ekranem ekwipunku
@@ -541,7 +598,7 @@ if (canUseContainter){
 	    if ((inv_grid[# INVAMOUNT, i] == 0) && (inv_grid[# INVITEM, i] != item.none)){
 				slot_remove(i);
 		}
-		if (inv_grid[# INVCAP, i] < 0){
+		if (inv_grid[# INVCAP, i] <= 0) && (inv_grid[# INVCAP, i] != -1){
 			inv_grid[# INVCAP, i] = 0;	
 		}
 	}

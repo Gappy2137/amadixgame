@@ -1,5 +1,5 @@
 function item_add(slot, iitem, amount, level, capacity){
-	
+	/*
 	if (capacity > -1) && (slot == -1){
 		if (item_exists(item.none, false)){
 			item_mag_add(iitem, capacity, level);
@@ -10,7 +10,7 @@ function item_add(slot, iitem, amount, level, capacity){
 		}
 		exit;
 	}
-	
+	*/
 	if (slot == -1){
 		if (item_exists(item.none, false)){
 			item_stack(iitem, amount, 0, false, level, capacity);

@@ -11,8 +11,8 @@ function item_attrib_grid(){
 	grid[# INVDEFENCE, item.none] = 0;
 	grid[# INVEFFECTS, item.none] = 0;
 	grid[# INVTEMPERATURE, item.none] = 0;
-	grid[# INVCAP, item.none] = 0;
-	grid[# MAXCAP, item.none] = 0;
+	grid[# INVCAP, item.none] = -1;
+	grid[# MAXCAP, item.none] = -1;
 
 	//Jablko
 	grid[# INVTYPE, item.apple] = itemtype.fruit;
@@ -207,7 +207,6 @@ function item_attrib_grid(){
 		}
 		if (grid[# INVTYPE, i] == itemtype.magazine){
 			grid[# MAXSTACK, i] = 1;
-			grid[# MAXCAP, i] = -1;
 		}
 		
 		i++;

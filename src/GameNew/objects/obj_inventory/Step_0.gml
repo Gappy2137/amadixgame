@@ -343,8 +343,9 @@ if (show_inventory) && (!show_slots){
 			if (inhand == -1) && (inv_grid[# INVITEM, selected_slot] != item.none) && (inv_grid[# INVAMOUNT, selected_slot] > 0) && (multipick < inv_grid[# MAXSTACK, selected_slot]){
 				//Od teraz trzymamy w rece przedmiot ze slotu
 				inhand = inv_grid[# INVITEM, selected_slot];
-				if (inv_grid[# MAXCAP, selected_slot] != -1){
-					inhand = inv_grid[# INVITEM, selected_slot];
+				if (inv_grid[# INVTYPE, selected_slot] == itemtype.alcohol)
+				|| (inv_grid[# INVTYPE, selected_slot] == itemtype.drink)
+				|| (inv_grid[# INVTYPE, selected_slot] == itemtype.magazine){
 					multipick = inv_grid[# INVAMOUNT, selected_slot];
 					cap = inv_grid[# INVCAP, selected_slot];
 					lvl = inv_grid[# INVLEVEL, selected_slot];
@@ -418,7 +419,7 @@ if (show_inventory) && (!show_slots){
 	    if ((inv_grid[# INVAMOUNT, i] == 0) && (inv_grid[# INVITEM, i] != item.none)){
 				slot_remove(i);
 		}
-		if (inv_grid[# INVCAP, i] < 0){
+		if (inv_grid[# INVCAP, i] <= 0) && (inv_grid[# INVCAP, i] != -1){
 			inv_grid[# INVCAP, i] = 0;	
 		}
 	}

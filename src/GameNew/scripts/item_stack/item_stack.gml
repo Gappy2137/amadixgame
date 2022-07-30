@@ -19,12 +19,13 @@ function item_stack(iitem, amount, xx, ready, level, capacity){
 						_inv[# MAXSTACK, i] = itemall[# MAXSTACK, iitem];
 						_inv[# INVHP, i] = itemall[# INVHP, iitem];
 						_inv[# INVSTAMINA, i] = itemall[# INVSTAMINA, iitem];
-						_inv[# INVLEVEL, i] = itemall[# INVLEVEL, iitem];
+						_inv[# INVLEVEL, i] = level;
 						_inv[# INVDAMAGE, i] = itemall[# INVDAMAGE, iitem];
 						_inv[# INVDEFENCE, i] = itemall[# INVDEFENCE, iitem];
 						_inv[# INVEFFECTS, i] = itemall[# INVEFFECTS, iitem];
 						_inv[# INVTEMPERATURE, i] = itemall[# INVTEMPERATURE, iitem];
-						_inv[# INVCAP, i] = itemall[# INVCAP, iitem];
+						_inv[# INVCAP, i] = capacity;
+						_inv[# MAXCAP, i] = itemall[# MAXCAP, iitem];
 						flag = true;
 					}else{
 						i++;	

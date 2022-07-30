@@ -10,6 +10,6 @@ function slot_remove(slot){
 	obj_inventory.ds_inventory[# INVDEFENCE, slot] = 0;
 	obj_inventory.ds_inventory[# INVEFFECTS, slot] = 0;
 	obj_inventory.ds_inventory[# INVTEMPERATURE, slot] = 0;
-	obj_inventory.ds_inventory[# INVCAP, slot] = 0;
+	obj_inventory.ds_inventory[# INVCAP, slot] = -1;
 	obj_inventory.ds_inventory[# MAXCAP, slot] = -1;
 }

@@ -9,8 +9,8 @@ if (instance_exists(obj_inventory)){
 	draw_text(16, 64 + 12*3, "mltp " + string(multipick));
 	draw_text(16, 64 + 12*4, "inh " + string(inhand));
 	draw_text(16, 64 + 12*5, "cap " + string(cap));
-	draw_text(16, 64 + 12*6, "concap " + string(ds_container[# INVCAP, selected_slot]));
-	draw_text(16, 64 + 12*7, "eqcap " + string(obj_inventory.ds_inventory[# INVCAP, selected_slot_eq]));
+	//draw_text(16, 64 + 12*6, "concap " + string(ds_container[# INVCAP, selected_slot]));
+	//draw_text(16, 64 + 12*7, "eqcap " + string(obj_inventory.ds_inventory[# INVCAP, selected_slot_eq]));
 	////////////////
 		
 	draw_sprite_ext(obj_inventory.spr_eq_slotback, 0, 92, 152, 1, 1, 0, c_white, 1);
@@ -101,7 +101,6 @@ if (instance_exists(obj_inventory)){
 				//Rysuj liczbe przedmiotow
 					if (iitem > 0){
 						var amount = inv_grid[# 1, ii];
-						var level = inv_grid[# INVLEVEL, ii];
 						var _cap = inv_grid[# INVCAP, ii];
 						if (amount != 0){
 							if (inv_grid[# INVTYPE, ii] == itemtype.drink)
@@ -111,7 +110,7 @@ if (instance_exists(obj_inventory)){
 							}else if (inv_grid[# INVTYPE, ii] == itemtype.magazine){
 									draw_set_font(global.font_itemnum);
 									draw_set_halign(fa_right);
-									draw_text_transformed_color(xx + 22, yy + 16, string(level), .5, .5, 0, wh, wh, wh, wh, 1);
+									draw_text_transformed_color(xx + 22, yy + 16, string(_cap), .5, .5, 0, wh, wh, wh, wh, 1);
 									draw_set_halign(fa_left);
 									draw_set_font(font_item);
 							}else{
