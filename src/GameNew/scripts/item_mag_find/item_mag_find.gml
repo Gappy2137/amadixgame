@@ -4,7 +4,7 @@ function item_mag_find(iitem){
 	var amount = 0;
 	repeat(obj_inventory.inv_slots){
 		if (_inv[# INVITEM, xx] == iitem){
-			amount += _inv[# INVLEVEL, xx];
+			amount += _inv[# INVCAP, xx];
 			xx++;
 		}else{
 			xx++;

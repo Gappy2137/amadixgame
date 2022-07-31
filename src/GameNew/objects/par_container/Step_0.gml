@@ -72,6 +72,15 @@ if (canUseContainter){
 		
 		//Uzywanie shifta
 		if (mouse_check_button_pressed(mb_left)) && (keyboard_check(vk_shift)){
+			var _item = inv_grid[# INVITEM, selected_slot_eq];
+			var _amount = inv_grid[# INVAMOUNT, selected_slot_eq];
+			var _level = inv_grid[# INVLEVEL, selected_slot_eq];
+			var _cap = inv_grid[# INVCAP, selected_slot_eq];
+			var _maxstack = inv_grid[# MAXSTACK, selected_slot_eq];
+			
+			var am = container_stack(_item, _amount, 0, false, _level, _cap, con_grid, containerSlots);
+			
+			inv_grid[# INVAMOUNT, selected_slot_eq] = am;
 		}
 		
 		//Branie przedmiotow lewym
@@ -478,9 +487,9 @@ if (canUseContainter){
 				//Od teraz trzymamy w rece przedmiot ze slotu
 				inhand = con_grid[# INVITEM, selected_slot];
 				
-				if (inv_grid[# INVTYPE, selected_slot] == itemtype.alcohol)
-				|| (inv_grid[# INVTYPE, selected_slot] == itemtype.drink)
-				|| (inv_grid[# INVTYPE, selected_slot] == itemtype.magazine){
+				if (con_grid[# INVTYPE, selected_slot] == itemtype.alcohol)
+				|| (con_grid[# INVTYPE, selected_slot] == itemtype.drink)
+				|| (con_grid[# INVTYPE, selected_slot] == itemtype.magazine){
 					multipick = con_grid[# INVAMOUNT, selected_slot];
 					cap = con_grid[# INVCAP, selected_slot];
 					lvl = con_grid[# INVLEVEL, selected_slot];

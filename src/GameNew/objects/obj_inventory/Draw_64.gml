@@ -6,16 +6,16 @@ if (show_inventory) && (!show_slots){
 
 	
 	////////////////
-	draw_set_color(c_yellow);
-	draw_text(16, 64, "page " + string(page));
-	draw_text(16, 64 + 12*1, "sel " + string(selected_slot));
-	draw_text(16, 64 + 12*2, "pckd " + string(picked_slot));
-	draw_text(16, 64 + 12*3, "mltp " + string(multipick));
-	draw_text(16, 64 + 12*4, "inh " + string(inhand));
-	draw_text(16, 64 + 12*5, "cap " + string(cap));
-	draw_text(16, 64 + 12*6, "invcap " + string(ds_inventory[# INVCAP, abs(selected_slot)]));
-	draw_text(16, 64 + 12*7, "maxcap " + string(ds_inventory[# MAXCAP, abs(selected_slot)]));
-	////////////////
+	//draw_set_color(c_yellow);
+	//draw_text(16, 64, "page " + string(page));
+	//draw_text(16, 64 + 12*1, "sel " + string(selected_slot));
+	//draw_text(16, 64 + 12*2, "pckd " + string(picked_slot));
+	//draw_text(16, 64 + 12*3, "mltp " + string(multipick));
+	//draw_text(16, 64 + 12*4, "inh " + string(inhand));
+	//draw_text(16, 64 + 12*5, "cap " + string(cap));
+	//draw_text(16, 64 + 12*6, "invcap " + string(ds_inventory[# INVCAP, abs(selected_slot)]));
+	//draw_text(16, 64 + 12*7, "maxcap " + string(ds_inventory[# MAXCAP, abs(selected_slot)]));
+	//////////////////
 	
 
 	depth = -2;

@@ -18,7 +18,7 @@ itemOverlay = -1;
 shadowOriginX = 0;
 shadowOriginY = 0;
 shadowStyle = spr_shadow_big;
-shadowAlpha = 0.6;
+shadowAlpha = 0.4;
 
 shadowEnable = true;
 

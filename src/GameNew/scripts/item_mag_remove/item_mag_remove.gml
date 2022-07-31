@@ -5,8 +5,8 @@ function item_mag_remove(iitem){
 		if (!picked){
 			repeat(obj_inventory.inv_slots){
 				if (obj_inventory.ds_inventory[# INVITEM, xx] == iitem)
-				&& (obj_inventory.ds_inventory[# INVLEVEL, xx] != 0){
-					cap = obj_inventory.ds_inventory[# INVLEVEL, xx];
+				&& (obj_inventory.ds_inventory[# INVCAP, xx] != 0){
+					cap = obj_inventory.ds_inventory[# INVCAP, xx];
 					slot_remove(xx);
 					return cap;
 					
