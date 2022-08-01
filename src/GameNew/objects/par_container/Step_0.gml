@@ -78,7 +78,7 @@ if (canUseContainter){
 			var _cap = inv_grid[# INVCAP, selected_slot_eq];
 			var _maxstack = inv_grid[# MAXSTACK, selected_slot_eq];
 			
-			var am = container_stack(_item, _amount, 0, false, _level, _cap, con_grid, containerSlots);
+			var am = container_stack(_item, _amount, _level, _cap, con_grid, containerSlots);
 			
 			inv_grid[# INVAMOUNT, selected_slot_eq] = am;
 		}
