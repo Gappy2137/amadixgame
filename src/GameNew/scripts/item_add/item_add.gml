@@ -11,9 +11,24 @@ function item_add(slot, iitem, amount, level, capacity){
 		exit;
 	}
 	*/
+	
+	
+	
 	if (slot == -1){
 		if (item_exists(item.none, false)){
-			item_stack(iitem, amount, 0, false, level, capacity);
+			if (amount > obj_inventory.ds_item_all[# MAXSTACK, iitem]){
+				var maxstack = obj_inventory.ds_item_all[# MAXSTACK, iitem];
+				var rep = (amount div maxstack);
+				var reminder = (amount mod maxstack);
+				
+				repeat(rep){
+					item_stack(iitem, maxstack, level, capacity);
+				}
+				item_stack(iitem, reminder, level, capacity);
+				
+			}else{
+				item_stack(iitem, amount, level, capacity);
+			}
 		}else{
 			if (instance_exists(obj_amadix)){
 				item_drop(iitem, amount, level, capacity, true, obj_amadix.x, obj_amadix.y, 5);	
