@@ -1,3 +1,50 @@
+var width = GAMEWIDTH * obj_display.window_size;
+var height = GAMEHEIGHT * obj_display.window_size;
+
+var cam_x = camera_get_view_x(view_camera[0]);
+var cam_y = camera_get_view_y(view_camera[0]);
+var cam_scale = obj_display.window_size;
+
+var xy = -16;
+
+if !surface_exists(waterSurface){
+	waterSurface = surface_create(room_width, room_height);	
+}
+if !surface_exists(overlaySurface){
+	overlaySurface = surface_create((width + 16), (height + 16));	
+}
+
+var tiles = layer_tilemap_get_id(layer_get_id("Water"));
+
+
+
+surface_set_target(overlaySurface);
+
+draw_sprite_tiled(spr_water_overlay, 0, 0, 0);
+
+surface_reset_target();
+
+
+
+surface_set_target(waterSurface);
+
+draw_tilemap(tiles, 0, 0);
+
+gpu_set_colorwriteenable(1, 1, 1, 0);
+
+draw_surface_ext(overlaySurface, xx + xy, yy + xy, 1, 1, 0, c_white, 0.2);
+
+gpu_set_colorwriteenable(1, 1, 1, 1);
+
+surface_reset_target();
+
+
+//draw_surface_ext(overlaySurface, cam_x + xx, cam_y + yy, 1, 1, 0, c_white, 0.8);
+
+draw_surface_ext(waterSurface, 0, 0, 1, 1, 0, c_white, 0.8);
+
+
+
 /*
 if !surface_exists(surf){
 	surf = surface_create(GAMEWIDTH*obj_display.window_size, GAMEHEIGHT*obj_display.window_size);	
@@ -36,7 +83,7 @@ draw_surface_ext(surf, 0, 0, 1, 1, 0, c_white, 0.8);
 
 */
 
-
+/*
 var width = GAMEWIDTH * obj_display.window_size;
 var height = GAMEHEIGHT * obj_display.window_size;
 
@@ -62,7 +109,7 @@ surface_set_target(overlaySurface);
 draw_sprite_tiled_ext(spr_water_overlay, 0, 0, 0, 1, 1, c_white, 1);
 
 surface_reset_target();
-
+*/
 
 /*
 
@@ -78,7 +125,7 @@ gpu_set_colorwriteenable(1, 1, 1, 1);
 
 surface_reset_target();
 */
-
+/*
 shader_set(shader_ov);
 	
 var u_Overlay = shader_get_sampler_index(shader_ov, "u_Overlay");
@@ -98,6 +145,9 @@ shader_set_uniform_f(u_TilemapUV, tilemapUV[0], tilemapUV[1], tilemapUV[2], tile
 draw_tilemap(tiles, 0, 0);
 
 shader_reset();
+*/
+
+
 
 
 /*

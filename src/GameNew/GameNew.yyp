@@ -716,6 +716,7 @@
     {"id":{"name":"input_keyboard_check","path":"scripts/input_keyboard_check/input_keyboard_check.yy",},"order":0,},
     {"id":{"name":"ChatterboxVariablesFind","path":"scripts/ChatterboxVariablesFind/ChatterboxVariablesFind.yy",},"order":7,},
     {"id":{"name":"scr_daycycle_params","path":"scripts/scr_daycycle_params/scr_daycycle_params.yy",},"order":7,},
+    {"id":{"name":"shader_water","path":"shaders/shader_water/shader_water.yy",},"order":6,},
     {"id":{"name":"spr_amadix_d_melee","path":"sprites/spr_amadix_d_melee/spr_amadix_d_melee.yy",},"order":6,},
     {"id":{"name":"spr_amadix_hands_gun_d_shoot","path":"sprites/spr_amadix_hands_gun_d_shoot/spr_amadix_hands_gun_d_shoot.yy",},"order":9,},
     {"id":{"name":"spr_amadix_newA_gun_l_reload","path":"sprites/spr_amadix_newA_gun_l_reload/spr_amadix_newA_gun_l_reload.yy",},"order":1,},
