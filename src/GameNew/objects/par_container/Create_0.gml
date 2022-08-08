@@ -63,3 +63,5 @@ anim_frame_num = 0;
 anim_speed = 0;
 
 opened = false;
+
+_a = 0;
