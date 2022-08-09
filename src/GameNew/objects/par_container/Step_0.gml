@@ -78,7 +78,7 @@ if (canUseContainter){
 			var _cap = inv_grid[# INVCAP, selected_slot_eq];
 			var _maxstack = inv_grid[# MAXSTACK, selected_slot_eq];
 			
-			var _am = container_stack(_item, _amount, _level, _cap);
+			var _am = container_stack(_item, _amount, _level, _cap, true);
 			
 			inv_grid[# INVAMOUNT, selected_slot_eq] = _am + _a;
 			
@@ -320,6 +320,17 @@ if (canUseContainter){
 		
 		//Uzywanie shifta
 		if (mouse_check_button_pressed(mb_left)) && (keyboard_check(vk_shift)){
+			var _item = con_grid[# INVITEM, selected_slot];
+			var _amount = con_grid[# INVAMOUNT, selected_slot];
+			var _level = con_grid[# INVLEVEL, selected_slot];
+			var _cap = con_grid[# INVCAP, selected_slot];
+			var _maxstack = con_grid[# MAXSTACK, selected_slot];
+			
+			var _am = container_stack(_item, _amount, _level, _cap, false);
+			
+			con_grid[# INVAMOUNT, selected_slot] = _am + _a;
+			
+			_a = 0;
 		}
 		
 		//Branie przedmiotow lewym
@@ -614,13 +625,28 @@ if (canUseContainter){
 		}
 	}
 	
-	/*
+	
 	for (var i = 0; i < containerSlots; ++i){
-	    if ((inv_grid[# INVAMOUNT, i] == 0) && (inv_grid[# INVITEM, i] != item.none)){
-				slot_remove(i);
+	    if ((con_grid[# INVAMOUNT, i] == 0) && (con_grid[# INVITEM, i] != item.none)){
+				ds_container[# INVITEM, i] = item.none;
+				ds_container[# INVAMOUNT, i] = 0;
+				ds_container[# INVTYPE, i] = -1;
+				ds_container[# MAXSTACK, i] = 0;
+				ds_container[# INVHP, i] = 0;
+				ds_container[# INVSTAMINA, i] = 0;
+				ds_container[# INVLEVEL, i] = 0;
+				ds_container[# INVDAMAGE, i] = 0;
+				ds_container[# INVDEFENCE, i] = 0;
+				ds_container[# INVEFFECTS, i] = 0;
+				ds_container[# INVTEMPERATURE, i] = 0;
+				ds_container[# INVCAP, i] = -1;
+				ds_container[# MAXCAP, i] = -1;
+		}
+		if (con_grid[# INVCAP, i] <= 0) && (con_grid[# INVCAP, i] != -1){
+			con_grid[# INVCAP, i] = 0;	
 		}
 	}
-	*/
+	
 	
 	if (inhand == -1){
 		multipick = 0;	

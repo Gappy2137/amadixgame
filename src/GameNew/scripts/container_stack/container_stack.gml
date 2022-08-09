@@ -1,4 +1,4 @@
-function container_stack(iitem, amount, level, capacity){
+function container_stack(iitem, amount, level, capacity, ischest){
 
 	var i = 0;
 	var _maxslots = containerSlots;
@@ -6,7 +6,11 @@ function container_stack(iitem, amount, level, capacity){
 	var itemall = obj_inventory.ds_item_all;
 	var am = amount;
 
-	
+	if (!ischest){
+		_maxslots = obj_inventory.inv_slots - 4;
+		_inv = obj_inventory.ds_inventory;
+	}
+		
 	
 	repeat(_maxslots){
 		// Sprawdz czy istnieje przedmiot i czy ilosc na slocie != maxstack
@@ -20,7 +24,11 @@ function container_stack(iitem, amount, level, capacity){
 				// Na slocie zmieniamy ilosc na maxstack
 				_inv[# INVAMOUNT, i] = itemall[# MAXSTACK, iitem];
 				
-				container_stack(iitem, reminder, level, capacity);
+				if (!ischest){
+					container_stack(iitem, reminder, level, capacity, false);
+				}else{
+					container_stack(iitem, reminder, level, capacity, true);
+				}
 				return 0;
 				break;
 			}else{

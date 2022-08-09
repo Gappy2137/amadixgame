@@ -1,5 +1,5 @@
 function scr_setPlayerFacing() {
-	if (!canmove){exit;}
+
 	
 	if (facing = dirc.right){
 		scr_setPlayerFacingAnim(index_facing.right);

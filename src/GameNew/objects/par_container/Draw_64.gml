@@ -9,8 +9,10 @@ if (instance_exists(obj_inventory)){
 	draw_text(16, 64 + 12*3, "mltp " + string(multipick));
 	draw_text(16, 64 + 12*4, "inh " + string(inhand));
 	draw_text(16, 64 + 12*5, "cap " + string(cap));
-	//draw_text(16, 64 + 12*6, "concap " + string(ds_container[# INVCAP, selected_slot]));
-	//draw_text(16, 64 + 12*7, "eqcap " + string(obj_inventory.ds_inventory[# INVCAP, selected_slot_eq]));
+	if (selected_slot!=-1)draw_text(16, 64 + 12*6, "conitem " + string(ds_container[# INVITEM, selected_slot]));
+	if (selected_slot_eq!=-1)draw_text(16, 64 + 12*7, "eqitem " + string(obj_inventory.ds_inventory[# INVITEM, selected_slot_eq]));
+	if (selected_slot!=-1)draw_text(16, 64 + 12*8, "conam " + string(ds_container[# INVAMOUNT, selected_slot]));
+	if (selected_slot_eq!=-1)draw_text(16, 64 + 12*9, "eqam " + string(obj_inventory.ds_inventory[# INVAMOUNT, selected_slot_eq]));
 	////////////////
 		
 	draw_sprite_ext(obj_inventory.spr_eq_slotback, 0, 92, 152, 1, 1, 0, c_white, 1);

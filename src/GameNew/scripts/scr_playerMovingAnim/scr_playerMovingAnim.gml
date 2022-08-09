@@ -165,6 +165,7 @@ with(obj_amadix){
 	if obj_gamecontrol.doTransition == false{
 		if ((hsp == 0) && (vsp == 0)){
 			scr_setPlayerFacing();
+			anim_speed = 0;
 		}
 	}
 
@@ -198,10 +199,13 @@ with(obj_amadix){
 		}
 	}
 	if ((hsp == 0) && (vsp == 0)){
-		scr_setPlayerFacing();
 		if ((floor(anim_frame) == 0) || (floor(anim_frame) == 2)){
 			anim_speed = 0;
-			anim_frame = 0;
+			if (!skid){
+				anim_frame = 0;
+				anim_speed = 0;
+				scr_setPlayerFacing();
+			}
 		}
 	}
 	/*
@@ -290,8 +294,20 @@ with(obj_amadix){
 		if (skidTimer <= 0){
 			skidTimer = skidTime;
 			skid = false;
+			scr_setPlayerFacing();
+			anim_frame = 0;
 		}else{
 			skidTimer--;
+		}
+	}
+	
+	if ( (abs(hsp) < .1) && (abs(vsp) < .1) ){
+		if (!skid){
+			anim_speed = 0;
+		}
+		if (running == 1){
+			anim_frame = 0;
+			running = 0;
 		}
 	}
 	

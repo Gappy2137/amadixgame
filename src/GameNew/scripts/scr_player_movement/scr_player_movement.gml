@@ -37,7 +37,7 @@ with (obj_amadix){
 		canmove = true;
 	}
 	
-	if (isbounded(skidTimer, 1, skidTime - 1)){
+	if (isbounded(skidTimer, 0, skidTime - 1)){
 		canmove = true;
 		if (hsp != 0){
 			hsp = lerp(hsp, 0, .15);
