@@ -23,7 +23,8 @@ with (obj_amadix){
 	|| (global.inDialogue)
 	|| (global.inConsole)
 	|| (global.inEq)
-	|| (global.inCutscene){
+	|| (global.inCutscene)
+	|| (global.inChest){
 		if (hsp != 0){
 			hsp = lerp(hsp, 0, 0.5);
 		}

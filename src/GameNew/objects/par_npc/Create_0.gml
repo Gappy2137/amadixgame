@@ -20,6 +20,12 @@ shadowEnable = true;
 
 dialogue = "test_en.yarn";
 
+canClickAt = false;
+clickRadius = 6;
+cursorSpr = cursorState.normal;
+canTalkTo = false;
+cursorChange = false;
+
 // Zachowanie
 // 0 - oglada sie po kliknieciu w strone gracza
 // 1 - oglada sie w strone obiektu

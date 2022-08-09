@@ -1,6 +1,6 @@
 event_inherited();
 
-if (ami_clicked()){
+if (ami_clicked(4)){
 	if (canclick){
 		isanim = true;
 		if (itemDrop != -1) && (itemDrop != 0) && (itemNum != 0){

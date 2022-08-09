@@ -11,3 +11,4 @@ if (object_get_parent(object_index) != (par_grass))
 		zfloor = 0;	
 	}
 }
+

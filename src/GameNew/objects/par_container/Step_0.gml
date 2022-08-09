@@ -6,6 +6,8 @@ if (instance_exists(obj_inventory)){
 		
 		obj_inventory.show_slots = false;
 		
+		global.inChest = true;
+		
 		#region Myszka w polu pojemnika
 		mousex = device_mouse_x_to_gui(0);
 		mousey = device_mouse_y_to_gui(0);
@@ -68,6 +70,7 @@ if (instance_exists(obj_inventory)){
 	var con_grid = ds_container;
 if (canUseContainter){
 	if ((mousex >= xUI_eq) && (mousex < endx_eq) && (mousey >= yUI_eq) && (mousey < endy_eq)){
+		
 		
 		
 		//Uzywanie shifta
@@ -655,5 +658,7 @@ if (canUseContainter){
 		inhand = -1;	
 	}
 		
+	}else{
+		global.inChest = false;	
 	}
 }

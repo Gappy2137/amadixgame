@@ -8,12 +8,27 @@ if (npcBehaviour == 1){
 	}
 }
 
-if (ami_clicked()) && (!global.inDialogue){
+if (canTalkTo){
+	canClickAt = true;
+	clickRadius = 6;
+}else{
+	canClickAt = false;
+	clickRadius = 6;
+}
+
+if ((canTalkTo) && (mouse_over_me(clickRadius)) && (!global.inDialogue)){
 	
-	if (instance_exists(obj_amadix))
-		anim_frame = checkFacing(obj_amadix);
+	cursorChange = true;
+
+	if (input_check_pressed("mouseRight")){
 	
-	instance_create_layer(x, y, "Important", obj_chatterbox, {
-		dialogueName: dialogue
-	});
+		if (instance_exists(obj_amadix))
+			anim_frame = checkFacing(obj_amadix);
+	
+		instance_create_layer(x, y, "Important", obj_chatterbox, {
+			dialogueName: dialogue
+		});
+	}
+}else{
+	cursorChange = false;
 }

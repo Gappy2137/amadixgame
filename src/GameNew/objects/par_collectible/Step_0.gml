@@ -26,86 +26,106 @@ function canPickup(){
 	}
 }
 
-if (ami_clicked()){
-	if (canclick){
-			switch(type){
-				case 0:
-						if (rotate){isanim = true;}
-						if (itemDrop != -1) && (itemDrop != 0) && (itemNum != 0){
-							item_add(-1, itemDrop, amount);
-							itemNum--;
-							flag = true;
-						}
-				break;
-				case 1:
-						if (rotate){isanim = true;}
-						if (itemDrop != -1) && (itemDrop != 0) && (itemNum != 0){
-							item_add(-1, itemDrop, amount);
-							itemNum--;
-							flag = true;
-						}
-				break;
-				case 2:
-						if (rotate){isanim = true;}
-						if (itemDrop != -1) && (itemDrop != 0) && (itemNum == itemNumMax){
-							item_add(-1, itemDrop, amount);
-							itemNum = 0;
-							flag = true;
-						}
-				break;
-				case 3:
-						if (rotate){isanim = true;}
-						if (itemDrop != -1) && (itemDrop != 0) && (itemNum != 0){
-							item_add(-1, itemDrop, amount);
-							itemNum--;
-							flag = true;
-						}
-				break;
-				case 4:
-						if (rotate){isanim = true;}
-						if (itemDrop != -1) && (itemDrop != 0) && (itemNum == itemNumMax){
-							item_add(-1, itemDrop, amount);
-							itemNum = 0;
-							flag = true;
-						}
-				break;
-				case 5:
-					item_add(-1, itemDrop, amount);
-					instance_destroy();
-				break;
-				case 6:
+if (canPickup()){
+	canClickAt = true;
+	clickRadius = 6;
+	cursorSpr = cursorState.pickup;
+}else{
+	canClickAt = false;
+	clickRadius = 4;
+	cursorSpr = cursorState.normal;
+}
+
+if (canClickAt){
+if (mouse_over_me(clickRadius)){
+	cursorChange = true;
+	if (input_check_pressed("mouseRight")){
+		if (canclick){
+				switch(type){
+					case 0:
+							if (rotate){isanim = true;}
+							if (itemDrop != -1) && (itemDrop != 0) && (itemNum != 0){
+								item_add(-1, itemDrop, amount);
+								itemNum--;
+								flag = true;
+							}
+					break;
+					case 1:
+							if (rotate){isanim = true;}
+							if (itemDrop != -1) && (itemDrop != 0) && (itemNum != 0){
+								item_add(-1, itemDrop, amount);
+								itemNum--;
+								flag = true;
+							}
+					break;
+					case 2:
+							if (rotate){isanim = true;}
+							if (itemDrop != -1) && (itemDrop != 0) && (itemNum == itemNumMax){
+								item_add(-1, itemDrop, amount);
+								itemNum = 0;
+								flag = true;
+							}
+					break;
+					case 3:
+							if (rotate){isanim = true;}
+							if (itemDrop != -1) && (itemDrop != 0) && (itemNum != 0){
+								item_add(-1, itemDrop, amount);
+								itemNum--;
+								flag = true;
+							}
+					break;
+					case 4:
+							if (rotate){isanim = true;}
+							if (itemDrop != -1) && (itemDrop != 0) && (itemNum == itemNumMax){
+								item_add(-1, itemDrop, amount);
+								itemNum = 0;
+								flag = true;
+							}
+					break;
+					case 5:
+						item_add(-1, itemDrop, amount);
+						instance_destroy();
+					break;
+					case 6:
 				
-						if (canPickup()){
-							var idrop = itemDrop;
-							var im = amount;
-							var idd = id;
+							if (canPickup()){
+								var idrop = itemDrop;
+								var im = amount;
+								var idd = id;
 				
-							with (obj_inventory){
-								if (item_exists(item.none, false)){
-									with (obj_amadix){
-										itemeaten = idrop;
-										itemamount = im;
-										pickupid = idd;
-										actionstate = player_state_action.pickup;
-										oneStepEvent[0] = true;
-										oneStepEvent[1] = true;
-										anim_frame_action = 0;
-										anim_frame = 0;
-										moving = false;
-										hsp = 0;
-										vsp = 0;
-										scr_setPlayerFacingAnim(checkFacing(idd));
-										alarm[0] = 28;
+								with (obj_inventory){
+									if (item_exists(item.none, false)){
+										with (obj_amadix){
+											itemeaten = idrop;
+											itemamount = im;
+											pickupid = idd;
+											actionstate = player_state_action.pickup;
+											oneStepEvent[0] = true;
+											oneStepEvent[1] = true;
+											anim_frame_action = 0;
+											anim_frame = 0;
+											moving = false;
+											hsp = 0;
+											vsp = 0;
+											scr_setPlayerFacingAnim(checkFacing(idd));
+											alarm[0] = 28;
+										}
 									}
 								}
+							canclick = false;
 							}
-						canclick = false;
-						}
 
-				break;
-			}
+					break;
+				}
+		}
 	}
+
+}else{
+	cursorChange = false;	
 }
+}
+
+
 
 
 if (flag) && (itemRegTime != -1){
@@ -253,7 +273,7 @@ if (rotate){
 
 // Potrzas
 if (shake){
-	if (ami_clicked()){
+	if (ami_clicked(clickRadius)){
 		if (canclick){
 			shakex = random_range(-2, 2);
 			shakeflag = true;

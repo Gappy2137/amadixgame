@@ -130,6 +130,7 @@ global.pickUp = false;
 global.inEq = false;
 global.inConsole = false;
 global.eqSlots = true;
+global.inChest = false;
 
 refTimer = 0;
 

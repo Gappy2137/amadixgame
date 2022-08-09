@@ -1,6 +1,6 @@
 
 
-if (ami_clicked()) && (!obj_inventory.show_inventory){
+if (ami_clicked(4)) && (!obj_inventory.show_inventory){
 	show_container = true;	
 	alarm[0] = 2;
 }

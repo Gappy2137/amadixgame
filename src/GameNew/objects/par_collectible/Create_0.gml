@@ -31,7 +31,10 @@ amount = 1;
 6 - krzak 5 (bez kolizji + usuniecie)
 */
 
-
+canClickAt = false;
+clickRadius = 4;
+cursorSpr = cursorState.normal;
+cursorChange = false;
 
 type = collectible_type.col_nostage;
 shake = false;
