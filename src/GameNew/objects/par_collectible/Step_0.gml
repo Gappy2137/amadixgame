@@ -39,6 +39,7 @@ if (canPickup()){
 if (canClickAt){
 if (mouse_over_me(clickRadius)){
 	cursorChange = true;
+	global.cursorSpr = cursorState.pickup;
 	if (input_check_pressed("mouseRight")){
 		if (canclick){
 				switch(type){

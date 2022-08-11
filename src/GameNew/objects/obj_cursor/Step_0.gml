@@ -1,4 +1,4 @@
-
+/*
 var col = instance_place(x, y, par_collectible);
 var npc = instance_place(x, y, par_npc)
 
@@ -22,7 +22,7 @@ if (npc){
 }else{
 	global.cursorSpr = cursorState.normal;	
 }
-
+*/
 switch (global.cursorSpr){
 	case cursorState.normal:
 		cursor_sprite = spr_cursor_default;
@@ -32,8 +32,5 @@ switch (global.cursorSpr){
 	break;
 	case cursorState.dialogue:
 		cursor_sprite = spr_cursor_dialogue;
-	break;
-	default:
-		cursor_sprite = spr_cursor_default;
 	break;
 }

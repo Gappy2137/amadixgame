@@ -16,4 +16,4 @@ if display_mouse_get_x() < _x || display_mouse_get_x() > _w || display_mouse_get
 } else {
     mouseInWindow = true;
 }
-
+*/

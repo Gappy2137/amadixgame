@@ -19,6 +19,7 @@ if (canTalkTo){
 if ((canTalkTo) && (mouse_over_me(clickRadius)) && (!global.inDialogue)){
 	
 	cursorChange = true;
+	global.cursorSpr = cursorState.dialogue;
 
 	if (input_check_pressed("mouseRight")){
 	

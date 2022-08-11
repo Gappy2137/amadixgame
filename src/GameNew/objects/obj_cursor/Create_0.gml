@@ -13,3 +13,5 @@ enum cursorState{
 
 _x = 0;
 _y = 0;
+
+alarm[0] = 1;
