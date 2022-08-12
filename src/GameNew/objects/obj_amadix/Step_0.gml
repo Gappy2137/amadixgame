@@ -46,6 +46,8 @@ if (_scene){
 // Pozycja czapki
 scr_updateHatY();
 
+
+
 if (actionstate = player_state_action.handgun){
 	oneStepEvent[2] = 2;
 }else{

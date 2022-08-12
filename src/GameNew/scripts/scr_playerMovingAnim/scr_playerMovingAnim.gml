@@ -311,7 +311,7 @@ with(obj_amadix){
 		}
 	}
 	
-	if (actionstate == player_state_action.none){
+	if (actionstate == player_state_action.none) && (canmove){
 				if (key_right){ 
 					scr_setPlayerFacingAnim(index_facing.right);
 					facing = dirc.right;

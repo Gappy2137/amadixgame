@@ -80,6 +80,8 @@ actionstate = player_state_action.none;
 
 itemeaten = -1;
 itemamount = 0;
+itemlvl = 0;
+itemcap = -1;
 itemUsedX = 0;
 itemUsedY = 0;
 itemUsedAngle = 0;

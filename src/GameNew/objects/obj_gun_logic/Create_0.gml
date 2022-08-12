@@ -28,7 +28,12 @@ soundMAGOUT = -1;
 soundMAGIN = -1;
 soundBOLT = -1;
 
+
+//type
+//0 - semi-auto handgun
+//1 - sawed off
 type = 0;
+
 
 mag = 0;
 
@@ -37,9 +42,7 @@ animFramesShootingLast = 0;
 animFramesReload = 0;
 animFramesReloadEmpty = 0;
 
-//type
-//0 - semi-auto handgun
-//1 - sawed off
+
 
 enum gunState{
 	standby = 0,

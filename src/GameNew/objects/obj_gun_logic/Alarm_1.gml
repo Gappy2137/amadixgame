@@ -34,7 +34,8 @@ with(obj_inventory){
 	
 			//Zwrocenie magazynku z broni do ekwipunku
 	
-			item_mag_add(obj_gun_logic.mag, obj_gun_logic.ammoLoaded - 1, 0);
+			//item_mag_add(obj_gun_logic.mag, obj_gun_logic.ammoLoaded - 1, 0);
+			item_add(-1, obj_gun_logic.mag, 1, 0, obj_gun_logic.ammoLoaded - 1);
 
 			obj_gun_logic.ammoLoaded = ammo + 1;
 		
@@ -47,8 +48,9 @@ with(obj_inventory){
 	
 			//Zwrocenie magazynku z broni do ekwipunku
 	
-			item_mag_add(obj_gun_logic.mag, obj_gun_logic.ammoLoaded, 0);
-
+			//item_mag_add(obj_gun_logic.mag, obj_gun_logic.ammoLoaded, 0);
+			item_add(-1, obj_gun_logic.mag, 1, 0, obj_gun_logic.ammoLoaded);
+			
 			obj_gun_logic.ammoLoaded = ammo;
 		}
 	}else if (obj_gun_logic.type == 1){

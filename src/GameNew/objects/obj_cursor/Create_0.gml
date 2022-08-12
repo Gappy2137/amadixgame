@@ -8,10 +8,14 @@ mouseInWindow = true;
 enum cursorState{
 	normal,
 	pickup,
-	dialogue
+	dialogue,
+	handgun,
+	point
 }
 
 _x = 0;
 _y = 0;
 
-alarm[0] = 1;
+timer = 3;
+
+global.cursorSpr = cursorState.normal;	

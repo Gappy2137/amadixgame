@@ -6,7 +6,7 @@ if (instance_exists(obj_inventory)){
 		
 		obj_inventory.show_slots = false;
 		
-		global.inChest = true;
+		inchest = true;
 		
 		#region Myszka w polu pojemnika
 		mousex = device_mouse_x_to_gui(0);
@@ -659,6 +659,6 @@ if (canUseContainter){
 	}
 		
 	}else{
-		global.inChest = false;	
+		inchest = false;	
 	}
 }

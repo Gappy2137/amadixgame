@@ -65,3 +65,5 @@ anim_speed = 0;
 opened = false;
 
 _a = 0;
+
+inchest = false;

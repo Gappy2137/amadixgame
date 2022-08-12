@@ -878,6 +878,7 @@
     {"id":{"name":"obj_amadix","path":"objects/obj_amadix/obj_amadix.yy",},"order":0,},
     {"id":{"name":"spr_amadix_classicB_attack_u","path":"sprites/spr_amadix_classicB_attack_u/spr_amadix_classicB_attack_u.yy",},"order":7,},
     {"id":{"name":"__input_player_tick_sources","path":"scripts/__input_player_tick_sources/__input_player_tick_sources.yy",},"order":25,},
+    {"id":{"name":"scr_player_pushout","path":"scripts/scr_player_pushout/scr_player_pushout.yy",},"order":14,},
     {"id":{"name":"slot_remove","path":"scripts/slot_remove/slot_remove.yy",},"order":5,},
     {"id":{"name":"obj_rock_plain","path":"objects/obj_rock_plain/obj_rock_plain.yy",},"order":0,},
     {"id":{"name":"isbounded","path":"scripts/isbounded/isbounded.yy",},"order":14,},

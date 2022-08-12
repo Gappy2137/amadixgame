@@ -306,6 +306,7 @@
         {"properties":[],"isDnd":false,"objectId":{"name":"obj_pine_3","path":"objects/obj_pine_3/obj_pine_3.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":424.0,"y":422.0,"resourceVersion":"1.0","name":"inst_4697E844","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"obj_hazel_bush","path":"objects/obj_hazel_bush/obj_hazel_bush.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":544.0,"y":422.0,"resourceVersion":"1.0","name":"inst_25C5044","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"obj_hazel_bush","path":"objects/obj_hazel_bush/obj_hazel_bush.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":579.0,"y":417.0,"resourceVersion":"1.0","name":"inst_20036DEA","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[],"isDnd":false,"objectId":{"name":"obj_chest","path":"objects/obj_chest/obj_chest.yy",},"inheritCode":false,"hasCreationCode":true,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":560.0,"y":448.0,"resourceVersion":"1.0","name":"inst_72081133","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":0,"userdefinedDepth":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":16,"gridY":16,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],"resourceVersion":"1.0","name":"Instances","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[
         {"properties":[],"isDnd":false,"objectId":{"name":"obj_shadows","path":"objects/obj_shadows/obj_shadows.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":-16.0,"y":0.0,"resourceVersion":"1.0","name":"inst_1774DB5D","tags":[],"resourceType":"GMRInstance",},
@@ -2274,6 +2275,7 @@
     {"name":"inst_4697E844","path":"rooms/rm_devroom_3/rm_devroom_3.yy",},
     {"name":"inst_25C5044","path":"rooms/rm_devroom_3/rm_devroom_3.yy",},
     {"name":"inst_20036DEA","path":"rooms/rm_devroom_3/rm_devroom_3.yy",},
+    {"name":"inst_72081133","path":"rooms/rm_devroom_3/rm_devroom_3.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

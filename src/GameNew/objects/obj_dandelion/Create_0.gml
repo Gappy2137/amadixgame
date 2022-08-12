@@ -24,6 +24,8 @@ shake = false;
 rotate = false;
 rotoncol = true;
 
+clickRadius = 4;
+
 shadowOriginX = 1;
 shadowOriginY = 0;
 shadowStyle = spr_shadow_big;

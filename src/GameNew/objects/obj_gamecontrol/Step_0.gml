@@ -25,7 +25,33 @@ if (refTimer >= 1){
 	refTimer = 0;	
 }
 
-
+// Chest
+var _p = 0;
+var _temp = 0;
+var _t = 0;
+var i = 0;
+var j = 0;
+repeat(instance_number(par_container)){
+    _p[i] = instance_find(par_container, i);
+	_temp[i] = 0;
+	if (_p[i].inchest == true){
+		_t[i] = 1;	
+	}else{
+		_t[i] = 0;	
+	}
+	i++;
+}
+i = 0;
+repeat(array_length(_p)){
+	if (_p[i].inchest == true){
+		global.inChest = true;	
+	}
+	if (array_equals(_t, _temp)){
+		global.inChest = false;
+	}
+	i++;
+}
+//
 if (instance_exists(obj_chatterbox)){
 	global.inDialogue = true;	
 }else{

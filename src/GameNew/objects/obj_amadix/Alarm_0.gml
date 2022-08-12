@@ -21,7 +21,7 @@ switch(actionstate){
 	break;
 	case player_state_action.pickup:
 		actionstate = player_state_action.none;
-		item_add(-1, itemeaten, itemamount);
+		item_add(-1, itemeaten, itemamount, itemlvl, itemcap);
 		itemeaten = -1;
 		itemamount = 0;
 		pickupid = -1;

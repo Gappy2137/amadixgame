@@ -80,7 +80,9 @@ function item_action(){
 		if (obj_amadix.state == player_state.idle)
 		|| (obj_amadix.state == player_state.moving) 
 		|| (obj_amadix.state == player_state.wading_idle) 
-		|| (obj_amadix.state == player_state.wading){
+		|| (obj_amadix.state == player_state.wading)
+		|| (global.cursorSpr != cursorState.dialogue)
+		|| (global.cursorSpr != cursorState.pickup){
 		
 			var amount =		obj_inventory.ds_inventory[# INVAMOUNT, obj_inventory.mouse_slotx_second];
 			var hp =			obj_inventory.ds_inventory[# INVHP, obj_inventory.mouse_slotx_second];
@@ -123,7 +125,9 @@ function item_action(){
 		if (obj_amadix.state == player_state.idle)
 		|| (obj_amadix.state == player_state.moving) 
 		|| (obj_amadix.state == player_state.wading_idle) 
-		|| (obj_amadix.state == player_state.wading){
+		|| (obj_amadix.state == player_state.wading)
+		|| (global.cursorSpr != cursorState.dialogue)
+		|| (global.cursorSpr != cursorState.pickup){
 			
 			var amount =		obj_inventory.ds_inventory[# INVAMOUNT, obj_inventory.mouse_slotx_second];
 			var hp =			obj_inventory.ds_inventory[# INVHP, obj_inventory.mouse_slotx_second];

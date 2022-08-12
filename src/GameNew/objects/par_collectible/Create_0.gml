@@ -21,6 +21,10 @@ itemOverlayState = 0;
 
 amount = 1;
 
+level = 0;
+
+capacity = -1;
+
 /*
 0 - zwykly (kolizja bez etapow)
 1 - krzak (kolizja z overlay)
@@ -33,7 +37,6 @@ amount = 1;
 
 canClickAt = false;
 clickRadius = 4;
-cursorSpr = cursorState.normal;
 cursorChange = false;
 
 type = collectible_type.col_nostage;

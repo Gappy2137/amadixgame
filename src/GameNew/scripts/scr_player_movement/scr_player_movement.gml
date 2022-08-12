@@ -612,7 +612,7 @@ with (obj_amadix){
 	y += vsp;	
 	scr_player_unstuck();
 	scr_player_walkaround();
-	
+	scr_player_pushout();
 	
 	
 	
