@@ -22,6 +22,7 @@ instance_activate_object(obj_gun_logic);
 instance_activate_object(obj_chatterbox);
 instance_activate_object(obj_cursor);
 instance_activate_object(obj_cutscene_controller);
+instance_activate_object(obj_rain_emitter);
 
 instance_activate_region(
 camera_get_view_x(view_camera[0]) - INSTANCE_LOAD_DISTANCE,
