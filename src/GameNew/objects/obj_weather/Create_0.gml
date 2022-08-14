@@ -37,7 +37,9 @@ global.temperature = 23;
 global.inside = false;
 global.cave = false;
 
-weatherChangeAmount = 100;
+global.prevweather = weather.sun;
+
+weatherChangeAmount = 200;
 weatherchange = weatherChangeAmount;
 wch = false;
 alarm[0] = 1;
