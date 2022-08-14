@@ -1,5 +1,7 @@
 application_surface_draw_enable(false);
 
+depth = 1000000;
+
 shader = shader_daycycle;
 
 u_col = shader_get_uniform(shader, "col");
@@ -9,6 +11,8 @@ s_lights		= shader_get_sampler_index(shader, "lights");
 tex_lights		= -1;
 srf_lights		= -1;
 
+surf = -1;
+
 color_mix = -1;
 color[0][0] = undefined;
 
@@ -16,6 +20,8 @@ con_sat_brt_mix = -1;
 
 key_previous = -1;
 key_next = -1;
+
+time = global.daycycletime;
 
 // KEY TIMES:
 // ----------------------------------------------------------------------------
@@ -90,3 +96,5 @@ alpha = 0;
 ds_daycycle_info[0][0][0] = [];
 scr_daycycle_params();
 alarm[0] = 1;
+
+lrp = 0;

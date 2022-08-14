@@ -55,7 +55,13 @@ repeat(maxeffects){
 #endregion
 
 #region Opcje HUD
-if input_check_pressed("inventoryAccess") && (obj_inventory.inhand == -1) && (canOpenInv) && (instance_exists(obj_amadix)){
+if input_check_pressed("inventoryAccess") 
+&& (obj_inventory.inhand == -1) 
+&& (canOpenInv) 
+&& (instance_exists(obj_amadix))
+&& (!global.inCutscene)
+&& (!global.inConsole)
+&& (!global.inDialogue){
 	
 	if (instance_exists(obj_amadix)){
 		var ins = instance_nearest(obj_amadix.x , obj_amadix.y, par_container);

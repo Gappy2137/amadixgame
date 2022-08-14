@@ -1,3 +1,5 @@
+if (global.pause){exit;}
+
 instance_deactivate_all(true);
 instance_activate_object(obj_amadix);
 instance_activate_object(locales);
@@ -23,6 +25,7 @@ instance_activate_object(obj_chatterbox);
 instance_activate_object(obj_cursor);
 instance_activate_object(obj_cutscene_controller);
 instance_activate_object(obj_rain_emitter);
+instance_activate_object(obj_pause);
 
 instance_activate_region(
 camera_get_view_x(view_camera[0]) - INSTANCE_LOAD_DISTANCE,

@@ -1,5 +1,7 @@
+var scale = scr_camera_get_scale();
+
 if (!surface_exists(srf_lights)) {
-	srf_lights = surface_create(GAMEWIDTH, GAMEHEIGHT);
+	srf_lights = surface_create(GAMEWIDTH * scale, GAMEHEIGHT * scale);
 	tex_lights = surface_get_texture(srf_lights);
 }
 surface_set_target(srf_lights);
@@ -24,11 +26,19 @@ shader_set_uniform_f_array(u_col, color_mix);
 shader_set_uniform_f_array(u_con_sat_brt, con_sat_brt_mix);
 texture_set_stage(s_lights, tex_lights);
 
-var scale = scr_camera_get_scale();
+
 if surface_exists(application_surface){
 	draw_surface_ext(application_surface, 0, 0, 1/scale, 1/scale, 0, c_white, 1);
 }
 shader_reset();
+
+
+draw_text(96, 96, lrp);
+draw_text(96, 96 + 16, global.weather);
+draw_text(96, 96 + 32, obj_weather.weatherchange);
+
+draw_text(96, 96 + 48, con_sat_brt_mix[2]);
+draw_text(96, 96 + 64, ds_daycycle_info[global.weather][key_next][5]);
 
 //Light curve
 //var curveAsset = curve_lights_out;

@@ -1,7 +1,7 @@
 if (keyboard_check_pressed(ord("M"))) && (weatherchange == weatherChangeAmount){
 	wch = true;
 	global.weather++;
-	if global.weather > 11{
+	if global.weather > 1{
 		global.weather = 0;	
 	}
 }

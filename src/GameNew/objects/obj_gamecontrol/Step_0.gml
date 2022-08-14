@@ -31,7 +31,6 @@ if (instance_exists(par_container)){
 	var _temp = 0;
 	var _t = 0;
 	var i = 0;
-	var j = 0;
 	repeat(instance_number(par_container)){
 	    _p[i] = instance_find(par_container, i);
 		_temp[i] = 0;

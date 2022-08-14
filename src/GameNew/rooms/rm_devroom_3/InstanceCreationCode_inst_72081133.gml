@@ -5,5 +5,5 @@ containter_additem(3, item.sneakers, 1, -1, 0);
 containter_additem(4, item.sneakers, 1, -1, 0);
 containter_additem(5, item.sneakers, 1, -1, 0);
 containter_additem(6, item.sneakers, 1, -1, 0);
-containter_additem(7, item.sneakers, 1, -1, 0);
+containter_additem(7, item.vodka, 1, 5, 0);
 containter_additem(8, item.apple, 10, -1, 0);

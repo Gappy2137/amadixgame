@@ -1,15 +1,17 @@
-var time = global.daycycletime;
+time = global.daycycletime;
 
 var wthr = global.weather;
-var hour = floor(time * 24);
+var hour = floor(time * number_of_key_times);
 
-key_previous = min(floor(time * number_of_key_times), number_of_key_times - 1);
+key_previous = min(hour, number_of_key_times - 1);
 key_next = (key_previous + 1) mod number_of_key_times;
 
 var lerp_ = (time - key_previous/number_of_key_times) * number_of_key_times;
 
+lrp = lerp_;
 
 if (obj_weather.weatherchange < obj_weather.weatherChangeAmount){
+	
 	color_mix = [	lerp(color_mix[0], ds_daycycle_info[wthr][key_next][0], lerp_),
 					lerp(color_mix[1], ds_daycycle_info[wthr][key_next][1], lerp_),
 					lerp(color_mix[2], ds_daycycle_info[wthr][key_next][2], lerp_)];
@@ -20,6 +22,9 @@ if (obj_weather.weatherchange < obj_weather.weatherChangeAmount){
 						lerp(con_sat_brt_mix[3], ds_daycycle_info[wthr][key_next][6], lerp_),
 						lerp(con_sat_brt_mix[4], ds_daycycle_info[wthr][key_next][7], lerp_)];
 }else{
+	
+	
+	
 	color_mix = [	lerp(ds_daycycle_info[wthr][key_previous][0], ds_daycycle_info[wthr][key_next][0], lerp_),
 					lerp(ds_daycycle_info[wthr][key_previous][1], ds_daycycle_info[wthr][key_next][1], lerp_),
 					lerp(ds_daycycle_info[wthr][key_previous][2], ds_daycycle_info[wthr][key_next][2], lerp_)];

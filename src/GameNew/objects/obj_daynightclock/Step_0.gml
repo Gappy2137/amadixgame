@@ -1,4 +1,7 @@
-rot += rotval;
+if !(obj_weather.weatherchange < obj_weather.weatherChangeAmount){
+	rot += rotval;
+}
+
 
 if keyboard_check(vk_left){
 	rot -= 0.5;	
