@@ -2,13 +2,15 @@
 x += lengthdir_x(spd, angle);
 y += lengthdir_y(spd, angle);
 
-//var inst = par_collision;
+var inst = (instance_place(x,y,par_collision));
 
-//if (collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, inst, 1, 1)){
-//	if (inst.cancollide){
-//		instance_destroy();
-//	}
-//}
+if (inst){
+	if (inst.cancollide){
+		if (zaxis < inst.zfloor + inst.zheight){
+			instance_destroy();
+		}
+	}
+}
 
 
 

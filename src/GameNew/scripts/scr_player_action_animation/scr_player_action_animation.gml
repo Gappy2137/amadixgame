@@ -39,6 +39,8 @@ switch (actionstate){
 	break;
 	case player_state_action.pickup:
 	
+		scr_setPlayerFacingAnim(checkFacing(pickupid));
+		
 				switch(facing){
 					case dirc.down:
 						if (floor(anim_frame_action) == 1){itemUsedX = 0;itemUsedY = 1.5 + fixY;itemUsedAngle = 0;itemUsedSx = 0;}
@@ -63,7 +65,9 @@ switch (actionstate){
 
 				if (floor(anim_frame_action) == 2){
 					if (instance_exists(pickupid)){
-						instance_destroy(pickupid);
+						with(pickupid){
+							pickedup = true;
+						}
 					}
 				}
 			}

@@ -1,4 +1,4 @@
-if (!instance_exists(obj_amadix)){instance_destroy();}
+if (!instance_exists(obj_amadix)){exit;}
 
 
 // Nie mozna strzelac jezeli przeladowujemy albo nie mamy w reku broni
@@ -73,8 +73,9 @@ if (type == 0){
 			var bullet = instance_create_layer(xx, yy, "Instances", obj_bullet_shot);
 			with (bullet){
 				_sprite = spr_bullet_shot;
-				spd = 20;
+				spd = 8;
 				angle = obj_amadix.shootdir + random_range(-6, 6);
+				zaxis = obj_amadix.zfloor + 16;
 			}
 			
 			var fx_xx = obj_amadix.x + lengthdir_x(12, obj_amadix.shootdir);

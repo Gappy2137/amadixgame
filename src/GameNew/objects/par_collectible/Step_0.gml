@@ -1,10 +1,36 @@
 event_inherited();
 
+// Regeneration logic
+if (flag) && (itemRegTime != -1){
+	timer--;
+	if (timer == 0){
+		pickedup = false;
+		canclick = true;
+		itemNum++;
+		timer = itemRegTime;
+		if (itemNum == 0){
+			flag = false;
+		}
+		if (itemNum > itemNumMax){
+			itemNum = itemNumMax;	
+			flag = false;	
+		}
+	}
+}
+
+
+if (itemOverlay != -1){
+	if (itemNum <= itemNumMax){
+		itemOverlayState = itemNum;	
+	}else{
+		itemOverlayState = itemNumMax;
+	}
+}
 
 function canPickup(){
 	if instance_exists(obj_amadix){
 		if (obj_amadix.actionstate == player_state_action.none){
-			if (!global.inDialogue){
+			if (!global.inDialogue) || (!pickedup){
 				return true;
 			}
 		}else{
@@ -13,8 +39,9 @@ function canPickup(){
 					if ((obj_gun_logic.state == gunState.reloading)
 					|| (obj_gun_logic.state == gunState.shooting)
 					|| (obj_gun_logic.state == gunState.reloading_empty)){
-						if (!global.inDialogue)
+						if (!global.inDialogue) || (!pickedup){
 							return true;
+						}
 					}else{
 						return false;	
 					}
@@ -36,9 +63,13 @@ if (canPickup()){
 if (canClickAt){
 if (mouse_over_me(clickRadius)){
 	
-	cursorChange = true;
+	if (!pickedup){
+		cursorChange = true;
+	}else{
+		cursorChange = false;
+	}
 
-	if (input_check_pressed("mouseRight")){
+	if (input_check_pressed("mouseRight")) && (!pickedup){
 		if (global.cursorSpr == cursorState.pickup){
 			if (canclick){
 					switch(type){
@@ -105,32 +136,11 @@ if (mouse_over_me(clickRadius)){
 
 
 
-if (flag) && (itemRegTime != -1){
-	timer--;
-	if (timer == 0){
-		itemNum++;
-		timer = itemRegTime;
-		if (itemNum == 0){
-			flag = false;
-		}
-		if (itemNum > itemNumMax){
-			itemNum = itemNumMax;	
-			flag = false;	
-		}
-	}
-}
 
 
-if (itemOverlay != -1){
-	if (itemNum <= itemNumMax){
-		itemOverlayState = itemNum;	
-	}else{
-		itemOverlayState = itemNumMax;
-	}
-}
 
 
-clamp(itemNum, 0, itemNumMax);
+//clamp(itemNum, 0, itemNumMax);
 
 
 /*
@@ -159,6 +169,8 @@ if (rotoncol){
 	}
 }
 */
+
+if (pickedup){exit;}
 
 #region Wind Effects
 

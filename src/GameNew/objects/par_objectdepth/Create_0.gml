@@ -4,6 +4,7 @@ yorigin = 0;
 
 zaxis = 0;
 zfloor = 0;
+zheight = 0;
 shadowAlpha = 0.25;
 shadowHeight = 12;
 shadowOriginY = 0;

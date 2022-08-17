@@ -6,6 +6,7 @@ scale_change_start		= image_xscale;				// changes in the alarm	| tween the scale
 scale_change_target		= random(scale_change_max);	// changes in the alarm	| tween the scale to  this
 scale_change_speed		= room_speed * 0.1;			// changeable in room	| how quickly the scale changes direction
 scale_change_timer		= 0;						// don't change			| used to tween in step event
+alpha = 1;
 alarm[0]				= 1;
 image_speed = 0;
 					// don't change			| changes scaling variables

@@ -16,6 +16,6 @@ enum cursorState{
 _x = 0;
 _y = 0;
 
-timer = 3;
+timer = 5;
 
 global.cursorSpr = cursorState.normal;	

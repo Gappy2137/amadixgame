@@ -41,7 +41,8 @@ function item_action(){
 							face = index_facing.right;
 						}
 						
-						scr_setPlayerFacingAnim(face);
+						if (actionstate != player_state_action.pickup)
+							scr_setPlayerFacingAnim(face);
 					}
 			}else{
 				slot_remove(obj_inventory.mouse_slotx_second);

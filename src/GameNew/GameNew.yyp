@@ -653,7 +653,7 @@
     {"id":{"name":"sequence_instance_variable_set","path":"scripts/sequence_instance_variable_set/sequence_instance_variable_set.yy",},"order":1,},
     {"id":{"name":"autotile_water_2","path":"sprites/autotile_water_2/autotile_water_2.yy",},"order":6,},
     {"id":{"name":"spr_hud_stats_line","path":"sprites/spr_hud_stats_line/spr_hud_stats_line.yy",},"order":21,},
-    {"id":{"name":"scr_setPlayerFacingAnim","path":"scripts/scr_setPlayerFacingAnim/scr_setPlayerFacingAnim.yy",},"order":5,},
+    {"id":{"name":"scr_setplayerfacinganim","path":"scripts/scr_setplayerfacinganim/scr_setplayerfacinganim.yy",},"order":5,},
     {"id":{"name":"input_source_share","path":"scripts/input_source_share/input_source_share.yy",},"order":9,},
     {"id":{"name":"ChatterboxUnload","path":"scripts/ChatterboxUnload/ChatterboxUnload.yy",},"order":9,},
     {"id":{"name":"spr_amadix_newA_sawedoff_l","path":"sprites/spr_amadix_newA_sawedoff_l/spr_amadix_newA_sawedoff_l.yy",},"order":5,},

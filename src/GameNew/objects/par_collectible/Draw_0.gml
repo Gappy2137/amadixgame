@@ -1,3 +1,5 @@
+if (pickedup){exit;}
+
 event_inherited();
 
 switch (type){

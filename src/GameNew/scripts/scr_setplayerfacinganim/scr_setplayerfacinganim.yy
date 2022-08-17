@@ -6,7 +6,7 @@
     "path": "folders/Scripts/PlayerInWorld.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_setPlayerFacingAnim",
+  "name": "scr_setplayerfacinganim",
   "tags": [],
   "resourceType": "GMScript",
 }

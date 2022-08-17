@@ -55,6 +55,8 @@ collision = false;
 
 cancollide = false;
 
+pickedup = false;
+
 acc = 2;
 
 en = -1;

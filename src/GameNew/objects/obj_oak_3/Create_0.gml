@@ -23,3 +23,5 @@ shadowAlpha = 0.4;
 shadowEnable = true;
 
 treeSize = 1.5;
+
+zheight = 128;
