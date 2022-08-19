@@ -13,18 +13,18 @@ function load_room(){
 	
 	repeat(struct.colNum){
 		
-		var _inst = instance_find(par_collectible, i);
+		var _inst = struct.colData[i].ID;
+		var _timer = struct.colData[i].timer;
+		var _amount = struct.colData[i].amount;
+		var _pickedup = struct.colData[i].pickedup;
+		var _flag = struct.colData[i].flag;
 		
-		struct.colData[i] = {
-			
-			timer : _inst.timer,
-			amount : _inst.amount,
-			
+		with(_inst){
+			timer = _timer;
+			amount = _amount;
+			pickedup = _pickedup;
+			flag = _flag;
 		}
-		
-		_inst.timer = struct.timer[i];
-		_inst.amount = struct.amount[i];
-		
 		i++;
 	}
 	

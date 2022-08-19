@@ -19,8 +19,11 @@ function save_room(){
 		
 		struct.colData[i] = {
 			
+			ID : _inst.id,
 			timer : _inst.timer,
 			amount : _inst.amount,
+			pickedup : _inst.pickedup,
+			flag : _inst.flag,
 			
 		}
 		

@@ -1,3 +1,3 @@
 targetRoom = rm_devroom_3;
-targetX = 400;
-targetY = 480;
+targetX = 704;
+targetY = 416;
