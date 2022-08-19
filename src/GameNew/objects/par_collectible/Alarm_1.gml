@@ -26,7 +26,7 @@ if (canPickup()){
 				moving = false;
 				hsp = 0;
 				vsp = 0;
-				//scr_setPlayerFacingAnim(checkFacing(idd));
+				scr_setPlayerFacingAnim(checkFacing(idd));
 				alarm[0] = 28;
 			}
 		}

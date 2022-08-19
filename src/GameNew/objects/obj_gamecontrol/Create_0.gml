@@ -134,4 +134,16 @@ global.inChest = false;
 
 refTimer = 0;
 
+
+global.savingRoom = false;
+
+global.mainTimer = 0;
+alarm[1] = GAMESPEED;
+
 alarm[0] = 5;
+
+//room data
+global.roomData = {
+	devroom_3 : 0,
+	devroom_b : 0,
+}

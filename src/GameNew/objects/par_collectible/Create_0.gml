@@ -74,6 +74,8 @@ anim_speed = 0;
 if (anim_enable){
 	anim_frame = irandom(anim_frame_num);
 	anim_speed = 0.1;
+}else{
+	anim_frame = image_index;	
 }
 
 enableWind = false;
@@ -97,6 +99,9 @@ if (zf){
 
 shallowwater = collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, obj_shallowwater16, false, true);
 if (shallowwater){shadowEnable = false;}
+
+notActive = false;
+
 /*
 if (type == 0) || (type == 1) || (type == 2) || (type == 5){
 	cancollide = true;

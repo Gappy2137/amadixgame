@@ -7,7 +7,7 @@ itemDrop = item.mango_salsa;
 itemNum = 1;
 itemNumMax = 1;
 
-itemRegTime = 150;
+itemRegTime = 100;
 timer = itemRegTime;
 
 itemOverlay = -1;

@@ -4,14 +4,24 @@ if (!instance_exists(obj_amadix)){exit;}
 // Nie mozna strzelac jezeli przeladowujemy albo nie mamy w reku broni
 if (state == gunState.reloading)
 || (state == gunState.reloading_empty)
-|| (obj_amadix.actionstate != player_state_action.handgun){
+|| (obj_amadix.actionstate != player_state_action.handgun)
+|| (global.inEq)
+|| (global.inConsole)
+|| (global.inChest)
+|| (global.inDialogue)
+|| (global.inCutscene){
 	canShoot = false;	
 }
 
 // Nie mozna przeladowac jezeli strzelamy albo nie mamy w reku broni
 if (state == gunState.shooting)
 || (obj_amadix.actionstate != player_state_action.handgun)
-|| (ammoExtra == 0){
+|| (ammoExtra == 0)
+|| (global.inEq)
+|| (global.inConsole)
+|| (global.inChest)
+|| (global.inDialogue)
+|| (global.inCutscene){
 	canReload = false;	
 }
 

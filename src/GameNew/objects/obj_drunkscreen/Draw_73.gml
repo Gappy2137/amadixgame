@@ -1,5 +1,7 @@
 if (obj_display.zoomtrigger){exit;}
 
+if (global.alcoholPoisoning >= 5){
+	
 var width = GAMEWIDTH * obj_display.window_size * xscale;
 var height = GAMEHEIGHT * obj_display.window_size * yscale;
 
@@ -43,7 +45,7 @@ shader_reset();
 
 surface_reset_target();
 
-if (global.alcoholPoisoning >= 5){
+
 	
 
 	

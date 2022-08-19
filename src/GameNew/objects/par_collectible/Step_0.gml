@@ -1,23 +1,34 @@
-event_inherited();
+
+if (isbounded(x, camera_get_view_x(view_camera[0]) - INSTANCE_LOAD_DISTANCE, camera_get_view_width(view_camera[0]) + INSTANCE_LOAD_DISTANCE*2))
+&& (isbounded(y, camera_get_view_y(view_camera[0]) - INSTANCE_LOAD_DISTANCE/32, camera_get_view_height(view_camera[0]) + INSTANCE_LOAD_DISTANCE*3)){
+	notActive = false;
+	angle = 0;
+}else{
+	notActive = true;	
+}
 
 // Regeneration logic
 if (flag) && (itemRegTime != -1){
-	timer--;
 	if (timer == 0){
-		pickedup = false;
-		canclick = true;
-		itemNum++;
-		timer = itemRegTime;
-		if (itemNum == 0){
-			flag = false;
+		if (notActive){
+			pickedup = false;
+			canclick = true;
+			itemNum++;
+			timer = itemRegTime;
+			if (itemNum == 0){
+				flag = false;
+			}
+			if (itemNum > itemNumMax){
+				itemNum = itemNumMax;	
+				flag = false;	
+			}
 		}
-		if (itemNum > itemNumMax){
-			itemNum = itemNumMax;	
-			flag = false;	
-		}
+	}else{
+		timer--;	
 	}
 }
 
+if (notActive){exit;}
 
 if (itemOverlay != -1){
 	if (itemNum <= itemNumMax){
@@ -26,6 +37,8 @@ if (itemOverlay != -1){
 		itemOverlayState = itemNumMax;
 	}
 }
+
+event_inherited();
 
 function canPickup(){
 	if instance_exists(obj_amadix){
