@@ -4,14 +4,19 @@
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
 
-uniform float alphaGLSL;
-uniform sampler2D other_texture; // <-- This holds the Applicaiton Surface
+uniform float Time;
+uniform vec2 Texel;
+
+const float xSpeed = 0.01;
+const float xFreq = 20.0;
+const float xSize = 3.0;
+
+const float yFreq = 100.0;
+const float ySize = 7.0;
 
 void main()
 {
-    vec4 base_tex_col = v_vColour * texture2D(gm_BaseTexture, v_vTexcoord);
-    vec4 other_tex_col = v_vColour * texture2D(other_texture, v_vTexcoord);
-    vec4 final_tex_col = (base_tex_col + other_tex_col) / 2.0;
-
-    gl_FragColor =  vec4(final_tex_col.rbg, final_tex_col.a * alphaGLSL);// This works!
+	float xWave = sin(Time * xSpeed + v_vTexcoord.y * xFreq) * (xSize * Texel.x) * v_vTexcoord.y;
+	float yWave = sin(Time * xSpeed + v_vTexcoord.y * yFreq) * (ySize * Texel.y) * v_vTexcoord.y;
+    gl_FragColor =  v_vColour * texture2D(gm_BaseTexture, v_vTexcoord + vec2(xWave, yWave));
 }

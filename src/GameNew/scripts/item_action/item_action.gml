@@ -57,16 +57,16 @@ function item_action(){
 				with(obj_amadix){
 					if (oneStepEvent[2] == 2){
 						switch(facing){
-							case dirc.down:
+							case index_facing.down:
 								scr_setPlayerFacingAnim(index_facing.down);
 							break;
-							case dirc.left:
+							case index_facing.left:
 								scr_setPlayerFacingAnim(index_facing.left);
 							break;
-							case dirc.right:
+							case index_facing.right:
 								scr_setPlayerFacingAnim(index_facing.right);
 							break;
-							case dirc.up:
+							case index_facing.up:
 								scr_setPlayerFacingAnim(index_facing.up);
 							break;
 						}
@@ -105,7 +105,7 @@ function item_action(){
 								running = false;
 								hsp = 0;
 								vsp = 0;
-								facing = dirc.down;
+								facing = index_facing.down;
 								scr_setPlayerFacingAnim(index_facing.down);
 								alarm[0] = 55;
 							}
@@ -152,7 +152,7 @@ function item_action(){
 							running = false;
 							hsp = 0;
 							vsp = 0;
-							facing = dirc.down;
+							facing = index_facing.down;
 							scr_setPlayerFacingAnim(index_facing.down);
 							alarm[0] = 65;
 						}
@@ -184,9 +184,12 @@ function item_action(){
 			var hp =			obj_inventory.ds_inventory[# INVHP, obj_inventory.mouse_slotx_second];
 			var type =			obj_inventory.ds_inventory[# INVTYPE, obj_inventory.mouse_slotx_second];
 			if (amount > 0){
-				if (obj_amadix.actionstate != player_state_action.attacking_melee) || (!obj_amadix.skid){
+				if (obj_amadix.actionstate != player_state_action.attacking_melee){
 					var iitem = obj_inventory.ds_inventory[# INVITEM, obj_inventory.mouse_slotx_second];
 					with (obj_amadix){
+						running = 0;
+						skid = false;
+						skidTimer = skidTime;
 						oneStepEvent[0] = true;
 						oneStepEvent[1] = true;
 						itemeaten = iitem;
@@ -194,20 +197,17 @@ function item_action(){
 						anim_frame_action = 0;
 						anim_speed_action = 0.4;
 						anim_frame = 0;
-						moving = false;
-						hsp = 0;
-						vsp = 0;
 						switch(facing){
-							case dirc.down:
+							case index_facing.down:
 								scr_setPlayerFacingAnim(index_facing.down);
 							break;
-							case dirc.left:
+							case index_facing.left:
 								scr_setPlayerFacingAnim(index_facing.left);
 							break;
-							case dirc.right:
+							case index_facing.right:
 								scr_setPlayerFacingAnim(index_facing.right);
 							break;
-							case dirc.up:
+							case index_facing.up:
 								scr_setPlayerFacingAnim(index_facing.up);
 							break;
 						}
@@ -343,16 +343,16 @@ function item_action(){
 			with(obj_amadix){
 				if (oneStepEvent[2] == 2){
 					switch(facing){
-						case dirc.down:
+						case index_facing.down:
 							scr_setPlayerFacingAnim(index_facing.down);
 						break;
-						case dirc.left:
+						case index_facing.left:
 							scr_setPlayerFacingAnim(index_facing.left);
 						break;
-						case dirc.right:
+						case index_facing.right:
 							scr_setPlayerFacingAnim(index_facing.right);
 						break;
-						case dirc.up:
+						case index_facing.up:
 							scr_setPlayerFacingAnim(index_facing.up);
 						break;
 					}

@@ -57,18 +57,18 @@ with(obj_amadix){
 			
 			//Update facing
 			if isLooking(index_facing.up){
-				facing = dirc.up;	
+				facing = index_facing.up;	
 				scr_updatePlayerAnim();
 			}else
 			if isLooking(index_facing.left){
-				facing = dirc.left;	
+				facing = index_facing.left;	
 				scr_updatePlayerAnim();
 			}else
 			if isLooking(index_facing.down){
-				facing = dirc.down;	
+				facing = index_facing.down;	
 				scr_updatePlayerAnim();
 			}else{
-				facing = dirc.right;	
+				facing = index_facing.right;	
 				scr_updatePlayerAnim();
 			}
 		
@@ -132,7 +132,7 @@ with(obj_amadix){
 	
 
 	switch(facing){
-		case dirc.down:
+		case index_facing.down:
 			 hand_xoffset = -3;
 			 hand_yoffset = 14;
 			 hand_xoffset2 = 3;
@@ -143,17 +143,17 @@ with(obj_amadix){
 				 hand_rot = point_direction(x, y + hand_yoffset, mouse_x, mouse_y) + 90;
 			}
 		break;
-		case dirc.left:
+		case index_facing.left:
 			 hand_xoffset = 3;
 			 hand_yoffset = 17;
 			 hand_rot = point_direction(x, y + hand_yoffset, mouse_x, mouse_y) - 180;
 		break;
-		case dirc.right:
+		case index_facing.right:
 			 hand_xoffset = -3;
 			 hand_yoffset = 17;
 			 hand_rot = point_direction(x, y  + hand_yoffset, mouse_x, mouse_y);
 		break;
-		case dirc.up:
+		case index_facing.up:
 			 hand_xoffset = 0;
 			 hand_yoffset = 18;
 			 hand_rot = point_direction(x, y  + hand_yoffset, mouse_x, mouse_y) - 90;
@@ -193,7 +193,8 @@ with(obj_amadix){
 		if (running == 2) && ((!scr_playerPressingKeys()) || ((abs(hsp) < .3) && (abs(vsp) < .3)) ){
 			if ((hsp != 0) || (vsp != 0)){
 				if (timeSinceRunning >= timeToRun){
-					skid = true;
+					if (actionstate != player_state_action.attacking_melee)
+						skid = true;
 				}
 			}
 		}
@@ -270,21 +271,21 @@ with(obj_amadix){
 		timeSinceRunning = lerp(timeSinceRunning, 0, .2);
 	}
 	
-	if (skid){
+	if (skid) && (canmove){
 		switch(facing){
-			case dirc.down:
+			case index_facing.down:
 				anim_frame = 0;
 				scr_setPlayerFacingAnim(index_facing.down);
 			break;
-			case dirc.left:
+			case index_facing.left:
 				anim_frame = 0;
 				scr_setPlayerFacingAnim(index_facing.left);
 			break;
-			case dirc.right:
+			case index_facing.right:
 				anim_frame = 1;
 				scr_setPlayerFacingAnim(index_facing.right);
 			break;
-			case dirc.up:
+			case index_facing.up:
 				anim_frame = 2;
 				scr_setPlayerFacingAnim(index_facing.up);
 			break;
@@ -314,19 +315,19 @@ with(obj_amadix){
 	if (actionstate == player_state_action.none) && (canmove) && (actionstate != player_state_action.pickup){
 				if (key_right){ 
 					scr_setPlayerFacingAnim(index_facing.right);
-					facing = dirc.right;
+					facing = index_facing.right;
 				}
 				if (key_left){
 					scr_setPlayerFacingAnim(index_facing.left);
-					facing = dirc.left;
+					facing = index_facing.left;
 				}
 				if (key_up){
 					scr_setPlayerFacingAnim(index_facing.up);
-					facing = dirc.up;
+					facing = index_facing.up;
 				}
 				if (key_down){
 					scr_setPlayerFacingAnim(index_facing.down);
-					facing = dirc.down;
+					facing = index_facing.down;
 				}	
 	}
 	

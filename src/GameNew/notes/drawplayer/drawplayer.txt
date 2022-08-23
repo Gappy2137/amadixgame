@@ -187,7 +187,7 @@ function scr_draw_player(px, py) {
 			var sy = (itemeaten div obj_inventory.spr_inv_items_columns) * 24;
 			
 			switch(facing){
-				case dirc.down: //Za dlonia
+				case index_facing.down: //Za dlonia
 					//Glowa
 					draw_sprite_ext(head_index,anim_frame_action,px,py,image_xscale,image_yscale,image_angle,c_white,image_alpha);
 
@@ -207,7 +207,7 @@ function scr_draw_player(px, py) {
 						if (instance_exists(obj_melee_attack)){
 							with (obj_melee_attack){
 								yorigin = obj_amadix.yorigin + 1;
-								face = dirc.down;
+								face = index_facing.down;
 							}
 						}
 					}
@@ -216,7 +216,7 @@ function scr_draw_player(px, py) {
 					//Dlonie
 					draw_sprite_ext(hands_index,anim_frame_action,px,py,image_xscale,image_yscale,image_angle,c_white,image_alpha);
 				break;
-				case dirc.left: // Roznie
+				case index_facing.left: // Roznie
 			
 					//Glowa
 					draw_sprite_ext(head_index,anim_frame_action,px,py,image_xscale,image_yscale,image_angle,c_white,image_alpha);
@@ -234,7 +234,7 @@ function scr_draw_player(px, py) {
 					//Dlonie
 					draw_sprite_ext(hands_index,anim_frame_action,px,py,image_xscale,image_yscale,image_angle,c_white,image_alpha);
 				break;
-				case dirc.right: // Roznie
+				case index_facing.right: // Roznie
 			
 					//Glowa
 					draw_sprite_ext(head_index,anim_frame_action,px,py,image_xscale,image_yscale,image_angle,c_white,image_alpha);
@@ -252,7 +252,7 @@ function scr_draw_player(px, py) {
 					//Dlonie
 					draw_sprite_ext(hands_index,anim_frame_action,px,py,image_xscale,image_yscale,image_angle,c_white,image_alpha);
 				break;
-				case dirc.up: // Za wszystkim
+				case index_facing.up: // Za wszystkim
 			
 					//Glowa
 					draw_sprite_ext(head_index,anim_frame_action,px,py,image_xscale,image_yscale,image_angle,c_white,image_alpha);

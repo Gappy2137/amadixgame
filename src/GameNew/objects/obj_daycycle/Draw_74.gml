@@ -32,14 +32,14 @@ if surface_exists(application_surface){
 }
 shader_reset();
 
-
+/*
 draw_text(96, 96, lrp);
 draw_text(96, 96 + 16, global.weather);
 draw_text(96, 96 + 32, obj_weather.weatherchange);
 
 draw_text(96, 96 + 48, con_sat_brt_mix[2]);
 draw_text(96, 96 + 64, ds_daycycle_info[global.weather][key_next][5]);
-
+*/
 //Light curve
 //var curveAsset = curve_lights_out;
 //var curvePos = global.daycycletime;

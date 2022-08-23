@@ -10,3 +10,6 @@ xx = 0;
 yy = 0;
 
 sh = shader_water;
+
+time = shader_get_uniform(sh, "Time");
+texel = shader_get_uniform(sh, "Texel");

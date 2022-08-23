@@ -22,13 +22,15 @@ if ((canTalkTo) && (mouse_over_me(clickRadius)) && (!global.inDialogue)){
 		
 		if (global.cursorSpr == cursorState.dialogue){
 	
-			if (instance_exists(obj_amadix))
+			if (instance_exists(obj_amadix)){
 				anim_frame = checkFacing(obj_amadix);
+				
+				obj_amadix.facing = checkFacing(real(id));
 	
-			instance_create_layer(x, y, "Important", obj_chatterbox, {
-				dialogueName: dialogue
-			});
-		
+				instance_create_layer(x, y, "Important", obj_chatterbox, {
+					dialogueName: dialogue
+				});
+			}
 		}
 	}
 }else{

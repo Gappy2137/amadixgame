@@ -13,12 +13,12 @@ if (canPickup()){
 	with (obj_inventory){
 		if (item_exists(item.none, false)){
 			with (obj_amadix){
+				actionstate = player_state_action.pickup;
 				itemeaten = idrop;
 				itemamount = im;
 				pickupid = idd;
 				itemlvl = lvl;
 				itemcap = cap;
-				actionstate = player_state_action.pickup;
 				oneStepEvent[0] = true;
 				oneStepEvent[1] = true;
 				anim_frame_action = 0;
@@ -26,7 +26,8 @@ if (canPickup()){
 				moving = false;
 				hsp = 0;
 				vsp = 0;
-				scr_setPlayerFacingAnim(checkFacing(idd));
+				facing = checkFacing(real(idd));
+				scr_setPlayerFacingAnim(facing);
 				alarm[0] = 28;
 			}
 		}

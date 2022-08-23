@@ -46,7 +46,7 @@ switch (actionstate){
 	break;
 	case player_state_action.attacking_melee:
 				switch(facing){
-				case dirc.down:
+				case index_facing.down:
 					
 					if (anim_frame_action == anim_speed_action){
 						var swing = instance_create_layer(x, y + 16, "Instances", obj_melee_swing);
@@ -57,7 +57,7 @@ switch (actionstate){
 						instance_create_layer(x, y, "Instances", obj_melee_attack);
 						with (obj_melee_attack){
 							animation_speed = sp;
-							face = dirc.down;
+							face = index_facing.down;
 						}
 					}
 					if (anim_frame_action) <= 5{fixAngle -= 1;}
@@ -68,7 +68,7 @@ switch (actionstate){
 					if (floor(anim_frame_action) == 4){itemUsedX = 10;itemUsedY = 28 + fixY;itemUsedAngle = 190 + fixAngle;itemUsedSx = 0;}
 					if (floor(anim_frame_action) == 5){itemUsedX = 3;itemUsedY = 30 + fixY;itemUsedAngle = 180 + fixAngle;itemUsedSx = 0;}
 				break;
-				case dirc.right:
+				case index_facing.right:
 					if (anim_frame_action == anim_speed_action){
 						var swing = instance_create_layer(x, y + 16, "Instances", obj_melee_swing);
 						var sp = anim_speed_action;
@@ -78,7 +78,7 @@ switch (actionstate){
 						instance_create_layer(x, y, "Instances", obj_melee_attack);
 						with (obj_melee_attack){
 							animation_speed = sp;
-							face = dirc.down;
+							face = index_facing.down;
 						}
 					}
 					if (floor(anim_frame_action) == 0){itemUsedX = 1;itemUsedY = -18 + fixY;itemUsedAngle = 15;itemUsedSx = 0;}
@@ -88,10 +88,10 @@ switch (actionstate){
 					if (floor(anim_frame_action) == 4){itemUsedX = 24;itemUsedY = -12 + fixY;itemUsedAngle = 240;itemUsedSx = 0;}
 					if (floor(anim_frame_action) == 5){itemUsedX = 27;itemUsedY = 1.5 + fixY;itemUsedAngle = 200;itemUsedSx = 0;}
 				break;
-				case dirc.left:
+				case index_facing.left:
 				
 				break;
-				case dirc.up:
+				case index_facing.up:
 				
 				break;
 			}

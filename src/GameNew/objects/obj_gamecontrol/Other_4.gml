@@ -9,10 +9,10 @@ if instance_exists(obj_amadix){
 	obj_amadix.facing = oldfacing;
 	with (obj_amadix){
 		switch(facing){
-			case dirc.right: scr_setPlayerFacingAnim(index_facing.right);		break;	
-			case dirc.left: scr_setPlayerFacingAnim(index_facing.left);			break;	
-			case dirc.up: scr_setPlayerFacingAnim(index_facing.up);				break;	
-			case dirc.down: scr_setPlayerFacingAnim(index_facing.down);			break;	
+			case index_facing.right: scr_setPlayerFacingAnim(index_facing.right);		break;	
+			case index_facing.left: scr_setPlayerFacingAnim(index_facing.left);			break;	
+			case index_facing.up: scr_setPlayerFacingAnim(index_facing.up);				break;	
+			case index_facing.down: scr_setPlayerFacingAnim(index_facing.down);			break;	
 			case -1: scr_setPlayerFacingAnim(index_facing.right);				break;	
 		}
 		

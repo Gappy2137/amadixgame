@@ -16,8 +16,7 @@ with (obj_amadix){
 	
 	// Czy moze sie poruszac
 	
-	if (actionstate == player_state_action.attacking_melee)
-	|| (actionstate == player_state_action.eating)
+	if (actionstate == player_state_action.eating)
 	|| (actionstate == player_state_action.drinking)
 	|| (actionstate == player_state_action.pickup)
 	|| (global.inDialogue)
@@ -40,12 +39,14 @@ with (obj_amadix){
 	}
 	
 	if (isbounded(skidTimer, 0, skidTime - 1)){
-		canmove = true;
-		if (hsp != 0){
-			hsp = lerp(hsp, 0, .15);
-		}
-		if (vsp != 0){
-			vsp = lerp(vsp, 0, .15);
+		if (actionstate != player_state_action.attacking_melee){
+			canmove = true;
+			if (hsp != 0){
+				hsp = lerp(hsp, 0, 0.15);
+			}
+			if (vsp != 0){
+				vsp = lerp(vsp, 0, 0.15);
+			}
 		}
 	}
 	
@@ -313,6 +314,14 @@ with (obj_amadix){
 		}
 
 
+	}
+	
+	if (actionstate == player_state_action.attacking_melee){
+		running = 0;
+		skid = false;
+		skidTimer = skidTime;
+		hsp /= 4;
+		vsp /= 4;
 	}
 	
 	var plantcol = collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom, par_collectible, false, true);

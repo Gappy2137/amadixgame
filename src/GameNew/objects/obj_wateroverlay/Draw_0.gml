@@ -1,3 +1,45 @@
+var camw = camera_get_view_width(view_camera[0]);
+var camh = camera_get_view_height(view_camera[0]);
+var portw = view_get_wport(0);
+var porth = view_get_hport(0);
+var wratio = portw/camw;
+var hratio = porth/camh;
+
+if !surface_exists(waterSurface){
+	waterSurface = surface_create(room_width * wratio, room_height * hratio);	
+}
+
+if !surface_exists(tilesurf){
+	tilesurf = surface_create(room_width * wratio, room_height * hratio);	
+}
+
+var tiles = layer_tilemap_get_id(layer_get_id("Water"));
+
+surface_set_target(tilesurf);
+
+draw_tilemap(tiles, 0, 0);
+
+surface_reset_target();
+
+
+
+surface_set_target(waterSurface);
+
+draw_surface_ext(tilesurf, 0, 0, 1 / wratio, 1 / hratio, 0, c_white, 1);
+
+gpu_set_colorwriteenable(1, 1, 1, 0);
+
+draw_sprite_tiled_ext(spr_water_overlay, 0, xx * wratio, yy * hratio, wratio, hratio, c_white, 0.2);
+
+gpu_set_colorwriteenable(1, 1, 1, 1);
+
+surface_reset_target();
+
+
+draw_surface_ext(waterSurface, 0, 0, 1 / wratio, 1 / hratio, 0, c_white, 0.85);
+
+/*
+
 var width = GAMEWIDTH * obj_display.window_size;
 var height = GAMEHEIGHT * obj_display.window_size;
 
@@ -17,7 +59,6 @@ if !surface_exists(overlaySurface){
 var tiles = layer_tilemap_get_id(layer_get_id("Water"));
 
 
-
 surface_set_target(overlaySurface);
 
 draw_sprite_tiled(spr_water_overlay, 0, 0, 0);
@@ -26,9 +67,29 @@ surface_reset_target();
 
 
 
+
 surface_set_target(waterSurface);
 
 draw_tilemap(tiles, 0, 0);
+
+var inst = obj_amadix;
+
+var yBuffer = (inst.sprite_height - inst.sprite_yoffset)*2;
+
+gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_src_alpha);
+
+shader_set(sh);
+
+shader_set_uniform_f(time, current_time);
+var tex = sprite_get_texture(inst.sprite_index, inst.image_index);
+
+shader_set_uniform_f(texel, texture_get_texel_width(tex), texture_get_texel_height(tex));
+
+draw_sprite_ext(inst.sprite_index, inst.image_index, inst.x, (inst.y + yBuffer), inst.image_xscale, -inst.image_yscale, 0, c_white, 1);
+
+shader_reset();
+
+gpu_set_blendmode(bm_normal);
 
 gpu_set_colorwriteenable(1, 1, 1, 0);
 
@@ -174,5 +235,5 @@ surface_reset_target();
 
 
 draw_surface_ext(refSurf, cam_x, cam_y, cam_scale, cam_scale, 0, c_white, 1);
-*/
+
 //draw_surface_ext(waterSurface, 0, 0, 1, 1, 0, c_white, 1);

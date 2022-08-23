@@ -56,16 +56,16 @@ if (actionstate = player_state_action.handgun){
 
 if (oneStepEvent[2] == 2){
 	switch(facing){
-		case dirc.down:
+		case index_facing.down:
 			scr_setPlayerFacingAnim(index_facing.down);
 		break;
-		case dirc.left:
+		case index_facing.left:
 			scr_setPlayerFacingAnim(index_facing.left);
 		break;
-		case dirc.right:
+		case index_facing.right:
 			scr_setPlayerFacingAnim(index_facing.right);
 		break;
-		case dirc.up:
+		case index_facing.up:
 			scr_setPlayerFacingAnim(index_facing.up);
 		break;
 	}

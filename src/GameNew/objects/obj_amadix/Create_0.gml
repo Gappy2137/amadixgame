@@ -3,7 +3,7 @@ event_inherited();
 image_speed = 0;
 image_index = 0;
 
-facing = 270;
+facing = index_facing.down;
 
 hsp = 0;
 vsp = 0;

@@ -42,19 +42,19 @@ switch (actionstate){
 		
 		
 		switch(facing){
-			case dirc.down:
+			case index_facing.down:
 				if (floor(anim_frame_action) == 1){itemUsedX = 0;itemUsedY = 1.5 + fixY;itemUsedAngle = 0;itemUsedSx = 0;}
 				if (floor(anim_frame_action) == 2){itemUsedX = 0;itemUsedY = 2 + fixY;itemUsedAngle = 0;itemUsedSx = 0;}
 			break;
-			case dirc.left:
+			case index_facing.left:
 				if (floor(anim_frame_action) == 1){itemUsedX = -4;itemUsedY = 1.5 + fixY;itemUsedAngle = 0;itemUsedSx = 0;}
 				if (floor(anim_frame_action) == 2){itemUsedX = -4;itemUsedY = 2 + fixY;itemUsedAngle = 0;itemUsedSx = 0;}
 			break;
-			case dirc.right:
+			case index_facing.right:
 				if (floor(anim_frame_action) == 1){itemUsedX = 6;itemUsedY = 1.5 + fixY;itemUsedAngle = 0;itemUsedSx = 0;}
 				if (floor(anim_frame_action) == 2){itemUsedX = 6.5;itemUsedY = 2 + fixY;itemUsedAngle = 0;itemUsedSx = 0;}
 			break;
-			case dirc.up:
+			case index_facing.up:
 				itemUsedX = 1000;itemUsedY = 2 + fixY;itemUsedAngle = 0;itemUsedSx = 0;
 			break;
 		}
@@ -78,7 +78,7 @@ switch (actionstate){
 			}
 			
 				switch(facing){
-				case dirc.down:
+				case index_facing.down:
 				
 						if (oneStepEvent[0] == true){
 							instance_create_layer(x, y, "Instances", obj_seq_item);
@@ -124,7 +124,7 @@ switch (actionstate){
 						}
 
 				break;
-				case dirc.right:
+				case index_facing.right:
 
 						if (oneStepEvent[0] == true){
 							instance_create_layer(x, y, "Instances", obj_seq_item);
@@ -173,7 +173,7 @@ switch (actionstate){
 
 
 				break;
-				case dirc.left:
+				case index_facing.left:
 				
 						if (oneStepEvent[0] == true){
 							instance_create_layer(x, y, "Instances", obj_seq_item);
@@ -222,7 +222,7 @@ switch (actionstate){
 
 
 				break;
-				case dirc.up:
+				case index_facing.up:
 				
 				
 						if (oneStepEvent[0] == true){
