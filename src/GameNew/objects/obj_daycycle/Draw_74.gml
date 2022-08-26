@@ -4,6 +4,12 @@ if (!surface_exists(srf_lights)) {
 	srf_lights = surface_create(GAMEWIDTH, GAMEHEIGHT);
 	tex_lights = surface_get_texture(srf_lights);
 }
+
+if (!surface_exists(srf_cover)) {
+	srf_cover = surface_create(GAMEWIDTH, GAMEHEIGHT);
+	tex_cover = surface_get_texture(srf_cover);
+}
+
 surface_set_target(srf_lights);
 	draw_clear(c_black);
 	gpu_set_blendmode(bm_add);
@@ -15,7 +21,10 @@ surface_set_target(srf_lights);
 	var vy = camera_get_view_y(view_camera[0]);
 	with(par_light)
 		draw_sprite_ext(sprite_index, image_index, x - vx, y - vy, image_xscale, image_yscale, image_angle, image_blend, alpha * lights_strength);
-	
+	gpu_set_blendmode_ext(bm_zero,bm_inv_src_alpha);
+	with(par_lightcover)
+		draw_sprite_ext(sprite_index, image_index, x - vx, y - vy, image_xscale, image_yscale, image_angle, image_blend, 1);
+	gpu_set_blendmode(bm_add);
 	// reset GPU
 	gpu_set_tex_filter(false); // optional
 	gpu_set_blendmode(bm_normal);

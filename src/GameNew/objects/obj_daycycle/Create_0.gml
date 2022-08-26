@@ -11,6 +11,9 @@ s_lights		= shader_get_sampler_index(shader, "lights");
 tex_lights		= -1;
 srf_lights		= -1;
 
+tex_cover		= -1;
+srf_cover		= -1;
+
 surf = -1;
 
 color_mix = -1;

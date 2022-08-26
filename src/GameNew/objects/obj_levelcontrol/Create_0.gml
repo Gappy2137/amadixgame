@@ -6,5 +6,12 @@ cx = 0;
 cy = 0;
 ix = 0;
 iy = 0;
-alarm[0] = 5;
 
+decalSourceTiles[0] = [];
+decalOverlayTiles[0] = [];
+
+
+
+
+
+alarm[0] = 5;
