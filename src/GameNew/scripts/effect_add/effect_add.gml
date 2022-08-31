@@ -7,7 +7,7 @@ function effect_add(effectID, duration, amplifier){
 			if (obj_hud.effect_grid[# EF_EFFECT, yy] == effect.none){
 				if (!temp){
 					obj_hud.effect_grid[# EF_EFFECT, yy] = effectID;
-					obj_hud.effect_grid[# EF_DURATION, yy] = (duration * room_speed);
+					obj_hud.effect_grid[# EF_DURATION, yy] = (duration * GAMESPEED);
 					obj_hud.effect_grid[# EF_AMPLIFIER, yy] = amplifier;
 					obj_hud.effect_grid[# EF_TIMER, yy] = time;
 					effect_at(effectID, amplifier);
@@ -18,7 +18,7 @@ function effect_add(effectID, duration, amplifier){
 					if (amplifier >= obj_hud.effect_grid[# EF_AMPLIFIER, yy]){
 						if (!temp){
 							obj_hud.effect_grid[# EF_AMPLIFIER, yy] = amplifier;
-							obj_hud.effect_grid[# EF_DURATION, yy] = (duration * room_speed);
+							obj_hud.effect_grid[# EF_DURATION, yy] = (duration * GAMESPEED);
 							obj_hud.effect_grid[# EF_TIMER, yy] = time;
 							effect_at(effectID, amplifier);
 							temp = true;

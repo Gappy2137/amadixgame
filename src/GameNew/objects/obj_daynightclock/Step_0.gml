@@ -3,10 +3,10 @@ if !(obj_weather.weatherchange < obj_weather.weatherChangeAmount){
 }
 
 
-if keyboard_check(vk_left){
+if keyboard_check(vk_left) && (global.debugMode) && (!global.inConsole){
 	rot -= 0.5;	
 }
-if keyboard_check(vk_right){
+if keyboard_check(vk_right) && (global.debugMode) && (!global.inConsole){
 	rot += 0.5;
 }
 

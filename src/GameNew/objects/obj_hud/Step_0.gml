@@ -248,4 +248,9 @@ if (show_hud == hud.inv)
 }else{
 	global.inEq = false;	
 }
+
+if (global.inConsole){
+	global.inEq = false;	
+	hud_inner = false;
+}
 #endregion

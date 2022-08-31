@@ -1,3 +1,9 @@
+if (isOpen){
+	global.inConsole = true;	
+}else{
+	global.inConsole = false;	
+}
+
 if (saveHistory) {
 	if (!loadedSavedHistory) {
 		self._load_history();

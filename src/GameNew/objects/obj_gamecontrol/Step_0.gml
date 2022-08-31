@@ -63,7 +63,8 @@ if (instance_exists(obj_chatterbox)){
 if (global.inDialogue)
 || (global.inEq)
 || (global.inCutscene)
-|| (global.inChest){
+|| (global.inChest)
+|| (global.inConsole){
 	global.eqSlots = false;
 }else{
 	global.eqSlots = true;

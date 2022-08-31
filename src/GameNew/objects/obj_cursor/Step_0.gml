@@ -1,7 +1,6 @@
 
 
 if (!global.inEq)
-&& (!global.inConsole)
 && (!global.inChest)
 && (!global.inCutscene){
 	var col = instance_place(x, y, par_collectible);

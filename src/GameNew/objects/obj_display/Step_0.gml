@@ -1,4 +1,4 @@
-if(keyboard_check_pressed(ord("Z"))){
+if(keyboard_check_pressed(ord("Z"))) && (!global.inConsole){
 	
 	window_size++;
 	if(window_size > max_window_size){
@@ -9,7 +9,7 @@ if(keyboard_check_pressed(ord("Z"))){
 	surface_resize(application_surface,GAMEWIDTH*window_size,GAMEHEIGHT*window_size);
 	window_center();
 }
-if(keyboard_check_pressed(ord("V"))){
+if(keyboard_check_pressed(ord("V"))) && (!global.inConsole){
 	fullscreen = fullscreen ^ 1;
 	
 	if (fullscreen)

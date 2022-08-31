@@ -71,24 +71,11 @@ if (oneStepEvent[2] == 2){
 	}
 }
 
-if (keyboard_check_pressed(vk_space)){
-	item_add(-1, item.apple, 1, 0, -1);
-}
-if (keyboard_check_pressed(vk_enter)){
-	//item_add(-1, item.m1911, 1, 0, -1);
-	item_add(-1, item.apple, 22, 0, -1);
-}
-if (keyboard_check_pressed(ord("X"))){
+
+if (keyboard_check_pressed(ord("X"))) && (global.debugMode) && (!global.inConsole){
 	room_speed = 5;	
 }
-if (keyboard_check_pressed(ord("C"))){
+if (keyboard_check_pressed(ord("C"))) && (global.debugMode) && (!global.inConsole){
 	room_speed = 60;	
 }
-if (keyboard_check(ord("O"))){
-	global.stamina -= 0.1;
-}
-if (keyboard_check(ord("P"))){
-	global.stamina += 0.1;
-}
-
 depth = -(bbox_bottom - (sprite_height - yorigin) + zfloor);
