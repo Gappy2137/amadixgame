@@ -984,7 +984,7 @@
     {"id":{"name":"spr_amadix_feetB_run_r","path":"sprites/spr_amadix_feetB_run_r/spr_amadix_feetB_run_r.yy",},"order":9,},
     {"id":{"name":"tileset_test_6","path":"tilesets/tileset_test_6/tileset_test_6.yy",},"order":6,},
     {"id":{"name":"__input_sdl2_database_funcs","path":"scripts/__input_sdl2_database_funcs/__input_sdl2_database_funcs.yy",},"order":26,},
-    {"id":{"name":"scr_testshell","path":"scripts/scr_testshell/scr_testshell.yy",},"order":13,},
+    {"id":{"name":"console_commands","path":"scripts/console_commands/console_commands.yy",},"order":13,},
     {"id":{"name":"input_y","path":"scripts/input_y/input_y.yy",},"order":4,},
     {"id":{"name":"ChatterboxGetOptionConditionBool","path":"scripts/ChatterboxGetOptionConditionBool/ChatterboxGetOptionConditionBool.yy",},"order":2,},
     {"id":{"name":"par_player","path":"objects/par_player/par_player.yy",},"order":0,},
@@ -1314,6 +1314,7 @@
     {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"licenses.txt","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"sdl2.txt","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/language/dialogue","resourceVersion":"1.0","name":"cutscene1_en.yarn","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"item_ids.txt","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
     "IDEVersion": "2022.6.1.26",

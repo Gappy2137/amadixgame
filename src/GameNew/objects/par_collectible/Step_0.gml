@@ -183,6 +183,17 @@ if (rotoncol){
 }
 */
 
+finalangle = clamp((angle + windangle + angle2), -75, 75);
+
+if (resetAngle){
+	angle = approach(angle, 0, acc);
+}
+
+// Obrot przy klikaniu
+if (rotate){
+	event_user(0);	
+}
+
 if (pickedup){exit;}
 
 #region Wind Effects
@@ -262,16 +273,7 @@ if (enableWind){
 
 #endregion
 
-finalangle = clamp((angle + windangle + angle2), -75, 75);
 
-if (resetAngle){
-	angle = approach(angle, 0, acc);
-}
-
-// Obrot przy klikaniu
-if (rotate){
-	event_user(0);	
-}
 
 // Potrzas
 if (shake){

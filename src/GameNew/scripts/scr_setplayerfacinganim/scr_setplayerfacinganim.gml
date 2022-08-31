@@ -956,6 +956,7 @@ switch(global.playerTorso){
 		if (skid){
 			torso_index = spr_amadix_newTC_skid;	
 		}else{
+			if (running != 2){
 				switch(actionstate){
 					//eating--------------------------------------------------------
 					case player_state_action.eating:
@@ -1159,6 +1160,22 @@ switch(global.playerTorso){
 					//--------------------------------------------------------------
 				
 				}
+			}else{
+				switch(facing){
+					case index_facing.down:
+						torso_index = spr_amadix_newTC_run_d;
+					break;
+					case index_facing.left:
+						torso_index = spr_amadix_newTC_run_l;
+					break;
+					case index_facing.right:
+						torso_index = spr_amadix_newTC_run_r;
+					break;
+					case index_facing.up:
+						torso_index = spr_amadix_newTC_run_u;
+					break;
+				}
+			}
 		}
 	
 
@@ -1341,6 +1358,7 @@ switch(global.playerLegs){
 		if (skid){
 			legs_index = spr_amadix_jeansL_skid;	
 		}else{
+			if (running != 2){
 				switch(actionstate){
 					//eating--------------------------------------------------------
 					case player_state_action.eating:
@@ -1543,6 +1561,22 @@ switch(global.playerLegs){
 					//--------------------------------------------------------------
 				
 				}
+			}else{
+				switch(facing){
+					case index_facing.down:
+						legs_index = spr_amadix_jeansL_run_d;
+					break;
+					case index_facing.left:
+						legs_index = spr_amadix_jeansL_run_l;
+					break;
+					case index_facing.right:
+						legs_index = spr_amadix_jeansL_run_r;
+					break;
+					case index_facing.up:
+						legs_index = spr_amadix_jeansL_run_u;
+					break;
+				}
+			}
 		}
 			
 	break;
@@ -1723,6 +1757,7 @@ switch(global.playerBoots){
 		if (skid){
 			boots_index = spr_amadix_newB_skid;	
 		}else{
+			if (running != 2){
 				switch(actionstate){
 					//eating--------------------------------------------------------
 					case player_state_action.eating:
@@ -1925,6 +1960,22 @@ switch(global.playerBoots){
 					//--------------------------------------------------------------
 				
 				}
+			}else{
+				switch(facing){
+					case index_facing.down:
+						boots_index = spr_amadix_newB_run_d;
+					break;
+					case index_facing.left:
+						boots_index = spr_amadix_newB_run_l;
+					break;
+					case index_facing.right:
+						boots_index = spr_amadix_newB_run_r;
+					break;
+					case index_facing.up:
+						boots_index = spr_amadix_newB_run_u;
+					break;
+				}
+			}
 		}
 			
 	break;

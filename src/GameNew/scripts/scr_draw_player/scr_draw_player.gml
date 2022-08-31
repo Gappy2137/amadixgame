@@ -36,7 +36,7 @@ function drawPlayerNormal(xx, yy, zz, cutoff){
 		draw_sprite_part_ext(boots_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height+zz,xx-sprite_xoffset,yy-zz,image_xscale,image_yscale,c_white,image_alpha);
 					
 		//Czapka
-		draw_sprite_part_ext(hat_index,hat_frame,0,sprite_yoffset,sprite_width,sprite_height+zz,xx-sprite_xoffset,yy - zz - 12 + hatY,image_xscale,image_yscale,c_white,image_alpha);
+		draw_sprite_ext(hat_index,hat_frame,xx,yy - zz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 	}
 
 	//----------------------------------------------------------------------------------------------------------------
@@ -91,7 +91,7 @@ function drawPlayerEating(xx, yy, zz, cutoff){
 		draw_sprite_part_ext(boots_index,0,0,sprite_yoffset,sprite_width,sprite_height+zz,xx-sprite_xoffset,yy-zz,image_xscale,image_yscale,c_white,image_alpha);
 					
 		//Czapka
-		draw_sprite_part_ext(hat_index,hat_frame,0,sprite_yoffset,sprite_width,sprite_height+zz,xx-sprite_xoffset,yy - zz - 12 + hatY,image_xscale,image_yscale,c_white,image_alpha);
+		draw_sprite_ext(hat_index,hat_frame,xx,yy - zz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 	}
 
 	//----------------------------------------------------------------------------------------------------------------
@@ -147,7 +147,7 @@ function drawPlayerDrinking(xx, yy, zz, cutoff){
 		draw_sprite_part_ext(boots_index,0,0,sprite_yoffset,sprite_width,sprite_height+zz,xx-sprite_xoffset,yy-zz,image_xscale,image_yscale,c_white,image_alpha);
 					
 		//Czapka
-		draw_sprite_part_ext(hat_index,hat_frame,0,sprite_yoffset,sprite_width,sprite_height+zz,xx-sprite_xoffset,yy - zz - 12 + hatY,image_xscale,image_yscale,c_white,image_alpha);
+		draw_sprite_ext(hat_index,hat_frame,xx,yy - zz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 	}
 
 	//----------------------------------------------------------------------------------------------------------------
@@ -210,7 +210,7 @@ function drawPlayerPickup(xx, yy, zz, cutoff){
 		draw_sprite_part_ext(boots_index,anim_frame_action,0,sprite_yoffset,sprite_width,sprite_height+zz,xx-sprite_xoffset,yy-zz,image_xscale,image_yscale,c_white,image_alpha);
 					
 		//Czapka
-		draw_sprite_part_ext(hat_index,hat_frame,0,sprite_yoffset,sprite_width,sprite_height+zz,xx-sprite_xoffset,yy - zz - 12 + hatY,image_xscale,image_yscale,c_white,image_alpha);
+		draw_sprite_ext(hat_index,hat_frame,xx,yy - zz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 	}
 
 	//----------------------------------------------------------------------------------------------------------------
@@ -253,7 +253,7 @@ function drawPlayerMelee(xx, yy, zz, cutoff){
 		draw_sprite_part_ext(boots_index,anim_frame_action,0,sprite_yoffset,sprite_width,sprite_height+zz,xx-sprite_xoffset,yy-zz,image_xscale,image_yscale,c_white,image_alpha);
 					
 		//Czapka
-		draw_sprite_part_ext(hat_index,hat_frame,0,sprite_yoffset,sprite_width,sprite_height+zz,xx-sprite_xoffset,yy - zz - 12 + hatY,image_xscale,image_yscale,c_white,image_alpha);
+		draw_sprite_ext(hat_index,hat_frame,xx,yy - zz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 	}
 	//----------------------------------------------------------------------------------------------------------------
 }
@@ -349,7 +349,7 @@ function drawPlayerHandgun(xx, yy, zz, cutoff){
 					draw_sprite_ext(gun_index,anim_frame_action,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);	
 		
 					//Czapka
-					draw_sprite_part_ext(hat_index,hat_frame,0,sprite_yoffset,sprite_width,sprite_height+zz,xx-sprite_xoffset,yy - zz - 12 + hatY,image_xscale,image_yscale,c_white,image_alpha);
+					draw_sprite_ext(hat_index,hat_frame,xx,yy - zz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 		}
 		//----------------------------------------------------------------------------------------------------------------
 		break;
@@ -368,7 +368,10 @@ function drawPlayerHandgun(xx, yy, zz, cutoff){
 
 					//Buty
 					draw_sprite_ext(boots_index,anim_frame,xx,yy - zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-		
+					
+					//Czapka
+					draw_sprite_ext(hat_index,hat_frame,xx,yy - zz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+					
 					//Rece i dlonie
 					if (instance_exists(obj_gun_logic)){
 						if (obj_gun_logic.state == gunState.reloading) || (obj_gun_logic.state == gunState.shooting) || (obj_gun_logic.state == gunState.reloading_empty){
@@ -386,9 +389,7 @@ function drawPlayerHandgun(xx, yy, zz, cutoff){
 		
 					//Bron
 					draw_sprite_ext(gun_index,anim_frame_action,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);	
-		
-					//Czapka
-					draw_sprite_ext(hat_index,hat_frame,xx,yy - zz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+
 		}else{
 					//Glowa
 					draw_sprite_part_ext(head_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height+zz,xx-sprite_xoffset,yy-zz,image_xscale,image_yscale,c_white,image_alpha);
@@ -401,6 +402,9 @@ function drawPlayerHandgun(xx, yy, zz, cutoff){
 
 					//Buty
 					draw_sprite_part_ext(boots_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height+zz,xx-sprite_xoffset,yy-zz,image_xscale,image_yscale,c_white,image_alpha);	
+		
+					//Czapka
+					draw_sprite_ext(hat_index,hat_frame,xx,yy - zz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
 		
 					//Rece i dlonie
 					if (instance_exists(obj_gun_logic)){
@@ -419,9 +423,7 @@ function drawPlayerHandgun(xx, yy, zz, cutoff){
 		
 					//Bron
 					draw_sprite_ext(gun_index,anim_frame_action,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
-		
-					//Czapka
-					draw_sprite_part_ext(hat_index,hat_frame,0,sprite_yoffset,sprite_width,sprite_height+zz,xx-sprite_xoffset,yy - zz - 12 + hatY,image_xscale,image_yscale,c_white,image_alpha);
+
 		}
 
 		//----------------------------------------------------------------------------------------------------------------
@@ -441,7 +443,10 @@ function drawPlayerHandgun(xx, yy, zz, cutoff){
 
 					//Buty
 					draw_sprite_ext(boots_index,anim_frame,xx,yy - zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-		
+					
+					//Czapka
+					draw_sprite_ext(hat_index,hat_frame,xx,yy - zz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+					
 					//Rece i dlonie
 					if (instance_exists(obj_gun_logic)){
 						if (obj_gun_logic.state == gunState.reloading) || (obj_gun_logic.state == gunState.shooting) || (obj_gun_logic.state == gunState.reloading_empty){
@@ -460,8 +465,7 @@ function drawPlayerHandgun(xx, yy, zz, cutoff){
 					//Bron
 					draw_sprite_ext(gun_index,anim_frame_action,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);	
 		
-					//Czapka
-					draw_sprite_ext(hat_index,hat_frame,xx,yy - zz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+
 		}else{
 					//Glowa
 					draw_sprite_part_ext(head_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height+zz,xx-sprite_xoffset,yy-zz,image_xscale,image_yscale,c_white,image_alpha);
@@ -474,7 +478,10 @@ function drawPlayerHandgun(xx, yy, zz, cutoff){
 
 					//Buty
 					draw_sprite_part_ext(boots_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height+zz,xx-sprite_xoffset,yy-zz,image_xscale,image_yscale,c_white,image_alpha);	
-		
+					
+					//Czapka
+					draw_sprite_ext(hat_index,hat_frame,xx,yy - zz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+					
 					//Rece i dlonie
 					if (instance_exists(obj_gun_logic)){
 						if (obj_gun_logic.state == gunState.reloading) || (obj_gun_logic.state == gunState.shooting) || (obj_gun_logic.state == gunState.reloading_empty){
@@ -492,9 +499,7 @@ function drawPlayerHandgun(xx, yy, zz, cutoff){
 		
 					//Bron
 					draw_sprite_ext(gun_index,anim_frame_action,xx + hand_xoffset,yy - zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
-		
-					//Czapka
-					draw_sprite_part_ext(hat_index,hat_frame,0,sprite_yoffset,sprite_width,sprite_height+zz,xx-sprite_xoffset,yy - zz - 12 + hatY,image_xscale,image_yscale,c_white,image_alpha);
+
 		}
 
 		//----------------------------------------------------------------------------------------------------------------
@@ -567,7 +572,7 @@ function drawPlayerHandgun(xx, yy, zz, cutoff){
 					draw_sprite_part_ext(boots_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height+zz,xx-sprite_xoffset,yy-zz,image_xscale,image_yscale,c_white,image_alpha);	
 					
 					//Czapka
-					draw_sprite_part_ext(hat_index,hat_frame,0,sprite_yoffset,sprite_width,sprite_height+zz,xx-sprite_xoffset,yy - zz - 12 + hatY,image_xscale,image_yscale,c_white,image_alpha);
+					draw_sprite_ext(hat_index,hat_frame,xx,yy - zz - 12 + hatY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 		}
 
 		//----------------------------------------------------------------------------------------------------------------

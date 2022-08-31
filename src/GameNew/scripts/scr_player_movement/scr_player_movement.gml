@@ -202,46 +202,269 @@ with (obj_amadix){
 					}
 		break;
 		case player_state.wading_idle:
-					if (running){
-						spd = runspeed + _spd;
-						anim_speed = 0.16;
-					}else{
-						spd = walkspeed + _spd;
-						anim_speed = 0.12;
-					}
+						if (running == 0){
+								max_spd = walkspeed + _spd;
+								spd = walkspeed + _spd;
+								anim_speed = 0.09;
+								accel = 0.6;
+								deccel = 0.35;
+								
+								runningTimer = timeToRun;
+								
+								if (key_run){
+									running = 1;
+								}else{
+									running = 0;	
+								}
+								
+						}else if (running == 1){
+								max_spd = runspeed + _spd;
+								spd = lerp(spd, (runspeed + _spd), 0.1);
+								anim_speed = lerp(anim_speed, 0.15, 0.05);
+								
+								accel = 0.3;
+								deccel = 0.3;
+							
+								
+								if (!key_run){
+									running = 0;	
+								}else{
+									if (runningTimer <= 0){
+										if ((round(anim_frame) == 0) || (round(anim_frame) == 2)){
+											runningTimer = 0;
+										}
+									}else{
+										runningTimer--;	
+									}
+									
+									if (runningTimer == 0){
+										anim_frame = 0;
+										running = 2;	
+									}
+								}
+								
+						}else{
+								max_spd = runspeed + _spd;
+								spd = runspeed + _spd;
+								anim_speed = 0.3;
+								accel = 0.3;
+								deccel = 0.25;
+								
+								runningTimer = timeToRun;
+								
+								if (!key_run){
+									running = 0;	
+								}else{
+									running = 2;	
+								}
+						}
+					//if (running){
+					//	spd = runspeed + _spd;
+					//	anim_speed = 0.16;
+					//}else{
+					//	spd = walkspeed + _spd;
+					//	anim_speed = 0.12;
+					//}
 		break;
 		case player_state.swimming_idle:
-					if (running){
-						spd = runspeed + _spd;
-						anim_speed = 0.16;
-					}else{
-						spd = walkspeed + _spd;
-						anim_speed = 0.12;
-					}
+						if (running == 0){
+								max_spd = walkspeed + _spd;
+								spd = walkspeed + _spd;
+								anim_speed = 0.09;
+								accel = 0.6;
+								deccel = 0.35;
+								
+								runningTimer = timeToRun;
+								
+								if (key_run){
+									running = 1;
+								}else{
+									running = 0;	
+								}
+								
+						}else if (running == 1){
+								max_spd = runspeed + _spd;
+								spd = lerp(spd, (runspeed + _spd), 0.1);
+								anim_speed = lerp(anim_speed, 0.15, 0.05);
+								
+								accel = 0.3;
+								deccel = 0.3;
+							
+								
+								if (!key_run){
+									running = 0;	
+								}else{
+									if (runningTimer <= 0){
+										if ((round(anim_frame) == 0) || (round(anim_frame) == 2)){
+											runningTimer = 0;
+										}
+									}else{
+										runningTimer--;	
+									}
+									
+									if (runningTimer == 0){
+										anim_frame = 0;
+										running = 2;	
+									}
+								}
+								
+						}else{
+								max_spd = runspeed + _spd;
+								spd = runspeed + _spd;
+								anim_speed = 0.3;
+								accel = 0.3;
+								deccel = 0.25;
+								
+								runningTimer = timeToRun;
+								
+								if (!key_run){
+									running = 0;	
+								}else{
+									running = 2;	
+								}
+						}
+					//if (running){
+					//	spd = runspeed + _spd;
+					//	anim_speed = 0.16;
+					//}else{
+					//	spd = walkspeed + _spd;
+					//	anim_speed = 0.12;
+					//}
 		break;
 		case player_state.wading:
-					if (running){
-						spd = runspeed - 0.35 + _spd;
-						anim_speed = 0.1;
-					}else{
-						spd = walkspeed - 0.3 + _spd;
-						anim_speed = 0.08;
-					}
+						if (running == 0){
+								max_spd = walkspeed - 0.35 + _spd;
+								spd = walkspeed - 0.35 + _spd;
+								anim_speed = 0.08;
+								accel = 0.2;
+								deccel = 0.6;
+								
+								runningTimer = timeToRun;
+								
+								if (key_run){
+									running = 1;
+								}else{
+									running = 0;	
+								}
+								
+						}else if (running == 1){
+								max_spd = runspeed - 0.35 + _spd;
+								spd = lerp(spd, (runspeed - 0.35 + _spd), 0.1);
+								anim_speed = lerp(anim_speed, 0.08, 0.05);
+								
+								accel = 0.2;
+								deccel = 0.6;
+								
+								if (!key_run){
+									running = 0;	
+								}else{
+									if (runningTimer <= 0){
+										if ((round(anim_frame) == 0) || (round(anim_frame) == 2)){
+											runningTimer = 0;
+										}
+									}else{
+										runningTimer--;	
+									}
+									
+									if (runningTimer == 0){
+										anim_frame = 0;
+										running = 2;	
+									}
+								}
+								
+						}else{
+								max_spd = runspeed - 0.35 + _spd;
+								spd = runspeed - 0.35 + _spd;
+								anim_speed = 0.1;
+								accel = 0.2;
+								deccel = 0.6;
+								
+								runningTimer = timeToRun;
+								
+								if (!key_run){
+									running = 0;	
+								}else{
+									running = 2;	
+								}
+						}
+					//if (running){
+					//	spd = runspeed - 0.35 + _spd;
+					//	anim_speed = 0.1;
+					//}else{
+					//	spd = walkspeed - 0.3 + _spd;
+					//	anim_speed = 0.08;
+					//}
 	
-					accel = 0.2;
-					deccel = 0.6;
+					//accel = 0.2;
+					//deccel = 0.6;
 		break;
 		case player_state.swimming:
-					if (running){
-						spd = runspeed - 0.55 + _spd;
-						anim_speed = 0.08;
-					}else{
-						spd = walkspeed - 0.5 + _spd;
-						anim_speed = 0.05;
-					}
+						if (running == 0){
+								max_spd = walkspeed - 0.5 + _spd;
+								spd = walkspeed - 0.5 + _spd;
+								anim_speed = 0.05;
+								accel = 0.15;
+								deccel = 0.2;
+								
+								runningTimer = timeToRun;
+								
+								if (key_run){
+									running = 1;
+								}else{
+									running = 0;	
+								}
+								
+						}else if (running == 1){
+								max_spd = walkspeed - 0.5 + _spd;
+								spd = lerp(spd, (runspeed - 0.5 + _spd), 0.05);
+								anim_speed = lerp(anim_speed, 0.05, 0.05);
+								
+								accel = 0.15;
+								deccel = 0.2;
+							
+								
+								if (!key_run){
+									running = 0;	
+								}else{
+									if (runningTimer <= 0){
+										if ((round(anim_frame) == 0) || (round(anim_frame) == 2)){
+											runningTimer = 0;
+										}
+									}else{
+										runningTimer--;	
+									}
+									
+									if (runningTimer == 0){
+										anim_frame = 0;
+										running = 2;	
+									}
+								}
+								
+						}else{
+								max_spd = runspeed - 0.55 + _spd;
+								spd = runspeed - 0.55 + _spd;
+								anim_speed = 0.08;
+								accel = 0.15;
+								deccel = 0.2;
+								
+								runningTimer = timeToRun;
+								
+								if (!key_run){
+									running = 0;	
+								}else{
+									running = 2;	
+								}
+						}
+					//if (running){
+					//	spd = runspeed - 0.55 + _spd;
+					//	anim_speed = 0.08;
+					//}else{
+					//	spd = walkspeed - 0.5 + _spd;
+					//	anim_speed = 0.05;
+					//}
 	
-					accel = 0.15;
-					deccel = 0.2;
+					//accel = 0.15;
+					//deccel = 0.2;
 		break;
 	}
 

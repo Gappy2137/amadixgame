@@ -22,10 +22,10 @@ function meta_rgb() {
 #endregion
 #region debug mode
 function sh_debug(arg) {
-	if (real(arg[1]) == 1) || (arg[1] == "true"){
+	if (real(arg[1]) == 1){
 		global.debugMode = true;
 	}
-	if (real(arg[1]) == 0) || (arg[1] == "false"){
+	if (real(arg[1]) == 0){
 		global.debugMode = false;
 	}
 }
@@ -38,14 +38,14 @@ function meta_debug() {
 	}
 }
 #endregion
-#region rot val
+#region time speed
 function sh_set_rot_val(arg) {
 	obj_daynightclock.rotval = real(arg[1]);
 }
 
 function meta_set_rot_val() {
 	return {
-		description: "",
+		description: "Changes time speed",
 		arguments: ["timeSpeed"],
 		hidden: false
 	}

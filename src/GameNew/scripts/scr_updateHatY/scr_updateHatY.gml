@@ -4,7 +4,7 @@ function scr_updateHatY(){
 			hatY = 0;
 		break;
 		case player_state.moving:
-			if (!running){
+			if (running != 2){
 				if (floor(anim_frame) == 0){hatY = 0;}
 				if (floor(anim_frame) == 1){hatY = 1;}
 				if (floor(anim_frame) == 2){hatY = 0;}
@@ -25,16 +25,88 @@ function scr_updateHatY(){
 			}
 		break;
 		case player_state.wading_idle:
-			
+			if (running != 2){
+				if (floor(anim_frame) == 0){hatY = 0;}
+				if (floor(anim_frame) == 1){hatY = 1;}
+				if (floor(anim_frame) == 2){hatY = 0;}
+				if (floor(anim_frame) == 3){hatY = 1;}
+			}else{
+				if (floor(anim_frame) == 0){hatY = 0;}
+				if (floor(anim_frame) == 1){hatY = 1;}
+				if (floor(anim_frame) == 2){hatY = 2;}
+				if (floor(anim_frame) == 3){hatY = 3;}
+				if (floor(anim_frame) == 4){hatY = 3;}
+				if (floor(anim_frame) == 5){hatY = 1;}
+				if (floor(anim_frame) == 6){hatY = 0;}
+				if (floor(anim_frame) == 7){hatY = 1;}
+				if (floor(anim_frame) == 8){hatY = 2;}
+				if (floor(anim_frame) == 9){hatY = 3;}
+				if (floor(anim_frame) == 10){hatY = 3;}
+				if (floor(anim_frame) == 11){hatY = 1;}
+			}
 		break;
 		case player_state.wading:
-			
+			if (running != 2){
+				if (floor(anim_frame) == 0){hatY = 0;}
+				if (floor(anim_frame) == 1){hatY = 1;}
+				if (floor(anim_frame) == 2){hatY = 0;}
+				if (floor(anim_frame) == 3){hatY = 1;}
+			}else{
+				if (floor(anim_frame) == 0){hatY = 0;}
+				if (floor(anim_frame) == 1){hatY = 1;}
+				if (floor(anim_frame) == 2){hatY = 2;}
+				if (floor(anim_frame) == 3){hatY = 3;}
+				if (floor(anim_frame) == 4){hatY = 3;}
+				if (floor(anim_frame) == 5){hatY = 1;}
+				if (floor(anim_frame) == 6){hatY = 0;}
+				if (floor(anim_frame) == 7){hatY = 1;}
+				if (floor(anim_frame) == 8){hatY = 2;}
+				if (floor(anim_frame) == 9){hatY = 3;}
+				if (floor(anim_frame) == 10){hatY = 3;}
+				if (floor(anim_frame) == 11){hatY = 1;}
+			}
 		break;
 		case player_state.swimming_idle:
-			
+			if (running != 2){
+				if (floor(anim_frame) == 0){hatY = 0;}
+				if (floor(anim_frame) == 1){hatY = 1;}
+				if (floor(anim_frame) == 2){hatY = 0;}
+				if (floor(anim_frame) == 3){hatY = 1;}
+			}else{
+				if (floor(anim_frame) == 0){hatY = 0;}
+				if (floor(anim_frame) == 1){hatY = 1;}
+				if (floor(anim_frame) == 2){hatY = 2;}
+				if (floor(anim_frame) == 3){hatY = 3;}
+				if (floor(anim_frame) == 4){hatY = 3;}
+				if (floor(anim_frame) == 5){hatY = 1;}
+				if (floor(anim_frame) == 6){hatY = 0;}
+				if (floor(anim_frame) == 7){hatY = 1;}
+				if (floor(anim_frame) == 8){hatY = 2;}
+				if (floor(anim_frame) == 9){hatY = 3;}
+				if (floor(anim_frame) == 10){hatY = 3;}
+				if (floor(anim_frame) == 11){hatY = 1;}
+			}
 		break;
 		case player_state.swimming:
-			
+			if (running != 2){
+				if (floor(anim_frame) == 0){hatY = 0;}
+				if (floor(anim_frame) == 1){hatY = 1;}
+				if (floor(anim_frame) == 2){hatY = 0;}
+				if (floor(anim_frame) == 3){hatY = 1;}
+			}else{
+				if (floor(anim_frame) == 0){hatY = 0;}
+				if (floor(anim_frame) == 1){hatY = 1;}
+				if (floor(anim_frame) == 2){hatY = 2;}
+				if (floor(anim_frame) == 3){hatY = 3;}
+				if (floor(anim_frame) == 4){hatY = 3;}
+				if (floor(anim_frame) == 5){hatY = 1;}
+				if (floor(anim_frame) == 6){hatY = 0;}
+				if (floor(anim_frame) == 7){hatY = 1;}
+				if (floor(anim_frame) == 8){hatY = 2;}
+				if (floor(anim_frame) == 9){hatY = 3;}
+				if (floor(anim_frame) == 10){hatY = 3;}
+				if (floor(anim_frame) == 11){hatY = 1;}
+			}
 		break;
 	}
 	switch(actionstate){
