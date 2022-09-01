@@ -1,4 +1,4 @@
-var camw = camera_get_view_width(view_camera[0]);
+/*var camw = camera_get_view_width(view_camera[0]);
 var camh = camera_get_view_height(view_camera[0]);
 var portw = view_get_wport(0);
 var porth = view_get_hport(0);
