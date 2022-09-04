@@ -33,33 +33,59 @@ function sh_debug(arg) {
 function meta_debug() {
 	return {
 		description: "Enables debug mode",
-		arguments: ["true/false"],
+		arguments: ["1/0"],
 		hidden: false
 	}
 }
 #endregion
-#region time speed
-function sh_set_rot_val(arg) {
-	obj_daynightclock.rotval = real(arg[1]);
+#region time scale
+function sh_timescale(arg) {
+	obj_daynightclock.timescale = real(arg[1]);
 }
 
-function meta_set_rot_val() {
+function meta_timescale() {
 	return {
-		description: "Changes time speed",
-		arguments: ["timeSpeed"],
+		description: "Changes time scale",
+		arguments: ["timescale"],
 		hidden: false
 	}
 }
 #endregion
 #region time set
 function sh_time_set(args) {
-	obj_daynightclock.rotval = ((real(args[1])/24)*360)+((real(args[2])/60)*15);
+	obj_daynightclock.rot = ((real(args[1])/24)*360)+((real(args[2])/60)*15);
 }
 
 function meta_time_set() {
 	return {
 		description: "Changes time",
 		arguments: ["hour", "minute"],
+		hidden: false
+	}
+}
+#endregion
+#region time stop
+function sh_time_stop() {
+	obj_daynightclock.rotval = 0;
+}
+
+function meta_time_stop() {
+	return {
+		description: "Stops time",
+		arguments: [],
+		hidden: false
+	}
+}
+#endregion
+#region time resume
+function sh_time_resume() {
+	obj_daynightclock.rotval = CLOCKTICK;
+}
+
+function meta_time_resume() {
+	return {
+		description: "Resumes time",
+		arguments: [],
 		hidden: false
 	}
 }
@@ -90,12 +116,12 @@ function meta_give_cap() {
 	}
 }
 #endregion
-#region cast effect
-function sh_cast_effect(args) {
+#region give effect
+function sh_give_effect(args) {
 	effect_add(real(args[1]), real(args[2]), real(args[3]));
 }
 
-function meta_cast_effect() {
+function meta_give_effect() {
 	return {
 		description: "Casts provided effect upon the player",
 		arguments: ["effect_id", "duration", "amplifier"],

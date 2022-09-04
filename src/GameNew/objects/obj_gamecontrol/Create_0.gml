@@ -32,6 +32,8 @@ global.font_itemnum = font_add_sprite(spr_font_item_num, ord("0123456789-.%"), f
 
 game_set_speed(GAMESPEED, gamespeed_fps);
 
+#macro CLOCKTICK 0.004
+
 // New seed
 randomize();
 

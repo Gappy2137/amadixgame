@@ -1,5 +1,5 @@
 if !(obj_weather.weatherchange < obj_weather.weatherChangeAmount){
-	rot += rotval;
+	rot += (rotval * timescale);
 }
 
 
