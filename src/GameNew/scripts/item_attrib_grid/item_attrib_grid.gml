@@ -105,6 +105,7 @@ function item_attrib_grid(){
 	
 	//M1911
 	grid[# INVTYPE, item.m1911] = itemtype.handgun;
+	grid[# INVHP, item.m1911] = 0;
 	
 	//Wodka
 	grid[# INVTYPE, item.vodka] = itemtype.alcohol;
@@ -113,10 +114,12 @@ function item_attrib_grid(){
 	
 	//Sawed off
 	grid[# INVTYPE, item.sawedoff] = itemtype.shotgun;
+	grid[# INVHP, item.sawedoff] = 0;
 	
 	//M1911 mag
 	grid[# INVTYPE, item.m1911mag] = itemtype.magazine;
 	grid[# MAXCAP, item.m1911mag] = 7;
+	
 	
 	var i = 0;
 	

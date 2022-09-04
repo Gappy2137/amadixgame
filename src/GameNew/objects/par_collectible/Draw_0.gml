@@ -1,4 +1,4 @@
-if ((pickedup) || (notActive)){exit;}{exit;}
+if ((pickedup) || (notActive)){exit;}
 
 event_inherited();
 

@@ -3,6 +3,8 @@ ammoCap = 0;
 ammoLoaded = 0;
 ammoExtra = 0;
 
+ammoLoadedInv = 0;
+
 isLoaded = true;
 canShoot = true;
 canReload = true;

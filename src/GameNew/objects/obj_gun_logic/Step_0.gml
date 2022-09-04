@@ -1,5 +1,11 @@
 if (!instance_exists(obj_amadix)){exit;}
 
+// Liczba zaladowanych nabojow pobierana z eq
+if (obj_amadix.actionstate == player_state_action.handgun){
+	ammoLoadedInv = obj_inventory.ds_inventory[# INVHP, obj_inventory.mouse_slotx_second];
+}else{
+	ammoLoadedInv = 0;
+}
 
 // Nie mozna strzelac jezeli przeladowujemy albo nie mamy w reku broni
 if (state == gunState.reloading)
@@ -44,19 +50,23 @@ if (state != gunState.reloading)
 if (state != gunState.reloading)
 && (state != gunState.reloading_empty)
 && (state != gunState.shooting)
-&& (ammoLoaded < ammoCap)
+&& (obj_inventory.ds_inventory[# INVHP, obj_inventory.mouse_slotx_second] < ammoCap)
 && (ammoExtra != 0)
 && (obj_amadix.actionstate == player_state_action.handgun){
 	canReload = true;
 }
 
 //Czy komora jest pusta
-if (ammoLoaded == 0)
+if (obj_inventory.ds_inventory[# INVHP, obj_inventory.mouse_slotx_second] == 0)
+&& (obj_amadix.actionstate == player_state_action.handgun)
 && (state != gunState.shooting)
 && (state != gunState.reloading)
 && (state != gunState.reloading_empty){
 	state = gunState.empty;
 	inChamber = false;
+}else{
+	state = gunState.standby;
+	inChamber = true;
 }
 
 //Czy jest w stanie gotowosci do strzalu
@@ -69,7 +79,7 @@ if (state != gunState.reloading)
 
 if (type == 0){
 	if (mouse_check_button_pressed(mb_left)){
-		if ((ammoLoaded != 0) && (canShoot) && (inChamber)){
+		if ((ammoLoadedInv != 0) && (canShoot) && (inChamber)){
 			
 			obj_amadix.anim_frame_action = 0;
 			
@@ -147,7 +157,8 @@ if (type == 0){
 			state = gunState.shooting;
 			canShoot = false;
 			alarm[0] = shootingTime;
-			ammoLoaded--;
+			ammoLoadedInv--;
+			obj_inventory.ds_inventory[# INVHP, obj_inventory.mouse_slotx_second]--;
 		}
 	}
 	
@@ -173,7 +184,7 @@ if (type == 0){
 	
 }else if (type == 1){
 	if (mouse_check_button_pressed(mb_left)){
-		if ((ammoLoaded != 0) && (canShoot) && (inChamber)){
+		if ((ammoLoadedInv != 0) && (canShoot) && (inChamber)){
 			
 			obj_amadix.anim_frame_action = 0;
 			
@@ -236,7 +247,8 @@ if (type == 0){
 			state = gunState.shooting;
 			canShoot = false;
 			alarm[0] = shootingTime;
-			ammoLoaded--;
+			ammoLoadedInv--;
+			obj_inventory.ds_inventory[# INVHP, obj_inventory.mouse_slotx_second]--;
 		}
 	}
 	
@@ -268,7 +280,7 @@ if (canReload){
 		
 		obj_amadix.anim_frame_action = 0;
 		
-		if (ammoLoaded == 0){
+		if (ammoLoadedInv == 0){
 			state = gunState.reloading_empty;	
 			alarm[1] = reloadTimeEmpty;
 		}else{
@@ -307,7 +319,7 @@ with (obj_amadix){
 				
 				if (obj_gun_logic.shellfix){
 					with (obj_gun_logic){
-						repeat(ammoCap - ammoLoaded){
+						repeat(ammoCap - ammoLoadedInv){
 							var shell_xx = obj_amadix.x + lengthdir_x(7, obj_amadix.shootdir);
 							var shell_yy = obj_amadix.y + 32 + lengthdir_y(10, obj_amadix.shootdir);
 							var shell = instance_create_layer(shell_xx, shell_yy, "Instances", obj_particle);

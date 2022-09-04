@@ -2,9 +2,9 @@
 if (isbounded(x, camera_get_view_x(view_camera[0]) - INSTANCE_LOAD_DISTANCE, camera_get_view_width(view_camera[0]) + INSTANCE_LOAD_DISTANCE*2))
 && (isbounded(y, camera_get_view_y(view_camera[0]) - INSTANCE_LOAD_DISTANCE/32, camera_get_view_height(view_camera[0]) + INSTANCE_LOAD_DISTANCE*3)){
 	notActive = false;
-	angle = 0;
 }else{
 	notActive = true;	
+	angle = 0;
 }
 
 // Regeneration logic

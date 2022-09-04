@@ -26,7 +26,7 @@ with(obj_inventory){
 	var ammo = 0;
 	
 	if (obj_gun_logic.type == 0){
-		if (obj_gun_logic.ammoLoaded >= 1){
+		if (obj_gun_logic.ammoLoadedInv >= 1){
 		
 			//Usuniecie magazynku z ekwipunku i podanie jego pojemnosci
 	
@@ -35,9 +35,9 @@ with(obj_inventory){
 			//Zwrocenie magazynku z broni do ekwipunku
 	
 			//item_mag_add(obj_gun_logic.mag, obj_gun_logic.ammoLoaded - 1, 0);
-			item_add(-1, obj_gun_logic.mag, 1, 0, obj_gun_logic.ammoLoaded - 1);
+			item_add(-1, obj_gun_logic.mag, 1, 0, obj_gun_logic.ammoLoadedInv - 1);
 
-			obj_gun_logic.ammoLoaded = ammo + 1;
+			obj_inventory.ds_inventory[# INVHP, obj_inventory.mouse_slotx_second] = ammo + 1;
 		
 		
 		}else{
@@ -49,23 +49,26 @@ with(obj_inventory){
 			//Zwrocenie magazynku z broni do ekwipunku
 	
 			//item_mag_add(obj_gun_logic.mag, obj_gun_logic.ammoLoaded, 0);
-			item_add(-1, obj_gun_logic.mag, 1, 0, obj_gun_logic.ammoLoaded);
+			item_add(-1, obj_gun_logic.mag, 1, 0, obj_gun_logic.ammoLoadedInv);
 			
-			obj_gun_logic.ammoLoaded = ammo;
+			obj_inventory.ds_inventory[# INVHP, obj_inventory.mouse_slotx_second] = ammo;
 		}
 	}else if (obj_gun_logic.type == 1){
-		if (obj_gun_logic.ammoLoaded == 0){
+		if (obj_gun_logic.ammoLoadedInv == 0){
 			if (obj_gun_logic.ammoExtra >= 2){
-				obj_gun_logic.ammoLoaded = 2;
+				obj_gun_logic.ammoLoadedInv = 2;
+				obj_inventory.ds_inventory[# INVHP, obj_inventory.mouse_slotx_second] = 2;
 				item_remove(obj_gun_logic.mag, 2, false);	
 			}else if (obj_gun_logic.ammoExtra == 1){
-				obj_gun_logic.ammoLoaded = 1;
+				obj_gun_logic.ammoLoadedInv = 1;
+				obj_inventory.ds_inventory[# INVHP, obj_inventory.mouse_slotx_second] = 1;
 				item_remove(obj_gun_logic.mag, 1, false);
 			}
 
-		}else if (obj_gun_logic.ammoLoaded == 1){
+		}else if (obj_gun_logic.ammoLoadedInv == 1){
 			if (obj_gun_logic.ammoExtra >= 1){
-				obj_gun_logic.ammoLoaded = 2;
+				obj_gun_logic.ammoLoadedInv = 2;
+				obj_inventory.ds_inventory[# INVHP, obj_inventory.mouse_slotx_second] = 2;
 				item_remove(obj_gun_logic.mag, 1, false);	
 			}
 		}
