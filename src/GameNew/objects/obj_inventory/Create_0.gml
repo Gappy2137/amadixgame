@@ -8,12 +8,15 @@ show_inventory = false;
 //Pierwszy rzad slotow poza glownym eq
 show_slots = true;
 slots_position_up = false;
+slots_pos_fast = false;
+slots_pos_fast2 = false;
 
 //Wartosci do obliczania pozycji calosci eq
 x_rel = 0;
 y_rel = 0;
 
 ypos = 0;
+yposTemp = false;
 
 canUseInventory = true;
 

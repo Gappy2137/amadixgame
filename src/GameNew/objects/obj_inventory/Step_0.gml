@@ -446,15 +446,19 @@ else if (!show_inventory) && (show_slots){
 	
 	if (!global.eqSlots){
 		if (slots_position_up){
-			ypos = lerp(ypos, -16, .3);
+			ypos = lerp(ypos, -32, .3);
+			yposTemp = 0;
 		}else{
-			ypos = lerp(ypos, GAMEHEIGHT + 16, .3);
+			ypos = lerp(ypos, GAMEHEIGHT + 32, .3);
+			yposTemp = 0;
 		}
 	}else{
 		if (slots_position_up){
-			ypos = 12;
+			ypos = 0 + yposTemp;
+			yposTemp = lerp(yposTemp, 20, .3);
 		}else{
-			ypos = 237;
+			ypos = GAMEHEIGHT + 32 + yposTemp;
+			yposTemp = lerp(yposTemp, -65, .3);
 		}
 	}
 	
@@ -490,7 +494,11 @@ else if (!show_inventory) && (show_slots){
 			if instance_exists(obj_amadix){
 				if (obj_amadix.actionstate == player_state_action.none){
 					if (!global.inDialogue)
+					|| (!global.inConsole)
+					|| (!global.inCutscene)
+					|| (!global.inChest){
 						return true;	
+					}
 				}else
 				if (obj_amadix.actionstate == player_state_action.handgun){
 					if instance_exists(obj_gun_logic){
@@ -500,7 +508,11 @@ else if (!show_inventory) && (show_slots){
 							return false;	
 						}else{
 							if (!global.inDialogue)
+							|| (!global.inConsole)
+							|| (!global.inCutscene)
+							|| (!global.inChest){
 								return true;	
+							}
 						}
 					}
 						

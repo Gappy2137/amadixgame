@@ -4,8 +4,8 @@ if (!surface_exists(global.refl_surf)){
 	var w, h;
 
 	if (global.camera_used){
-		w = camera_get_view_width(view_camera);
-		h = camera_get_view_height(view_camera);
+		w = camera_get_view_width(view_camera[0]);
+		h = camera_get_view_height(view_camera[0]);
 	}
 	else{
 		w = room_width;

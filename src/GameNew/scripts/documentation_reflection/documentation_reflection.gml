@@ -65,13 +65,13 @@ function Documentation_Reflection() {
 
 	**USAGE EXAMPLE**
 	*/
-	refl_start("Refl_Layer", true);			//Starts the reflection in layer "Refl_layer" with camera enabled.
-	refl_water_layer("Tiles_Water", false);	//Sets the layer "Tiles_Water" which contains the water tiles only, with water detection disabled.
-	refl_water_object(obj_puddle);			//Adds obj_puddle as a water object.
+	//refl_start("Refl_Layer", true);			//Starts the reflection in layer "Refl_layer" with camera enabled.
+	//refl_water_layer("Tiles_Water", false);	//Sets the layer "Tiles_Water" which contains the water tiles only, with water detection disabled.
+	//refl_water_object(obj_puddle);			//Adds obj_puddle as a water object.
 
-	refl_add_object(obj_player, 0);			//Enables reflection for obj_player.
-	refl_add_object(obj_tree, 8);			//Enables reflection for obj_tree, with an adjusted offset.
-	refl_add_object(obj_cloud, -16);		//Enables reflection for obj_cloud, an invisible object, with -30 offset, to make it appear far away.
+	//refl_add_object(obj_player, 0);			//Enables reflection for obj_player.
+	//refl_add_object(obj_tree, 8);			//Enables reflection for obj_tree, with an adjusted offset.
+	//refl_add_object(obj_cloud, -16);		//Enables reflection for obj_cloud, an invisible object, with -30 offset, to make it appear far away.
 	/*
 	*/
 

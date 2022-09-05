@@ -16,7 +16,7 @@ if (state == gunState.reloading)
 || (global.inChest)
 || (global.inDialogue)
 || (global.inCutscene){
-	canShoot = false;	
+	canShoot = false;
 }
 
 // Nie mozna przeladowac jezeli strzelamy albo nie mamy w reku broni
@@ -57,16 +57,17 @@ if (state != gunState.reloading)
 }
 
 //Czy komora jest pusta
-if (obj_inventory.ds_inventory[# INVHP, obj_inventory.mouse_slotx_second] == 0)
-&& (obj_amadix.actionstate == player_state_action.handgun)
-&& (state != gunState.shooting)
+if (state != gunState.shooting)
 && (state != gunState.reloading)
 && (state != gunState.reloading_empty){
-	state = gunState.empty;
-	inChamber = false;
-}else{
-	state = gunState.standby;
-	inChamber = true;
+	if (obj_inventory.ds_inventory[# INVHP, obj_inventory.mouse_slotx_second] == 0)
+	&& (obj_amadix.actionstate == player_state_action.handgun){
+		state = gunState.empty;
+		inChamber = false;
+	}else{
+		state = gunState.standby;
+		inChamber = true;
+	}
 }
 
 //Czy jest w stanie gotowosci do strzalu

@@ -5,8 +5,8 @@
 //that suit your liking.
 
 global.wave_speed = 0.5; //Speed of the wave animation
-global.wave_size = 1; //Size of the waves, horizontally
-global.wave_frequency = 1; //Frequency; How much waves are created in a time
+global.wave_size = 2; //Size of the waves, horizontally
+global.wave_frequency = 2; //Frequency; How much waves are created in a time
 
 global.vertical_wave_size = 2; //Size of the vertical waves
 global.vertical_wave_frequency = 4; //Frequency of the vertical waves

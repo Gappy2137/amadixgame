@@ -1,9 +1,11 @@
+
+depth = 1000000;
 /// @description 
 surface_set_target(global.refl_surf);
 
 //Draw water
-var cam_x = camera_get_view_x(view_camera);
-var cam_y = camera_get_view_y(view_camera);
+var cam_x = camera_get_view_x(view_camera[0]);
+var cam_y = camera_get_view_y(view_camera[0]);
 
 //Objects
 for(var i=0; i<ds_list_size(global.water_insts); i++){
