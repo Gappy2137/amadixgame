@@ -23,12 +23,9 @@ wind_enable = true;
 anim_enable = false;
 isWind = false;
 anim_frame_num = 4;
-anim_frame = irandom(anim_frame_num);
+anim_frame = image_index;
 anim_speed = 0;
-if (anim_enable){
-	anim_frame = irandom(anim_frame_num);
-	anim_speed = 0.1;
-}
+
 
 timer = 0;
 
@@ -49,6 +46,9 @@ shallowwater = collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom,
 if (shallowwater){
 	wtr = true;
 	shadowEnable = false;
-	yorigin = 30;	
+	//yorigin -=2 ;
+	//yorigin = 30;
 	//y += 4;
 }
+
+alarm[0] = 1;

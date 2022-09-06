@@ -8,45 +8,48 @@ function scr_player_unstuck() {
 		repeat(_num){
 			if (variable_instance_exists(_list[| __i], "cancollide")){
 				if (_list[| __i].cancollide == true){
-					for(var i = 0; i < 10; ++i;){
+					if (variable_instance_exists(_list[| __i], "zfloor"))
+					&& (variable_instance_exists(_list[| __i], "zheight")){
+						for(var i = 0; i < 10; ++i;){
 				
-							if (!instance_place(x + i, y, par_collision)){
-									x += i;
-									break;
-							}
-							if (!instance_place(x - i, y, par_collision)){
-									x -= i;
-									break;
-							}
-							if (!instance_place(x, y - i, par_collision)){
-									x -= i;
-									break;
-							}
-							if (!instance_place(x, y + i, par_collision)){
-									x += i;
-									break;
-							}
-							if (!instance_place(x + i, y + i, par_collision)){
-									x += i;
-									y += i;
-									break;
-							}
-							if (!instance_place(x - i, y + i, par_collision)){
-									x -= i;
-									y += i;
-									break;
-							}
-							if (!instance_place(x + i, y - i, par_collision)){
-									x += i;
-									y -= i;
-									break;
-							}
-							if (!instance_place(x - i, y - i, par_collision)){
-									x -= i;
-									y -= i;
-									break;
-							}
+								if (!instance_place(x + i, y, par_collision)){
+										x += i;
+										break;
+								}
+								if (!instance_place(x - i, y, par_collision)){
+										x -= i;
+										break;
+								}
+								if (!instance_place(x, y - i, par_collision)){
+										x -= i;
+										break;
+								}
+								if (!instance_place(x, y + i, par_collision)){
+										x += i;
+										break;
+								}
+								if (!instance_place(x + i, y + i, par_collision)){
+										x += i;
+										y += i;
+										break;
+								}
+								if (!instance_place(x - i, y + i, par_collision)){
+										x -= i;
+										y += i;
+										break;
+								}
+								if (!instance_place(x + i, y - i, par_collision)){
+										x += i;
+										y -= i;
+										break;
+								}
+								if (!instance_place(x - i, y - i, par_collision)){
+										x -= i;
+										y -= i;
+										break;
+								}
 
+						}
 					}
 				}
 			}

@@ -1,4 +1,15 @@
+
+
+
 if (instance_exists(obj_amadix)){
+	
+
+	if (obj_amadix.state == player_state.swimming_idle)
+	|| (obj_amadix.state == player_state.swimming){
+		obj_amadix.actionstate = player_state_action.none;
+	}
+
+	
 	switch(obj_amadix.itemeaten){
 		case item.m1911:
 			//type

@@ -9,8 +9,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "par_collision",
-    "path": "objects/par_collision/par_collision.yy",
+    "name": "par_inviswall",
+    "path": "objects/par_inviswall/par_inviswall.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,

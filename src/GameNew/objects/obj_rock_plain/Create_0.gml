@@ -13,3 +13,5 @@ shadowAlpha = 0.3;
 shadowEnable = true;
 
 cancollide = true;
+
+zheight = 8;

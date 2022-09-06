@@ -101,6 +101,7 @@ oneStepEvent[2] = 2;
 z = 0;
 zaxis = 0;
 zfloor = 0;
+zheight = 30;
 
 hat_frame = 0;
 hatY = 0;

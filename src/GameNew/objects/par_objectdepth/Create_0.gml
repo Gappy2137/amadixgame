@@ -2,6 +2,12 @@ event_inherited();
 
 yorigin = 0;
 
+spd = 0;
+hsp = 0;
+vsp = 0;
+zsp = 0;
+gravSpeed = 1;
+jumpSpeed = 10;
 zaxis = 0;
 zfloor = 0;
 zheight = 0;

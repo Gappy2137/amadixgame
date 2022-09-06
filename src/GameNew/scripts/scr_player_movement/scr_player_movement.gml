@@ -714,30 +714,28 @@ with (obj_amadix){
 		var __i = 0;
 		repeat(hor_num){
 			if (variable_instance_exists(hor_list[| __i], "cancollide")){
-				if (hor_list[| __i].cancollide == true){
-						var yplus = 0;
+								var yplus = 0;
 
-						//can we go above?
-						while (instance_place(x + hsp, y - yplus, par_collision) && yplus <= abs(hsp)) yplus += 1;
-						if ((!instance_place(x + hsp, y - yplus, par_collision)) && (!key_down)) {
-							//if you can go up, then go up
-							y -= yplus;
-						} else {
-							//we can't go above it   
-							//can we go below?
-							while (instance_place(x + hsp, y + yplus, par_collision) && yplus <= abs(hsp)) yplus += 1;
-							if ((!instance_place(x + hsp, y + yplus, par_collision)) && (!key_up)) {
-							    //if we can go down, then we'll go down
-							    y += yplus;
-							} else {
-							    //we can't go below it
-							    //we get as close as we can to the wall and stop
-							    while (!instance_place(x + sign(hsp), y, par_collision))
-							        x += sign(hsp);
-							    hsp = 0;
-							}
-						}
-				}
+								//can we go above?
+								while (instance_place_3d(x + hsp, y - yplus, zaxis, par_collision) && yplus <= abs(hsp)) yplus += 1;
+								if ((!instance_place_3d(x + hsp, y - yplus, zaxis, par_collision)) && (!key_down)) {
+									//if you can go up, then go up
+									y -= yplus;
+								} else {
+									//we can't go above it   
+									//can we go below?
+									while (instance_place_3d(x + hsp, y + yplus, zaxis, par_collision) && yplus <= abs(hsp)) yplus += 1;
+									if ((!instance_place_3d(x + hsp, y + yplus, zaxis, par_collision)) && (!key_up)) {
+									    //if we can go down, then we'll go down
+									    y += yplus;
+									} else {
+									    //we can't go below it
+									    //we get as close as we can to the wall and stop
+									    while (!instance_place_3d(x + sign(hsp), y, zaxis, par_collision))
+									        x += sign(hsp);
+									    hsp = 0;
+									}
+								}
 			}
 			__i++;
 		}
@@ -784,28 +782,28 @@ with (obj_amadix){
 		repeat(ver_num){
 			if (variable_instance_exists(ver_list[| __i], "cancollide")){
 				if (ver_list[| __i].cancollide == true){
-						var xplus = 0;
+								var xplus = 0;
 
-						//can we go to the left?
-						while (instance_place(x - xplus, y + vsp, par_collision) && xplus <= abs(vsp)) xplus += 1;
-						if ((!instance_place(x - xplus, y + vsp, par_collision)) && (!key_right)) {
-						    //if you can go to the left, then go to the left
-						    x -= xplus;
-						} else {
-						    //we can't go to the left   
-						    //can we go to the right?
-						    while (instance_place(x + xplus, y + vsp, par_collision) && xplus <= abs(vsp)) xplus += 1;
-						    if ((!instance_place(x + xplus, y + vsp, par_collision)) && (!key_left)) {
-						        //if we can go to the right, then we'll go right
-						        x += xplus;
-						    } else {
-						        //we can't go right
-						        //we get as close as we can to the wall and stop
-						        while (!instance_place(x, y + sign(vsp), par_collision))
-						            y += sign(vsp);
-						        vsp = 0;
-						    }
-						}
+								//can we go to the left?
+								while (instance_place_3d(x - xplus, y + vsp, zaxis, par_collision) && xplus <= abs(vsp)) xplus += 1;
+								if ((!instance_place_3d(x - xplus, y + vsp, zaxis, par_collision)) && (!key_right)) {
+								    //if you can go to the left, then go to the left
+								    x -= xplus;
+								} else {
+								    //we can't go to the left   
+								    //can we go to the right?
+								    while (instance_place_3d(x + xplus, y + vsp, zaxis, par_collision) && xplus <= abs(vsp)) xplus += 1;
+								    if ((!instance_place_3d(x + xplus, y + vsp, zaxis, par_collision)) && (!key_left)) {
+								        //if we can go to the right, then we'll go right
+								        x += xplus;
+								    } else {
+								        //we can't go right
+								        //we get as close as we can to the wall and stop
+								        while (!instance_place_3d(x, y + sign(vsp), zaxis, par_collision))
+								            y += sign(vsp);
+								        vsp = 0;
+								    }
+								}
 				}
 			}
 			__i++;
@@ -843,6 +841,30 @@ with (obj_amadix){
 	}
 */
 	y += vsp;	
+	
+	//if (zsp < 10){
+	//	zsp += gravSpeed;	
+	//}
+
+
+	
+	//var z_collision = instance_place_3d(x, y, zaxis + zsp, par_collision);
+	
+	//if (z_collision){
+	//	if ((z_collision != noone) && (z_collision.cancollide)){
+	//		zsp = 0;
+	//	}
+	//}
+	
+	
+	
+	//if (zaxis + zsp > zfloor){
+	//	zsp = 0;
+	//	zaxis = zfloor;
+	//}
+	
+	//zaxis += zsp;
+	
 	scr_player_unstuck();
 	scr_player_walkaround();
 	scr_player_pushout();

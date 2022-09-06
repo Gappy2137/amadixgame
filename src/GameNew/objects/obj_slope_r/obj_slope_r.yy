@@ -9,8 +9,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "par_slope",
-    "path": "objects/par_slope/par_slope.yy",
+    "name": "par_inviswall",
+    "path": "objects/par_inviswall/par_inviswall.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,

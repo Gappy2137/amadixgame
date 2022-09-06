@@ -1,7 +1,7 @@
 event_inherited();
 
 if (playerVisible){
-	scr_draw_player(round_to4(x), round_to4(y), round_to4(z));
+	scr_draw_player(round_to4(x), round_to4(y), round_to4(zaxis));
 	
 	if (state == player_state.wading) || (state == player_state.wading_idle){
 		draw_sprite_ext(spr_entity_water_shallow, (obj_gamecontrol.refTimer * 4), x, y + sprite_height, 1, 1, 0, c_white, .9);
@@ -14,6 +14,10 @@ if (playerVisible){
 	}
 	
 }
+
+draw_text(x + 32, y, zaxis);
+draw_text(x + 32, y + 8, zfloor);
+draw_text(x + 32, y + 16, zheight);
 
 //draw_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,true);
 
@@ -28,6 +32,7 @@ if (playerVisible){
 //draw_sprite(arms_index, 0, x + 32, y + 32);
 
 //draw_sprite(arms2_index, 0, x + 32, y + 48);
+
 
 
 //draw_text(x + 32, y, hsp);

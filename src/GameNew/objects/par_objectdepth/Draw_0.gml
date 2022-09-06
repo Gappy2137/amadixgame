@@ -14,6 +14,8 @@ if (instance_exists(obj_shadows)){
 			var _index = image_index;	
 		}
 		
+		
+		
 		gpu_set_fog(true, c_black, 0, 1);
 		//gpu_set_blendmode(bm_max);
 		
@@ -34,5 +36,7 @@ if (instance_exists(obj_shadows)){
 			
 	}
 }
+
+//draw_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,true);
 
 event_inherited();

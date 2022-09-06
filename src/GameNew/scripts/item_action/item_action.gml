@@ -242,7 +242,10 @@ function item_action(){
 			break;
 			case itemtype.food:
 				if (mouse_check_button_pressed(mb_right)){
-					itemActionEat();
+					if (obj_amadix.state != player_state.swimming)
+					&& (obj_amadix.state != player_state.swimming_idle){
+						itemActionEat();
+					}
 				}else{
 					if (obj_amadix.actionstate != player_state_action.eating)
 					itemActionNone();
@@ -250,7 +253,10 @@ function item_action(){
 			break;
 			case itemtype.dish:
 				if (mouse_check_button_pressed(mb_right)){
-					itemActionEat();
+					if (obj_amadix.state != player_state.swimming)
+					&& (obj_amadix.state != player_state.swimming_idle){
+						itemActionEat();
+					}
 				}else{
 					if (obj_amadix.actionstate != player_state_action.eating)
 					itemActionNone();
@@ -258,7 +264,10 @@ function item_action(){
 			break;
 			case itemtype.fruit:
 				if (mouse_check_button_pressed(mb_right)){
-					itemActionEat();
+					if (obj_amadix.state != player_state.swimming)
+					&& (obj_amadix.state != player_state.swimming_idle){
+						itemActionEat();
+					}
 				}else{
 					if (obj_amadix.actionstate != player_state_action.eating)
 					itemActionNone();
@@ -266,7 +275,10 @@ function item_action(){
 			break;
 			case itemtype.vegetable:
 				if (mouse_check_button_pressed(mb_right)){
-					itemActionEat();
+					if (obj_amadix.state != player_state.swimming)
+					&& (obj_amadix.state != player_state.swimming_idle){
+						itemActionEat();
+					}
 				}else{
 					if (obj_amadix.actionstate != player_state_action.eating)
 					itemActionNone();
@@ -274,7 +286,10 @@ function item_action(){
 			break;
 			case itemtype.drink:
 				if (mouse_check_button_pressed(mb_right)){
-					itemActionDrink();
+					if (obj_amadix.state != player_state.swimming)
+					&& (obj_amadix.state != player_state.swimming_idle){
+						itemActionDrink();
+					}
 				}else{
 					if (obj_amadix.actionstate != player_state_action.drinking)
 					itemActionNone();
@@ -282,7 +297,10 @@ function item_action(){
 			break;
 			case itemtype.alcohol:
 				if (mouse_check_button_pressed(mb_right)){
-					itemActionDrink();
+					if (obj_amadix.state != player_state.swimming)
+					&& (obj_amadix.state != player_state.swimming_idle){
+						itemActionDrink();
+					}
 				}else{
 					if (obj_amadix.actionstate != player_state_action.drinking)
 					itemActionNone();
@@ -296,7 +314,10 @@ function item_action(){
 			break;
 			case itemtype.melee:
 				if (mouse_check_button_pressed(mb_left)){
-					itemActionSword();
+					if (obj_amadix.state != player_state.swimming)
+					&& (obj_amadix.state != player_state.swimming_idle){
+						itemActionSword();
+					}
 				}else{
 					if (obj_amadix.actionstate != player_state_action.attacking_melee)
 					itemActionNone();

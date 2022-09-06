@@ -1,4 +1,4 @@
-depth = -(bbox_bottom - (sprite_height - yorigin) + zfloor);
+depth = -(bbox_bottom - (sprite_height - yorigin) + zaxis);
 
 
 //Z axis
@@ -11,4 +11,3 @@ if (object_get_parent(object_index) != (par_grass))
 		zfloor = 0;	
 	}
 }
-
