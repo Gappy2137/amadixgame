@@ -77,8 +77,8 @@ hud_slot_y_active[3] = 0;
 hud_slot_y_active[4] = 0;
 hud_slot_y_active[5] = 0;
 
-effect_x = 16;
-effect_y = 80;
+effect_x = 12;
+effect_y = 148;
 
 maxeffects = 16;
 effect_grid = ds_grid_create(4, maxeffects);

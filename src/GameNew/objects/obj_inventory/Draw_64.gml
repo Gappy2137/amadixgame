@@ -23,11 +23,13 @@ if (show_inventory) && (!show_slots){
 
 	var amx = 148;
 	var amy = 175;
-	//draw_sprite(obj_amadix.head_index, 0, amx, amy);
-	//draw_sprite(obj_amadix.hands_index, 0, amx, amy);
-	//draw_sprite(obj_amadix.torso_index, 0, amx, amy);
-	//draw_sprite(obj_amadix.legs_index, 0, amx, amy);
-	//draw_sprite(obj_amadix.boots_index, 0, amx, amy);
+	
+	draw_sprite(obj_amadix.head_index, 0, amx, amy);
+	draw_sprite(obj_amadix.hat_index, 0, amx, amy);
+	draw_sprite(obj_amadix.hands_index, 0, amx, amy);
+	draw_sprite(obj_amadix.torso_index, 0, amx, amy);
+	draw_sprite(obj_amadix.legs_index, 0, amx, amy);
+	draw_sprite(obj_amadix.boots_index, 0, amx, amy);
 
 
 	//Inventory

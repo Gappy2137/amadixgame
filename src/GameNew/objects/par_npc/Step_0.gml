@@ -25,7 +25,12 @@ if ((canTalkTo) && (mouse_over_me(clickRadius)) && (!global.inDialogue)){
 			if (instance_exists(obj_amadix)){
 				anim_frame = checkFacing(obj_amadix);
 				
-				obj_amadix.facing = checkFacing(real(id));
+				var idd = id;
+				
+				with(obj_amadix){
+					facing = checkFacing(real(idd));
+					scr_setPlayerFacingAnim(facing);
+				}
 	
 				instance_create_layer(x, y, "Important", obj_chatterbox, {
 					dialogueName: dialogue

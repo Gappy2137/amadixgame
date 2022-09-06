@@ -93,6 +93,10 @@ function choiceshow(){
 			dialogue_emotion_convert(myEmotion),
 			portraitboxX_amadix, dialboxY);
 			
+			draw_sprite(spr_portrait_amadix_hats,
+			dialogue_hat(global.playerHat),
+			portraitboxX_amadix, dialboxY);
+			
 			// Portrait edge
 			scr_draw_gui_box_stretch(spr_dialoguebox_edge, portraitboxX_amadix, dialboxY, portraitboxX_amadix + portraitbox_width, dialboxY + dialbox_height);
 			
@@ -187,6 +191,9 @@ function choiceshow(){
 					draw_sprite(spr_portrait_amadix,
 					0,
 					choiceport_x, dialboxY);
+					draw_sprite(spr_portrait_amadix_hats,
+					dialogue_hat(global.playerHat),
+					choiceport_x, dialboxY);
 				}else{
 					draw_sprite(asset_get_index(myPortrait),
 					dialogue_emotion_convert(myEmotion),
@@ -239,6 +246,10 @@ function choiceshow(){
 				// Portrait
 				draw_sprite(spr_portrait_amadix,
 				0,
+				portraitboxX_choice, dialboxY);
+				
+				draw_sprite(spr_portrait_amadix_hats,
+				dialogue_hat(global.playerHat),
 				portraitboxX_choice, dialboxY);
 			
 				// Portrait edge

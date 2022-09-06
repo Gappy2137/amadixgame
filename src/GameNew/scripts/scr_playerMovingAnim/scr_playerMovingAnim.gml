@@ -194,10 +194,10 @@ with(obj_amadix){
 			if ((hsp != 0) || (vsp != 0)){
 				if (timeSinceRunning >= timeToRun){
 					if (actionstate != player_state_action.attacking_melee)
-					|| (state != player_state.wading)
-					|| (state != player_state.wading_idle)
-					|| (state != player_state.swimming)
-					|| (state != player_state.swimming_idle){
+					&& (state != player_state.wading)
+					&& (state != player_state.wading_idle)
+					&& (state != player_state.swimming)
+					&& (state != player_state.swimming_idle){
 						skid = true;
 					}
 				}

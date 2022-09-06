@@ -73,5 +73,10 @@ function scr_updateHatY(){
 					}
 				}
 		break;
+		case player_state_action.pickup:
+			if (floor(anim_frame_action) == 0){hatY = 0;}
+			if (floor(anim_frame_action) == 1){hatY = 3;}
+			if (floor(anim_frame_action) == 2){hatY = 5;}
+		break;
 	}
 }

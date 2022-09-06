@@ -15,9 +15,9 @@ if (playerVisible){
 	
 }
 
-draw_text(x + 32, y, zaxis);
-draw_text(x + 32, y + 8, zfloor);
-draw_text(x + 32, y + 16, zheight);
+//draw_text(x + 32, y, zaxis);
+//draw_text(x + 32, y + 8, zfloor);
+//draw_text(x + 32, y + 16, zheight);
 
 //draw_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,true);
 

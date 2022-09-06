@@ -60,6 +60,3 @@ repeat(bulletsLoaded * 2){
 if (ammoLoadedInv == ammoCap + 1){
 	draw_sprite(spr_extrabullet, 0, (bgX + bgWidth/2), bgY - 4);
 }
-
-draw_text(128, 128, ammoLoadedInv);
-draw_text(128, 128 + 16, obj_inventory.ds_inventory[# INVHP, obj_inventory.mouse_slotx_second]);

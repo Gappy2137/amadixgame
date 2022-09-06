@@ -3,6 +3,7 @@ if (instance_exists(obj_inventory)){
 	if (!obj_inventory.show_inventory) && (!obj_inventory.show_slots) && (show_container){		
 		
 	////////////////
+	if (global.debugMode){
 	draw_set_color(c_yellow);
 	draw_text(16, 64 + 12*1, "sel " + string(selected_slot));
 	draw_text(16, 64 + 12*2, "seleq " + string(selected_slot_eq));
@@ -13,6 +14,7 @@ if (instance_exists(obj_inventory)){
 	if (selected_slot_eq!=-1)draw_text(16, 64 + 12*7, "eqitem " + string(obj_inventory.ds_inventory[# INVITEM, selected_slot_eq]));
 	if (selected_slot!=-1)draw_text(16, 64 + 12*8, "conam " + string(ds_container[# INVAMOUNT, selected_slot]));
 	if (selected_slot_eq!=-1)draw_text(16, 64 + 12*9, "eqam " + string(obj_inventory.ds_inventory[# INVAMOUNT, selected_slot_eq]));
+	}
 	////////////////
 		
 	draw_sprite_ext(obj_inventory.spr_eq_slotback, 0, 92, 152, 1, 1, 0, c_white, 1);

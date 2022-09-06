@@ -494,9 +494,9 @@ else if (!show_inventory) && (show_slots){
 			if instance_exists(obj_amadix){
 				if (obj_amadix.actionstate == player_state_action.none){
 					if (!global.inDialogue)
-					|| (!global.inConsole)
-					|| (!global.inCutscene)
-					|| (!global.inChest){
+					&& (!global.inConsole)
+					&& (!global.inCutscene)
+					&& (!global.inChest){
 						return true;	
 					}
 				}else
@@ -508,9 +508,9 @@ else if (!show_inventory) && (show_slots){
 							return false;	
 						}else{
 							if (!global.inDialogue)
-							|| (!global.inConsole)
-							|| (!global.inCutscene)
-							|| (!global.inChest){
+							&& (!global.inConsole)
+							&& (!global.inCutscene)
+							&& (!global.inChest){
 								return true;	
 							}
 						}
@@ -519,7 +519,7 @@ else if (!show_inventory) && (show_slots){
 				}
 			}
 		}
-		
+		/*
 		if (mouse_check_button_pressed(mb_left)) && canChange(){
 			show_slots_mouse = true;
 			mouse_slotx_fix = false;
@@ -528,7 +528,7 @@ else if (!show_inventory) && (show_slots){
 			mouse_slotx_second = mouse_slotx;
 			selected_slot = mouse_slotx_second;
 		}
-	
+		*/
 	}else{
 		selected_slot = -1;
 		inslots = false;

@@ -39,7 +39,11 @@ with (obj_amadix){
 	}
 	
 	if (isbounded(skidTimer, 0, skidTime - 1)){
-		if (actionstate != player_state_action.attacking_melee){
+		if (actionstate != player_state_action.attacking_melee)
+		&& (state != player_state.wading)
+		&& (state != player_state.wading_idle)
+		&& (state != player_state.swimming)
+		&& (state != player_state.swimming_idle){
 			canmove = true;
 			if (hsp != 0){
 				hsp = lerp(hsp, 0, 0.15);

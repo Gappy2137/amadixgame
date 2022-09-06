@@ -155,3 +155,29 @@ function meta_wind_set_dir() {
 	}
 }
 #endregion
+#region health set
+function sh_health_set(arg) {
+	global.hp = real(arg[1]);
+}
+
+function meta_health_set() {
+	return {
+		description: "Sets player's health",
+		arguments: ["health"],
+		hidden: false
+	}
+}
+#endregion
+#region stamina set
+function sh_stamina_set(arg) {
+	global.stamina = real(arg[1]);
+}
+
+function meta_stamina_set() {
+	return {
+		description: "Sets player's stamina",
+		arguments: ["stamina"],
+		hidden: false
+	}
+}
+#endregion
