@@ -667,6 +667,7 @@
     {"id":{"name":"scr_tiles_depth","path":"scripts/scr_tiles_depth/scr_tiles_depth.yy",},"order":2,},
     {"id":{"name":"spr_shotgun_shell_shot","path":"sprites/spr_shotgun_shell_shot/spr_shotgun_shell_shot.yy",},"order":6,},
     {"id":{"name":"spr_amadix_hands_gun_u_reload","path":"sprites/spr_amadix_hands_gun_u_reload/spr_amadix_hands_gun_u_reload.yy",},"order":3,},
+    {"id":{"name":"spr_catears_hat","path":"sprites/spr_catears_hat/spr_catears_hat.yy",},"order":1,},
     {"id":{"name":"scribble_anim_cycle","path":"scripts/scribble_anim_cycle/scribble_anim_cycle.yy",},"order":1,},
     {"id":{"name":"__input_keyboard_key","path":"scripts/__input_keyboard_key/__input_keyboard_key.yy",},"order":19,},
     {"id":{"name":"ChatterboxGetVisited","path":"scripts/ChatterboxGetVisited/ChatterboxGetVisited.yy",},"order":6,},

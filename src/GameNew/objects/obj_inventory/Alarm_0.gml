@@ -24,6 +24,7 @@ ds_item_info[# in, i++] = json_read("itemNameM1911mag");
 ds_item_info[# in, i++] = json_read("itemName45ACP");
 ds_item_info[# in, i++] = json_read("itemNameVodka");
 ds_item_info[# in, i++] = json_read("itemNameSawedOff");
+ds_item_info[# in, i++] = json_read("itemNameCatEars");
 #endregion
 
 #region Opisy przedmiotow
@@ -50,6 +51,7 @@ ds_item_info[# in, i++] = json_read("itemDescM1911mag");
 ds_item_info[# in, i++] = json_read("itemDesc45ACP");
 ds_item_info[# in, i++] = json_read("itemDescVodka");
 ds_item_info[# in, i++] = json_read("itemDescSawedOff");
+ds_item_info[# in, i++] = json_read("itemDescCatEars");
 #endregion
 
 #region Rodzaje przedmiotow

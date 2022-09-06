@@ -120,6 +120,10 @@ function item_attrib_grid(){
 	grid[# INVTYPE, item.m1911mag] = itemtype.magazine;
 	grid[# MAXCAP, item.m1911mag] = 7;
 	
+	//Kocie uszy
+	grid[# INVTYPE, item.cat_ears] = itemtype.hat;
+	grid[# INVTEMPERATURE, item.cat_ears] = 0;
+	grid[# INVDEFENCE, item.cat_ears] = 0;
 	
 	var i = 0;
 	

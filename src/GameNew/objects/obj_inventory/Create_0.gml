@@ -173,7 +173,8 @@ enum item{
 	bullet45acp					= 19,
 	vodka						= 20,
 	sawedoff					= 21,
-	height						= 22
+	cat_ears					= 22,
+	height						= 23
 }
 #endregion
 

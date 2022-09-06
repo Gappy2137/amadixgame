@@ -444,6 +444,23 @@ function scr_setPlayerFacingAnim(facing){
 				break;
 			}
 		break;
+		case item.cat_ears:
+			hat_index = spr_catears_hat;
+			switch(facing){
+				case index_facing.down:
+					hat_frame = 0;
+				break;
+				case index_facing.left:
+					hat_frame = 1;
+				break;
+				case index_facing.right:
+					hat_frame = 2;
+				break;
+				case index_facing.up:
+					hat_frame = 3;
+				break;
+			}
+		break;
 	}
 #endregion
 
