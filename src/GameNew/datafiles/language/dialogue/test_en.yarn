@@ -1,6 +1,6 @@
 #__PrivCrochet_version:1
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: -659,-787
+__PrivCrochet_position: -658,-787
 __PrivCrochet_tags: 
 title: Start
 ---
@@ -20,6 +20,13 @@ title: Start
     [speaker,spr_portrait_amadix,emotion_normal,Amadeusz,snd_speech_retro][choice,0]Maybe you should try to chill out?
     <<wait>>
     <<jump EmptySpeaker>>
+-> test...
+    [speaker,spr_portrait_amadix,emotion_normal,Amadeusz,snd_speech_retro][choice,0]Maybe you should try to chill out?
+    <<wait>>
+    <<jump EmptySpeaker>>
+-> Exit
+    [choice,0]
+    <<stop>>
 ===
 __PrivCrochet_colorID: 0
 __PrivCrochet_position: 98,-149
@@ -98,11 +105,21 @@ __PrivCrochet_position: -233,-899
 __PrivCrochet_tags: 
 title: AmadixResponse
 ---
-[speaker,spr_portrait_amadix,emotion_normal,Amadeusz,snd_speech_retro]Lorem ipsum dolor sit amet, consectetur adipiscing elit. [jitter]Nullam[/jitter] vulputate elit in fermentum egestas.
-<<stop>>
+[choice,0][speaker,spr_portrait_walter,emotion_normal,Walter,snd_speech_walter]AA.
+<<wait>>
+[choice,1][speaker,spr_portrait_walter,emotion_normal,Walter,snd_speech_walter]AA.
+-> What?
+    [speaker,spr_portrait_amadix,emotion_normal,Amadeusz,snd_speech_retro][choice,0]What do you mean by this?
+    <<wait>>
+    [speaker,spr_portrait_walter,emotion_normal,Walter,snd_speech_walter]Bravo Vince!
+    <<stop>>
+-> Try me.
+    [speaker,spr_portrait_amadix,emotion_normal,Amadeusz,snd_speech_retro][choice,0]Try me, bitch!
+    <<wait>>
+    <<stop>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: -219,-532
+__PrivCrochet_position: -219,-531
 __PrivCrochet_tags: 
 title: EmptySpeaker
 ---

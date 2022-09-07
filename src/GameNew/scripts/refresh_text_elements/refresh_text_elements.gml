@@ -39,7 +39,7 @@ function refresh_text_elements(){
 
     }else{
 		
-        var _i = 0;
+        var _i = choiceScroll;
         repeat(ChatterboxGetOptionCount(chatterbox)){
 		
 			
@@ -49,7 +49,8 @@ function refresh_text_elements(){
             //_string += string(_i+1) + ") ";
             
             //aaaand add the actual option string too
-            _string += ChatterboxGetOption(chatterbox, _i);
+			if (_i < (4 + choiceScroll))
+				_string += ChatterboxGetOption(chatterbox, _i);
             
             //Cache a new text element using our formatted string
             var _element = scribble(_string);
@@ -66,7 +67,7 @@ function refresh_text_elements(){
             });
             
             //Move down a bit to visually separate each option
-            _y += 16;
+			_y += 16;
             ++_i;
         }
     }

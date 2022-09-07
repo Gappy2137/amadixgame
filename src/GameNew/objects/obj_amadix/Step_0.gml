@@ -73,9 +73,9 @@ if (oneStepEvent[2] == 2){
 
 
 if (keyboard_check_pressed(ord("X"))) && (global.debugMode) && (!global.inConsole){
-	room_speed = 5;	
+	game_set_speed(1, gamespeed_fps);	
 }
 if (keyboard_check_pressed(ord("C"))) && (global.debugMode) && (!global.inConsole){
-	room_speed = 60;	
+	game_set_speed(GAMESPEED, gamespeed_fps);	
 }
 depth = -(bbox_bottom - (sprite_height - yorigin) + zfloor);

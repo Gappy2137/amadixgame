@@ -6,6 +6,9 @@ if (ChatterboxIsStopped(chatterbox)){
     instance_destroy();
 }else{
 	
+	draw_text(128,128,choiceScroll);
+	draw_text(128,148,in);
+	
 if (!show)exit;
 	
 function choiceshow(){
@@ -179,6 +182,12 @@ function choiceshow(){
 						draw_sprite(spr_dialoguebox_choice, onChoice[2], choiceboxX2[2], dialboxY + 32);
 						draw_sprite(spr_dialoguebox_choice, onChoice[3], choiceboxX2[3], dialboxY + 48);
 					break;
+					default:
+						draw_sprite(spr_dialoguebox_choice, onChoice[0], choiceboxX, dialboxY);
+						draw_sprite(spr_dialoguebox_choice, onChoice[1], choiceboxX, dialboxY + 16);
+						draw_sprite(spr_dialoguebox_choice, onChoice[2], choiceboxX, dialboxY + 32);
+						draw_sprite(spr_dialoguebox_choice, onChoice[3], choiceboxX, dialboxY + 48);
+					break;
 				}
 				
 				choiceshow();
@@ -234,6 +243,12 @@ function choiceshow(){
 						draw_sprite(spr_dialoguebox_choice, onChoice[2], choiceboxX, dialboxY + 32);
 						draw_sprite(spr_dialoguebox_choice, onChoice[3], choiceboxX, dialboxY + 48);
 					break;
+					default:
+						draw_sprite(spr_dialoguebox_choice, onChoice[0], choiceboxX, dialboxY);
+						draw_sprite(spr_dialoguebox_choice, onChoice[1], choiceboxX, dialboxY + 16);
+						draw_sprite(spr_dialoguebox_choice, onChoice[2], choiceboxX, dialboxY + 32);
+						draw_sprite(spr_dialoguebox_choice, onChoice[3], choiceboxX, dialboxY + 48);
+					break;
 				}
 
 				
@@ -254,6 +269,17 @@ function choiceshow(){
 			
 				// Portrait edge
 				scr_draw_gui_box_stretch(spr_dialoguebox_edge, portraitboxX_choice, dialboxY, portraitboxX_choice + portraitbox_width, dialboxY + dialbox_height);
+				
+				// Choice arrows
+				if (choiceNum > 4){
+					if (choiceScroll >= 0){
+						draw_sprite(spr_dialoguebox_arrowscroll, 0, 462, 200);
+					}
+					
+					if (choiceScroll < choiceNum){
+						draw_sprite(spr_dialoguebox_arrowscroll, 1, 462, 258);
+					}
+				}
 			}
 
 		break;

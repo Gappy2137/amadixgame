@@ -45,6 +45,7 @@ waitArrow = false;
 boxType = 0;
 
 choiceStop = "0";
+in = 0;
 
 choiceAnim = false;
 choiceAnimDone = false;
@@ -77,6 +78,8 @@ onChoice[0] = 0;
 onChoice[1] = 0;
 onChoice[2] = 0;
 onChoice[3] = 0;
+
+choiceScroll = 0;
 /*
 0 - amadix
 1 - inna osoba

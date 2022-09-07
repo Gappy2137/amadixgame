@@ -248,10 +248,10 @@ with(obj_amadix){
 	*/
 	
 	// Shadows
-	if (state = player_state.wading) 
-	|| (state = player_state.swimming) 
-	|| (state = player_state.swimming_idle) 
-	|| (state = player_state.wading_idle)
+	if (state == player_state.wading) 
+	|| (state == player_state.swimming) 
+	|| (state == player_state.swimming_idle) 
+	|| (state == player_state.wading_idle)
 	|| (!visible){
 		shadowEnable = false;
 	}else{

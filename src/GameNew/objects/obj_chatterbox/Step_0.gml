@@ -41,38 +41,38 @@ if (_complete){
 		choiceNum = (ChatterboxGetOptionCount(chatterbox));
 		var _index = undefined;
 		
-		#region Check for mouse 
+		#region Sprawdz czy mysz jest nad odpowiedzia 
 		
 		var mousex = device_mouse_x_to_gui(0);
 		var mousey = device_mouse_y_to_gui(0);
 
-		if (isbounded(mousex, choiceboxX, choiceboxX + dialbox_width)) && (isbounded(mousey, choiceboxY, choiceboxY + choicebox_height)){
+		if (isbounded(mousex, choiceboxX, choiceboxX + dialbox_width - 6)) && (isbounded(mousey, choiceboxY, choiceboxY + choicebox_height)){
 			onChoice[0] = 1;
 			onChoice[1] = 0;
 			onChoice[2] = 0;
 			onChoice[3] = 0;
-			if (mouse_check_button_pressed(mb_left)) && (choiceNum >= 1) _index = 0;
+			if (mouse_check_button_pressed(mb_left)) && (choiceNum >= 1) _index = 0 + choiceScroll;
 		}else
-		if (isbounded(mousex, choiceboxX, choiceboxX + dialbox_width)) && (isbounded(mousey, choiceboxY + 16, choiceboxY + choicebox_height + 16)){
+		if (isbounded(mousex, choiceboxX, choiceboxX + dialbox_width - 6)) && (isbounded(mousey, choiceboxY + 16, choiceboxY + choicebox_height + 16)){
 			onChoice[0] = 0;
 			onChoice[1] = 1;
 			onChoice[2] = 0;
 			onChoice[3] = 0;
-			if (mouse_check_button_pressed(mb_left)) && (choiceNum >= 2) _index = 1;
+			if (mouse_check_button_pressed(mb_left)) && (choiceNum >= 2) _index = 1 + choiceScroll;
 		}else
-		if (isbounded(mousex, choiceboxX, choiceboxX + dialbox_width)) && (isbounded(mousey, choiceboxY + 32, choiceboxY + choicebox_height + 32)){
+		if (isbounded(mousex, choiceboxX, choiceboxX + dialbox_width - 6)) && (isbounded(mousey, choiceboxY + 32, choiceboxY + choicebox_height + 32)){
 			onChoice[0] = 0;
 			onChoice[1] = 0;
 			onChoice[2] = 1;
 			onChoice[3] = 0;
-			if (mouse_check_button_pressed(mb_left)) && (choiceNum >= 3) _index = 2;
+			if (mouse_check_button_pressed(mb_left)) && (choiceNum >= 3) _index = 2 + choiceScroll;
 		}else
-		if (isbounded(mousex, choiceboxX, choiceboxX + dialbox_width)) && (isbounded(mousey, choiceboxY + 48, choiceboxY + choicebox_height + 48)){
+		if (isbounded(mousex, choiceboxX, choiceboxX + dialbox_width - 6)) && (isbounded(mousey, choiceboxY + 48, choiceboxY + choicebox_height + 48)){
 			onChoice[0] = 0;
 			onChoice[1] = 0;
 			onChoice[2] = 0;
 			onChoice[3] = 1;
-			if (mouse_check_button_pressed(mb_left)) && (choiceNum == 4) _index = 3;
+			if (mouse_check_button_pressed(mb_left)) && (choiceNum == 4) _index = 3 + choiceScroll;
 		}else{
 			onChoice[0] = 0;
 			onChoice[1] = 0;
@@ -81,14 +81,36 @@ if (_complete){
 		}
 		#endregion
 		
+		#region Scroll
+		
+		if (choiceNum > 4){
+			
+			if (choiceScroll < 0)
+				choiceScroll = 0;
+				
+			if (choiceScroll > choiceNum)
+				choiceScroll = choiceNum;
+			
+			if (mouse_wheel_up()) && (choiceScroll > 0){
+				choiceScroll--;
+				refresh_text_options();
+			}
+			
+			if (mouse_wheel_down()) && (choiceScroll < choiceNum - 4){
+				choiceScroll++;
+				refresh_text_options();
+			}
+		}
+		
+		#endregion
+		in = _index;
 		waitArrow = false;
-        /*
-        if (keyboard_check_pressed(ord("1"))) _index = 0;
-        if (keyboard_check_pressed(ord("2"))) _index = 1;
-        if (keyboard_check_pressed(ord("3"))) _index = 2;
-        if (keyboard_check_pressed(ord("4"))) _index = 3;
-        */
         if (_index != undefined){
+			in = _index;
+			choiceScroll = 0;
+			choiceAnim = false;
+			choiceAnimDone = false;
+			choiceAnimMid = false;
             //If the player pressed a number key, choose the corresponding option
             ChatterboxSelect(chatterbox, _index);
             //Always update your text elements after advancing chatterbox!
