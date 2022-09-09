@@ -72,7 +72,7 @@ if (_complete){
 			onChoice[1] = 0;
 			onChoice[2] = 0;
 			onChoice[3] = 1;
-			if (mouse_check_button_pressed(mb_left)) && (choiceNum == 4) _index = 3 + choiceScroll;
+			if (mouse_check_button_pressed(mb_left)) && (choiceNum >= 4) _index = 3 + choiceScroll;
 		}else{
 			onChoice[0] = 0;
 			onChoice[1] = 0;
@@ -110,7 +110,7 @@ if (_complete){
 			choiceScroll = 0;
 			choiceAnim = false;
 			choiceAnimDone = false;
-			choiceAnimMid = false;
+			//choiceAnimMid = false;
             //If the player pressed a number key, choose the corresponding option
             ChatterboxSelect(chatterbox, _index);
             //Always update your text elements after advancing chatterbox!
@@ -167,9 +167,16 @@ switch(myPortrait){
 
 
 
-var _mid = 24;
+var _mid = 16;
 
 if (choiceAnim){
+	
+	if (choiceboxStep <= 0){
+		choiceboxStep = 0;	
+	}else{
+		choiceboxStep--;
+	}
+	
 	choicebox1_x = lerp(choicebox1_x, choicebox1_tox, .3);
 	choicebox2_x = lerp(choicebox2_x, choicebox2_tox, .3);
 	choiceport_x = lerp(choiceport_x, choiceport_tox, .3);
@@ -179,9 +186,9 @@ if (choiceAnim){
 	choiceboxX2[2] = lerp(choiceboxX2[2], choicebox2_tox, .35);
 	choiceboxX2[3] = lerp(choiceboxX2[3], choicebox2_tox, .3);
 	
-	if ((round(choicebox1_x) >= choicebox1_tox + _mid) && (round(choicebox1_x) <= choicebox1_tox + _mid + 8)){
-		choiceAnimMid = true;	
-	}
+	//if ((round(choicebox1_x) >= choicebox1_tox + _mid) && (round(choicebox1_x) <= choicebox1_tox + _mid + 8)){
+	//	choiceAnimMid = true;	
+	//}
 	if (round(choicebox1_x) == choicebox1_tox){
 
 		choicebox1_x = choicebox1_fromx;
@@ -193,12 +200,21 @@ if (choiceAnim){
 		choiceboxX2[3] = choicebox2_fromx;
 	
 		choiceAnimDone = true;
-		choiceAnimMid = false;
+		//choiceAnimMid = false;
 		choiceAnim = false;
 	}
 	
 }
 if (choiceAnimDone){
+	choiceboxStep = choiceboxSteps;
+	choicebox1_x = choicebox1_fromx;
+	choicebox2_x = choicebox2_fromx;
+	choiceport_x = choiceport_fromx;
+	choiceboxX2[0] = choicebox2_fromx;
+	choiceboxX2[1] = choicebox2_fromx;
+	choiceboxX2[2] = choicebox2_fromx;
+	choiceboxX2[3] = choicebox2_fromx;
 	choiceAnim = false;
-	textfix = 160;	
+	//choiceAnimMid = true;
+	textfix = 128;	
 }

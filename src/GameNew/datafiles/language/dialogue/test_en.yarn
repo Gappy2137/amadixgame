@@ -1,12 +1,12 @@
 #__PrivCrochet_version:1
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: -658,-787
+__PrivCrochet_position: -657,-786
 __PrivCrochet_tags: 
 title: Start
 ---
 [choice,0][speaker,spr_portrait_walter,emotion_normal,Walter,snd_speech_walter]My name is [$ffdd30]Walter Hartwell White[/c]. I live at 308 Negra Arroyo Lane, Albuquerque, New Mexico, 87104.[delay,100][speed,0.5] I'm [shake]coming after you[/shake].[/speed]
 <<wait>>
-[choice,1][speaker,spr_portrait_walter,emotion_normal,Walter,snd_speech_walter]My name is [$ffdd30]Walter Hartwell White[/c]. I live at 308 Negra Arroyo Lane, Albuquerque, New Mexico, 87104.[delay,100][speed,0.5] I'm [shake]coming after you[/shake].[/speed]
+[choice,1][speaker,spr_portrait_walter,emotion_normal,Walter,snd_speech_walter]My name is [$ffdd30]Walter Hartwell White[/c].
 -> What?
     [speaker,spr_portrait_amadix,emotion_normal,Amadeusz,snd_speech_retro][choice,0]What do you mean by this?
     <<wait>>
@@ -25,7 +25,6 @@ title: Start
     <<wait>>
     <<jump EmptySpeaker>>
 -> Exit
-    [choice,0]
     <<stop>>
 ===
 __PrivCrochet_colorID: 0

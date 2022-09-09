@@ -14,7 +14,7 @@ dialboxY = 200;
 
 dialboxX_amadix = 112;
 dialboxX_empty = 144;
-dialboxX_choice = 16;
+dialboxX_choice = 48;
 
 dialbox_width = 192;
 dialbox_height = 64;
@@ -35,7 +35,7 @@ text_height = dialbox_height - 4;
 nameboxY = 184;
 namebox_height = 16;
 
-choiceboxX = 272;
+choiceboxX = 240;
 choiceboxY = 200;
 
 textColor = #FFFFFF;
@@ -55,9 +55,9 @@ choicebox1_fromx = dialboxX;
 choicebox1_tox = dialboxX_choice;
 choicebox1_x = dialboxX;
 
-choicebox2_fromx = dialboxX;
+choicebox2_fromx = 144;
 choicebox2_tox = choiceboxX;
-choicebox2_x = dialboxX;
+choicebox2_x = 144;
 
 
 choiceport_fromx = 112;
@@ -65,6 +65,9 @@ choiceport_tox = 208;
 choiceport_x = portraitboxX - 32;
 
 show = false;
+
+choiceboxSteps = 10;
+choiceboxStep = choiceboxSteps;
 
 alarm[0] = 1;
 

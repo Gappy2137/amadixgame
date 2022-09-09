@@ -7,8 +7,10 @@ if (ChatterboxIsStopped(chatterbox)){
 }else{
 	
 	draw_text(128,128,choiceScroll);
-	draw_text(128,148,in);
-	
+	draw_text(128,128 + 8,choicebox2_fromx);
+	draw_text(128,128 + 16,choicebox2_tox);
+	draw_text(128,128 + 24,choicebox2_x);
+
 if (!show)exit;
 	
 function choiceshow(){
@@ -161,123 +163,69 @@ function choiceshow(){
 		case 3:
 		
 			if (choiceAnim){
+				if (choiceboxStep <= 8){
+					// Choicebox	
+					if (ChatterboxGetOptionCount(chatterbox) == 1){
+						draw_sprite(spr_dialoguebox_choice, onChoice[0], choiceboxX2[0], dialboxY);
+					}else
+					if (ChatterboxGetOptionCount(chatterbox) == 2){
+							draw_sprite(spr_dialoguebox_choice, 0, choiceboxX2[0], dialboxY);
+							draw_sprite(spr_dialoguebox_choice, 0, choiceboxX2[1], dialboxY + 16);
+					}else
+					if (ChatterboxGetOptionCount(chatterbox) == 3){
+							draw_sprite(spr_dialoguebox_choice, 0, choiceboxX2[0], dialboxY);
+							draw_sprite(spr_dialoguebox_choice, 0, choiceboxX2[1], dialboxY + 16);
+							draw_sprite(spr_dialoguebox_choice, 0, choiceboxX2[2], dialboxY + 32);
+					}else{
+							draw_sprite(spr_dialoguebox_choice, 0, choiceboxX2[0], dialboxY);
+							draw_sprite(spr_dialoguebox_choice, 0, choiceboxX2[1], dialboxY + 16);
+							draw_sprite(spr_dialoguebox_choice, 0, choiceboxX2[2], dialboxY + 32);
+							draw_sprite(spr_dialoguebox_choice, 0, choiceboxX2[3], dialboxY + 48);
+					}
+					
+					choiceshow();
+				}
+				
+					
+				
+					// Main dialoguebox
+					scr_draw_gui_box_stretch(spr_dialoguebox, choicebox1_x, dialboxY, choicebox1_x + dialbox_width, dialboxY + dialbox_height);	
+				
+				
+			}else{
 
-				// Choicebox	
-				switch(choiceNum){
-					case 1:
-						draw_sprite(spr_dialoguebox_choice, onChoice[0], choiceboxX2[0], dialboxY);
-					break;
-					case 2:
-						draw_sprite(spr_dialoguebox_choice, onChoice[0], choiceboxX2[0], dialboxY);
-						draw_sprite(spr_dialoguebox_choice, onChoice[1], choiceboxX2[1], dialboxY + 16);
-					break;
-					case 3:
-						draw_sprite(spr_dialoguebox_choice, onChoice[0], choiceboxX2[0], dialboxY);
-						draw_sprite(spr_dialoguebox_choice, onChoice[1], choiceboxX2[1], dialboxY + 16);
-						draw_sprite(spr_dialoguebox_choice, onChoice[2], choiceboxX2[2], dialboxY + 32);
-					break;
-					case 4:
-						draw_sprite(spr_dialoguebox_choice, onChoice[0], choiceboxX2[0], dialboxY);
-						draw_sprite(spr_dialoguebox_choice, onChoice[1], choiceboxX2[1], dialboxY + 16);
-						draw_sprite(spr_dialoguebox_choice, onChoice[2], choiceboxX2[2], dialboxY + 32);
-						draw_sprite(spr_dialoguebox_choice, onChoice[3], choiceboxX2[3], dialboxY + 48);
-					break;
-					default:
+				// Choicebox
+				if (choiceNum == 1){
+					draw_sprite(spr_dialoguebox_choice, onChoice[0], choiceboxX, dialboxY);
+				}else
+				if (choiceNum == 2){
+						draw_sprite(spr_dialoguebox_choice, onChoice[0], choiceboxX, dialboxY);
+						draw_sprite(spr_dialoguebox_choice, onChoice[1], choiceboxX, dialboxY + 16);
+				}else
+				if (choiceNum == 3){
+						draw_sprite(spr_dialoguebox_choice, onChoice[0], choiceboxX, dialboxY);
+						draw_sprite(spr_dialoguebox_choice, onChoice[1], choiceboxX, dialboxY + 16);
+						draw_sprite(spr_dialoguebox_choice, onChoice[2], choiceboxX, dialboxY + 32);
+				}else{
 						draw_sprite(spr_dialoguebox_choice, onChoice[0], choiceboxX, dialboxY);
 						draw_sprite(spr_dialoguebox_choice, onChoice[1], choiceboxX, dialboxY + 16);
 						draw_sprite(spr_dialoguebox_choice, onChoice[2], choiceboxX, dialboxY + 32);
 						draw_sprite(spr_dialoguebox_choice, onChoice[3], choiceboxX, dialboxY + 48);
-					break;
 				}
-				
-				choiceshow();
-				
-				// Portraitbox
-				scr_draw_gui_box_stretch(spr_dialoguebox, choiceport_x, dialboxY, choiceport_x + portraitbox_width, dialboxY + dialbox_height);
-			
-				// Portrait
-				if ((choiceAnimMid) || (choiceAnimDone)){
-					draw_sprite(spr_portrait_amadix,
-					0,
-					choiceport_x, dialboxY);
-					draw_sprite(spr_portrait_amadix_hats,
-					dialogue_hat(global.playerHat),
-					choiceport_x, dialboxY);
-				}else{
-					draw_sprite(asset_get_index(myPortrait),
-					dialogue_emotion_convert(myEmotion),
-					choiceport_x, dialboxY);
-				}
-				// Portrait edge
-				scr_draw_gui_box_stretch(spr_dialoguebox_edge, choiceport_x, dialboxY, choiceport_x + portraitbox_width, dialboxY + dialbox_height);
-				
-				
-				// Main dialoguebox
-				scr_draw_gui_box_stretch(spr_dialoguebox, choicebox1_x, dialboxY, choicebox1_x + dialbox_width, dialboxY + dialbox_height);	
-				
 
-
-
-				
-			}else{
 				// Main dialoguebox
 				scr_draw_gui_box_stretch(spr_dialoguebox, dialboxX_choice, dialboxY, dialboxX_choice + dialbox_width, dialboxY + dialbox_height);	
 			
-				// Choicebox
-				switch(choiceNum){
-					case 1:
-						draw_sprite(spr_dialoguebox_choice, onChoice[0], choiceboxX, dialboxY);
-					break;
-					case 2:
-						draw_sprite(spr_dialoguebox_choice, onChoice[0], choiceboxX, dialboxY);
-						draw_sprite(spr_dialoguebox_choice, onChoice[1], choiceboxX, dialboxY + 16);
-					break;
-					case 3:
-						draw_sprite(spr_dialoguebox_choice, onChoice[0], choiceboxX, dialboxY);
-						draw_sprite(spr_dialoguebox_choice, onChoice[1], choiceboxX, dialboxY + 16);
-						draw_sprite(spr_dialoguebox_choice, onChoice[2], choiceboxX, dialboxY + 32);
-					break;
-					case 4:
-						draw_sprite(spr_dialoguebox_choice, onChoice[0], choiceboxX, dialboxY);
-						draw_sprite(spr_dialoguebox_choice, onChoice[1], choiceboxX, dialboxY + 16);
-						draw_sprite(spr_dialoguebox_choice, onChoice[2], choiceboxX, dialboxY + 32);
-						draw_sprite(spr_dialoguebox_choice, onChoice[3], choiceboxX, dialboxY + 48);
-					break;
-					default:
-						draw_sprite(spr_dialoguebox_choice, onChoice[0], choiceboxX, dialboxY);
-						draw_sprite(spr_dialoguebox_choice, onChoice[1], choiceboxX, dialboxY + 16);
-						draw_sprite(spr_dialoguebox_choice, onChoice[2], choiceboxX, dialboxY + 32);
-						draw_sprite(spr_dialoguebox_choice, onChoice[3], choiceboxX, dialboxY + 48);
-					break;
-				}
-
-				
 				choiceshow();
 
-			
-				// Portraitbox
-				scr_draw_gui_box_stretch(spr_dialoguebox, portraitboxX_choice, dialboxY, portraitboxX_choice + portraitbox_width, dialboxY + dialbox_height);
-			
-				// Portrait
-				draw_sprite(spr_portrait_amadix,
-				0,
-				portraitboxX_choice, dialboxY);
-				
-				draw_sprite(spr_portrait_amadix_hats,
-				dialogue_hat(global.playerHat),
-				portraitboxX_choice, dialboxY);
-			
-				// Portrait edge
-				scr_draw_gui_box_stretch(spr_dialoguebox_edge, portraitboxX_choice, dialboxY, portraitboxX_choice + portraitbox_width, dialboxY + dialbox_height);
-				
 				// Choice arrows
 				if (choiceNum > 4){
 					if (choiceScroll >= 0){
-						draw_sprite(spr_dialoguebox_arrowscroll, 0, 462, 200);
+						draw_sprite(spr_dialoguebox_arrowscroll, 0, 430, 200);
 					}
 					
 					if (choiceScroll < choiceNum){
-						draw_sprite(spr_dialoguebox_arrowscroll, 1, 462, 258);
+						draw_sprite(spr_dialoguebox_arrowscroll, 1, 430, 258);
 					}
 				}
 			}
