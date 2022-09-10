@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "spr_health_hud",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,24 +27,16 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"be1f6f61-9a28-4424-a62f-6d41ae40d98e","path":"sprites/spr_health_hud/spr_health_hud.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"be1f6f61-9a28-4424-a62f-6d41ae40d98e","path":"sprites/spr_health_hud/spr_health_hud.yy",},"LayerId":{"name":"ff5d2695-5136-4506-90e9-b44e52cf2114","path":"sprites/spr_health_hud/spr_health_hud.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_health_hud","path":"sprites/spr_health_hud/spr_health_hud.yy",},"resourceVersion":"1.0","name":"be1f6f61-9a28-4424-a62f-6d41ae40d98e","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"ff6c3381-c094-4976-b5bb-a0c11cb890ff","path":"sprites/spr_health_hud/spr_health_hud.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"ff6c3381-c094-4976-b5bb-a0c11cb890ff","path":"sprites/spr_health_hud/spr_health_hud.yy",},"LayerId":{"name":"ff5d2695-5136-4506-90e9-b44e52cf2114","path":"sprites/spr_health_hud/spr_health_hud.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_health_hud","path":"sprites/spr_health_hud/spr_health_hud.yy",},"resourceVersion":"1.0","name":"ff6c3381-c094-4976-b5bb-a0c11cb890ff","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"13552089-9314-4a8d-8223-a8c42be00eb5","path":"sprites/spr_health_hud/spr_health_hud.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"13552089-9314-4a8d-8223-a8c42be00eb5","path":"sprites/spr_health_hud/spr_health_hud.yy",},"LayerId":{"name":"ff5d2695-5136-4506-90e9-b44e52cf2114","path":"sprites/spr_health_hud/spr_health_hud.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_health_hud","path":"sprites/spr_health_hud/spr_health_hud.yy",},"resourceVersion":"1.0","name":"13552089-9314-4a8d-8223-a8c42be00eb5","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"b646bd9a-33a3-4c05-863d-52dcb05466e8","path":"sprites/spr_health_hud/spr_health_hud.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"b646bd9a-33a3-4c05-863d-52dcb05466e8","path":"sprites/spr_health_hud/spr_health_hud.yy",},"LayerId":{"name":"ff5d2695-5136-4506-90e9-b44e52cf2114","path":"sprites/spr_health_hud/spr_health_hud.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_health_hud","path":"sprites/spr_health_hud/spr_health_hud.yy",},"resourceVersion":"1.0","name":"b646bd9a-33a3-4c05-863d-52dcb05466e8","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"c5c57441-b8f7-4717-8407-ce0dd805f80a","path":"sprites/spr_health_hud/spr_health_hud.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"c5c57441-b8f7-4717-8407-ce0dd805f80a","path":"sprites/spr_health_hud/spr_health_hud.yy",},"LayerId":{"name":"ff5d2695-5136-4506-90e9-b44e52cf2114","path":"sprites/spr_health_hud/spr_health_hud.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_health_hud","path":"sprites/spr_health_hud/spr_health_hud.yy",},"resourceVersion":"1.0","name":"c5c57441-b8f7-4717-8407-ce0dd805f80a","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"be1f6f61-9a28-4424-a62f-6d41ae40d98e",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ff6c3381-c094-4976-b5bb-a0c11cb890ff",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"13552089-9314-4a8d-8223-a8c42be00eb5",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b646bd9a-33a3-4c05-863d-52dcb05466e8",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c5c57441-b8f7-4717-8407-ce0dd805f80a",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_health_hud","path":"sprites/spr_health_hud/spr_health_hud.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "spr_health_hud",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -52,13 +47,13 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"d963a74c-3e32-4171-9f20-6531b219ef8e","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"be1f6f61-9a28-4424-a62f-6d41ae40d98e","path":"sprites/spr_health_hud/spr_health_hud.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"33d13c08-edfa-43c2-b5ac-777d2577188b","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"ff6c3381-c094-4976-b5bb-a0c11cb890ff","path":"sprites/spr_health_hud/spr_health_hud.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"3e4f7c88-e5fe-4c44-9777-dbc2cd537538","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"13552089-9314-4a8d-8223-a8c42be00eb5","path":"sprites/spr_health_hud/spr_health_hud.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"55e5f7c2-3115-43b8-8588-ca6afba03d06","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b646bd9a-33a3-4c05-863d-52dcb05466e8","path":"sprites/spr_health_hud/spr_health_hud.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"85401a4c-804b-4e44-a258-76033ce34511","Key":4.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c5c57441-b8f7-4717-8407-ce0dd805f80a","path":"sprites/spr_health_hud/spr_health_hud.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -74,22 +69,13 @@
     "yorigin": 32,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_health_hud","path":"sprites/spr_health_hud/spr_health_hud.yy",},
-    "resourceVersion": "1.4",
-    "name": "spr_health_hud",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"ff5d2695-5136-4506-90e9-b44e52cf2114","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"ff5d2695-5136-4506-90e9-b44e52cf2114","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "HUD",
     "path": "folders/Sprites/HUD.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "spr_health_hud",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

@@ -509,8 +509,24 @@ with (obj_amadix){
 		vsp = 0;	
 	}
 	
-	dir = point_direction(x, y, x + hsp, y + vsp);
-	
+	if (hsp == 0) && (vsp == 0){
+		switch(facing){
+			case index_facing.down: 
+				dir = 270;
+			break;
+			case index_facing.left: 
+				dir = 180;
+			break;
+			case index_facing.right: 
+				dir = 0;
+			break;
+			case index_facing.up: 
+				dir = 90;
+			break;
+		}
+	}else{
+		dir = point_direction(x, y, x + hsp, y + vsp);
+	}
 	
 	//Naprawa poruszania sie po przekatnej
 	var diagonal = hor_keyPress != 0 && ver_keyPress != 0;

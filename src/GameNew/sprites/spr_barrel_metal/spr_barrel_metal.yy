@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "spr_barrel_metal",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,12 +27,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"6d2c6be3-5930-43a0-a768-19a07e005ec9","path":"sprites/spr_barrel_metal/spr_barrel_metal.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"6d2c6be3-5930-43a0-a768-19a07e005ec9","path":"sprites/spr_barrel_metal/spr_barrel_metal.yy",},"LayerId":{"name":"999d901a-fa9e-4944-8939-4c49f8793b7b","path":"sprites/spr_barrel_metal/spr_barrel_metal.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_barrel_metal","path":"sprites/spr_barrel_metal/spr_barrel_metal.yy",},"resourceVersion":"1.0","name":"6d2c6be3-5930-43a0-a768-19a07e005ec9","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"6d2c6be3-5930-43a0-a768-19a07e005ec9",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_barrel_metal","path":"sprites/spr_barrel_metal/spr_barrel_metal.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "spr_barrel_metal",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 1.0,
@@ -37,12 +40,12 @@
     "autoRecord": true,
     "volume": 1.0,
     "length": 1.0,
-    "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore`1","elementType":"MessageEventKeyframe",},
-    "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore`1","elementType":"MomentsEventKeyframe",},
+    "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
+    "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"55fa52ff-3594-4bd9-a6d7-dbebfda2972f","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"6d2c6be3-5930-43a0-a768-19a07e005ec9","path":"sprites/spr_barrel_metal/spr_barrel_metal.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe`1","elementType":"SpriteFrameKeyframe",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore`1","elementType":"SpriteFrameKeyframe",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+            {"id":"55fa52ff-3594-4bd9-a6d7-dbebfda2972f","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"6d2c6be3-5930-43a0-a768-19a07e005ec9","path":"sprites/spr_barrel_metal/spr_barrel_metal.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -58,25 +61,17 @@
     "yorigin": 32,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_barrel_metal","path":"sprites/spr_barrel_metal/spr_barrel_metal.yy",},
-    "resourceVersion": "1.4",
-    "name": "spr_barrel_metal",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"999d901a-fa9e-4944-8939-4c49f8793b7b","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"999d901a-fa9e-4944-8939-4c49f8793b7b","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Other",
     "path": "folders/Sprites/World/Other.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "spr_barrel_metal",
   "tags": [
     "worldobject",
     "boulder",
   ],
-  "resourceType": "GMSprite",
 }

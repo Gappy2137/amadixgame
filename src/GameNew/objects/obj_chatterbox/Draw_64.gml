@@ -6,10 +6,7 @@ if (ChatterboxIsStopped(chatterbox)){
     instance_destroy();
 }else{
 	
-	draw_text(128,128,choiceScroll);
-	draw_text(128,128 + 8,choicebox2_fromx);
-	draw_text(128,128 + 16,choicebox2_tox);
-	draw_text(128,128 + 24,choicebox2_x);
+	//draw_text(128,128,boxType);
 
 if (!show)exit;
 	
@@ -165,14 +162,14 @@ function choiceshow(){
 			if (choiceAnim){
 				if (choiceboxStep <= 8){
 					// Choicebox	
-					if (ChatterboxGetOptionCount(chatterbox) == 1){
+					if (choiceNum == 1){
 						draw_sprite(spr_dialoguebox_choice, onChoice[0], choiceboxX2[0], dialboxY);
 					}else
-					if (ChatterboxGetOptionCount(chatterbox) == 2){
+					if (choiceNum == 2){
 							draw_sprite(spr_dialoguebox_choice, 0, choiceboxX2[0], dialboxY);
 							draw_sprite(spr_dialoguebox_choice, 0, choiceboxX2[1], dialboxY + 16);
 					}else
-					if (ChatterboxGetOptionCount(chatterbox) == 3){
+					if (choiceNum == 3){
 							draw_sprite(spr_dialoguebox_choice, 0, choiceboxX2[0], dialboxY);
 							draw_sprite(spr_dialoguebox_choice, 0, choiceboxX2[1], dialboxY + 16);
 							draw_sprite(spr_dialoguebox_choice, 0, choiceboxX2[2], dialboxY + 32);
@@ -230,6 +227,10 @@ function choiceshow(){
 				}
 			}
 
+		break;
+		case 4:
+				// Main dialoguebox
+				scr_draw_gui_box_stretch(spr_dialoguebox, dialboxX_amadix, dialboxY, dialboxX_amadix + dialboxX_amadix + dialboxX_empty, dialboxY + dialbox_height);	
 		break;
 	}
 	

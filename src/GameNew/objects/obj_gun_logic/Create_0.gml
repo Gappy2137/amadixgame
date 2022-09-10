@@ -58,3 +58,4 @@ state = gunState.standby;
 
 shellfix = true;
 
+yfix = 0;

@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "spr_npc_walter",
   "bboxMode": 2,
   "collisionKind": 1,
   "type": 0,
@@ -24,21 +27,15 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"c1e0f8d6-cb9e-4ce7-959d-52e9cb35a386","path":"sprites/spr_npc_walter/spr_npc_walter.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"c1e0f8d6-cb9e-4ce7-959d-52e9cb35a386","path":"sprites/spr_npc_walter/spr_npc_walter.yy",},"LayerId":{"name":"4ab84936-1c64-4375-adca-9fb5761e9ee7","path":"sprites/spr_npc_walter/spr_npc_walter.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_npc_walter","path":"sprites/spr_npc_walter/spr_npc_walter.yy",},"resourceVersion":"1.0","name":"c1e0f8d6-cb9e-4ce7-959d-52e9cb35a386","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"a14100de-741f-4eb5-bb64-d8b126dbd154","path":"sprites/spr_npc_walter/spr_npc_walter.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"a14100de-741f-4eb5-bb64-d8b126dbd154","path":"sprites/spr_npc_walter/spr_npc_walter.yy",},"LayerId":{"name":"4ab84936-1c64-4375-adca-9fb5761e9ee7","path":"sprites/spr_npc_walter/spr_npc_walter.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_npc_walter","path":"sprites/spr_npc_walter/spr_npc_walter.yy",},"resourceVersion":"1.0","name":"a14100de-741f-4eb5-bb64-d8b126dbd154","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"f82b6e77-76db-45ca-987d-a5c500f242a9","path":"sprites/spr_npc_walter/spr_npc_walter.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"f82b6e77-76db-45ca-987d-a5c500f242a9","path":"sprites/spr_npc_walter/spr_npc_walter.yy",},"LayerId":{"name":"4ab84936-1c64-4375-adca-9fb5761e9ee7","path":"sprites/spr_npc_walter/spr_npc_walter.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_npc_walter","path":"sprites/spr_npc_walter/spr_npc_walter.yy",},"resourceVersion":"1.0","name":"f82b6e77-76db-45ca-987d-a5c500f242a9","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"0d8b5db8-20cb-426c-b9d8-ad6935d3faf9","path":"sprites/spr_npc_walter/spr_npc_walter.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"0d8b5db8-20cb-426c-b9d8-ad6935d3faf9","path":"sprites/spr_npc_walter/spr_npc_walter.yy",},"LayerId":{"name":"4ab84936-1c64-4375-adca-9fb5761e9ee7","path":"sprites/spr_npc_walter/spr_npc_walter.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_npc_walter","path":"sprites/spr_npc_walter/spr_npc_walter.yy",},"resourceVersion":"1.0","name":"0d8b5db8-20cb-426c-b9d8-ad6935d3faf9","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c1e0f8d6-cb9e-4ce7-959d-52e9cb35a386",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a14100de-741f-4eb5-bb64-d8b126dbd154",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f82b6e77-76db-45ca-987d-a5c500f242a9",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"0d8b5db8-20cb-426c-b9d8-ad6935d3faf9",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_npc_walter","path":"sprites/spr_npc_walter/spr_npc_walter.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "spr_npc_walter",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -49,12 +46,12 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"3a22415c-e387-4a48-8d8f-3360f0c7026c","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c1e0f8d6-cb9e-4ce7-959d-52e9cb35a386","path":"sprites/spr_npc_walter/spr_npc_walter.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"3a4d2315-9a80-4e19-9365-c18fe53fc22d","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"a14100de-741f-4eb5-bb64-d8b126dbd154","path":"sprites/spr_npc_walter/spr_npc_walter.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"9f26e90a-cc26-49b4-97a7-eccb1543ffa8","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f82b6e77-76db-45ca-987d-a5c500f242a9","path":"sprites/spr_npc_walter/spr_npc_walter.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"52976288-e4c1-4f4f-bb6d-df6d74784a94","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"0d8b5db8-20cb-426c-b9d8-ad6935d3faf9","path":"sprites/spr_npc_walter/spr_npc_walter.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -70,22 +67,13 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_npc_walter","path":"sprites/spr_npc_walter/spr_npc_walter.yy",},
-    "resourceVersion": "1.4",
-    "name": "spr_npc_walter",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"4ab84936-1c64-4375-adca-9fb5761e9ee7","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"4ab84936-1c64-4375-adca-9fb5761e9ee7","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "NPC",
     "path": "folders/Sprites/NPC.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "spr_npc_walter",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

@@ -26,6 +26,7 @@ if (refTimer >= 1){
 }
 
 
+
 // Chest
 if (instance_exists(par_container)){
 	var _p = 0;

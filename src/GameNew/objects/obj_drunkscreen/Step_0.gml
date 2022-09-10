@@ -11,10 +11,3 @@ if (global.alcoholPoisoning >= 5){
 	xx = 0;
 	yy = 0;
 }
-/*
-if (keyboard_check(ord("J"))){
-	global.alcoholPoisoning--;
-}
-if (keyboard_check(ord("K"))){
-	global.alcoholPoisoning++;
-}

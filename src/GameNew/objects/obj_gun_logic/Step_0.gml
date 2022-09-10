@@ -1,5 +1,12 @@
 if (!instance_exists(obj_amadix)){exit;}
 
+if (obj_amadix.state == player_state.wading)
+|| (obj_amadix.state == player_state.wading_idle){
+	yfix = 4;
+}else{
+	yfix = 0;	
+}
+
 // Liczba zaladowanych nabojow pobierana z eq
 if (obj_amadix.actionstate == player_state_action.handgun){
 	ammoLoadedInv = obj_inventory.ds_inventory[# INVHP, obj_inventory.mouse_slotx_second];
@@ -86,11 +93,11 @@ if (type == 0){
 			
 			#region FX
 			
-			audio_play_sound(soundSHOOT, 10, false);
+			audio_play_sound_at(obj_gun_logic.soundSHOOT, x, y, 0, 100, 1000, 1, false, 10);
 			
 			//Shoot
 			var xx = obj_amadix.x + lengthdir_x(16, obj_amadix.shootdir);
-			var yy = obj_amadix.y + 16 + lengthdir_y(16, obj_amadix.shootdir);
+			var yy = obj_amadix.y + 16 + lengthdir_y(16, obj_amadix.shootdir) + yfix;
 			var bullet = instance_create_layer(xx, yy, "Instances", obj_bullet_shot);
 			with (bullet){
 				_sprite = spr_bullet_shot;
@@ -100,7 +107,7 @@ if (type == 0){
 			}
 			
 			var fx_xx = obj_amadix.x + lengthdir_x(12, obj_amadix.shootdir);
-			var fx_yy = obj_amadix.y + 12 + lengthdir_y(13, obj_amadix.shootdir);
+			var fx_yy = obj_amadix.y + 12 + lengthdir_y(13, obj_amadix.shootdir) + yfix;
 			var muzzleflash = instance_create_layer(fx_xx, fx_yy, "Instances", obj_smoke_fx);
 			with (muzzleflash){
 				type = 0;
@@ -138,7 +145,7 @@ if (type == 0){
 		
 			
 			var shell_xx = obj_amadix.x + lengthdir_x(7, obj_amadix.shootdir);
-			var shell_yy = obj_amadix.y + 32 + lengthdir_y(10, obj_amadix.shootdir);
+			var shell_yy = obj_amadix.y + 32 + lengthdir_y(10, obj_amadix.shootdir) + yfix;
 			var shell = instance_create_layer(shell_xx, shell_yy, "Instances", obj_particle);
 			with(shell){
 				_sprite = spr_gun_shell;
@@ -165,7 +172,7 @@ if (type == 0){
 	
 	if (!smokeflag){
 			var heat_x = obj_amadix.x + lengthdir_x(13, obj_amadix.shootdir);
-			var heat_y = obj_amadix.y + 16 + lengthdir_y(16, obj_amadix.shootdir);
+			var heat_y = obj_amadix.y + 16 + lengthdir_y(16, obj_amadix.shootdir) + yfix;
 			var heatsmoke = instance_create_layer(heat_x, heat_y, "Instances", obj_smoke_fx);
 			with (heatsmoke){
 				type = 4;
@@ -196,18 +203,18 @@ if (type == 0){
 			//Shoot
 			
 			var xx = obj_amadix.x + lengthdir_x(16, obj_amadix.shootdir);
-			var yy = obj_amadix.y + 16 + lengthdir_y(16, obj_amadix.shootdir) + random_range(-1, 3);
+			var yy = obj_amadix.y + 16 + lengthdir_y(16, obj_amadix.shootdir) + random_range(-1, 3) + yfix;
 			repeat(6){
 				var bullet = instance_create_layer(xx, yy, "Instances", obj_bullet_shot);
 				with (bullet){
 					_sprite = spr_shotgun_shell_shot;
 					spd = 20;
-					angle = obj_amadix.shootdir + random_range(-20, 20);
+					angle = obj_amadix.shootdir + random_range(-10, 10);
 				}
 			}
 			
 			var fx_xx = obj_amadix.x + lengthdir_x(16, obj_amadix.shootdir);
-			var fx_yy = obj_amadix.y + 12 + lengthdir_y(13, obj_amadix.shootdir);
+			var fx_yy = obj_amadix.y + 12 + lengthdir_y(13, obj_amadix.shootdir) + yfix;
 			var muzzleflash = instance_create_layer(fx_xx, fx_yy, "Instances", obj_smoke_fx);
 			with (muzzleflash){
 				type = 0;
@@ -255,7 +262,7 @@ if (type == 0){
 	
 	if (!smokeflag){
 			var heat_x = obj_amadix.x + lengthdir_x(16, obj_amadix.shootdir);
-			var heat_y = obj_amadix.y + 16 + lengthdir_y(16, obj_amadix.shootdir);
+			var heat_y = obj_amadix.y + 16 + lengthdir_y(16, obj_amadix.shootdir) + yfix;
 			var heatsmoke = instance_create_layer(heat_x, heat_y, "Instances", obj_smoke_fx);
 			with (heatsmoke){
 				type = 4;
@@ -297,16 +304,16 @@ with (obj_amadix){
 		|| (obj_gun_logic.state == gunState.reloading_empty){
 			if (floor(anim_frame_action) == 1){
 				if (!audio_is_playing(obj_gun_logic.soundMAGOUT))
-				audio_play_sound(obj_gun_logic.soundMAGOUT, 10, false);
+				audio_play_sound_at(obj_gun_logic.soundMAGOUT, x, y, 0, 100, 200, 1, false, 10);
 				}
 			if (floor(anim_frame_action) == 6){
 				if (!audio_is_playing(obj_gun_logic.soundMAGIN))
-				audio_play_sound(obj_gun_logic.soundMAGIN, 10, false);}
+				audio_play_sound_at(obj_gun_logic.soundMAGIN, x, y, 0, 100, 200, 1, false, 10);}
 		}
 			if (obj_gun_logic.state == gunState.reloading_empty){
 				if (floor(anim_frame_action) == 11){
 				if (!audio_is_playing(obj_gun_logic.soundBOLT))
-				audio_play_sound(obj_gun_logic.soundBOLT, 10, false);}
+				audio_play_sound_at(obj_gun_logic.soundBOLT, x, y, 0, 100, 200, 1, false, 10);}
 			}
 		break;
 		
@@ -322,7 +329,7 @@ with (obj_amadix){
 					with (obj_gun_logic){
 						repeat(ammoCap - ammoLoadedInv){
 							var shell_xx = obj_amadix.x + lengthdir_x(7, obj_amadix.shootdir);
-							var shell_yy = obj_amadix.y + 32 + lengthdir_y(10, obj_amadix.shootdir);
+							var shell_yy = obj_amadix.y + 32 + lengthdir_y(10, obj_amadix.shootdir) + yfix;
 							var shell = instance_create_layer(shell_xx, shell_yy, "Instances", obj_particle);
 							with(shell){
 								_sprite = spr_gun_shell;

@@ -42,7 +42,7 @@ textColor = #FFFFFF;
 shadowColor = #000000;
 
 waitArrow = false;
-boxType = 0;
+boxType = 4;
 
 choiceStop = "0";
 in = 0;
@@ -69,7 +69,7 @@ show = false;
 choiceboxSteps = 10;
 choiceboxStep = choiceboxSteps;
 
-alarm[0] = 1;
+alarm[0] = 8;
 
 choiceNum = 0;
 choiceboxX2[0] = choicebox2_x;
@@ -89,7 +89,6 @@ choiceScroll = 0;
 2 - wiadomosc
 3 - wybor
 */
-
 
 
 cutsceneStep = 0;

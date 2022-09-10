@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "spr_amadix_hands_gun_l_shoot",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,21 +27,15 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"85b54b3a-cb8f-4bfc-8a5a-4ea8cc609d0a","path":"sprites/spr_amadix_hands_gun_l_shoot/spr_amadix_hands_gun_l_shoot.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"85b54b3a-cb8f-4bfc-8a5a-4ea8cc609d0a","path":"sprites/spr_amadix_hands_gun_l_shoot/spr_amadix_hands_gun_l_shoot.yy",},"LayerId":{"name":"9dd4e55d-065a-45ff-8358-392ffbd92190","path":"sprites/spr_amadix_hands_gun_l_shoot/spr_amadix_hands_gun_l_shoot.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_amadix_hands_gun_l_shoot","path":"sprites/spr_amadix_hands_gun_l_shoot/spr_amadix_hands_gun_l_shoot.yy",},"resourceVersion":"1.0","name":"85b54b3a-cb8f-4bfc-8a5a-4ea8cc609d0a","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"9a2ad5d8-4dac-49ff-aca1-5398dc085f55","path":"sprites/spr_amadix_hands_gun_l_shoot/spr_amadix_hands_gun_l_shoot.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"9a2ad5d8-4dac-49ff-aca1-5398dc085f55","path":"sprites/spr_amadix_hands_gun_l_shoot/spr_amadix_hands_gun_l_shoot.yy",},"LayerId":{"name":"9dd4e55d-065a-45ff-8358-392ffbd92190","path":"sprites/spr_amadix_hands_gun_l_shoot/spr_amadix_hands_gun_l_shoot.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_amadix_hands_gun_l_shoot","path":"sprites/spr_amadix_hands_gun_l_shoot/spr_amadix_hands_gun_l_shoot.yy",},"resourceVersion":"1.0","name":"9a2ad5d8-4dac-49ff-aca1-5398dc085f55","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"4c5f2dee-918a-45eb-8cec-facb1831bd58","path":"sprites/spr_amadix_hands_gun_l_shoot/spr_amadix_hands_gun_l_shoot.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"4c5f2dee-918a-45eb-8cec-facb1831bd58","path":"sprites/spr_amadix_hands_gun_l_shoot/spr_amadix_hands_gun_l_shoot.yy",},"LayerId":{"name":"9dd4e55d-065a-45ff-8358-392ffbd92190","path":"sprites/spr_amadix_hands_gun_l_shoot/spr_amadix_hands_gun_l_shoot.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_amadix_hands_gun_l_shoot","path":"sprites/spr_amadix_hands_gun_l_shoot/spr_amadix_hands_gun_l_shoot.yy",},"resourceVersion":"1.0","name":"4c5f2dee-918a-45eb-8cec-facb1831bd58","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"fbbc8e23-9a44-4372-92f4-9920df72d5aa","path":"sprites/spr_amadix_hands_gun_l_shoot/spr_amadix_hands_gun_l_shoot.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"fbbc8e23-9a44-4372-92f4-9920df72d5aa","path":"sprites/spr_amadix_hands_gun_l_shoot/spr_amadix_hands_gun_l_shoot.yy",},"LayerId":{"name":"9dd4e55d-065a-45ff-8358-392ffbd92190","path":"sprites/spr_amadix_hands_gun_l_shoot/spr_amadix_hands_gun_l_shoot.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_amadix_hands_gun_l_shoot","path":"sprites/spr_amadix_hands_gun_l_shoot/spr_amadix_hands_gun_l_shoot.yy",},"resourceVersion":"1.0","name":"fbbc8e23-9a44-4372-92f4-9920df72d5aa","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"85b54b3a-cb8f-4bfc-8a5a-4ea8cc609d0a",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9a2ad5d8-4dac-49ff-aca1-5398dc085f55",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4c5f2dee-918a-45eb-8cec-facb1831bd58",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"fbbc8e23-9a44-4372-92f4-9920df72d5aa",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_amadix_hands_gun_l_shoot","path":"sprites/spr_amadix_hands_gun_l_shoot/spr_amadix_hands_gun_l_shoot.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "spr_amadix_hands_gun_l_shoot",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 0.1,
@@ -49,12 +46,12 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"99a428fe-370f-4f4d-ba03-2b824fbd63f0","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"85b54b3a-cb8f-4bfc-8a5a-4ea8cc609d0a","path":"sprites/spr_amadix_hands_gun_l_shoot/spr_amadix_hands_gun_l_shoot.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"778f8241-d261-48ea-b194-50b8bceb976e","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"9a2ad5d8-4dac-49ff-aca1-5398dc085f55","path":"sprites/spr_amadix_hands_gun_l_shoot/spr_amadix_hands_gun_l_shoot.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"f9dadb1a-15c6-46fe-8a1d-d21595128d4d","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"4c5f2dee-918a-45eb-8cec-facb1831bd58","path":"sprites/spr_amadix_hands_gun_l_shoot/spr_amadix_hands_gun_l_shoot.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"a7e8dcf9-79ae-44f5-9e7d-29c49c12e6a1","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"fbbc8e23-9a44-4372-92f4-9920df72d5aa","path":"sprites/spr_amadix_hands_gun_l_shoot/spr_amadix_hands_gun_l_shoot.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -70,22 +67,13 @@
     "yorigin": 17,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_amadix_hands_gun_l_shoot","path":"sprites/spr_amadix_hands_gun_l_shoot/spr_amadix_hands_gun_l_shoot.yy",},
-    "resourceVersion": "1.4",
-    "name": "spr_amadix_hands_gun_l_shoot",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"9dd4e55d-065a-45ff-8358-392ffbd92190","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"9dd4e55d-065a-45ff-8358-392ffbd92190","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "M1911",
     "path": "folders/Sprites/Player/Hands/Gun/M1911.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "spr_amadix_hands_gun_l_shoot",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

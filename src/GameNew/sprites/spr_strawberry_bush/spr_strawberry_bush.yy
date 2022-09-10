@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "spr_strawberry_bush",
   "bboxMode": 2,
   "collisionKind": 1,
   "type": 0,
@@ -24,18 +27,14 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"4ca318aa-e8b4-4bbb-80a6-bfdf850ef7c5","path":"sprites/spr_strawberry_bush/spr_strawberry_bush.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"4ca318aa-e8b4-4bbb-80a6-bfdf850ef7c5","path":"sprites/spr_strawberry_bush/spr_strawberry_bush.yy",},"LayerId":{"name":"4aa28d44-2a61-4dea-9622-cda5c8ac2fdd","path":"sprites/spr_strawberry_bush/spr_strawberry_bush.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_strawberry_bush","path":"sprites/spr_strawberry_bush/spr_strawberry_bush.yy",},"resourceVersion":"1.0","name":"4ca318aa-e8b4-4bbb-80a6-bfdf850ef7c5","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"f9e286e3-e3c1-4178-9cdc-66cda8fd1f4a","path":"sprites/spr_strawberry_bush/spr_strawberry_bush.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"f9e286e3-e3c1-4178-9cdc-66cda8fd1f4a","path":"sprites/spr_strawberry_bush/spr_strawberry_bush.yy",},"LayerId":{"name":"4aa28d44-2a61-4dea-9622-cda5c8ac2fdd","path":"sprites/spr_strawberry_bush/spr_strawberry_bush.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_strawberry_bush","path":"sprites/spr_strawberry_bush/spr_strawberry_bush.yy",},"resourceVersion":"1.0","name":"f9e286e3-e3c1-4178-9cdc-66cda8fd1f4a","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"a28e74d4-38d3-40e2-a6d0-3ff475f57531","path":"sprites/spr_strawberry_bush/spr_strawberry_bush.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"a28e74d4-38d3-40e2-a6d0-3ff475f57531","path":"sprites/spr_strawberry_bush/spr_strawberry_bush.yy",},"LayerId":{"name":"4aa28d44-2a61-4dea-9622-cda5c8ac2fdd","path":"sprites/spr_strawberry_bush/spr_strawberry_bush.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_strawberry_bush","path":"sprites/spr_strawberry_bush/spr_strawberry_bush.yy",},"resourceVersion":"1.0","name":"a28e74d4-38d3-40e2-a6d0-3ff475f57531","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4ca318aa-e8b4-4bbb-80a6-bfdf850ef7c5",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f9e286e3-e3c1-4178-9cdc-66cda8fd1f4a",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a28e74d4-38d3-40e2-a6d0-3ff475f57531",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_strawberry_bush","path":"sprites/spr_strawberry_bush/spr_strawberry_bush.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "spr_strawberry_bush",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -46,11 +45,11 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"31190cd1-0c68-489e-b887-d79a52b4f007","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"4ca318aa-e8b4-4bbb-80a6-bfdf850ef7c5","path":"sprites/spr_strawberry_bush/spr_strawberry_bush.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"63a4bd42-a180-4c90-b3d0-a8ed0980634a","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f9e286e3-e3c1-4178-9cdc-66cda8fd1f4a","path":"sprites/spr_strawberry_bush/spr_strawberry_bush.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"1cd1b8bd-c5f1-4d0f-83fb-c1fbe6125e4e","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"a28e74d4-38d3-40e2-a6d0-3ff475f57531","path":"sprites/spr_strawberry_bush/spr_strawberry_bush.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -66,22 +65,13 @@
     "yorigin": 23,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_strawberry_bush","path":"sprites/spr_strawberry_bush/spr_strawberry_bush.yy",},
-    "resourceVersion": "1.4",
-    "name": "spr_strawberry_bush",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"4aa28d44-2a61-4dea-9622-cda5c8ac2fdd","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"4aa28d44-2a61-4dea-9622-cda5c8ac2fdd","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Plants",
     "path": "folders/Sprites/World/Plants.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "spr_strawberry_bush",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "spr_amadix_classicTC_drinking",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,39 +27,21 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"d27b33d6-7592-48fd-854f-c27c1b97c969","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"d27b33d6-7592-48fd-854f-c27c1b97c969","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"LayerId":{"name":"9fbddf7f-b34b-413f-a78e-895f0694df5c","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_amadix_classicTC_drinking","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"resourceVersion":"1.0","name":"d27b33d6-7592-48fd-854f-c27c1b97c969","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"12f9f202-9ecd-4b07-9706-4133fdac51da","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"12f9f202-9ecd-4b07-9706-4133fdac51da","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"LayerId":{"name":"9fbddf7f-b34b-413f-a78e-895f0694df5c","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_amadix_classicTC_drinking","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"resourceVersion":"1.0","name":"12f9f202-9ecd-4b07-9706-4133fdac51da","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"e325e673-e4bb-4e5b-a729-1bb3f1fda858","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"e325e673-e4bb-4e5b-a729-1bb3f1fda858","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"LayerId":{"name":"9fbddf7f-b34b-413f-a78e-895f0694df5c","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_amadix_classicTC_drinking","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"resourceVersion":"1.0","name":"e325e673-e4bb-4e5b-a729-1bb3f1fda858","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"02fb09cf-f026-4112-b00e-16cc7a543195","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"02fb09cf-f026-4112-b00e-16cc7a543195","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"LayerId":{"name":"9fbddf7f-b34b-413f-a78e-895f0694df5c","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_amadix_classicTC_drinking","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"resourceVersion":"1.0","name":"02fb09cf-f026-4112-b00e-16cc7a543195","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"e2aa6634-dd8e-4b19-a0e5-3d6134e7fa80","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"e2aa6634-dd8e-4b19-a0e5-3d6134e7fa80","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"LayerId":{"name":"9fbddf7f-b34b-413f-a78e-895f0694df5c","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_amadix_classicTC_drinking","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"resourceVersion":"1.0","name":"e2aa6634-dd8e-4b19-a0e5-3d6134e7fa80","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"4626c4a3-479d-4507-a7a2-8262c1b2832d","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"4626c4a3-479d-4507-a7a2-8262c1b2832d","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"LayerId":{"name":"9fbddf7f-b34b-413f-a78e-895f0694df5c","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_amadix_classicTC_drinking","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"resourceVersion":"1.0","name":"4626c4a3-479d-4507-a7a2-8262c1b2832d","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"baecf40e-32d8-49ab-92c3-6db109e142b6","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"baecf40e-32d8-49ab-92c3-6db109e142b6","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"LayerId":{"name":"9fbddf7f-b34b-413f-a78e-895f0694df5c","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_amadix_classicTC_drinking","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"resourceVersion":"1.0","name":"baecf40e-32d8-49ab-92c3-6db109e142b6","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"124e885d-17eb-488d-9b81-73a379de117e","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"124e885d-17eb-488d-9b81-73a379de117e","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"LayerId":{"name":"9fbddf7f-b34b-413f-a78e-895f0694df5c","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_amadix_classicTC_drinking","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"resourceVersion":"1.0","name":"124e885d-17eb-488d-9b81-73a379de117e","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"14883762-6410-44b1-a82b-fad38185f5ad","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"14883762-6410-44b1-a82b-fad38185f5ad","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"LayerId":{"name":"9fbddf7f-b34b-413f-a78e-895f0694df5c","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_amadix_classicTC_drinking","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"resourceVersion":"1.0","name":"14883762-6410-44b1-a82b-fad38185f5ad","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"5871ac0c-e253-46e1-8588-6bd663977e3f","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"5871ac0c-e253-46e1-8588-6bd663977e3f","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"LayerId":{"name":"9fbddf7f-b34b-413f-a78e-895f0694df5c","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_amadix_classicTC_drinking","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"resourceVersion":"1.0","name":"5871ac0c-e253-46e1-8588-6bd663977e3f","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d27b33d6-7592-48fd-854f-c27c1b97c969",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"12f9f202-9ecd-4b07-9706-4133fdac51da",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e325e673-e4bb-4e5b-a729-1bb3f1fda858",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"02fb09cf-f026-4112-b00e-16cc7a543195",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e2aa6634-dd8e-4b19-a0e5-3d6134e7fa80",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4626c4a3-479d-4507-a7a2-8262c1b2832d",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"baecf40e-32d8-49ab-92c3-6db109e142b6",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"124e885d-17eb-488d-9b81-73a379de117e",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"14883762-6410-44b1-a82b-fad38185f5ad",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"5871ac0c-e253-46e1-8588-6bd663977e3f",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_amadix_classicTC_drinking","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "spr_amadix_classicTC_drinking",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 0.1,
@@ -67,7 +52,7 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"229bb394-7ad2-482c-a7b3-2ecb88dd69d1","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"d27b33d6-7592-48fd-854f-c27c1b97c969","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"f7ef42b4-a8af-484f-938d-1827421f0280","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"12f9f202-9ecd-4b07-9706-4133fdac51da","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"89eb0a1a-1e7e-4070-a594-79c95f1dc6c9","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"e325e673-e4bb-4e5b-a729-1bb3f1fda858","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
@@ -78,7 +63,7 @@
             {"id":"db86a73c-f5fd-4306-b9e1-b51006e6342a","Key":7.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"124e885d-17eb-488d-9b81-73a379de117e","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"5c528ceb-6a9b-4475-b194-63eef70e2e09","Key":8.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"14883762-6410-44b1-a82b-fad38185f5ad","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"1dc0cbd2-625f-4b38-b5f1-151d4f695669","Key":9.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"5871ac0c-e253-46e1-8588-6bd663977e3f","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -94,22 +79,13 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_amadix_classicTC_drinking","path":"sprites/spr_amadix_classicTC_drinking/spr_amadix_classicTC_drinking.yy",},
-    "resourceVersion": "1.4",
-    "name": "spr_amadix_classicTC_drinking",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"9fbddf7f-b34b-413f-a78e-895f0694df5c","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"9fbddf7f-b34b-413f-a78e-895f0694df5c","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "ClassicClothes",
     "path": "folders/Sprites/Player/Torso/ClassicClothes.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "spr_amadix_classicTC_drinking",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

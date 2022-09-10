@@ -1,6 +1,8 @@
 if (cutsceneStep <= 0){cutsceneStep = 0;}else{cutsceneStep--;}
 if (cutsceneStep != 0){exit;}
 
+choiceNum = (ChatterboxGetOptionCount(chatterbox));
+
 #region Work out if all of our text elements have stopped fading in
 
 var _complete = true;
@@ -38,7 +40,7 @@ if (_complete){
         }
     }else if (ChatterboxGetOptionCount(chatterbox)){
 		
-		choiceNum = (ChatterboxGetOptionCount(chatterbox));
+		
 		var _index = undefined;
 		
 		#region Sprawdz czy mysz jest nad odpowiedzia 
@@ -109,7 +111,8 @@ if (_complete){
 			in = _index;
 			choiceScroll = 0;
 			choiceAnim = false;
-			choiceAnimDone = false;
+			choiceAnimDone = true;
+			boxType = 4;
 			//choiceAnimMid = false;
             //If the player pressed a number key, choose the corresponding option
             ChatterboxSelect(chatterbox, _index);
@@ -119,8 +122,7 @@ if (_complete){
     }else{
 		waitArrow = false;	
 	}
-}
-else{
+}else{
 	waitArrow = false;
 	
     //If the text elements *haven't* all finished fading in...
@@ -136,7 +138,7 @@ else{
 
 switch(myPortrait){
 	case "-1":
-		if (choiceStop == "0"){
+		if (choiceNum == 0){
 			boxType = 2;
 			textfix = 32;
 			choiceAnim = false;
@@ -153,7 +155,7 @@ switch(myPortrait){
 		choiceAnimDone = false;
 	break;
 	default:
-		if (choiceStop == "0"){
+		if (choiceNum == 0){
 			boxType = 1;	
 			textfix = 0;
 			choiceAnim = false;

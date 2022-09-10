@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "spr_linden",
   "bboxMode": 2,
   "collisionKind": 1,
   "type": 0,
@@ -24,13 +27,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"c1eb7e7f-e494-4db3-bdd9-8a753e039788","path":"sprites/spr_linden/spr_linden.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"c1eb7e7f-e494-4db3-bdd9-8a753e039788","path":"sprites/spr_linden/spr_linden.yy",},"LayerId":{"name":"d1e4e905-1bc8-4eac-a45c-0601347ecb7f","path":"sprites/spr_linden/spr_linden.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"c1eb7e7f-e494-4db3-bdd9-8a753e039788","path":"sprites/spr_linden/spr_linden.yy",},"LayerId":{"name":"492d1351-2c2d-43e8-bf9a-5e065d1da9bf","path":"sprites/spr_linden/spr_linden.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_linden","path":"sprites/spr_linden/spr_linden.yy",},"resourceVersion":"1.0","name":"c1eb7e7f-e494-4db3-bdd9-8a753e039788","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c1eb7e7f-e494-4db3-bdd9-8a753e039788",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_linden","path":"sprites/spr_linden/spr_linden.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "spr_linden",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,9 +43,9 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"fe3d83d0-0689-48d4-bc5f-d5d9961b2033","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c1eb7e7f-e494-4db3-bdd9-8a753e039788","path":"sprites/spr_linden/spr_linden.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -59,23 +61,14 @@
     "yorigin": 128,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_linden","path":"sprites/spr_linden/spr_linden.yy",},
-    "resourceVersion": "1.4",
-    "name": "spr_linden",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":false,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"d1e4e905-1bc8-4eac-a45c-0601347ecb7f","tags":[],"resourceType":"GMImageLayer",},
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"492d1351-2c2d-43e8-bf9a-5e065d1da9bf","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"d1e4e905-1bc8-4eac-a45c-0601347ecb7f","visible":false,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"492d1351-2c2d-43e8-bf9a-5e065d1da9bf","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Trees",
     "path": "folders/Sprites/World/Trees.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "spr_linden",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

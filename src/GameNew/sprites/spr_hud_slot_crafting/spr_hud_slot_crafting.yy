@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "spr_hud_slot_crafting",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,42 +27,22 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"9eea48ef-133e-499b-bbe3-ca61e4440adb","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"9eea48ef-133e-499b-bbe3-ca61e4440adb","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"LayerId":{"name":"9ce71e9b-a414-450f-bcec-1c2393a3af81","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_hud_slot_crafting","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"resourceVersion":"1.0","name":"9eea48ef-133e-499b-bbe3-ca61e4440adb","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"6a370e62-244c-4446-be7e-d772fbb7b4ba","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"6a370e62-244c-4446-be7e-d772fbb7b4ba","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"LayerId":{"name":"9ce71e9b-a414-450f-bcec-1c2393a3af81","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_hud_slot_crafting","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"resourceVersion":"1.0","name":"6a370e62-244c-4446-be7e-d772fbb7b4ba","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"8ea0b326-482d-4a4d-a567-66ae631df5bb","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"8ea0b326-482d-4a4d-a567-66ae631df5bb","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"LayerId":{"name":"9ce71e9b-a414-450f-bcec-1c2393a3af81","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_hud_slot_crafting","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"resourceVersion":"1.0","name":"8ea0b326-482d-4a4d-a567-66ae631df5bb","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"85577ff5-ab08-461a-b55e-96050d742a9d","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"85577ff5-ab08-461a-b55e-96050d742a9d","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"LayerId":{"name":"9ce71e9b-a414-450f-bcec-1c2393a3af81","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_hud_slot_crafting","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"resourceVersion":"1.0","name":"85577ff5-ab08-461a-b55e-96050d742a9d","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"79104302-3610-4388-904b-0f9e7c6f2ec4","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"79104302-3610-4388-904b-0f9e7c6f2ec4","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"LayerId":{"name":"9ce71e9b-a414-450f-bcec-1c2393a3af81","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_hud_slot_crafting","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"resourceVersion":"1.0","name":"79104302-3610-4388-904b-0f9e7c6f2ec4","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"8bb0048e-1a2e-405d-a63d-19f76caf8854","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"8bb0048e-1a2e-405d-a63d-19f76caf8854","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"LayerId":{"name":"9ce71e9b-a414-450f-bcec-1c2393a3af81","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_hud_slot_crafting","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"resourceVersion":"1.0","name":"8bb0048e-1a2e-405d-a63d-19f76caf8854","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"6fe8fed9-32a4-4e7f-8448-a7d6bd77b845","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"6fe8fed9-32a4-4e7f-8448-a7d6bd77b845","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"LayerId":{"name":"9ce71e9b-a414-450f-bcec-1c2393a3af81","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_hud_slot_crafting","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"resourceVersion":"1.0","name":"6fe8fed9-32a4-4e7f-8448-a7d6bd77b845","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"2f2d4a74-754a-4d9b-bc4e-f143b10149c2","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"2f2d4a74-754a-4d9b-bc4e-f143b10149c2","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"LayerId":{"name":"9ce71e9b-a414-450f-bcec-1c2393a3af81","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_hud_slot_crafting","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"resourceVersion":"1.0","name":"2f2d4a74-754a-4d9b-bc4e-f143b10149c2","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"4bef9b20-89fa-4f12-9462-d3000b4f5d2e","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"4bef9b20-89fa-4f12-9462-d3000b4f5d2e","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"LayerId":{"name":"9ce71e9b-a414-450f-bcec-1c2393a3af81","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_hud_slot_crafting","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"resourceVersion":"1.0","name":"4bef9b20-89fa-4f12-9462-d3000b4f5d2e","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"9240caef-9fa6-4b19-bc2b-79976ab16753","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"9240caef-9fa6-4b19-bc2b-79976ab16753","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"LayerId":{"name":"9ce71e9b-a414-450f-bcec-1c2393a3af81","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_hud_slot_crafting","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"resourceVersion":"1.0","name":"9240caef-9fa6-4b19-bc2b-79976ab16753","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"379d2d7d-bce3-41bb-ada5-a7fda4d27305","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"379d2d7d-bce3-41bb-ada5-a7fda4d27305","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"LayerId":{"name":"9ce71e9b-a414-450f-bcec-1c2393a3af81","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_hud_slot_crafting","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"resourceVersion":"1.0","name":"379d2d7d-bce3-41bb-ada5-a7fda4d27305","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9eea48ef-133e-499b-bbe3-ca61e4440adb",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"6a370e62-244c-4446-be7e-d772fbb7b4ba",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"8ea0b326-482d-4a4d-a567-66ae631df5bb",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"85577ff5-ab08-461a-b55e-96050d742a9d",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"79104302-3610-4388-904b-0f9e7c6f2ec4",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"8bb0048e-1a2e-405d-a63d-19f76caf8854",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"6fe8fed9-32a4-4e7f-8448-a7d6bd77b845",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"2f2d4a74-754a-4d9b-bc4e-f143b10149c2",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4bef9b20-89fa-4f12-9462-d3000b4f5d2e",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9240caef-9fa6-4b19-bc2b-79976ab16753",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"379d2d7d-bce3-41bb-ada5-a7fda4d27305",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_hud_slot_crafting","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "spr_hud_slot_crafting",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 15.0,
@@ -70,7 +53,7 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"9141adb9-4dfd-48f3-a514-5f55a1135570","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"9eea48ef-133e-499b-bbe3-ca61e4440adb","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"dba6ca73-6d08-4343-8d2b-4c42f2edcbc9","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"6a370e62-244c-4446-be7e-d772fbb7b4ba","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"2ef3334d-a643-441d-85d7-b9c9d8b48948","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"8ea0b326-482d-4a4d-a567-66ae631df5bb","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
@@ -82,7 +65,7 @@
             {"id":"c9fcd237-dbea-4f76-935e-226acd3a1f83","Key":8.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"4bef9b20-89fa-4f12-9462-d3000b4f5d2e","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"f46bb4f5-2747-4d60-aced-df2f2fc27d8c","Key":9.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"9240caef-9fa6-4b19-bc2b-79976ab16753","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"7e344c24-4535-4668-b320-91705b3a9397","Key":10.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"379d2d7d-bce3-41bb-ada5-a7fda4d27305","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -98,22 +81,13 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_hud_slot_crafting","path":"sprites/spr_hud_slot_crafting/spr_hud_slot_crafting.yy",},
-    "resourceVersion": "1.4",
-    "name": "spr_hud_slot_crafting",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"9ce71e9b-a414-450f-bcec-1c2393a3af81","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"9ce71e9b-a414-450f-bcec-1c2393a3af81","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "HUD",
     "path": "folders/Sprites/HUD.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "spr_hud_slot_crafting",
-  "tags": [],
-  "resourceType": "GMSprite",
 }
