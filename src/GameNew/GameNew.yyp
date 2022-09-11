@@ -124,6 +124,7 @@
     {"id":{"name":"spr_amadix_m1911_d_reload","path":"sprites/spr_amadix_m1911_d_reload/spr_amadix_m1911_d_reload.yy",},"order":0,},
     {"id":{"name":"spr_strawberry_bush","path":"sprites/spr_strawberry_bush/spr_strawberry_bush.yy",},"order":0,},
     {"id":{"name":"item_exists","path":"scripts/item_exists/item_exists.yy",},"order":11,},
+    {"id":{"name":"snd_wind_forest","path":"sounds/snd_wind_forest/snd_wind_forest.yy",},"order":1,},
     {"id":{"name":"spr_eq_menu","path":"sprites/spr_eq_menu/spr_eq_menu.yy",},"order":6,},
     {"id":{"name":"spr_crosshair","path":"sprites/spr_crosshair/spr_crosshair.yy",},"order":6,},
     {"id":{"name":"input_multiplayer_params_get","path":"scripts/input_multiplayer_params_get/input_multiplayer_params_get.yy",},"order":1,},
@@ -149,6 +150,7 @@
     {"id":{"name":"ChatterboxCreate","path":"scripts/ChatterboxCreate/ChatterboxCreate.yy",},"order":7,},
     {"id":{"name":"input_cursor_coord_space_get","path":"scripts/input_cursor_coord_space_get/input_cursor_coord_space_get.yy",},"order":0,},
     {"id":{"name":"input_check_pressed","path":"scripts/input_check_pressed/input_check_pressed.yy",},"order":9,},
+    {"id":{"name":"snd_wind_raw","path":"sounds/snd_wind_raw/snd_wind_raw.yy",},"order":0,},
     {"id":{"name":"__input_config_profiles_and_default_bindings","path":"scripts/__input_config_profiles_and_default_bindings/__input_config_profiles_and_default_bindings.yy",},"order":5,},
     {"id":{"name":"__scribble_class_typist","path":"scripts/__scribble_class_typist/__scribble_class_typist.yy",},"order":5,},
     {"id":{"name":"input_binding_swap","path":"scripts/input_binding_swap/input_binding_swap.yy",},"order":9,},
@@ -1278,6 +1280,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"WaterReflection","folderPath":"folders/Extensions/WaterReflection.yy","order":3,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Invis","folderPath":"folders/Sprites/DEV_/Floor/Invis.yy","order":6,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Amadix","folderPath":"folders/Sprites/Portraits/Amadix.yy","order":5,},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Ambient","folderPath":"folders/Sounds/Ambient.yy","order":3,},
   ],
   "AudioGroups": [
     {"resourceType":"GMAudioGroup","resourceVersion":"1.3","name":"audiogroup_default","targets":-1,},
@@ -1315,6 +1318,8 @@
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"sdl2.txt","CopyToMask":-1,"filePath":"datafiles",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"cutscene1_en.yarn","CopyToMask":-1,"filePath":"datafiles/language/dialogue",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"item_ids.txt","CopyToMask":-1,"filePath":"datafiles",},
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"wind_forest.ogg","CopyToMask":-1,"filePath":"datafiles/sound/ambient",},
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"wind_raw.ogg","CopyToMask":-1,"filePath":"datafiles/sound/ambient",},
   ],
   "MetaData": {
     "IDEVersion": "2022.8.0.34",
