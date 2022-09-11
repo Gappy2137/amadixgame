@@ -12,5 +12,3 @@ decalOverlayTiles[0] = [];
 
 alarm[0] = 5;
 
-loopingAudio_1_prev = noone;
-loopingAudioVolume = 0.5;
