@@ -1,2 +1,2 @@
-
-loopingAudio_1_prev = loopingAudio_1;
+event_user(0);
+triggerFadeOut = true;

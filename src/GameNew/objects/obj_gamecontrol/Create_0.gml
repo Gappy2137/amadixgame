@@ -1,3 +1,5 @@
+depth = -10000;
+
 //MAKRA
 
 //EKWIPUNEK
@@ -47,6 +49,7 @@ newX = 0;
 newY = 0;
 doTransition = false;
 oldfacing = -1;
+oldrunning = 0;
 
 enum dirc{
 	right = 0,

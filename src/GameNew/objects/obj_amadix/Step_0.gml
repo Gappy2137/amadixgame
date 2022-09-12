@@ -26,7 +26,9 @@ if (rm_trans != noone){
 				newY = rm_trans.targetY;
 				doTransition = true;
 				oldfacing = obj_amadix.facing;
+				oldrunning = obj_amadix.running;
 			}
+			
 		}
 	}
 }

@@ -111,6 +111,8 @@ stuffed = false;
 shootdir = 0;
 hand_xoffset = 0;
 hand_yoffset = 0;
+hand_xoffset2 = 0;
+hand_yoffset2 = 0;
 hand_rot = 0;
 
 pickupTrigger = false;

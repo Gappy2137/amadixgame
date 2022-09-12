@@ -181,3 +181,31 @@ function meta_stamina_set() {
 	}
 }
 #endregion
+#region sound ambient play
+function sh_ambient_play(args) {
+	with (obj_audiomanager){triggerFadeOut = true; triggerFadeIn = false;
+			newAudio = asset_sound(args[1]);
+		}
+}
+
+function meta_ambient_play() {
+	return {
+		description: "",
+		arguments: ["asset"],
+		hidden: false
+	}
+}
+#endregion
+#region sound ambient stop
+function sh_ambient_stop(arg) {
+	with (obj_audiomanager){alarm[3] = 1;}
+}
+
+function meta_ambient_stop() {
+	return {
+		description: "",
+		arguments: ["index"],
+		hidden: false
+	}
+}
+#endregion

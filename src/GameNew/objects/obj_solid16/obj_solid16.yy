@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_solid16",
   "spriteId": {
     "name": "spr_solid16",
     "path": "sprites/spr_solid16/spr_solid16.yy",
@@ -31,8 +34,4 @@
     "name": "DEV_",
     "path": "folders/Objects/DEV_.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_solid16",
-  "tags": [],
-  "resourceType": "GMObject",
 }

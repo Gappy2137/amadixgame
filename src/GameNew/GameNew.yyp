@@ -343,6 +343,7 @@
     {"id":{"name":"__scribble_config_behaviours","path":"scripts/__scribble_config_behaviours/__scribble_config_behaviours.yy",},"order":0,},
     {"id":{"name":"input_check_double_released","path":"scripts/input_check_double_released/input_check_double_released.yy",},"order":3,},
     {"id":{"name":"spr_amadix_feetB_u","path":"sprites/spr_amadix_feetB_u/spr_amadix_feetB_u.yy",},"order":11,},
+    {"id":{"name":"snd_none","path":"sounds/snd_none/snd_none.yy",},"order":4,},
     {"id":{"name":"containter_additem","path":"scripts/containter_additem/containter_additem.yy",},"order":0,},
     {"id":{"name":"spr_amadix_hands_sawedoff_u_shoot","path":"sprites/spr_amadix_hands_sawedoff_u_shoot/spr_amadix_hands_sawedoff_u_shoot.yy",},"order":8,},
     {"id":{"name":"input_cursor_limit_circle","path":"scripts/input_cursor_limit_circle/input_cursor_limit_circle.yy",},"order":6,},
@@ -1320,6 +1321,7 @@
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"item_ids.txt","CopyToMask":-1,"filePath":"datafiles",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"wind_forest.ogg","CopyToMask":-1,"filePath":"datafiles/sound/ambient",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"wind_raw.ogg","CopyToMask":-1,"filePath":"datafiles/sound/ambient",},
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"none.wav","CopyToMask":-1,"filePath":"datafiles/sound",},
   ],
   "MetaData": {
     "IDEVersion": "2022.8.0.34",
