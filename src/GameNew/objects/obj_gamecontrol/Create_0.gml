@@ -1,7 +1,5 @@
 depth = -10000;
 
-//MAKRA
-
 //EKWIPUNEK
 #macro INVITEM 0
 #macro INVAMOUNT 1

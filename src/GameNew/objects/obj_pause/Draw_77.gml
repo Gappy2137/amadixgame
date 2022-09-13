@@ -42,6 +42,8 @@ if (global.pause){
 		instance_activate_object(obj_cutscene_controller);
 		instance_activate_object(obj_gamecontrol);
 		instance_activate_object(obj_rain_emitter);
+		instance_activate_object(obj_audiomanager);
+		instance_activate_object(par_collectible);
 		instance_activate_object(par_container);
 		
 		pauseSurf = surface_create(width, height);

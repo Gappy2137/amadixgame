@@ -123,14 +123,14 @@ with(obj_amadix){
 	
 	if (instance_exists(obj_gun_logic)){
 		if (obj_gun_logic.state != gunState.reloading)
-		|| (obj_gun_logic.state != gunState.reloading_empty){
+		&& (obj_gun_logic.state != gunState.reloading_empty){
 			shootdir = (point_direction(x, y + 16, mouse_x, mouse_y));
 		}else{
-			shootdir = lerp(shootdir, facing, 0.1);
+			shootdir = facing * 90;
 		}
 	}
 	
-
+/*
 	switch(facing){
 		case index_facing.down:
 			 hand_xoffset = -3;
@@ -159,6 +159,7 @@ with(obj_amadix){
 			 hand_rot = point_direction(x, y  + hand_yoffset, mouse_x, mouse_y) - 90;
 		break;
 	}
+*/
 
 
 

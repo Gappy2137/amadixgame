@@ -14,7 +14,9 @@ if (playerVisible){
 	}
 	
 }
-
+draw_text(x, y, facing);
+draw_text(x, y+8, shootdir);
+draw_text(x, y+16, hand_rot);
 //draw_text(x + 32, y, zaxis);
 //draw_text(x + 32, y + 8, zfloor);
 //draw_text(x + 32, y + 16, zheight);

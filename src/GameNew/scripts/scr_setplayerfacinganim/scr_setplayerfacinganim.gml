@@ -138,7 +138,12 @@ function scr_setPlayerFacingAnim(facing){
 						switch(itemeaten){
 							case item.m1911:
 								if (isLooking(index_facing.up)){
-										hand_rot = point_direction(x, y + hand_yoffset, mouse_x, mouse_y) - 90;
+										if (obj_gun_logic.state != gunState.reloading)
+										&& (obj_gun_logic.state != gunState.reloading_empty){
+											hand_rot = point_direction(x, y + hand_yoffset, mouse_x, mouse_y) - 90;
+										}else{
+											hand_rot = lerp(hand_rot, 0, 0.3);
+										}
 										hand_xoffset = 0;
 										hand_yoffset = 18;
 									
@@ -165,7 +170,12 @@ function scr_setPlayerFacingAnim(facing){
 										}
 								}else
 								if (isLooking(index_facing.left)){
-										hand_rot = point_direction(x, y + hand_yoffset, mouse_x, mouse_y) - 180;
+										if (obj_gun_logic.state != gunState.reloading)
+										&& (obj_gun_logic.state != gunState.reloading_empty){
+											hand_rot = point_direction(x, y + hand_yoffset, mouse_x, mouse_y) - 180;
+										}else{
+											hand_rot = lerp(hand_rot, 0, 0.3);
+										}
 										hand_xoffset = 3;
 										hand_yoffset = 17;
 									
@@ -192,7 +202,12 @@ function scr_setPlayerFacingAnim(facing){
 										}
 								}else
 								if (isLooking(index_facing.down)){
-										hand_rot = point_direction(x, y + hand_yoffset, mouse_x, mouse_y) + 90;
+										if (obj_gun_logic.state != gunState.reloading)
+										&& (obj_gun_logic.state != gunState.reloading_empty){
+											hand_rot = point_direction(x, y + hand_yoffset, mouse_x, mouse_y) + 90;
+										}else{
+											hand_rot = lerp(hand_rot, 360, 0.3);
+										}
 										hand_xoffset = -3;
 										hand_yoffset = 14;
 										hand_xoffset2 = 3;
@@ -220,7 +235,16 @@ function scr_setPlayerFacingAnim(facing){
 											break;
 										}
 								}else{
-										hand_rot = point_direction(x, y + hand_yoffset, mouse_x, mouse_y);
+										if (obj_gun_logic.state != gunState.reloading)
+										&& (obj_gun_logic.state != gunState.reloading_empty){
+											hand_rot = point_direction(x, y + hand_yoffset, mouse_x, mouse_y);
+										}else{
+											if (hand_rot >= 0) && (hand_rot <= 45){
+												hand_rot = lerp(hand_rot, 0, 0.3);
+											}else{
+												hand_rot = lerp(hand_rot, 360, 0.3);
+											}
+										}
 										hand_xoffset = -3;
 										hand_yoffset = 17;
 									
