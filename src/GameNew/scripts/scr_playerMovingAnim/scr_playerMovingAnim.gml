@@ -56,20 +56,22 @@ with(obj_amadix){
 				}
 			
 			//Update facing
-			if isLooking(index_facing.up){
-				facing = index_facing.up;	
-				scr_updatePlayerAnim();
-			}else
-			if isLooking(index_facing.left){
-				facing = index_facing.left;	
-				scr_updatePlayerAnim();
-			}else
-			if isLooking(index_facing.down){
-				facing = index_facing.down;	
-				scr_updatePlayerAnim();
-			}else{
-				facing = index_facing.right;	
-				scr_updatePlayerAnim();
+			if (running != 2){
+				if isLooking(index_facing.up){
+					facing = index_facing.up;	
+					scr_updatePlayerAnim();
+				}else
+				if isLooking(index_facing.left){
+					facing = index_facing.left;	
+					scr_updatePlayerAnim();
+				}else
+				if isLooking(index_facing.down){
+					facing = index_facing.down;	
+					scr_updatePlayerAnim();
+				}else{
+					facing = index_facing.right;	
+					scr_updatePlayerAnim();
+				}
 			}
 		
 			//Gun animation

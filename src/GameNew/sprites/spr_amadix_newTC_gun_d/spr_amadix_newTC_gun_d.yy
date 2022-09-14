@@ -73,7 +73,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Jacket",
-    "path": "folders/Sprites/Player/Torso/Jacket.yy",
+    "name": "Gun",
+    "path": "folders/Sprites/Player/Torso/Jacket/Gun.yy",
   },
 }
