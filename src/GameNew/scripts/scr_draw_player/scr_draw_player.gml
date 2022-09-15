@@ -263,6 +263,7 @@ function drawPlayerHandgun(xx, yy, zz, cutoff){
 	switch(facing){
 		case index_facing.down:
 		//----------------------------------------------------------------------------------------------------------------
+		if (instance_exists(obj_gun_logic)){obj_gun_logic.depth = depth - 1;}
 		if (!cutoff){
 					//Glowa
 					draw_sprite_ext(head_index,anim_frame,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
@@ -355,7 +356,7 @@ function drawPlayerHandgun(xx, yy, zz, cutoff){
 		break;
 		case index_facing.left:
 		//----------------------------------------------------------------------------------------------------------------
-		
+		if (instance_exists(obj_gun_logic)){obj_gun_logic.depth = depth - 1;}
 		if (!cutoff){
 					//Glowa
 					draw_sprite_ext(head_index,anim_frame,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
@@ -430,7 +431,7 @@ function drawPlayerHandgun(xx, yy, zz, cutoff){
 		break;
 		case index_facing.right:
 		//----------------------------------------------------------------------------------------------------------------
-		
+		if (instance_exists(obj_gun_logic)){obj_gun_logic.depth = depth - 1;}
 		if (!cutoff){
 					//Glowa
 					draw_sprite_ext(head_index,anim_frame,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
@@ -506,6 +507,7 @@ function drawPlayerHandgun(xx, yy, zz, cutoff){
 		break;
 		case index_facing.up:
 		//----------------------------------------------------------------------------------------------------------------
+		if (instance_exists(obj_gun_logic)){obj_gun_logic.depth = depth + 1;}
 		if (!cutoff){
 					//Rece i dlonie
 					if (instance_exists(obj_gun_logic)){

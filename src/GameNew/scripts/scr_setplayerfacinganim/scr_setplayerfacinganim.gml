@@ -592,6 +592,7 @@ switch(itemeaten){
 				break;
 			}
 		}else{
+			if (obj_gun_logic.state != gunState.empty){
 				switch(facing){
 					case index_facing.right:
 						gun_index = spr_amadix_m1911_run_r;
@@ -606,6 +607,22 @@ switch(itemeaten){
 						gun_index = spr_amadix_m1911_run_d;
 					break;
 				}
+			}else{
+				switch(facing){
+					case index_facing.right:
+						gun_index = spr_amadix_m1911_run_r_empty;
+					break;
+					case index_facing.up:
+						gun_index = spr_amadix_m1911_run_u;
+					break;
+					case index_facing.left:
+						gun_index = spr_amadix_m1911_run_l_empty;
+					break;
+					case index_facing.down:
+						gun_index = spr_amadix_m1911_run_d_empty;
+					break;
+				}
+			}
 		}
 
 
@@ -1696,19 +1713,36 @@ switch(global.playerLegs){
 				
 				}
 			}else{
-				switch(facing){
-					case index_facing.down:
-						legs_index = spr_amadix_jeansL_run_d;
-					break;
-					case index_facing.left:
-						legs_index = spr_amadix_jeansL_run_l;
-					break;
-					case index_facing.right:
-						legs_index = spr_amadix_jeansL_run_r;
-					break;
-					case index_facing.up:
-						legs_index = spr_amadix_jeansL_run_u;
-					break;
+				if (actionstate == player_state_action.handgun){
+					switch(facing){
+						case index_facing.down:
+							legs_index = spr_amadix_jeansL_run_gun_d;
+						break;
+						case index_facing.left:
+							legs_index = spr_amadix_jeansL_run_gun_l;
+						break;
+						case index_facing.right:
+							legs_index = spr_amadix_jeansL_run_gun_r;
+						break;
+						case index_facing.up:
+							legs_index = spr_amadix_jeansL_run_gun_u;
+						break;
+					}
+				}else{
+					switch(facing){
+						case index_facing.down:
+							legs_index = spr_amadix_jeansL_run_d;
+						break;
+						case index_facing.left:
+							legs_index = spr_amadix_jeansL_run_l;
+						break;
+						case index_facing.right:
+							legs_index = spr_amadix_jeansL_run_r;
+						break;
+						case index_facing.up:
+							legs_index = spr_amadix_jeansL_run_u;
+						break;
+					}
 				}
 			}
 		}

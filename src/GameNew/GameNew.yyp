@@ -1031,6 +1031,7 @@
     {"id":{"name":"spr_amadix_feetB_r","path":"sprites/spr_amadix_feetB_r/spr_amadix_feetB_r.yy",},"order":6,},
     {"id":{"name":"spr_amadix_sawedoff_u_reload","path":"sprites/spr_amadix_sawedoff_u_reload/spr_amadix_sawedoff_u_reload.yy",},"order":3,},
     {"id":{"name":"ChatterboxGetAllContentString","path":"scripts/ChatterboxGetAllContentString/ChatterboxGetAllContentString.yy",},"order":0,},
+    {"id":{"name":"scr_inv_draw_player_preview","path":"scripts/scr_inv_draw_player_preview/scr_inv_draw_player_preview.yy",},"order":22,},
     {"id":{"name":"__input_finalize_default_profiles","path":"scripts/__input_finalize_default_profiles/__input_finalize_default_profiles.yy",},"order":6,},
     {"id":{"name":"spr_amadix_hands_gun_u","path":"sprites/spr_amadix_hands_gun_u/spr_amadix_hands_gun_u.yy",},"order":4,},
     {"id":{"name":"item_drop_instant","path":"scripts/item_drop_instant/item_drop_instant.yy",},"order":16,},

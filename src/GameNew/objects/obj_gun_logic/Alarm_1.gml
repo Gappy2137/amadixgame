@@ -1,4 +1,14 @@
-
+if (instance_exists(obj_amadix)){
+	if (obj_amadix.running == 2){
+		if (ammoLoadedInv == 0){
+			state = gunState.empty;	
+		}else{
+			state = gunState.standby;
+			canShoot = true;
+		}
+		exit;
+	}
+}
 //var ammo = ammoCap - ammoLoaded;
 
 

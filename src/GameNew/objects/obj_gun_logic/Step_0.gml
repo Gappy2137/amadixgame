@@ -18,6 +18,7 @@ if (obj_amadix.actionstate == player_state_action.handgun){
 if (state == gunState.reloading)
 || (state == gunState.reloading_empty)
 || (obj_amadix.actionstate != player_state_action.handgun)
+|| (obj_amadix.running == 2)
 || (global.inEq)
 || (global.inConsole)
 || (global.inChest)
@@ -30,6 +31,7 @@ if (state == gunState.reloading)
 if (state == gunState.shooting)
 || (obj_amadix.actionstate != player_state_action.handgun)
 || (ammoExtra == 0)
+|| (obj_amadix.running == 2)
 || (global.inEq)
 || (global.inConsole)
 || (global.inChest)
@@ -46,7 +48,13 @@ if (state != gunState.reloading)
 && (state != gunState.reloading_empty)
 && (inChamber == true)
 && (state != gunState.shooting)
-&& (obj_amadix.actionstate == player_state_action.handgun){
+&& (obj_amadix.running != 2)
+&& (obj_amadix.actionstate == player_state_action.handgun)
+&& (!global.inEq)
+&& (!global.inConsole)
+&& (!global.inChest)
+&& (!global.inDialogue)
+&& (!global.inCutscene){
 	canShoot = true;
 }
 
@@ -59,7 +67,13 @@ if (state != gunState.reloading)
 && (state != gunState.shooting)
 && (obj_inventory.ds_inventory[# INVHP, obj_inventory.mouse_slotx_second] < ammoCap)
 && (ammoExtra != 0)
-&& (obj_amadix.actionstate == player_state_action.handgun){
+&& (obj_amadix.running != 2)
+&& (obj_amadix.actionstate == player_state_action.handgun)
+&& (!global.inEq)
+&& (!global.inConsole)
+&& (!global.inChest)
+&& (!global.inDialogue)
+&& (!global.inCutscene){
 	canReload = true;
 }
 
@@ -283,17 +297,28 @@ if (type == 0){
 if (canReload){
 	if (input_check_pressed("reload")){
 		
-		canShoot = false;
-		canReload = false;
+		if (obj_amadix.running != 2){
+			canShoot = false;
+			canReload = false;
 		
-		obj_amadix.anim_frame_action = 0;
+			obj_amadix.anim_frame_action = 0;
 		
-		if (ammoLoadedInv == 0){
-			state = gunState.reloading_empty;	
-			alarm[1] = reloadTimeEmpty;
+			if (ammoLoadedInv == 0){
+				state = gunState.reloading_empty;	
+				alarm[1] = reloadTimeEmpty;
+			}else{
+				state = gunState.reloading;
+				alarm[1] = reloadTime;
+			}
 		}else{
-			state = gunState.reloading;
-			alarm[1] = reloadTime;
+			obj_amadix.anim_frame_action = 0;
+			if (ammoLoadedInv == 0){
+				state = gunState.empty;	
+			}else{
+				state = gunState.standby;
+				canShoot = true;
+			}
+			canReload = true;
 		}
 	}
 }

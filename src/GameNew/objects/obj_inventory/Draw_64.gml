@@ -24,12 +24,9 @@ if (show_inventory) && (!show_slots){
 	var amx = 148;
 	var amy = 175;
 	
-	draw_sprite(obj_amadix.head_index, 0, amx, amy);
-	draw_sprite(obj_amadix.hat_index, 0, amx, amy);
-	draw_sprite(obj_amadix.hands_index, 0, amx, amy);
-	draw_sprite(obj_amadix.torso_index, 0, amx, amy);
-	draw_sprite(obj_amadix.legs_index, 0, amx, amy);
-	draw_sprite(obj_amadix.boots_index, 0, amx, amy);
+	if (instance_exists(obj_amadix)){
+		scr_inv_draw_player_preview(amx, amy);
+	}
 
 
 	//Inventory
@@ -486,7 +483,9 @@ if (show_inventory) && (!show_slots){
 		
 		
 		//Rysuj HP
-		if (hp != 0){
+		if (hp != 0) 
+		&& (inv_grid[# INVTYPE, selected_slot] != itemtype.handgun)
+		&& (inv_grid[# INVTYPE, selected_slot] != itemtype.shotgun){
 			draw_sprite(spr_inventory_item_stat, 0, hp_x, hp_y);
 			var hpstr = scribble(hp);
 			hpstr.starting_format("font_dialogue", bl);

@@ -6,7 +6,7 @@ ammoExtra = 0;
 ammoLoadedInv = 0;
 
 isLoaded = true;
-canShoot = true;
+canShoot = false;
 canReload = true;
 isEmpty = false;
 

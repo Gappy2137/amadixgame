@@ -27,10 +27,10 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9848dde5-c2b3-42e6-bd7c-4563d352d689",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"33e6affb-2a0d-41f0-866f-6c86e920e54f",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b395b91a-ba5e-4b7e-847c-8eb170bc1ef8",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"791b5890-bf97-46fa-8a62-44e3170bbe6c",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"2a7591c8-d534-4590-bac1-de62f89028db",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"6b5512b9-0075-4e5e-88b2-41f35a19107a",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7c790b89-25d0-4a55-bd52-7a4e4b83a64d",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f84128a3-139b-48ad-a424-78cb1e5dbd4f",},
   ],
   "sequence": {
     "resourceType": "GMSequence",
@@ -47,10 +47,10 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"a967e03f-87b2-4c66-a3a9-ffae33419922","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"9848dde5-c2b3-42e6-bd7c-4563d352d689","path":"sprites/spr_amadix_jeansL_gun_l/spr_amadix_jeansL_gun_l.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"d0c2e081-a5f3-4457-9e9d-a49ab2d67fac","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"33e6affb-2a0d-41f0-866f-6c86e920e54f","path":"sprites/spr_amadix_jeansL_gun_l/spr_amadix_jeansL_gun_l.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"4fc9b949-99fa-4d83-b38b-14702c206d3b","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b395b91a-ba5e-4b7e-847c-8eb170bc1ef8","path":"sprites/spr_amadix_jeansL_gun_l/spr_amadix_jeansL_gun_l.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"ec819aad-8c8d-4031-be57-82c9c75ca819","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"791b5890-bf97-46fa-8a62-44e3170bbe6c","path":"sprites/spr_amadix_jeansL_gun_l/spr_amadix_jeansL_gun_l.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"6a4a4087-fb85-4869-a56f-99778d1b0e41","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"2a7591c8-d534-4590-bac1-de62f89028db","path":"sprites/spr_amadix_jeansL_gun_l/spr_amadix_jeansL_gun_l.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"6251644e-6463-429b-a751-d8f31e4d6024","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"6b5512b9-0075-4e5e-88b2-41f35a19107a","path":"sprites/spr_amadix_jeansL_gun_l/spr_amadix_jeansL_gun_l.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"747990fb-1711-43a4-a950-9989494b9e5e","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7c790b89-25d0-4a55-bd52-7a4e4b83a64d","path":"sprites/spr_amadix_jeansL_gun_l/spr_amadix_jeansL_gun_l.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"1f370eb6-5a7b-4632-8ee3-0f75c82de079","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f84128a3-139b-48ad-a424-78cb1e5dbd4f","path":"sprites/spr_amadix_jeansL_gun_l/spr_amadix_jeansL_gun_l.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
@@ -69,7 +69,7 @@
     "eventStubScript": null,
   },
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"2aa92c94-41a9-4f04-aeda-46eeece0b145","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"7f24ebe5-2b4c-42f9-82b2-905d21d4a600","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {

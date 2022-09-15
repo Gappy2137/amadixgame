@@ -3,6 +3,11 @@
 
 if (instance_exists(obj_amadix)){
 	
+	if (obj_amadix.facing == index_facing.up){
+		depth = obj_amadix.depth + 1;
+	}else{
+		depth = obj_amadix.depth - 1;
+	}
 
 	if (obj_amadix.state == player_state.swimming_idle)
 	|| (obj_amadix.state == player_state.swimming){

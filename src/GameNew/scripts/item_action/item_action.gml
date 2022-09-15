@@ -28,19 +28,21 @@ function item_action(){
 						itemeaten = iitem;
 						actionstate = player_state_action.handgun;
 						
-						
-						if isLooking(index_facing.up){
-							face = index_facing.up;
-						}else
-						if isLooking(index_facing.left){
-							face = index_facing.left;
-						}else
-						if isLooking(index_facing.down){
-							face = index_facing.down;
+						if (running != 2){
+							if isLooking(index_facing.up){
+								face = index_facing.up;
+							}else
+							if isLooking(index_facing.left){
+								face = index_facing.left;
+							}else
+							if isLooking(index_facing.down){
+								face = index_facing.down;
+							}else{
+								face = index_facing.right;
+							}
 						}else{
-							face = index_facing.right;
+							face = facing;	
 						}
-						
 						if (actionstate != player_state_action.pickup)
 							scr_setPlayerFacingAnim(face);
 					}

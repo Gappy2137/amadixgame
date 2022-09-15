@@ -124,11 +124,15 @@ with(obj_amadix){
 	
 	
 	if (instance_exists(obj_gun_logic)){
-		if (obj_gun_logic.state != gunState.reloading)
-		&& (obj_gun_logic.state != gunState.reloading_empty){
-			shootdir = (point_direction(x, y + 16, mouse_x, mouse_y));
+		if (running != 2){
+			if (obj_gun_logic.state != gunState.reloading)
+			&& (obj_gun_logic.state != gunState.reloading_empty){
+				shootdir = (point_direction(x, y + 16, mouse_x, mouse_y));
+			}else{
+				shootdir = facing * 90;
+			}
 		}else{
-			shootdir = facing * 90;
+			shootdir = facing;	
 		}
 	}
 	
@@ -197,6 +201,7 @@ with(obj_amadix){
 			if ((hsp != 0) || (vsp != 0)){
 				if (timeSinceRunning >= timeToRun){
 					if (actionstate != player_state_action.attacking_melee)
+					&& (actionstate != player_state_action.handgun)
 					&& (state != player_state.wading)
 					&& (state != player_state.wading_idle)
 					&& (state != player_state.swimming)
@@ -320,7 +325,35 @@ with(obj_amadix){
 		}
 	}
 	
-	if (actionstate == player_state_action.none) && (canmove) && (actionstate != player_state_action.pickup){
+	if (canmove)
+	&& (actionstate != player_state_action.attacking_melee)
+	&& (actionstate != player_state_action.drinking)
+	&& (actionstate != player_state_action.eating)
+	&& (actionstate != player_state_action.pickup){
+		if (actionstate == player_state_action.handgun)
+		&& (running == 2){
+				if (key_right){ 
+					scr_setPlayerFacingAnim(index_facing.right);
+					facing = index_facing.right;
+					hand_rot = 0;
+				}
+				if (key_left){
+					scr_setPlayerFacingAnim(index_facing.left);
+					facing = index_facing.left;
+					hand_rot = 0;
+				}
+				if (key_up){
+					scr_setPlayerFacingAnim(index_facing.up);
+					facing = index_facing.up;
+					hand_rot = 0;
+				}
+				if (key_down){
+					scr_setPlayerFacingAnim(index_facing.down);
+					facing = index_facing.down;
+					hand_rot = 360;
+				}	
+		}
+		if (actionstate == player_state_action.none){
 				if (key_right){ 
 					scr_setPlayerFacingAnim(index_facing.right);
 					facing = index_facing.right;
@@ -337,6 +370,7 @@ with(obj_amadix){
 					scr_setPlayerFacingAnim(index_facing.down);
 					facing = index_facing.down;
 				}	
+		}
 	}
 	
 }

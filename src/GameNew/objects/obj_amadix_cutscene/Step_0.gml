@@ -55,4 +55,3 @@ switch(_index){
 }
 
 scr_setPlayerFacingAnim(facing);
-
