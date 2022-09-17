@@ -6,7 +6,8 @@ if (instance_exists(obj_amadix)){
 }
 
 
-
+/*
+if (!ready){exit;}
 
 if (triggerFadeOut){
 	if (timer2 == 0){
@@ -32,7 +33,8 @@ if (triggerFadeOut){
 	
 	if (audio_sound_get_gain(loopAudioSound[0]) <= 0){
 		audio_stop_sound(loopAudioSound[0]);
-		loopAudioIndex[0] = newAudio;
+		if (newAudio != noone)
+			loopAudioIndex[0] = newAudio;
 		alarm[2] = 2;
 		triggerFadeOut = false;
 		timer2 = timeFadeIn;	

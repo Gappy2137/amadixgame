@@ -1,0 +1,9 @@
+{
+  "extensionId": {
+    "name": "Dynamic_Music_System",
+    "path": "extensions/Dynamic_Music_System/Dynamic_Music_System.yy"
+  },
+  "resourceVersion": "1.0",
+  "resourceType": "GMExtensionConfigSet",
+  "configurables": null
+}

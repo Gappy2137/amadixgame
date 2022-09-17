@@ -21,8 +21,7 @@ if (doTransition){
 //draw_text(48, 48, in);
 
 draw_set_alpha(1);
-draw_text(128, 128, obj_audiomanager.timer);
-draw_text(128, 128 + 8, obj_audiomanager.timer2);
-draw_text(128, 128 + 16, audio_get_name(obj_audiomanager.loopAudioIndex[0]));
-draw_text(128, 128 + 24, obj_audiomanager.loopAudioVolume[0]);
-draw_text(128, 128 + 32, audio_sound_get_gain(obj_audiomanager.loopAudioSound[0]));
+draw_text(128, 128 + 0, (obj_audiomanager.loopAudioState[0]));
+draw_text(128, 128 + 8, audio_get_name(obj_audiomanager.loopAudioIndex[0]));
+draw_text(128, 128 + 16, (obj_audiomanager.loopAudioVolume[0]));
+draw_text(128, 128 + 24, audio_sound_get_gain(obj_audiomanager.loopAudioSound[0]));
