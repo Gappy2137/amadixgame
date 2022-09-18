@@ -80,6 +80,18 @@ if (show_inventory) && (!show_slots){
 	}
 	//---------------------------------------------------------------------------
 	
+	//---------------------------------------------------------------------------
+	// Trash item
+	if ((mousex >= trashSlotX) && (mousex < trashSlotX2) && (mousey >= trashSlotY) && (mousey <= trashSlotY2)){
+		if (inhand != -1){
+			onTrashSlot = true;
+		}
+	}else{
+		onTrashSlot = false;
+	}
+	
+	//---------------------------------------------------------------------------
+	
 	#endregion
 	//---------------------------------------------------------------------------
 
@@ -409,15 +421,27 @@ if (show_inventory) && (!show_slots){
 	}else{
 		//Jezeli myszka jest poza ekranem ekwipunku
 		if ((!pageArrowOn[0]) && (!pageArrowOn[1])){
-			if (selected_slot == -1){
+			if (onTrashSlot){
 				if (mouse_check_button_pressed(mb_left)){
-					//Jezeli trzymasz cos w rece wyrzuc to
-					if (inhand != -1){
-						item_drop(inhand, multipick, lvl, cap, true, obj_amadix.x, obj_amadix.y, 5);		
-						inhand = -1;
-						multipick = 0;
-						cap = -1;
-						lvl = 0;
+					
+					audio_play_sound(snd_trashcan, 10, false);
+					
+					inhand = -1;
+					multipick = 0;
+					cap = -1;
+					lvl = 0;
+				}
+			}else{
+				if (selected_slot == -1){
+					if (mouse_check_button_pressed(mb_left)){
+						//Jezeli trzymasz cos w rece wyrzuc to
+						if (inhand != -1){
+							item_drop(inhand, multipick, lvl, cap, true, obj_amadix.x, obj_amadix.y, 5);		
+							inhand = -1;
+							multipick = 0;
+							cap = -1;
+							lvl = 0;
+						}
 					}
 				}
 			}

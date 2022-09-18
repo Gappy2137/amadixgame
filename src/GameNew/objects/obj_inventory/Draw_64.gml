@@ -26,18 +26,18 @@ if (show_inventory) && (!show_slots){
 			// Left arrow
 			if (page > 0){
 				if !(pageArrowOn[0]){
-					draw_sprite(spr_eq_arrow, 0, pageArrow_drawx[0], pageArrow_drawy);	
+					draw_sprite(spr_eq_arrow, 0, pageArrow_drawx[0], pageArrow_drawy + y_rel);	
 				}else{
-					draw_sprite(spr_eq_arrow, 1, pageArrow_drawx[0], pageArrow_drawy);	
+					draw_sprite(spr_eq_arrow, 1, pageArrow_drawx[0], pageArrow_drawy + y_rel);	
 				}
 			}
 			
 			//Right arrow
 			if (page < pages){
 				if !(pageArrowOn[1]){
-					draw_sprite(spr_eq_arrow, 2, pageArrow_drawx[1], pageArrow_drawy);	
+					draw_sprite(spr_eq_arrow, 2, pageArrow_drawx[1], pageArrow_drawy + y_rel);	
 				}else{
-					draw_sprite(spr_eq_arrow, 3, pageArrow_drawx[1], pageArrow_drawy);	
+					draw_sprite(spr_eq_arrow, 3, pageArrow_drawx[1], pageArrow_drawy + y_rel);	
 				}
 			}
 		}
@@ -47,7 +47,17 @@ if (show_inventory) && (!show_slots){
 	// Inventory back
 	draw_sprite_ext(spr_eq_slotback, 0, backslotUI_x, backslotUI_y + y_rel, scale, scale, 0, c_white, 1);
 
+	// Accessory slots
+	draw_sprite_ext(spr_eq_slotback_accessory, 0, accessorySlotsX, accessorySlotsY + y_rel, scale, scale, 0, c_white, 1);
 
+	// Trash slot
+	draw_sprite_ext(spr_eq_trash, 0, trashSlotX, trashSlotY + y_rel, scale, scale, 0, c_white, 1);
+	if (onTrashSlot){
+		draw_sprite(spr_eq_trash, 2, trashSlotX, trashSlotY + y_rel);
+	}else{
+		draw_sprite(spr_eq_trash, 1, trashSlotX, trashSlotY + y_rel);
+	}
+	
 	// Amadix
 	var amx = 148;
 	var amy = 175;

@@ -82,8 +82,11 @@ spr_eq_slotback = spr_eq_ui_slotback;
 spr_eq_arrow = spr_eq_ui_slotback_arrow;
 spr_eq_slotback_12slot = spr_eq_ui_slotback_noneq;
 
+spr_eq_trash = spr_eq_trashslot;
+
 
 spr_eq_slotback_armor = spr_eq_ui_slotback_armor;
+spr_eq_slotback_accessory = spr_eq_ui_slotback_accessory;
 ///////////////
 
 cell_size = 24;
@@ -132,6 +135,15 @@ pageArrow_y2 = 128;
 
 pageArrow_x1[1] = 386;
 pageArrow_x2[1] = 416;
+
+trashSlotX = 427;
+trashSlotY = 219;
+trashSlotX2 = 479;
+trashSlotY2 = 269;
+onTrashSlot = false;
+
+accessorySlotsX = 300;
+accessorySlotsY = 168;
 
 spr_inv_items_columns = sprite_get_width(spr_inv_items)/cell_size;
 spr_inv_items_rows = sprite_get_height(spr_inv_items)/cell_size;
