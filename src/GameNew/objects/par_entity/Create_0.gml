@@ -9,3 +9,4 @@ running = 0;
 zfloor = 0;
 gravSpeed = 1;
 jumpSpeed = 10;
+speedChange = 0;

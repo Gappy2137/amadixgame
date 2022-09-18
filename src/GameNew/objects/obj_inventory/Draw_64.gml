@@ -19,14 +19,43 @@ if (show_inventory) && (!show_slots){
 	
 
 	depth = -2;
+	
+	#region Page arrows
+	
+		if (pages > 0){
+			// Left arrow
+			if (page > 0){
+				if !(pageArrowOn[0]){
+					draw_sprite(spr_eq_arrow, 0, pageArrow_drawx[0], pageArrow_drawy);	
+				}else{
+					draw_sprite(spr_eq_arrow, 1, pageArrow_drawx[0], pageArrow_drawy);	
+				}
+			}
+			
+			//Right arrow
+			if (page < pages){
+				if !(pageArrowOn[1]){
+					draw_sprite(spr_eq_arrow, 2, pageArrow_drawx[1], pageArrow_drawy);	
+				}else{
+					draw_sprite(spr_eq_arrow, 3, pageArrow_drawx[1], pageArrow_drawy);	
+				}
+			}
+		}
+	
+	#endregion
+	
+	// Inventory back
 	draw_sprite_ext(spr_eq_slotback, 0, backslotUI_x, backslotUI_y + y_rel, scale, scale, 0, c_white, 1);
 
+
+	// Amadix
 	var amx = 148;
 	var amy = 175;
 	
 	if (instance_exists(obj_amadix)){
 		scr_inv_draw_player_preview(amx, amy);
 	}
+
 
 
 	//Inventory

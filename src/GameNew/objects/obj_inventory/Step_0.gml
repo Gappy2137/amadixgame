@@ -7,6 +7,8 @@ if (!canUseInventory){exit;}
 #region Operacje na przedmiotach
 if (show_inventory) && (!show_slots){
 
+
+	//---------------------------------------------------------------------------
 	#region Pozycja myszki
 	mousex = device_mouse_x_to_gui(0);
 	mousey = device_mouse_y_to_gui(0);
@@ -40,43 +42,49 @@ if (show_inventory) && (!show_slots){
 		selected_slot = -1;
 	}
 	
-	//////////////////////////////////////////////////////////////////////////
+	//---------------------------------------------------------------------------
 	//Zmiana strony
-	if (mousex >= (xUI - 16)) && (mousex < (xUI - 16 + 14)) && (mousey >= (yUI + 70)) && (mousey <= (yUI + 70 + 25)){
+	if (pages > 0){
 		if (page > 0){
-			if (mouse_check_button_pressed(mb_left)){
+			if ((mousex >= pageArrow_x1[0]) && (mousex < pageArrow_x2[0]) && (mousey >= pageArrow_y1) && (mousey <= pageArrow_y2)){
+				if (mouse_check_button_pressed(mb_left)){
+					page--;
+				}
+				pageArrowOn[0] = true;
+			}else{
+				pageArrowOn[0] = false;
+			}
+		}
+	
+		if (page < pages){
+			if ((mousex >= pageArrow_x1[1]) && (mousex < pageArrow_x2[1]) && (mousey >= pageArrow_y1) && (mousey <= pageArrow_y2)){
+				if (mouse_check_button_pressed(mb_left)){
+					page++;
+				}
+				pageArrowOn[1] = true;
+			}else{
+				pageArrowOn[1] = false;
+			}
+		}
+	
+		if (mouse_wheel_up()){
+			if (page > 0){
 				page--;
 			}
-			if (picked_slot != -1){
-				page--;	
-			}
 		}
-	}
-	if (mousex >= ((xUI + invUI_width))) && (mousex < ((xUI + invUI_width) + 16)) && (mousey >= (yUI + 70)) && (mousey <= (yUI + 70 + 25)){
-		if (page < pages){
-			if (mouse_check_button_pressed(mb_left)){
+		if (mouse_wheel_down()){
+			if (page < pages){
 				page++;
 			}
-			if (picked_slot != -1){
-				page++;	
-			}
 		}
 	}
-	
-	if (mouse_wheel_up()){
-		if (page > 0){
-			page--;
-		}
-	}
-	if (mouse_wheel_down()){
-		if (page < pages){
-			page++;
-		}
-	}
-	//////////////////////////////////////////////////////////////////////////
+	//---------------------------------------------------------------------------
 	
 	#endregion
+	//---------------------------------------------------------------------------
 
+
+	//---------------------------------------------------------------------------
 	#region Armor
 	var ar = 0;
 	repeat(4){
@@ -86,7 +94,9 @@ if (show_inventory) && (!show_slots){
 		ar++;
 	}
 	#endregion
-
+	//---------------------------------------------------------------------------
+	
+	//---------------------------------------------------------------------------
 	#region Operacje na przedmiotach
 	var inv_grid = ds_inventory;
 
@@ -398,22 +408,25 @@ if (show_inventory) && (!show_slots){
 		
 	}else{
 		//Jezeli myszka jest poza ekranem ekwipunku
-		if (selected_slot == -1){
-			if (mouse_check_button_pressed(mb_left)){
-				//Jezeli trzymasz cos w rece wyrzuc to
-				if (inhand != -1){
-					item_drop(inhand, multipick, lvl, cap, true, obj_amadix.x, obj_amadix.y, 5);		
-					inhand = -1;
-					multipick = 0;
-					cap = -1;
-					lvl = 0;
+		if ((!pageArrowOn[0]) && (!pageArrowOn[1])){
+			if (selected_slot == -1){
+				if (mouse_check_button_pressed(mb_left)){
+					//Jezeli trzymasz cos w rece wyrzuc to
+					if (inhand != -1){
+						item_drop(inhand, multipick, lvl, cap, true, obj_amadix.x, obj_amadix.y, 5);		
+						inhand = -1;
+						multipick = 0;
+						cap = -1;
+						lvl = 0;
+					}
 				}
 			}
 		}
 	}
 	#endregion
-
+	//---------------------------------------------------------------------------
 	
+	//---------------------------------------------------------------------------
 	//Jezeli istnieje w siatce przedmiot o ilosci zerowej usun go
 	for (var i = 0; i < inv_slots; ++i){
 	    if ((inv_grid[# INVAMOUNT, i] == 0) && (inv_grid[# INVITEM, i] != item.none)){
@@ -423,13 +436,16 @@ if (show_inventory) && (!show_slots){
 			inv_grid[# INVCAP, i] = 0;	
 		}
 	}
+	//---------------------------------------------------------------------------
 	
+	//---------------------------------------------------------------------------
 	if (inhand == -1){
 		multipick = 0;	
 	}
 	if (multipick == 0){
 		inhand = -1;	
 	}
+	//---------------------------------------------------------------------------
 }
 else if (!show_inventory) && (show_slots){
 	

@@ -25,11 +25,16 @@ with (obj_amadix){
 	|| (global.inCutscene)
 	|| (global.inChest)
 	|| (global.pause){
-		if (hsp != 0){
-			hsp = lerp(hsp, 0, 0.5);
-		}
-		if (vsp != 0){
-			vsp = lerp(vsp, 0, 0.5);
+		if (global.pause){
+			hsp = 0;
+			vsp = 0;
+		}else{
+			if (hsp != 0){
+				hsp = lerp(hsp, 0, 0.5);
+			}
+			if (vsp != 0){
+				vsp = lerp(vsp, 0, 0.5);
+			}
 		}
 		anim_frame = 0;
 		anim_speed = 0;
@@ -567,8 +572,9 @@ with (obj_amadix){
 		vsp /= 4;
 	}
 	
-	var plantcol = collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom, par_collectible, false, true);
+	var plantcol = collision_rectangle(bbox_left, bbox_top + 4, bbox_right, bbox_bottom + 4, par_collectible, false, true);
 	var plantcol2 = collision_rectangle(bbox_left, bbox_top + 4, bbox_right, bbox_bottom + 4, par_grass, false, true);
+	
 	if (plantcol) || (plantcol2){
 		speedChange = -.2;
 	}else{

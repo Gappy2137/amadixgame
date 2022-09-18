@@ -12,21 +12,24 @@ switch (mode) {
 	        if (instance_exists(following)){
 				
 				if (!stop){
+					if (!global.pause){
+						bounded = true;
 				
-					bounded = true;
+						var cam_x = clamp((following.x-(view_width/2)),0 , room_width-(view_width));
+						var cam_y = clamp((following.y-(view_height/2) + _y),0, room_height-(view_height));
 				
-					var cam_x = clamp((following.x-(view_width/2)),0 , room_width-(view_width));
-					var cam_y = clamp((following.y-(view_height/2) + _y),0, room_height-(view_height));
+						var cam_x_pos = camera_get_view_x(view_camera[0]);
+						var cam_y_pos = camera_get_view_y(view_camera[0]);
 				
-					var cam_x_pos = camera_get_view_x(view_camera[0]);
-					var cam_y_pos = camera_get_view_y(view_camera[0]);
-				
-					var cam_speed = 0.2;
+						var cam_speed = 0.2;
 
-					camera_set_view_pos(view_camera[0],
-									    (round_to4(lerp(cam_x_pos,cam_x,cam_speed))),
-										(round_to4(lerp(cam_y_pos,cam_y,cam_speed))));	
-									
+						camera_set_view_pos(view_camera[0],
+										    (round_to4(lerp(cam_x_pos,cam_x,cam_speed))),
+											(round_to4(lerp(cam_y_pos,cam_y,cam_speed))));	
+						
+						camX = cam_x;
+						camY = cam_y;
+					}
 				}
 			}
 			
@@ -44,7 +47,9 @@ switch (mode) {
 				var cam_y = clamp((following.y-(view_height/2) + _y),0, room_height-(view_height));
 
 				camera_set_view_pos(view_camera[0], (cam_x), (cam_y));
-									
+						
+				camX = cam_x;
+				camY = cam_y;	
 			}
 			
     break;
@@ -53,3 +58,4 @@ switch (mode) {
 if (!bounded){
 	camera_set_view_pos(view_camera[0], 0, 0);
 }
+

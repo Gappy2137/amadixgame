@@ -21,7 +21,7 @@ yposTemp = false;
 canUseInventory = true;
 
 page = 0;
-pages = 0;
+pages = 2;
 
 inv_slots = (48 * (pages + 1)) + 4;
 inv_slots_width = 12;
@@ -117,6 +117,21 @@ armor_y[2] = 168;
 
 armor_x[3] = 168;
 armor_y[3] = 192;
+
+pageArrowOn[0] = false;
+pageArrowOn[1] = false;
+
+pageArrow_drawx[0] = 65;
+pageArrow_drawx[1] = 370;
+pageArrow_drawy = 79;
+
+pageArrow_x1[0] = 64;
+pageArrow_y1 = 80;
+pageArrow_x2[0] = 94;
+pageArrow_y2 = 128;
+
+pageArrow_x1[1] = 386;
+pageArrow_x2[1] = 416;
 
 spr_inv_items_columns = sprite_get_width(spr_inv_items)/cell_size;
 spr_inv_items_rows = sprite_get_height(spr_inv_items)/cell_size;
