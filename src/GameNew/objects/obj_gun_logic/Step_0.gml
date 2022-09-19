@@ -115,7 +115,7 @@ if (type == 0){
 			var bullet = instance_create_layer(xx, yy, "Instances", obj_bullet_shot);
 			with (bullet){
 				_sprite = spr_bullet_shot;
-				spd = 8;
+				spd = 20;
 				angle = obj_amadix.shootdir + random_range(-6, 6);
 				zaxis = obj_amadix.zfloor + 16;
 			}
