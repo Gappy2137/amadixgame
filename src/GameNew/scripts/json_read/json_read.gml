@@ -1,6 +1,6 @@
 function json_read(key){
 
-var language = string(global.lang);
+var language = global.lang;
 
 // Open the Json file
 var JsonFile = file_text_open_read(working_directory + "/language/langs.json");

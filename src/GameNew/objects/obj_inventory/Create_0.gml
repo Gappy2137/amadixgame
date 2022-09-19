@@ -201,7 +201,8 @@ enum item{
 	vodka						= 20,
 	sawedoff					= 21,
 	cat_ears					= 22,
-	height						= 23
+	dandelion					= 23,
+	height						= 24
 }
 #endregion
 
@@ -240,7 +241,6 @@ repeat(item.height){
 alarm[0] = 1; //Nazwy i opisy przedmiotow
 
 item_attrib_grid();
-
 
 i = 0;
 repeat(inv_slots){

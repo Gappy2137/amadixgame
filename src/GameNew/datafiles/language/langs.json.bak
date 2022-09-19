@@ -46,10 +46,10 @@
 		"itemDescPanamaHat":					"Traditionally made from leaves of toquilla palm.",
 		"itemDescM1911":						"Semi-automatic handgun. Uses .45ACP bullet.",
 		"itemDescM1911mag":						"A magazine used by M1911 handgun. Can hold 7 .45ACP bullets.",
-		"itemDesc45ACP":						"Nabój kalibru .45 cala.",
-		"itemDescVodka":						"Rozwiązanie i powód wielu problemów.",
-		"itemDescSawedOff":						"Skrócona wersja dubeltówki strzelająca śrutem 12 Gauge.",
-		"itemDescCatEars":						"Jeden z elementów zestawu prawdziwego informatyka.",
+		"itemDesc45ACP":						".45ACP bullet.",
+		"itemDescVodka":						"A solution and a cause of many problems.",
+		"itemDescSawedOff":						"A sawed off double barrel shotgun. Uses 12 Gauge shells.",
+		"itemDescCatEars":						"If you see someone wearing them they are probably studying Computer Science.",
 		
 		
 		

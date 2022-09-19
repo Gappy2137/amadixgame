@@ -125,6 +125,12 @@ function item_attrib_grid(){
 	grid[# INVTEMPERATURE, item.cat_ears] = 0;
 	grid[# INVDEFENCE, item.cat_ears] = 0;
 	
+	//Mniszek
+	grid[# INVTYPE, item.dandelion] = itemtype.food;
+	grid[# INVHP, item.dandelion] = 2;
+	grid[# INVSTAMINA, item.dandelion] = 2;
+	grid[# INVTEMPERATURE, item.dandelion] = 0;
+	
 	var i = 0;
 	
 	//Sprawdzenie typow
