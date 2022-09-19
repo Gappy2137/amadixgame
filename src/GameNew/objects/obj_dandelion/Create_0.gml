@@ -2,7 +2,7 @@ event_inherited();
 
 yorigin = 14;
 
-itemDrop = item.mango_salsa;
+itemDrop = item.dandelion;
 
 itemNum = 1;
 itemNumMax = 1;

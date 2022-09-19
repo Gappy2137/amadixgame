@@ -3,6 +3,8 @@ if (cutsceneStep != 0){exit;}
 
 choiceNum = (ChatterboxGetOptionCount(chatterbox));
 
+
+
 #region Work out if all of our text elements have stopped fading in
 
 var _complete = true;

@@ -54,6 +54,8 @@ if (show_inventory) && (!show_slots){
 			}else{
 				pageArrowOn[0] = false;
 			}
+		}else{
+			pageArrowOn[0] = false;
 		}
 	
 		if (page < pages){
@@ -65,6 +67,8 @@ if (show_inventory) && (!show_slots){
 			}else{
 				pageArrowOn[1] = false;
 			}
+		}else{
+			pageArrowOn[1] = false;	
 		}
 	
 		if (mouse_wheel_up()){
@@ -77,6 +81,9 @@ if (show_inventory) && (!show_slots){
 				page++;
 			}
 		}
+	}else{
+		pageArrowOn[0] = false;
+		pageArrowOn[1] = false;
 	}
 	//---------------------------------------------------------------------------
 	
@@ -420,7 +427,7 @@ if (show_inventory) && (!show_slots){
 		
 	}else{
 		//Jezeli myszka jest poza ekranem ekwipunku
-		if ((!pageArrowOn[0]) && (!pageArrowOn[1])){
+		if !((pageArrowOn[0]) || (pageArrowOn[1])){
 			if (onTrashSlot){
 				if (mouse_check_button_pressed(mb_left)){
 					

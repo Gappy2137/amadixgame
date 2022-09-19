@@ -8,7 +8,10 @@
   "managed": true,
   "spriteMaskId": null,
   "persistent": true,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "par_alwaysactive",
+    "path": "objects/par_alwaysactive/par_alwaysactive.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,

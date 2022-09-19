@@ -12,6 +12,7 @@ if (doTransition){
 	draw_rectangle_color(0, 0, guiWidth, guiHeight, c_black, c_black, c_black, c_black, false);
 	draw_set_alpha(1);
 }
+
 //draw_text(64, 96, hours + ":" + minutes);
 
 //draw_text(64, 96, global.alcoholPoisoning);
@@ -20,6 +21,9 @@ if (doTransition){
 
 //draw_text(48, 48, in);
 
+
+
+/*
 draw_set_alpha(1);
 draw_text(128, 128 + 0, (obj_audiomanager.loopAudioState[0]));
 draw_text(128, 128 + 8, audio_get_name(obj_audiomanager.loopAudioIndex[0]));

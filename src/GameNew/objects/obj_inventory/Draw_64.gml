@@ -17,6 +17,8 @@ if (show_inventory) && (!show_slots){
 	//draw_text(16, 64 + 12*7, "maxcap " + string(ds_inventory[# MAXCAP, abs(selected_slot)]));
 	//////////////////
 	
+	draw_text(16, 64, pageArrowOn[0]);
+	draw_text(16, 64 + 8, pageArrowOn[1]);
 
 	depth = -2;
 	

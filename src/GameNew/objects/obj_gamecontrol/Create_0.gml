@@ -146,6 +146,8 @@ alarm[1] = GAMESPEED;
 
 alarm[0] = 5;
 
+
+
 //room data
 global.roomData = {
 	devroom_3 : 0,

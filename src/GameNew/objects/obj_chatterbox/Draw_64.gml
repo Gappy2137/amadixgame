@@ -9,7 +9,9 @@ if (ChatterboxIsStopped(chatterbox)){
 	//draw_text(128,128,boxType);
 
 if (!show)exit;
-	
+
+
+
 function choiceshow(){
 	var _j = 0;
     repeat(array_length(choice_elements)){

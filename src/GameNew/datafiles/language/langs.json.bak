@@ -1,6 +1,6 @@
 {
 
-	"0": {
+	"english": {
 		"itemNameNone":							"...",
 		"itemNameApple":						"Apple",
 		"itemNameBucket":						"Bucket",
@@ -75,7 +75,7 @@
 		"Hello":	"Hello!"
 	},
 	
-	"1": {
+	"polish": {
 		"itemNameNone":							"...",
 		"itemNameApple":						"Jabłko",
 		"itemNameBucket":						"Wiadro",
