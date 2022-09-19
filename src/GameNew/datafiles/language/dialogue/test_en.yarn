@@ -20,10 +20,6 @@ title: Start
     [speaker,spr_portrait_amadix,emotion_normal,Amadeusz,snd_speech_retro]Maybe you should try to chill out?
     <<wait>>
     <<jump EmptySpeaker>>
--> test...
-    [speaker,spr_portrait_amadix,emotion_normal,Amadeusz,snd_speech_retro]Maybe you should try to chill out?
-    <<wait>>
-    <<jump EmptySpeaker>>
 -> Exit
     <<stop>>
 ===
