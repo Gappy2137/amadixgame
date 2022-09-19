@@ -1,10 +1,10 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_oak_3",
+  "name": "obj_sumac",
   "spriteId": {
-    "name": "spr_oak_3",
-    "path": "sprites/spr_oak_3/spr_oak_3.yy",
+    "name": "spr_staghorn_sumac",
+    "path": "sprites/spr_staghorn_sumac/spr_staghorn_sumac.yy",
   },
   "solid": false,
   "visible": true,

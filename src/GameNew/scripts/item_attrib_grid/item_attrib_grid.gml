@@ -110,7 +110,7 @@ function item_attrib_grid(){
 	//Wodka
 	grid[# INVTYPE, item.vodka] = itemtype.alcohol;
 	grid[# INVHP, item.vodka] = 5;
-	grid[# INVSTAMINA, item.vodka] = 35;
+	grid[# INVSTAMINA, item.vodka] = 25;
 	
 	//Sawed off
 	grid[# INVTYPE, item.sawedoff] = itemtype.shotgun;

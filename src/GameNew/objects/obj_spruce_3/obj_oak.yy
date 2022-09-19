@@ -1,14 +1,10 @@
 {
-  "resourceType": "GMObject",
-  "resourceVersion": "1.0",
-  "name": "obj_oak_3",
   "spriteId": {
-    "name": "spr_oak_3",
-    "path": "sprites/spr_oak_3/spr_oak_3.yy",
+    "name": "spr_oak",
+    "path": "sprites/spr_oak/spr_oak.yy",
   },
   "solid": false,
-  "visible": true,
-  "managed": true,
+  "visible": false,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
@@ -28,7 +24,7 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_oak","path":"objects/obj_oak/obj_oak.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -36,4 +32,8 @@
     "name": "Trees",
     "path": "folders/Objects/World Objects/Trees.yy",
   },
+  "resourceVersion": "1.0",
+  "name": "obj_oak",
+  "tags": [],
+  "resourceType": "GMObject",
 }

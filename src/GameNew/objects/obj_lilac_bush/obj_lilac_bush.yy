@@ -1,10 +1,10 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_oak_3",
+  "name": "obj_lilac_bush",
   "spriteId": {
-    "name": "spr_oak_3",
-    "path": "sprites/spr_oak_3/spr_oak_3.yy",
+    "name": "spr_lilac_bush",
+    "path": "sprites/spr_lilac_bush/spr_lilac_bush.yy",
   },
   "solid": false,
   "visible": true,
@@ -33,7 +33,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Trees",
-    "path": "folders/Objects/World Objects/Trees.yy",
+    "name": "Plants",
+    "path": "folders/Objects/World Objects/Plants.yy",
   },
 }
