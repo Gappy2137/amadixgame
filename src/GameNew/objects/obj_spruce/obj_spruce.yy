@@ -1,10 +1,10 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_slope_dl",
+  "name": "obj_spruce",
   "spriteId": {
-    "name": "spr_slope_dl",
-    "path": "sprites/spr_slope_dl/spr_slope_dl.yy",
+    "name": "spr_spruce",
+    "path": "sprites/spr_spruce/spr_spruce.yy",
   },
   "solid": false,
   "visible": true,
@@ -12,12 +12,12 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "par_slope",
-    "path": "objects/par_slope/par_slope.yy",
+    "name": "par_tree",
+    "path": "objects/par_tree/par_tree.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
-  "physicsShape": 1,
+  "physicsShape": 0,
   "physicsGroup": 0,
   "physicsDensity": 0.5,
   "physicsRestitution": 0.1,
@@ -27,11 +27,13 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [],
+  "eventList": [
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
+  ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "DEV_",
-    "path": "folders/Objects/DEV_.yy",
+    "name": "Trees",
+    "path": "folders/Objects/World Objects/Trees.yy",
   },
 }

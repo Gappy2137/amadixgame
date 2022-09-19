@@ -108,6 +108,8 @@ if (global.inCutscene){
 	scribble_typists_add_event("speaker", speaker_change);
 
 	scribble_typists_add_event("choice", dialogue_choice);
+	
+	scribble_typists_add_event("giveitem", dialogue_item);
 
 	//Create a new chatterbox and jump to the Start node
 	chatterbox = ChatterboxCreate(dialogueName, false);
@@ -125,6 +127,8 @@ if (global.inCutscene){
 	scribble_typists_add_event("speaker", speaker_change);
 
 	scribble_typists_add_event("choice", dialogue_choice);
+	
+	scribble_typists_add_event("giveitem", dialogue_item);
 
 	//Create a new chatterbox and jump to the Start node
 	chatterbox = ChatterboxCreate(dialogueName, false);

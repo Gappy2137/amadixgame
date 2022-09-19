@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tileset_leaves_green",
   "spriteId": {
     "name": "tilespr_leaves_green",
     "path": "sprites/tilespr_leaves_green/tilespr_leaves_green.yy",
@@ -19,7 +22,7 @@
   "out_columns": 11,
   "tile_count": 121,
   "autoTileSets": [
-    {"tiles":[
+    {"resourceType":"GMAutoTileSet","resourceVersion":"1.0","name":"autotile_1","tiles":[
         40,
         23,
         24,
@@ -36,7 +39,7 @@
         38,
         39,
         0,
-      ],"closed_edge":false,"resourceVersion":"1.0","name":"autotile_1","tags":[],"resourceType":"GMAutoTileSet",},
+      ],"closed_edge":false,},
   ],
   "tileAnimationFrames": [],
   "tileAnimationSpeed": 15.0,
@@ -175,8 +178,4 @@
     "name": "Tile Sets",
     "path": "folders/Tile Sets.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tileset_leaves_green",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

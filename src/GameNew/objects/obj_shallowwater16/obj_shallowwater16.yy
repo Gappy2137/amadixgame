@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_shallowwater16",
   "spriteId": {
     "name": "spr_shallowwater16",
     "path": "sprites/spr_shallowwater16/spr_shallowwater16.yy",
@@ -28,8 +31,4 @@
     "name": "Terrain Types",
     "path": "folders/Objects/DEV_/Terrain Types.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_shallowwater16",
-  "tags": [],
-  "resourceType": "GMObject",
 }

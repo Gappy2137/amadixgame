@@ -234,10 +234,18 @@ function item_action(){
 		
 		switch(type){
 			case itemtype.handgun:
-				itemActionGun();
+				if (!global.inDialogue){
+					itemActionGun();
+				}else{
+					itemActionNone();	
+				}
 			break;
 			case itemtype.shotgun:
-				itemActionGun();
+				if (!global.inDialogue){
+					itemActionGun();
+				}else{
+					itemActionNone();	
+				}
 			break;
 			case itemtype.magazine:
 				itemActionNone();

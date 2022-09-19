@@ -1,127 +1,32 @@
 #__PrivCrochet_version:1
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: -656,-786
+__PrivCrochet_position: -658,-788
 __PrivCrochet_tags: 
 title: Start
 ---
-[speaker,spr_portrait_walter,emotion_normal,Walter,snd_speech_walter]My name is [$ffdd30]Walter Hartwell White[/c]. I live at 308 Negra Arroyo Lane, Albuquerque, New Mexico, 87104.[delay,100][speed,0.5] I'm [shake]coming after you[/shake].[/speed]
+[speaker,spr_portrait_janusz,emotion_normal,Janusz,snd_speech_janusz]Cholibka, gdzie ten gówniarz zawszony[speed, 0.5]... [delay, 250][/speed][jitter]PJOTER!!![/jitter][delay, 500] Pjoter chodź zamieniłem się w grę na konkuter, proszę pomóż ojcu swemu sprawiedliwemu, choć rozpikselizowanemu.
 <<wait>>
-[speaker,spr_portrait_walter,emotion_normal,Walter,snd_speech_walter]My name is [$ffdd30]Walter Hartwell White[/c].
--> What?
-    [speaker,spr_portrait_amadix,emotion_normal,Amadeusz,snd_speech_retro]What do you mean by this?
-    <<wait>>
-    [speaker,spr_portrait_walter,emotion_normal,Walter,snd_speech_walter]Bravo Vince!
-    <<stop>>
--> Try me.
-    [speaker,spr_portrait_amadix,emotion_normal,Amadeusz,snd_speech_retro]Try me, bitch!
-    <<wait>>
-    <<jump AmadixResponse>>
--> Chill out...
-    [speaker,spr_portrait_amadix,emotion_normal,Amadeusz,snd_speech_retro]Maybe you should try to chill out?
-    <<wait>>
-    <<jump EmptySpeaker>>
--> test...
-    [speaker,spr_portrait_amadix,emotion_normal,Amadeusz,snd_speech_retro]Maybe you should try to chill out?
-    <<wait>>
-    <<jump EmptySpeaker>>
--> Exit
-    <<stop>>
-===
-__PrivCrochet_colorID: 0
-__PrivCrochet_position: 98,-149
-__PrivCrochet_tags: 
-title: Scribblebox
----
-Yknow, [rainbow]Scribblebox[/rainbow]!
-It's the combination of [$9090FF]Scribble[/c], a fast and powerful text renderer, and [$FFFF90]Chatterbox[/c], a narrative scripting tool.
+[speaker,spr_portrait_janusz,emotion_normal,Janusz,snd_speech_janusz]O, dzień dobry witam Pana szanownego. Nie widział pan w okolicy mojego syna? Taki mały[delay, 250], nie szwędał się gdzieś?
 <<wait>>
-No?
--> Never heard of them.
-Lemme open up the GitHub repos for them.
-Uh, if you're ok with that?
--> Sure, go right ahead.
-	Okey dokey, let me know when you come back...
-	Pretty cool huh?
-	Wouldn't it be great if you could put them together?
-	-> Yes! How? I must know!
-
--> No thanks.
-	Righto, I'll let you do your own research there. Would you like to quickly go through the features of Scribblebox though?
-	-> Oh! Yes I would, please.
-	-> Pass. I thought this was going to be something very different.
-		Ah, nevermind. I hope you find what you were looking for!
-		<<stop>>
-Let's goooooo!
-<<jump Tutorial>>
-===
-__PrivCrochet_colorID: 0
-__PrivCrochet_position: -695,-143
-__PrivCrochet_tags: 
-title: Tutorial
----
-[$9090FF]Scribble[/c] and [$FFFF90]Chatterbox[/c] are two different libraries that can be used separately or combined together.
--> What's Chatterbox?
-	[$FFFF90]Chatterbox[/c] handles what text to show to you and also allows the player to choose options. [$FFFF90]Chatterbox[/c] is based on a narrative design language called "Yarn" which has been used for lots of professional/commercial games.
-	<<jump Tutorial>>
--> What's Scribble?
-	[$9090FF]Scribble[/c] draws the text itself. It does [wave]animation[/wave] and [cycle,0,20,70,40]colours[/cycle] and lots of other things.
-	What [$9090FF]Scribble[/c] draws is dictated by what [$FFFF90]Chatterbox[/c] passes to it.
-	<<jump Tutorial>>
--> Go on...
-<<jump TheBasicIdea>>
-===
-__PrivCrochet_colorID: 0
-__PrivCrochet_position: 53,103
-__PrivCrochet_tags: 
-title: TheBasicIdea
----
-The basic idea is that [$FFFF90]Chatterbox[/c] "drives" [$9090FF]Scribble[/c]. Whenever the player advances [$FFFF90]Chatterbox[/c] by selecting an option or continuing when [$FFFF90]Chatterbox[/c] is waiting, [$FFFF90]Chatterbox[/c] hands some text over to [$9090FF]Scribble[/c].
--> Uhuh...
-We then use [$9090FF]Scribble[/c] to cache the text as "text elements". We do this so we can set up the autotyper to let the text elegantly fade in.
-All the text caching is done in [fnt_consolas28]refresh_text_elements()[/f].
--> It sure is elegant.
-[wheel]Thanks![/wheel]
-Take a browse through the code. It's all commented and should be easy to follow. [$9090FF]Scribble[/c] and [$FFFF90]Chatterbox[/c] both have lots of documentation on GitHub so you can read up on each individual feature.
--> Hold up, could you go over that again?
-	Sure, one sec...
-	<<jump TheBasicIdea>>
--> Oooh I'd like to read about Scribble please.
-	[$FFFF90]Chatterbox[/c] too?
-	-> Yep.
-	-> Nah, already know that library.
--> Hmm, not so familiar with Chatterbox... Could you point me in the right direction?
-	[$FFFF90]Scribble[/c] too?
-	-> Please.
-	-> No thanks.
--> Cool! That's all I think. Thanks for your time.
-I guess that's everything then...
-Let me know what you get up to!
-Bye!
--> See ya~
-===
-__PrivCrochet_colorID: 0
-__PrivCrochet_position: -233,-899
-__PrivCrochet_tags: 
-title: AmadixResponse
----
-[speaker,spr_portrait_walter,emotion_normal,Walter,snd_speech_walter]AA.
+[speaker,spr_portrait_amadix,emotion_normal,Amadeusz,snd_speech_retro]Nie wydaje mi się.
 <<wait>>
-[speaker,spr_portrait_walter,emotion_normal,Walter,snd_speech_walter]AA.
--> What?
-    [speaker,spr_portrait_amadix,emotion_normal,Amadeusz,snd_speech_retro]What do you mean by this?
+[speaker,spr_portrait_janusz,emotion_normal,Janusz,snd_speech_janusz]Niegodziwiec jeden, zawsze kiedy go potrzeba, to go nigdzie nie ma. Mógłby mi Pan pomóc szukać?
+<<wait>>
+[speaker,spr_portrait_janusz,emotion_normal,Janusz,snd_speech_janusz]Mógłby mi Pan pomóc szukać?
+-> Można spróbować.
+    [speaker,spr_portrait_amadix,emotion_normal,Amadeusz,snd_speech_retro]Mogę spróbować, ale nic nie obiecuję.
     <<wait>>
-    [speaker,spr_portrait_walter,emotion_normal,Walter,snd_speech_walter]Bravo Vince!
-    <<stop>>
--> Try me.
-    [speaker,spr_portrait_amadix,emotion_normal,Amadeusz,snd_speech_retro]Try me, bitch!
+    [speaker,spr_portrait_janusz,emotion_normal,Janusz,snd_speech_janusz]W takim razie niech Pan szanowny weźmie to, powinno pomóc przy poszukiwaniach.[giveitem, 20, 1, 0, 2]
+    <<wait>>
+    [speaker,-1,-1,-1,snd_speech_retro]Otrzymano niedopitą wódkę!
+    <<wait>>
+    [speaker,spr_portrait_amadix,emotion_happy,Amadeusz,snd_speech_retro][wave]Taaak...[/wave][delay, 250] To na pewno pomoże.
     <<wait>>
     <<stop>>
-===
-__PrivCrochet_colorID: 0
-__PrivCrochet_position: -219,-531
-__PrivCrochet_tags: 
-title: EmptySpeaker
----
-[speaker,-1,-1,-1,snd_speech_default]Lorem ipsum dolor sit amet, consectetur adipiscing elit. [shake]Nullam[/shake] vulputate elit in fermentum egestas.
-<<stop>>
+-> Niestety nie.
+    [speaker,spr_portrait_amadix,emotion_normal,Amadeusz,snd_speech_retro]Niestety, ale nie mam teraz czasu, może kiedy indziej.
+    <<wait>>
+    [speaker,spr_portrait_janusz,emotion_normal,Janusz,snd_speech_janusz]W takim razie do widzenia.
+    <<wait>>
+    <<stop>>
 ===

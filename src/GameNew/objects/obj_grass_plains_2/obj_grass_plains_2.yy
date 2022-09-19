@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_grass_plains_2",
   "spriteId": {
     "name": "spr_grass_light_2",
     "path": "sprites/spr_grass_light_2/spr_grass_light_2.yy",
@@ -25,7 +28,7 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -33,8 +36,4 @@
     "name": "Grass",
     "path": "folders/Objects/World Objects/Grass.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_grass_plains_2",
-  "tags": [],
-  "resourceType": "GMObject",
 }

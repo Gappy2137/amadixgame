@@ -67,4 +67,3 @@ window_center();
 
 //alarm[2] = 1;
 
-room_goto(rm_devroom_3);

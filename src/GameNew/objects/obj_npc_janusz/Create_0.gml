@@ -7,4 +7,4 @@ npcBehaviour = 1;
 
 npcLookAt = obj_amadix;
 
-dialogue = "test_en.yarn";
+dialogue = "janusz_pl.yarn";
