@@ -2,7 +2,12 @@
 if ((!is_array(depthSortedTiles)) || (array_length(depthSortedTiles) < 1)){}else{
 	var i = 0;
 	repeat(array_length(depthSortedTiles)){
-		scr_tiles_depth(depthSortedTiles[i], 16, 16, room_height);
+		if (depthSortedTiles[i] == -1){
+			exit;
+		}
+		if (depthSortedTilesHeight[i] == -1)
+			depthSortedTilesHeight[i] = 1;
+		scr_tiles_depth(depthSortedTiles[i], 16, 16, room_height, depthSortedTilesHeight[i]);
 
 		layer_destroy(layer_get_id(depthSortedTiles[i]));
 		i++;
@@ -15,7 +20,7 @@ ix = 0;
 iy = 0;
 
 // Decals
-
+/*
 var i = 0;
 repeat(array_length(decalOverlayTiles)){
 	var j = layer_get_id(decalOverlayTiles[i]);	
@@ -23,7 +28,7 @@ repeat(array_length(decalOverlayTiles)){
 	//layer_script_end(j, layer_blend_normal);
 	i++;
 }
-
+*/
 
 
 /*

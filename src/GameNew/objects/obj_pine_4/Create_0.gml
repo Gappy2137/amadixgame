@@ -17,7 +17,8 @@ itemOverlay = -1;
 
 shadowOriginX = 0;
 shadowOriginY = -5;
-shadowStyle = spr_shadow_big;
+shadowSizeY = -4;
+shadowStyle = spr_shadow_tree_coniferous;
 shadowAlpha = 0.4;
 
 shadowEnable = true;

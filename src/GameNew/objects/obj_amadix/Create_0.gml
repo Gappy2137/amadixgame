@@ -71,7 +71,7 @@ gun_index = 0;
 
 shadowOriginY = 33;
 shadowStyle = spr_shadow_player;
-shadowAlpha = 0.5;
+shadowAlpha = 0.4;
 customSpr = false;
 shadowEnable = true;
 

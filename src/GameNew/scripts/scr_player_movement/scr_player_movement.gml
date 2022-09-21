@@ -24,7 +24,8 @@ with (obj_amadix){
 	|| (global.inEq)
 	|| (global.inCutscene)
 	|| (global.inChest)
-	|| (global.pause){
+	|| (global.pause)
+	|| (global.inChestAnim){
 		if (global.pause){
 			hsp = 0;
 			vsp = 0;

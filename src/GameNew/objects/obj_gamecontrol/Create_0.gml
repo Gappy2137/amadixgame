@@ -134,6 +134,7 @@ global.inEq = false;
 global.inConsole = false;
 global.eqSlots = true;
 global.inChest = false;
+global.inChestAnim = false;
 global.debugMode = false;
 global.debugBbox = false;
 

@@ -1,4 +1,4 @@
-function scr_tiles_depth(_layer, _grid_width, _grid_height, _depth_offset) {
+function scr_tiles_depth(_layer, _grid_width, _grid_height, _depth_offset, _layer_height) {
 
 	var lay_id = layer_get_id(_layer);
 	var map_id = layer_tilemap_get_id(lay_id);
@@ -10,7 +10,7 @@ function scr_tiles_depth(_layer, _grid_width, _grid_height, _depth_offset) {
 	var i = 0;
 	var dpth = 0;
 	repeat(depth_offset/grid_y){
-		dpth = -(i * grid_y);
+		dpth = -(i * grid_y + (16 * _layer_height));
 		tiledepth_layer[i] = layer_create(dpth);
 		tiledepth_tilemap[i] = layer_tilemap_create(tiledepth_layer[i], 0, 0, tile_id, room_width/grid_x, room_height/grid_y);
 		i++;

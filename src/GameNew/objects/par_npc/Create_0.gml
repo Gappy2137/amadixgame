@@ -12,9 +12,9 @@ yorigin = 31;
 
 cancollide = true;
 
-shadowOriginY = 34;
+shadowOriginY = 33;
 shadowStyle = spr_shadow_player;
-shadowAlpha = 0.5;
+shadowAlpha = 0.4;
 
 shadowEnable = true;
 

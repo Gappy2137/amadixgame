@@ -61,7 +61,8 @@ if input_check_pressed("inventoryAccess")
 && (instance_exists(obj_amadix))
 && (!global.inCutscene)
 && (!global.inConsole)
-&& (!global.inDialogue){
+&& (!global.inDialogue)
+&& (!global.inChestAnim){
 	
 	if (instance_exists(obj_amadix)){
 		var ins = instance_nearest(obj_amadix.x , obj_amadix.y, par_container);
