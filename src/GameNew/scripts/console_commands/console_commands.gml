@@ -227,3 +227,16 @@ function meta_show_bbox() {
 	}
 }
 #endregion
+#region goto room
+function sh_room_enter(arg) {
+	room_goto(asset_get_index(arg[1]));
+}
+
+function meta_room_enter() {
+	return {
+		description: "",
+		arguments: ["room"],
+		hidden: false
+	}
+}
+#endregion

@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_rock_plain_medium",
   "spriteId": {
     "name": "spr_rocks_plains_medium",
     "path": "sprites/spr_rocks_plains_medium/spr_rocks_plains_medium.yy",
@@ -25,7 +28,7 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -33,8 +36,4 @@
     "name": "Rocks",
     "path": "folders/Objects/World Objects/Rocks.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_rock_plain_medium",
-  "tags": [],
-  "resourceType": "GMObject",
 }

@@ -14,6 +14,8 @@ yorigin = 31;
 
 shadowOriginY = 2;
 shadowOriginX = 0;
+shadowSizeX = 2;
+shadowSizeY = 1;
 shadowStyle = spr_shadow_big;
 shadowAlpha = 0.2;
 

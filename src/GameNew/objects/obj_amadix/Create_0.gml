@@ -69,7 +69,7 @@ arms_index = spr_none;
 arms2_index = spr_none;
 gun_index = 0;
 
-shadowOriginY = 34;
+shadowOriginY = 33;
 shadowStyle = spr_shadow_player;
 shadowAlpha = 0.5;
 customSpr = false;

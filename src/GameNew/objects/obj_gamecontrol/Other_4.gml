@@ -2,7 +2,13 @@
 load_room();
 
 if (newRoom == -1) exit;
-if !instance_exists(obj_amadix) instance_create_layer(128, 128, "Instances", obj_amadix);
+if (!instance_exists(obj_amadix)){
+	if (instance_exists(par_npc)){
+		instance_create_layer(par_npc.x, par_npc.y, "Instances", obj_amadix);	
+	}else{
+		instance_create_layer(room_width/2, room_height/2, "Instances", obj_amadix);	
+	}
+}
 if instance_exists(obj_amadix){
 	obj_amadix.x = newX;
 	obj_amadix.y = newY;

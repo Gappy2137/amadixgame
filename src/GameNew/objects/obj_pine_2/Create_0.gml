@@ -16,8 +16,9 @@ timer = itemRegTime;
 itemOverlay = -1;
 
 shadowOriginX = 0;
-shadowOriginY = -5;
-shadowStyle = spr_shadow_big;
+shadowOriginY = 0;
+shadowStyle = spr_shadow_tree_coniferous;
+shadowHeight = 20;
 shadowAlpha = 0.6;
 
 shadowEnable = true;

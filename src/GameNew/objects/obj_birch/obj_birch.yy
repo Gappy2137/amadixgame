@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_birch",
   "spriteId": {
     "name": "spr_birch",
     "path": "sprites/spr_birch/spr_birch.yy",
@@ -25,7 +28,7 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -33,8 +36,4 @@
     "name": "Trees",
     "path": "folders/Objects/World Objects/Trees.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_birch",
-  "tags": [],
-  "resourceType": "GMObject",
 }

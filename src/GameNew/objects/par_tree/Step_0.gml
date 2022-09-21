@@ -78,3 +78,4 @@ if ((wnd*100) > 10) && ((wnd*100) < 60){
 event_user(0);
 
 finalangle = clamp((angle + windangle), -15, 15);
+

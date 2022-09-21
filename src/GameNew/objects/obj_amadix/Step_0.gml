@@ -48,8 +48,26 @@ if (_scene){
 // Pozycja czapki
 scr_updateHatY();
 
-
-
+// Cienie
+if (running != 2){
+	if (floor(anim_frame) == 0){shadowSizeX = 0; shadowSizeY = 0;}
+	if (floor(anim_frame) == 1){shadowSizeX = 0; shadowSizeY = 0;}
+	if (floor(anim_frame) == 2){shadowSizeX = 0; shadowSizeY = 0;}
+	if (floor(anim_frame) == 3){shadowSizeX = 0; shadowSizeY = 0;}
+}else{
+	if (floor(anim_frame) == 0){shadowSizeX = 0; shadowSizeY = 0;}
+	if (floor(anim_frame) == 1){shadowSizeX = 1; shadowSizeY = 1;}
+	if (floor(anim_frame) == 2){shadowSizeX = 2; shadowSizeY = 2;}
+	if (floor(anim_frame) == 3){shadowSizeX = 2; shadowSizeY = 2;}
+	if (floor(anim_frame) == 4){shadowSizeX = 2; shadowSizeY = 2;}
+	if (floor(anim_frame) == 5){shadowSizeX = 1; shadowSizeY = 1;}
+	if (floor(anim_frame) == 6){shadowSizeX = 0; shadowSizeY = 0;}
+	if (floor(anim_frame) == 7){shadowSizeX = 1; shadowSizeY = 1;}
+	if (floor(anim_frame) == 8){shadowSizeX = 2; shadowSizeY = 2;}
+	if (floor(anim_frame) == 9){shadowSizeX = 2; shadowSizeY = 2;}
+	if (floor(anim_frame) == 10){shadowSizeX = 2; shadowSizeY = 2;}
+	if (floor(anim_frame) == 11){shadowSizeX = 1; shadowSizeY = 1;}
+}
 if (actionstate = player_state_action.handgun){
 	oneStepEvent[2] = 2;
 }else{
