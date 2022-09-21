@@ -135,6 +135,7 @@ global.inConsole = false;
 global.eqSlots = true;
 global.inChest = false;
 global.debugMode = false;
+global.debugBbox = false;
 
 refTimer = 0;
 

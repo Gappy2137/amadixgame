@@ -209,3 +209,21 @@ function meta_ambient_stop() {
 	}
 }
 #endregion
+#region debug bbox
+function sh_show_bbox(arg) {
+	if (real(arg[1]) == 1){
+		global.debugBbox = true;
+	}
+	if (real(arg[1]) == 0){
+		global.debugBbox = false;
+	}
+}
+
+function meta_show_bbox() {
+	return {
+		description: "",
+		arguments: ["1/0"],
+		hidden: false
+	}
+}
+#endregion
