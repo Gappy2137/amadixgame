@@ -56,7 +56,7 @@ slots_y_eq = yUI_eq;
 
 ds_container = ds_grid_create(13, containerSlots);
 
-canUseContainter = false;
+canUseContainter = true;
 
 anim_frame = 0;
 anim_frame_num = 0;

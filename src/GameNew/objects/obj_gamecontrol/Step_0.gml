@@ -12,6 +12,7 @@ minute			= (string_length(minute) == 1) ? "0" + minute : minute;
 hours = hour;
 minutes = minute;
 
+// Alcohol poisoning
 
 if (global.alcoholPoisoning > global.maxAlcoholPoisoning){
 	global.alcoholPoisoning = lerp(global.alcoholPoisoning, 0, 0.001);
@@ -19,6 +20,15 @@ if (global.alcoholPoisoning > global.maxAlcoholPoisoning){
 	global.alcoholPoisoning = lerp(global.alcoholPoisoning, 0, 0.0001);
 }
 
+if (global.alcoholPoisoning >= 10){
+	if (!instance_exists(obj_drunkscreen)){
+		instance_create_layer(x, y, "Important", obj_drunkscreen);	
+	}
+}else{
+	if (instance_exists(obj_drunkscreen)){
+		instance_destroy(obj_drunkscreen);
+	}
+}
 
 refTimer += 0.01;
 if (refTimer >= 1){

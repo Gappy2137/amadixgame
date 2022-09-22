@@ -2,10 +2,10 @@
 if ((!is_array(depthSortedTiles)) || (array_length(depthSortedTiles) < 1)){}else{
 	var i = 0;
 	repeat(array_length(depthSortedTiles)){
-		if (depthSortedTiles[i] == -1){
+		if (depthSortedTiles[i] == ""){
 			exit;
 		}
-		if (depthSortedTilesHeight[i] == -1)
+		if (depthSortedTilesHeight[i] == "")
 			depthSortedTilesHeight[i] = 1;
 		scr_tiles_depth(depthSortedTiles[i], 16, 16, room_height, depthSortedTilesHeight[i]);
 

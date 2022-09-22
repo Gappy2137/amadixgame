@@ -256,18 +256,20 @@ function choiceshow(){
        
 	    _element.blend(c_white, 0.5);
 		_element.starting_format("font_dialogue", shadowColor);
-		if (choiceAnim)
+		if (choiceAnim){
 			_element.draw(choicebox1_x + 4 + .5, _y + .5, _typist);	
-		else
+		}else{
 			_element.draw(_x + .5  - textfix, _y + .5, _typist);	
+		}
 		
 		
 		_element.blend(c_white, 1);
 		_element.starting_format("font_dialogue", textColor);
-		if (choiceAnim)
+		if (choiceAnim){
 			_element.draw(choicebox1_x + 4, _y, _typist);
-		else
+		}else{
 			_element.draw(_x - textfix, _y, _typist);
+		}
 		
 		
 		if (mySound != -1)

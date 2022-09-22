@@ -7,7 +7,7 @@
   "visible": true,
   "managed": true,
   "spriteMaskId": null,
-  "persistent": true,
+  "persistent": false,
   "parentObjectId": {
     "name": "par_alwaysactive",
     "path": "objects/par_alwaysactive/par_alwaysactive.yy",

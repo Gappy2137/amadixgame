@@ -1,3 +1,3 @@
-depthSortedTiles[0] = "rockfloor16";
+depthSortedTiles[0] = "";
 
 decalOverlayTiles[0] = "";
