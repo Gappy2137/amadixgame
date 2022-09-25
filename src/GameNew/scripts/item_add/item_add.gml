@@ -12,10 +12,24 @@ function item_add(slot, iitem, amount, level, capacity){
 	}
 	*/
 	
+
+	
 	
 	
 	if (slot == -1){
 		if (item_exists(item.none, false)){
+			
+			var newitemam = capacity == -1 ? amount : capacity;
+			var newitemid = iitem;
+			if (instance_exists(obj_amadix)){
+				var ID = instance_create_layer(obj_amadix.x, obj_amadix.y, "Important", obj_newitem);
+				with (ID){
+					newItemID = newitemid;
+					newItemAmount = newitemam;
+				}
+			}
+			
+			
 			if (amount > obj_inventory.ds_item_all[# MAXSTACK, iitem]){
 				var maxstack = obj_inventory.ds_item_all[# MAXSTACK, iitem];
 				var rep = (amount div maxstack);

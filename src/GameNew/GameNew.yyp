@@ -226,6 +226,7 @@
     {"id":{"name":"__ChatterboxConfig","path":"scripts/__ChatterboxConfig/__ChatterboxConfig.yy",},"order":6,},
     {"id":{"name":"spr_amadix_classicB_u","path":"sprites/spr_amadix_classicB_u/spr_amadix_classicB_u.yy",},"order":1,},
     {"id":{"name":"input_held_time","path":"scripts/input_held_time/input_held_time.yy",},"order":13,},
+    {"id":{"name":"obj_newitem","path":"objects/obj_newitem/obj_newitem.yy",},"order":14,},
     {"id":{"name":"obj_spruce_2","path":"objects/obj_spruce_2/obj_spruce_2.yy",},"order":12,},
     {"id":{"name":"spr_amadix_classicB_l","path":"sprites/spr_amadix_classicB_l/spr_amadix_classicB_l.yy",},"order":2,},
     {"id":{"name":"scr_player_stats","path":"scripts/scr_player_stats/scr_player_stats.yy",},"order":9,},
