@@ -1,6 +1,7 @@
 function scr_updateHatY(){
 	switch(actionstate){
 		case player_state_action.none:
+				hat_rot = 0;
 				if (skid){
 					hatY = 1;
 				}else{
@@ -26,9 +27,11 @@ function scr_updateHatY(){
 				}
 		break;
 		case player_state_action.eating:
+			hat_rot = 0;
 			hatY = 0;
 		break;
 		case player_state_action.drinking:
+			hat_rot = 0;
 			if (floor(anim_frame_action) == 0){hatY = 0;}
 			if (floor(anim_frame_action) == 2){hatY = -1;}
 			if (floor(anim_frame_action) == 3){hatY = -1;}
@@ -39,6 +42,7 @@ function scr_updateHatY(){
 			if (floor(anim_frame_action) == 8){hatY = 0;}
 		break;
 		case player_state_action.attacking_melee:
+			hat_rot = 0;
 			if (floor(anim_frame_action) == 0){hatY = 0;}
 			if (floor(anim_frame_action) == 1){hatY = 0;}
 			if (floor(anim_frame_action) == 2){hatY = 1;}
@@ -49,6 +53,7 @@ function scr_updateHatY(){
 			if (floor(anim_frame_action) == 7){hatY = 2;}
 		break;
 		case player_state_action.handgun:
+				hat_rot = 0;
 				if (skid){
 					hatY = 1;
 				}else{
@@ -74,9 +79,26 @@ function scr_updateHatY(){
 				}
 		break;
 		case player_state_action.pickup:
-			if (floor(anim_frame_action) == 0){hatY = 0;}
-			if (floor(anim_frame_action) == 1){hatY = 3;}
-			if (floor(anim_frame_action) == 2){hatY = 5;}
+		
+			var face = 0;
+			switch(facing){
+				case index_facing.down:
+					face = 0;
+				break;
+				case index_facing.left:
+					face = 1;
+				break;
+				case index_facing.right:
+					face = -1;
+				break;
+				case index_facing.up:
+					face = 0;
+				break;
+			}
+		
+			if (floor(anim_frame_action) == 0){hatY = 0; hat_rot = 0;}
+			if (floor(anim_frame_action) == 1){hatY = 3; hat_rot = 0;}
+			if (floor(anim_frame_action) == 2){hatY = 6; hat_rot = 0;}
 		break;
 	}
 }

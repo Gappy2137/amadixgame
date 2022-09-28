@@ -13,7 +13,9 @@ scr_player_stats();
 global.stamina += (stamina_drain * -1);
 
 //Animacja jedzenia i picia
-scr_player_action_animation();
+if (actionstate != player_state_action.none){
+	scr_player_action_animation();
+}
 
 //Przejscie do innego pokoju
 var rm_trans = instance_place(x, y, obj_room_transition);
@@ -46,7 +48,9 @@ if (_scene){
 }
 
 // Pozycja czapki
-scr_updateHatY();
+if (hat_index != spr_item_none){
+	scr_updateHatY();
+}
 
 // Cienie
 if (running != 2){

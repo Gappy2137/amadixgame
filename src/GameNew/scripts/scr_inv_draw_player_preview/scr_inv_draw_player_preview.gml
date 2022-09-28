@@ -32,7 +32,7 @@ function scr_inv_draw_player_preview(amx, amy){
 	}
 	
 	draw_sprite(head_index, 0, amx, amy);
-	draw_sprite(hat_index, 0, amx, amy - 12);
+	draw_sprite(hat_index, 0, amx, amy - 12 + 32);
 	draw_sprite(hands_index, 0, amx, amy);
 	draw_sprite(torso_index, 0, amx, amy);
 	draw_sprite(legs_index, 0, amx, amy);

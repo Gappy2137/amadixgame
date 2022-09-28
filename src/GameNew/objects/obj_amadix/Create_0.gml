@@ -104,6 +104,7 @@ zfloor = 0;
 zheight = 30;
 
 hat_frame = 0;
+hat_rot = 0;
 hatY = 0;
 
 stuffed = false;

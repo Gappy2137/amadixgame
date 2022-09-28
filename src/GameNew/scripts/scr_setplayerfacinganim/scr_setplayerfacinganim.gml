@@ -490,38 +490,26 @@ function scr_setPlayerFacingAnim(facing){
 		break;
 		case item.panama_hat:
 			hat_index = spr_panama_hat;
-			switch(facing){
-				case index_facing.down:
-					hat_frame = 0;
-				break;
-				case index_facing.left:
-					hat_frame = 1;
-				break;
-				case index_facing.right:
-					hat_frame = 2;
-				break;
-				case index_facing.up:
-					hat_frame = 3;
-				break;
-			}
 		break;
 		case item.cat_ears:
 			hat_index = spr_catears_hat;
-			switch(facing){
-				case index_facing.down:
-					hat_frame = 0;
-				break;
-				case index_facing.left:
-					hat_frame = 1;
-				break;
-				case index_facing.right:
-					hat_frame = 2;
-				break;
-				case index_facing.up:
-					hat_frame = 3;
-				break;
-			}
 		break;
+	}
+	if (hat_index != spr_item_none){
+		switch(facing){
+			case index_facing.down:
+				hat_frame = 0;
+			break;
+			case index_facing.left:
+				hat_frame = 1;
+			break;
+			case index_facing.right:
+				hat_frame = 2;
+			break;
+			case index_facing.up:
+				hat_frame = 3;
+			break;
+		}
 	}
 #endregion
 
