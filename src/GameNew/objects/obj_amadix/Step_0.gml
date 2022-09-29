@@ -17,6 +17,12 @@ global.stamina += (stamina_drain * -1);
 //Animacja jedzenia i picia
 if (actionstate != player_state_action.none){
 	scr_player_action_animation();
+}else{
+	itemUsedX = 0;
+	itemUsedY = 0;
+	itemUsedAngle = 0;
+	itemUsedSx = 0;
+	itemUsedYscale = 1;		
 }
 
 //Przejscie do innego pokoju

@@ -91,6 +91,7 @@ switch (actionstate){
 							var swing = instance_create_layer(x, y + 16, "Instances", obj_melee_swing);
 							with (swing){
 								animation_speed = other.anim_speed_action;
+								angle = 0;
 							}
 							oneStepEvent[0] = false;
 						}
@@ -134,12 +135,13 @@ switch (actionstate){
 
 						if (oneStepEvent[0] == true){
 							instance_create_layer(x, y, "Instances", obj_seq_item);
-							/*
-							var swing = instance_create_layer(x, y + 16, "Instances", obj_melee_swing);
+							
+							var swing = instance_create_layer(x - 8, y + 16, "Instances", obj_melee_swing);
 							with (swing){
 								animation_speed = other.anim_speed_action;
+								angle = 90;
 							}
-							*/
+							
 							oneStepEvent[0] = false;
 						}
 						
@@ -183,12 +185,13 @@ switch (actionstate){
 				
 						if (oneStepEvent[0] == true){
 							instance_create_layer(x, y, "Instances", obj_seq_item);
-							/*
-							var swing = instance_create_layer(x, y + 16, "Instances", obj_melee_swing);
+							
+							var swing = instance_create_layer(x + 8, y + 16, "Instances", obj_melee_swing);
 							with (swing){
 								animation_speed = other.anim_speed_action;
+								angle = -90;
 							}
-							*/
+							
 							oneStepEvent[0] = false;
 						}
 						
@@ -233,12 +236,13 @@ switch (actionstate){
 				
 						if (oneStepEvent[0] == true){
 							instance_create_layer(x, y, "Instances", obj_seq_item);
-							/*
+							
 							var swing = instance_create_layer(x, y + 16, "Instances", obj_melee_swing);
 							with (swing){
 								animation_speed = other.anim_speed_action;
+								angle = 180;
 							}
-							*/
+							
 							oneStepEvent[0] = false;
 						}
 						
