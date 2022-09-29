@@ -14,6 +14,12 @@ if (playerVisible){
 	}
 	
 }
+
+
+draw_text(x + 32, y + 0, itemUsedX);
+draw_text(x + 32, y + 8, itemUsedY);
+draw_text(x + 32, y + 16, itemUsedAngle);
+draw_text(x + 32, y + 32, anim_frame_action);
 //if (instance_exists(obj_gun_logic)){draw_text(x + 32, y, obj_gun_logic.state);}
 //if (instance_exists(obj_gun_logic)){draw_text(x + 32, y+8, obj_gun_logic.canShoot);}
 //if (instance_exists(obj_gun_logic)){draw_text(x + 32, y+16, obj_gun_logic.canReload);}

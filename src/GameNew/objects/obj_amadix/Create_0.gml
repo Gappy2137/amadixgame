@@ -68,6 +68,7 @@ hat_index = 0;
 arms_index = spr_none;
 arms2_index = spr_none;
 gun_index = 0;
+melee_index = spr_none;
 
 shadowOriginY = 33;
 shadowStyle = spr_shadow_player;
@@ -77,6 +78,11 @@ shadowEnable = true;
 
 state = player_state.idle;
 actionstate = player_state_action.none;
+
+iteminhand = -1;
+iteminhandX = 0;
+iteminhandY = 0;
+iteminhandAngle = 0;
 
 itemeaten = -1;
 itemamount = 0;

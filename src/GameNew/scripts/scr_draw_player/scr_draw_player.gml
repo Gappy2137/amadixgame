@@ -1,30 +1,18 @@
 function scr_draw_player(px, py, pz) {
-function drawPlayerNormal(xx, yy, zz, cutoff){
-	//----------------------------------------------------------------------------------------------------------------
-	if (!cutoff){
-		//Glowa
-		draw_sprite_ext(head_index,anim_frame,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-		//Dlonie
-		draw_sprite_ext(hands_index,anim_frame,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-		//Gorne ubranie
-		draw_sprite_ext(torso_index,anim_frame,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-		//Spodnie
-		draw_sprite_ext(legs_index,anim_frame,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+function drawPlayerNormal(xx, yy, zz, cutoff) {
 	
-		//Buty
-		draw_sprite_ext(boots_index,anim_frame,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					
-		//Czapka
-		draw_sprite_ext(hat_index,hat_frame,xx,yy + zz - 12 + hatY + 32,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-	}else{
+	//----------------------------------------------------------------------------------------------------------------
+	
+		//Dlonie
+		draw_sprite_part_ext(hands2_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
+
+		//Bron biala
+		if ( (facing == index_facing.left)) {
+			draw_sprite_general(melee_index,0,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset+iteminhandX,yy+zz+iteminhandY,image_xscale,image_yscale,iteminhandAngle,c_white,c_white,c_white,c_white,image_alpha);	
+		}
+	
 		//Glowa
 		draw_sprite_part_ext(head_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
-
-		//Dlonie
-		draw_sprite_part_ext(hands_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
 
 		//Gorne ubranie
 		draw_sprite_part_ext(torso_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
@@ -34,98 +22,61 @@ function drawPlayerNormal(xx, yy, zz, cutoff){
 	
 		//Buty
 		draw_sprite_part_ext(boots_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
-					
-		//Czapka
-		draw_sprite_ext(hat_index,hat_frame,xx,yy + zz - 12 + hatY + 32,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-	}
-
-	//----------------------------------------------------------------------------------------------------------------
-}
-function drawPlayerEating(xx, yy, zz, cutoff){
-	var sx = (itemeaten mod obj_inventory.spr_inv_items_columns) * 24;
-	var sy = (itemeaten div obj_inventory.spr_inv_items_columns) * 24;
-	//----------------------------------------------------------------------------------------------------------------
-	
-	if (!cutoff){
-		//Glowa
-		draw_sprite_ext(head_index,anim_frame_action,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-	
-		//Gorne ubranie
-		draw_sprite_ext(torso_index,anim_frame_action,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-	
-		//Spodnie
-		draw_sprite_ext(legs_index,0,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-	
-		if (anim_frame_action >= 0.1) && (anim_frame_action <= 6){
-			//Przedmiot jedzony
-			draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 23, 24 - itemUsedSx, xx - 7 + (itemUsedX), yy + zz + 13 + (itemUsedY), .5, .5, itemUsedAngle, c_white, c_white, c_white, c_white, 1);
-		}
-	
-		//Dlonie
-		draw_sprite_ext(hands_index,anim_frame_action,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-		//Buty
-		draw_sprite_ext(boots_index,0,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					
-		//Czapka
-		draw_sprite_ext(hat_index,hat_frame,xx,yy + zz - 12 + hatY + 32,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-	}else{
-		//Glowa
-		draw_sprite_part_ext(head_index,anim_frame_action,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
-	
-		//Gorne ubranie
-		draw_sprite_part_ext(torso_index,anim_frame_action,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
-	
-		//Spodnie
-		draw_sprite_part_ext(legs_index,0,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
-	
-		if (anim_frame_action >= 0.1) && (anim_frame_action <= 6){
-			//Przedmiot jedzony
-			draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 23, 24 - itemUsedSx, xx - 7 + (itemUsedX), yy + zz + 13 + (itemUsedY), .5, .5, itemUsedAngle, c_white, c_white, c_white, c_white, 1);
-		}
-	
-		//Dlonie
-		draw_sprite_part_ext(hands_index,anim_frame_action,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
-
-		//Buty
-		draw_sprite_part_ext(boots_index,0,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
-					
-		//Czapka
-		draw_sprite_ext(hat_index,hat_frame,xx,yy + zz - 12 + hatY + 32,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-	}
-
-	//----------------------------------------------------------------------------------------------------------------
-}
-function drawPlayerDrinking(xx, yy, zz, cutoff){
-	var sx = (itemeaten mod obj_inventory.spr_inv_items_columns) * 24;
-	var sy = (itemeaten div obj_inventory.spr_inv_items_columns) * 24;
-	
-	//----------------------------------------------------------------------------------------------------------------
-	
-	if (!cutoff){
-		//Glowa
-		draw_sprite_ext(head_index,anim_frame_action,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-	
-		//Gorne ubranie
-		draw_sprite_ext(torso_index,anim_frame_action,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-	
-		//Spodnie
-		draw_sprite_ext(legs_index,0,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 		
-		if ((anim_frame_action >= 0.1) && (anim_frame_action <= 1.8)) || ((anim_frame_action >= 8) && (anim_frame_action <= 10)){
-			//Przedmiot pity
-			draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 24, 24 - itemUsedSx, xx - 7 + (itemUsedX), yy + zz + 13 + (itemUsedY), .5, (.5 * itemUsedYscale), itemUsedAngle, c_white, c_white, c_white, c_white, 1);
+		//Bron biala
+		if ( (facing == index_facing.right)) {
+			draw_sprite_general(melee_index,0,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset+iteminhandX,yy+zz+iteminhandY,image_xscale,image_yscale,iteminhandAngle,c_white,c_white,c_white,c_white,image_alpha);	
+		}
+		
+		//Dlonie
+		draw_sprite_part_ext(hands_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
+		
+		//Bron biala
+		if ( (facing == index_facing.up) || (facing == index_facing.down) ) {
+			draw_sprite_part_ext(melee_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);	
+		}
+		
+		//Czapka
+		draw_sprite_ext(hat_index,hat_frame,xx,yy + zz - 12 + hatY + 32,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+	
+	//----------------------------------------------------------------------------------------------------------------
+}
+function drawPlayerEating(xx, yy, zz, cutoff) {
+	var sx = (itemeaten mod obj_inventory.spr_inv_items_columns) * 24;
+	var sy = (itemeaten div obj_inventory.spr_inv_items_columns) * 24;
+	//----------------------------------------------------------------------------------------------------------------
+	
+		//Glowa
+		draw_sprite_part_ext(head_index,anim_frame_action,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
+	
+		//Gorne ubranie
+		draw_sprite_part_ext(torso_index,anim_frame_action,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
+	
+		//Spodnie
+		draw_sprite_part_ext(legs_index,0,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
+	
+		if (anim_frame_action >= 0.1) && (anim_frame_action <= 6){
+			//Przedmiot jedzony
+			draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 23, 24 - itemUsedSx, xx - 7 + (itemUsedX), yy + zz + 13 + (itemUsedY), .5, .5, itemUsedAngle, c_white, c_white, c_white, c_white, 1);
 		}
 	
 		//Dlonie
-		draw_sprite_ext(hands_index,anim_frame_action,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+		draw_sprite_part_ext(hands_index,anim_frame_action,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
 
 		//Buty
-		draw_sprite_ext(boots_index,0,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+		draw_sprite_part_ext(boots_index,0,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
 					
 		//Czapka
 		draw_sprite_ext(hat_index,hat_frame,xx,yy + zz - 12 + hatY + 32,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-	}else{
+
+	//----------------------------------------------------------------------------------------------------------------
+}
+function drawPlayerDrinking(xx, yy, zz, cutoff) {
+	var sx = (itemeaten mod obj_inventory.spr_inv_items_columns) * 24;
+	var sy = (itemeaten div obj_inventory.spr_inv_items_columns) * 24;
+	
+	//----------------------------------------------------------------------------------------------------------------
+	
 		//Glowa
 		draw_sprite_part_ext(head_index,anim_frame_action,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
 	
@@ -147,27 +98,26 @@ function drawPlayerDrinking(xx, yy, zz, cutoff){
 		draw_sprite_part_ext(boots_index,0,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
 					
 		//Czapka
-		draw_sprite_ext(hat_index,hat_frame,xx,yy + zz - 12 + hatY + 32,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-	}
+		draw_sprite_ext(hat_index,hat_frame,xx,yy + zz - 12 + hatY + 32,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 
 	//----------------------------------------------------------------------------------------------------------------
 	
 }
-function drawPlayerPickup(xx, yy, zz, cutoff){
+function drawPlayerPickup(xx, yy, zz, cutoff) {
 	var sx = (itemeaten mod obj_inventory.spr_inv_items_columns) * 24;
 	var sy = (itemeaten div obj_inventory.spr_inv_items_columns) * 24;
 	
 	//----------------------------------------------------------------------------------------------------------------
 	
-	if (!cutoff){
 		//Glowa
-		draw_sprite_ext(head_index,anim_frame_action,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+		draw_sprite_part_ext(head_index,anim_frame_action,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
 	
 		//Gorne ubranie
-		draw_sprite_ext(torso_index,anim_frame_action,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+		draw_sprite_part_ext(torso_index,anim_frame_action,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
 	
 		//Spodnie
-		draw_sprite_ext(legs_index,anim_frame_action,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+		draw_sprite_part_ext(legs_index,anim_frame_action,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
+
 		
 		if (pickupTrigger){
 			if (anim_frame_action >= 1){
@@ -178,30 +128,6 @@ function drawPlayerPickup(xx, yy, zz, cutoff){
 				draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 24, 24 - itemUsedSx, xx - 7 + (itemUsedX), yy + zz + 13 + (itemUsedY), .5, (.5 * itemUsedYscale), itemUsedAngle, c_white, c_white, c_white, c_white, 1);
 			}
 		}
-
-	
-		//Dlonie
-		draw_sprite_ext(hands_index,anim_frame_action,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-		//Buty
-		draw_sprite_ext(boots_index,anim_frame_action,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					
-		//Czapka
-		draw_sprite_ext(hat_index,hat_frame,xx,yy + zz - 12 + hatY + 32,image_xscale,image_yscale,hat_rot,image_blend,image_alpha);	
-	}else{
-		//Glowa
-		draw_sprite_part_ext(head_index,anim_frame_action,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
-	
-		//Gorne ubranie
-		draw_sprite_part_ext(torso_index,anim_frame_action,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
-	
-		//Spodnie
-		draw_sprite_part_ext(legs_index,anim_frame_action,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
-	
-		if ((anim_frame_action >= 0.1) && (anim_frame_action <= 1.8)) || ((anim_frame_action >= 8) && (anim_frame_action <= 10)){
-			//Przedmiot pity
-			draw_sprite_general(spr_inventory_items, 0, sx, sy + itemUsedSx, 24, 24 - itemUsedSx, xx - 7 + (itemUsedX), yy + zz + 13 + (itemUsedY), .5, (.5 * itemUsedYscale), itemUsedAngle, c_white, c_white, c_white, c_white, 1);
-		}
 	
 		//Dlonie
 		draw_sprite_part_ext(hands_index,anim_frame_action,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
@@ -211,32 +137,13 @@ function drawPlayerPickup(xx, yy, zz, cutoff){
 					
 		//Czapka
 		draw_sprite_ext(hat_index,hat_frame,xx,yy + zz - 12 + hatY + 32,image_xscale,image_yscale,hat_rot,image_blend,image_alpha);	
-	}
 
 	//----------------------------------------------------------------------------------------------------------------
 	
 }
-function drawPlayerMelee(xx, yy, zz, cutoff){
+function drawPlayerMelee(xx, yy, zz, cutoff) {
 	//----------------------------------------------------------------------------------------------------------------
-	if (!cutoff){
-		//Glowa
-		draw_sprite_ext(head_index,anim_frame_action,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-		//Dlonie
-		draw_sprite_ext(hands_index,anim_frame_action,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-		//Gorne ubranie
-		draw_sprite_ext(torso_index,anim_frame_action,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-		//Spodnie
-		draw_sprite_ext(legs_index,anim_frame_action,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 	
-		//Buty
-		draw_sprite_ext(boots_index,anim_frame_action,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					
-		//Czapka
-		draw_sprite_ext(hat_index,hat_frame,xx,yy + zz - 12 + hatY + 32,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-	}else{
 		//Glowa
 		draw_sprite_part_ext(head_index,anim_frame_action,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
 
@@ -254,144 +161,66 @@ function drawPlayerMelee(xx, yy, zz, cutoff){
 					
 		//Czapka
 		draw_sprite_ext(hat_index,hat_frame,xx,yy + zz - 12 + hatY + 32,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-	}
+		
 	//----------------------------------------------------------------------------------------------------------------
 }
-function drawPlayerHandgun(xx, yy, zz, cutoff){
+function drawPlayerHandgun(xx, yy, zz, cutoff) {
 	//----------------------------------------------------------------------------------------------------------------
 	
 	switch(facing){
 		case index_facing.down:
 		//----------------------------------------------------------------------------------------------------------------
-		if (instance_exists(obj_gun_logic)){obj_gun_logic.depth = depth - 1;}
-		if (!cutoff){
-					//Glowa
-					draw_sprite_ext(head_index,anim_frame,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+		
+			if (instance_exists(obj_gun_logic)){obj_gun_logic.depth = depth - 1;}
+						//Glowa
+						draw_sprite_part_ext(head_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
 	
-					//Gorne ubranie
-					draw_sprite_ext(torso_index,anim_frame,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+						//Gorne ubranie
+						draw_sprite_part_ext(torso_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
 	
-					//Spodnie
-					draw_sprite_ext(legs_index,anim_frame,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+						//Spodnie
+						draw_sprite_part_ext(legs_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
 
-					//Buty
-					draw_sprite_ext(boots_index,anim_frame,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
+						//Buty
+						draw_sprite_part_ext(boots_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);	
 		
-					//Rece i dlonie
-					if (instance_exists(obj_gun_logic)){
-						if (obj_gun_logic.state == gunState.reloading) || (obj_gun_logic.state == gunState.reloading_empty){
-							draw_sprite_ext(arms_index,anim_frame_action,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+						//Rece i dlonie
+						if (instance_exists(obj_gun_logic)){
+							if (obj_gun_logic.state == gunState.reloading) || (obj_gun_logic.state == gunState.reloading_empty){
+								draw_sprite_ext(arms_index,anim_frame_action,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
 		
-							draw_sprite_ext(hands_index,anim_frame_action,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+								draw_sprite_ext(hands_index,anim_frame_action,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
 		
-						}else if (obj_gun_logic.state == gunState.shooting){
-							draw_sprite_ext(arms_index,anim_frame_action,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+							}else if (obj_gun_logic.state == gunState.shooting){
+								draw_sprite_ext(arms_index,anim_frame_action,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
 		
-							draw_sprite_ext(hands_index,anim_frame_action,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+								draw_sprite_ext(hands_index,anim_frame_action,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
 		
-							draw_sprite_ext(arms2_index,anim_frame_action,xx + hand_xoffset2,yy + zz + hand_yoffset2,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+								draw_sprite_ext(arms2_index,anim_frame_action,xx + hand_xoffset2,yy + zz + hand_yoffset2,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
 		
-							draw_sprite_ext(hands2_index,anim_frame_action,xx + hand_xoffset2,yy + zz + hand_yoffset2,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
-						}else{
-							draw_sprite_ext(arms_index,anim_frame,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+								draw_sprite_ext(hands2_index,anim_frame_action,xx + hand_xoffset2,yy + zz + hand_yoffset2,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+							}else{
+								draw_sprite_ext(arms_index,anim_frame,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
 		
-							draw_sprite_ext(hands_index,anim_frame,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+								draw_sprite_ext(hands_index,anim_frame,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
 		
-							draw_sprite_ext(arms2_index,anim_frame,xx + hand_xoffset2,yy + zz + hand_yoffset2,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+								draw_sprite_ext(arms2_index,anim_frame,xx + hand_xoffset2,yy + zz + hand_yoffset2,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
 		
-							draw_sprite_ext(hands2_index,anim_frame,xx + hand_xoffset2,yy + zz + hand_yoffset2,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+								draw_sprite_ext(hands2_index,anim_frame,xx + hand_xoffset2,yy + zz + hand_yoffset2,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
+							}
 						}
-					}
-					//Bron
-					draw_sprite_ext(gun_index,anim_frame_action,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);	
+						//Bron
+						draw_sprite_ext(gun_index,anim_frame_action,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);	
 		
-					//Czapka
-					draw_sprite_ext(hat_index,hat_frame,xx,yy + zz - 12 + hatY + 32,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-		
-		}else{
-					//Glowa
-					draw_sprite_part_ext(head_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
-	
-					//Gorne ubranie
-					draw_sprite_part_ext(torso_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
-	
-					//Spodnie
-					draw_sprite_part_ext(legs_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
-
-					//Buty
-					draw_sprite_part_ext(boots_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);	
-		
-					//Rece i dlonie
-					if (instance_exists(obj_gun_logic)){
-						if (obj_gun_logic.state == gunState.reloading) || (obj_gun_logic.state == gunState.reloading_empty){
-							draw_sprite_ext(arms_index,anim_frame_action,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
-		
-							draw_sprite_ext(hands_index,anim_frame_action,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
-		
-						}else if (obj_gun_logic.state == gunState.shooting){
-							draw_sprite_ext(arms_index,anim_frame_action,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
-		
-							draw_sprite_ext(hands_index,anim_frame_action,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
-		
-							draw_sprite_ext(arms2_index,anim_frame_action,xx + hand_xoffset2,yy + zz + hand_yoffset2,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
-		
-							draw_sprite_ext(hands2_index,anim_frame_action,xx + hand_xoffset2,yy + zz + hand_yoffset2,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
-						}else{
-							draw_sprite_ext(arms_index,anim_frame,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
-		
-							draw_sprite_ext(hands_index,anim_frame,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
-		
-							draw_sprite_ext(arms2_index,anim_frame,xx + hand_xoffset2,yy + zz + hand_yoffset2,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
-		
-							draw_sprite_ext(hands2_index,anim_frame,xx + hand_xoffset2,yy + zz + hand_yoffset2,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
-						}
-					}
-					//Bron
-					draw_sprite_ext(gun_index,anim_frame_action,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);	
-		
-					//Czapka
-					draw_sprite_ext(hat_index,hat_frame,xx,yy + zz - 12 + hatY + 32,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-		}
+						//Czapka
+						draw_sprite_ext(hat_index,hat_frame,xx,yy + zz - 12 + hatY + 32,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+					
 		//----------------------------------------------------------------------------------------------------------------
 		break;
 		case index_facing.left:
 		//----------------------------------------------------------------------------------------------------------------
+		
 		if (instance_exists(obj_gun_logic)){obj_gun_logic.depth = depth - 1;}
-		if (!cutoff){
-					//Glowa
-					draw_sprite_ext(head_index,anim_frame,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-	
-					//Gorne ubranie
-					draw_sprite_ext(torso_index,anim_frame,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-	
-					//Spodnie
-					draw_sprite_ext(legs_index,anim_frame,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Buty
-					draw_sprite_ext(boots_index,anim_frame,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					
-					//Czapka
-					draw_sprite_ext(hat_index,hat_frame,xx,yy + zz - 12 + hatY + 32,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					
-					//Rece i dlonie
-					if (instance_exists(obj_gun_logic)){
-						if (obj_gun_logic.state == gunState.reloading) || (obj_gun_logic.state == gunState.shooting) || (obj_gun_logic.state == gunState.reloading_empty){
-							draw_sprite_ext(arms_index,anim_frame_action,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
-		
-							draw_sprite_ext(hands_index,anim_frame_action,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
-		
-						}else{
-							draw_sprite_ext(arms_index,anim_frame,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
-		
-							draw_sprite_ext(hands_index,anim_frame,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
-		
-						}
-					}
-		
-					//Bron
-					draw_sprite_ext(gun_index,anim_frame_action,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);	
-
-		}else{
 					//Glowa
 					draw_sprite_part_ext(head_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
 	
@@ -424,50 +253,13 @@ function drawPlayerHandgun(xx, yy, zz, cutoff){
 		
 					//Bron
 					draw_sprite_ext(gun_index,anim_frame_action,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
-
-		}
 
 		//----------------------------------------------------------------------------------------------------------------
 		break;
 		case index_facing.right:
 		//----------------------------------------------------------------------------------------------------------------
+		
 		if (instance_exists(obj_gun_logic)){obj_gun_logic.depth = depth - 1;}
-		if (!cutoff){
-					//Glowa
-					draw_sprite_ext(head_index,anim_frame,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-	
-					//Gorne ubranie
-					draw_sprite_ext(torso_index,anim_frame,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-	
-					//Spodnie
-					draw_sprite_ext(legs_index,anim_frame,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Buty
-					draw_sprite_ext(boots_index,anim_frame,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					
-					//Czapka
-					draw_sprite_ext(hat_index,hat_frame,xx,yy + zz - 12 + hatY + 32,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-					
-					//Rece i dlonie
-					if (instance_exists(obj_gun_logic)){
-						if (obj_gun_logic.state == gunState.reloading) || (obj_gun_logic.state == gunState.shooting) || (obj_gun_logic.state == gunState.reloading_empty){
-							draw_sprite_ext(arms_index,anim_frame_action,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
-		
-							draw_sprite_ext(hands_index,anim_frame_action,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
-		
-						}else{
-							draw_sprite_ext(arms_index,anim_frame,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
-		
-							draw_sprite_ext(hands_index,anim_frame,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
-		
-						}
-					}
-		
-					//Bron
-					draw_sprite_ext(gun_index,anim_frame_action,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);	
-		
-
-		}else{
 					//Glowa
 					draw_sprite_part_ext(head_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
 	
@@ -501,48 +293,12 @@ function drawPlayerHandgun(xx, yy, zz, cutoff){
 					//Bron
 					draw_sprite_ext(gun_index,anim_frame_action,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
 
-		}
-
 		//----------------------------------------------------------------------------------------------------------------
 		break;
 		case index_facing.up:
 		//----------------------------------------------------------------------------------------------------------------
+		
 		if (instance_exists(obj_gun_logic)){obj_gun_logic.depth = depth + 1;}
-		if (!cutoff){
-					//Rece i dlonie
-					if (instance_exists(obj_gun_logic)){
-						if (obj_gun_logic.state == gunState.reloading) || (obj_gun_logic.state == gunState.shooting) || (obj_gun_logic.state == gunState.reloading_empty){
-							draw_sprite_ext(arms_index,anim_frame_action,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
-		
-							draw_sprite_ext(hands_index,anim_frame_action,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
-		
-						}else{
-							draw_sprite_ext(arms_index,anim_frame,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
-		
-							draw_sprite_ext(hands_index,anim_frame,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);
-		
-						}
-					}
-		
-					//Bron
-					draw_sprite_ext(gun_index,anim_frame_action,xx + hand_xoffset,yy + zz + hand_yoffset,image_xscale,image_yscale,hand_rot,image_blend,image_alpha);	
-		
-					//Glowa
-					draw_sprite_ext(head_index,anim_frame,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-	
-					//Gorne ubranie
-					draw_sprite_ext(torso_index,anim_frame,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-	
-					//Spodnie
-					draw_sprite_ext(legs_index,anim_frame,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-
-					//Buty
-					draw_sprite_ext(boots_index,anim_frame,xx,yy + zz,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-		
-					//Czapka
-					draw_sprite_ext(hat_index,hat_frame,xx,yy + zz - 12 + hatY + 32,image_xscale,image_yscale,image_angle,image_blend,image_alpha);	
-		}else{
-			
 					//Rece i dlonie
 					if (instance_exists(obj_gun_logic)){
 						if (obj_gun_logic.state == gunState.reloading) || (obj_gun_logic.state == gunState.shooting) || (obj_gun_logic.state == gunState.reloading_empty){
@@ -575,7 +331,6 @@ function drawPlayerHandgun(xx, yy, zz, cutoff){
 					
 					//Czapka
 					draw_sprite_ext(hat_index,hat_frame,xx,yy + zz - 12 + hatY + 32,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-		}
 
 		//----------------------------------------------------------------------------------------------------------------
 		break;

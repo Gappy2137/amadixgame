@@ -43,16 +43,22 @@ switch (actionstate){
 		
 		switch(facing){
 			case index_facing.down:
+				if (floor(anim_frame_action) == 0){itemUsedX = 0;itemUsedY = 1.5 + fixY;itemUsedAngle = 0;itemUsedSx = 0;}
 				if (floor(anim_frame_action) == 1){itemUsedX = 0;itemUsedY = 1.5 + fixY;itemUsedAngle = 0;itemUsedSx = 0;}
 				if (floor(anim_frame_action) == 2){itemUsedX = 0;itemUsedY = 2 + fixY;itemUsedAngle = 0;itemUsedSx = 0;}
+				if (floor(anim_frame_action) == 3){itemUsedX = 0;itemUsedY = 2 + fixY;itemUsedAngle = 0;itemUsedSx = 0;}
 			break;
 			case index_facing.left:
+				if (floor(anim_frame_action) == 0){itemUsedX = -4;itemUsedY = 1.5 + fixY;itemUsedAngle = 0;itemUsedSx = 0;}
 				if (floor(anim_frame_action) == 1){itemUsedX = -4;itemUsedY = 1.5 + fixY;itemUsedAngle = 0;itemUsedSx = 0;}
 				if (floor(anim_frame_action) == 2){itemUsedX = -4;itemUsedY = 2 + fixY;itemUsedAngle = 0;itemUsedSx = 0;}
+				if (floor(anim_frame_action) == 3){itemUsedX = -4;itemUsedY = 2 + fixY;itemUsedAngle = 0;itemUsedSx = 0;}
 			break;
 			case index_facing.right:
+				if (floor(anim_frame_action) == 0){itemUsedX = 6;itemUsedY = 1.5 + fixY;itemUsedAngle = 0;itemUsedSx = 0;}
 				if (floor(anim_frame_action) == 1){itemUsedX = 6;itemUsedY = 1.5 + fixY;itemUsedAngle = 0;itemUsedSx = 0;}
 				if (floor(anim_frame_action) == 2){itemUsedX = 6.5;itemUsedY = 2 + fixY;itemUsedAngle = 0;itemUsedSx = 0;}
+				if (floor(anim_frame_action) == 3){itemUsedX = 6.5;itemUsedY = 2 + fixY;itemUsedAngle = 0;itemUsedSx = 0;}
 			break;
 			case index_facing.up:
 				itemUsedX = 1000;itemUsedY = 2 + fixY;itemUsedAngle = 0;itemUsedSx = 0;

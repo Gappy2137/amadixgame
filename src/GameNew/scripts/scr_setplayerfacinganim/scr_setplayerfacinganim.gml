@@ -412,11 +412,11 @@ function scr_setPlayerFacingAnim(facing){
 							break;
 							case index_facing.left:
 								hands_index = spr_amadix_hands_l;
-								hands2_index = spr_none;
+								hands2_index = spr_amadix_hands_l2;
 							break;
 							case index_facing.right:
 								hands_index = spr_amadix_hands_r;
-								hands2_index = spr_none;
+								hands2_index = spr_amadix_hands_r2;
 							break;
 							case index_facing.up:
 								hands_index = spr_amadix_hands_u;

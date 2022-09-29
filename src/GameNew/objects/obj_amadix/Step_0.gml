@@ -4,7 +4,9 @@ tenalarm++;
 if (tenalarm > 10){
 	tenalarm = 0;
 }
-
+if (instance_exists(obj_inventory)){
+	iteminhand = obj_inventory.ds_inventory[# INVITEM, obj_inventory.mouse_slotx_second];
+}
 //Fizyka i poruszanie
 scr_player_movement();
 
@@ -52,6 +54,9 @@ if (hat_index != spr_item_none){
 	scr_updateHatY();
 }
 
+// Chodzenie z bronia biala
+scr_player_melee_walk();
+
 // Cienie
 if (running != 2){
 	if (floor(anim_frame) == 0){shadowSizeX = 0; shadowSizeY = 0;}
@@ -97,7 +102,7 @@ if (oneStepEvent[2] == 2){
 
 
 if (keyboard_check_pressed(ord("X"))) && (global.debugMode) && (!global.inConsole){
-	game_set_speed(10, gamespeed_fps);	
+	game_set_speed(5, gamespeed_fps);	
 }
 if (keyboard_check_pressed(ord("C"))) && (global.debugMode) && (!global.inConsole){
 	game_set_speed(GAMESPEED, gamespeed_fps);	
