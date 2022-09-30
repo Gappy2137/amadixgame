@@ -5,12 +5,16 @@ if (!global.inEq)
 && (!global.inCutscene){
 	var col = instance_place(x, y, par_collectible);
 	var npc = instance_place(x, y, par_npc);
+	var chest = instance_place(x, y, par_container);
 	if (col) && (col.cursorChange){
 		global.cursorSpr = cursorState.pickup;
 		timer = 10;
 	}else
 	if (npc) && (npc.cursorChange){
 		global.cursorSpr = cursorState.dialogue;
+		timer = 10;
+	}else if (chest) && (chest.cursorChange){
+		global.cursorSpr = cursorState.pickup;
 		timer = 10;
 	}else{
 		timer--;

@@ -1,17 +1,30 @@
 
 
-if (ami_clicked(4)) 
-&& (!obj_inventory.show_inventory) 
-&& (!global.inDialogue)
-&& (!global.inCutscene)
-&& (!global.inConsole){
-	opened = true;
-	var idd = id;
+if (mouse_over_me(4)){
+	cursorChange = true;
+
+	if (input_check_pressed("mouseRight")){
+		
+		if (global.cursorSpr == cursorState.pickup){
+			
+			if (!global.inDialogue)
+			&& (!global.inCutscene)
+			&& (!global.inConsole)
+			&& (!obj_inventory.show_inventory) {
+				opened = true;
+				var idd = id;
 				
-	with(obj_amadix){
-		facing = checkFacing(real(idd));
-		scr_setPlayerFacingAnim(facing);
+				with(obj_amadix){
+					facing = checkFacing(real(idd));
+					scr_setPlayerFacingAnim(facing);
+				}
+			}
+		
+		}
+		
 	}
+}else{
+	cursorChange = false;
 }
 
 if (show_container){
