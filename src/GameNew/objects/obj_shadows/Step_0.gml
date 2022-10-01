@@ -1,9 +1,9 @@
-if (keyboard_check(ord("B"))){
-	skewX -= 0.5;	
-}
-if (keyboard_check(ord("N"))){
-	skewX += 0.5;	
-}
+//if (keyboard_check(ord("B"))){
+//	skewX -= 0.5;	
+//}
+//if (keyboard_check(ord("N"))){
+//	skewX += 0.5;	
+//}
 
 time = global.daycycletime;
 curvePos = time;

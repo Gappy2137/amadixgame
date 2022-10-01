@@ -12,4 +12,3 @@ decalSourceTiles[0] = "";
 decalOverlayTiles[0] = "";
 
 alarm[0] = 5;
-

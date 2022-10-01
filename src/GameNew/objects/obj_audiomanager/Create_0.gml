@@ -2,6 +2,8 @@
 // Load all audio groups
 audio_group_load(audiogroup_sfx);
 audio_group_load(audiogroup_ambient);
+audio_group_load(audiogroup_default);
+
 
 enum audioState {
 	stopped = 0,
