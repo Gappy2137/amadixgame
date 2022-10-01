@@ -67,3 +67,5 @@ opened = false;
 _a = 0;
 
 inchest = false;
+
+cursorChange = false;
