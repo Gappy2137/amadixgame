@@ -38,14 +38,14 @@ if (itemNum > itemNumMax){
 	itemNum = itemNumMax;	
 }
 
-timer += 0.01 * rnd;
-if (timer >= 1){
-	timer = 0;
+windtimer += 0.01 * rnd;
+if (windtimer >= 1){
+	windtimer = 0;
 }
 
 var wnd = global.windStr/100;
 var wndir = global.windDir;
-var tmr = timer;
+var tmr = windtimer;
 
 
 var curveAsset = curve_wind_anim;
@@ -79,3 +79,24 @@ event_user(0);
 
 finalangle = clamp((angle + windangle), -15, 15);
 
+//
+if (object_index != obj_hazel_bush)
+&& (object_index != obj_oak_2_bark)
+&& (object_index != obj_birch_small)
+&& (object_index != obj_lilac_bush){
+	var col = collision_rectangle(
+		x - sprite_get_xoffset(sprite_index) - 4,
+		bbox_top - sprite_get_bbox_top(sprite_index) + 4,
+		x + sprite_get_xoffset(sprite_index) + 4,
+		bbox_top + 1,
+		obj_amadix, false, false
+	);
+	
+	if (col){
+		alpha = approach(alpha, 0.5, 0.05);	
+	}else{
+		if (alpha != 1){
+			alpha = approach(alpha, 1, 0.05);		
+		}
+	}
+}

@@ -34,6 +34,6 @@ anim = 0;
 
 acc = .75;
 
-timer = 0;
+windtimer = 0;
 
 rnd = random_range(0.8, 1.3);

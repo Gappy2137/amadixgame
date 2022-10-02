@@ -15,8 +15,6 @@ if (playerVisible){
 	
 }
 
-draw_text(x + 32, y, obj_shadows.shadowHeight);
-draw_text(x + 32, y + 8, obj_shadows.skewX);
 
 //if (instance_exists(obj_gun_logic)){draw_text(x + 32, y, obj_gun_logic.state);}
 //if (instance_exists(obj_gun_logic)){draw_text(x + 32, y+8, obj_gun_logic.canShoot);}

@@ -4,11 +4,11 @@ image_speed = 0;
 
 yorigin = 79;
 
-itemDrop = item.apple;
+itemDrop = -1;
 
-itemNum = 1;
+itemNum = -1;
 
-itemNumMax = 1;
+itemNumMax = -1;
 
 itemRegTime = 1000;
 timer = itemRegTime;

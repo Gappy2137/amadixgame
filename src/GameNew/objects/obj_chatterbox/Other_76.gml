@@ -1,6 +1,8 @@
 if (global.inCutscene){
 	with (obj_cutscene_controller){
 		
+		chatterboxActive = true;
+		
 		var _eventType = event_data[? "event_type"];
 		var _eventMessage = event_data[? "message"];
 		

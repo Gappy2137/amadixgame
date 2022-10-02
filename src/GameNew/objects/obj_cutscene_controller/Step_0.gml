@@ -1,5 +1,6 @@
 if (global.inCutscene){
 	
+
 	if (stop){
 		if (!layer_sequence_is_paused(currentSequenceElementID)){
 			layer_sequence_pause(currentSequenceElementID);	

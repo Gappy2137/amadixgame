@@ -1,7 +1,7 @@
 
 currentSequenceElementID = 0;
 currentSequenceInstance	 = 0;
-
+chatterboxActive = false;
 
 _cutsceneID = 0;
 

@@ -9,6 +9,9 @@ function load_room(){
 
 	if (!is_struct(struct)){exit;}
 	
+	
+	// collectible data
+	
 	var i = 0;
 	
 	repeat(struct.colNum){
@@ -28,5 +31,78 @@ function load_room(){
 		i++;
 	}
 	
+	
+	
+	// trees data
+	
 	i = 0;
+
+	repeat(struct.treesNum){
+		
+		var _inst = struct.treesData[i].ID;
+		var _timer = struct.treesData[i].timer;
+		var _itemNum = struct.treesData[i].itemNum;
+		var _windangle = struct.treesData[i].windangle;
+		var _flag = struct.treesData[i].flag;
+		var _windtimer = struct.treesData[i].windtimer;
+		
+		with(_inst){
+			timer = _timer;
+			itemNum = _itemNum;
+			windangle = _windangle;
+			flag = _flag;
+			windtimer = _windtimer;
+		}
+		i++;
+	}
+	
+	// grass data
+	
+	i = 0;
+
+	repeat(struct.grassNum){
+		
+		var _inst = struct.grassData[i].ID;
+		var _timer = struct.grassData[i].timer;
+		var _finalangle = struct.grassData[i].finalangle;
+		
+		with(_inst){
+			timer = _timer;
+			finalangle = _finalangle;
+		}
+		i++;
+	}
+	
+	// container data
+	
+	i = 0;
+
+	repeat(struct.containerNum){
+		
+		var j = 0;
+		
+		var _inst = struct.containerData[i].ID;
+		
+		with(_inst){
+			repeat(_inst.containerSlots){
+				ds_container[# INVITEM , j] = struct.containerData[i].ds_itemid;
+				ds_container[# INVAMOUNT , j] = struct.containerData[i].ds_itemamount;
+				ds_container[# MAXSTACK , j] = struct.containerData[i].ds_itemstack;
+				ds_container[# INVTYPE , j] = struct.containerData[i].ds_itemtype;
+				ds_container[# INVHP , j] = struct.containerData[i].ds_itemhp;
+				ds_container[# INVSTAMINA , j] = struct.containerData[i].ds_itemstamina;
+				ds_container[# INVLEVEL , j] = struct.containerData[i].ds_itemlevel;
+				ds_container[# INVDAMAGE , j] = struct.containerData[i].ds_itemdamage;
+				ds_container[# INVDEFENCE , j] = struct.containerData[i].ds_itemdefence;
+				ds_container[# INVTEMPERATURE , j] = struct.containerData[i].ds_itemtemp;
+				ds_container[# INVCAP , j] = struct.containerData[i].ds_itemcap;
+				ds_container[# MAXCAP , j] = struct.containerData[i].ds_itemmaxcap;
+				ds_container[# INVEFFECTS , j] = struct.containerData[i].ds_itemeffects;
+				
+				j++;
+			}
+		}
+		i++;
+	}
+	
 }

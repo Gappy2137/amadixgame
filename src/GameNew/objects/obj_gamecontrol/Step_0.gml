@@ -66,7 +66,15 @@ if (instance_exists(par_container)){
 }
 //
 if (instance_exists(obj_chatterbox)){
-	global.inDialogue = true;	
+	if (global.inCutscene){
+		if (obj_cutscene_controller.chatterboxActive){
+			global.inDialogue = true;		
+		}else{
+			global.inDialogue = false;	
+		}
+	}else{
+		global.inDialogue = true;	
+	}
 }else{
 	global.inDialogue = false;	
 }

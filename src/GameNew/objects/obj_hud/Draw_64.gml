@@ -1,4 +1,4 @@
-depth = -1;
+
 
 //Rysuj menu ekwipunku
 if (obj_inventory.show_inventory) && (!obj_inventory.show_slots){

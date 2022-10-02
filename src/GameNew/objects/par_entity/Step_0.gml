@@ -117,7 +117,29 @@ if (stairs){
 	if (running > 0){
 		vsp /= 1.25;
 	}else{
-		vsp /= 2;
+		vsp /= 1.75;
 	}
 }
 
+if (object_index != obj_amadix){
+	var water = instance_place(x, y, obj_shallowwater16);
+	var deepwater = instance_place(x, y, obj_water16);
+
+	if (water){
+		if (running > 0){
+			vsp /= 1.5;
+		}else{
+			vsp /= 2;
+		}
+	}	
+	
+	
+
+	if (deepwater){
+		if (running > 0){
+			vsp /= 2.5;
+		}else{
+			vsp /= 3;
+		}
+	}	
+}

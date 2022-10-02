@@ -12,7 +12,7 @@
   "length": 360.0,
   "events": {
     "Keyframes": [
-      {"id":"fcfdf009-0174-4c63-a52d-fa5ae1b50c54","Key":295.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Events":[
+      {"id":"e9773702-2821-4119-aada-f4480ccd0407","Key":297.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Events":[
               "cutscene1_en.yarn",
             ],"resourceVersion":"1.0","resourceType":"MessageEventKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<MessageEventKeyframe>",},
     ],
@@ -21,13 +21,13 @@
   },
   "moments": {
     "Keyframes": [
-      {"id":"46f4271c-eac3-4ed6-8f4f-0e5941f39c6d","Key":260.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Events":[
+      {"id":"583a82ab-aec6-4585-bc03-861dfbea0ee6","Key":260.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Events":[
               "sequence_camera_stop",
             ],"resourceVersion":"1.0","resourceType":"MomentsEventKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<MomentsEventKeyframe>",},
-      {"id":"bbe1bad9-35ff-4163-93f3-183d339fb02c","Key":299.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Events":[
+      {"id":"14dec30e-7419-4442-883f-6038ddb92c0e","Key":299.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Events":[
               "sequence_stop",
             ],"resourceVersion":"1.0","resourceType":"MomentsEventKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<MomentsEventKeyframe>",},
-      {"id":"8e2e9efd-88f7-4f58-a405-75b705ed87c6","Key":359.99982,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Events":[
+      {"id":"f791e84f-f4ea-40c4-8f6d-40dd6d57b234","Key":359.9999,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Events":[
               "sequence_camera_toplayer",
             ],"resourceVersion":"1.0","resourceType":"MomentsEventKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<MomentsEventKeyframe>",},
     ],
