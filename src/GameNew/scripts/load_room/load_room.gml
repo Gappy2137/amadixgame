@@ -79,12 +79,17 @@ function load_room(){
 
 	repeat(struct.containerNum){
 		
-		var j = 0;
+
 		
 		var _inst = struct.containerData[i].ID;
+		var _container = struct.containerData[i]._ds_container;
 		
 		with(_inst){
-			repeat(_inst.containerSlots){
+
+				
+				ds_container = _container;
+				
+				/*
 				ds_container[# INVITEM , j] = struct.containerData[i].ds_itemid;
 				ds_container[# INVAMOUNT , j] = struct.containerData[i].ds_itemamount;
 				ds_container[# MAXSTACK , j] = struct.containerData[i].ds_itemstack;
@@ -98,9 +103,10 @@ function load_room(){
 				ds_container[# INVCAP , j] = struct.containerData[i].ds_itemcap;
 				ds_container[# MAXCAP , j] = struct.containerData[i].ds_itemmaxcap;
 				ds_container[# INVEFFECTS , j] = struct.containerData[i].ds_itemeffects;
+				*/
 				
-				j++;
-			}
+		
+			
 		}
 		i++;
 	}

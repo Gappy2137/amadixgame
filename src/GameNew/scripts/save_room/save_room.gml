@@ -94,30 +94,28 @@ function save_room(){
 	
 	repeat(_containerNum){
 		
-		var j = 0;
-		
 		var _inst = instance_find(par_container, i);
+		var _ds = _inst.ds_container;
 		
-		repeat(_inst.containerSlots) {
-			struct.containerData[i] = {
-				ID : _inst.id,
-				ds_itemid : _inst.ds_container[# INVITEM, j],
-				ds_itemamount : _inst.ds_container[# INVAMOUNT, j],
-				ds_itemstack : _inst.ds_container[# MAXSTACK, j],
-				ds_itemtype : _inst.ds_container[# INVTYPE, j],
-				ds_itemhp : _inst.ds_container[# INVHP, j],
-				ds_itemstamina : _inst.ds_container[# INVSTAMINA, j],
-				ds_itemlevel : _inst.ds_container[# INVLEVEL, j],
-				ds_itemdamage : _inst.ds_container[# INVDAMAGE, j],
-				ds_itemdefence : _inst.ds_container[# INVDEFENCE, j],
-				ds_itemtemp : _inst.ds_container[# INVTEMPERATURE, j],
-				ds_itemcap : _inst.ds_container[# INVCAP, j],
-				ds_itemmaxcap : _inst.ds_container[# MAXCAP, j],
-				ds_itemeffects : _inst.ds_container[# INVEFFECTS, j]
-			
-			}
-			j++;
+		//var _tempContainer = -1;
+		
+		//_tempContainer = ds_grid_create(ds_grid_width(_ds) , ds_grid_height(_ds));
+		//ds_grid_set_grid_region(_tempContainer, _ds,
+		//	0,
+		//	0,
+		//	ds_grid_width(_ds),
+		//	ds_grid_height(_ds),
+		//	0,
+		//	0
+		//);
+	
+		struct.containerData[i] = {
+			ID : _inst.id,
+			_ds_container : _ds
 		}
+		
+		//ds_grid_destroy(_tempContainer);
+		//_tempContainer = -1;
 		
 		i++;
 	}
@@ -130,6 +128,8 @@ function save_room(){
 		case rm_devroom_3: global.roomData.devroom_3 = struct		break;
 		case rm_devroom_b: global.roomData.devroom_b = struct		break;
 	}
+	
+	
 	
 	global.savingRoom = false;
 }
