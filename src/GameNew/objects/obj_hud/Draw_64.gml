@@ -1,13 +1,11 @@
 
 
 //Rysuj menu ekwipunku
-if (obj_inventory.show_inventory) && (!obj_inventory.show_slots){
+if (global.inEq){
 	draw_set_alpha(0.5);
 	draw_rectangle_color(-8, -8, GAMEWIDTH + 8, GAMEHEIGHT + 8, c_black, c_black, c_black, c_black, false);
 	draw_set_alpha(1);
 	draw_sprite_ext(obj_inventory.spr_eq_back, 1, obj_inventory.backUI_x, obj_inventory.backUI_y, obj_inventory.scale, obj_inventory.scale, 0, c_white, 1);
-
-
 }
 /*
 //Rysuj maks rdzen zdrowia
@@ -150,9 +148,11 @@ if (show_hud == hud.inv) || (show_hud == hud.crafting) || (show_hud == hud.playe
 	}
 }
 
-if (obj_inventory.show_inventory) && (!obj_inventory.show_slots){
+if (global.inEq){
 	draw_sprite_ext(obj_inventory.spr_eq_back, 0, obj_inventory.backUI_x, obj_inventory.backUI_y, obj_inventory.scale, obj_inventory.scale, 0, c_white, 1);
-	draw_sprite_ext(obj_inventory.spr_eq_back, 2, obj_inventory.backUI_x, obj_inventory.backUI_y, obj_inventory.scale, obj_inventory.scale, 0, c_white, 1);
+	
+	if (obj_inventory.show_inventory)
+		draw_sprite_ext(obj_inventory.spr_eq_back, 2, obj_inventory.backUI_x, obj_inventory.backUI_y, obj_inventory.scale, obj_inventory.scale, 0, c_white, 1);
 }
 ////////////////////////
 

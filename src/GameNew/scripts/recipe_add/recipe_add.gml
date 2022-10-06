@@ -15,4 +15,5 @@ function recipe_add(ingredients, result, amount, type){
 	ds_grid_add(global.recipes, 0, i - 1, recipe);
 	
 	global.recipes[# 1, i - 1] = type;
+	
 }

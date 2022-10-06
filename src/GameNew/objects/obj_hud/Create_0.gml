@@ -99,8 +99,6 @@ hud_inner = false;
 
 selected_hud_slot = 0;
 
-instance_create_layer(x, y, "Important", obj_crafting);
-
 t = 0;
 
 clockFont = font_add_sprite_ext(spr_hud_clock_font, "1234567890DN", true, 2);

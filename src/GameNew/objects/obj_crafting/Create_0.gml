@@ -1,5 +1,35 @@
 show_crafting = false;
 
+
+craftingUISlotbackX = 113;
+craftingUISlotbackY = 68;
+
+
+craftingUIArrowX = 161;
+invUIArrowX = 407;
+craftingUIArrowY[0] = 54;
+craftingUIArrowY[1] = 218;
+
+invUISlotbackX = 386;
+invUISlotbackY = 67;
+
+craftingUItabX = 42;
+craftingUItabY[0] = 64;
+craftingUItabY[1] = 88;
+craftingUItabY[2] = 112;
+craftingUItabY[3] = 136;
+craftingUItabY[4] = 160;
+craftingUItabActive[0] = true;
+craftingUItabActive[1] = false;
+craftingUItabActive[2] = false;
+craftingUItabActive[3] = false;
+craftingUItabActive[4] = false;
+
+craftButtonX = 296;
+craftButtonY = 196;
+craftButtonActive = false;
+
+
 gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();
 
@@ -36,19 +66,18 @@ global.recipes = ds_grid_create(2, 1);
 
 enum recipe_type{
 	none = 0,
-	cooking = 1,
-	resources = 2,
+	resources = 1,
+	clothes = 2,
+	cooking = 3,
+	tools = 4
 }
 
-value1 = 0;
-value2 = 0;
+//ds_result_info = ds_grid_create(11, item.height);
 
-ds_result_info = ds_grid_create(11, item.height);
-
-var recipe_ss = ds_grid_create(2, 1);
-recipe_ss[# INVITEM, 0] = item.none;
-recipe_ss[# INVAMOUNT, 0] = 0;
-recipe_add(recipe_ss, item.none, 0, recipe_type.none);
+//var recipe_ss = ds_grid_create(2, 1);
+//recipe_ss[# INVITEM, 0] = item.none;
+//recipe_ss[# INVAMOUNT, 0] = 0;
+//recipe_add(recipe_ss, item.none, 0, recipe_type.none);
 
 
 var recipe_one = ds_grid_create(2, 4);
@@ -61,24 +90,25 @@ recipe_one[# INVAMOUNT, 2] = 3;
 recipe_one[# INVITEM, 3] = item.orange;
 recipe_one[# INVAMOUNT, 3] = 4;
 recipe_add(recipe_one, item.bull_energy_drink, 1, recipe_type.cooking);
+ds_grid_destroy(recipe_one);
 
-var recipe_two = ds_grid_create(2, 1);
-recipe_two[# INVITEM, 0] = item.log;
-recipe_two[# INVAMOUNT, 0] = 4;
-recipe_add(recipe_two, item.stick, 4, recipe_type.resources);
+//var recipe_two = ds_grid_create(2, 1);
+//recipe_two[# INVITEM, 0] = item.log;
+//recipe_two[# INVAMOUNT, 0] = 4;
+//recipe_add(recipe_two, item.stick, 4, recipe_type.resources);
 
-var recipe_three = ds_grid_create(2, 3);
-recipe_three[# INVITEM, 0] = item.orange;
-recipe_three[# INVAMOUNT, 0] = 2;
-recipe_three[# INVITEM, 1] = item.apple;
-recipe_three[# INVAMOUNT, 1] = 2;
-recipe_three[# INVITEM, 2] = item.strawberry;
-recipe_three[# INVAMOUNT, 2] = 2;
-recipe_add(recipe_three, item.mango_salsa, 1, recipe_type.cooking);
+//var recipe_three = ds_grid_create(2, 3);
+//recipe_three[# INVITEM, 0] = item.orange;
+//recipe_three[# INVAMOUNT, 0] = 2;
+//recipe_three[# INVITEM, 1] = item.apple;
+//recipe_three[# INVAMOUNT, 1] = 2;
+//recipe_three[# INVITEM, 2] = item.strawberry;
+//recipe_three[# INVAMOUNT, 2] = 2;
+//recipe_add(recipe_three, item.mango_salsa, 1, recipe_type.cooking);
 
-var recipe_four = ds_grid_create(2, 2);
-recipe_four[# INVITEM, 0] = item.stick;
-recipe_four[# INVAMOUNT, 0] = 2;
-recipe_four[# INVITEM, 1] = item.stone;
-recipe_four[# INVAMOUNT, 1] = 4;
-recipe_add(recipe_four, item.sword, 1, recipe_type.resources);
+//var recipe_four = ds_grid_create(2, 2);
+//recipe_four[# INVITEM, 0] = item.stick;
+//recipe_four[# INVAMOUNT, 0] = 2;
+//recipe_four[# INVITEM, 1] = item.stone;
+//recipe_four[# INVAMOUNT, 1] = 4;
+//recipe_add(recipe_four, item.sword, 1, recipe_type.resources);
