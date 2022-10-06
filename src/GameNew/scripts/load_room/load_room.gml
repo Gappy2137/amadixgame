@@ -75,39 +75,46 @@ function load_room(){
 	
 	// container data
 	
+	var _filename = ("\savedata\\" + room_get_name(room) + "_roomData.sav");
+	if (!file_exists(_filename)) exit;
+	
+	var _buffer = buffer_load(_filename);
+	var _json = buffer_read(_buffer, buffer_string);
+	buffer_delete(_buffer);
+	
+	var _loadArray = json_parse(_json);
+	
+	
 	i = 0;
 
 	repeat(struct.containerNum){
 		
+		var _inst = array_get(_loadArray, i * 2);
+		var _container = array_get(_loadArray, (i * 2) + 1);
+		
+		var j = 0;
 
-		
-		var _inst = struct.containerData[i].ID;
-		var _container = struct.containerData[i]._ds_container;
-		
 		with(_inst){
-
+			repeat(_inst.containerSlots){
+				ds_container[# INVITEM, j] = _container[@ (j * 4)];
+				ds_container[# INVAMOUNT, j] = _container[@ ((j * 4) + 1)];
+				ds_container[# INVLEVEL, j] = _container[@ ((j * 4) + 2)];
+				ds_container[# INVCAP, j] = _container[@ ((j * 4) + 3)];
 				
-				ds_container = _container;
+				ds_container[# INVTYPE, j] = obj_inventory.ds_item_info[# INVTYPE, ds_container[# INVITEM, j]];
+				ds_container[# MAXSTACK, j] = obj_inventory.ds_item_info[# INVTYPE, ds_container[# INVITEM, j]];
+				ds_container[# INVHP, j] = obj_inventory.ds_item_info[# INVTYPE, ds_container[# INVITEM, j]];
+				ds_container[# INVSTAMINA, j] = obj_inventory.ds_item_info[# INVTYPE, ds_container[# INVITEM, j]];
+				ds_container[# INVDAMAGE, j] = obj_inventory.ds_item_info[# INVTYPE, ds_container[# INVITEM, j]];
+				ds_container[# INVDEFENCE, j] = obj_inventory.ds_item_info[# INVTYPE, ds_container[# INVITEM, j]];
+				ds_container[# INVEFFECTS, j] = obj_inventory.ds_item_info[# INVTYPE, ds_container[# INVITEM, j]];
+				ds_container[# INVTEMPERATURE, j] = obj_inventory.ds_item_info[# INVTYPE, ds_container[# INVITEM, j]];
+				ds_container[# MAXCAP, j] = obj_inventory.ds_item_info[# INVTYPE, ds_container[# INVITEM, j]];
 				
-				/*
-				ds_container[# INVITEM , j] = struct.containerData[i].ds_itemid;
-				ds_container[# INVAMOUNT , j] = struct.containerData[i].ds_itemamount;
-				ds_container[# MAXSTACK , j] = struct.containerData[i].ds_itemstack;
-				ds_container[# INVTYPE , j] = struct.containerData[i].ds_itemtype;
-				ds_container[# INVHP , j] = struct.containerData[i].ds_itemhp;
-				ds_container[# INVSTAMINA , j] = struct.containerData[i].ds_itemstamina;
-				ds_container[# INVLEVEL , j] = struct.containerData[i].ds_itemlevel;
-				ds_container[# INVDAMAGE , j] = struct.containerData[i].ds_itemdamage;
-				ds_container[# INVDEFENCE , j] = struct.containerData[i].ds_itemdefence;
-				ds_container[# INVTEMPERATURE , j] = struct.containerData[i].ds_itemtemp;
-				ds_container[# INVCAP , j] = struct.containerData[i].ds_itemcap;
-				ds_container[# MAXCAP , j] = struct.containerData[i].ds_itemmaxcap;
-				ds_container[# INVEFFECTS , j] = struct.containerData[i].ds_itemeffects;
-				*/
-				
-		
-			
+				j++;
+			}
 		}
+		
 		i++;
 	}
 	

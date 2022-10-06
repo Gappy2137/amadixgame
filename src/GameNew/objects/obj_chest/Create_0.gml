@@ -11,6 +11,8 @@ yorigin = 30;
 containerSlotWidth = 3;
 containerSlotHeight = 3;
 
+containerSlots = containerSlotWidth * containerSlotHeight;
+
 shadowOriginY = 0;
 shadowStyle = spr_shadow_small;
 shadowAlpha = 0.5;

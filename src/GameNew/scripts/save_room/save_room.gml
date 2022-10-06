@@ -92,34 +92,44 @@ function save_room(){
 	
 	i = 0;
 	
+	var _saveArray = array_create(0);
+	
+	
+	
 	repeat(_containerNum){
 		
 		var _inst = instance_find(par_container, i);
 		var _ds = _inst.ds_container;
+		var _gridArray = array_create(0);
 		
-		//var _tempContainer = -1;
+		var j = 0;
 		
-		//_tempContainer = ds_grid_create(ds_grid_width(_ds) , ds_grid_height(_ds));
-		//ds_grid_set_grid_region(_tempContainer, _ds,
-		//	0,
-		//	0,
-		//	ds_grid_width(_ds),
-		//	ds_grid_height(_ds),
-		//	0,
-		//	0
-		//);
-	
-		struct.containerData[i] = {
-			ID : _inst.id,
-			_ds_container : _ds
+		array_push(_saveArray, _inst);
+		
+		repeat(_inst.containerSlots){
+			array_push(_gridArray, _ds[# INVITEM, j]);
+			array_push(_gridArray, _ds[# INVAMOUNT, j]);
+			array_push(_gridArray, _ds[# INVLEVEL, j]);
+			array_push(_gridArray, _ds[# INVCAP, j]);
+			j++;
 		}
 		
-		//ds_grid_destroy(_tempContainer);
-		//_tempContainer = -1;
+		array_push(_saveArray, _gridArray);
 		
+		_gridArray = [];
+		j = 0;
 		i++;
 	}
 	
+	
+	var _filename = ("\savedata\\" + room_get_name(room) + "_roomData.sav");
+	var _json = json_stringify(_saveArray);
+	var _buffer = buffer_create(string_byte_length(_json) + 1, buffer_fixed, 1);
+	buffer_write(_buffer, buffer_string, _json);
+	
+	buffer_save(_buffer, _filename);
+	
+	buffer_delete(_buffer);
 	
 	
 	i = 0;
