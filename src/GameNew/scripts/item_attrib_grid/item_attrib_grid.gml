@@ -38,13 +38,16 @@ function item_attrib_grid(){
 	grid[# INVHP, item.bull_energy_drink] = 5;
 	grid[# INVSTAMINA, item.bull_energy_drink] = 25;
 	grid[# INVTEMPERATURE, item.bull_energy_drink] = 0;
-	var effect_1 = ds_grid_create(3, 2);
+	var effect_1 = ds_grid_create(3, 3);
 	effect_1[# EF_EFFECT, 0] = effect.speed_ef;
 	effect_1[# EF_DURATION, 0] = 75;
 	effect_1[# EF_AMPLIFIER, 0] = 1;
 	effect_1[# EF_EFFECT, 1] = effect.stuffed;
 	effect_1[# EF_DURATION, 1] = 5;
 	effect_1[# EF_AMPLIFIER, 1] = 1;
+	effect_1[# EF_EFFECT, 2] = effect.regeneration;
+	effect_1[# EF_DURATION, 2] = 5;
+	effect_1[# EF_AMPLIFIER, 2] = 1;
 	grid[# INVEFFECTS, item.bull_energy_drink] = effect_1;
 	
 	//Mangosalsa

@@ -95,55 +95,17 @@ if (show_inventory) && (!show_slots){
 				if (iitem > 0) && (inv_grid[# INVAMOUNT, ii] > 0){
 					switch(ii){
 						case selected_slot:
-										//draw selected slot
-										draw_sprite_ext(spr_inv_slot_selected, 0, xx, yy, scale, scale, 0, c_white, 1);
-										//draw item
-										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
+									// Draw selected slot
+									draw_sprite_ext(spr_inv_slot_selected, 0, xx, yy, scale, scale, 0, c_white, 1);
+									// Draw item
+									draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
 										
-										gpu_set_blendmode(bm_add);
-										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, .2);
-										gpu_set_blendmode(bm_normal);
-										
-									if (selected_slot == picked_slot){
-										if (multipick > 0){
-										//draw selected slot
-										draw_sprite_ext(spr_inv_slot_selected, 0, xx, yy, scale, scale, 0, c_white, 1);
-										//draw item
-										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
-										
-										gpu_set_blendmode(bm_add);
-										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, .2);
-										gpu_set_blendmode(bm_normal);
-										}else{
-											draw_sprite_ext(spr_inv_slot_none, 0, xx, yy, scale, scale, 0, c_white, 1);
-										}
-									
-									}else if (selected_slot != picked_slot){
-										if (multipick > 0){
-										//draw selected slot
-										draw_sprite_ext(spr_inv_slot_selected, 0, xx, yy, scale, scale, 0, c_white, 1);
-										//draw item
-										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
-										
-										gpu_set_blendmode(bm_add);
-										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, .2);
-										gpu_set_blendmode(bm_normal);
-										}else{
-											break;	
-										}
-									}
-						break;
-						case picked_slot:
-									if (multipick > 0){
-										draw_sprite_ext(spr_inv_slot_none, 0, xx, yy, scale, scale, 0, c_white, 1);
-										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
-									}else{
-										draw_sprite_ext(spr_inv_slot_none, 0, xx, yy, scale, scale, 0, c_white, .2);
-									}
+									gpu_set_blendmode(bm_add);
+									draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, .2);
+									gpu_set_blendmode(bm_normal);
 						break;
 						default:
 									if (inv_grid[# INVAMOUNT, ii] > 0){
-										//draw_sprite_ext(spr_inv_slot_none, 0, xx, yy, scale, scale, 0, c_white, 1);
 										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
 									}
 						break;
@@ -154,26 +116,25 @@ if (show_inventory) && (!show_slots){
 				if (iitem > 0){
 					var amount = inv_grid[# INVAMOUNT, ii];
 					var _cap = inv_grid[# INVCAP, ii];
-					if (amount != 0){
-						if (inv_grid[# INVTYPE, ii] == itemtype.drink) 
-						|| (inv_grid[# INVTYPE, ii] == itemtype.alcohol){
-								draw_rectangle_color(xx + 4, yy + 20, xx + 20, yy + 22, bl, bl, bl, bl, false);
-								draw_rectangle_color(xx + 4.5, yy + 20.5, xx + 3 + (_cap*3.28) , yy + 21.5, wh, wh, wh, wh, false);
-								
-						}else if (inv_grid[# INVITEM, ii] == item.m1911mag){
-								draw_set_font(global.font_itemnum);
-								draw_set_halign(fa_right);
-								draw_text_transformed_color(xx + 22, yy + 16, string(_cap), .5, .5, 0, wh, wh, wh, wh, 1);
-								draw_set_halign(fa_left);
-								draw_set_font(font_item);
+					
+					if (_cap != -1){
+						if (inv_grid[# INVTYPE, ii] == itemtype.magazine){
+							draw_set_font(global.font_itemnum);
+							draw_set_halign(fa_right);
+							draw_text_transformed_color(xx + 22, yy + 16, string(_cap), .5, .5, 0, wh, wh, wh, wh, 1);
+							draw_set_halign(fa_left);
+							draw_set_font(font_item);
 						}else{
-							if (amount > 1){
-								draw_set_font(global.font_itemnum);
-								draw_set_halign(fa_right);
-								draw_text_transformed_color(xx + 22, yy + 16, string(amount), .5, .5, 0, wh, wh, wh, wh, 1);
-								draw_set_halign(fa_left);
-								draw_set_font(font_item);
-							}
+							draw_rectangle_color(xx + 4, yy + 20, xx + 20, yy + 22, bl, bl, bl, bl, false);
+							draw_rectangle_color(xx + 4.5, yy + 20.5, xx + 3 + (_cap*3.28) , yy + 21.5, wh, wh, wh, wh, false);
+						}
+					}else{
+						if (amount > 1){
+							draw_set_font(global.font_itemnum);
+							draw_set_halign(fa_right);
+							draw_text_transformed_color(xx + 22, yy + 16, string(amount), .5, .5, 0, wh, wh, wh, wh, 1);
+							draw_set_halign(fa_left);
+							draw_set_font(font_item);
 						}
 					}
 				}
@@ -213,7 +174,7 @@ if (show_inventory) && (!show_slots){
 				yy = armor_y[jj];
 		
 				//Przedmiot
-				iitem = inv_grid[# 0, ii];
+				iitem = inv_grid[# INVITEM, ii];
 				sx = (iitem mod spr_inv_items_columns) * cell_size;
 				sy = (iitem div spr_inv_items_columns) * cell_size;
 		
@@ -222,55 +183,17 @@ if (show_inventory) && (!show_slots){
 				if (iitem > 0) && (inv_grid[# 1, ii] > 0){
 					switch(ii){
 						case selected_slot:
-										//draw selected slot
-										draw_sprite_ext(spr_inv_slot_selected, 0, xx, yy, scale, scale, 0, c_white, 1);
-										//draw item
-										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
+									// Draw selected slot
+									draw_sprite_ext(spr_inv_slot_selected, 0, xx, yy, scale, scale, 0, c_white, 1);
+									// Draw item
+									draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
 										
-										gpu_set_blendmode(bm_add);
-										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, .2);
-										gpu_set_blendmode(bm_normal);
-										
-									if (selected_slot == picked_slot){
-										if (multipick > 0){
-										//draw selected slot
-										draw_sprite_ext(spr_inv_slot_selected, 0, xx, yy, scale, scale, 0, c_white, 1);
-										//draw item
-										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
-										
-										gpu_set_blendmode(bm_add);
-										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, .2);
-										gpu_set_blendmode(bm_normal);
-										}else{
-											draw_sprite_ext(spr_inv_slot_none, 0, xx, yy, scale, scale, 0, c_white, 1);
-										}
-									
-									}else if (selected_slot != picked_slot){
-										if (multipick > 0){
-										//draw selected slot
-										draw_sprite_ext(spr_inv_slot_selected, 0, xx, yy, scale, scale, 0, c_white, 1);
-										//draw item
-										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
-										
-										gpu_set_blendmode(bm_add);
-										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, .2);
-										gpu_set_blendmode(bm_normal);
-										}else{
-											break;	
-										}
-									}
-						break;
-						case picked_slot:
-									if (multipick > 0){
-										draw_sprite_ext(spr_inv_slot_none, 0, xx, yy, scale, scale, 0, c_white, 1);
-										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
-									}else{
-										draw_sprite_ext(spr_inv_slot_none, 0, xx, yy, scale, scale, 0, c_white, .2);
-									}
+									gpu_set_blendmode(bm_add);
+									draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, .2);
+									gpu_set_blendmode(bm_normal);
 						break;
 						default:
-									if (inv_grid[# 1, ii] > 0){
-										//draw_sprite_ext(spr_inv_slot_none, 0, xx, yy, scale, scale, 0, c_white, 1);
+									if (inv_grid[# INVAMOUNT, ii] > 0){
 										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
 									}
 						break;
@@ -279,43 +202,30 @@ if (show_inventory) && (!show_slots){
 		
 				//Rysuj liczbe przedmiotow
 				if (iitem > 0){
-					var amount = inv_grid[# 1, ii];
-					if (amount < 0) || (amount > 1){
-							switch(ii){
-								case selected_slot:
-									if (selected_slot == picked_slot) && (multipick == 0){
-										break;	
-									}
-									draw_set_font(global.font_itemnum);
-									draw_set_halign(fa_right);
-									draw_text_transformed_color(xx + 22, yy + 16, string(amount), .5, .5, 0, wh, wh, wh, wh, 1);
-									draw_set_halign(fa_left);
-									draw_set_font(font_item);
-								break;
-								case picked_slot:
-									if (multipick > 0){
-										draw_set_font(global.font_itemnum);
-										draw_set_halign(fa_right);
-										draw_text_transformed_color(xx + 22, yy + 16, string(amount), .5, .5, 0, wh, wh, wh, wh, 1);
-										draw_set_halign(fa_left);
-										draw_set_font(font_item);
-									}else{
-										break;
-									}
-								break;
-								default:
-									draw_set_font(global.font_itemnum);
-									draw_set_halign(fa_right);
-									draw_text_transformed_color(xx + 22, yy + 16, string(amount), .5, .5, 0, wh, wh, wh, wh, 1);
-									draw_set_halign(fa_left);
-									draw_set_font(font_item);
-								break;
-							}
-
+					var amount = inv_grid[# INVAMOUNT, ii];
+					var _cap = inv_grid[# INVCAP, ii];
+					
+					if (_cap != -1){
+						if (inv_grid[# INVTYPE, ii] == itemtype.magazine){
+							draw_set_font(global.font_itemnum);
+							draw_set_halign(fa_right);
+							draw_text_transformed_color(xx + 22, yy + 16, string(_cap), .5, .5, 0, wh, wh, wh, wh, 1);
+							draw_set_halign(fa_left);
+							draw_set_font(font_item);
+						}else{
+							draw_rectangle_color(xx + 4, yy + 20, xx + 20, yy + 22, bl, bl, bl, bl, false);
+							draw_rectangle_color(xx + 4.5, yy + 20.5, xx + 3 + (_cap*3.28) , yy + 21.5, wh, wh, wh, wh, false);
+						}
+					}else{
+						if (amount > 1){
+							draw_set_font(global.font_itemnum);
+							draw_set_halign(fa_right);
+							draw_text_transformed_color(xx + 22, yy + 16, string(amount), .5, .5, 0, wh, wh, wh, wh, 1);
+							draw_set_halign(fa_left);
+							draw_set_font(font_item);
+						}
 					}
 				}
-
-		
 		
 				//Przelec przez cala siatke przedmiotow
 						ii += 1;
@@ -338,14 +248,11 @@ if (show_inventory) && (!show_slots){
 	var damage = 0;
 	var level = 0;
 	if (selected_slot >= 0) && (selected_slot < inv_slots){
-		iitem = inv_grid[# 0, selected_slot];
+		iitem = inv_grid[# INVITEM, selected_slot];
 	}else{
 		iitem = 0;	
 	}
 
-	
-
-	var hflag = false;
 
 	if (iitem > 0) && (multipick == 0){
 		//GUI opisu
@@ -363,8 +270,10 @@ if (show_inventory) && (!show_slots){
 		infobox_y = mousey + 8;
 		infobox_width = cell_size * 4;
 	
+		var hfix = 0;
+	
 		//Nazwa przedmiotu
-		name = (iinfo_grid[# INVITEM, iitem]);
+		name = (iinfo_grid[# 0, iitem]);
 		var namestr = scribble(name);
 		var name_scale = 0.5;
 		
@@ -404,9 +313,6 @@ if (show_inventory) && (!show_slots){
 		var efx_num = ds_grid_height(inv_grid[# INVEFFECTS, selected_slot]);
 		
 		switch(efx_num){
-			case 0:
-				
-			break;
 			case 1:
 				effect1 = inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 0];
 			break;
@@ -419,28 +325,24 @@ if (show_inventory) && (!show_slots){
 				effect2 = inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 1];
 				effect3 = inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 2];
 			break;
+			default:
+				effect1 = -1;
+				effect2 = -1;
+				effect3 = -1;
+			break;
 		}
-		/*
-		if (inv_grid[# INVEFFECTS, selected_slot] != 0){
-			effect1 = inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 0];
-			if (inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 1] != 0){
-				effect2 = inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 1];
-				if (inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 2] != 0){
-					effect3 = inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 2];
-				}
-			}
-		}
-		*/
 		
 		if (infobox_x + infobox_width > GAMEWIDTH){
 			infobox_x = mousex - 8 - infobox_width;
 		}
 		var infobox_half = (infobox_x + infobox_width/2);
 		
-		infobox_height = namestr.get_height()*name_scale + typestr.get_height()*type_scale + descstr.get_height()*desc_scale + 12;
+		infobox_height = ( namestr.get_height() * name_scale ) + ( typestr.get_height() * type_scale ) + ( descstr.get_height() * desc_scale ) + 12;
 		
 		if (infobox_y + infobox_height > GAMEHEIGHT){
-			infobox_y = mousey - 8 - infobox_height;
+			hfix = (GAMEHEIGHT - infobox_height);
+		}else{
+			hfix = 0;
 		}
 		
 		if (inv_grid[# INVTYPE, selected_slot] == itemtype.food)
@@ -449,35 +351,60 @@ if (show_inventory) && (!show_slots){
 		|| (inv_grid[# INVTYPE, selected_slot] == itemtype.dish)
 		|| (inv_grid[# INVTYPE, selected_slot] == itemtype.drink)
 		|| (inv_grid[# INVTYPE, selected_slot] == itemtype.alcohol){
-			if (hp != 0) && (stamina == 0){
-				hp_x = infobox_half - 8;
-				infobox_height = namestr.get_height()*name_scale + typestr.get_height()*type_scale + descstr.get_height()*desc_scale + 12 + 20;
-				hp_y = infobox_y + infobox_height - 12;
-			}
-			if (hp == 0) && (stamina != 0){
-				stamina_x = infobox_half - 8;
-				infobox_height = namestr.get_height()*name_scale + typestr.get_height()*type_scale + descstr.get_height()*desc_scale + 12 + 20;
-				stamina_y = infobox_y + infobox_height - 12;
-			}
-			if (hp != 0) && (stamina != 0){
-				hp_x = infobox_half - 22;
-				stamina_x = hp_x + 34;
-				if (inv_grid[# INVEFFECTS, selected_slot] != 0){
-					effect1_x = infobox_half - 8;
-					effect1_y = infobox_y + infobox_height + 10;
-					effect_height = 20;
-					if (inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 1] != 0){
+
+			
+
+
+				if (hp != 0) && (stamina == 0){
+					hp_x = infobox_half - 8;
+					hp_y = infobox_y + infobox_height - 12;
+					
+				}else
+				if (hp == 0) && (stamina != 0){
+					stamina_x = infobox_half - 8;
+					stamina_y = infobox_y + infobox_height - 12;
+				}else if (hp != 0) && (stamina != 0){
+					hp_x = infobox_half - 22;
+					stamina_x = hp_x + 34;
+				}else{
+					hp_x = 0;
+					hp_y = -128;
+					stamina_x = 0;
+					stamina_y = -128;
+				}
+
+				switch(efx_num){
+					case 1:
+						effect1_x = infobox_half - 8;
+						effect1_y = infobox_y + infobox_height + 10;
+						effect_height = 20;
+					break;
+					case 2:
 						effect1_x = infobox_half - 28;
+						effect1_y = infobox_y + infobox_height + 10;
 						effect2_x = infobox_half + 16;
 						effect2_y = infobox_y + infobox_height + 10;
-					}
+						effect_height = 20;
+					break;
+					case 3:
+						effect1_x = infobox_half - 28;
+						effect1_y = infobox_y + infobox_height + 10;
+						effect2_x = infobox_half + 16;
+						effect2_y = infobox_y + infobox_height + 10;
+						effect3_x = infobox_half - 8;
+						effect3_y = infobox_y + infobox_height + 28;
+						effect_height = 40;
+					break;
+					default:
+					
+					break;
 				}
 				
 				infobox_height = namestr.get_height()*name_scale + typestr.get_height()*type_scale + descstr.get_height()*desc_scale + 12 + 20 + effect_height;
 				
 				hp_y = infobox_y + infobox_height - 12;
 				stamina_y = infobox_y + infobox_height - 12;
-			}
+			
 		}else
 		if (inv_grid[# INVTYPE, selected_slot] == itemtype.resource)
 		{
@@ -545,19 +472,32 @@ if (show_inventory) && (!show_slots){
 		}
 		
 		//Rysuj efekty
-		if (inv_grid[# INVEFFECTS, selected_slot] != 0){
-			draw_sprite(spr_inventory_item_effects, (inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 0]) - 1, effect1_x, effect1_y);
-			var ef1 = inv_grid[# INVEFFECTS, selected_slot][# EF_DURATION, 0];
-			var ef1a = (string_length(string(ef1 % 60)) == 1) ? "0" + string(ef1 % 60) : string(ef1 % 60);
-			var ef1_t = string(floor(ef1/60)) + ":" + ef1a;
-			var ef1str = scribble(ef1_t);
-			ef1str.starting_format("font_dialogue", bl);
-			ef1str.align(fa_left, fa_center);
-			ef1str.transform(.5, .5, 0);
-			ef1str.draw(effect1_x+ 10, effect1_y + 2);
-			draw_sprite(spr_inventory_item_effects_amp, (inv_grid[# INVEFFECTS, selected_slot][# EF_AMPLIFIER, 0]) - 1, effect1_x + 8, effect1_y + 8);
-			
-			if (inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 1] != 0){
+		
+		switch(efx_num){
+			case 1:
+				draw_sprite(spr_inventory_item_effects, (inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 0]) - 1, effect1_x, effect1_y);
+				var ef1 = inv_grid[# INVEFFECTS, selected_slot][# EF_DURATION, 0];
+				var ef1a = (string_length(string(ef1 % 60)) == 1) ? "0" + string(ef1 % 60) : string(ef1 % 60);
+				var ef1_t = string(floor(ef1/60)) + ":" + ef1a;
+				var ef1str = scribble(ef1_t);
+				ef1str.starting_format("font_dialogue", bl);
+				ef1str.align(fa_left, fa_center);
+				ef1str.transform(.5, .5, 0);
+				ef1str.draw(effect1_x+ 10, effect1_y + 2);
+				draw_sprite(spr_inventory_item_effects_amp, (inv_grid[# INVEFFECTS, selected_slot][# EF_AMPLIFIER, 0]) - 1, effect1_x + 8, effect1_y + 8);
+			break;
+			case 2:
+				draw_sprite(spr_inventory_item_effects, (inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 0]) - 1, effect1_x, effect1_y);
+				var ef1 = inv_grid[# INVEFFECTS, selected_slot][# EF_DURATION, 0];
+				var ef1a = (string_length(string(ef1 % 60)) == 1) ? "0" + string(ef1 % 60) : string(ef1 % 60);
+				var ef1_t = string(floor(ef1/60)) + ":" + ef1a;
+				var ef1str = scribble(ef1_t);
+				ef1str.starting_format("font_dialogue", bl);
+				ef1str.align(fa_left, fa_center);
+				ef1str.transform(.5, .5, 0);
+				ef1str.draw(effect1_x+ 10, effect1_y + 2);
+				draw_sprite(spr_inventory_item_effects_amp, (inv_grid[# INVEFFECTS, selected_slot][# EF_AMPLIFIER, 0]) - 1, effect1_x + 8, effect1_y + 8);
+				
 				draw_sprite(spr_inventory_item_effects, (inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 1]) - 1, effect2_x, effect2_y);
 				var ef2 = inv_grid[# INVEFFECTS, selected_slot][# EF_DURATION, 1];
 				var ef2a = (string_length(string(ef2 % 60)) == 1) ? "0" + string(ef2 % 60) : string(ef2 % 60);
@@ -568,74 +508,49 @@ if (show_inventory) && (!show_slots){
 				ef2str.transform(.5, .5, 0);
 				ef2str.draw(effect2_x+ 10, effect2_y + 2);
 				draw_sprite(spr_inventory_item_effects_amp, (inv_grid[# INVEFFECTS, selected_slot][# EF_AMPLIFIER, 1]) - 1, effect2_x + 8, effect2_y + 8);
-			}
-		}
-		
-		hflag = true;
-		
-		/*
-		//Rysuj ()
-		if (hp > 0) || (stamina > 0){
-			var ibox_height = name_height + type_height + desc_height + 8;
-		}else{
-			var ibox_height = name_height + type_height + desc_height - 8;
-		}
-		
-		if (ibox_y + ibox_height > GAMEHEIGHT){
-			ibox_y = yUI + (mouse_sloty * cell_size) - ibox_height;
-		}
-		
-		if string_width_ext(name, name_sep, name_width) > 700{
-			var ibox_width = string_width_ext(name, name_sep, name_width)/2;
-			var new_desc_width = 72 * 2;
-			scr_draw_gui_box_stretch(spr_inventory_desc, ibox_x - ibox_width + 16, ibox_y, ibox_x + ibox_width - 16, ibox_y + ibox_height);
-			draw_set_halign(fa_center);
-			draw_text_ext_transformed_color(ibox_x + 1, ibox_y + type_height + name_height + 1, description, desc_sep, new_desc_width, desc_scale, desc_scale, 0, c_gray, c_gray, c_gray, c_gray, .35);
-			draw_text_ext_transformed_color(ibox_x, ibox_y + type_height + name_height, description, desc_sep, new_desc_width, desc_scale, desc_scale, 0, wh, wh, wh, wh, 1);
-			draw_set_halign(fa_left);
-			if (hp > 0) && (stamina > 0){
-				draw_sprite(spr_inventory_item_stat, 0, ibox_x - 30, ibox_y + ibox_height - 24);
-				draw_text_transformed_color(ibox_x - 30 + 18, ibox_y + ibox_height + 3 - 24, hp, .75, .75, 0, wh, wh, wh, wh, 1);
+			break;
+			case 3:
+				draw_sprite(spr_inventory_item_effects, (inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 0]) - 1, effect1_x, effect1_y);
+				var ef1 = inv_grid[# INVEFFECTS, selected_slot][# EF_DURATION, 0];
+				var ef1a = (string_length(string(ef1 % 60)) == 1) ? "0" + string(ef1 % 60) : string(ef1 % 60);
+				var ef1_t = string(floor(ef1/60)) + ":" + ef1a;
+				var ef1str = scribble(ef1_t);
+				ef1str.starting_format("font_dialogue", bl);
+				ef1str.align(fa_left, fa_center);
+				ef1str.transform(.5, .5, 0);
+				ef1str.draw(effect1_x+ 10, effect1_y + 2);
+				draw_sprite(spr_inventory_item_effects_amp, (inv_grid[# INVEFFECTS, selected_slot][# EF_AMPLIFIER, 0]) - 1, effect1_x + 8, effect1_y + 8);
 				
-				draw_sprite(spr_inventory_item_stat, 1, ibox_x, ibox_y + ibox_height - 24);
-				draw_text_transformed_color(ibox_x + 18, ibox_y + ibox_height + 3 - 24, stamina, .75, .75, 0, wh, wh, wh, wh, 1);
-			}else if (hp > 0) && (stamina == 0){
-				draw_sprite(spr_inventory_item_stat, 0, ibox_x - 12, ibox_y + ibox_height - 24);
-				draw_text_transformed_color(ibox_x - 12 + 18, ibox_y + ibox_height + 3 - 24, hp, .75, .75, 0, wh, wh, wh, wh, 1);
-			}else if (hp == 0) && (stamina > 0){
-				draw_sprite(spr_inventory_item_stat, 1, ibox_x - 12, ibox_y + ibox_height - 24);
-				draw_text_transformed_color(ibox_x - 12 + 18, ibox_y + ibox_height + 3 - 24, stamina, .75, .75, 0, wh, wh, wh, wh, 1);
-			}
-		}else{
-			var ibox_width = 0;
-			scr_draw_gui_box_stretch(spr_inventory_desc, ibox_x - 40, ibox_y, ibox_x + 40, ibox_y + ibox_height);
-			draw_set_halign(fa_center);
-			draw_text_ext_transformed_color(ibox_x + 1, ibox_y + name_height + type_height + 1 - 6, description, desc_sep, desc_width, desc_scale, desc_scale, 0, c_gray, c_gray, c_gray, c_gray, .35);
-			draw_text_ext_transformed_color(ibox_x, ibox_y + type_height + name_height - 6, description, desc_sep, desc_width, desc_scale, desc_scale, 0, wh, wh, wh, wh, 1);
-			draw_set_halign(fa_left);
-			if (hp > 0) && (stamina > 0){
-				draw_sprite(spr_inventory_item_stat, 0, ibox_x - 30, ibox_y + ibox_height - 20);
-				draw_text_transformed_color(ibox_x - 30 + 18, ibox_y + ibox_height + 3 - 20, hp, .75, .75, 0, wh, wh, wh, wh, 1);
+				draw_sprite(spr_inventory_item_effects, (inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 1]) - 1, effect2_x, effect2_y);
+				var ef2 = inv_grid[# INVEFFECTS, selected_slot][# EF_DURATION, 1];
+				var ef2a = (string_length(string(ef2 % 60)) == 1) ? "0" + string(ef2 % 60) : string(ef2 % 60);
+				var ef2_t = string(floor(ef2/60)) + ":" + ef2a;
+				var ef2str = scribble(ef2_t);
+				ef2str.starting_format("font_dialogue", bl);
+				ef2str.align(fa_left, fa_center);
+				ef2str.transform(.5, .5, 0);
+				ef2str.draw(effect2_x+ 10, effect2_y + 2);
+				draw_sprite(spr_inventory_item_effects_amp, (inv_grid[# INVEFFECTS, selected_slot][# EF_AMPLIFIER, 1]) - 1, effect2_x + 8, effect2_y + 8);
 				
-				draw_sprite(spr_inventory_item_stat, 1, ibox_x, ibox_y + ibox_height - 20);
-				draw_text_transformed_color(ibox_x + 18, ibox_y + ibox_height + 3 - 20, stamina, .75, .75, 0, wh, wh, wh, wh, 1);
-			}else if (hp > 0) && (stamina == 0){
-				draw_sprite(spr_inventory_item_stat, 0, ibox_x - 12, ibox_y + ibox_height - 20);
-				draw_text_transformed_color(ibox_x - 12 + 18, ibox_y + ibox_height + 3 - 20, hp, .75, .75, 0, wh, wh, wh, wh, 1);
-			}else if (hp == 0) && (stamina > 0){
-				draw_sprite(spr_inventory_item_stat, 1, ibox_x - 12, ibox_y + ibox_height - 20);
-				draw_text_transformed_color(ibox_x - 12 + 18, ibox_y + ibox_height + 3 - 20, stamina, .75, .75, 0, wh, wh, wh, wh, 1);
-			}
+				draw_sprite(spr_inventory_item_effects, (inv_grid[# INVEFFECTS, selected_slot][# EF_EFFECT, 2]) - 1, effect3_x, effect3_y);
+				var ef3 = inv_grid[# INVEFFECTS, selected_slot][# EF_DURATION, 1];
+				var ef3a = (string_length(string(ef3 % 60)) == 1) ? "0" + string(ef2 % 60) : string(ef3 % 60);
+				var ef3_t = string(floor(ef3/60)) + ":" + ef3a;
+				var ef3str = scribble(ef3_t);
+				ef3str.starting_format("font_dialogue", bl);
+				ef3str.align(fa_left, fa_center);
+				ef3str.transform(.5, .5, 0);
+				ef3str.draw(effect3_x+ 10, effect3_y + 2);
+				draw_sprite(spr_inventory_item_effects_amp, (inv_grid[# INVEFFECTS, selected_slot][# EF_AMPLIFIER, 1]) - 1, effect3_x + 8, effect3_y + 8);
+			break;
+			default:
+			
+			break;
 		}
-		draw_set_halign(fa_center);
-		draw_text_ext_transformed_color(ibox_x + 1, ibox_y + 2 + 1, name, name_sep, name_width, name_scale, name_scale, 0, c_gray, c_gray, c_gray, c_gray, .35);
-		draw_text_ext_transformed_color(ibox_x, ibox_y + 2, name, name_sep, name_width, name_scale, name_scale, 0, wh, wh, wh, wh, 1);
-		draw_set_halign(fa_left);
-		draw_set_halign(fa_center);
-		draw_text_ext_transformed_color(ibox_x + .25, ibox_y + name_height + .75, type, type_sep, type_width, type_scale, type_scale, 0, c_gray, c_gray, c_gray, c_gray, .35);
-		draw_text_ext_transformed_color(ibox_x, ibox_y + name_height, type, type_sep, type_width, type_scale, type_scale, 0, wh, wh, wh, wh, 1);
-		draw_set_halign(fa_left);
-		*/
+		
+		
+		draw_text(16, 16, infobox_y);
+		draw_text(16, 32, hfix);
 	}
 
 	#endregion
