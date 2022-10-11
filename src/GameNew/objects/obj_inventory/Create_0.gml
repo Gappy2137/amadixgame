@@ -158,6 +158,7 @@ cap = -1;
 lvl = 0;
 
 infobox_height = 0;
+infobox_y = 0;
 
 //-------Ekwipunek
 //0 = PRZEDMIOT

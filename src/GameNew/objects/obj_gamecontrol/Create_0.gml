@@ -21,6 +21,12 @@ depth = -10000;
 #macro EF_AMPLIFIER 2
 #macro EF_TIMER 3
 //
+//CRAFTING
+#macro C_ING 0
+#macro C_RES 1
+#macro C_RESAM 2
+#macro C_TYPE 3
+//
 //
 //CZCIONKI
 global.font_itemnum = font_add_sprite(spr_font_item_num, ord("0123456789-.%"), false, 1);

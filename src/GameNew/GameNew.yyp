@@ -471,7 +471,6 @@
     {"id":{"name":"spr_groudtype_dirt_light16","path":"sprites/spr_groudtype_dirt_light16/spr_groudtype_dirt_light16.yy",},"order":7,},
     {"id":{"name":"spr_amadix_newA_gun_run_r","path":"sprites/spr_amadix_newA_gun_run_r/spr_amadix_newA_gun_run_r.yy",},"order":12,},
     {"id":{"name":"spr_portrait_amadix_hats","path":"sprites/spr_portrait_amadix_hats/spr_portrait_amadix_hats.yy",},"order":1,},
-    {"id":{"name":"craft_info","path":"scripts/craft_info/craft_info.yy",},"order":14,},
     {"id":{"name":"spr_eq_ui_slotback","path":"sprites/spr_eq_ui_slotback/spr_eq_ui_slotback.yy",},"order":2,},
     {"id":{"name":"spr_amadix_classicTC_run_u","path":"sprites/spr_amadix_classicTC_run_u/spr_amadix_classicTC_run_u.yy",},"order":13,},
     {"id":{"name":"spr_slope_r_steep","path":"sprites/spr_slope_r_steep/spr_slope_r_steep.yy",},"order":5,},

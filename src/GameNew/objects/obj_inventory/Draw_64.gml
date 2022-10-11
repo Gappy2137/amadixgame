@@ -260,7 +260,7 @@ if (show_inventory) && (!show_slots){
 		//var ibox_y = yUI + (mouse_sloty * cell_size) + 24;
 	
 		//Infobox
-		var infobox_x, infobox_y, infobox_width,
+		var infobox_x, infobox_width,
 		name_x, name_y, type_x, type_y, desc_x, desc_y,
 		hp_x = 0, hp_y = 0, hp_h = 0, stamina_x = 0, stamina_y = 0, stamina_h = 0,
 		defence_x = 0, defence_y = 0, defence_h = 0, damage_x = 0, damage_y = 0, damage_h = 0,
@@ -268,6 +268,7 @@ if (show_inventory) && (!show_slots){
 	
 		infobox_x = mousex + 8;
 		infobox_y = mousey + 8;
+		
 		infobox_width = cell_size * 4;
 	
 		var hfix = 0;
@@ -339,11 +340,7 @@ if (show_inventory) && (!show_slots){
 		
 		infobox_height = ( namestr.get_height() * name_scale ) + ( typestr.get_height() * type_scale ) + ( descstr.get_height() * desc_scale ) + 12;
 		
-		if (infobox_y + infobox_height > GAMEHEIGHT){
-			hfix = (GAMEHEIGHT - infobox_height);
-		}else{
-			hfix = 0;
-		}
+		var infobox_descheight = ( namestr.get_height() * name_scale ) + ( typestr.get_height() * type_scale ) + ( descstr.get_height() * desc_scale ) + 24;
 		
 		if (inv_grid[# INVTYPE, selected_slot] == itemtype.food)
 		|| (inv_grid[# INVTYPE, selected_slot] == itemtype.fruit)
@@ -357,12 +354,12 @@ if (show_inventory) && (!show_slots){
 
 				if (hp != 0) && (stamina == 0){
 					hp_x = infobox_half - 8;
-					hp_y = infobox_y + infobox_height - 12;
+					hp_y = infobox_y + infobox_descheight;
 					
 				}else
 				if (hp == 0) && (stamina != 0){
 					stamina_x = infobox_half - 8;
-					stamina_y = infobox_y + infobox_height - 12;
+					stamina_y = infobox_y + infobox_descheight;
 				}else if (hp != 0) && (stamina != 0){
 					hp_x = infobox_half - 22;
 					stamina_x = hp_x + 34;
@@ -375,36 +372,72 @@ if (show_inventory) && (!show_slots){
 
 				switch(efx_num){
 					case 1:
-						effect1_x = infobox_half - 8;
-						effect1_y = infobox_y + infobox_height + 10;
 						effect_height = 20;
 					break;
 					case 2:
-						effect1_x = infobox_half - 28;
-						effect1_y = infobox_y + infobox_height + 10;
-						effect2_x = infobox_half + 16;
-						effect2_y = infobox_y + infobox_height + 10;
 						effect_height = 20;
+
+					break;
+					case 3:
+						effect_height = 48;
+					break;
+					default:
+						effect_height = 0;
+					break;
+				}
+				
+				infobox_height = namestr.get_height()*name_scale + typestr.get_height()*type_scale + descstr.get_height()*desc_scale + 12 + 20 + effect_height;
+				
+				switch(efx_num){
+					case 1:
+						effect1_x = infobox_half - 8;
+						effect1_y = infobox_y + infobox_descheight + 24;
+					break;
+					case 2:
+						effect1_x = infobox_half - 28;
+						effect1_y = infobox_y + infobox_descheight + 24;
+						effect2_x = infobox_half + 16;
+						effect2_y = infobox_y + infobox_descheight + 24;
 					break;
 					case 3:
 						effect1_x = infobox_half - 28;
-						effect1_y = infobox_y + infobox_height + 10;
+						effect1_y = infobox_y + infobox_descheight + 24;
 						effect2_x = infobox_half + 16;
-						effect2_y = infobox_y + infobox_height + 10;
+						effect2_y = infobox_y + infobox_descheight + 24;
 						effect3_x = infobox_half - 8;
-						effect3_y = infobox_y + infobox_height + 28;
-						effect_height = 40;
+						effect3_y = infobox_y + infobox_descheight + 40;
 					break;
 					default:
 					
 					break;
 				}
 				
-				infobox_height = namestr.get_height()*name_scale + typestr.get_height()*type_scale + descstr.get_height()*desc_scale + 12 + 20 + effect_height;
+				hp_y = infobox_y + infobox_descheight;
+				stamina_y = infobox_y + infobox_descheight;
 				
-				hp_y = infobox_y + infobox_height - 12;
-				stamina_y = infobox_y + infobox_height - 12;
-			
+				if (infobox_y + infobox_height >= GAMEHEIGHT){
+					infobox_y = (GAMEHEIGHT - infobox_height);
+					hp_y = infobox_y + infobox_descheight;
+					stamina_y = infobox_y + infobox_descheight;
+					switch(efx_num){
+						case 1:
+							effect1_y = infobox_y + infobox_descheight + 24;
+						break;
+						case 2:
+							effect1_y = infobox_y + infobox_descheight + 24;
+							effect2_y = infobox_y + infobox_descheight + 24;
+						break;
+						case 3:
+							effect1_y = infobox_y + infobox_descheight + 24;
+							effect2_y = infobox_y + infobox_descheight + 24;
+							effect3_y = infobox_y + infobox_descheight + 40;
+						break;
+						default:
+					
+						break;
+					}
+				}
+				
 		}else
 		if (inv_grid[# INVTYPE, selected_slot] == itemtype.resource)
 		{
@@ -422,7 +455,11 @@ if (show_inventory) && (!show_slots){
 		{
 			infobox_height = namestr.get_height()*name_scale + typestr.get_height()*type_scale + descstr.get_height()*desc_scale + 12;
 		}
-		
+
+		if (infobox_y + infobox_height >= GAMEHEIGHT){
+			infobox_y = (GAMEHEIGHT - infobox_height);
+		}
+
 		//Rysuj tlo
 		draw_sprite_ext(spr_inventory_desc, 0, infobox_x, infobox_y, infobox_width/cell_size, infobox_height/cell_size, 0, c_white, 1);
 		
@@ -548,9 +585,13 @@ if (show_inventory) && (!show_slots){
 			break;
 		}
 		
+
 		
-		draw_text(16, 16, infobox_y);
-		draw_text(16, 32, hfix);
+		draw_set_color(c_white);
+		draw_text(16, 32, infobox_y);
+		draw_text(16, 48, infobox_height);
+		draw_text(16, 64, infobox_y + infobox_height);
+		draw_text(16, 80, hp_y);
 	}
 
 	#endregion

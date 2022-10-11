@@ -62,7 +62,7 @@ spr_craft_items_rows = sprite_get_height(spr_crafting_hud)/cell_size;
 
 page = 0;
 
-global.recipes = ds_grid_create(2, 1);
+global.recipes = ds_grid_create(4, 1);
 
 enum recipe_type{
 	none = 0,
@@ -79,7 +79,14 @@ enum recipe_type{
 //recipe_ss[# INVAMOUNT, 0] = 0;
 //recipe_add(recipe_ss, item.none, 0, recipe_type.none);
 
+var recipeOne = [
+	[item.lemon, 1],
+	[item.apple, 2],
+	[item.strawberry, 1]
+];
+recipe_add(recipeOne, item.mango_salsa, 1, recipe_type.cooking);
 
+/*
 var recipe_one = ds_grid_create(2, 4);
 recipe_one[# INVITEM, 0] = item.lemon;
 recipe_one[# INVAMOUNT, 0] = 1;
@@ -91,7 +98,7 @@ recipe_one[# INVITEM, 3] = item.orange;
 recipe_one[# INVAMOUNT, 3] = 4;
 recipe_add(recipe_one, item.bull_energy_drink, 1, recipe_type.cooking);
 ds_grid_destroy(recipe_one);
-
+*/
 //var recipe_two = ds_grid_create(2, 1);
 //recipe_two[# INVITEM, 0] = item.log;
 //recipe_two[# INVAMOUNT, 0] = 4;

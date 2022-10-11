@@ -11,10 +11,3 @@ if (object_get_parent(object_index) != (par_grass))
 		zfloor = 0;	
 	}
 }
-
-if (keyboard_check(ord("G"))){
-	shadowHeight -= 0.5;	
-}
-if (keyboard_check(ord("H"))){
-	shadowHeight += 0.5;	
-}
