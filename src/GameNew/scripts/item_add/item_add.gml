@@ -38,7 +38,8 @@ function item_add(slot, iitem, amount, level, capacity){
 				repeat(rep){
 					item_stack(iitem, maxstack, level, capacity);
 				}
-				item_stack(iitem, reminder, level, capacity);
+				if (reminder != 0)
+					item_stack(iitem, reminder, level, capacity);
 				
 			}else{
 				item_stack(iitem, amount, level, capacity);

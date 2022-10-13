@@ -1,4 +1,189 @@
 if (!show_crafting){exit;}
+
+draw_set_font(font_item);
+depth = -2;
+
+//Draw crafting type tabs
+
+var i = 0;
+repeat(5){
+	if (craftingUItabActive[i]){
+		draw_sprite(spr_crafting_ui_typetab, i * 2, craftingUItabX, craftingUItabY[i]);
+	}else{
+		draw_sprite(spr_crafting_ui_typetab, (i * 2) + 1, craftingUItabX, craftingUItabY[i]);
+	}
+	i++;
+}
+
+i = 0;
+
+// Inventory back
+draw_sprite_ext(spr_crafting_ui_inv_slotback, 0, invUISlotbackX, invUISlotbackY, 1, 1, 0, c_white, 1);
+
+// Crafting back
+draw_sprite_ext(spr_crafting_ui_slotback, 0, craftingUISlotbackX, craftingUISlotbackY, 1, 1, 0, c_white, 1);
+
+//Inventory
+var ii, ix, iy, xx, yy, sx, sy, iitem, inv_grid;
+ii = 0; ix = 0; iy = 0; inv_grid = obj_inventory.ds_inventory;
+var jj = 0;
+var wh = c_white;
+var bl = c_black;
+ii = invRow * invSlotsWidth;
+var craft_grid = global.recipes;
+	
+#region Strona eq
+	repeat (invSlotsOnPage){
+			
+			//x,y slotow
+			xx = invUIX + (cell_size * ix);
+			yy = invUIY + (cell_size * iy);
+		
+			//Przedmiot
+			iitem = inv_grid[# INVITEM, ii];
+			sx = (iitem mod spr_inv_items_columns) * cell_size;
+			sy = (iitem div spr_inv_items_columns) * cell_size;
+		
+			//Rysuj slot i przedmiot
+		
+			if (iitem > 0) && (inv_grid[# INVAMOUNT, ii] > 0){
+				switch(ii){
+					case selected_slot_eq:
+								// Draw selected slot
+								draw_sprite_ext(spr_item_slot_selected, 0, xx, yy, 1, 1, 0, c_white, 1);
+								// Draw item
+								draw_sprite_part_ext(spr_inventory_items, 0, sx, sy, cell_size, cell_size, xx, yy, 1, 1, c_white, 1);
+										
+								gpu_set_blendmode(bm_add);
+								draw_sprite_part_ext(spr_inventory_items, 0, sx, sy, cell_size, cell_size, xx, yy, 1, 1, c_white, .2);
+								gpu_set_blendmode(bm_normal);
+					break;
+					default:
+								if (inv_grid[# INVAMOUNT, ii] > 0){
+									draw_sprite_part_ext(spr_inventory_items, 0, sx, sy, cell_size, cell_size, xx, yy, 1, 1, c_white, 1);
+								}
+					break;
+				}
+			}
+		
+			//Rysuj liczbe przedmiotow
+			if (iitem > 0){
+				var amount = inv_grid[# INVAMOUNT, ii];
+				var _cap = inv_grid[# INVCAP, ii];
+					
+				if (_cap != -1){
+					if (inv_grid[# INVTYPE, ii] == itemtype.magazine){
+						draw_set_font(global.font_itemnum);
+						draw_set_halign(fa_right);
+						draw_text_transformed_color(xx + 22, yy + 16, string(_cap), .5, .5, 0, wh, wh, wh, wh, 1);
+						draw_set_halign(fa_left);
+						draw_set_font(font_item);
+					}else{
+						draw_rectangle_color(xx + 4, yy + 20, xx + 20, yy + 22, bl, bl, bl, bl, false);
+						draw_rectangle_color(xx + 4.5, yy + 20.5, xx + 3 + (_cap*3.28) , yy + 21.5, wh, wh, wh, wh, false);
+					}
+				}else{
+					if (amount > 1){
+						draw_set_font(global.font_itemnum);
+						draw_set_halign(fa_right);
+						draw_text_transformed_color(xx + 22, yy + 16, string(amount), .5, .5, 0, wh, wh, wh, wh, 1);
+						draw_set_halign(fa_left);
+						draw_set_font(font_item);
+					}
+				}
+			}
+
+		
+		
+			//Przelec przez cala siatke przedmiotow
+					ii += 1;
+					jj += 1;
+					ix = ii mod invSlotsWidth;
+					iy = jj div invSlotsWidth;
+		
+	}
+	
+#endregion
+
+ii = craftRow * craftSlotsWidth;
+jj = 0;
+ix = 0;
+iy = 0;
+
+#region Strona craftingu
+	repeat (craftSlotsOnPage){
+			
+			//x,y slotow
+			xx = craftUIX + (cell_size * ix);
+			yy = craftUIY + (cell_size * iy);
+		
+			//Przedmiot
+			iitem = inv_grid[# INVITEM, ii];
+			sx = (iitem mod spr_inv_items_columns) * cell_size;
+			sy = (iitem div spr_inv_items_columns) * cell_size;
+		
+			//Rysuj slot i przedmiot
+		
+			if (iitem > 0) && (inv_grid[# INVAMOUNT, ii] > 0){
+				switch(ii){
+					case selected_slot_craft:
+								// Draw selected slot
+								draw_sprite_ext(spr_item_slot_selected, 0, xx, yy, 1, 1, 0, c_white, 1);
+								// Draw item
+								draw_sprite_part_ext(spr_inventory_items, 0, sx, sy, cell_size, cell_size, xx, yy, 1, 1, c_white, 1);
+										
+								gpu_set_blendmode(bm_add);
+								draw_sprite_part_ext(spr_inventory_items, 0, sx, sy, cell_size, cell_size, xx, yy, 1, 1, c_white, .2);
+								gpu_set_blendmode(bm_normal);
+					break;
+					default:
+								if (inv_grid[# INVAMOUNT, ii] > 0){
+									draw_sprite_part_ext(spr_inventory_items, 0, sx, sy, cell_size, cell_size, xx, yy, 1, 1, c_white, 1);
+								}
+					break;
+				}
+			}
+		
+			//Rysuj liczbe przedmiotow
+			if (iitem > 0){
+				var amount = inv_grid[# INVAMOUNT, ii];
+				var _cap = inv_grid[# INVCAP, ii];
+					
+				if (_cap != -1){
+					if (inv_grid[# INVTYPE, ii] == itemtype.magazine){
+						draw_set_font(global.font_itemnum);
+						draw_set_halign(fa_right);
+						draw_text_transformed_color(xx + 22, yy + 16, string(_cap), .5, .5, 0, wh, wh, wh, wh, 1);
+						draw_set_halign(fa_left);
+						draw_set_font(font_item);
+					}else{
+						draw_rectangle_color(xx + 4, yy + 20, xx + 20, yy + 22, bl, bl, bl, bl, false);
+						draw_rectangle_color(xx + 4.5, yy + 20.5, xx + 3 + (_cap*3.28) , yy + 21.5, wh, wh, wh, wh, false);
+					}
+				}else{
+					if (amount > 1){
+						draw_set_font(global.font_itemnum);
+						draw_set_halign(fa_right);
+						draw_text_transformed_color(xx + 22, yy + 16, string(amount), .5, .5, 0, wh, wh, wh, wh, 1);
+						draw_set_halign(fa_left);
+						draw_set_font(font_item);
+					}
+				}
+			}
+
+		
+		
+			//Przelec przez cala siatke przedmiotow
+					ii += 1;
+					jj += 1;
+					ix = ii mod craftSlotsWidth;
+					iy = jj div craftSlotsWidth;
+		
+	}
+	
+#endregion
+
+
 /*
 draw_sprite_ext(spr_inventory_hud_back, 0, craft_slot_x, craft_slot_y - 4, 1, 1, 0, c_white, 1);
 draw_sprite_ext(spr_inventory_hud, 0, craft_slot_x, craft_slot_y, 1, 1, 0, c_white, 1);

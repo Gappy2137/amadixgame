@@ -21,7 +21,7 @@ if (show_inventory) && (!show_slots){
 	//draw_text(16, 64 + 8, pageArrowOn[1]);
 
 	depth = -2;
-	
+
 	#region Page arrows
 	
 		if (pages > 0){

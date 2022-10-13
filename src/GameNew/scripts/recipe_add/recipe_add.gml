@@ -18,19 +18,17 @@ function recipe_add(ingredients, result, amount, type){
 	global.recipes[# 1, i - 1] = type;
 	*/
 	
-	var i = ds_grid_height(global.recipes) - 1;
+	var i = ds_grid_height(global.recipes);
 	
 	ds_grid_resize(global.recipes, 4, i + 1);
 	
 	global.recipes[# C_ING, i] = ingredients;
 	
-	//ds_grid_add(global.recipes, C_ING, i, ingredients);
+	global.recipes[# C_RES, i] = result;
 	
-	ds_grid_add(global.recipes, C_RES, i, result);
+	global.recipes[# C_RESAM, i] = amount;
 	
-	ds_grid_add(global.recipes, C_RESAM, i, amount);
-	
-	ds_grid_add(global.recipes, C_TYPE, i, type);
+	global.recipes[# C_TYPE, i] = type;
 	
 	
 }

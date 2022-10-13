@@ -55,41 +55,43 @@ repeat(maxeffects){
 #endregion
 
 #region Opcje HUD
-if input_check_pressed("inventoryAccess") 
-&& (obj_inventory.inhand == -1) 
-&& (canOpenInv) 
-&& (instance_exists(obj_amadix))
-&& (!global.inCutscene)
-&& (!global.inConsole)
-&& (!global.inDialogue)
-&& (!global.inChestAnim){
+if input_check_pressed("inventoryAccess"){
+	if (obj_inventory.inhand == -1) 
+	&& (canOpenInv) 
+	&& (instance_exists(obj_amadix))
+	&& (!global.inCutscene)
+	&& (!global.inConsole)
+	&& (!global.inDialogue)
+	&& (!global.inChestAnim){
 	
-	if (instance_exists(obj_amadix)){
-		var ins = instance_nearest(obj_amadix.x , obj_amadix.y, par_container);
-	}else{
-		var ins = 0;
-	}
-	
-	if (instance_exists(par_container)){
-		if !(ins.show_container){
-			if (show_hud == hud.slots){
-				show_hud = lasthud;	
-			}else{
-				lasthud = show_hud;
-				show_hud = hud.slots;
-			}
+		if (instance_exists(obj_amadix)){
+			var ins = instance_nearest(obj_amadix.x , obj_amadix.y, par_container);
+		}else{
+			var ins = 0;
 		}
-	}else{
-
-			if (show_hud == hud.slots){
-				show_hud = lasthud;	
-			}else{
-				lasthud = show_hud;
-				show_hud = hud.slots;
+	
+		if (instance_exists(par_container)){
+			if !(ins.show_container){
+				if (show_hud == hud.slots){
+					show_hud = lasthud;	
+				}else{
+					lasthud = show_hud;
+					show_hud = hud.slots;
+				}
 			}
+		}else{
+
+				if (show_hud == hud.slots){
+					show_hud = lasthud;	
+				}else{
+					lasthud = show_hud;
+					show_hud = hud.slots;
+				}
 		
+		}
 	}
 }
+
 switch (show_hud){
 	case hud.crafting:
 		obj_inventory.show_inventory = false;
