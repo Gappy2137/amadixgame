@@ -322,7 +322,19 @@ function item_action(){
 				}
 			break;
 			case itemtype.resource:
-				itemActionNone();
+				if (obj_inventory.ds_inventory[# INVITEM, obj_inventory.mouse_slotx_second] == item.stick){
+					if (mouse_check_button_pressed(mb_left)){
+						if (obj_amadix.state != player_state.swimming)
+						&& (obj_amadix.state != player_state.swimming_idle){
+							itemActionSword();
+						}
+					}else{
+						if (obj_amadix.actionstate != player_state_action.attacking_melee)
+						itemActionNone();
+					}
+				}else{
+					itemActionNone();
+				}
 			break;
 			case itemtype.tool:
 				itemActionNone();
