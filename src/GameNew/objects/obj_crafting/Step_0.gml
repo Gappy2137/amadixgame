@@ -45,17 +45,29 @@ var endcraftUIX = craftUIX + (craftSlotsWidth * cell_size);
 var endcraftUIY = craftUIY + (craftSlotsHeight * cell_size);
 
 if isbounded(mousex, craftUIX, endcraftUIX) && isbounded(mousey, craftUIY, endcraftUIY){
-	var sx = i_mousex - (numx * cell_size);
-	var sy = i_mousey - (numy * cell_size);
+	var sxC = i_mousex_craft - (numx_craft * cell_size);
+	var syC = i_mousey_craft - (numy_craft * cell_size);
 	
-	if ((sx < cell_size) && (sy < cell_size)){
-		mouse_slotx = numx;
-		mouse_sloty = numy;
+	if ((sxC < cell_size) && (syC < cell_size)){
+		mouse_slotx = numx_craft;
+		mouse_sloty = numy_craft;
 	}
-	selected_slot_craft = min(invSlots - 1 + (craftRow * craftSlotsWidth), mouse_slotx + (mouse_sloty * craftSlotsWidth) + (craftRow * craftSlotsWidth));
+	selected_slot_craft = max(-1, mouse_slotx + (mouse_sloty * craftSlotsWidth) + (craftRow * craftSlotsWidth));
+	if (mouse_check_button_pressed(mb_left)){
+		if (selected_slot_craft < ds_grid_height(global.recipes)){
+			craftSlotSelected = selected_slot_craft;	
+			craftSlotSelectedX = mouse_slotx;
+			craftSlotSelectedY = mouse_sloty;
+		}
+	}
 	
 }else{
 	selected_slot_craft = -1;
+	if (mouse_check_button_pressed(mb_left)){
+		craftSlotSelected = -1;
+		craftSlotSelectedX = 0;
+		craftSlotSelectedY = 0;
+	}
 }
 	
 //---------------------------------------------------------------------------

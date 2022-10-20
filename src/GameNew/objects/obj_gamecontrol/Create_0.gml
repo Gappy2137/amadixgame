@@ -24,8 +24,11 @@ depth = -10000;
 //CRAFTING
 #macro C_ING 0
 #macro C_RES 1
-#macro C_RESAM 2
-#macro C_TYPE 3
+#macro C_TYPE 2
+#macro C_ITEM 0
+#macro C_AMOUNT 1
+#macro C_LVL 2
+#macro C_CAP 3
 //
 //
 //CZCIONKI

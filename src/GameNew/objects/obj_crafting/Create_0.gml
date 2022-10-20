@@ -40,6 +40,9 @@ craftSlots = 0;
 craftSlotsWidth = 4;
 craftSlotsHeight = 6;
 craftSlotsOnPage = 24;
+craftSlotSelected = -1;
+craftSlotSelectedX = 0;
+craftSlotSelectedY = 0;
 
 invRow = 0;
 invSlots = obj_inventory.inv_slots - 4;
@@ -98,16 +101,31 @@ enum recipe_type{
 	cooking = 3,
 	tools = 4
 }
+	
+var recipeZero = [
+	[item.log, 1]
+];
+var recipeZeroResult = [item.stick, 4, 0, -1];
+	
+global.recipes[# C_ING, 0] = recipeZero;
+	
+global.recipes[# C_RES, 0] = recipeZeroResult;
+	
+global.recipes[# C_TYPE, 0] = recipe_type.resources;
+	
 
 var recipeOne = [
 	[item.lemon, 1],
 	[item.apple, 2],
 	[item.strawberry, 1]
 ];
-recipe_add(recipeOne, item.mango_salsa, 1, recipe_type.cooking);
+var recipeOneResult = [item.bull_energy_drink, 1, 0, 5];
+recipe_add(recipeOne, recipeOneResult, recipe_type.cooking);
+
 
 var recipeTwo = [
 	[item.stick, 2],
 	[item.log, 1]
 ];
-recipe_add(recipeTwo, item.sword, 1, recipe_type.tools);
+var recipeTwoResult = [item.sword, 1, 0, -1];
+recipe_add(recipeTwo, recipeTwoResult, recipe_type.tools);

@@ -1,4 +1,4 @@
-function recipe_add(ingredients, result, amount, type){
+function recipe_add(ingredients, result, type){
 	
 	/*
 	var recipe = ds_map_create();
@@ -25,8 +25,6 @@ function recipe_add(ingredients, result, amount, type){
 	global.recipes[# C_ING, i] = ingredients;
 	
 	global.recipes[# C_RES, i] = result;
-	
-	global.recipes[# C_RESAM, i] = amount;
 	
 	global.recipes[# C_TYPE, i] = type;
 	

@@ -8,9 +8,9 @@ depth = -2;
 var i = 0;
 repeat(5){
 	if (craftingUItabActive[i]){
-		draw_sprite(spr_crafting_ui_typetab, i * 2, craftingUItabX, craftingUItabY[i]);
-	}else{
 		draw_sprite(spr_crafting_ui_typetab, (i * 2) + 1, craftingUItabX, craftingUItabY[i]);
+	}else{
+		draw_sprite(spr_crafting_ui_typetab, (i * 2), craftingUItabX, craftingUItabY[i]);
 	}
 	i++;
 }
@@ -110,25 +110,29 @@ jj = 0;
 ix = 0;
 iy = 0;
 
+var recipeAmount = ds_grid_height(global.recipes);
+var iinfo_grid = obj_inventory.ds_item_info;
+var item_all = obj_inventory.ds_item_all;
+
 #region Strona craftingu
-	repeat (craftSlotsOnPage){
+	repeat (recipeAmount){
 			
 			//x,y slotow
 			xx = craftUIX + (cell_size * ix);
 			yy = craftUIY + (cell_size * iy);
 		
 			//Przedmiot
-			iitem = inv_grid[# INVITEM, ii];
+			iitem = craft_grid[# C_RES, ii][@ C_ITEM];
 			sx = (iitem mod spr_inv_items_columns) * cell_size;
 			sy = (iitem div spr_inv_items_columns) * cell_size;
 		
 			//Rysuj slot i przedmiot
 		
-			if (iitem > 0) && (inv_grid[# INVAMOUNT, ii] > 0){
+			if (iitem > 0) && (craft_grid[# C_RES, ii][@ C_AMOUNT] > 0){
 				switch(ii){
 					case selected_slot_craft:
 								// Draw selected slot
-								draw_sprite_ext(spr_item_slot_selected, 0, xx, yy, 1, 1, 0, c_white, 1);
+								draw_sprite_ext(spr_crafting_ui_slot_selected, 0, xx, yy, 1, 1, 0, c_white, 1);
 								// Draw item
 								draw_sprite_part_ext(spr_inventory_items, 0, sx, sy, cell_size, cell_size, xx, yy, 1, 1, c_white, 1);
 										
@@ -137,20 +141,22 @@ iy = 0;
 								gpu_set_blendmode(bm_normal);
 					break;
 					default:
-								if (inv_grid[# INVAMOUNT, ii] > 0){
+								if (craft_grid[# C_RES, ii][@ C_AMOUNT] > 0){
 									draw_sprite_part_ext(spr_inventory_items, 0, sx, sy, cell_size, cell_size, xx, yy, 1, 1, c_white, 1);
 								}
 					break;
 				}
 			}
+			
+			
 		
 			//Rysuj liczbe przedmiotow
 			if (iitem > 0){
-				var amount = inv_grid[# INVAMOUNT, ii];
-				var _cap = inv_grid[# INVCAP, ii];
+				var amount = craft_grid[# C_RES, ii][@ C_AMOUNT];
+				var _cap = craft_grid[# C_RES, ii][@ C_CAP];
 					
 				if (_cap != -1){
-					if (inv_grid[# INVTYPE, ii] == itemtype.magazine){
+					if (item_all[# INVTYPE, craft_grid[# C_RES, ii][@ C_ITEM]] == itemtype.magazine){
 						draw_set_font(global.font_itemnum);
 						draw_set_halign(fa_right);
 						draw_text_transformed_color(xx + 22, yy + 16, string(_cap), .5, .5, 0, wh, wh, wh, wh, 1);
@@ -170,7 +176,6 @@ iy = 0;
 					}
 				}
 			}
-
 		
 		
 			//Przelec przez cala siatke przedmiotow
@@ -183,6 +188,282 @@ iy = 0;
 	
 #endregion
 
+
+var selslot_x = craftUIX + (craftSlotSelectedX * cell_size);
+var selslot_y = craftUIY + (craftSlotSelectedY * cell_size);
+if (craftSlotSelected != -1){
+	draw_sprite(spr_crafting_ui_selected, 0, selslot_x, selslot_y);
+}
+
+#region Crafting info
+
+	if (craftSlotSelected != -1){
+		
+		var name = "";
+		var description = "";
+		var type = "";
+		var hp = 0;
+		var stamina = 0;
+		var defence = 0;
+		var damage = 0;
+		var level = 0;
+		if (craftSlotSelected >= 0) && (craftSlotSelected < craftSlots){
+			iitem = craft_grid[# C_RES, craftSlotSelected][@ C_ITEM];
+		}else{
+			iitem = 0;	
+		}
+		
+		
+		
+		//Infobox
+		var infobox_x, infobox_width, infobox_y, infobox_height,
+		name_x, name_y, type_x, type_y, desc_x, desc_y,
+		hp_x = 0, hp_y = 0, hp_h = 0, stamina_x = 0, stamina_y = 0, stamina_h = 0,
+		defence_x = 0, defence_y = 0, defence_h = 0, damage_x = 0, damage_y = 0, damage_h = 0,
+		level_x = 0, level_y = 0, level_h = 0,
+	
+		infobox_x = 248;
+		infobox_y = 64;
+		
+		infobox_width = 130;
+		infobox_height = 144;
+		
+		var infobox_half = (infobox_x + (infobox_width)/2);
+	
+		//Nazwa przedmiotu
+		name = (iinfo_grid[# 0, iitem]);
+		var namestr = scribble(name);
+		var name_scale = 0.5;
+		
+		//Rodzaj przedmiotu
+		type = iinfo_grid[# 2, item_all[# INVTYPE, iitem]];
+		var typestr = scribble(type);
+		var type_scale = 0.25;
+		
+		//Opis przedmiotu
+		description = iinfo_grid[# 1, iitem];
+		var descstr = scribble(description);
+		var desc_scale = 0.5;
+	
+	
+		//Leczone HP
+		hp = item_all[# INVHP, iitem];
+	
+		//Leczona energia
+		stamina = item_all[# INVSTAMINA, iitem];
+		
+		//Armor
+		defence = item_all[# INVDEFENCE, iitem];
+		
+		//Damage
+		damage = item_all[# INVDAMAGE, iitem];
+		
+		//Level
+		level = craft_grid[# C_RES, craftSlotSelected][@ C_LVL];
+		
+		//Effects
+		var effect1 = -1, effect2 = -1, effect3 = -1;
+		var effect1_x = 0, effect1_y = 0;
+		var effect2_x = 0, effect2_y = 0;
+		var effect3_x = 0, effect3_y = 0;
+		var effect_height = 0;
+		
+		var efx_num = ds_grid_height(item_all[# INVEFFECTS, iitem]);
+		
+		switch(efx_num){
+			case 1:
+				effect1 = item_all[# INVEFFECTS, iitem][# EF_EFFECT, 0];
+			break;
+			case 2:
+				effect1 = item_all[# INVEFFECTS, iitem][# EF_EFFECT, 0];
+				effect2 = item_all[# INVEFFECTS, iitem][# EF_EFFECT, 1];
+			break;
+			case 3:
+				effect1 = item_all[# INVEFFECTS, iitem][# EF_EFFECT, 0];
+				effect2 = item_all[# INVEFFECTS, iitem][# EF_EFFECT, 1];
+				effect3 = item_all[# INVEFFECTS, iitem][# EF_EFFECT, 2];
+			break;
+			default:
+				effect1 = -1;
+				effect2 = -1;
+				effect3 = -1;
+			break;
+		}
+		
+		
+		
+		//Rysuj nazwe
+		namestr.starting_format("font_item", bl);
+		namestr.align(fa_center, fa_top);
+		namestr.transform(name_scale, name_scale, 0);
+		namestr.fit_to_box( ((infobox_width - 6) * 1/name_scale), 48, false);
+		namestr.draw(infobox_half, infobox_y);
+	
+		
+		//Rysuj typ
+		typestr.starting_format("font_item", bl);
+		typestr.align(fa_center, fa_top);
+		typestr.transform(type_scale, type_scale, 0);
+		typestr.wrap( ((infobox_width - 6) * 1/type_scale), 12, false);
+		typestr.draw(infobox_half, infobox_y + namestr.get_height()*name_scale + 4);
+		
+		
+		//Rysuj opis
+		descstr.starting_format("font_dialogue", bl);
+		descstr.align(fa_center, fa_top);
+		descstr.transform(desc_scale, desc_scale, 0);
+		descstr.fit_to_box( ((infobox_width - 6) * 1/desc_scale), 96, false);
+		descstr.draw(infobox_half, infobox_y + namestr.get_height()*name_scale + + typestr.get_height()*type_scale + 8);
+		
+		hp_x = infobox_half - 32;
+		stamina_x = infobox_half - 32;
+		
+		var _h = infobox_y + namestr.get_height()*name_scale + typestr.get_height()*type_scale + descstr.get_height()*desc_scale + 16;
+		
+		if (hp != 0) && (stamina != 0){
+			hp_y = _h;
+			stamina_y = _h + 8;
+		}else{
+			stamina_y = _h;
+			hp_y = _h;
+		}
+		switch(efx_num){
+			case 1:
+				effect1_x = infobox_half + 18;
+				effect1_y = _h;
+			break;
+			case 2:
+				effect1_x = infobox_half + 18;
+				effect1_y = _h;
+				effect2_x = infobox_half + 18;
+				effect2_y = _h + 8;
+			break;
+			case 3:
+				effect1_x = infobox_half + 18;
+				effect1_y = _h;
+				effect2_x = infobox_half + 18;
+				effect2_y = _h + 8;
+				effect3_x = infobox_half + 18;
+				effect3_y = _h + 16;
+			break;
+			default:
+					
+			break;
+		}
+		
+		//Rysuj HP
+		if (hp != 0) 
+		&& (item_all[# INVTYPE, craft_grid[# C_RES, craftSlotSelected][@ C_ITEM]] != itemtype.handgun)
+		&& (item_all[# INVTYPE, craft_grid[# C_RES, craftSlotSelected][@ C_ITEM]] != itemtype.shotgun){
+			draw_sprite_ext(spr_inventory_item_stat, 0, hp_x, hp_y, .5, .5, 0, c_white, 1);
+			var hpstr = scribble(hp);
+			hpstr.starting_format("font_dialogue", bl);
+			hpstr.align(fa_left, fa_center);
+			hpstr.transform(.5, .5, 0);
+			hpstr.draw(hp_x + 5, hp_y + 1);
+		}
+		//Rysuj energie
+		if (stamina != 0){
+			draw_sprite_ext(spr_inventory_item_stat, 1, stamina_x, stamina_y, .5, .5, 0, c_white, 1);
+			var ststr = scribble(stamina);
+			ststr.starting_format("font_dialogue", bl);
+			ststr.align(fa_left, fa_center);
+			ststr.transform(.5, .5, 0);
+			ststr.draw(stamina_x + 5, stamina_y + 1);
+		}
+		
+		//Rysuj efekty
+		
+		switch(efx_num){
+			case 1:
+				draw_sprite_ext(spr_inventory_item_effects, (item_all[# INVEFFECTS, iitem][# EF_EFFECT, 0]) - 1, effect1_x, effect1_y, .5, .5, 0, c_white, 1);
+				var ef1 = item_all[# INVEFFECTS, iitem][# EF_DURATION, 0];
+				var ef1a = (string_length(string(ef1 % 60)) == 1) ? "0" + string(ef1 % 60) : string(ef1 % 60);
+				var ef1_t = string(floor(ef1/60)) + ":" + ef1a;
+				var ef1str = scribble(ef1_t);
+				ef1str.starting_format("font_dialogue", bl);
+				ef1str.align(fa_left, fa_center);
+				ef1str.transform(.5, .5, 0);
+				ef1str.draw(effect1_x+ 10, effect1_y + 2);
+				draw_sprite_ext(spr_inventory_item_effects_amp, (item_all[# INVEFFECTS, iitem][# EF_AMPLIFIER, 0]) - 1, effect1_x - 8, effect1_y, .5, .5, 0, c_white, 1);
+			break;
+			case 2:
+				draw_sprite_ext(spr_inventory_item_effects, (item_all[# INVEFFECTS, iitem][# EF_EFFECT, 0]) - 1, effect1_x, effect1_y, .5, .5, 0, c_white, 1);
+				var ef1 = item_all[# INVEFFECTS, iitem][# EF_DURATION, 0];
+				var ef1a = (string_length(string(ef1 % 60)) == 1) ? "0" + string(ef1 % 60) : string(ef1 % 60);
+				var ef1_t = string(floor(ef1/60)) + ":" + ef1a;
+				var ef1str = scribble(ef1_t);
+				ef1str.starting_format("font_dialogue", bl);
+				ef1str.align(fa_left, fa_center);
+				ef1str.transform(.5, .5, 0);
+				ef1str.draw(effect1_x+ 10, effect1_y + 2);
+				draw_sprite_ext(spr_inventory_item_effects_amp, (item_all[# INVEFFECTS, iitem][# EF_AMPLIFIER, 0]) - 1, effect1_x - 8, effect1_y, .5, .5, 0, c_white, 1);
+				
+				draw_sprite_ext(spr_inventory_item_effects, (item_all[# INVEFFECTS, iitem][# EF_EFFECT, 1]) - 1, effect2_x, effect2_y, .5, .5, 0, c_white, 1);
+				var ef2 = item_all[# INVEFFECTS, iitem][# EF_DURATION, 1];
+				var ef2a = (string_length(string(ef2 % 60)) == 1) ? "0" + string(ef2 % 60) : string(ef2 % 60);
+				var ef2_t = string(floor(ef2/60)) + ":" + ef2a;
+				var ef2str = scribble(ef2_t);
+				ef2str.starting_format("font_dialogue", bl);
+				ef2str.align(fa_left, fa_center);
+				ef2str.transform(.5, .5, 0);
+				ef2str.draw(effect2_x+ 10, effect2_y + 2);
+				draw_sprite_ext(spr_inventory_item_effects_amp, (item_all[# INVEFFECTS, iitem][# EF_AMPLIFIER, 1]) - 1, effect2_x - 8, effect2_y, .5, .5, 0, c_white, 1);
+			break;
+			case 3:
+				draw_sprite_ext(spr_inventory_item_effects, (item_all[# INVEFFECTS, iitem][# EF_EFFECT, 0]) - 1, effect1_x, effect1_y, .5, .5, 0, c_white, 1);
+				var ef1 = item_all[# INVEFFECTS, iitem][# EF_DURATION, 0];
+				var ef1a = (string_length(string(ef1 % 60)) == 1) ? "0" + string(ef1 % 60) : string(ef1 % 60);
+				var ef1_t = string(floor(ef1/60)) + ":" + ef1a;
+				var ef1str = scribble(ef1_t);
+				ef1str.starting_format("font_dialogue", bl);
+				ef1str.align(fa_left, fa_center);
+				ef1str.transform(.5, .5, 0);
+				ef1str.draw(effect1_x+ 10, effect1_y + 2);
+				draw_sprite_ext(spr_inventory_item_effects_amp, (item_all[# INVEFFECTS, iitem][# EF_AMPLIFIER, 0]) - 1, effect1_x - 8, effect1_y, .5, .5, 0, c_white, 1);
+				
+				draw_sprite_ext(spr_inventory_item_effects, (item_all[# INVEFFECTS, iitem][# EF_EFFECT, 1]) - 1, effect2_x, effect2_y, .5, .5, 0, c_white, 1);
+				var ef2 = item_all[# INVEFFECTS, iitem][# EF_DURATION, 1];
+				var ef2a = (string_length(string(ef2 % 60)) == 1) ? "0" + string(ef2 % 60) : string(ef2 % 60);
+				var ef2_t = string(floor(ef2/60)) + ":" + ef2a;
+				var ef2str = scribble(ef2_t);
+				ef2str.starting_format("font_dialogue", bl);
+				ef2str.align(fa_left, fa_center);
+				ef2str.transform(.5, .5, 0);
+				ef2str.draw(effect2_x+ 10, effect2_y + 2);
+				draw_sprite_ext(spr_inventory_item_effects_amp, (item_all[# INVEFFECTS, iitem][# EF_AMPLIFIER, 1]) - 1, effect2_x - 8, effect2_y, .5, .5, 0, c_white, 1);
+				
+				draw_sprite_ext(spr_inventory_item_effects, (item_all[# INVEFFECTS, iitem][# EF_EFFECT, 2]) - 1, effect3_x, effect3_y, .5, .5, 0, c_white, 1);
+				var ef3 = item_all[# INVEFFECTS, iitem][# EF_DURATION, 1];
+				var ef3a = (string_length(string(ef3 % 60)) == 1) ? "0" + string(ef2 % 60) : string(ef3 % 60);
+				var ef3_t = string(floor(ef3/60)) + ":" + ef3a;
+				var ef3str = scribble(ef3_t);
+				ef3str.starting_format("font_dialogue", bl);
+				ef3str.align(fa_left, fa_center);
+				ef3str.transform(.5, .5, 0);
+				ef3str.draw(effect3_x+ 10, effect3_y + 2);
+				draw_sprite_ext(spr_inventory_item_effects_amp, (item_all[# INVEFFECTS, iitem][# EF_AMPLIFIER, 1]) - 1, effect3_x - 8, effect3_y, .5, .5, 0, c_white, 1);
+			break;
+			default:
+			
+			break;
+		}
+		
+		
+		// Ingredients
+		
+		var _i = 0;
+		
+		var ing_amount = array_length(craft_grid[# C_ING, craftSlotSelected]);
+		
+		//craft_grid[# C_ING, craftSlotSelected][@ _i][@ C_ITEM]
+		//craft_grid[# C_ING, craftSlotSelected][@ _i][@ C_AMOUNT]
+		
+		var ing_h = _h + 32;
+		
+	}
+
+#endregion
 
 /*
 draw_sprite_ext(spr_inventory_hud_back, 0, craft_slot_x, craft_slot_y - 4, 1, 1, 0, c_white, 1);

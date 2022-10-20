@@ -586,12 +586,7 @@ if (show_inventory) && (!show_slots){
 		}
 		
 
-		
-		draw_set_color(c_white);
-		draw_text(16, 32, infobox_y);
-		draw_text(16, 48, infobox_height);
-		draw_text(16, 64, infobox_y + infobox_height);
-		draw_text(16, 80, hp_y);
+	
 	}
 
 	#endregion
