@@ -319,13 +319,16 @@ if (craftSlotSelected != -1){
 		stamina_x = infobox_half - 32;
 		
 		var _h = infobox_y + namestr.get_height()*name_scale + typestr.get_height()*type_scale + descstr.get_height()*desc_scale + 16;
+		var _h2 = 0;
 		
 		if (hp != 0) && (stamina != 0){
 			hp_y = _h;
 			stamina_y = _h + 8;
+			_h2 = 16;
 		}else{
 			stamina_y = _h;
 			hp_y = _h;
+			_h2 = 0;
 		}
 		switch(efx_num){
 			case 1:
@@ -345,6 +348,7 @@ if (craftSlotSelected != -1){
 				effect2_y = _h + 8;
 				effect3_x = infobox_half + 18;
 				effect3_y = _h + 16;
+				_h2 = 24;
 			break;
 			default:
 					
@@ -459,7 +463,63 @@ if (craftSlotSelected != -1){
 		//craft_grid[# C_ING, craftSlotSelected][@ _i][@ C_ITEM]
 		//craft_grid[# C_ING, craftSlotSelected][@ _i][@ C_AMOUNT]
 		
-		var ing_h = _h + 32;
+		var ing_w = 252;
+		var ing_h = _h + _h2;
+		
+		var ing_x = [];
+		var ing_y = [];
+		var ing_alpha = [];
+		
+		ing_x[0] = ing_w;
+		ing_y[0] = ing_h;
+		
+		ing_x[1] = ing_w + 40;
+		ing_y[1] = ing_h;
+		
+		ing_x[2] = ing_w + 40 + 40;
+		ing_y[2] = ing_h;
+		
+		
+		
+		repeat(ing_amount){
+			
+			var _iitem = craft_grid[# C_ING, craftSlotSelected][@ _i][@ C_ITEM];
+			var _amount = craft_grid[# C_ING, craftSlotSelected][@ _i][@ C_AMOUNT];
+			var _sx = (_iitem mod spr_inv_items_columns) * cell_size;
+			var _sy = (_iitem div spr_inv_items_columns) * cell_size;
+			var _name = (iinfo_grid[# 0, _iitem]);
+			
+			var amountInInv = item_find_amount(_iitem);
+			
+			if (amountInInv >= _amount){
+				ing_alpha[_i] = 1;
+			}else{
+				ing_alpha[_i] = .5;
+			}
+			
+			// Draw ingredient sprite
+			draw_sprite_part_ext(spr_inventory_items, 0, _sx, _sy, 24, 24, ing_x[_i], ing_y[_i], .5, .5, c_white, ing_alpha[_i]);
+			
+			// Draw needed amount
+			draw_set_font(font_dialogue);
+			draw_set_halign(fa_left);
+			draw_set_valign(fa_middle);
+			draw_set_alpha(ing_alpha[_i]);
+			draw_text_transformed(ing_x[_i] + 12, ing_y[_i] + 7, string(_amount), .5, .5, 0);
+			draw_set_alpha(1);
+			
+			// Draw name
+			var _namestr = scribble(_name);
+			_namestr.starting_format("font_dialogue", bl);
+			_namestr.align(fa_center, fa_middle);
+			_namestr.transform(.5, .5, 0);
+			_namestr.scale_to_box(42, 16, false);
+			_namestr.blend(c_white, ing_alpha[_i]);
+			_namestr.draw(ing_x[_i] + 26, ing_y[_i] + 7);
+			_i++;
+		}
+		
+		
 		
 	}
 
