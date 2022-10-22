@@ -598,7 +598,7 @@ if (show_inventory) && (!show_slots){
 			iitem = inhand;
 			sx = (iitem mod spr_inv_items_columns) * cell_size;
 			sy = (iitem div spr_inv_items_columns) * cell_size;
-			scr_draw_item(sx, sy, mousex, mousey, 1);
+			draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, mousex, mousey, 1, 1, c_white, 1);
 			var inuma = multipick;
 			var _cap = cap;
 			

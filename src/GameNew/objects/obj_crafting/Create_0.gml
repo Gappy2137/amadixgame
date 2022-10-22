@@ -10,6 +10,12 @@ invUIArrowX = 407;
 craftingUIArrowY[0] = 54;
 craftingUIArrowY[1] = 218;
 
+pageArrowOnInv[0] = false;
+pageArrowOnInv[1] = false;
+
+pageArrowOnCraft[0] = false;
+pageArrowOnCraft[1] = false;
+
 invUISlotbackX = 386;
 invUISlotbackY = 67;
 
@@ -28,6 +34,8 @@ craftingUItabActive[4] = false;
 craftButtonX = 296;
 craftButtonY = 196;
 craftButtonActive = false;
+
+y_rel = 0;
 
 invUIX = 388;
 invUIY = 72;
@@ -49,6 +57,11 @@ invSlots = obj_inventory.inv_slots - 4;
 invSlotsWidth = 3;
 invSlotsHeight = 6;
 invSlotsOnPage = 18;
+inhand = -1;
+multipick = 0;
+cap = -1;
+lvl = 0;
+
 
 cell_size = 24;
 
@@ -62,6 +75,17 @@ mousey = 0;
 
 mouse_slotx = 0;
 mouse_sloty = 0;
+
+trashSlotX = 0;
+trashSlotY = 219;
+trashSlotX2 = 52;
+trashSlotY2 = 269;
+onTrashSlot = false;
+
+onEqUI = false;
+onCraftUI = false;
+
+canThrowOut = true;
 
 /*
 gui_width = display_get_gui_width();

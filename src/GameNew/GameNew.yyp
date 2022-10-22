@@ -1397,7 +1397,6 @@
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"buttoncolors.csv","CopyToMask":-1,"filePath":"datafiles",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"buttonlabels.csv","CopyToMask":-1,"filePath":"datafiles",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"test_en.yarn","CopyToMask":3035461389054378222,"filePath":"datafiles/language/dialogue",},
-    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"speech_walter.wav","CopyToMask":-1,"filePath":"datafiles/sound/speech",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"controllerblacklist.csv","CopyToMask":-1,"filePath":"datafiles",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"controllertypes.csv","CopyToMask":-1,"filePath":"datafiles",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"licenses.txt","CopyToMask":-1,"filePath":"datafiles",},
@@ -1410,6 +1409,8 @@
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"trashcan.wav","CopyToMask":-1,"filePath":"datafiles/sound/other",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"janusz_pl.yarn","CopyToMask":-1,"filePath":"datafiles/language/dialogue",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"speech_janusz.wav","CopyToMask":-1,"filePath":"datafiles/sound/speech",},
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"speech_walter.wav","CopyToMask":-1,"filePath":"datafiles/sound/speech",},
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"speech_waltuh.wav","CopyToMask":-1,"filePath":"datafiles/sound/speech",},
   ],
   "MetaData": {
     "IDEVersion": "2022.9.1.51",

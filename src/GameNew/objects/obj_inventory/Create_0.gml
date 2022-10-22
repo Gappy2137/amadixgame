@@ -136,9 +136,9 @@ pageArrow_y2 = 128;
 pageArrow_x1[1] = 386;
 pageArrow_x2[1] = 416;
 
-trashSlotX = 427;
+trashSlotX = 0;
 trashSlotY = 219;
-trashSlotX2 = 479;
+trashSlotX2 = 52;
 trashSlotY2 = 269;
 onTrashSlot = false;
 

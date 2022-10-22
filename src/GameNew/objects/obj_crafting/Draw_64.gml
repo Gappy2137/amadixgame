@@ -21,6 +21,15 @@ draw_sprite_ext(spr_crafting_ui_inv_slotback, 0, invUISlotbackX, invUISlotbackY,
 // Crafting back
 draw_sprite_ext(spr_crafting_ui_slotback, 0, craftingUISlotbackX, craftingUISlotbackY, 1, 1, 0, c_white, 1);
 
+// Trash slot
+draw_sprite_ext(spr_eq_trashslot, 0, trashSlotX, trashSlotY + y_rel, 1, 1, 0, c_white, 1);
+if (onTrashSlot){
+	draw_sprite(spr_eq_trashslot, 2, trashSlotX, trashSlotY + y_rel);
+}else{
+	draw_sprite(spr_eq_trashslot, 1, trashSlotX, trashSlotY + y_rel);
+}
+
+
 //Inventory
 var ii, ix, iy, xx, yy, sx, sy, iitem, inv_grid;
 ii = 0; ix = 0; iy = 0; inv_grid = obj_inventory.ds_inventory;
@@ -48,7 +57,7 @@ var craft_grid = global.recipes;
 				switch(ii){
 					case selected_slot_eq:
 								// Draw selected slot
-								draw_sprite_ext(spr_item_slot_selected, 0, xx, yy, 1, 1, 0, c_white, 1);
+								draw_sprite_ext(spr_item_slot_selected, 0, xx, yy - 1, 1, 1, 0, c_white, 1);
 								// Draw item
 								draw_sprite_part_ext(spr_inventory_items, 0, sx, sy, cell_size, cell_size, xx, yy, 1, 1, c_white, 1);
 										
@@ -529,4 +538,39 @@ if (craftSlotSelected != -1){
 	
 	
 
+#endregion
+
+#region Rysowanie przedmiotow przenoszonych
+if (multipick != 0) && (inhand != -1){
+	
+	
+		var itemall = obj_inventory.ds_item_all;
+		
+		//Przedmiot
+		iitem = inhand;
+		
+		sx = (iitem mod spr_inv_items_columns) * cell_size;
+		sy = (iitem div spr_inv_items_columns) * cell_size;
+		
+		draw_sprite_part_ext(spr_inventory_items, 0, sx, sy, cell_size, cell_size, mousex, mousey, 1, 1, c_white, 1);
+		var inuma = multipick;
+		var _cap = cap;
+			
+		if (itemall[# INVTYPE, iitem] == itemtype.drink) || (itemall[# INVTYPE, iitem] == itemtype.alcohol){
+				draw_rectangle_color(mousex + 4, mousey + 20, mousex + 20, mousey + 22, bl, bl, bl, bl, false);
+				draw_rectangle_color(mousex + 4.5, mousey + 20.5, mousex + 3 + (_cap*3.28) , mousey + 21.5, wh, wh, wh, wh, false);
+		}else if (itemall[# INVTYPE, iitem] == itemtype.magazine){
+				draw_set_font(global.font_itemnum);
+				draw_text_transformed_color(mousex + 16, mousey + 16, string(_cap), .5, .5, 0, wh, wh, wh, wh, 1);
+				draw_set_font(font_item);
+		}else{
+			if (inuma > 1){
+				draw_set_font(global.font_itemnum);
+				draw_text_transformed_color(mousex + 16, mousey + 16, string(inuma), .5, .5, 0, wh, wh, wh, wh, 1);
+				draw_set_font(font_item);
+			}
+		}
+
+		
+}
 #endregion
