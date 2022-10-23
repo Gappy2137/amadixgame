@@ -140,8 +140,7 @@ global.recipes[# C_TYPE, 0] = recipe_type.resources;
 
 var recipeOne = [
 	[item.lemon, 1],
-	[item.apple, 99],
-	[item.strawberry, 1]
+	[item.apple, 10]
 ];
 var recipeOneResult = [item.bull_energy_drink, 1, 0, 5];
 recipe_add(recipeOne, recipeOneResult, recipe_type.cooking);

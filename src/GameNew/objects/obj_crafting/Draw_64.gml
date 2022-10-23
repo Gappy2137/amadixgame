@@ -517,11 +517,11 @@ if (craftSlotSelected != -1){
 			// Draw name
 			var _namestr = scribble(_name);
 			_namestr.starting_format("font_dialogue", bl);
-			_namestr.align(fa_center, fa_middle);
+			_namestr.align(fa_left, fa_middle);
 			_namestr.transform(.5, .5, 0);
-			_namestr.scale_to_box(42, 16, false);
+			_namestr.scale_to_box(46, 24, false);
 			_namestr.blend(c_white, ing_alpha[_i]);
-			_namestr.draw(ing_x[_i] + 25, ing_y[_i] + 7);
+			_namestr.draw(ing_x[_i] + 20, ing_y[_i] + 7);
 			draw_set_alpha(1);
 			
 			_i++;
@@ -529,7 +529,12 @@ if (craftSlotSelected != -1){
 		
 		// Draw crafting button
 		if (craftButtonActive){
-			draw_sprite(spr_crafting_ui_craftbutton, 1, craftButtonX, craftButtonY);
+			if (isbounded(mousex, craftButtonX, craftButtonX + 32))
+			&& (isbounded(mousey, craftButtonY, craftButtonY + 16)){
+				draw_sprite(spr_crafting_ui_craftbutton, 2, craftButtonX, craftButtonY);
+			}else{
+				draw_sprite(spr_crafting_ui_craftbutton, 1, craftButtonX, craftButtonY);
+			}
 		}else{
 			draw_sprite(spr_crafting_ui_craftbutton, 0, craftButtonX, craftButtonY);
 		}

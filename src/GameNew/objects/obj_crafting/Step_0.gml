@@ -62,12 +62,16 @@ if isbounded(mousex, craftUIX, endcraftUIX) && isbounded(mousey, craftUIY, endcr
 	}
 	
 }else{
-	selected_slot_craft = -1;
-	if (mouse_check_button_pressed(mb_left)){
-		craftSlotSelected = -1;
-		craftSlotSelectedX = 0;
-		craftSlotSelectedY = 0;
+	/*
+	if !(isbounded(mousex, 85, 394) && isbounded(mousey, 48, 240)){
+		selected_slot_craft = -1;
+		if (mouse_check_button_pressed(mb_left)){
+			craftSlotSelected = -1;
+			craftSlotSelectedX = 0;
+			craftSlotSelectedY = 0;
+		}
 	}
+	*/
 }
 	
 //---------------------------------------------------------------------------
@@ -355,6 +359,93 @@ if isbounded(mousex, 85, 394) && isbounded(mousey, 54, 240)
 	#endregion
 	//---------------------------------------------------------------------------
 
+
+
+// Crafting
+
+if (craftSlotSelected != -1){
+	
+	var craft_grid = global.recipes;
+	var ing_amount = array_length(craft_grid[# C_ING, craftSlotSelected]);
+	
+	var _i = 0;
+	var _cancraft = [];
+
+	repeat(ing_amount){
+			
+		var _iitem = craft_grid[# C_ING, craftSlotSelected][@ _i][@ C_ITEM];
+		var _amount = craft_grid[# C_ING, craftSlotSelected][@ _i][@ C_AMOUNT];
+			
+		var amountInInv = item_find_amount(_iitem);
+			
+		if (amountInInv >= _amount){
+			_cancraft[_i] = true;
+		}else{
+			_cancraft[_i] = false;
+		}
+		
+		
+		_i++;
+	}
+	
+	_i = 0;
+	
+	repeat(ing_amount){
+		
+		craftButtonActive = true;
+		
+		if (_cancraft[_i] == false){
+			craftButtonActive = false;
+			break;
+		}
+		_i++;
+	}
+	
+	_i = 0;
+	
+	if (craftButtonActive){
+		if (isbounded(mousex, craftButtonX, craftButtonX + 32))
+		&& (isbounded(mousey, craftButtonY, craftButtonY + 16)){
+			if (mouse_check_button_pressed(mb_left)){
+				repeat(ing_amount){
+					
+					var _iitem = craft_grid[# C_ING, craftSlotSelected][@ _i][@ C_ITEM];
+					var _amount = craft_grid[# C_ING, craftSlotSelected][@ _i][@ C_AMOUNT];
+					
+					var _result_item = craft_grid[# C_RES, craftSlotSelected][@ C_ITEM];
+					var _result_amount = craft_grid[# C_RES, craftSlotSelected][@ C_AMOUNT];
+					var _result_cap = craft_grid[# C_RES, craftSlotSelected][@ C_CAP];
+					var _result_lvl = craft_grid[# C_RES, craftSlotSelected][@ C_LVL];
+					
+					
+					if (inhand == -1){
+						inhand = _result_item;
+						multipick += _result_amount;
+						cap = _result_cap;
+						lvl = _result_lvl;
+						
+						item_remove(_iitem, _amount, false);
+					}else{
+						if (_result_amount + multipick <= obj_inventory.ds_item_all[# MAXSTACK, inhand]){
+							inhand = _result_item;
+							multipick += _result_amount;
+							cap = _result_cap;
+							lvl = _result_lvl;
+							
+							item_remove(_iitem, _amount, false);
+						}
+					}
+
+				
+					//item_add(-1, _result_item, _result_amount, _result_lvl, _result_cap);
+					
+					_i++;
+				}
+			}
+		}
+	}
+	
+}
 
 
 /*
