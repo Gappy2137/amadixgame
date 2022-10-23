@@ -100,6 +100,46 @@ if isbounded(mousex, 0, GAMEWIDTH/2) {
 	}
 }
 
+//---------------------------------------------------------------------------
+// Arrows
+
+// Crafting arrow top >:3
+if isbounded(mousex, craftingUIArrowX, craftingUIArrowX + 14) && isbounded(mousey, craftingUIArrowY[0], craftingUIArrowY[0] + 15) {
+	if (mouse_check_button_pressed(mb_left)) {
+		if (craftRow > 0){
+			craftRow--;
+		}
+	}
+}
+// Crafting arrow bottom >w<
+if isbounded(mousex, craftingUIArrowX, craftingUIArrowX + 14) && isbounded(mousey, craftingUIArrowY[1], craftingUIArrowY[1] + 15) {
+	if (mouse_check_button_pressed(mb_left)) {
+		if (craftRow < ( (craftSlots / craftSlotsWidth) - craftSlotsHeight)){
+			craftRow++;
+		}
+	}
+}
+
+
+// Inventory arrow top >:3
+if isbounded(mousex, invUIArrowX, invUIArrowX + 14) && isbounded(mousey, craftingUIArrowY[0], craftingUIArrowY[0] + 15) {
+	if (mouse_check_button_pressed(mb_left)) {
+		if (invRow > 0){
+			invRow--;
+		}
+	}
+}
+// Inventory arrow bottom >w<
+if isbounded(mousex, invUIArrowX, invUIArrowX + 14) && isbounded(mousey, craftingUIArrowY[1], craftingUIArrowY[1] + 15) {
+	if (mouse_check_button_pressed(mb_left)) {
+		if (invRow < ( (invSlots / invSlotsWidth) - invSlotsHeight)){
+			invRow++;
+		}
+	}
+}
+
+//---------------------------------------------------------------------------
+
 if isbounded(mousex, craftUIX, endcraftUIX) && isbounded(mousey, craftUIY, endcraftUIY) {
 	onCraftUI = true;
 } else {
@@ -160,6 +200,8 @@ repeat(5) {
 __i = 0;
 
 //---------------------------------------------------------------------------
+
+
 
 	//---------------------------------------------------------------------------
 	#region Operacje na przedmiotach
@@ -237,7 +279,19 @@ __i = 0;
 				cap = inv_grid[# INVCAP, selected_slot_eq];
 				lvl = inv_grid[# INVLEVEL, selected_slot_eq];
 				
-				slot_remove(selected_slot_eq);
+				inv_grid[# INVITEM, selected_slot_eq] = item.none;
+				inv_grid[# INVAMOUNT, selected_slot_eq] = 0;
+				inv_grid[# INVTYPE, selected_slot_eq] = -1;
+				inv_grid[# MAXSTACK, selected_slot_eq] = 0;
+				inv_grid[# INVHP, selected_slot_eq] = 0;
+				inv_grid[# INVSTAMINA, selected_slot_eq] = 0;
+				inv_grid[# INVLEVEL, selected_slot_eq] = 0;
+				inv_grid[# INVDAMAGE, selected_slot_eq] = 0;
+				inv_grid[# INVDEFENCE, selected_slot_eq] = 0;
+				inv_grid[# INVEFFECTS, selected_slot_eq] = 0;
+				inv_grid[# INVTEMPERATURE, selected_slot_eq] = 0;
+				inv_grid[# INVCAP, selected_slot_eq] = -1;
+				inv_grid[# MAXCAP, selected_slot_eq] = -1;
 			}else
 			//Jezeli mamy przedmiot w rece i klikamy na pusty slot
 			if (inhand != -1) && (inv_grid[# INVITEM, selected_slot_eq] == item.none){
@@ -308,7 +362,19 @@ __i = 0;
 					cap = inv_grid[# INVCAP, selected_slot_eq];
 					lvl = inv_grid[# INVLEVEL, selected_slot_eq];
 				
-					slot_remove(selected_slot_eq);
+					inv_grid[# INVITEM, selected_slot_eq] = item.none;
+					inv_grid[# INVAMOUNT, selected_slot_eq] = 0;
+					inv_grid[# INVTYPE, selected_slot_eq] = -1;
+					inv_grid[# MAXSTACK, selected_slot_eq] = 0;
+					inv_grid[# INVHP, selected_slot_eq] = 0;
+					inv_grid[# INVSTAMINA, selected_slot_eq] = 0;
+					inv_grid[# INVLEVEL, selected_slot_eq] = 0;
+					inv_grid[# INVDAMAGE, selected_slot_eq] = 0;
+					inv_grid[# INVDEFENCE, selected_slot_eq] = 0;
+					inv_grid[# INVEFFECTS, selected_slot_eq] = 0;
+					inv_grid[# INVTEMPERATURE, selected_slot_eq] = 0;
+					inv_grid[# INVCAP, selected_slot_eq] = -1;
+					inv_grid[# MAXCAP, selected_slot_eq] = -1;
 				}else{
 					
 					if (input_check("inventory_shift")){
@@ -331,7 +397,19 @@ __i = 0;
 					if (input_check("inventory_shift")){
 						if (inv_grid[# INVAMOUNT, selected_slot_eq] == 1){
 							multipick++;
-							slot_remove(selected_slot_eq);
+							inv_grid[# INVITEM, selected_slot_eq] = item.none;
+							inv_grid[# INVAMOUNT, selected_slot_eq] = 0;
+							inv_grid[# INVTYPE, selected_slot_eq] = -1;
+							inv_grid[# MAXSTACK, selected_slot_eq] = 0;
+							inv_grid[# INVHP, selected_slot_eq] = 0;
+							inv_grid[# INVSTAMINA, selected_slot_eq] = 0;
+							inv_grid[# INVLEVEL, selected_slot_eq] = 0;
+							inv_grid[# INVDAMAGE, selected_slot_eq] = 0;
+							inv_grid[# INVDEFENCE, selected_slot_eq] = 0;
+							inv_grid[# INVEFFECTS, selected_slot_eq] = 0;
+							inv_grid[# INVTEMPERATURE, selected_slot_eq] = 0;
+							inv_grid[# INVCAP, selected_slot_eq] = -1;
+							inv_grid[# MAXCAP, selected_slot_eq] = -1;
 						}else{
 							var mm = floor((inv_grid[# INVAMOUNT, selected_slot_eq])/2);
 							if (multipick + mm >= inv_grid[# MAXSTACK, selected_slot_eq]){
@@ -385,6 +463,40 @@ __i = 0;
 			}
 		}
 	}
+	
+	//---------------------------------------------------------------------------
+	//Jezeli istnieje w siatce przedmiot o ilosci zerowej usun go
+	for (var i = 0; i < invSlots; ++i){
+	    if ((inv_grid[# INVAMOUNT, i] == 0) && (inv_grid[# INVITEM, i] != item.none)){
+			inv_grid[# INVITEM, i] = item.none;
+			inv_grid[# INVAMOUNT, i] = 0;
+			inv_grid[# INVTYPE, i] = -1;
+			inv_grid[# MAXSTACK, i] = 0;
+			inv_grid[# INVHP, i] = 0;
+			inv_grid[# INVSTAMINA, i] = 0;
+			inv_grid[# INVLEVEL, i] = 0;
+			inv_grid[# INVDAMAGE, i] = 0;
+			inv_grid[# INVDEFENCE, i] = 0;
+			inv_grid[# INVEFFECTS, i] = 0;
+			inv_grid[# INVTEMPERATURE, i] = 0;
+			inv_grid[# INVCAP, i] = -1;
+			inv_grid[# MAXCAP, i] = -1;
+		}
+		if (inv_grid[# INVCAP, i] <= 0) && (inv_grid[# INVCAP, i] != -1){
+			inv_grid[# INVCAP, i] = 0;	
+		}
+	}
+	//---------------------------------------------------------------------------
+	
+	//---------------------------------------------------------------------------
+	if (inhand == -1){
+		multipick = 0;	
+	}
+	if (multipick == 0){
+		inhand = -1;	
+	}
+	//---------------------------------------------------------------------------
+	
 	#endregion
 	//---------------------------------------------------------------------------
 

@@ -21,7 +21,7 @@ yposTemp = false;
 canUseInventory = true;
 
 page = 0;
-pages = 0;
+pages = 1;
 
 inv_slots = (48 * (pages + 1)) + 4;
 inv_slots_width = 12;

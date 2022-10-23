@@ -1,9 +1,9 @@
 containter_additem(0, item.sword, 1, -1, 0);
-containter_additem(1, item.sawedoff, 1, -1, 0);
-containter_additem(2, item.bullet45acp, 10, -1, 0);
+containter_additem(1, item.m1911, 1, -1, 0);
+containter_additem(2, item.m1911mag, 1, 7, 0);
 containter_additem(3, item.log, 20, -1, 0);
 containter_additem(4, item.stick, 20, -1, 0);
 containter_additem(5, item.lemon, 10, -1, 0);
-containter_additem(6, item.sneakers, 1, -1, 0);
+containter_additem(6, item.m1911mag, 1, 7, 0);
 containter_additem(7, item.vodka, 1, 5, 0);
 containter_additem(8, item.apple, 10, -1, 0);

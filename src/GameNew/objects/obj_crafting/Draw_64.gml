@@ -18,10 +18,26 @@ repeat(5){
 
 i = 0;
 
-
-
 // Crafting back
 draw_sprite_ext(spr_crafting_ui_slotback, 0, craftingUISlotbackX, craftingUISlotbackY, 1, 1, 0, c_white, 1);
+
+// Inventory row arrows
+
+if (craftRow > 0) {
+	draw_sprite(spr_crafting_ui_slotback_arrow, 0, craftingUIArrowX, craftingUIArrowY[0]);
+}
+if (craftRow < ( (craftSlots / craftSlotsWidth) - craftSlotsHeight)) {
+	draw_sprite(spr_crafting_ui_slotback_arrow, 1, craftingUIArrowX, craftingUIArrowY[1]);
+}
+
+// Crafting row arrows
+
+if (invRow > 0) {
+	draw_sprite(spr_crafting_ui_inv_slotback_arrow, 0, invUIArrowX, craftingUIArrowY[0]);
+}
+if (invRow < ( (invSlots / invSlotsWidth) - invSlotsHeight)) {
+	draw_sprite(spr_crafting_ui_inv_slotback_arrow, 1, invUIArrowX, craftingUIArrowY[1]);
+}
 
 // Trash slot
 draw_sprite_ext(spr_eq_trashslot, 0, trashSlotX, trashSlotY + y_rel, 1, 1, 0, c_white, 1);
@@ -31,6 +47,11 @@ if (onTrashSlot){
 	draw_sprite(spr_eq_trashslot, 1, trashSlotX, trashSlotY + y_rel);
 }
 
+draw_set_font(font_item_desc);
+draw_set_color(c_red);
+draw_text(16, 16, inhand);
+draw_text(16, 16 + 8, multipick);
+draw_text(16, 16 + 16, cap);
 
 //Inventory
 var ii, ix, iy, xx, yy, sx, sy, iitem, inv_grid;
