@@ -1,8 +1,11 @@
 if (!show_crafting){exit;}
 depth = -2;
 
-//Draw crafting type tabs
 
+// Inventory back
+draw_sprite_ext(spr_crafting_ui_inv_slotback, 0, invUISlotbackX, invUISlotbackY, 1, 1, 0, c_white, 1);
+
+//Draw crafting type tabs
 var i = 0;
 repeat(5){
 	if (craftingUItabActive[i]){
@@ -15,8 +18,7 @@ repeat(5){
 
 i = 0;
 
-// Inventory back
-draw_sprite_ext(spr_crafting_ui_inv_slotback, 0, invUISlotbackX, invUISlotbackY, 1, 1, 0, c_white, 1);
+
 
 // Crafting back
 draw_sprite_ext(spr_crafting_ui_slotback, 0, craftingUISlotbackX, craftingUISlotbackY, 1, 1, 0, c_white, 1);

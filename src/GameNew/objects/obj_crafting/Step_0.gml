@@ -77,60 +77,89 @@ if isbounded(mousex, craftUIX, endcraftUIX) && isbounded(mousey, craftUIY, endcr
 //---------------------------------------------------------------------------
 
 if isbounded(mousex, 0, GAMEWIDTH/2) {
-	if (mouse_wheel_up()){
+	if (mouse_wheel_up()) {
 		if (craftRow > 0){
 			craftRow--;
 		}
 	}
-	if (mouse_wheel_down()){
+	if (mouse_wheel_down()) {
 		if (craftRow < ( (craftSlots / craftSlotsWidth) - craftSlotsHeight)){
 			craftRow++;
 		}
 	}
-}else{
-	if (mouse_wheel_up()){
-		if (invRow > 0){
+} else {
+	if (mouse_wheel_up()) {
+		if (invRow > 0) {
 			invRow--;
 		}
 	}
-	if (mouse_wheel_down()){
+	if (mouse_wheel_down()) {
 		if (invRow < ( (invSlots / invSlotsWidth) - invSlotsHeight)){
 			invRow++;
 		}
 	}
 }
 
-if isbounded(mousex, craftUIX, endcraftUIX) && isbounded(mousey, craftUIY, endcraftUIY){
+if isbounded(mousex, craftUIX, endcraftUIX) && isbounded(mousey, craftUIY, endcraftUIY) {
 	onCraftUI = true;
-}else{
+} else {
 	onCraftUI = false;
 }
-if isbounded(mousex, invUIX, endinvUIX) && isbounded(mousey, invUIY, endinvUIY){
+if isbounded(mousex, invUIX, endinvUIX) && isbounded(mousey, invUIY, endinvUIY) {
 	onEqUI = true;
-}else{
+} else {
 	onEqUI = false;
 }
 
 //---------------------------------------------------------------------------
 // Trash item
-if ((mousex >= trashSlotX) && (mousex < trashSlotX2) && (mousey >= trashSlotY) && (mousey <= trashSlotY2)){
-	if (inhand != -1){
+if ((mousex >= trashSlotX) && (mousex < trashSlotX2) && (mousey >= trashSlotY) && (mousey <= trashSlotY2)) {
+	if (inhand != -1) {
 		onTrashSlot = true;
 	}
-}else{
+} else {
 	onTrashSlot = false;
 }
 	
 //---------------------------------------------------------------------------
 
 if isbounded(mousex, 85, 394) && isbounded(mousey, 54, 240)
-|| isbounded(mousex, craftingUItabX, 85) && isbounded(mousey, craftingUItabY[0], 184){
+|| isbounded(mousex, craftingUItabX, 85) && isbounded(mousey, craftingUItabY[0], 184) {
 	canThrowOut = false;
-}else{
+} else {
 	canThrowOut = true;	
 }
 
+//---------------------------------------------------------------------------
+// Tabs
 
+var __i = 0;
+
+repeat(5) {
+	
+	
+	if isbounded(mousex, craftingUItabX, craftingUItabX + 51) && isbounded(mousey, craftingUItabY[__i], craftingUItabY[__i] + 24) {
+		if (mouse_check_button_pressed(mb_left)) {
+			
+			var tt = 0;
+			repeat(5) {
+				
+				craftingUItabActive[tt] = false;
+				
+				tt++;
+			}
+			
+			craftingUItabActive[__i] = true;
+			
+		}
+	}
+	
+	__i++;
+}
+
+__i = 0;
+
+//---------------------------------------------------------------------------
 
 	//---------------------------------------------------------------------------
 	#region Operacje na przedmiotach
@@ -435,9 +464,6 @@ if (craftSlotSelected != -1){
 							item_remove(_iitem, _amount, false);
 						}
 					}
-
-				
-					//item_add(-1, _result_item, _result_amount, _result_lvl, _result_cap);
 					
 					_i++;
 				}
