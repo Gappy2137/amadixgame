@@ -1,6 +1,8 @@
 function scr_playerMovingAnim() {
 	
 with(obj_amadix){
+	
+	if (!global.pause){
 	switch (actionstate){
 		case player_state_action.none:
 				anim_frame += anim_speed;
@@ -120,7 +122,7 @@ with(obj_amadix){
 			
 		break;
 	}
-	
+	}
 	
 	
 	if (instance_exists(obj_gun_logic)){

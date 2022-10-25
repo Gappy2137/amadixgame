@@ -116,7 +116,7 @@ spr_craft_items_rows = sprite_get_height(spr_crafting_hud)/cell_size;
 
 page = 0;
 */
-global.recipes = ds_grid_create(4, 1);
+global.recipes = ds_grid_create(3, 1);
 
 enum recipe_type{
 	none = 0,
@@ -155,3 +155,5 @@ var recipeTwoResult = [item.sword, 1, 0, -1];
 recipe_add(recipeTwo, recipeTwoResult, recipe_type.tools);
 
 recipe_add([ [item.lemon, 3],[item.orange,3],[item.apple, 3] ], [item.bull_energy_drink, 1, 0, 5], recipe_type.cooking);
+
+ds_grid_sort(global.recipes, C_TYPE, true);

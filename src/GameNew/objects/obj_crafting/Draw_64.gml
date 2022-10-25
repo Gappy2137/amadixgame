@@ -47,12 +47,6 @@ if (onTrashSlot){
 	draw_sprite(spr_eq_trashslot, 1, trashSlotX, trashSlotY + y_rel);
 }
 
-draw_set_font(font_item_desc);
-draw_set_color(c_red);
-draw_text(16, 16, inhand);
-draw_text(16, 16 + 8, multipick);
-draw_text(16, 16 + 16, cap);
-
 //Inventory
 var ii, ix, iy, xx, yy, sx, sy, iitem, inv_grid;
 ii = 0; ix = 0; iy = 0; inv_grid = obj_inventory.ds_inventory;
@@ -141,6 +135,42 @@ iy = 0;
 var recipeAmount = ds_grid_height(global.recipes);
 var iinfo_grid = obj_inventory.ds_item_info;
 var item_all = obj_inventory.ds_item_all;
+
+var _ii = 0;
+repeat(5){
+	
+	if (craftingUItabActive[_ii] == true){
+
+		if (_ii != 0){
+			
+			
+		
+			var j = 0;
+			var _am = 0;
+		
+			repeat(ds_grid_height(global.recipes)){
+			
+				var temp = ds_grid_get(craft_grid, C_TYPE, j);
+			
+				if (temp == _ii){
+					_am ++;
+				}
+			
+				j++;
+			
+			}
+		
+			recipeAmount = _am;
+			
+		}
+
+		
+	}
+	
+	_ii++;
+}
+
+
 
 #region Strona craftingu
 	repeat (recipeAmount){

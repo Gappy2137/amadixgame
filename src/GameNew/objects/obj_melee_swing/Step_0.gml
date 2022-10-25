@@ -9,3 +9,8 @@ if animation_frame > 7.9{
 
 alpha -= 0.025;
 
+if (instance_exists(obj_amadix)){
+	if (obj_amadix.actionstate != player_state_action.attacking_melee){
+		instance_destroy();
+	}
+}
