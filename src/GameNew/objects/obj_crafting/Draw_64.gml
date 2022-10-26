@@ -137,24 +137,30 @@ var iinfo_grid = obj_inventory.ds_item_info;
 var item_all = obj_inventory.ds_item_all;
 
 var _ii = 0;
+var from = 0;
 repeat(5){
 	
 	if (craftingUItabActive[_ii] == true){
 
 		if (_ii != 0){
 			
-			
 		
 			var j = 0;
 			var _am = 0;
+			var _from = 0;
+			
+			
 		
 			repeat(ds_grid_height(global.recipes)){
-			
-				var temp = ds_grid_get(craft_grid, C_TYPE, j);
-			
-				if (temp == _ii){
-					_am ++;
+				
+				if (craft_grid[# C_TYPE, j] == _ii){
+					_am++;
+					
+					
+					_from = j;
 				}
+				
+				from = _from - _am + 1;
 			
 				j++;
 			
@@ -170,13 +176,19 @@ repeat(5){
 	_ii++;
 }
 
+ii = (craftRow * craftSlotsWidth) + from;
+//jj = from;
+ix = ii mod craftSlotsWidth;
+//iy = jj div craftSlotsWidth;
+
 
 
 #region Strona craftingu
 	repeat (recipeAmount){
 			
+			
 			//x,y slotow
-			xx = craftUIX + (cell_size * ix);
+			xx = craftUIX + (cell_size * (ix - from));
 			yy = craftUIY + (cell_size * iy);
 		
 			//Przedmiot
@@ -185,6 +197,29 @@ repeat(5){
 			sy = (iitem div spr_inv_items_columns) * cell_size;
 		
 			//Rysuj slot i przedmiot
+			
+			var ing_amount = array_length(craft_grid[# C_ING, ii]);
+			var alpha = 0;
+			
+			var _i = 0;
+			
+			repeat(ing_amount){
+				var _item = craft_grid[# C_ING, ii][@ _i][@ C_ITEM];
+				var amount = craft_grid[# C_ING, ii][@ _i][@ C_AMOUNT];
+				
+				
+				var amountInInv = item_find_amount(_item);
+			
+				if (amountInInv >= amount){
+					alpha = 1;
+				}else{
+					alpha = .5;
+				}
+				
+				_i++;
+			}
+			
+
 		
 			if (iitem > 0) && (craft_grid[# C_RES, ii][@ C_AMOUNT] > 0){
 				switch(ii){
@@ -192,7 +227,7 @@ repeat(5){
 								// Draw selected slot
 								draw_sprite_ext(spr_crafting_ui_slot_selected, 0, xx, yy, 1, 1, 0, c_white, 1);
 								// Draw item
-								draw_sprite_part_ext(spr_inventory_items, 0, sx, sy, cell_size, cell_size, xx, yy, 1, 1, c_white, 1);
+								draw_sprite_part_ext(spr_inventory_items, 0, sx, sy, cell_size, cell_size, xx, yy, 1, 1, c_white, alpha);
 										
 								gpu_set_blendmode(bm_add);
 								draw_sprite_part_ext(spr_inventory_items, 0, sx, sy, cell_size, cell_size, xx, yy, 1, 1, c_white, .2);
@@ -200,7 +235,7 @@ repeat(5){
 					break;
 					default:
 								if (craft_grid[# C_RES, ii][@ C_AMOUNT] > 0){
-									draw_sprite_part_ext(spr_inventory_items, 0, sx, sy, cell_size, cell_size, xx, yy, 1, 1, c_white, 1);
+									draw_sprite_part_ext(spr_inventory_items, 0, sx, sy, cell_size, cell_size, xx, yy, 1, 1, c_white, alpha);
 								}
 					break;
 				}
@@ -217,7 +252,7 @@ repeat(5){
 					if (item_all[# INVTYPE, craft_grid[# C_RES, ii][@ C_ITEM]] == itemtype.magazine){
 						draw_set_font(global.font_itemnum);
 						draw_set_halign(fa_right);
-						draw_text_transformed_color(xx + 22, yy + 16, string(_cap), .5, .5, 0, wh, wh, wh, wh, 1);
+						draw_text_transformed_color(xx + 22, yy + 16, string(_cap), .5, .5, 0, wh, wh, wh, wh, alpha);
 						draw_set_halign(fa_left);
 					}else{
 						draw_rectangle_color(xx + 4, yy + 20, xx + 20, yy + 22, bl, bl, bl, bl, false);
@@ -227,7 +262,7 @@ repeat(5){
 					if (amount > 1){
 						draw_set_font(global.font_itemnum);
 						draw_set_halign(fa_right);
-						draw_text_transformed_color(xx + 22, yy + 16, string(amount), .5, .5, 0, wh, wh, wh, wh, 1);
+						draw_text_transformed_color(xx + 22, yy + 16, string(amount), .5, .5, 0, wh, wh, wh, wh, alpha);
 						draw_set_halign(fa_left);
 					}
 				}

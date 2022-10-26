@@ -20,7 +20,7 @@ function recipe_add(ingredients, result, type){
 	
 	var i = ds_grid_height(global.recipes);
 	
-	ds_grid_resize(global.recipes, 4, i + 1);
+	ds_grid_resize(global.recipes, 3, i + 1);
 	
 	global.recipes[# C_ING, i] = ingredients;
 	
@@ -28,5 +28,6 @@ function recipe_add(ingredients, result, type){
 	
 	global.recipes[# C_TYPE, i] = type;
 	
+	ds_grid_sort(global.recipes, C_TYPE, true);
 	
 }

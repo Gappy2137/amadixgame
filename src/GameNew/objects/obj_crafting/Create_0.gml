@@ -156,4 +156,8 @@ recipe_add(recipeTwo, recipeTwoResult, recipe_type.tools);
 
 recipe_add([ [item.lemon, 3],[item.orange,3],[item.apple, 3] ], [item.bull_energy_drink, 1, 0, 5], recipe_type.cooking);
 
-ds_grid_sort(global.recipes, C_TYPE, true);
+recipe_add([ [item.lemon, 3],[item.orange,3],[item.apple, 3] ], [item.dandelion, 1, 0, -1], recipe_type.cooking);
+
+recipe_add([ [item.lemon, 3],[item.orange,3],[item.apple, 3] ], [item.lemon, 1, 0, -1], recipe_type.cooking);
+
+recipe_add([ [item.lemon, 3],[item.orange,3],[item.apple, 3] ], [item.apple, 1, 0, -1], recipe_type.cooking);
