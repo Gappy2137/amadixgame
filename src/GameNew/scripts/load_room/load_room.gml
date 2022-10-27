@@ -5,6 +5,7 @@ function load_room(){
 	switch(room){
 		case rm_devroom_3: struct = global.roomData.devroom_3 		break;
 		case rm_devroom_b: struct = global.roomData.devroom_b		break;
+		case rm_devroom_c: struct = global.roomData.devroom_c		break;
 	}
 
 	if (!is_struct(struct)){exit;}

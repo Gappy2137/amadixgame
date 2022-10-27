@@ -91,6 +91,10 @@ canThrowOut = true;
 
 currentStation = craftingStation.none;
 
+stationX = 256;
+stationY = 208;
+stationIm = 0;
+
 /*
 gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();
@@ -159,7 +163,7 @@ var recipeTwo = [
 var recipeTwoResult = [item.sword, 1, 0, -1];
 recipe_add(recipeTwo, recipeTwoResult, recipe_type.tools, craftingStation.craft_basic_1);
 
-recipe_add([ [item.lemon, 3],[item.orange,3],[item.apple, 3] ], [item.bull_energy_drink, 1, 0, 5], recipe_type.cooking, craftingStation.none);
+recipe_add([ [item.lemon, 3],[item.orange,3],[item.apple, 3],[item.stick, 1],[item.log, 3] ], [item.bull_energy_drink, 1, 0, 5], recipe_type.cooking, craftingStation.none);
 
 recipe_add([ [item.lemon, 3],[item.orange,3],[item.apple, 3] ], [item.dandelion, 1, 0, -1], recipe_type.cooking, craftingStation.none);
 

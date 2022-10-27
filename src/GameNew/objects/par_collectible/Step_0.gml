@@ -162,7 +162,13 @@ if (mouse_over_me(clickRadius)){
 											vsp = 0;
 											facing = checkFacing(real(idd));
 											scr_setPlayerFacingAnim(facing);
-											alarm[0] = 28;
+											stopEatingTimer = time_source_create(time_source_game, 28, time_source_units_frames, 
+											function (){
+												event_user(0);	
+											}
+											, [], 1);
+								
+											time_source_start(stopEatingTimer);
 										}
 									}
 								}

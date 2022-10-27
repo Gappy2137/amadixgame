@@ -39,6 +39,10 @@ if (invRow < ( (invSlots / invSlotsWidth) - invSlotsHeight)) {
 	draw_sprite(spr_crafting_ui_inv_slotback_arrow, 1, invUIArrowX, craftingUIArrowY[1]);
 }
 
+
+
+
+
 // Trash slot
 draw_sprite_ext(spr_eq_trashslot, 0, trashSlotX, trashSlotY + y_rel, 1, 1, 0, c_white, 1);
 if (onTrashSlot){
@@ -353,7 +357,35 @@ if (craftSlotSelected != -1){
 			iitem = 0;	
 		}
 		
+		// Crafting station requirements
 		
+		var stationReq = craft_grid[# C_STATION, craftSlotSelected];
+		
+		switch(stationReq){
+			case craftingStation.none:
+				stationIm = 3;
+			break;
+			case craftingStation.craft_basic_1:
+				stationIm = 0;
+			break;
+			case craftingStation.craft_basic_2:
+				stationIm = 1;
+			break;
+			case craftingStation.craft_basic_3:
+				stationIm = 2;
+			break;
+			case craftingStation.cooking_1:
+				stationIm = 0;
+			break;
+			case craftingStation.cooking_2:
+				stationIm = 1;
+			break;
+			case craftingStation.cooking_3:
+				stationIm = 2;
+			break;
+		}
+		
+		draw_sprite(spr_crafting_ui_station_req, stationIm, stationX, stationY);
 		
 		//Infobox
 		var infobox_x, infobox_width, infobox_y, infobox_height,
@@ -622,7 +654,23 @@ if (craftSlotSelected != -1){
 		ing_x[2] = ing_w + 40 + 40;
 		ing_y[2] = ing_h;
 		
+		ing_x[3] = ing_w;
+		ing_y[3] = ing_h + 12;
 		
+		ing_x[4] = ing_w + 40;
+		ing_y[4] = ing_h + 12;
+		
+		ing_x[5] = ing_w + 40 + 40;
+		ing_y[5] = ing_h + 12;
+		
+		ing_x[6] = ing_w;
+		ing_y[6] = ing_h + 12 + 12;
+		
+		ing_x[7] = ing_w + 40;
+		ing_y[7] = ing_h + 12 + 12;
+		
+		ing_x[8] = ing_w + 40 + 40;
+		ing_y[8] = ing_h + 12 + 12;
 		
 		repeat(ing_amount){
 			
