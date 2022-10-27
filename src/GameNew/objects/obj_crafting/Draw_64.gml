@@ -228,9 +228,34 @@ ix = (ii - from) mod craftSlotsWidth;
 			
 			_i = 0;
 			
+			
+			
 			repeat(ing_amount){
-		
-				alpha = 1;
+				
+				var stationReq = craft_grid[# C_STATION, ii];
+
+				if (currentStation == stationReq){
+					alpha = 1;
+				}else{
+					if (stationReq == craftingStation.craft_basic_1)
+					&& ( (currentStation == craftingStation.craft_basic_2) || (currentStation == craftingStation.craft_basic_3) ){
+						alpha = 1;
+					}else
+					if (stationReq == craftingStation.craft_basic_2)
+					&& (currentStation == craftingStation.craft_basic_3){
+						alpha = 1;
+					}else
+					if (stationReq == craftingStation.cooking_1)
+					&& ( (currentStation == craftingStation.cooking_2) || (currentStation == craftingStation.cooking_3) ){
+						alpha = 1;
+					}else
+					if (stationReq == craftingStation.cooking_2)
+					&& (currentStation == craftingStation.cooking_3){
+						alpha = 1;
+					}else{
+						alpha = 0.5;
+					}
+				}
 		
 				if (_cancraft[_i] == false){
 					alpha = 0.5;

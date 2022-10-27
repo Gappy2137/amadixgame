@@ -3,6 +3,10 @@ if (!show_crafting){exit;}
 invSlots = obj_inventory.inv_slots - 4;
 craftSlots = ds_grid_height(global.recipes);
 
+if (instance_exists(obj_amadix)){
+	currentStation = obj_amadix.crafting_station;	
+}
+
 //---------------------------------------------------------------------------
 #region Pozycja myszki
 mousex = device_mouse_x_to_gui(0);
@@ -521,6 +525,7 @@ if (craftSlotSelected != -1){
 	
 	var craft_grid = global.recipes;
 	var ing_amount = array_length(craft_grid[# C_ING, craftSlotSelected]);
+	var stationReq = craft_grid[# C_STATION, craftSlotSelected];
 	
 	var _i = 0;
 	var _cancraft = [];
@@ -546,7 +551,29 @@ if (craftSlotSelected != -1){
 	
 	repeat(ing_amount){
 		
-		craftButtonActive = true;
+		
+		if (currentStation == stationReq){
+			craftButtonActive = true;
+		}else{
+			if (stationReq == craftingStation.craft_basic_1)
+			&& ( (currentStation == craftingStation.craft_basic_2) || (currentStation == craftingStation.craft_basic_3) ){
+				craftButtonActive = true;
+			}else
+			if (stationReq == craftingStation.craft_basic_2)
+			&& (currentStation == craftingStation.craft_basic_3){
+				craftButtonActive = true;
+			}else
+			if (stationReq == craftingStation.cooking_1)
+			&& ( (currentStation == craftingStation.cooking_2) || (currentStation == craftingStation.cooking_3) ){
+				craftButtonActive = true;
+			}else
+			if (stationReq == craftingStation.cooking_2)
+			&& (currentStation == craftingStation.cooking_3){
+				craftButtonActive = true;
+			}else{
+				craftButtonActive = false;
+			}
+		}
 		
 		if (_cancraft[_i] == false){
 			craftButtonActive = false;

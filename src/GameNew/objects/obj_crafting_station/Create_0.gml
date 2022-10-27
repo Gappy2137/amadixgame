@@ -1,1 +1,1 @@
-stationType = craftingStation.craft_basic_1;
+stationType = craftingStation.craft_basic_2;

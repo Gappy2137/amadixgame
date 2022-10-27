@@ -71,7 +71,9 @@ scr_player_melee_walk();
 var craftCollision = instance_place(x, y, obj_crafting_station);
 
 if (craftCollision){
-	crafting_station = other.stationType;
+	crafting_station = craftCollision.stationType;
+}else{
+	crafting_station = craftingStation.none;
 }
 
 // Cienie
