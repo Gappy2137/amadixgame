@@ -83,6 +83,7 @@ iteminhand = -1;
 iteminhandX = 0;
 iteminhandY = 0;
 iteminhandAngle = 0;
+iteminhandType = -1;
 
 itemeaten = -1;
 itemamount = 0;
@@ -127,6 +128,8 @@ pickupid = -1;
 
 cx = 0;
 cy = 0;
+
+stopEatingTimer = 0;
 
 if (obj_gamecontrol.doTransition == true) scr_updatePlayerAnim();
 

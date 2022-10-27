@@ -62,6 +62,8 @@ multipick = 0;
 cap = -1;
 lvl = 0;
 
+from = 0;
+recipeAmount = 0;
 
 cell_size = 24;
 
@@ -158,6 +160,6 @@ recipe_add([ [item.lemon, 3],[item.orange,3],[item.apple, 3] ], [item.bull_energ
 
 recipe_add([ [item.lemon, 3],[item.orange,3],[item.apple, 3] ], [item.dandelion, 1, 0, -1], recipe_type.cooking);
 
-recipe_add([ [item.lemon, 3],[item.orange,3],[item.apple, 3] ], [item.lemon, 1, 0, -1], recipe_type.cooking);
+recipe_add([ [item.stick, 3],[item.orange,3],[item.apple, 3] ], [item.lemon, 2, 0, -1], recipe_type.cooking);
 
-recipe_add([ [item.lemon, 3],[item.orange,3],[item.apple, 3] ], [item.apple, 1, 0, -1], recipe_type.cooking);
+recipe_add([ [item.lemon, 3],[item.orange,3],[item.strawberry, 3] ], [item.apple, 3, 0, -1], recipe_type.cooking);

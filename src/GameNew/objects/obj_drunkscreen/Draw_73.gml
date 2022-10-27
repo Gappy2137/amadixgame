@@ -1,3 +1,5 @@
+
+
 if (obj_display.zoomtrigger){exit;}
 	
 var width = GAMEWIDTH * obj_display.window_size * xscale;

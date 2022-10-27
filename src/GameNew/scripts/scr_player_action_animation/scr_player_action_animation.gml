@@ -1,4 +1,7 @@
 function scr_player_action_animation(){
+	
+if (global.pause){exit;}
+	
 var fixY = 0;
 var fixAngle = 0;
 var alarmcurveAsset = curve_attack_delay;
@@ -79,12 +82,22 @@ switch (actionstate){
 	
 			anim_frame_action_num = 7;
 			if ((anim_frame_action) >= (anim_frame_action_num)) && (!attackSpeedFix){
-				alarm[0] = alarmval;
+				
+				stopEatingTimer = time_source_create(time_source_game, alarmval, time_source_units_frames, 
+				function (){
+					event_user(0);	
+				}
+				, [], 1);
+								
+				time_source_start(stopEatingTimer);
+				
 				attackSpeedFix = true;
 			}
 			
 				switch(facing){
 				case index_facing.down:
+				
+						
 				
 						if (oneStepEvent[0] == true){
 							instance_create_layer(x, y, "Instances", obj_seq_item);
@@ -93,6 +106,9 @@ switch (actionstate){
 								animation_speed = other.anim_speed_action;
 								angle = 0;
 							}
+							
+							
+							
 							oneStepEvent[0] = false;
 						}
 						
@@ -123,7 +139,15 @@ switch (actionstate){
 								
 								if (other.anim_frame_action >= other.anim_frame_action_num){
 									if (other.oneStepEvent[1] == true){
-										alarm[0] = alarmval;
+										with (other){
+											stopEatingTimer = time_source_create(time_source_game, alarmval, time_source_units_frames, 
+											function (){
+												event_user(0);	
+											}
+											, [], 1);
+								
+											time_source_start(stopEatingTimer);
+										}
 										other.oneStepEvent[1] = false;
 									}
 								}
@@ -172,7 +196,15 @@ switch (actionstate){
 								
 								if (other.anim_frame_action >= other.anim_frame_action_num){
 									if (other.oneStepEvent[1] == true){
-										alarm[0] = alarmval;
+										with (other){
+											stopEatingTimer = time_source_create(time_source_game, alarmval, time_source_units_frames, 
+											function (){
+												event_user(0);	
+											}
+											, [], 1);
+								
+											time_source_start(stopEatingTimer);
+										}
 										other.oneStepEvent[1] = false;
 									}
 								}
@@ -222,7 +254,15 @@ switch (actionstate){
 								
 								if (other.anim_frame_action >= other.anim_frame_action_num){
 									if (other.oneStepEvent[1] == true){
-										alarm[0] = alarmval;
+										with (other){
+											stopEatingTimer = time_source_create(time_source_game, alarmval, time_source_units_frames, 
+											function (){
+												event_user(0);	
+											}
+											, [], 1);
+								
+											time_source_start(stopEatingTimer);
+										}
 										other.oneStepEvent[1] = false;
 									}
 								}
@@ -273,7 +313,15 @@ switch (actionstate){
 								
 								if (other.anim_frame_action >= other.anim_frame_action_num){
 									if (other.oneStepEvent[1] == true){
-										alarm[0] = alarmval;
+										with (other){
+											stopEatingTimer = time_source_create(time_source_game, alarmval, time_source_units_frames, 
+											function (){
+												event_user(0);	
+											}
+											, [], 1);
+								
+											time_source_start(stopEatingTimer);
+										}
 										other.oneStepEvent[1] = false;
 									}
 								}

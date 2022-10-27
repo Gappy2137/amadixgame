@@ -1,4 +1,6 @@
 
+if (global.pause){exit;}
+
 i += 0.1;
 if (i >= degtorad(360)){i = 0;}
 

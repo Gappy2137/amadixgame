@@ -1,4 +1,5 @@
 function scr_playerMovingAnim() {
+
 	
 with(obj_amadix){
 	

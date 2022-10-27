@@ -27,6 +27,14 @@ if (global.pause){
 			instance_activate_object(par_light);
 			instance_activate_object(par_lightcover);
 			instance_activate_object(par_container);
+			
+			with(obj_amadix){
+				if (time_source_exists(stopEatingTimer)){
+					if (time_source_get_state(stopEatingTimer) == time_source_state_active){
+						time_source_pause(stopEatingTimer);
+					}
+				}
+			}
 		
 			pauseSurf = surface_create(width, height);
 			surface_set_target(pauseSurf);
@@ -49,6 +57,15 @@ if (global.pause){
 	camera_get_view_height(view_camera[0]) + INSTANCE_LOAD_DISTANCE*3,
 	true
 	);
+	
+	with(obj_amadix){
+		if (time_source_exists(stopEatingTimer)){
+			if (time_source_get_state(stopEatingTimer) == time_source_state_paused){
+				time_source_resume(stopEatingTimer);
+			}
+		}
+	}
+	
 	if (surface_exists(pauseSurf)) surface_free(pauseSurf);
 	if (buffer_exists(pauseSurfBuffer)) buffer_delete(pauseSurfBuffer);
 }

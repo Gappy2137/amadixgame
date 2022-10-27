@@ -59,6 +59,7 @@ if input_check_pressed("inventoryAccess"){
 	if (obj_inventory.inhand == -1) 
 	&& (canOpenInv) 
 	&& (instance_exists(obj_amadix))
+	&& (!obj_gamecontrol.doTransition)
 	&& (!global.inCutscene)
 	&& (!global.inConsole)
 	&& (!global.inDialogue)
@@ -71,12 +72,14 @@ if input_check_pressed("inventoryAccess"){
 		}
 	
 		if (instance_exists(par_container)){
-			if !(ins.show_container){
-				if (show_hud == hud.slots){
-					show_hud = lasthud;	
-				}else{
-					lasthud = show_hud;
-					show_hud = hud.slots;
+			if (instance_exists(obj_amadix)){
+				if !(ins.show_container){
+					if (show_hud == hud.slots){
+						show_hud = lasthud;	
+					}else{
+						lasthud = show_hud;
+						show_hud = hud.slots;
+					}
 				}
 			}
 		}else{

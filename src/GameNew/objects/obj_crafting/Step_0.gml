@@ -52,13 +52,24 @@ if isbounded(mousex, craftUIX, endcraftUIX) && isbounded(mousey, craftUIY, endcr
 		mouse_slotx = numx_craft;
 		mouse_sloty = numy_craft;
 	}
-	selected_slot_craft = max(-1, mouse_slotx + (mouse_sloty * craftSlotsWidth) + (craftRow * craftSlotsWidth));
+	selected_slot_craft = max(-1, (mouse_slotx + (mouse_sloty * craftSlotsWidth) + (craftRow * craftSlotsWidth)) + from);
 	if (mouse_check_button_pressed(mb_left)){
-		if (selected_slot_craft < ds_grid_height(global.recipes)){
-			craftSlotSelected = selected_slot_craft;	
-			craftSlotSelectedX = mouse_slotx;
-			craftSlotSelectedY = mouse_sloty;
+		if (recipeAmount == ds_grid_height(global.recipes)){
+			if (selected_slot_craft < recipeAmount){
+				craftSlotSelected = selected_slot_craft;	
+				craftSlotSelectedX = mouse_slotx;
+				craftSlotSelectedY = mouse_sloty;
+			}
 		}
+		
+		if (recipeAmount < ds_grid_height(global.recipes)){
+			if (selected_slot_craft < recipeAmount + from){
+				craftSlotSelected = selected_slot_craft;	
+				craftSlotSelectedX = mouse_slotx;
+				craftSlotSelectedY = mouse_sloty;
+			}
+		}
+
 	}
 	
 }else{
@@ -190,6 +201,8 @@ repeat(5) {
 			}
 			
 			craftingUItabActive[__i] = true;
+			selected_slot_craft = -1;
+			craftSlotSelected = -1;
 			
 		}
 	}
@@ -548,37 +561,40 @@ if (craftSlotSelected != -1){
 		if (isbounded(mousex, craftButtonX, craftButtonX + 32))
 		&& (isbounded(mousey, craftButtonY, craftButtonY + 16)){
 			if (mouse_check_button_pressed(mb_left)){
+				
+				
+				var _result_item = craft_grid[# C_RES, craftSlotSelected][@ C_ITEM];
+				var _result_amount = craft_grid[# C_RES, craftSlotSelected][@ C_AMOUNT];
+				var _result_cap = craft_grid[# C_RES, craftSlotSelected][@ C_CAP];
+				var _result_lvl = craft_grid[# C_RES, craftSlotSelected][@ C_LVL];
+				
+				
+				if (inhand == -1){
+					inhand = _result_item;
+					multipick += _result_amount;
+					cap = _result_cap;
+					lvl = _result_lvl;
+				}else{
+					if (_result_amount + multipick <= obj_inventory.ds_item_all[# MAXSTACK, inhand]){
+						inhand = _result_item;
+						multipick += _result_amount;
+						cap = _result_cap;
+						lvl = _result_lvl;
+					}
+				}
+				
+				
 				repeat(ing_amount){
 					
 					var _iitem = craft_grid[# C_ING, craftSlotSelected][@ _i][@ C_ITEM];
 					var _amount = craft_grid[# C_ING, craftSlotSelected][@ _i][@ C_AMOUNT];
 					
-					var _result_item = craft_grid[# C_RES, craftSlotSelected][@ C_ITEM];
-					var _result_amount = craft_grid[# C_RES, craftSlotSelected][@ C_AMOUNT];
-					var _result_cap = craft_grid[# C_RES, craftSlotSelected][@ C_CAP];
-					var _result_lvl = craft_grid[# C_RES, craftSlotSelected][@ C_LVL];
-					
-					
-					if (inhand == -1){
-						inhand = _result_item;
-						multipick += _result_amount;
-						cap = _result_cap;
-						lvl = _result_lvl;
-						
-						item_remove(_iitem, _amount, false);
-					}else{
-						if (_result_amount + multipick <= obj_inventory.ds_item_all[# MAXSTACK, inhand]){
-							inhand = _result_item;
-							multipick += _result_amount;
-							cap = _result_cap;
-							lvl = _result_lvl;
-							
-							item_remove(_iitem, _amount, false);
-						}
-					}
+					item_remove(_iitem, _amount, false);
 					
 					_i++;
 				}
+				
+				
 			}
 		}
 	}

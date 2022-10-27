@@ -1,11 +1,14 @@
 event_inherited();
 
+if (global.pause){exit;}
+
 tenalarm++;
 if (tenalarm > 10){
 	tenalarm = 0;
 }
 if (instance_exists(obj_inventory)){
 	iteminhand = obj_inventory.ds_inventory[# INVITEM, obj_inventory.mouse_slotx_second];
+	iteminhandType = obj_inventory.ds_inventory[# INVTYPE, obj_inventory.mouse_slotx_second];
 }
 //Fizyka i poruszanie
 scr_player_movement();

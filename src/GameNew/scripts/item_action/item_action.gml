@@ -135,7 +135,15 @@ function item_action(){
 								vsp = 0;
 								facing = index_facing.down;
 								scr_setPlayerFacingAnim(index_facing.down);
-								alarm[0] = 55;
+								
+								stopEatingTimer = time_source_create(time_source_game, 55, time_source_units_frames, 
+								function (){
+									event_user(0);	
+								}
+								, [], 1);
+								
+								time_source_start(stopEatingTimer);
+								
 							}
 							if (hp > 0){global.hp += hp;}
 							if (stamina > 0){global.stamina += stamina;}
@@ -182,13 +190,21 @@ function item_action(){
 							vsp = 0;
 							facing = index_facing.down;
 							scr_setPlayerFacingAnim(index_facing.down);
-							alarm[0] = 65;
+							
+							stopEatingTimer = time_source_create(time_source_game, 55, time_source_units_frames, 
+							function (){
+								event_user(0);	
+								if (iteminhandType == itemtype.alcohol){
+									global.alcoholPoisoning += alcohol_read_power(iteminhand);
+								}
+							}
+							, [type, iitem], 1);
+								
+							time_source_start(stopEatingTimer);
+							
 						}
 						if (hp > 0){global.hp += hp;}
 						if (stamina > 0){global.stamina += stamina;}
-						if (type == itemtype.alcohol){
-							global.alcoholPoisoning += alcohol_read_power(iitem);
-						}
 					}
 				}else{
 					if ((type != itemtype.drink) && (type != itemtype.alcohol)){

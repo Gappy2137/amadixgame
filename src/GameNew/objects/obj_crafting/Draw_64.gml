@@ -132,12 +132,11 @@ jj = 0;
 ix = 0;
 iy = 0;
 
-var recipeAmount = ds_grid_height(global.recipes);
+recipeAmount = ds_grid_height(global.recipes);
 var iinfo_grid = obj_inventory.ds_item_info;
 var item_all = obj_inventory.ds_item_all;
 
 var _ii = 0;
-var from = 0;
 repeat(5){
 	
 	if (craftingUItabActive[_ii] == true){
@@ -168,6 +167,9 @@ repeat(5){
 		
 			recipeAmount = _am;
 			
+		}else{
+			from = 0;	
+			recipeAmount = ds_grid_height(global.recipes);
 		}
 
 		
@@ -178,7 +180,7 @@ repeat(5){
 
 ii = (craftRow * craftSlotsWidth) + from;
 //jj = from;
-ix = ii mod craftSlotsWidth;
+ix = (ii - from) mod craftSlotsWidth;
 //iy = jj div craftSlotsWidth;
 
 
@@ -186,9 +188,12 @@ ix = ii mod craftSlotsWidth;
 #region Strona craftingu
 	repeat (recipeAmount){
 			
+			if (ii < 0){
+				ii = 0;	
+			}
 			
 			//x,y slotow
-			xx = craftUIX + (cell_size * (ix - from));
+			xx = craftUIX + (cell_size * ix);
 			yy = craftUIY + (cell_size * iy);
 		
 			//Przedmiot
@@ -196,12 +201,14 @@ ix = ii mod craftSlotsWidth;
 			sx = (iitem mod spr_inv_items_columns) * cell_size;
 			sy = (iitem div spr_inv_items_columns) * cell_size;
 		
-			//Rysuj slot i przedmiot
+			
 			
 			var ing_amount = array_length(craft_grid[# C_ING, ii]);
 			var alpha = 0;
 			
 			var _i = 0;
+			
+			var _cancraft = [];
 			
 			repeat(ing_amount){
 				var _item = craft_grid[# C_ING, ii][@ _i][@ C_ITEM];
@@ -211,15 +218,30 @@ ix = ii mod craftSlotsWidth;
 				var amountInInv = item_find_amount(_item);
 			
 				if (amountInInv >= amount){
-					alpha = 1;
+					_cancraft[_i] = true;
 				}else{
-					alpha = .5;
+					_cancraft[_i] = false;
 				}
 				
 				_i++;
 			}
 			
-
+			_i = 0;
+			
+			repeat(ing_amount){
+		
+				alpha = 1;
+		
+				if (_cancraft[_i] == false){
+					alpha = 0.5;
+					break;
+				}
+				_i++;
+			}
+			
+			_i = 0;
+			
+			//Rysuj slot i przedmiot
 		
 			if (iitem > 0) && (craft_grid[# C_RES, ii][@ C_AMOUNT] > 0){
 				switch(ii){
@@ -255,8 +277,10 @@ ix = ii mod craftSlotsWidth;
 						draw_text_transformed_color(xx + 22, yy + 16, string(_cap), .5, .5, 0, wh, wh, wh, wh, alpha);
 						draw_set_halign(fa_left);
 					}else{
+						draw_set_alpha(alpha);
 						draw_rectangle_color(xx + 4, yy + 20, xx + 20, yy + 22, bl, bl, bl, bl, false);
 						draw_rectangle_color(xx + 4.5, yy + 20.5, xx + 3 + (_cap*3.28) , yy + 21.5, wh, wh, wh, wh, false);
+						draw_set_alpha(1);
 					}
 				}else{
 					if (amount > 1){
@@ -272,7 +296,7 @@ ix = ii mod craftSlotsWidth;
 			//Przelec przez cala siatke przedmiotow
 					ii += 1;
 					jj += 1;
-					ix = ii mod craftSlotsWidth;
+					ix = (ii - from) mod craftSlotsWidth;
 					iy = jj div craftSlotsWidth;
 		
 	}
@@ -632,6 +656,11 @@ if (craftSlotSelected != -1){
 	
 
 #endregion
+
+draw_set_color(c_yellow);
+draw_text(16, 16, mouse_slotx);
+draw_text(16, 16 + 8, mouse_sloty);
+draw_text(16, 16 + 16, selected_slot_craft);
 
 #region Rysowanie przedmiotow przenoszonych
 if (multipick != 0) && (inhand != -1){
