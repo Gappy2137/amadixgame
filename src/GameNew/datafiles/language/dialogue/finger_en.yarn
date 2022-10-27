@@ -1,0 +1,36 @@
+#__PrivCrochet_version:1
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: -656,-786
+__PrivCrochet_tags: 
+title: Start
+---
+[speaker,spr_portrait_finger,emotion_normal,Finger,snd_speech_finger]Waltuh,[delay,400] put your dick away, Waltuh. [delay,400]I'm not having sex with you right now, Waltuh.
+<<wait>>
+<<stop>>
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: -233,-899
+__PrivCrochet_tags: 
+title: AmadixResponse
+---
+[speaker,spr_portrait_walter,emotion_normal,Walter,snd_speech_walter]AA.
+<<wait>>
+[speaker,spr_portrait_walter,emotion_normal,Walter,snd_speech_walter]AA.
+-> What?
+    [speaker,spr_portrait_amadix,emotion_normal,Amadeusz,snd_speech_retro]What do you mean by this?
+    <<wait>>
+    [speaker,spr_portrait_walter,emotion_normal,Walter,snd_speech_walter]Bravo Vince!
+    <<stop>>
+-> Try me.
+    [speaker,spr_portrait_amadix,emotion_normal,Amadeusz,snd_speech_retro]Try me, bitch!
+    <<wait>>
+    <<stop>>
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: -218,-531
+__PrivCrochet_tags: 
+title: EmptySpeaker
+---
+[speaker,-1,-1,-1,snd_speech_default]Lorem ipsum dolor sit amet, consectetur adipiscing elit. [shake]Nullam[/shake] vulputate elit in fermentum egestas.
+<<stop>>
+===

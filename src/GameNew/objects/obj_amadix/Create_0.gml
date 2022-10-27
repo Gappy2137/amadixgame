@@ -131,6 +131,8 @@ cy = 0;
 
 stopEatingTimer = 0;
 
+crafting_station = craftingStation.none;
+
 if (obj_gamecontrol.doTransition == true) scr_updatePlayerAnim();
 
 

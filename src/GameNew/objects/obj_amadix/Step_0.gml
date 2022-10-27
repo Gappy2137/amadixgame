@@ -66,6 +66,14 @@ if (hat_index != spr_item_none){
 // Chodzenie z bronia biala
 scr_player_melee_walk();
 
+// Crafting stations
+
+var craftCollision = instance_place(x, y, obj_crafting_station);
+
+if (craftCollision){
+	crafting_station = other.stationType;
+}
+
 // Cienie
 if (running != 2){
 	if (floor(anim_frame) == 0){shadowSizeX = 0; shadowSizeY = 0;}

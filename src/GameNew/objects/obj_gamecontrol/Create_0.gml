@@ -29,6 +29,7 @@ depth = -10000;
 #macro C_AMOUNT 1
 #macro C_LVL 2
 #macro C_CAP 3
+#macro C_STATION 3
 //
 //
 //CZCIONKI
@@ -113,6 +114,16 @@ enum collectible_type{
 	nocol_stage		= 4,
 	col_delete		= 5,
 	nocol_delete	= 6
+}
+
+enum craftingStation {
+	none = 0,
+	craft_basic_1 = 1,
+	craft_basic_2 = 2,
+	craft_basic_3 = 3,
+	cooking_1 = 4,
+	cooking_2 = 5,
+	cooking_3 = 6
 }
 
 global.playerTorso = item.classic_jacket;

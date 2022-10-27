@@ -118,7 +118,7 @@ spr_craft_items_rows = sprite_get_height(spr_crafting_hud)/cell_size;
 
 page = 0;
 */
-global.recipes = ds_grid_create(3, 1);
+global.recipes = ds_grid_create(4, 1);
 
 enum recipe_type{
 	none = 0,
@@ -139,6 +139,7 @@ global.recipes[# C_RES, 0] = recipeZeroResult;
 	
 global.recipes[# C_TYPE, 0] = recipe_type.resources;
 	
+global.recipes[# C_STATION, 0] = craftingStation.none;
 
 var recipeOne = [
 	[item.strawberry, 3],
@@ -146,7 +147,7 @@ var recipeOne = [
 	[item.orange, 1]
 ];
 var recipeOneResult = [item.mango_salsa, 1, 0, -1];
-recipe_add(recipeOne, recipeOneResult, recipe_type.cooking);
+recipe_add(recipeOne, recipeOneResult, recipe_type.cooking, craftingStation.none);
 
 
 var recipeTwo = [
@@ -154,12 +155,12 @@ var recipeTwo = [
 	[item.log, 1]
 ];
 var recipeTwoResult = [item.sword, 1, 0, -1];
-recipe_add(recipeTwo, recipeTwoResult, recipe_type.tools);
+recipe_add(recipeTwo, recipeTwoResult, recipe_type.tools, craftingStation.craft_basic_1);
 
-recipe_add([ [item.lemon, 3],[item.orange,3],[item.apple, 3] ], [item.bull_energy_drink, 1, 0, 5], recipe_type.cooking);
+recipe_add([ [item.lemon, 3],[item.orange,3],[item.apple, 3] ], [item.bull_energy_drink, 1, 0, 5], recipe_type.cooking, craftingStation.none);
 
-recipe_add([ [item.lemon, 3],[item.orange,3],[item.apple, 3] ], [item.dandelion, 1, 0, -1], recipe_type.cooking);
+recipe_add([ [item.lemon, 3],[item.orange,3],[item.apple, 3] ], [item.dandelion, 1, 0, -1], recipe_type.cooking, craftingStation.none);
 
-recipe_add([ [item.stick, 3],[item.orange,3],[item.apple, 3] ], [item.lemon, 2, 0, -1], recipe_type.cooking);
+recipe_add([ [item.stick, 3],[item.orange,3],[item.apple, 3] ], [item.lemon, 2, 0, -1], recipe_type.cooking, craftingStation.none);
 
-recipe_add([ [item.lemon, 3],[item.orange,3],[item.strawberry, 3] ], [item.apple, 3, 0, -1], recipe_type.cooking);
+recipe_add([ [item.lemon, 3],[item.orange,3],[item.strawberry, 3] ], [item.apple, 3, 0, -1], recipe_type.cooking, craftingStation.none);
