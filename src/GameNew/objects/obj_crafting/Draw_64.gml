@@ -730,11 +730,6 @@ if (craftSlotSelected != -1){
 
 #endregion
 
-draw_set_color(c_yellow);
-draw_text(16, 16, mouse_slotx);
-draw_text(16, 16 + 8, mouse_sloty);
-draw_text(16, 16 + 16, selected_slot_craft);
-
 #region Rysowanie przedmiotow przenoszonych
 if (multipick != 0) && (inhand != -1){
 	
