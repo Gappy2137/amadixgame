@@ -92,7 +92,13 @@ function meta_time_resume() {
 #endregion
 #region give item amount
 function sh_give_amount(args) {
-	item_add(-1, real(args[1]), real(args[2]), 0, -1);
+	
+	var _item = real(args[1]);
+	
+	if (_item) >= item.invalid{
+		_item = item.invalid;
+	}
+	item_add(-1, _item, real(args[2]), 0, -1);
 }
 
 function meta_give_amount() {
@@ -112,6 +118,51 @@ function meta_give_cap() {
 	return {
 		description: "Gives player the provided item with capacity",
 		arguments: ["item_id", "capacity"],
+		hidden: false
+	}
+}
+#endregion
+#region give item
+function sh_give_item(args) {
+	
+	var _item = args[1];
+	var _item_str = 0;
+
+	
+	switch (_item){
+		case "apple": _item_str = item.apple; break;
+		case "bucket": _item_str = item.bucket; break;
+		case "stone": _item_str = item.stone; break;
+		case "sword": _item_str = item.sword; break;
+		case "bull_energy_drink": _item_str = item.bull_energy_drink; break;
+		case "mango_salsa": _item_str = item.mango_salsa; break;
+		case "stick": _item_str = item.stick; break;
+		case "log": _item_str = item.log; break;
+		case "pear": _item_str = item.pear; break;
+		case "strawberry": _item_str = item.strawberry; break;
+		case "lemon": _item_str = item.lemon; break;
+		case "orange": _item_str = item.orange; break;
+		case "classic_jacket": _item_str = item.classic_jacket; break;
+		case "jeans": _item_str = item.jeans; break;
+		case "sneakers": _item_str = item.sneakers; break;
+		case "panama_hat": _item_str = item.panama_hat; break;
+		case "m1911": _item_str = item.m1911; break;
+		case "m1911mag": _item_str = item.m1911mag; break;
+		case "bullet45acp": _item_str = item.bullet45acp; break;
+		case "vodka": _item_str = item.vodka; break;
+		case "sawedoff": _item_str = item.sawedoff; break;
+		case "cat_ears": _item_str = item.cat_ears; break;
+		case "dandelion": _item_str = item.dandelion; break;
+		default: _item_str = item.invalid; break;
+	}
+	
+	item_add(-1, _item_str, real(args[2]), 0, obj_inventory.ds_item_all[# MAXCAP, _item_str]);
+}
+
+function meta_give_item() {
+	return {
+		description: "Gives player the provided item",
+		arguments: ["item_id", "amount"],
 		hidden: false
 	}
 }

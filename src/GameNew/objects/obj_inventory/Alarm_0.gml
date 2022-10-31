@@ -26,10 +26,12 @@ ds_item_info[# in, i++] = json_read("itemNameVodka");
 ds_item_info[# in, i++] = json_read("itemNameSawedOff");
 ds_item_info[# in, i++] = json_read("itemNameCatEars");
 ds_item_info[# in, i++] = json_read("itemNameDandelion");
+
+ds_item_info[# in, i++] = json_read("itemNameNone");
 #endregion
 
 #region Opisy przedmiotow
-var in = 1; var i = 0;
+in = 1; i = 0;
 ds_item_info[# in, i++] = json_read("itemDescNone");
 ds_item_info[# in, i++] = json_read("itemDescApple");
 ds_item_info[# in, i++] = json_read("itemDescBucket");
@@ -54,10 +56,12 @@ ds_item_info[# in, i++] = json_read("itemDescVodka");
 ds_item_info[# in, i++] = json_read("itemDescSawedOff");
 ds_item_info[# in, i++] = json_read("itemDescCatEars");
 ds_item_info[# in, i++] = json_read("itemDescDandelion");
+
+ds_item_info[# in, i++] = json_read("itemDescNone");
 #endregion
 
 #region Rodzaje przedmiotow
-var in = 2; var i = 0;
+in = 2; i = 0;
 ds_item_info[# in, i++] = json_read("itemTypeResource");
 ds_item_info[# in, i++] = json_read("itemTypeFood");
 ds_item_info[# in, i++] = json_read("itemTypeDrink");
@@ -74,4 +78,6 @@ ds_item_info[# in, i++] = json_read("itemTypeHandgun");
 ds_item_info[# in, i++] = json_read("itemTypeMagazine");
 ds_item_info[# in, i++] = json_read("itemTypeAlcohol");
 ds_item_info[# in, i++] = json_read("itemTypeShotgun");
+
+ds_item_info[# in, i++] = json_read("itemNameNone");
 #endregion

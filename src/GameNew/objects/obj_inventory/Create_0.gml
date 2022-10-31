@@ -203,7 +203,9 @@ enum item{
 	sawedoff					= 21,
 	cat_ears					= 22,
 	dandelion					= 23,
-	height						= 24
+	
+	invalid						= 24,
+	height						= 25
 }
 #endregion
 
@@ -224,7 +226,9 @@ enum itemtype{
 	magazine			= 13,
 	alcohol				= 14,
 	shotgun				= 15,
-	height				= 16
+	
+	invalid				= 16,
+	height				= 17
 }
 
 ds_item_info = ds_grid_create(3, item.height);

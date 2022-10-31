@@ -2,7 +2,7 @@ function item_attrib_grid(){
 	var grid = obj_inventory.ds_item_all;
 	
 	//Nic
-	grid[# INVTYPE, item.none] = -1;
+	grid[# INVTYPE, item.none] = itemtype.invalid;
 	grid[# MAXSTACK, item.none] = 0;
 	grid[# INVHP, item.none] = 0;
 	grid[# INVSTAMINA, item.none] = 0;
@@ -13,6 +13,19 @@ function item_attrib_grid(){
 	grid[# INVTEMPERATURE, item.none] = 0;
 	grid[# INVCAP, item.none] = -1;
 	grid[# MAXCAP, item.none] = -1;
+	
+	//Undefined
+	grid[# INVTYPE, item.invalid] = itemtype.invalid;
+	grid[# MAXSTACK, item.invalid] = 2147483647;
+	grid[# INVHP, item.invalid] = 0;
+	grid[# INVSTAMINA, item.invalid] = 0;
+	grid[# INVLEVEL, item.invalid] = 0;
+	grid[# INVDAMAGE, item.invalid] = 0;
+	grid[# INVDEFENCE, item.invalid] = 0;
+	grid[# INVEFFECTS, item.invalid] = 0;
+	grid[# INVTEMPERATURE, item.invalid] = 0;
+	grid[# INVCAP, item.invalid] = -1;
+	grid[# MAXCAP, item.invalid] = -1;
 
 	//Jablko
 	grid[# INVTYPE, item.apple] = itemtype.fruit;
