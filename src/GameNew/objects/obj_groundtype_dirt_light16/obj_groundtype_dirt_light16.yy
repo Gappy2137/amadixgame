@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_groundtype_dirt_light16",
   "spriteId": {
     "name": "spr_dirt_basic_tt",
     "path": "sprites/spr_dirt_basic_tt/spr_dirt_basic_tt.yy",
@@ -28,8 +31,4 @@
     "name": "Terrain Types",
     "path": "folders/Objects/DEV_/Terrain Types.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_groundtype_dirt_light16",
-  "tags": [],
-  "resourceType": "GMObject",
 }
