@@ -1,7 +1,7 @@
 // Inherit the parent event
 event_inherited();
 
-
+yorigin = 31;
 
 canBeHurtByPlayer = true;
 
@@ -19,3 +19,9 @@ hurt = false;
 
 invisFrames = 25;
 invisFrame = invisFrames;
+
+shadowOriginY = 33;
+shadowStyle = spr_shadow_player;
+shadowAlpha = 0.4;
+customSpr = false;
+shadowEnable = true;

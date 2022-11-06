@@ -216,7 +216,7 @@ function item_action(){
 		|| (obj_amadix.state == player_state.wading_idle) 
 		|| (obj_amadix.state == player_state.wading){
 			var amount =		obj_inventory.ds_inventory[# INVAMOUNT, obj_inventory.mouse_slotx_second];
-			var dmg =			obj_inventory.ds_inventory[# INVDAMAGE, obj_inventory.mouse_slotx_second];
+			var spd =			obj_inventory.ds_inventory[# INVDEFENCE, obj_inventory.mouse_slotx_second];
 			var type =			obj_inventory.ds_inventory[# INVTYPE, obj_inventory.mouse_slotx_second];
 			if (amount > 0){
 				if (obj_amadix.actionstate != player_state_action.attacking_melee){
@@ -230,7 +230,7 @@ function item_action(){
 						itemeaten = iitem;
 						actionstate = player_state_action.attacking_melee;
 						anim_frame_action = 0;
-						anim_speed_action = 0.4;
+						anim_speed_action = spd;
 						anim_frame = 0;
 						switch(facing){
 							case index_facing.down:

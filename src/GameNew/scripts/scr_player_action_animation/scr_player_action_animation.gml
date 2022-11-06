@@ -235,8 +235,8 @@ switch (actionstate){
 						
 						if (instance_exists(dmgID)){
 							with (dmgID){
-								x = obj_amadix.x + curveXHitbox - 16;
-								y = obj_amadix.y + curveYHitbox + 16;
+								x = obj_amadix.x + curveXHitbox;
+								y = obj_amadix.y + curveYHitbox;
 								
 								width = curveXscaleHitbox;
 								height = curveYscaleHitbox;
@@ -322,8 +322,8 @@ switch (actionstate){
 						
 						if (instance_exists(dmgID)){
 							with (dmgID){
-								x = obj_amadix.x + curveXHitbox + 16;
-								y = obj_amadix.y + curveYHitbox + 16;
+								x = obj_amadix.x + curveXHitbox;
+								y = obj_amadix.y + curveYHitbox;
 								
 								width = curveXscaleHitbox;
 								height = curveYscaleHitbox;
@@ -411,7 +411,7 @@ switch (actionstate){
 						if (instance_exists(dmgID)){
 							with (dmgID){
 								x = obj_amadix.x + curveXHitbox;
-								y = obj_amadix.y + curveYHitbox + 32;
+								y = obj_amadix.y + curveYHitbox;
 								
 								width = curveXscaleHitbox;
 								height = curveYscaleHitbox;

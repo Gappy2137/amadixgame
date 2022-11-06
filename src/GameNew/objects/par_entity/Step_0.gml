@@ -20,10 +20,18 @@ if (hurt){
 	if (invisFrame <= 0){
 		invisFrame = invisFrames;	
 		hurt = false;
+		
+		colorBlend = baseColor;
+		
 	}else{
 		invisFrame--;
+		
+		colorBlend = merge_color(baseColor, hurtColor, (invisFrame / invisFrames / 2));
+		
 	}
 }
+
+
 
 
 if (hp > maxhp){
@@ -31,8 +39,9 @@ if (hp > maxhp){
 }
 if (hp < 0){
 	hp = 0;
-	instance_destroy();
 }
+
+if (hp == 0){instance_destroy();}
 
 
 	var _list = ds_list_create();

@@ -27,5 +27,9 @@ state = entityState.idle;
 
 hurt = false;
 
-invisFrames = 15;
+invisFrames = 25;
 invisFrame = invisFrames;
+
+hurtColor = #FA363F;
+baseColor = #FFFFFF;
+colorBlend = baseColor;
