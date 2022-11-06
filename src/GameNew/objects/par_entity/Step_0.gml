@@ -121,6 +121,15 @@ if (stairs){
 	}
 }
 
+
+// Ground fx timer
+groundFxTimer--;
+if (groundFxTimer < 0){
+	groundFxTimer = 15;
+}
+scr_groundtype_fx();
+
+
 if (object_index != obj_amadix){
 	var water = instance_place(x, y, obj_shallowwater16);
 	var deepwater = instance_place(x, y, obj_water16);

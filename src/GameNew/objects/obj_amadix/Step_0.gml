@@ -2,10 +2,6 @@ event_inherited();
 
 if (global.pause){exit;}
 
-tenalarm++;
-if (tenalarm > 10){
-	tenalarm = 0;
-}
 if (instance_exists(obj_inventory)){
 	iteminhand = obj_inventory.ds_inventory[# INVITEM, obj_inventory.mouse_slotx_second];
 	iteminhandType = obj_inventory.ds_inventory[# INVTYPE, obj_inventory.mouse_slotx_second];
@@ -25,7 +21,9 @@ if (actionstate != player_state_action.none){
 	itemUsedY = 0;
 	itemUsedAngle = 0;
 	itemUsedSx = 0;
-	itemUsedYscale = 1;		
+	itemUsedYscale = 1;	
+	if (instance_exists(meleeID)){instance_destroy(meleeID);}
+	if (instance_exists(dmgID)){instance_destroy(dmgID);}
 }
 
 //Przejscie do innego pokoju
@@ -119,6 +117,81 @@ if (oneStepEvent[2] == 2){
 	}
 }
 
+	var _list = ds_list_create();
+	var _num = instance_place_list(x, y, par_grass, _list, false);
+	var _id = id;
+	
+	if (_num != noone){
+		var __i = 0;
+		repeat(_num){
+			with (_list[| __i]){
+				var left_collision = collision_rectangle(bbox_left, bbox_top, bbox_right - (bbox_right-bbox_left)/2, bbox_bottom, _id, false, true);
+				var right_collision = collision_rectangle(bbox_left + (bbox_right-bbox_left)/2, bbox_top, bbox_right, bbox_bottom, _id, false, true);
+	
+				if (left_collision){
+					angle = approach(angle, -25, acc);	
+				}else if (right_collision){
+					angle = approach(angle, 25, acc);
+				}else{
+					angle = approach(angle, 0, acc);	
+				}
+		
+				resetAngle = false;
+
+			}
+			__i++;
+		}
+		ds_list_destroy(_list);
+	}
+	
+	var _list = ds_list_create();
+	var _num = instance_place_list(x, y, par_collectible, _list, false);
+	var _id = id;
+	
+	if (_num != noone){
+		var __i = 0;
+		repeat(_num){
+			if (variable_instance_exists(_list[| __i], "rotoncol")){
+				if (_list[| __i].rotoncol == true){
+					with (_list[| __i]){
+						var left_collision = collision_rectangle(bbox_left, bbox_top, bbox_right - (bbox_right-bbox_left)/2, bbox_bottom, _id, false, true);
+						var right_collision = collision_rectangle(bbox_left + (bbox_right-bbox_left)/2, bbox_top, bbox_right, bbox_bottom, _id, false, true);
+	
+						if (left_collision){
+							angle = approach(angle, -25, acc);	
+						}else if (right_collision){
+							angle = approach(angle, 25, acc);
+						}else{
+							angle = approach(angle, 0, acc);	
+						}
+		
+						resetAngle = false;
+
+					}
+				}
+			}
+			__i++;
+		}
+		ds_list_destroy(_list);
+	}
+	
+var stairs = instance_place(x, y, obj_stairs16);
+
+if (stairs){
+	if (running > 0){
+		vsp /= 1.25;
+	}else{
+		vsp /= 1.75;
+	}
+}
+
+
+// Ground fx timer
+groundFxTimer--;
+if (groundFxTimer < 0){
+	groundFxTimer = 15;
+}
+scr_groundtype_fx();
 
 if (keyboard_check_pressed(ord("X"))) && (global.debugMode) && (!global.inConsole){
 	game_set_speed(5, gamespeed_fps);	

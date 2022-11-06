@@ -5,8 +5,6 @@ var _channel = animcurve_get_channel(_curve_alpha, "alp");
 
 var _alpha = animcurve_channel_evaluate(_channel, curve_alpha_pos);
 
-
-
 switch(type){
 	case 0:
 		
@@ -21,9 +19,11 @@ switch(type){
 	break;
 	case 2:
 		curve_alpha_pos += fadeoutSpeed;
-		x += (player_sign * spd);
+		x += (entity_sign * spd);
 		accel += 0.02;
 		y -= spd * accel;
+		zaxis += 0.02;
+		yscale = xscale;
 		
 		alpha = _alpha;
 	break;

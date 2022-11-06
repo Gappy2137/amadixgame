@@ -11,6 +11,10 @@ col = c_white;
 alpha = 1;
 fadeoutSpeed = 0.04;
 yorigin = sprite_height/2;
+zaxis = 0;
+
+entity = -1;
+entity_sign = 1;
 
 _anim_frame = 0;
 _anim_frames = 0;
@@ -32,12 +36,4 @@ curve_alpha_pos = 0;
 spd = 0;
 accel = 0;
 
-player_sign = 0;
-if (instance_exists(obj_amadix)){
-	if (obj_amadix.hsp != 0){
-		player_sign = sign(obj_amadix.hsp);
-	}else{
-		player_sign = 1;	
-	}
-	
-}
+alarm[0] = 1;

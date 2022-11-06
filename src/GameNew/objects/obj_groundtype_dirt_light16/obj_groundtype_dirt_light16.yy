@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_groundtype_dirt_light16",
   "spriteId": {
-    "name": "spr_dirt_basic_tt",
-    "path": "sprites/spr_dirt_basic_tt/spr_dirt_basic_tt.yy",
+    "name": "spr_groudtype_dirt_light16",
+    "path": "sprites/spr_groudtype_dirt_light16/spr_groudtype_dirt_light16.yy",
   },
   "solid": false,
   "visible": false,

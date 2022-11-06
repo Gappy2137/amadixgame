@@ -11,30 +11,24 @@ function item_action(){
 	
 	if (instance_exists(obj_amadix)){
 		
-	/* czemu to kurwa nie dziala
-	function canConsumeFoodItems() {
+
+	function canUseConsume() {
 		
 		if (obj_amadix.state != player_state.swimming)
 		&& (obj_amadix.state != player_state.swimming_idle)
+		&& (obj_amadix.state != player_state.hurt)
+		&& (obj_amadix.state != player_state.ladder)
 		&& (global.cursorSpr != cursorState.dialogue)
 		&& (global.cursorSpr != cursorState.pickup)
 		&& (!obj_amadix.skid)
 		&& (!obj_amadix.stuffed)
-		&& (
-			   (obj_amadix.state == player_state.idle)
-			|| (obj_amadix.state == player_state.moving) 
-			|| (obj_amadix.state == player_state.wading_idle) 
-			|| (obj_amadix.state == player_state.wading)
-		)
 		{
-			show_debug_message("true");
 			return true;	
 		}else{
-			show_debug_message("false");
 			return false;
 		}
 	}
-	*/
+	
 		
 	function itemActionGun(){
 		if (obj_amadix.state == player_state.idle)
@@ -273,14 +267,16 @@ function item_action(){
 		
 		switch(type){
 			case itemtype.handgun:
-				if (!global.inDialogue){
+				if (!global.inDialogue)
+				&& (!global.inCutscene){
 					itemActionGun();
 				}else{
 					itemActionNone();	
 				}
 			break;
 			case itemtype.shotgun:
-				if (!global.inDialogue){
+				if (!global.inDialogue)
+				&& (!global.inCutscene){
 					itemActionGun();
 				}else{
 					itemActionNone();	
@@ -341,7 +337,11 @@ function item_action(){
 				if (obj_inventory.ds_inventory[# INVITEM, obj_inventory.mouse_slotx_second] == item.stick){
 					if (mouse_check_button_pressed(mb_left)){
 						if (obj_amadix.state != player_state.swimming)
-						&& (obj_amadix.state != player_state.swimming_idle){
+						&& (obj_amadix.state != player_state.swimming_idle)
+						&& (!global.inCutscene)
+						&& (!global.inEq)
+						&& (!global.inChest)
+						&& (!global.inDialogue){
 							itemActionSword();
 						}
 					}else{
@@ -353,12 +353,18 @@ function item_action(){
 				}
 			break;
 			case itemtype.tool:
-				itemActionNone();
+				if (obj_amadix.actionstate != player_state_action.pickup){
+					itemActionNone();
+				}
 			break;
 			case itemtype.melee:
 				if (mouse_check_button_pressed(mb_left)){
 					if (obj_amadix.state != player_state.swimming)
-					&& (obj_amadix.state != player_state.swimming_idle){
+					&& (obj_amadix.state != player_state.swimming_idle)
+					&& (!global.inCutscene)
+					&& (!global.inEq)
+					&& (!global.inChest)
+					&& (!global.inDialogue){
 						itemActionSword();
 					}
 				}else{
@@ -367,16 +373,24 @@ function item_action(){
 				}
 			break;
 			case itemtype.hat:
-				itemActionNone();
+				if (obj_amadix.actionstate != player_state_action.pickup){
+					itemActionNone();
+				}
 			break;
 			case itemtype.clothing:
-				itemActionNone();
+				if (obj_amadix.actionstate != player_state_action.pickup){
+					itemActionNone();
+				}
 			break;
 			case itemtype.pants:
-				itemActionNone();
+				if (obj_amadix.actionstate != player_state_action.pickup){
+					itemActionNone();
+				}
 			break;
 			case itemtype.boots:
-				itemActionNone();
+				if (obj_amadix.actionstate != player_state_action.pickup){
+					itemActionNone();
+				}
 			break;
 			default:
 				if (obj_amadix.actionstate != player_state_action.pickup){

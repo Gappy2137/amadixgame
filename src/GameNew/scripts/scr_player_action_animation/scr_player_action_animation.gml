@@ -80,6 +80,8 @@ switch (actionstate){
 	break;
 	case player_state_action.attacking_melee:
 	
+	
+			
 			anim_frame_action_num = 7;
 			if ((anim_frame_action) >= (anim_frame_action_num)) && (!attackSpeedFix){
 				
@@ -97,20 +99,22 @@ switch (actionstate){
 				switch(facing){
 				case index_facing.down:
 				
-						
-				
 						if (oneStepEvent[0] == true){
-							instance_create_layer(x, y, "Instances", obj_seq_item);
+							meleeID = instance_create_layer(x, y, "Instances", obj_seq_item);
 							var swing = instance_create_layer(x, y + 16, "Instances", obj_melee_swing);
 							with (swing){
 								animation_speed = other.anim_speed_action;
 								angle = 0;
 							}
+
 							
+							dmgID = instance_create_layer(x, y, "Instances", obj_damage);
 							
 							
 							oneStepEvent[0] = false;
 						}
+						
+
 						
 						var curveAsset = curve_attack_melee_down;
 						var curvePos = anim_frame_action/anim_frame_action_num;
@@ -129,8 +133,31 @@ switch (actionstate){
 						var curveYorigin = animcurve_channel_evaluate(curveYoriginChannel, curvePos);
 						
 						
-						if (instance_exists(obj_seq_item)){
-							with (obj_seq_item){
+						var curveAssetHitbox = curve_attack_melee_hitbox_down;
+
+						var curveStructHitbox = animcurve_get(curveAssetHitbox);
+						var curveXHitboxChannel = animcurve_get_channel(curveStructHitbox, "xpos");
+						var curveYHitboxChannel = animcurve_get_channel(curveStructHitbox, "ypos");
+						var curveXscaleHitboxChannel = animcurve_get_channel(curveStructHitbox, "xscale");
+						var curveYscaleHitboxChannel = animcurve_get_channel(curveStructHitbox, "yscale");
+
+						var curveXHitbox = animcurve_channel_evaluate(curveXHitboxChannel, curvePos);
+						var curveYHitbox = animcurve_channel_evaluate(curveYHitboxChannel, curvePos);
+						var curveXscaleHitbox = animcurve_channel_evaluate(curveXscaleHitboxChannel, curvePos);
+						var curveYscaleHitbox = animcurve_channel_evaluate(curveYscaleHitboxChannel, curvePos);
+						
+						if (instance_exists(dmgID)){
+							with (dmgID){
+								x = obj_amadix.x + curveXHitbox;
+								y = obj_amadix.y + curveYHitbox;
+								
+								width = curveXscaleHitbox;
+								height = curveYscaleHitbox;
+							}
+						}
+						
+						if (instance_exists(meleeID)){
+							with (meleeID){
 								item_id = other.itemeaten;
 								x = obj_amadix.x + curveX;
 								y = obj_amadix.y + curveY;
@@ -158,13 +185,15 @@ switch (actionstate){
 				case index_facing.right:
 
 						if (oneStepEvent[0] == true){
-							instance_create_layer(x, y, "Instances", obj_seq_item);
+							meleeID = instance_create_layer(x, y, "Instances", obj_seq_item);
 							
 							var swing = instance_create_layer(x - 8, y + 16, "Instances", obj_melee_swing);
 							with (swing){
 								animation_speed = other.anim_speed_action;
 								angle = 90;
 							}
+							
+							dmgID = instance_create_layer(x + 16, y + 16, "Instances", obj_damage);
 							
 							oneStepEvent[0] = false;
 						}
@@ -185,9 +214,31 @@ switch (actionstate){
 						var curveRot = animcurve_channel_evaluate(curveRotChannel, curvePos);
 						var curveYorigin = animcurve_channel_evaluate(curveYoriginChannel, curvePos);
 						
+						var curveAssetHitbox = curve_attack_melee_hitbox_right;
+
+						var curveStructHitbox = animcurve_get(curveAssetHitbox);
+						var curveXHitboxChannel = animcurve_get_channel(curveStructHitbox, "xpos");
+						var curveYHitboxChannel = animcurve_get_channel(curveStructHitbox, "ypos");
+						var curveXscaleHitboxChannel = animcurve_get_channel(curveStructHitbox, "xscale");
+						var curveYscaleHitboxChannel = animcurve_get_channel(curveStructHitbox, "yscale");
+
+						var curveXHitbox = animcurve_channel_evaluate(curveXHitboxChannel, curvePos);
+						var curveYHitbox = animcurve_channel_evaluate(curveYHitboxChannel, curvePos);
+						var curveXscaleHitbox = animcurve_channel_evaluate(curveXscaleHitboxChannel, curvePos);
+						var curveYscaleHitbox = animcurve_channel_evaluate(curveYscaleHitboxChannel, curvePos);
 						
-						if (instance_exists(obj_seq_item)){
-							with (obj_seq_item){
+						if (instance_exists(dmgID)){
+							with (dmgID){
+								x = obj_amadix.x + curveXHitbox - 16;
+								y = obj_amadix.y + curveYHitbox + 16;
+								
+								width = curveXscaleHitbox;
+								height = curveYscaleHitbox;
+							}
+						}
+						
+						if (instance_exists(meleeID)){
+							with (meleeID){
 								item_id = other.itemeaten;
 								x = obj_amadix.x + curveX;
 								y = obj_amadix.y + curveY;
@@ -216,13 +267,15 @@ switch (actionstate){
 				case index_facing.left:
 				
 						if (oneStepEvent[0] == true){
-							instance_create_layer(x, y, "Instances", obj_seq_item);
+							meleeID = instance_create_layer(x, y, "Instances", obj_seq_item);
 							
 							var swing = instance_create_layer(x + 8, y + 16, "Instances", obj_melee_swing);
 							with (swing){
 								animation_speed = other.anim_speed_action;
 								angle = -90;
 							}
+							
+							dmgID = instance_create_layer(x, y, "Instances", obj_damage);
 							
 							oneStepEvent[0] = false;
 						}
@@ -243,9 +296,31 @@ switch (actionstate){
 						var curveRot = animcurve_channel_evaluate(curveRotChannel, curvePos);
 						var curveYorigin = animcurve_channel_evaluate(curveYoriginChannel, curvePos);
 						
+						var curveAssetHitbox = curve_attack_melee_hitbox_left;
+
+						var curveStructHitbox = animcurve_get(curveAssetHitbox);
+						var curveXHitboxChannel = animcurve_get_channel(curveStructHitbox, "xpos");
+						var curveYHitboxChannel = animcurve_get_channel(curveStructHitbox, "ypos");
+						var curveXscaleHitboxChannel = animcurve_get_channel(curveStructHitbox, "xscale");
+						var curveYscaleHitboxChannel = animcurve_get_channel(curveStructHitbox, "yscale");
+
+						var curveXHitbox = animcurve_channel_evaluate(curveXHitboxChannel, curvePos);
+						var curveYHitbox = animcurve_channel_evaluate(curveYHitboxChannel, curvePos);
+						var curveXscaleHitbox = animcurve_channel_evaluate(curveXscaleHitboxChannel, curvePos);
+						var curveYscaleHitbox = animcurve_channel_evaluate(curveYscaleHitboxChannel, curvePos);
 						
-						if (instance_exists(obj_seq_item)){
-							with (obj_seq_item){
+						if (instance_exists(dmgID)){
+							with (dmgID){
+								x = obj_amadix.x + curveXHitbox + 16;
+								y = obj_amadix.y + curveYHitbox + 16;
+								
+								width = curveXscaleHitbox;
+								height = curveYscaleHitbox;
+							}
+						}
+						
+						if (instance_exists(meleeID)){
+							with (meleeID){
 								item_id = other.itemeaten;
 								x = obj_amadix.x + curveX;
 								y = obj_amadix.y + curveY;
@@ -275,13 +350,15 @@ switch (actionstate){
 				
 				
 						if (oneStepEvent[0] == true){
-							instance_create_layer(x, y, "Instances", obj_seq_item);
+							meleeID = instance_create_layer(x, y, "Instances", obj_seq_item);
 							
 							var swing = instance_create_layer(x, y + 16, "Instances", obj_melee_swing);
 							with (swing){
 								animation_speed = other.anim_speed_action;
 								angle = 180;
 							}
+							
+							dmgID = instance_create_layer(x + 16, y + 16, "Instances", obj_damage);
 							
 							oneStepEvent[0] = false;
 						}
@@ -302,9 +379,31 @@ switch (actionstate){
 						var curveRot = animcurve_channel_evaluate(curveRotChannel, curvePos);
 						var curveYorigin = animcurve_channel_evaluate(curveYoriginChannel, curvePos);
 						
+						var curveAssetHitbox = curve_attack_melee_hitbox_up;
+
+						var curveStructHitbox = animcurve_get(curveAssetHitbox);
+						var curveXHitboxChannel = animcurve_get_channel(curveStructHitbox, "xpos");
+						var curveYHitboxChannel = animcurve_get_channel(curveStructHitbox, "ypos");
+						var curveXscaleHitboxChannel = animcurve_get_channel(curveStructHitbox, "xscale");
+						var curveYscaleHitboxChannel = animcurve_get_channel(curveStructHitbox, "yscale");
+
+						var curveXHitbox = animcurve_channel_evaluate(curveXHitboxChannel, curvePos);
+						var curveYHitbox = animcurve_channel_evaluate(curveYHitboxChannel, curvePos);
+						var curveXscaleHitbox = animcurve_channel_evaluate(curveXscaleHitboxChannel, curvePos);
+						var curveYscaleHitbox = animcurve_channel_evaluate(curveYscaleHitboxChannel, curvePos);
 						
-						if (instance_exists(obj_seq_item)){
-							with (obj_seq_item){
+						if (instance_exists(dmgID)){
+							with (dmgID){
+								x = obj_amadix.x + curveXHitbox;
+								y = obj_amadix.y + curveYHitbox + 32;
+								
+								width = curveXscaleHitbox;
+								height = curveYscaleHitbox;
+							}
+						}
+						
+						if (instance_exists(meleeID)){
+							with (meleeID){
 								item_id = other.itemeaten;
 								x = obj_amadix.x + curveX;
 								y = obj_amadix.y + curveY;

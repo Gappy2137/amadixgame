@@ -15,8 +15,8 @@
   },
   "persistent": false,
   "parentObjectId": {
-    "name": "par_entity",
-    "path": "objects/par_entity/par_entity.yy",
+    "name": "par_objectdepth",
+    "path": "objects/par_objectdepth/par_objectdepth.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,

@@ -8,9 +8,14 @@ facing = index_facing.down;
 hsp = 0;
 vsp = 0;
 spd = 0;
+zsp = 0;
 dir = 270;
 _spd = 0;
 _dir = 0;
+
+gravSpeed = 1;
+jumpSpeed = 10;
+speedChange = 0;
 
 hsp_prev = 0;
 vsp_prev = 0;
@@ -99,7 +104,6 @@ attackSpeedFix = false;
 runningfix = true;
 movingfix = true;
 
-tenalarm = 0;
 
 oneStepEvent[0] = true;
 oneStepEvent[1] = true;
@@ -109,6 +113,8 @@ z = 0;
 zaxis = 0;
 zfloor = 0;
 zheight = 30;
+
+groundFxTimer = 15;
 
 hat_frame = 0;
 hat_rot = 0;
@@ -132,6 +138,10 @@ cy = 0;
 stopEatingTimer = 0;
 
 crafting_station = craftingStation.none;
+
+
+meleeID = -4;
+dmgID = -4;
 
 if (obj_gamecontrol.doTransition == true) scr_updatePlayerAnim();
 
