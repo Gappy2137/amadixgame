@@ -1,7 +1,7 @@
 function scr_player_pushout(){
 	
 	var col_list = ds_list_create();
-	var col_num = instance_place_list(x, y, par_npc, col_list, true);
+	var col_num = instance_place_list(x, y, par_entity, col_list, true);
 	
 	if (col_num != noone){
 		var __i = 0;

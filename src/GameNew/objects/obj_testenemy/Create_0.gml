@@ -13,6 +13,8 @@ maxdefence = 0;
 
 defence = 0;
 
+cancollide = true;
+
 state = entityState.idle;
 
 hurt = false;

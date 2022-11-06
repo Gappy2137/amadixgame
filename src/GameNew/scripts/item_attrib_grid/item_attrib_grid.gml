@@ -139,6 +139,7 @@ function item_attrib_grid(){
 	grid[# INVTYPE, item.sword] = itemtype.melee;
 	grid[# INVSTAMINA, item.sword] = 0;
 	grid[# INVDEFENCE, item.sword] = 0.4;
+	grid[# INVTEMPERATURE, item.sword] = 2;
 	grid[# INVDAMAGE, item.sword] = 10;
 	
 	//Byczek
@@ -167,6 +168,8 @@ function item_attrib_grid(){
 	//Patyk
 	grid[# INVTYPE, item.stick] = itemtype.resource;
 	grid[# INVDEFENCE, item.stick] = 0.5;
+	grid[# INVTEMPERATURE, item.stick] = 0.2;
+	grid[# INVDAMAGE, item.stick] = 1;
 	
 	//Kloda
 	grid[# INVTYPE, item.log] = itemtype.resource;

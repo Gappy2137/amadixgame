@@ -13,6 +13,8 @@ speedChange = 0;
 
 groundFxTimer = 15;
 
+knockbackHsp = 0;
+knockbackVsp = 0;
 
 
 canBeHurtByPlayer = false;
@@ -29,6 +31,8 @@ hurt = false;
 
 invisFrames = 25;
 invisFrame = invisFrames;
+knockbackFrames = 10;
+knockbackFrame = knockbackFrames;
 
 hurtColor = #FA363F;
 baseColor = #FFFFFF;
