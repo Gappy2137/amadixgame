@@ -44,7 +44,7 @@ function item_attrib_grid(){
 	//Miecz
 	grid[# INVTYPE, item.sword] = itemtype.melee;
 	grid[# INVSTAMINA, item.sword] = 0;
-	grid[# INVDAMAGE, item.sword] = 5;
+	grid[# INVDAMAGE, item.sword] = 10;
 	
 	//Byczek
 	grid[# INVTYPE, item.bull_energy_drink] = itemtype.drink;

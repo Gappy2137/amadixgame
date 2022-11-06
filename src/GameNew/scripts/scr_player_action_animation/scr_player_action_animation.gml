@@ -153,6 +153,12 @@ switch (actionstate){
 								
 								width = curveXscaleHitbox;
 								height = curveYscaleHitbox;
+								
+								damage = obj_inventory.ds_inventory[# INVDAMAGE, obj_inventory.mouse_slotx_second];
+								knockback = 2;
+								source = obj_amadix;
+								damageType = damageTypeE.melee;
+								
 							}
 						}
 						
@@ -234,6 +240,11 @@ switch (actionstate){
 								
 								width = curveXscaleHitbox;
 								height = curveYscaleHitbox;
+								
+								damage = obj_inventory.ds_inventory[# INVDAMAGE, obj_inventory.mouse_slotx_second];
+								knockback = 2;
+								source = obj_amadix;
+								damageType = damageTypeE.melee;
 							}
 						}
 						
@@ -316,6 +327,11 @@ switch (actionstate){
 								
 								width = curveXscaleHitbox;
 								height = curveYscaleHitbox;
+								
+								damage = obj_inventory.ds_inventory[# INVDAMAGE, obj_inventory.mouse_slotx_second];
+								knockback = 2;
+								source = obj_amadix;
+								damageType = damageTypeE.melee;
 							}
 						}
 						
@@ -399,6 +415,11 @@ switch (actionstate){
 								
 								width = curveXscaleHitbox;
 								height = curveYscaleHitbox;
+								
+								damage = obj_inventory.ds_inventory[# INVDAMAGE, obj_inventory.mouse_slotx_second];
+								knockback = 2;
+								source = obj_amadix;
+								damageType = damageTypeE.melee;
 							}
 						}
 						

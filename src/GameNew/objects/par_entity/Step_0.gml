@@ -1,6 +1,40 @@
 // Inherit the parent event
 event_inherited();
 
+if (defence < 0){
+	defence = 0;	
+}
+
+var damageSource = instance_place(x, y, obj_damage);
+
+if (damageSource){
+	if (damageSource.source == obj_amadix){
+		if (canBeHurtByPlayer) && (!hurt){
+			hp -= ceil( (damageSource.damage * (1 / (1 + (power(defence, 2) / 1000)))) );
+			hurt = true;
+		}
+	}
+}
+
+if (hurt){
+	if (invisFrame <= 0){
+		invisFrame = invisFrames;	
+		hurt = false;
+	}else{
+		invisFrame--;
+	}
+}
+
+
+if (hp > maxhp){
+	hp = maxhp;	
+}
+if (hp < 0){
+	hp = 0;
+	instance_destroy();
+}
+
+
 	var _list = ds_list_create();
 	var _num = instance_place_list(x, y, par_grass, _list, false);
 	var _id = id;

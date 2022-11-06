@@ -44,6 +44,17 @@ if (rm_trans != noone){
 	}
 }
 
+// Hurt
+if (hurt){
+	if (invisFrame <= 0){
+		invisFrame = invisFrames;	
+		hurt = false;
+	}else{
+		invisFrame--;
+	}
+}
+
+
 // Kontrola cutscenek
 
 var _scene = instance_place(x, y, obj_cutscene_trigger);

@@ -93,6 +93,13 @@ enum player_state_action{
 	pickup = 5,
 }
 
+enum entityState {
+	idle = 0,
+	moving = 1,
+	wading = 2,
+	swimming = 3,
+}
+
 enum lang{
 	english = 0,
 	polish =  1,

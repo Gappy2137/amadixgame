@@ -216,7 +216,7 @@ function item_action(){
 		|| (obj_amadix.state == player_state.wading_idle) 
 		|| (obj_amadix.state == player_state.wading){
 			var amount =		obj_inventory.ds_inventory[# INVAMOUNT, obj_inventory.mouse_slotx_second];
-			var hp =			obj_inventory.ds_inventory[# INVHP, obj_inventory.mouse_slotx_second];
+			var dmg =			obj_inventory.ds_inventory[# INVDAMAGE, obj_inventory.mouse_slotx_second];
 			var type =			obj_inventory.ds_inventory[# INVTYPE, obj_inventory.mouse_slotx_second];
 			if (amount > 0){
 				if (obj_amadix.actionstate != player_state_action.attacking_melee){

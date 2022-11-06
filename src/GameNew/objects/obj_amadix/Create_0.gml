@@ -84,6 +84,11 @@ shadowEnable = true;
 state = player_state.idle;
 actionstate = player_state_action.none;
 
+hurt = false;
+invisFrames = 15;
+invisFrame = invisFrames;
+
+
 iteminhand = -1;
 iteminhandX = 0;
 iteminhandY = 0;

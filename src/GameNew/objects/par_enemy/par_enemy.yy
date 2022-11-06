@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "par_enemy",
   "spriteId": null,
   "solid": false,
   "visible": true,
@@ -28,8 +31,4 @@
     "name": "Parents",
     "path": "folders/Objects/Parents.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "par_enemy",
-  "tags": [],
-  "resourceType": "GMObject",
 }

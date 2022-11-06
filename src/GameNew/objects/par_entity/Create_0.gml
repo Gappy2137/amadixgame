@@ -13,9 +13,19 @@ speedChange = 0;
 
 groundFxTimer = 15;
 
+
+
 canBeHurtByPlayer = false;
 
 hp = 100;
+maxhp = 100;
 
 defence = 0;
+maxdefence = 0;
 
+state = entityState.idle;
+
+hurt = false;
+
+invisFrames = 15;
+invisFrame = invisFrames;
