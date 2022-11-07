@@ -100,6 +100,18 @@ enum entityState {
 	swimming = 3,
 }
 
+enum entityStateAction {
+	none = 0,
+	attack = 1,
+	block = 2,
+	
+}
+
+enum entityAiType {
+	disabled = 0,
+	followSimple = 1,
+}
+
 enum lang{
 	english = 0,
 	polish =  1,

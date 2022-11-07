@@ -1,7 +1,35 @@
 event_inherited();
 
+if (instance_exists(obj_amadix)){
+	var damageSource = instance_place(x, y, obj_damage);
 
-
+	if (damageSource){
+		if (damageSource.source == obj_amadix)
+		&& (damageSource.damageType == damageTypeE.melee){
+			if (canBeHurtByPlayer){
+				var amadixFacing = obj_amadix.facing;
+				
+				switch (amadixFacing){
+					case index_facing.down:
+						hitangle = approach(hitangle, 25 + rnd*5, acc*2);
+					break;
+					case index_facing.left:
+						hitangle = approach(hitangle, 25 + rnd*5, acc*2);
+					break;
+					case index_facing.right:
+						hitangle = approach(hitangle, -25 - rnd*5, acc*2);
+					break;
+					case index_facing.up:
+						hitangle = approach(hitangle, -25 - rnd*5, acc*2);
+					break;
+				}
+				
+			}
+		}
+	}else{
+		hitangle = approach(hitangle, 0, acc);	
+	}
+}
 resetAngleTimer--;
 if (resetAngleTimer == 0){
 	resetAngleTimer = 10;	
@@ -79,7 +107,7 @@ if (isWind){
 	}
 }
 
-finalangle = clamp((angle + windangle), -75, 75);
+finalangle = clamp((angle + windangle + hitangle), -75, 75);
 
 if (resetAngle){
 	angle = approach(angle, 0, acc);	

@@ -29,6 +29,8 @@ state = entityState.idle;
 
 hurt = false;
 
+aiType = entityAiType.disabled;
+
 invisFrames = 25;
 invisFrame = invisFrames;
 knockbackFrames = 10;

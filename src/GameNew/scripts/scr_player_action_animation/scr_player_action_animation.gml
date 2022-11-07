@@ -169,6 +169,7 @@ switch (actionstate){
 								y = obj_amadix.y + curveY;
 								rot = curveRot;
 								yorigin = obj_amadix.yorigin + curveYorigin;
+								zaxis = 8;
 								
 								if (other.anim_frame_action >= other.anim_frame_action_num){
 									if (other.oneStepEvent[1] == true){
@@ -255,6 +256,7 @@ switch (actionstate){
 								y = obj_amadix.y + curveY;
 								rot = curveRot;
 								yorigin = other.yorigin + curveYorigin;
+								zaxis = 8;
 								
 								if (other.anim_frame_action >= other.anim_frame_action_num){
 									if (other.oneStepEvent[1] == true){
@@ -342,6 +344,7 @@ switch (actionstate){
 								y = obj_amadix.y + curveY;
 								rot = curveRot;
 								yorigin = other.yorigin + curveYorigin;
+								zaxis = 4;
 								
 								if (other.anim_frame_action >= other.anim_frame_action_num){
 									if (other.oneStepEvent[1] == true){
@@ -430,6 +433,7 @@ switch (actionstate){
 								y = obj_amadix.y + curveY;
 								rot = curveRot;
 								yorigin = other.yorigin + curveYorigin;
+								zaxis = 8;
 								
 								if (other.anim_frame_action >= other.anim_frame_action_num){
 									if (other.oneStepEvent[1] == true){

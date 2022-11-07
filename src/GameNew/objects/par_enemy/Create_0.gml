@@ -11,3 +11,5 @@ shadowSizeY = 0;
 customSpr = false;
 shadowStyle = spr_shadow_player;
 shadowEnable = false;
+
+aiType = entityAiType.followSimple;

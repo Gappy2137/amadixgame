@@ -37,6 +37,10 @@ resetAngle = true;
 resetAngleTimer = 10;
 wtr = false;
 
+canBeHurtByPlayer = true;
+
+hitangle = 0;
+
 var zf = instance_place(x, y, par_zfloor);
 if (zf){
 	zfloor = zf.zflr;	

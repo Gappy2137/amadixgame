@@ -168,7 +168,7 @@ function item_attrib_grid(){
 	//Patyk
 	grid[# INVTYPE, item.stick] = itemtype.resource;
 	grid[# INVDEFENCE, item.stick] = 0.5;
-	grid[# INVTEMPERATURE, item.stick] = 0.2;
+	grid[# INVTEMPERATURE, item.stick] = 1;
 	grid[# INVDAMAGE, item.stick] = 1;
 	
 	//Kloda

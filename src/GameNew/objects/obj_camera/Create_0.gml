@@ -2,6 +2,11 @@
 view_width = GAMEWIDTH;
 view_height = GAMEHEIGHT;
 
+xRel = 0;
+yRel = 0;
+widthRel = room_width;
+heightRel = room_height;
+
 following = obj_amadix;
 
 bounded = true;
