@@ -7,6 +7,10 @@ if (obj_amadix.state == player_state.wading)
 	yfix = 0;	
 }
 
+if (obj_amadix.actionstate != player_state_action.handgun){
+	heat = 0;	
+}
+
 // Liczba zaladowanych nabojow pobierana z eq
 if (obj_amadix.actionstate == player_state_action.handgun){
 	ammoLoadedInv = obj_inventory.ds_inventory[# INVHP, obj_inventory.mouse_slotx_second];

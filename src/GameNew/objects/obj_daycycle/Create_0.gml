@@ -96,6 +96,7 @@ alpha = 0;
 					
 #endregion
 */
+enableChange = true;
 ds_daycycle_info[0][0][0] = [];
 scr_daycycle_params();
 alarm[0] = 1;

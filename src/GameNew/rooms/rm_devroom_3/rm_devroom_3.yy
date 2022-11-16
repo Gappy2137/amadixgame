@@ -21,6 +21,7 @@
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","propertyId":{"name":"loopAudio[0]","path":"objects/obj_levelcontrol/obj_levelcontrol.yy",},"objectId":{"name":"obj_levelcontrol","path":"objects/obj_levelcontrol/obj_levelcontrol.yy",},"value":"snd_wind_forest",},
           ],"isDnd":false,"objectId":{"name":"obj_levelcontrol","path":"objects/obj_levelcontrol/obj_levelcontrol.yy",},"inheritCode":false,"hasCreationCode":true,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":-32.0,"y":64.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1B739AF2","properties":[],"isDnd":false,"objectId":{"name":"obj_wateroverlay","path":"objects/obj_wateroverlay/obj_wateroverlay.yy",},"inheritCode":false,"hasCreationCode":true,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":true,"inheritItemSettings":false,"x":-16.0,"y":32.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3656FA2A","properties":[],"isDnd":false,"objectId":{"name":"obj_rain_emitter","path":"objects/obj_rain_emitter/obj_rain_emitter.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":512.0,"y":64.0,},
       ],"visible":true,"depth":-1000000,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"GreenLeavesForeground","tilesetId":{"name":"tileset_leaves_green","path":"tilesets/tileset_leaves_green/tileset_leaves_green.yy",},"x":0,"y":0,"tiles":{"TileDataFormat":1,"SerialiseWidth":32,"SerialiseHeight":32,"TileCompressedData":[
 -7,40,1,35,-3,0,4,27,40,40,35,-3,0,1,27,-7,40,1,33,-3,37,1,26,-5,40,4,33,37,37,21,-3,0,
@@ -1149,6 +1150,7 @@
     {"name":"inst_67F26216","path":"rooms/rm_devroom_3/rm_devroom_3.yy",},
     {"name":"inst_2AC69A4F","path":"rooms/rm_devroom_3/rm_devroom_3.yy",},
     {"name":"inst_26DE1AA7","path":"rooms/rm_devroom_3/rm_devroom_3.yy",},
+    {"name":"inst_3656FA2A","path":"rooms/rm_devroom_3/rm_devroom_3.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

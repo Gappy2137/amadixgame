@@ -3,97 +3,7 @@ function item_attrib_grid(){
 	
 	var i = 0;
 	
-	//Sprawdzenie typow
-	repeat (item.height){
-		if (grid[# INVTYPE, i] == itemtype.dish){
-			grid[# MAXSTACK, i] = 20;
-			grid[# INVDAMAGE, i] = 0;
-			grid[# INVDEFENCE, i] = 0;
-			grid[# MAXCAP, i] = -1;
-		}
-		if (grid[# INVTYPE, i] == itemtype.drink){
-			grid[# MAXSTACK, i] = 1;
-			grid[# INVDAMAGE, i] = 0;
-			grid[# INVDEFENCE, i] = 0;
-			grid[# MAXCAP, i] = 5;
-		}
-		if (grid[# INVTYPE, i] == itemtype.food){
-			grid[# MAXSTACK, i] = 20;
-			grid[# INVDAMAGE, i] = 0;
-			grid[# INVDEFENCE, i] = 0;
-			grid[# MAXCAP, i] = -1;
-		}
-		if (grid[# INVTYPE, i] == itemtype.fruit){
-			grid[# MAXSTACK, i] = 20;
-			grid[# INVDAMAGE, i] = 0;
-			grid[# INVDEFENCE, i] = 0;
-			grid[# MAXCAP, i] = -1;
-		}
-		if (grid[# INVTYPE, i] == itemtype.resource){
-			grid[# MAXSTACK, i] = 99;
-			grid[# INVHP, i] = 0;
-			grid[# INVSTAMINA, i] = 0;
-			grid[# INVDAMAGE, i] = 0;
-			grid[# INVDEFENCE, i] = 0;
-			grid[# INVTEMPERATURE, i] = 0;
-			grid[# MAXCAP, i] = -1;
-		}
-		if (grid[# INVTYPE, i] == itemtype.tool){
-			grid[# MAXSTACK, i] = 1;
-			grid[# INVHP, i] = 0;
-			grid[# INVDEFENCE, i] = 0;
-			grid[# INVTEMPERATURE, i] = 0;
-			grid[# MAXCAP, i] = -1;
-		}
-		if (grid[# INVTYPE, i] == itemtype.vegetable){
-			grid[# MAXSTACK, i] = 20;
-			grid[# INVDAMAGE, i] = 0;
-			grid[# INVDEFENCE, i] = 0;
-			grid[# MAXCAP, i] = -1;
-		}
-		if (grid[# INVTYPE, i] == itemtype.melee){
-			grid[# MAXSTACK, i] = 1;
-			grid[# INVHP, i] = 0;
-			grid[# INVDEFENCE, i] = 0;
-			grid[# INVTEMPERATURE, i] = 0;
-			grid[# MAXCAP, i] = -1;
-		}
-		if (grid[# INVTYPE, i] == itemtype.clothing){
-			grid[# MAXSTACK, i] = 1;
-			grid[# MAXCAP, i] = -1;
-		}
-		if (grid[# INVTYPE, i] == itemtype.pants){
-			grid[# MAXSTACK, i] = 1;
-			grid[# MAXCAP, i] = -1;
-		}
-		if (grid[# INVTYPE, i] == itemtype.boots){
-			grid[# MAXSTACK, i] = 1;
-			grid[# MAXCAP, i] = -1;
-		}
-		if (grid[# INVTYPE, i] == itemtype.hat){
-			grid[# MAXSTACK, i] = 1;
-			grid[# MAXCAP, i] = -1;
-		}
-		if (grid[# INVTYPE, i] == itemtype.handgun){
-			grid[# MAXSTACK, i] = 1;
-			grid[# MAXCAP, i] = -1;
-		}
-		if (grid[# INVTYPE, i] == itemtype.alcohol){
-			grid[# MAXSTACK, i] = 1;
-			grid[# INVDAMAGE, i] = 0;
-			grid[# INVDEFENCE, i] = 0;
-			grid[# MAXCAP, i] = 5;
-		}
-		if (grid[# INVTYPE, i] == itemtype.shotgun){
-			grid[# MAXSTACK, i] = 1;
-			grid[# MAXCAP, i] = -1;
-		}
-		if (grid[# INVTYPE, i] == itemtype.magazine){
-			grid[# MAXSTACK, i] = 1;
-		}
-		
-		i++;
-	}
+
 	
 	//Nic
 	grid[# INVTYPE, item.none] = itemtype.invalid;
@@ -246,8 +156,97 @@ function item_attrib_grid(){
 	grid[# INVSTAMINA, item.dandelion] = 2;
 	grid[# INVTEMPERATURE, item.dandelion] = 0;
 	
-
-	
+	//Sprawdzenie typow
+	repeat (item.height){
+		if (grid[# INVTYPE, i] == itemtype.dish){
+			grid[# MAXSTACK, i] = 20;
+			grid[# INVDAMAGE, i] = 0;
+			grid[# INVDEFENCE, i] = 0;
+			grid[# MAXCAP, i] = -1;
+		}
+		if (grid[# INVTYPE, i] == itemtype.drink){
+			grid[# MAXSTACK, i] = 1;
+			grid[# INVDAMAGE, i] = 0;
+			grid[# INVDEFENCE, i] = 0;
+			grid[# MAXCAP, i] = 5;
+		}
+		if (grid[# INVTYPE, i] == itemtype.food){
+			grid[# MAXSTACK, i] = 20;
+			grid[# INVDAMAGE, i] = 0;
+			grid[# INVDEFENCE, i] = 0;
+			grid[# MAXCAP, i] = -1;
+		}
+		if (grid[# INVTYPE, i] == itemtype.fruit){
+			grid[# MAXSTACK, i] = 20;
+			grid[# INVDAMAGE, i] = 0;
+			grid[# INVDEFENCE, i] = 0;
+			grid[# MAXCAP, i] = -1;
+		}
+		if (grid[# INVTYPE, i] == itemtype.resource){
+			grid[# MAXSTACK, i] = 99;
+			grid[# INVHP, i] = 0;
+			grid[# INVSTAMINA, i] = 0;
+			grid[# INVDAMAGE, i] = 0;
+			grid[# INVDEFENCE, i] = 0;
+			grid[# INVTEMPERATURE, i] = 0;
+			grid[# MAXCAP, i] = -1;
+		}
+		if (grid[# INVTYPE, i] == itemtype.tool){
+			grid[# MAXSTACK, i] = 1;
+			grid[# INVHP, i] = 0;
+			grid[# INVDEFENCE, i] = 0;
+			grid[# INVTEMPERATURE, i] = 0;
+			grid[# MAXCAP, i] = -1;
+		}
+		if (grid[# INVTYPE, i] == itemtype.vegetable){
+			grid[# MAXSTACK, i] = 20;
+			grid[# INVDAMAGE, i] = 0;
+			grid[# INVDEFENCE, i] = 0;
+			grid[# MAXCAP, i] = -1;
+		}
+		if (grid[# INVTYPE, i] == itemtype.melee){
+			grid[# MAXSTACK, i] = 1;
+			grid[# INVHP, i] = 0;
+			grid[# INVDEFENCE, i] = 0;
+			grid[# INVTEMPERATURE, i] = 0;
+			grid[# MAXCAP, i] = -1;
+		}
+		if (grid[# INVTYPE, i] == itemtype.clothing){
+			grid[# MAXSTACK, i] = 1;
+			grid[# MAXCAP, i] = -1;
+		}
+		if (grid[# INVTYPE, i] == itemtype.pants){
+			grid[# MAXSTACK, i] = 1;
+			grid[# MAXCAP, i] = -1;
+		}
+		if (grid[# INVTYPE, i] == itemtype.boots){
+			grid[# MAXSTACK, i] = 1;
+			grid[# MAXCAP, i] = -1;
+		}
+		if (grid[# INVTYPE, i] == itemtype.hat){
+			grid[# MAXSTACK, i] = 1;
+			grid[# MAXCAP, i] = -1;
+		}
+		if (grid[# INVTYPE, i] == itemtype.handgun){
+			grid[# MAXSTACK, i] = 1;
+			grid[# MAXCAP, i] = -1;
+		}
+		if (grid[# INVTYPE, i] == itemtype.alcohol){
+			grid[# MAXSTACK, i] = 1;
+			grid[# INVDAMAGE, i] = 0;
+			grid[# INVDEFENCE, i] = 0;
+			grid[# MAXCAP, i] = 5;
+		}
+		if (grid[# INVTYPE, i] == itemtype.shotgun){
+			grid[# MAXSTACK, i] = 1;
+			grid[# MAXCAP, i] = -1;
+		}
+		if (grid[# INVTYPE, i] == itemtype.magazine){
+			grid[# MAXSTACK, i] = 1;
+		}
+		
+		i++;
+	}	
 	//Overrides
 	
 
