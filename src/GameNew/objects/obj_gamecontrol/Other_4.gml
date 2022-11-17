@@ -1,3 +1,6 @@
+// New seed
+randomize();
+
 
 load_room();
 

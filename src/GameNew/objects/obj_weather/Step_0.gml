@@ -2,7 +2,7 @@ if (keyboard_check_pressed(ord("M"))) && (weatherchange == weatherChangeAmount) 
 	wch = true;
 	global.prevweather = global.weather;
 	global.weather++;
-	if global.weather > 1{
+	if global.weather > 4{
 		global.weather = 0;	
 	}
 }

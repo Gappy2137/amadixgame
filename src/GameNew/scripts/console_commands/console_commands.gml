@@ -294,3 +294,18 @@ function meta_room_enter() {
 	}
 }
 #endregion
+#region weather set
+function sh_weather_set(arg) {
+	global.prevweather = global.weather;
+	global.weather = real(arg[1]);
+	obj_weather.wch = true;
+}
+
+function meta_weather_set() {
+	return {
+		description: "",
+		arguments: ["weather"],
+		hidden: false
+	}
+}
+#endregion

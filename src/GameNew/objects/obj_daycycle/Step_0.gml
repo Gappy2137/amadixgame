@@ -15,7 +15,7 @@ var cm_temp = [];
 var csb_temp = [];
 
 var _i = 0;
-repeat(2){
+repeat(5){
 	cm_temp[_i] = [				lerp(ds_daycycle_info[_i][key_previous][0], ds_daycycle_info[_i][key_next][0], lerp_),
 								lerp(ds_daycycle_info[_i][key_previous][1], ds_daycycle_info[_i][key_next][1], lerp_),
 								lerp(ds_daycycle_info[_i][key_previous][2], ds_daycycle_info[_i][key_next][2], lerp_),
