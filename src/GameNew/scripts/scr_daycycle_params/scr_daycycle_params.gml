@@ -1197,96 +1197,96 @@ function scr_daycycle_params(){
 	obj_daycycle.ds_daycycle_info[wth][0][0] = 060.00/255;
 	obj_daycycle.ds_daycycle_info[wth][0][1] = 120.00/255;
 	obj_daycycle.ds_daycycle_info[wth][0][2] = 220.00/255;
-	
+											   
 	obj_daycycle.ds_daycycle_info[wth][0][3] = 0.30;
-	obj_daycycle.ds_daycycle_info[wth][0][4] = 0.70;
-	obj_daycycle.ds_daycycle_info[wth][0][5] = -0.43;
-	obj_daycycle.ds_daycycle_info[wth][0][6] = 0.50;
-	obj_daycycle.ds_daycycle_info[wth][0][7] = 0.60;
+	obj_daycycle.ds_daycycle_info[wth][0][4] = 0.60;
+	obj_daycycle.ds_daycycle_info[wth][0][5] = -0.46;
+	obj_daycycle.ds_daycycle_info[wth][0][6] = 0.00;
+	obj_daycycle.ds_daycycle_info[wth][0][7] = 0.00;
 	//------------------------------------------
 	//------------------------------------------
 	//01:00
 	obj_daycycle.ds_daycycle_info[wth][1][0] = 060.00/255;
 	obj_daycycle.ds_daycycle_info[wth][1][1] = 120.00/255;
 	obj_daycycle.ds_daycycle_info[wth][1][2] = 220.00/255;
-	
+											   
 	obj_daycycle.ds_daycycle_info[wth][1][3] = 0.30;
-	obj_daycycle.ds_daycycle_info[wth][1][4] = 0.70;
-	obj_daycycle.ds_daycycle_info[wth][1][5] = -0.43;
-	obj_daycycle.ds_daycycle_info[wth][1][6] = 0.50;
-	obj_daycycle.ds_daycycle_info[wth][1][7] = 0.60;
+	obj_daycycle.ds_daycycle_info[wth][1][4] = 0.60;
+	obj_daycycle.ds_daycycle_info[wth][1][5] = -0.46;
+	obj_daycycle.ds_daycycle_info[wth][1][6] = 0.00;
+	obj_daycycle.ds_daycycle_info[wth][1][7] = 0.00;
 	//------------------------------------------
 	//------------------------------------------
 	//02:00
 	obj_daycycle.ds_daycycle_info[wth][2][0] = 060.00/255;
 	obj_daycycle.ds_daycycle_info[wth][2][1] = 120.00/255;
 	obj_daycycle.ds_daycycle_info[wth][2][2] = 220.00/255;
-	
+											   
 	obj_daycycle.ds_daycycle_info[wth][2][3] = 0.30;
-	obj_daycycle.ds_daycycle_info[wth][2][4] = 0.70;
-	obj_daycycle.ds_daycycle_info[wth][2][5] = -0.43;
-	obj_daycycle.ds_daycycle_info[wth][2][6] = 0.50;
-	obj_daycycle.ds_daycycle_info[wth][2][7] = 0.60;
+	obj_daycycle.ds_daycycle_info[wth][2][4] = 0.60;
+	obj_daycycle.ds_daycycle_info[wth][2][5] = -0.46;
+	obj_daycycle.ds_daycycle_info[wth][2][6] = 0.00;
+	obj_daycycle.ds_daycycle_info[wth][2][7] = 0.00;
 	//------------------------------------------
 	//------------------------------------------
 	//03:00
 	obj_daycycle.ds_daycycle_info[wth][3][0] = 060.00/255;
 	obj_daycycle.ds_daycycle_info[wth][3][1] = 120.00/255;
 	obj_daycycle.ds_daycycle_info[wth][3][2] = 220.00/255;
-	
+											   
 	obj_daycycle.ds_daycycle_info[wth][3][3] = 0.30;
-	obj_daycycle.ds_daycycle_info[wth][3][4] = 0.70;
-	obj_daycycle.ds_daycycle_info[wth][3][5] = -0.43;
-	obj_daycycle.ds_daycycle_info[wth][3][6] = 0.50;
-	obj_daycycle.ds_daycycle_info[wth][3][7] = 0.60;
+	obj_daycycle.ds_daycycle_info[wth][3][4] = 0.60;
+	obj_daycycle.ds_daycycle_info[wth][3][5] = -0.46;
+	obj_daycycle.ds_daycycle_info[wth][3][6] = 0.00;
+	obj_daycycle.ds_daycycle_info[wth][3][7] = 0.00;
 	//------------------------------------------
 	//------------------------------------------
 	//04:00
 	obj_daycycle.ds_daycycle_info[wth][4][0] = 080.00/255;
 	obj_daycycle.ds_daycycle_info[wth][4][1] = 120.00/255;
-	obj_daycycle.ds_daycycle_info[wth][4][2] = 210.00/255;
+	obj_daycycle.ds_daycycle_info[wth][4][2] = 200.00/255;
 	
-	obj_daycycle.ds_daycycle_info[wth][4][3] = 0.30;
-	obj_daycycle.ds_daycycle_info[wth][4][4] = 0.70;
-	obj_daycycle.ds_daycycle_info[wth][4][5] = -0.44;
+	obj_daycycle.ds_daycycle_info[wth][4][3] = 0.40;
+	obj_daycycle.ds_daycycle_info[wth][4][4] = 0.60;
+	obj_daycycle.ds_daycycle_info[wth][4][5] = -0.42;
 	obj_daycycle.ds_daycycle_info[wth][4][6] = 0.30;
 	obj_daycycle.ds_daycycle_info[wth][4][7] = 0.60;
 	//------------------------------------------
 	//------------------------------------------
 	//05:00
-	obj_daycycle.ds_daycycle_info[wth][5][0] = 130.00/255;
-	obj_daycycle.ds_daycycle_info[wth][5][1] = 100.00/255;
-	obj_daycycle.ds_daycycle_info[wth][5][2] = 140.00/255;
-	
-	obj_daycycle.ds_daycycle_info[wth][5][3] = 0.50;
-	obj_daycycle.ds_daycycle_info[wth][5][4] = 0.70;
-	obj_daycycle.ds_daycycle_info[wth][5][5] = -0.30;
-	obj_daycycle.ds_daycycle_info[wth][5][6] = 0.00;
-	obj_daycycle.ds_daycycle_info[wth][5][7] = 0.00;
+	obj_daycycle.ds_daycycle_info[wth][5][0] = 100.00/255;
+	obj_daycycle.ds_daycycle_info[wth][5][1] = 110.00/255;
+	obj_daycycle.ds_daycycle_info[wth][5][2] = 160.00/255;
+											   
+	obj_daycycle.ds_daycycle_info[wth][5][3] = 0.69;
+	obj_daycycle.ds_daycycle_info[wth][5][4] = 0.65;
+	obj_daycycle.ds_daycycle_info[wth][5][5] = -0.35;
+	obj_daycycle.ds_daycycle_info[wth][5][6] = -0.02;
+	obj_daycycle.ds_daycycle_info[wth][5][7] = 0.50;
 	//------------------------------------------
 	//------------------------------------------
 	//06:00
-	obj_daycycle.ds_daycycle_info[wth][6][0] = 140.00/255;
-	obj_daycycle.ds_daycycle_info[wth][6][1] = 120.00/255;
-	obj_daycycle.ds_daycycle_info[wth][6][2] = 100.00/255;
-	
-	obj_daycycle.ds_daycycle_info[wth][6][3] = 1.00;
-	obj_daycycle.ds_daycycle_info[wth][6][4] = 0.90;
-	obj_daycycle.ds_daycycle_info[wth][6][5] = -0.04;
-	obj_daycycle.ds_daycycle_info[wth][6][6] = 0.00;
-	obj_daycycle.ds_daycycle_info[wth][6][7] = 0.00;
+	obj_daycycle.ds_daycycle_info[wth][6][0] = 100.00/255;
+	obj_daycycle.ds_daycycle_info[wth][6][1] = 110.00/255;
+	obj_daycycle.ds_daycycle_info[wth][6][2] = 150.00/255;
+											   
+	obj_daycycle.ds_daycycle_info[wth][6][3] = 0.89;
+	obj_daycycle.ds_daycycle_info[wth][6][4] = 0.75;
+	obj_daycycle.ds_daycycle_info[wth][6][5] = -0.10;
+	obj_daycycle.ds_daycycle_info[wth][6][6] = -0.02;
+	obj_daycycle.ds_daycycle_info[wth][6][7] = 0.50;
 	//------------------------------------------
 	//------------------------------------------
 	//07:00
-	obj_daycycle.ds_daycycle_info[wth][7][0] = 130.00/255;
-	obj_daycycle.ds_daycycle_info[wth][7][1] = 128.00/255;
-	obj_daycycle.ds_daycycle_info[wth][7][2] = 120.00/255;
-	
-	obj_daycycle.ds_daycycle_info[wth][7][3] = 1.00;
-	obj_daycycle.ds_daycycle_info[wth][7][4] = 1.00;
-	obj_daycycle.ds_daycycle_info[wth][7][5] = 0.00;
-	obj_daycycle.ds_daycycle_info[wth][7][6] = 0.00;
-	obj_daycycle.ds_daycycle_info[wth][7][7] = 0.00;
+	obj_daycycle.ds_daycycle_info[wth][7][0] = 100.00/255;
+	obj_daycycle.ds_daycycle_info[wth][7][1] = 110.00/255;
+	obj_daycycle.ds_daycycle_info[wth][7][2] = 150.00/255;
+											   
+	obj_daycycle.ds_daycycle_info[wth][7][3] = 0.89;
+	obj_daycycle.ds_daycycle_info[wth][7][4] = 0.75;
+	obj_daycycle.ds_daycycle_info[wth][7][5] = -0.06;
+	obj_daycycle.ds_daycycle_info[wth][7][6] = -0.02;
+	obj_daycycle.ds_daycycle_info[wth][7][7] = 0.50;
 	//------------------------------------------
 	//------------------------------------------
 	//08:00

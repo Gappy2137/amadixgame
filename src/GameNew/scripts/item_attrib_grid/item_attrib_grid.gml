@@ -77,9 +77,6 @@ function item_attrib_grid(){
 	
 	//Patyk
 	grid[# INVTYPE, item.stick] = itemtype.resource;
-	grid[# INVDEFENCE, item.stick] = 0.5;
-	grid[# INVTEMPERATURE, item.stick] = 1;
-	grid[# INVDAMAGE, item.stick] = 1;
 	
 	//Kloda
 	grid[# INVTYPE, item.log] = itemtype.resource;
@@ -206,9 +203,6 @@ function item_attrib_grid(){
 		}
 		if (grid[# INVTYPE, i] == itemtype.melee){
 			grid[# MAXSTACK, i] = 1;
-			grid[# INVHP, i] = 0;
-			grid[# INVDEFENCE, i] = 0;
-			grid[# INVTEMPERATURE, i] = 0;
 			grid[# MAXCAP, i] = -1;
 		}
 		if (grid[# INVTYPE, i] == itemtype.clothing){
@@ -249,7 +243,11 @@ function item_attrib_grid(){
 	}	
 	//Overrides
 	
-
+	//patyk
+	grid[# INVDEFENCE, item.stick] = 0.5;
+	grid[# INVTEMPERATURE, item.stick] = 1;
+	grid[# INVDAMAGE, item.stick] = 1;
+	
 	//45acp
 	grid[# INVTYPE, item.bullet45acp] = itemtype.resource;
 	grid[# MAXSTACK, item.bullet45acp] = 20;
