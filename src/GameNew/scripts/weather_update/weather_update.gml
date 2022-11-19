@@ -71,6 +71,9 @@ function weather_update(){
 				gValue = 0.427;
 				bValue = 0.659;
 				alpha =	 1.0;
+				
+				fogSpr = spr_fog_fx;
+				fogSub = 0;
 			
 			}
 		}else{
@@ -84,6 +87,9 @@ function weather_update(){
 				gValue = 0.427;
 				bValue = 0.659;
 				alpha =	 1.0;
+				
+				fogSpr = spr_fog_fx;
+				fogSub = 0;
 			
 			}
 		}

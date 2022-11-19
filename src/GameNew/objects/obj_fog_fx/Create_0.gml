@@ -6,3 +6,6 @@ rValue = 1.0;
 gValue = 1.0;
 bValue = 1.0;
 alpha = 1.0;
+
+fogSpr = spr_fog_fx;
+fogSub = 0;

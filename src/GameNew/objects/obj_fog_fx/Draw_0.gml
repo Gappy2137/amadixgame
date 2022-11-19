@@ -7,6 +7,6 @@ shader_set_uniform_f(shader_get_uniform(shader_fog, "blue"), bValue);
 shader_set_uniform_f(shader_get_uniform(shader_fog, "alpha"), alpha);
 
 
-draw_sprite_tiled(spr_fog_fx, 0, 0, 0);
+draw_sprite_tiled(fogSpr, fogSub, 0, 0);
 
 shader_reset();
