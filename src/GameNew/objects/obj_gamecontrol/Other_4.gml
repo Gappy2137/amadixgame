@@ -1,6 +1,7 @@
 // New seed
 randomize();
 
+weather_update();
 
 load_room();
 

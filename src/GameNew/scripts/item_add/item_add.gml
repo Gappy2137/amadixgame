@@ -22,7 +22,7 @@ function item_add(slot, iitem, amount, level, capacity){
 			var newitemam = capacity == -1 ? amount : capacity;
 			var newitemid = iitem;
 			if (instance_exists(obj_amadix)){
-				var ID = instance_create_layer(obj_amadix.x, obj_amadix.y, "Important", obj_newitem);
+				var ID = instance_create_layer(obj_amadix.x, obj_amadix.y, MAINSCR, obj_newitem);
 				with (ID){
 					newItemID = newitemid;
 					newItemAmount = newitemam;

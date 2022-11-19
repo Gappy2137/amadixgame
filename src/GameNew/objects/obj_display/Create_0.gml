@@ -59,7 +59,7 @@ display_set_gui_size(GAMEWIDTH, GAMEHEIGHT);
 
 surface_resize(application_surface, GAMEWIDTH * window_size, GAMEHEIGHT * window_size);
 
-instance_create_layer(0,0,"Important",obj_camera); 
+instance_create_layer(0,0,MAINSCR,obj_camera); 
 
 window_set_fullscreen(false);
 

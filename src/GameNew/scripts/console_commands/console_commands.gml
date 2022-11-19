@@ -299,6 +299,8 @@ function sh_weather_set(arg) {
 	global.prevweather = global.weather;
 	global.weather = real(arg[1]);
 	obj_weather.wch = true;
+	obj_weather.weatherTrigger = true;
+	weather_update();
 }
 
 function meta_weather_set() {

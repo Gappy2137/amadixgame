@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "newdialogue",
+  "name": "weather_update",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {

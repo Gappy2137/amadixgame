@@ -42,4 +42,5 @@ global.prevweather = weather.sun;
 weatherChangeAmount = 200;
 weatherchange = weatherChangeAmount;
 wch = false;
+weatherTrigger = false;
 alarm[0] = 1;

@@ -32,7 +32,7 @@ if ((canTalkTo) && (mouse_over_me(clickRadius)) && (!global.inDialogue)){
 					scr_setPlayerFacingAnim(facing);
 				}
 	
-				instance_create_layer(x, y, "Important", obj_chatterbox, {
+				instance_create_layer(x, y, MAINSCR, obj_chatterbox, {
 					dialogueName: dialogue
 				});
 			}

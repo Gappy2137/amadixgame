@@ -1,0 +1,4 @@
+
+if (weatherTrigger){
+	weatherTrigger = false;	
+}

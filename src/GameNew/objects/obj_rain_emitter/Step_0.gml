@@ -16,3 +16,5 @@ part_type_direction(part_rain, 270 + _final_dir, 270 + _final_dir, 0, 0);
 part_type_orientation(part_rain, _final_dir, _final_dir, 0, 0, 0);
 
 part_emitter_region(rain, emitter_rain, cam_x - 16, cam_x + view_width + 16, cam_y - 16, cam_y + view_height + 16, ps_shape_rectangle, ps_distr_linear);
+
+part_emitter_region(rainDrop, emitter_rainDrop, cam_x - 4, cam_x + view_width + 4, cam_y - 4, cam_y + view_height + 4, ps_shape_rectangle, ps_distr_linear);

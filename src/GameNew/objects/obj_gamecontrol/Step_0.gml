@@ -1,6 +1,6 @@
 //global.daycycletime += 0.00001;
-if global.daycycletime < 0{global.daycycletime = 1;}
-if global.daycycletime > 1{global.daycycletime = 0;}
+if (global.daycycletime < 0){global.daycycletime = 1;}
+if (global.daycycletime > 1){global.daycycletime = 0;}
 global.daycycletime = clamp(global.daycycletime, 0, 1);
 
 var time = global.daycycletime;
@@ -22,7 +22,7 @@ if (global.alcoholPoisoning > global.maxAlcoholPoisoning){
 
 if (global.alcoholPoisoning >= 10){
 	if (!instance_exists(obj_drunkscreen)){
-		instance_create_layer(x, y, "Important", obj_drunkscreen);	
+		instance_create_layer(x, y, MAINSCR, obj_drunkscreen);	
 	}
 }else{
 	if (instance_exists(obj_drunkscreen)){

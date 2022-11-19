@@ -1,5 +1,6 @@
 if (keyboard_check_pressed(ord("M"))) && (weatherchange == weatherChangeAmount) && (global.debugMode) && (!global.inConsole){
 	wch = true;
+	weatherTrigger = true;
 	global.prevweather = global.weather;
 	global.weather++;
 	if global.weather > 4{
@@ -16,9 +17,6 @@ if (wch){
 
 global.windStr = clamp(global.windStr, 0, 100);
 
-if (keyboard_check(ord("J"))) && (global.debugMode) && (!global.inConsole){
-	global.windStr--;	
-}
-if (keyboard_check(ord("K"))) && (global.debugMode) && (!global.inConsole){
-	global.windStr++;	
+if (weatherTrigger){
+	weather_update();
 }

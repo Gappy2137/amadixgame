@@ -1,10 +1,10 @@
 
 if (doTransition){
 	if (room != newRoom){
-		alpha += 0.08;
+		alpha += 0.1;
 		if (alpha >= 1){room_goto(newRoom);}
 	} else {
-		alpha -= 0.08;
+		alpha -= 0.05;
 		if (alpha <= 0){doTransition = false;}
 	}
 	
