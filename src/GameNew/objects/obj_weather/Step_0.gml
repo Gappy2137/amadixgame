@@ -7,6 +7,15 @@ if (keyboard_check_pressed(ord("M"))) && (weatherchange == weatherChangeAmount) 
 		global.weather = 0;	
 	}
 }
+if (keyboard_check_pressed(ord("N"))) && (weatherchange == weatherChangeAmount) && (global.debugMode) && (!global.inConsole){
+	wch = true;
+	weatherTrigger = true;
+	global.prevweather = global.weather;
+	global.weather--;
+	if global.weather < 0{
+		global.weather = 4;	
+	}
+}
 if (wch){
 	weatherchange--;
 	if (weatherchange <= 0){

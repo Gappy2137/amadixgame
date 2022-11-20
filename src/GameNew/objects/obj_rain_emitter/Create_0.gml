@@ -10,6 +10,10 @@ scaleMax = 2;
 speedMin = 5;
 speedMax = 8;
 
+
+changeTrigger = false;
+newIntensity = 0;
+
 rainDrop = part_system_create();
 part_system_depth(rainDrop, -1000000);
 

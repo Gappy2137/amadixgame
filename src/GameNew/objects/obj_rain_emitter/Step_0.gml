@@ -17,4 +17,20 @@ part_type_orientation(part_rain, _final_dir, _final_dir, 0, 0, 0);
 
 part_emitter_region(rain, emitter_rain, cam_x - 16, cam_x + view_width + 16, cam_y - 16, cam_y + view_height + 16, ps_shape_rectangle, ps_distr_linear);
 
-part_emitter_region(rainDrop, emitter_rainDrop, cam_x - 4, cam_x + view_width + 4, cam_y - 4, cam_y + view_height + 4, ps_shape_rectangle, ps_distr_linear);
+if (global.weather != weather.drizzle){
+	part_emitter_region(rainDrop, emitter_rainDrop, cam_x - 4, cam_x + view_width + 4, cam_y - 4, cam_y + view_height + 4, ps_shape_rectangle, ps_distr_linear);
+}
+
+
+if (changeTrigger){
+	if inrange(intensity, newIntensity - 0.9, newIntensity + 0.9, true){
+		changeTrigger = false;
+		intensity = newIntensity;
+	}else{
+		intensity = lerp(intensity, newIntensity, 0.01);	
+	}
+}
+
+if (intensity <= 0){
+	instance_destroy();
+}

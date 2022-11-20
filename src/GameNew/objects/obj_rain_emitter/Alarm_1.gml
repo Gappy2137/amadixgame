@@ -1,3 +1,2 @@
-part_emitter_burst(rainDrop, emitter_rainDrop, part_rainDrop, round(intensity) );
+part_emitter_burst(rainDrop, emitter_rainDrop, part_rainDrop, round(abs(intensity)) );
 
-alarm[1] = irandom_range(1, 5);

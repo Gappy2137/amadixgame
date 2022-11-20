@@ -9,3 +9,5 @@ alpha = 1.0;
 
 fogSpr = spr_fog_fx;
 fogSub = 0;
+
+fade = false;
