@@ -4,10 +4,12 @@ edgeVal = 1.6;
 edge = edgeVal;
 edge2 = edge + 0.05;
 edgeTo = 1;
-vSprite = spr_vignette_fx;
+vSprite = spr_none;
+vNewSprite = spr_none;
 
 fadeIn = true;
 fadeOut = false;
+change = false;
 
 ready = false;
 

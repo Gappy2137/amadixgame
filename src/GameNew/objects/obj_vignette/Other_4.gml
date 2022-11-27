@@ -1,3 +1,6 @@
+edge = edgeTo;
+alarm[0] = 1;
+/*
 ready = false;
 edge = edgeTo;
 _fx_tint = fx_create("_filter_vignette");

@@ -56,27 +56,23 @@ function weather_update(){
 					}
 				}
 
-				if (!instance_exists(obj_vignette)){
-					var _VIG = instance_create_layer(0, 0, MAINSCR, obj_vignette);	
-					with (_VIG){
+				with (obj_vignette){
 			
-						edge = 1.6;
-						edge2 = edge + 0.05;
-						edgeTo = 1;
-						vSprite = spr_fog_fx;
-			
+					edge = 1.6;
+					edge2 = edge + 0.05;
+					edgeTo = 1;
+					vNewSprite = spr_fog_fx;
+					if (vNewSprite != vSprite){
+						fadeIn = false;
+						fadeOut = false;
+						change = true;
+					}else{
+						fadeIn = false;
+						fadeOut = false;
+						change = false;
 					}
-				}else{
-					with (obj_vignette){
 			
-						edge = 1.6;
-						edge2 = edge + 0.05;
-						edgeTo = 1;
-						vSprite = spr_fog_fx;
-			
-					}
 				}
-
 
 				if (!instance_exists(obj_fog_fx)){
 					var _FOG = instance_create_layer(0, 0, MAINSCR, obj_fog_fx);	
@@ -154,25 +150,21 @@ function weather_update(){
 			
 					}
 				}
-
-				if (!instance_exists(obj_vignette)){
-					var _VIG = instance_create_layer(0, 0, MAINSCR, obj_vignette);	
-					with (_VIG){
+				
+				with (obj_vignette){
 			
-						edge = 1.6;
-						edge2 = edge + 0.05;
-						edgeTo = 1;
-						vSprite = spr_fog_fx;
-			
-					}
-				}else{
-					with (obj_vignette){
-			
-						edge = 1.6;
-						edge2 = edge + 0.05;
-						edgeTo = 1;
-						vSprite = spr_fog_fx;
-			
+					edge = 1.6;
+					edge2 = edge + 0.05;
+					edgeTo = 1;
+					vNewSprite = spr_fog_fx;
+					if (vNewSprite != vSprite){
+						fadeIn = false;
+						fadeOut = false;
+						change = true;
+					}else{
+						fadeIn = false;
+						fadeOut = false;
+						change = false;
 					}
 				}
 
@@ -235,14 +227,12 @@ function weather_update(){
 			
 		}
 		
-		if (instance_exists(obj_vignette)){
-			
-			with (obj_vignette){
+		with (obj_vignette){
 				
-				fadeOut = true;
+			fadeIn = false;
+			fadeOut = true;
+			change = false;
 				
-			}
-			
 		}
 		
 		if (instance_exists(obj_fog_fx)){
