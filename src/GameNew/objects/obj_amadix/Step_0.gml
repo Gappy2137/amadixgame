@@ -75,6 +75,8 @@ if (hat_index != spr_item_none){
 // Chodzenie z bronia biala
 scr_player_melee_walk();
 
+
+
 // Crafting stations
 
 var craftCollision = instance_place(x, y, obj_crafting_station);
@@ -84,6 +86,21 @@ if (craftCollision){
 }else{
 	crafting_station = craftingStation.none;
 }
+
+// Water ripples
+if (state == player_state.wading)
+|| (state == player_state.wading_idle)
+|| (state == player_state.swimming)
+|| (state == player_state.swimming_idle){
+	
+	if inrange(obj_gamecontrol.refTimer, 0.95, 1, false){
+		if (chance(50)){
+			instance_create_layer(x + 31, y, "Instances", obj_water_ripple);
+		}
+	}
+	
+}
+
 
 // Cienie
 if (running != 2){

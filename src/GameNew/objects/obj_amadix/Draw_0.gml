@@ -9,6 +9,7 @@ if (global.debugBbox){
 }
 
 if (playerVisible){
+	
 	scr_draw_player(round_to4(x), round_to4(y), round_to4(zaxis));
 	
 	if (state == player_state.wading) || (state == player_state.wading_idle){
