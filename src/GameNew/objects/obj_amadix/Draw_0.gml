@@ -13,12 +13,12 @@ if (playerVisible){
 	scr_draw_player(round_to4(x), round_to4(y), round_to4(zaxis));
 	
 	if (state == player_state.wading) || (state == player_state.wading_idle){
-		draw_sprite_ext(spr_entity_water_shallow, (obj_gamecontrol.refTimer * 4), x, y + sprite_height, 1, 1, 0, c_white, .9);
+		draw_sprite_ext(spr_entity_water_shallow, (obj_gamecontrol.refTimer * 4), x, y + sprite_height, 1, 1, 0, c_white, .5);
 		draw_sprite_ext(spr_entity_wateredge, 0, x, y + sprite_height, 1, 1, 0, c_white, 1);
 	}
 	
 	if (state == player_state.swimming) || (state == player_state.swimming_idle){
-		draw_sprite_ext(spr_entity_water, (obj_gamecontrol.refTimer * 4), x, y + sprite_height, 1, 1, 0, c_white, .9);
+		draw_sprite_ext(spr_entity_water, (obj_gamecontrol.refTimer * 4), x, y + sprite_height, 1, 1, 0, c_white, .5);
 		draw_sprite_ext(spr_entity_wateredge, 1, x, y + sprite_height, 1, 1, 0, c_white, 1);
 	}
 	

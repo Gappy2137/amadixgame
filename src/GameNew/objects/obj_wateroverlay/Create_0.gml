@@ -6,7 +6,6 @@ tilesurf = -1;
 
 refSurf = -1;
 
-rippleSurface = -1;
 
 xx = 0;
 yy = 0;

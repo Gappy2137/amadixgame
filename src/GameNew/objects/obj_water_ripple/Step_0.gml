@@ -1,8 +1,7 @@
-scale += 0.05;
+scale += 0.015;
 
-var water = instance_place(x, y, obj_shallowwater16);
 
-if (scale >= 1) || (!water){
+if (scale >= 0.5){
 	alpha -= 0.01;	
 }
 

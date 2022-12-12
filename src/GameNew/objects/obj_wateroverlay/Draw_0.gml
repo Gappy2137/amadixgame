@@ -13,9 +13,8 @@ if !surface_exists(tilesurf){
 	tilesurf = surface_create(room_width * wratio, room_height * hratio);	
 }
 
-if !surface_exists(rippleSurface){
-	rippleSurface = surface_create(room_width * wratio, room_height * hratio);	
-}
+
+
 
 var tiles = layer_tilemap_get_id(layer_get_id("Water"));
 
@@ -34,6 +33,7 @@ draw_surface_ext(tilesurf, 0, 0, 1 / wratio, 1 / hratio, 0, c_white, 1);
 gpu_set_colorwriteenable(1, 1, 1, 0);
 
 draw_sprite_tiled_ext(spr_water_overlay, 0, xx * wratio, yy * hratio, wratio, hratio, c_white, 0.2);
+
 
 
 

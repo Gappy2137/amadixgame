@@ -5,10 +5,13 @@ function drawPlayerNormal(xx, yy, zz, cutoff) {
 	
 		//Dlonie
 		draw_sprite_part_ext(hands2_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
+		if (cutoff)
+			draw_sprite_part_ext(hands2_index,anim_frame,0,sprite_yoffset+zz,sprite_width,zz,xx-sprite_xoffset,yy+zz*2,image_xscale,image_yscale,c_white,image_alpha/8);
 
 		//Bron biala
 		if ( (facing == index_facing.left)) {
-			draw_sprite_general(melee_index,0,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset+iteminhandX,yy+zz+iteminhandY,image_xscale,image_yscale,iteminhandAngle,c_white,c_white,c_white,c_white,image_alpha);	
+			if (!cutoff)
+				draw_sprite_general(melee_index,0,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset+iteminhandX,yy+zz+iteminhandY,image_xscale,image_yscale,iteminhandAngle,c_white,c_white,c_white,c_white,image_alpha);	
 		}
 	
 		//Glowa
@@ -16,24 +19,34 @@ function drawPlayerNormal(xx, yy, zz, cutoff) {
 
 		//Gorne ubranie
 		draw_sprite_part_ext(torso_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
-
+		if (cutoff)
+			draw_sprite_part_ext(torso_index,anim_frame,0,sprite_yoffset+zz,sprite_width,zz,xx-sprite_xoffset,yy+zz*2,image_xscale,image_yscale,c_white,image_alpha/8);
+			
 		//Spodnie
 		draw_sprite_part_ext(legs_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
-	
+		if (cutoff)
+			draw_sprite_part_ext(legs_index,anim_frame,0,sprite_yoffset+zz,sprite_width,zz,xx-sprite_xoffset,yy+zz*2,image_xscale,image_yscale,c_white,image_alpha/8);
+			
 		//Buty
 		draw_sprite_part_ext(boots_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
-		
+		if (cutoff)
+			draw_sprite_part_ext(boots_index,anim_frame,0,sprite_yoffset+zz,sprite_width,zz,xx-sprite_xoffset,yy+zz*2,image_xscale,image_yscale,c_white,image_alpha/8);
+			
 		//Bron biala
 		if ( (facing == index_facing.right)) {
-			draw_sprite_general(melee_index,0,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset+iteminhandX,yy+zz+iteminhandY,image_xscale,image_yscale,iteminhandAngle,c_white,c_white,c_white,c_white,image_alpha);	
+			if (!cutoff)
+				draw_sprite_general(melee_index,0,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset+iteminhandX,yy+zz+iteminhandY,image_xscale,image_yscale,iteminhandAngle,c_white,c_white,c_white,c_white,image_alpha);	
 		}
 		
 		//Dlonie
 		draw_sprite_part_ext(hands_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
-		
+		if (cutoff)
+			draw_sprite_part_ext(hands_index,anim_frame,0,sprite_yoffset+zz,sprite_width,zz,xx-sprite_xoffset,yy+zz*2,image_xscale,image_yscale,c_white,image_alpha/8);
+			
 		//Bron biala
 		if ( (facing == index_facing.up) || (facing == index_facing.down) ) {
-			draw_sprite_part_ext(melee_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);	
+			if (!cutoff)
+				draw_sprite_part_ext(melee_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);	
 		}
 		
 		//Czapka

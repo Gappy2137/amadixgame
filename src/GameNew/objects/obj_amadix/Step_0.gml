@@ -93,11 +93,13 @@ if (state == player_state.wading)
 || (state == player_state.swimming)
 || (state == player_state.swimming_idle){
 	
-	if inrange(obj_gamecontrol.refTimer, 0.95, 1, false){
-		if (chance(50)){
-			instance_create_layer(x + 31, y, "Instances", obj_water_ripple);
+	if (obj_gamecontrol.refTimer == 0.3)
+	|| (obj_gamecontrol.refTimer == 0.9){
+		if (chance(80)){
+			instance_create_layer(x, y + 31, "Instances", obj_water_ripple);
 		}
 	}
+
 	
 }
 
