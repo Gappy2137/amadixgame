@@ -1,7 +1,7 @@
 
 
-ideal_width = 480;
-ideal_height = 270;
+ideal_width = GAMEWIDTH;
+ideal_height = GAMEHEIGHT;
 display_width = display_get_width();
 display_height = display_get_height();
 
