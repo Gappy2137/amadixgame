@@ -1,5 +1,5 @@
-/*
-depth = 100000000;
+
+
 draw_text(128, 128, edge);
 draw_text(128, 128 + 8, fadeIn);
 draw_text(128, 128 + 16, fadeOut);

@@ -1,5 +1,19 @@
-edge = edgeTo;
-alarm[0] = 1;
+if (global.weather != weather.drizzle)
+&& (global.weather != weather.rain)
+&& (global.weather != weather.heavy_rain)
+&& (global.weather != weather.storm)
+&& (global.weather != weather.storm_incoming)
+&& (global.weather != weather.heavy_storm){
+	edge = 1.6;
+	edgeTo = 1.6;
+}else{
+	edge = edgeTo;	
+	
+	alarm[0] = 1;
+}
+
+
+
 /*
 ready = false;
 edge = edgeTo;

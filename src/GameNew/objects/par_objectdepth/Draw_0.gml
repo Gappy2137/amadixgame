@@ -60,4 +60,6 @@ if (global.debugBbox){
 
 //draw_text(x,y+16,shadowAlpha * obj_shadows.shadowAlpha);
 
+//draw_text(x,y+16,depth);
+
 event_inherited();

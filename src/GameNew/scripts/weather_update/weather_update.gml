@@ -58,10 +58,9 @@ function weather_update(){
 
 				with (obj_vignette){
 			
-					edge = 1.6;
-					edge2 = edge + 0.05;
-					edgeTo = 1;
-					vNewSprite = spr_fog_fx;
+					//edge = 1.6;
+
+					
 					if (vNewSprite != vSprite){
 						fadeIn = false;
 						fadeOut = false;
@@ -71,6 +70,9 @@ function weather_update(){
 						fadeOut = false;
 						change = false;
 					}
+					vNewSprite = spr_fog_fx;
+					edge2 = edge + 0.05;
+					edgeTo = 1;
 			
 				}
 
@@ -153,10 +155,9 @@ function weather_update(){
 				
 				with (obj_vignette){
 			
-					edge = 1.6;
-					edge2 = edge + 0.05;
-					edgeTo = 1;
-					vNewSprite = spr_fog_fx;
+					//edge = 1.6;
+
+					
 					if (vNewSprite != vSprite){
 						fadeIn = false;
 						fadeOut = false;
@@ -166,6 +167,9 @@ function weather_update(){
 						fadeOut = false;
 						change = false;
 					}
+					vNewSprite = spr_fog_fx;
+					edge2 = edge + 0.05;
+					edgeTo = 1;
 				}
 
 
