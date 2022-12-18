@@ -1,12 +1,17 @@
 function scr_draw_player(px, py, pz) {
+	
+var flow = sin(obj_gamecontrol.refTimerPi);
+	
 function drawPlayerNormal(xx, yy, zz, cutoff) {
+	
+	var flow = 0;
 	
 	//----------------------------------------------------------------------------------------------------------------
 	
 		//Dlonie
 		draw_sprite_part_ext(hands2_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
 		if (cutoff)
-			draw_sprite_part_ext(hands2_index,anim_frame,0,sprite_yoffset+zz,sprite_width,zz,xx-sprite_xoffset,yy+zz*2,image_xscale,image_yscale,c_white,image_alpha/8);
+			draw_sprite_part_ext(hands2_index,anim_frame,0,sprite_yoffset+zz+(flow),sprite_width,zz+(flow),xx-sprite_xoffset,yy+(flow*2)+(zz*2),image_xscale,image_yscale,c_white,image_alpha/8);
 
 		//Bron biala
 		if ( (facing == index_facing.left)) {
@@ -20,17 +25,17 @@ function drawPlayerNormal(xx, yy, zz, cutoff) {
 		//Gorne ubranie
 		draw_sprite_part_ext(torso_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
 		if (cutoff)
-			draw_sprite_part_ext(torso_index,anim_frame,0,sprite_yoffset+zz,sprite_width,zz,xx-sprite_xoffset,yy+zz*2,image_xscale,image_yscale,c_white,image_alpha/8);
+			draw_sprite_part_ext(torso_index,anim_frame,0,sprite_yoffset+zz+(flow),sprite_width,zz+(flow),xx-sprite_xoffset,yy+(flow*2)+(zz*2),image_xscale,image_yscale,c_white,image_alpha/8);
 			
 		//Spodnie
 		draw_sprite_part_ext(legs_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
 		if (cutoff)
-			draw_sprite_part_ext(legs_index,anim_frame,0,sprite_yoffset+zz,sprite_width,zz,xx-sprite_xoffset,yy+zz*2,image_xscale,image_yscale,c_white,image_alpha/8);
+			draw_sprite_part_ext(legs_index,anim_frame,0,sprite_yoffset+zz+(flow),sprite_width,zz+(flow),xx-sprite_xoffset,yy+(flow*2)+(zz*2),image_xscale,image_yscale,c_white,image_alpha/8);
 			
 		//Buty
 		draw_sprite_part_ext(boots_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
 		if (cutoff)
-			draw_sprite_part_ext(boots_index,anim_frame,0,sprite_yoffset+zz,sprite_width,zz,xx-sprite_xoffset,yy+zz*2,image_xscale,image_yscale,c_white,image_alpha/8);
+			draw_sprite_part_ext(boots_index,anim_frame,0,sprite_yoffset+zz+(flow),sprite_width,zz+(flow),xx-sprite_xoffset,yy+(flow*2)+(zz*2),image_xscale,image_yscale,c_white,image_alpha/8);
 			
 		//Bron biala
 		if ( (facing == index_facing.right)) {
@@ -41,7 +46,7 @@ function drawPlayerNormal(xx, yy, zz, cutoff) {
 		//Dlonie
 		draw_sprite_part_ext(hands_index,anim_frame,0,sprite_yoffset,sprite_width,sprite_height-zz,xx-sprite_xoffset,yy+zz,image_xscale,image_yscale,c_white,image_alpha);
 		if (cutoff)
-			draw_sprite_part_ext(hands_index,anim_frame,0,sprite_yoffset+zz,sprite_width,zz,xx-sprite_xoffset,yy+zz*2,image_xscale,image_yscale,c_white,image_alpha/8);
+			draw_sprite_part_ext(hands_index,anim_frame,0,sprite_yoffset+zz+(flow),sprite_width,zz+(flow),xx-sprite_xoffset,yy+(flow*2)+(zz*2),image_xscale,image_yscale,c_white,image_alpha/8);
 			
 		//Bron biala
 		if ( (facing == index_facing.up) || (facing == index_facing.down) ) {
@@ -352,7 +357,7 @@ function drawPlayerHandgun(xx, yy, zz, cutoff) {
 }
 
 
-
+	
 
 	switch(actionstate){
 		case player_state_action.none:
@@ -370,10 +375,10 @@ function drawPlayerHandgun(xx, yy, zz, cutoff) {
 					drawPlayerNormal(px, py, pz + 4, true);
 				break;
 				case player_state.swimming_idle:
-					drawPlayerNormal(px, py, pz + 16, true);
+					drawPlayerNormal(px, py, pz + 16 + flow, true);
 				break;
 				case player_state.swimming:
-					drawPlayerNormal(px, py, pz + 16, true);
+					drawPlayerNormal(px, py, pz + 16 + flow, true);
 				break;
 				default:
 					drawPlayerNormal(px, py, pz, false);

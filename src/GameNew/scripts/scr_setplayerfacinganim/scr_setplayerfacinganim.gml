@@ -1,6 +1,74 @@
 ///@description scr_setPlayerFacingAnim(facing)
 function scr_setPlayerFacingAnim(facing){
 	
+	
+/*
+switch(actionstate){
+	//--------------------------------------------none
+	case player_state_action.none:
+	
+		switch(state){
+			
+			//----------------------------
+			case player_state.idle:
+			case player_state.moving:
+			case player_state.wading_idle:
+			case player_state.wading:
+				
+				#region Glowa
+				
+				#endregion
+				
+			break;
+			//----------------------------
+			
+			//----------------------------
+			case player_state.swimming_idle:
+				
+			break;
+			//----------------------------
+			
+			//----------------------------
+			case player_state.swimming:
+				
+			break;
+			//----------------------------
+		}
+	
+	break;
+	//--------------------------------------------
+	
+	//--------------------------------------------eating
+	case player_state_action.eating:
+	
+	break;
+	//--------------------------------------------
+	
+	//--------------------------------------------drinking
+	case player_state_action.drinking:
+	
+	break;
+	//--------------------------------------------
+	
+	//--------------------------------------------pickup
+	case player_state_action.pickup:
+	
+	break;
+	//--------------------------------------------
+	
+	//--------------------------------------------melee
+	case player_state_action.attacking_melee:
+	
+	break;
+	//--------------------------------------------
+	
+	//--------------------------------------------gun
+	case player_state_action.handgun:
+	
+	break;
+	//--------------------------------------------
+}
+*/
 
 #region Glowa
 	if (skid){
@@ -63,37 +131,137 @@ function scr_setPlayerFacingAnim(facing){
 						}
 					break;
 					case player_state_action.none:
-						switch(facing){
-							case index_facing.right:
-								head_index = spr_amadix_head_r;
+						
+						switch(state){
+							case player_state.idle:
+							case player_state.moving:
+							case player_state.wading_idle:
+							case player_state.wading:
+							
+								switch(facing){
+									case index_facing.right:
+										head_index = spr_amadix_head_r;
+									break;
+									case index_facing.up:
+										head_index = spr_amadix_head_u;
+									break;
+									case index_facing.left:
+										head_index = spr_amadix_head_l;
+									break;
+									case index_facing.down:
+										head_index = spr_amadix_head_d;
+									break;
+								}
+							
 							break;
-							case index_facing.up:
-								head_index = spr_amadix_head_u;
+							
+							case player_state.swimming_idle:
+							
+								switch(facing){
+									case index_facing.right:
+										head_index = spr_amadix_head_swim_idle_r;
+									break;
+									case index_facing.up:
+										head_index = spr_amadix_head_swim_idle_u;
+									break;
+									case index_facing.left:
+										head_index = spr_amadix_head_swim_idle_l;
+									break;
+									case index_facing.down:
+										head_index = spr_amadix_head_swim_idle_d;
+									break;
+								}
+							
 							break;
-							case index_facing.left:
-								head_index = spr_amadix_head_l;
+							
+							case player_state.swimming:
+							
+								switch(facing){
+									case index_facing.right:
+										head_index = spr_amadix_head_swim_r;
+									break;
+									case index_facing.up:
+										head_index = spr_amadix_head_swim_u;
+									break;
+									case index_facing.left:
+										head_index = spr_amadix_head_swim_l;
+									break;
+									case index_facing.down:
+										head_index = spr_amadix_head_swim_d;
+									break;
+								}
+							
 							break;
-							case index_facing.down:
-								head_index = spr_amadix_head_d;
-							break;
+							
 						}
+						
 					break;
 				}
 			}else{
-				switch(facing){
-					case index_facing.right:
-						head_index = spr_amadix_head_run_r;
-					break;
-					case index_facing.up:
-						head_index = spr_amadix_head_run_u;
-					break;
-					case index_facing.left:
-						head_index = spr_amadix_head_run_l;
-					break;
-					case index_facing.down:
-						head_index = spr_amadix_head_run_d;
-					break;
-				}
+				
+						switch(state){
+							case player_state.idle:
+							case player_state.moving:
+							case player_state.wading_idle:
+							case player_state.wading:
+							
+								switch(facing){
+									case index_facing.right:
+										head_index = spr_amadix_head_run_r;
+									break;
+									case index_facing.up:
+										head_index = spr_amadix_head_run_u;
+									break;
+									case index_facing.left:
+										head_index = spr_amadix_head_run_l;
+									break;
+									case index_facing.down:
+										head_index = spr_amadix_head_run_d;
+									break;
+								}
+							
+							break;
+							
+							case player_state.swimming_idle:
+							
+								switch(facing){
+									case index_facing.right:
+										head_index = spr_amadix_head_swim_idle_r;
+									break;
+									case index_facing.up:
+										head_index = spr_amadix_head_swim_idle_u;
+									break;
+									case index_facing.left:
+										head_index = spr_amadix_head_swim_idle_l;
+									break;
+									case index_facing.down:
+										head_index = spr_amadix_head_swim_idle_d;
+									break;
+								}
+							
+							break;
+							
+							case player_state.swimming:
+							
+								switch(facing){
+									case index_facing.right:
+										head_index = spr_amadix_head_swim_r;
+									break;
+									case index_facing.up:
+										head_index = spr_amadix_head_swim_u;
+									break;
+									case index_facing.left:
+										head_index = spr_amadix_head_swim_l;
+									break;
+									case index_facing.down:
+										head_index = spr_amadix_head_swim_d;
+									break;
+								}
+							
+							break;
+							
+						}
+				
 			}
 }
 #endregion
@@ -405,24 +573,79 @@ function scr_setPlayerFacingAnim(facing){
 						}
 					break;
 					case player_state_action.none:
-						switch(facing){
-							case index_facing.down:
-								hands_index = spr_amadix_hands_d;
-								hands2_index = spr_none;
+					
+					
+						switch(state){
+							case player_state.idle:
+							case player_state.moving:
+							case player_state.wading_idle:
+							case player_state.wading:
+							
+								switch(facing){
+									case index_facing.down:
+										hands_index = spr_amadix_hands_d;
+										hands2_index = spr_none;
+									break;
+									case index_facing.left:
+										hands_index = spr_amadix_hands_l;
+										hands2_index = spr_amadix_hands_l2;
+									break;
+									case index_facing.right:
+										hands_index = spr_amadix_hands_r;
+										hands2_index = spr_amadix_hands_r2;
+									break;
+									case index_facing.up:
+										hands_index = spr_amadix_hands_u;
+										hands2_index = spr_none;
+									break;
+								}
+							
 							break;
-							case index_facing.left:
-								hands_index = spr_amadix_hands_l;
-								hands2_index = spr_amadix_hands_l2;
+							
+							case player_state.swimming_idle:
+							
+								switch(facing){
+									case index_facing.down:
+										hands_index = spr_amadix_hands_swim_idle_d;
+										hands2_index = spr_none;
+									break;
+									case index_facing.left:
+										hands_index = spr_amadix_hands_swim_idle_l;
+										hands2_index = spr_none;
+									break;
+									case index_facing.right:
+										hands_index = spr_amadix_hands_swim_idle_r;
+										hands2_index = spr_none;
+									break;
+									case index_facing.up:
+										hands_index = spr_amadix_hands_swim_idle_u;
+										hands2_index = spr_none;
+									break;
+								}
+							
 							break;
-							case index_facing.right:
-								hands_index = spr_amadix_hands_r;
-								hands2_index = spr_amadix_hands_r2;
+							
+							case player_state.swimming:
+							
+								switch(facing){
+									case index_facing.right:
+										hands_index = spr_amadix_hands_swim_r;
+									break;
+									case index_facing.up:
+										hands_index = spr_amadix_hands_swim_u;
+									break;
+									case index_facing.left:
+										hands_index = spr_amadix_hands_swim_l;
+									break;
+									case index_facing.down:
+										hands_index = spr_amadix_hands_swim_d;
+									break;
+								}
+							
 							break;
-							case index_facing.up:
-								hands_index = spr_amadix_hands_u;
-								hands2_index = spr_none;
-							break;
+							
 						}
+					
 					break;
 				}
 			}else{
@@ -462,20 +685,83 @@ function scr_setPlayerFacingAnim(facing){
 						break;
 					}
 				}else{
-					switch(facing){
-						case index_facing.down:
-							hands_index = spr_amadix_hands_run_d;
-						break;
-						case index_facing.left:
-							hands_index = spr_amadix_hands_run_l;
-						break;
-						case index_facing.right:
-							hands_index = spr_amadix_hands_run_r;
-						break;
-						case index_facing.up:
-							hands_index = spr_amadix_hands_run_u;
-						break;
-					}
+					
+						switch(state){
+							case player_state.idle:
+							case player_state.moving:
+							case player_state.wading_idle:
+							case player_state.wading:
+							
+								switch(facing){
+									case index_facing.down:
+										hands_index = spr_amadix_hands_run_d;
+										hands2_index = spr_none;
+									break;
+									case index_facing.left:
+										hands_index = spr_amadix_hands_run_l;
+										hands2_index = spr_none;
+									break;
+									case index_facing.right:
+										hands_index = spr_amadix_hands_run_r;
+										hands2_index = spr_none;
+									break;
+									case index_facing.up:
+										hands_index = spr_amadix_hands_run_u;
+										hands2_index = spr_none;
+									break;
+								}
+							
+							break;
+							
+							case player_state.swimming_idle:
+							
+								switch(facing){
+									case index_facing.down:
+										hands_index = spr_amadix_hands_swim_idle_d;
+										hands2_index = spr_none;
+									break;
+									case index_facing.left:
+										hands_index = spr_amadix_hands_swim_idle_l;
+										hands2_index = spr_none;
+									break;
+									case index_facing.right:
+										hands_index = spr_amadix_hands_swim_idle_r;
+										hands2_index = spr_none;
+									break;
+									case index_facing.up:
+										hands_index = spr_amadix_hands_swim_idle_u;
+										hands2_index = spr_none;
+									break;
+								}
+							
+							break;
+							
+							case player_state.swimming:
+							
+								switch(facing){
+									case index_facing.down:
+										hands_index = spr_amadix_hands_swim_d;
+										hands2_index = spr_none;
+									break;
+									case index_facing.left:
+										hands_index = spr_amadix_hands_swim_l;
+										hands2_index = spr_none;
+									break;
+									case index_facing.right:
+										hands_index = spr_amadix_hands_swim_r;
+										hands2_index = spr_none;
+									break;
+									case index_facing.up:
+										hands_index = spr_amadix_hands_swim_u;
+										hands2_index = spr_none;
+									break;
+								}
+							
+							break;
+							
+						}
+					
+
 				}
 			}
 		}
@@ -1245,16 +1531,16 @@ switch(global.playerTorso){
 							case player_state.swimming:
 									switch(facing){
 										case index_facing.down:
-											torso_index = spr_amadix_newTC_d;
+											torso_index = spr_amadix_newTC_swim_d;
 										break;
 										case index_facing.left:
-											torso_index = spr_amadix_newTC_l;
+											torso_index = spr_amadix_newTC_swim_l;
 										break;
 										case index_facing.right:
-											torso_index = spr_amadix_newTC_r;
+											torso_index = spr_amadix_newTC_swim_r;
 										break;
 										case index_facing.up:
-											torso_index = spr_amadix_newTC_u;
+											torso_index = spr_amadix_newTC_swim_u;
 										break;
 									}
 							break;
@@ -1263,16 +1549,16 @@ switch(global.playerTorso){
 							case player_state.swimming_idle:
 									switch(facing){
 										case index_facing.down:
-											torso_index = spr_amadix_newTC_d;
+											torso_index = spr_amadix_newTC_swim_idle_d;
 										break;
 										case index_facing.left:
-											torso_index = spr_amadix_newTC_l;
+											torso_index = spr_amadix_newTC_swim_idle_l;
 										break;
 										case index_facing.right:
-											torso_index = spr_amadix_newTC_r;
+											torso_index = spr_amadix_newTC_swim_idle_r;
 										break;
 										case index_facing.up:
-											torso_index = spr_amadix_newTC_u;
+											torso_index = spr_amadix_newTC_swim_idle_u;
 										break;
 									}
 							break;
@@ -1299,20 +1585,71 @@ switch(global.playerTorso){
 						break;
 					}
 				}else{
-					switch(facing){
-						case index_facing.down:
-							torso_index = spr_amadix_newTC_run_d;
-						break;
-						case index_facing.left:
-							torso_index = spr_amadix_newTC_run_l;
-						break;
-						case index_facing.right:
-							torso_index = spr_amadix_newTC_run_r;
-						break;
-						case index_facing.up:
-							torso_index = spr_amadix_newTC_run_u;
-						break;
-					}
+					
+						switch(state){
+							case player_state.idle:
+							case player_state.moving:
+							case player_state.wading_idle:
+							case player_state.wading:
+							
+								switch(facing){
+									case index_facing.down:
+										torso_index = spr_amadix_newTC_run_d;
+									break;
+									case index_facing.left:
+										torso_index = spr_amadix_newTC_run_l;
+									break;
+									case index_facing.right:
+										torso_index = spr_amadix_newTC_run_r;
+									break;
+									case index_facing.up:
+										torso_index = spr_amadix_newTC_run_u;
+									break;
+								}
+							
+							break;
+							
+							case player_state.swimming_idle:
+							
+								switch(facing){
+									case index_facing.down:
+										torso_index = spr_amadix_newTC_swim_idle_d;
+									break;
+									case index_facing.left:
+										torso_index = spr_amadix_newTC_swim_idle_l;
+									break;
+									case index_facing.right:
+										torso_index = spr_amadix_newTC_swim_idle_r;
+									break;
+									case index_facing.up:
+										torso_index = spr_amadix_newTC_swim_idle_u;
+									break;
+								}
+							
+							break;
+							
+							case player_state.swimming:
+							
+								switch(facing){
+									case index_facing.down:
+										torso_index = spr_amadix_newTC_swim_d;
+									break;
+									case index_facing.left:
+										torso_index = spr_amadix_newTC_swim_l;
+									break;
+									case index_facing.right:
+										torso_index = spr_amadix_newTC_swim_r;
+									break;
+									case index_facing.up:
+										torso_index = spr_amadix_newTC_swim_u;
+									break;
+								}
+							
+							break;
+							
+						}
+					
+
 				}
 			}
 		}
@@ -1497,7 +1834,6 @@ switch(global.playerLegs){
 		if (skid){
 			legs_index = spr_amadix_jeansL_skid;	
 		}else{
-			if (running != 2){
 				switch(actionstate){
 					//eating--------------------------------------------------------
 					case player_state_action.eating:
@@ -1534,16 +1870,32 @@ switch(global.playerLegs){
 					case player_state_action.handgun:
 						switch(facing){
 							case index_facing.down:
-								legs_index = spr_amadix_jeansL_gun_d;
+								if (running != 2){
+									legs_index = spr_amadix_jeansL_gun_d;
+								}else{
+									legs_index = spr_amadix_jeansL_run_gun_d;
+								}
 							break;
 							case index_facing.left:
-								legs_index = spr_amadix_jeansL_gun_l;
+								if (running != 2){
+									legs_index = spr_amadix_jeansL_gun_l;
+								}else{
+									legs_index = spr_amadix_jeansL_run_gun_l;
+								}
 							break;
 							case index_facing.right:
-								legs_index = spr_amadix_jeansL_gun_r;
+								if (running != 2){
+									legs_index = spr_amadix_jeansL_gun_r;
+								}else{
+									legs_index = spr_amadix_jeansL_run_gun_r;
+								}
 							break;
 							case index_facing.up:
-								legs_index = spr_amadix_jeansL_gun_u;
+								if (running != 2){
+									legs_index = spr_amadix_jeansL_gun_u;
+								}else{
+									legs_index = spr_amadix_jeansL_run_gun_u;
+								}
 							break;
 						}
 					break;
@@ -1663,16 +2015,16 @@ switch(global.playerLegs){
 							case player_state.swimming:
 									switch(facing){
 										case index_facing.down:
-											legs_index = spr_amadix_jeansL_d;
+											legs_index = spr_amadix_jeansL_swim_d;
 										break;
 										case index_facing.left:
-											legs_index = spr_amadix_jeansL_l;
+											legs_index = spr_amadix_jeansL_swim_l;
 										break;
 										case index_facing.right:
-											legs_index = spr_amadix_jeansL_r;
+											legs_index = spr_amadix_jeansL_swim_r;
 										break;
 										case index_facing.up:
-											legs_index = spr_amadix_jeansL_u;
+											legs_index = spr_amadix_jeansL_swim_u;
 										break;
 									}
 							break;
@@ -1681,16 +2033,16 @@ switch(global.playerLegs){
 							case player_state.swimming_idle:
 									switch(facing){
 										case index_facing.down:
-											legs_index = spr_amadix_jeansL_d;
+											legs_index = spr_amadix_jeansL_swim_idle_d;
 										break;
 										case index_facing.left:
-											legs_index = spr_amadix_jeansL_l;
+											legs_index = spr_amadix_jeansL_swim_idle_l;
 										break;
 										case index_facing.right:
-											legs_index = spr_amadix_jeansL_r;
+											legs_index = spr_amadix_jeansL_swim_idle_r;
 										break;
 										case index_facing.up:
-											legs_index = spr_amadix_jeansL_u;
+											legs_index = spr_amadix_jeansL_swim_idle_u;
 										break;
 									}
 							break;
@@ -1700,39 +2052,6 @@ switch(global.playerLegs){
 					//--------------------------------------------------------------
 				
 				}
-			}else{
-				if (actionstate == player_state_action.handgun){
-					switch(facing){
-						case index_facing.down:
-							legs_index = spr_amadix_jeansL_run_gun_d;
-						break;
-						case index_facing.left:
-							legs_index = spr_amadix_jeansL_run_gun_l;
-						break;
-						case index_facing.right:
-							legs_index = spr_amadix_jeansL_run_gun_r;
-						break;
-						case index_facing.up:
-							legs_index = spr_amadix_jeansL_run_gun_u;
-						break;
-					}
-				}else{
-					switch(facing){
-						case index_facing.down:
-							legs_index = spr_amadix_jeansL_run_d;
-						break;
-						case index_facing.left:
-							legs_index = spr_amadix_jeansL_run_l;
-						break;
-						case index_facing.right:
-							legs_index = spr_amadix_jeansL_run_r;
-						break;
-						case index_facing.up:
-							legs_index = spr_amadix_jeansL_run_u;
-						break;
-					}
-				}
-			}
 		}
 			
 	break;
@@ -1913,7 +2232,7 @@ switch(global.playerBoots){
 		if (skid){
 			boots_index = spr_amadix_newB_skid;	
 		}else{
-			if (running != 2){
+			
 				switch(actionstate){
 					//eating--------------------------------------------------------
 					case player_state_action.eating:
@@ -1950,16 +2269,32 @@ switch(global.playerBoots){
 					case player_state_action.handgun:
 						switch(facing){
 							case index_facing.down:
-								boots_index = spr_amadix_newB_gun_d;
+								if (running != 2){
+									boots_index = spr_amadix_newB_gun_d;
+								}else{
+									boots_index = spr_amadix_newB_run_d;
+								}
 							break;
 							case index_facing.left:
-								boots_index = spr_amadix_newB_gun_l;
+								if (running != 2){
+									boots_index = spr_amadix_newB_gun_l;
+								}else{
+									boots_index = spr_amadix_newB_run_l;
+								}
 							break;
 							case index_facing.right:
-								boots_index = spr_amadix_newB_gun_r;
+								if (running != 2){
+									boots_index = spr_amadix_newB_gun_r;
+								}else{
+									boots_index = spr_amadix_newB_run_r;
+								}
 							break;
 							case index_facing.up:
-								boots_index = spr_amadix_newB_gun_u;
+								if (running != 2){
+									boots_index = spr_amadix_newB_gun_u;
+								}else{
+									boots_index = spr_amadix_newB_run_u;
+								}
 							break;
 						}
 					break;
@@ -2079,16 +2414,16 @@ switch(global.playerBoots){
 							case player_state.swimming:
 									switch(facing){
 										case index_facing.down:
-											boots_index = spr_amadix_newB_d;
+											boots_index = spr_amadix_newB_swim_d;
 										break;
 										case index_facing.left:
-											boots_index = spr_amadix_newB_l;
+											boots_index = spr_amadix_newB_swim_l;
 										break;
 										case index_facing.right:
-											boots_index = spr_amadix_newB_r;
+											boots_index = spr_amadix_newB_swim_r;
 										break;
 										case index_facing.up:
-											boots_index = spr_amadix_newB_u;
+											boots_index = spr_amadix_newB_swim_u;
 										break;
 									}
 							break;
@@ -2097,16 +2432,16 @@ switch(global.playerBoots){
 							case player_state.swimming_idle:
 									switch(facing){
 										case index_facing.down:
-											boots_index = spr_amadix_newB_d;
+											boots_index = spr_amadix_newB_swim_idle_d;
 										break;
 										case index_facing.left:
-											boots_index = spr_amadix_newB_l;
+											boots_index = spr_amadix_newB_swim_idle_l;
 										break;
 										case index_facing.right:
-											boots_index = spr_amadix_newB_r;
+											boots_index = spr_amadix_newB_swim_idle_r;
 										break;
 										case index_facing.up:
-											boots_index = spr_amadix_newB_u;
+											boots_index = spr_amadix_newB_swim_idle_u;
 										break;
 									}
 							break;
@@ -2116,22 +2451,7 @@ switch(global.playerBoots){
 					//--------------------------------------------------------------
 				
 				}
-			}else{
-				switch(facing){
-					case index_facing.down:
-						boots_index = spr_amadix_newB_run_d;
-					break;
-					case index_facing.left:
-						boots_index = spr_amadix_newB_run_l;
-					break;
-					case index_facing.right:
-						boots_index = spr_amadix_newB_run_r;
-					break;
-					case index_facing.up:
-						boots_index = spr_amadix_newB_run_u;
-					break;
-				}
-			}
+			
 		}
 			
 	break;

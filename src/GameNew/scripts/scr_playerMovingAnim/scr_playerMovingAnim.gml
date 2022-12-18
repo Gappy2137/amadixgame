@@ -4,125 +4,120 @@ function scr_playerMovingAnim() {
 with(obj_amadix){
 	
 	if (!global.pause){
-	switch (actionstate){
-		case player_state_action.none:
-				anim_frame += anim_speed;
-				if anim_frame > anim_frame_num{
-					anim_frame = 0;
-				}
-			
-
-			
-		break;
-		case player_state_action.eating:
-				anim_frame_action += anim_speed_action;
-				if anim_frame_action > (anim_frame_action_num + .9){
-					anim_frame_action = anim_frame_action_num;
-				}
-		break;
-		case player_state_action.drinking:
-				anim_frame_action += anim_speed_action;
-				if anim_frame_action > (anim_frame_action_num + .9){
-					anim_frame_action = anim_frame_action_num;
-				}
-		break;
-		case player_state_action.attacking_melee:
-				anim_frame_action += anim_speed_action;
-				if anim_frame_action > (anim_frame_action_num + .9){
-					anim_frame_action = anim_frame_action_num;
-				}
-		break;
-		case player_state_action.pickup:
-				
-				if (pickupTrigger){
-					anim_speed_action = -0.2;
-					if (anim_frame_action <= 0){
-						anim_frame_action = 0;	
+		switch (actionstate){
+			case player_state_action.none:
+					anim_frame += anim_speed;
+					if anim_frame > anim_frame_num{
+						anim_frame = 0;
 					}
-				}else{
-					anim_speed_action = 0.2;
-				}
+			break;
+			case player_state_action.eating:
+					anim_frame_action += anim_speed_action;
+					if anim_frame_action > (anim_frame_action_num + .9){
+						anim_frame_action = anim_frame_action_num;
+					}
+			break;
+			case player_state_action.drinking:
+					anim_frame_action += anim_speed_action;
+					if anim_frame_action > (anim_frame_action_num + .9){
+						anim_frame_action = anim_frame_action_num;
+					}
+			break;
+			case player_state_action.attacking_melee:
+					anim_frame_action += anim_speed_action;
+					if anim_frame_action > (anim_frame_action_num + .9){
+						anim_frame_action = anim_frame_action_num;
+					}
+			break;
+			case player_state_action.pickup:
 				
-				anim_frame_action += anim_speed_action;
+					if (pickupTrigger){
+						anim_speed_action = -0.2;
+						if (anim_frame_action <= 0){
+							anim_frame_action = 0;	
+						}
+					}else{
+						anim_speed_action = 0.2;
+					}
 				
-				if anim_frame_action > (2.7){
-					pickupTrigger = true;
-				}
+					anim_frame_action += anim_speed_action;
 				
+					if anim_frame_action > (2.7){
+						pickupTrigger = true;
+					}
 				
-				
-		break;
-		case player_state_action.handgun:
-				anim_frame += anim_speed;
-				if anim_frame > anim_frame_num{
-					anim_frame = 0;
-				}
+			break;
+			case player_state_action.handgun:
+					anim_frame += anim_speed;
+					if anim_frame > anim_frame_num{
+						anim_frame = 0;
+					}
 			
-			//Update facing
-			if (running != 2){
-				if isLooking(index_facing.up){
-					facing = index_facing.up;	
-					scr_updatePlayerAnim();
-				}else
-				if isLooking(index_facing.left){
-					facing = index_facing.left;	
-					scr_updatePlayerAnim();
-				}else
-				if isLooking(index_facing.down){
-					facing = index_facing.down;	
-					scr_updatePlayerAnim();
-				}else{
-					facing = index_facing.right;	
-					scr_updatePlayerAnim();
-				}
-			}
-		
-			//Gun animation
-			if (instance_exists(obj_gun_logic)){
-				switch(obj_gun_logic.state){
-					case gunState.standby:
-						anim_frame_action = anim_frame;
-					break;
-					case gunState.shooting:
-						anim_speed_action = 0.5;
-						if (obj_gun_logic.ammoLoaded <= 0.9){
-							anim_frame_action_num = obj_gun_logic.animFramesShootingLast;
+					//Update facing
+					if (running != 2){
+						if isLooking(index_facing.up){
+							facing = index_facing.up;	
+							scr_updatePlayerAnim();
+						}else
+						if isLooking(index_facing.left){
+							facing = index_facing.left;	
+							scr_updatePlayerAnim();
+						}else
+						if isLooking(index_facing.down){
+							facing = index_facing.down;	
+							scr_updatePlayerAnim();
 						}else{
-							anim_frame_action_num = obj_gun_logic.animFramesShooting;	
+							facing = index_facing.right;	
+							scr_updatePlayerAnim();
 						}
-						anim_frame_action += anim_speed_action;	
-						if anim_frame_action >= (anim_frame_action_num + .9){
-							anim_frame_action = anim_frame_action_num + .9;
-							anim_speed_action = 0;
+					}
+		
+					//Gun animation
+					if (instance_exists(obj_gun_logic)){
+						switch(obj_gun_logic.state){
+							case gunState.standby:
+								anim_frame_action = anim_frame;
+							break;
+							case gunState.shooting:
+								anim_speed_action = 0.5;
+								if (obj_gun_logic.ammoLoaded <= 0.9){
+									anim_frame_action_num = obj_gun_logic.animFramesShootingLast;
+								}else{
+									anim_frame_action_num = obj_gun_logic.animFramesShooting;	
+								}
+								anim_frame_action += anim_speed_action;	
+								if anim_frame_action >= (anim_frame_action_num + .9){
+									anim_frame_action = anim_frame_action_num + .9;
+									anim_speed_action = 0;
+								}
+							break;
+							case gunState.reloading:
+								anim_frame_action_num = obj_gun_logic.animFramesReload;
+								anim_speed_action = (anim_frame_action_num + 1) / obj_gun_logic.reloadTime;
+								anim_frame_action += anim_speed_action;
+								if anim_frame_action >= (anim_frame_action_num + .9){
+									anim_frame_action = anim_frame_action_num + .9;
+									anim_speed_action = 0;
+								}
+							break;
+							case gunState.reloading_empty:
+								anim_frame_action_num = obj_gun_logic.animFramesReloadEmpty;
+								anim_speed_action = (anim_frame_action_num + 1) / obj_gun_logic.reloadTimeEmpty;
+								anim_frame_action += anim_speed_action;
+								if anim_frame_action >= (anim_frame_action_num + .9){
+									anim_frame_action = anim_frame_action_num + .9;
+									anim_speed_action = 0;
+								}
+							break;
+							case gunState.empty:
+								anim_frame_action = anim_frame;
+							break;
 						}
-					break;
-					case gunState.reloading:
-						anim_frame_action_num = obj_gun_logic.animFramesReload;
-						anim_speed_action = (anim_frame_action_num + 1) / obj_gun_logic.reloadTime;
-						anim_frame_action += anim_speed_action;
-						if anim_frame_action >= (anim_frame_action_num + .9){
-							anim_frame_action = anim_frame_action_num + .9;
-							anim_speed_action = 0;
-						}
-					break;
-					case gunState.reloading_empty:
-						anim_frame_action_num = obj_gun_logic.animFramesReloadEmpty;
-						anim_speed_action = (anim_frame_action_num + 1) / obj_gun_logic.reloadTimeEmpty;
-						anim_frame_action += anim_speed_action;
-						if anim_frame_action >= (anim_frame_action_num + .9){
-							anim_frame_action = anim_frame_action_num + .9;
-							anim_speed_action = 0;
-						}
-					break;
-					case gunState.empty:
-						anim_frame_action = anim_frame;
-					break;
-				}
-			}
+					}
 			
 			
-		break;
-	}
+			break;
+		}
 	}
 	
 	
@@ -175,7 +170,11 @@ with(obj_amadix){
 	if obj_gamecontrol.doTransition == false{
 		if ((hsp == 0) && (vsp == 0)){
 			scr_setPlayerFacing();
-			anim_speed = 0;
+			if (state != player_state.swimming_idle){
+				anim_speed = 0;
+			}else{
+				anim_speed = 0.02;
+			}
 		}
 	}
 
@@ -217,10 +216,18 @@ with(obj_amadix){
 	}
 	if ((hsp == 0) && (vsp == 0)){
 		if ((floor(anim_frame) == 0) || (floor(anim_frame) == 2)){
-			anim_speed = 0;
-			if (!skid){
-				anim_frame = 0;
+			if (state != player_state.swimming_idle){
 				anim_speed = 0;
+			}else{
+				anim_speed = 0.02;
+			}
+			if (!skid){
+				if (state != player_state.swimming_idle){
+					anim_speed = 0;
+					anim_frame = 0;
+				}else{
+					anim_speed = 0.02;
+				}
 				scr_setPlayerFacing();
 			}
 		}
@@ -269,13 +276,23 @@ with(obj_amadix){
 		shadowEnable = true;	
 	}
 	
-	if (canmove){
-		if (running){
-			anim_frame_num = 12;	
-		}else{
-			anim_frame_num = 4;	
+	if (state == player_state.swimming_idle){
+		
+		anim_frame_num = 2;
+		
+	}else if (state == player_state.swimming){
+		
+		anim_frame_num = 6;
+		
+	}else{
+		if (canmove){
+			if (running){
+				anim_frame_num = 12;	
+			}else{
+				anim_frame_num = 4;	
+			}
 		}
-	}	
+	}
 	
 	if (running == 2){
 		if (timeSinceRunning >= timeToRun){
@@ -320,7 +337,11 @@ with(obj_amadix){
 	
 	if ( (abs(hsp) < .1) && (abs(vsp) < .1) ){
 		if (!skid){
-			anim_speed = 0;
+			if (state != player_state.swimming_idle){
+				anim_speed = 0;
+			}else{
+				anim_speed = 0.02;
+			}
 		}
 		if (running == 1){
 			anim_frame = 0;

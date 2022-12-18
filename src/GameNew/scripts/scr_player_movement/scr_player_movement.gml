@@ -280,7 +280,6 @@ with (obj_amadix){
 						if (running == 0){
 								max_spd = walkspeed + _spd;
 								spd = walkspeed + _spd;
-								anim_speed = 0.09;
 								accel = 0.6;
 								deccel = 0.35;
 								
@@ -295,7 +294,6 @@ with (obj_amadix){
 						}else if (running == 1){
 								max_spd = runspeed + _spd;
 								spd = lerp(spd, (runspeed + _spd), 0.1);
-								anim_speed = lerp(anim_speed, 0.15, 0.05);
 								
 								accel = 0.3;
 								deccel = 0.3;
@@ -321,7 +319,6 @@ with (obj_amadix){
 						}else{
 								max_spd = runspeed + _spd;
 								spd = runspeed + _spd;
-								anim_speed = 0.3;
 								accel = 0.3;
 								deccel = 0.25;
 								
@@ -412,7 +409,7 @@ with (obj_amadix){
 						if (running == 0){
 								max_spd = walkspeed - 0.5 + _spd;
 								spd = walkspeed - 0.5 + _spd;
-								anim_speed = 0.05;
+								anim_speed = 0.09;
 								accel = 0.15;
 								deccel = 0.2;
 								
@@ -427,7 +424,7 @@ with (obj_amadix){
 						}else if (running == 1){
 								max_spd = walkspeed - 0.5 + _spd;
 								spd = lerp(spd, (runspeed - 0.5 + _spd), 0.05);
-								anim_speed = lerp(anim_speed, 0.05, 0.05);
+								anim_speed = lerp(anim_speed, 0.15, 0.15);
 								
 								accel = 0.15;
 								deccel = 0.2;
@@ -453,7 +450,7 @@ with (obj_amadix){
 						}else{
 								max_spd = runspeed - 0.55 + _spd;
 								spd = runspeed - 0.55 + _spd;
-								anim_speed = 0.08;
+								anim_speed = 0.15;
 								accel = 0.15;
 								deccel = 0.2;
 								

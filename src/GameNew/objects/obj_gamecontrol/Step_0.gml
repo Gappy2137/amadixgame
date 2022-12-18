@@ -35,6 +35,10 @@ if (refTimer >= 1){
 	refTimer = 0;	
 }
 
+refTimerPi += 0.025;
+if (refTimerPi >= 2 * pi){
+	refTimerPi = 0;	
+}
 
 
 // Chest

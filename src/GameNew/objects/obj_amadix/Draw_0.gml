@@ -24,6 +24,10 @@ if (playerVisible){
 	
 }
 
+draw_text(x + 32, y, anim_frame);
+draw_text(x + 32, y + 16, anim_speed);
+draw_text(x + 32, y + 24, anim_frame_num);
+
 //if (instance_exists(obj_gun_logic)){draw_text(x + 32, y, obj_gun_logic.state);}
 //if (instance_exists(obj_gun_logic)){draw_text(x + 32, y+8, obj_gun_logic.canShoot);}
 //if (instance_exists(obj_gun_logic)){draw_text(x + 32, y+16, obj_gun_logic.canReload);}
