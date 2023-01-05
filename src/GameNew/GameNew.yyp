@@ -19,6 +19,7 @@
     {"id":{"name":"item_isinsep","path":"scripts/item_isinsep/item_isinsep.yy",},"order":21,},
     {"id":{"name":"spr_amadix_head_d","path":"sprites/spr_amadix_head_d/spr_amadix_head_d.yy",},"order":3,},
     {"id":{"name":"spr_amadix_newA_sawedoff_l_reload","path":"sprites/spr_amadix_newA_sawedoff_l_reload/spr_amadix_newA_sawedoff_l_reload.yy",},"order":1,},
+    {"id":{"name":"collision_line_point","path":"scripts/collision_line_point/collision_line_point.yy",},"order":27,},
     {"id":{"name":"__input_system_tick","path":"scripts/__input_system_tick/__input_system_tick.yy",},"order":30,},
     {"id":{"name":"spr_amadix_jeansL_run_l","path":"sprites/spr_amadix_jeansL_run_l/spr_amadix_jeansL_run_l.yy",},"order":10,},
     {"id":{"name":"input_binding_scan_start","path":"scripts/input_binding_scan_start/input_binding_scan_start.yy",},"order":9,},

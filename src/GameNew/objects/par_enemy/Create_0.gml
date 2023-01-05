@@ -22,6 +22,9 @@ detected = false;
 detectionRange = 128;
 detectionFOV = 30;
 detectionSpeed = 1;
-detectionSpeedMultiplier = 1;
+detectionSpeedMultiplier = 0.25;
 detectionMeter = 0;
 detectionMeterMax = 20;
+
+testx = x;
+texty = y;

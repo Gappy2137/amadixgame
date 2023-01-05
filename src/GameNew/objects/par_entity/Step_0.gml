@@ -67,8 +67,8 @@ if (hurt){
 
 	scr_player_unstuck();
 	
-	var hor_collision = instance_place(x + hsp, y, par_collision);
-	var ver_collision = instance_place(x, y + vsp, par_collision);
+	//var hor_collision = instance_place(x + hsp, y, par_collision);
+	//var ver_collision = instance_place(x, y + vsp, par_collision);
 	
 	var hor_list = ds_list_create();
 	var hor_num = instance_place_list(x + hsp, y, par_collision, hor_list, false);
