@@ -1,4 +1,4 @@
-depth = 10000;
+depth = DEPTH_UI + 1;
 
 dialShadowY = 270;
 dialShadowYsrc = 270;

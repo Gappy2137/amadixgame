@@ -1,0 +1,3 @@
+function quest_add(){
+
+}

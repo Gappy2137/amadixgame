@@ -17,3 +17,4 @@ ready = false;
 _fx_tint = -1;
 
 alarm[0] = 1;
+

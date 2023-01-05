@@ -1,5 +1,5 @@
 global.cursorSpr = spr_cursor_default;
-depth = -1000;
+depth = DEPTH_CURSOR;
 
 window_set_cursor(cr_none);
 

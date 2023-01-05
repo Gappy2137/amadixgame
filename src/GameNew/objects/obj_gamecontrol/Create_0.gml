@@ -1,4 +1,3 @@
-depth = -10000;
 
 //EKWIPUNEK
 #macro INVITEM 0
@@ -47,6 +46,27 @@ game_set_speed(GAMESPEED, gamespeed_fps);
 
 #macro CLOCKTICK 0.004
 #macro MAINSCR "Important"
+
+// DEPTH HIERARCHY
+
+#macro DEPTH_CURSOR -10009
+#macro DEPTH_UI -10008
+
+#macro DEPTH_TRANSITION -10007
+
+#macro DEPTH_FOG -100006
+
+#macro DEPTH_LAYERFX_1 -100005
+#macro DEPTH_LAYERFX_2 -100004
+#macro DEPTH_LAYERFX_3 -100003
+
+#macro DEPTH_FOREGROUND_1 -100002
+#macro DEPTH_FOREGROUND_2 -100001
+#macro DEPTH_FOREGROUND_3 -100000
+
+alarm[2] = 1;
+
+depth = DEPTH_TRANSITION;
 
 // New seed
 randomize();

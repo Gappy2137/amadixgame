@@ -37,6 +37,7 @@ if isbounded(mousex, invUIX, endinvUIX) && isbounded(mousey, invUIY, endinvUIY){
 }else{
 	selected_slot_eq = -1;
 }
+#endregion
 
 // Crafting
 var i_mousex_craft = mousex - craftUIX;

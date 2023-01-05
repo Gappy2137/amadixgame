@@ -105,7 +105,8 @@ if (hurt){
 		ds_list_destroy(hor_list);
 	}
 
-	x += hsp;	
+	if (!hurt)
+		x += hsp;	
 
 
 	var ver_list = ds_list_create();
@@ -144,7 +145,8 @@ if (hurt){
 		}
 		ds_list_destroy(ver_list);
 	}
-	y += vsp;	
+	if (!hurt)
+		y += vsp;	
 	
 	
 	scr_player_unstuck();

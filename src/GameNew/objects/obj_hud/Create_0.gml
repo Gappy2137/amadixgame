@@ -1,4 +1,4 @@
-depth = -1;
+depth = DEPTH_UI + 1;
 
 hp_x = 8;
 hp_y = 55;

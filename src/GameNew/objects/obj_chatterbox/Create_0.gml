@@ -1,5 +1,5 @@
 
-depth = -10;
+depth = DEPTH_UI;
 
 myPortrait = -1;
 

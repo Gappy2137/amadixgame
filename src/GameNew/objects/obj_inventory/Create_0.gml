@@ -1,4 +1,4 @@
-depth = -1;
+depth = DEPTH_UI;
 
 scale = 1;
 

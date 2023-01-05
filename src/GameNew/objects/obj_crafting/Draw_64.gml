@@ -1,5 +1,5 @@
 if (!show_crafting){exit;}
-depth = -2;
+depth = DEPTH_UI;
 
 
 // Inventory back

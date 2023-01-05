@@ -13,3 +13,15 @@ shadowStyle = spr_shadow_player;
 shadowEnable = false;
 
 aiType = entityAiType.followSimple;
+
+lookingFor = obj_amadix;
+
+facing = index_facing.down;
+
+detected = false;
+detectionRange = 128;
+detectionFOV = 30;
+detectionSpeed = 1;
+detectionSpeedMultiplier = 1;
+detectionMeter = 0;
+detectionMeterMax = 20;

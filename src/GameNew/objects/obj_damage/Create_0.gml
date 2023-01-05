@@ -12,6 +12,7 @@ knockback = 0;
 source = noone;
 
 damageType = damageTypeE.unknown;
+toPlayer = false;
 
 width = 0;
 height = 0;
