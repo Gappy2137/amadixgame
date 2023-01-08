@@ -18,6 +18,8 @@ lookingFor = obj_amadix;
 
 facing = index_facing.down;
 
+eyeHeight = 16;
+
 detected = false;
 detectionRange = 128;
 detectionFOV = 30;
@@ -26,5 +28,5 @@ detectionSpeedMultiplier = 0.25;
 detectionMeter = 0;
 detectionMeterMax = 20;
 
-testx = x;
-texty = y;
+testx = 0;
+testy = 0;

@@ -13,3 +13,5 @@ shadowStyle = spr_shadow_big;
 shadowAlpha = 0.3;
 
 shadowEnable = true;
+
+zheight = 18;
