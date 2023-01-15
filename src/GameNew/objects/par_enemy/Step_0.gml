@@ -3,26 +3,27 @@ event_inherited();
 
 // Detection
 
+
+var entityXCoord = 0;
+var entityYCoord = 0;
+					
+var myxCoord = bbox_left + ((bbox_right - bbox_left) / 2);
+var myyCoord = bbox_top + ((bbox_bottom - bbox_top) / 2);
+	
+var dist = 1;
+
 if (instance_exists(lookingFor)){
-	var entityXCoord = lookingFor.bbox_left + ((lookingFor.bbox_right - lookingFor.bbox_left) / 2);
-	var entityYCoord = lookingFor.bbox_top + ((lookingFor.bbox_bottom - lookingFor.bbox_top) / 2);
+	entityXCoord = lookingFor.bbox_left + ((lookingFor.bbox_right - lookingFor.bbox_left) / 2);
+	entityYCoord = lookingFor.bbox_top + ((lookingFor.bbox_bottom - lookingFor.bbox_top) / 2);
 					
-	var myxCoord = bbox_left + ((bbox_right - bbox_left) / 2);
-	var myyCoord = bbox_top + ((bbox_bottom - bbox_top) / 2);
+	myxCoord = bbox_left + ((bbox_right - bbox_left) / 2);
+	myyCoord = bbox_top + ((bbox_bottom - bbox_top) / 2);
 	
-	var dist = point_distance(myxCoord, myyCoord, entityXCoord, entityYCoord);
-	
-	if (dist <= 0) dist = 1;
-	
-}else{
-	var entityXCoord = 0;
-	var entityYCoord = 0;
-					
-	var myxCoord = bbox_left + ((bbox_right - bbox_left) / 2);
-	var myyCoord = bbox_top + ((bbox_bottom - bbox_top) / 2);
-	
-	var dist = 1;
+	dist = point_distance(myxCoord, myyCoord, entityXCoord, entityYCoord);
+		
 }
+
+if (dist <= 0) dist = 1;
 	
 // If in detection range
 if (dist < detectionRange){
@@ -38,44 +39,84 @@ if (dist < detectionRange){
 			
 		var col_list = ds_list_create();
 		var col_num = collision_line_list(myxCoord, myyCoord, myxCoord + px, myyCoord + py, par_objectdepth, false, true, col_list, true);
-	
+		var col_z = ds_grid_create(2, 1);
+		var passList = ds_list_create();
+
 		if (col_num > 0){
 		
 			var i = 0;
 			var nn = ds_list_size(col_list);
+			
+			ds_grid_resize(col_z, 2, nn);
 			
 			repeat(nn){
 					
 				if (col_list[| i] == lookingFor.id){
 					
 					var j = 0;
-					var n = i;
 					
-					if (n < 1){
-						
-						detectionMeter += ( detectionSpeed * detectionSpeedMultiplier ) + ( detectionSpeed / (dist / detectionRange) * 0.175 );
-						
-					}else{
-						
-						repeat(n){
+					repeat(nn){
 					
-							if ((variable_instance_exists(col_list[| j], "zaxis"))
-							&&  (variable_instance_exists(col_list[| j], "zheight"))){
-				
-								if (zaxis + eyeHeight >= col_list[| j].zaxis + col_list[| j].zheight){
-						
-									detectionMeter += ( detectionSpeed * detectionSpeedMultiplier ) + ( detectionSpeed / (dist / detectionRange) * 0.175 );
-						
-								}
-				
-							}else{
-								
-								detectionMeter += ( detectionSpeed * detectionSpeedMultiplier ) + ( detectionSpeed / (dist / detectionRange) * 0.175 );
-								
-							}
-					
-							j++;
+						if ((variable_instance_exists(col_list[| j], "zaxis"))
+						&&  (variable_instance_exists(col_list[| j], "zheight"))){
+							
+							col_z[# 0, j] = col_list[| j].zaxis;
+							col_z[# 1, j] = col_list[| j].zheight;
+							
+						}else{
+							
+							col_z[# 0, j] = 0;
+							col_z[# 1, j] = 0;
+							
 						}
+					
+						j++;
+					
+					}
+					
+					j = 0;
+					
+					repeat(i){
+						
+						if (zaxis + eyeHeight >= col_z[# 0, j] + col_z[# 1, j]){
+							
+							passList[| j] = 0;
+							
+						}else{
+							
+							passList[| j] = 1;
+							
+						}
+						
+						j++;
+					}
+					
+					j = 0;
+					
+					var sum = 0;
+					
+					repeat(i){
+						
+						sum += passList[| j];
+
+						j++;
+					}
+					
+					j = 0;
+					
+					if (sum < 1){
+						
+						if ((variable_instance_exists(lookingFor.id, "spd"))){
+							
+							detectionMeter += (( detectionSpeed * detectionSpeedMultiplier ) + ( detectionSpeed / (dist / detectionRange) * 0.175 )) * lookingFor.id.spd;
+							
+						}else{
+						
+							detectionMeter += (( detectionSpeed * detectionSpeedMultiplier ) + ( detectionSpeed / (dist / detectionRange) * 0.175 ));
+						
+						}
+						
+						
 						
 					}
 					
@@ -83,30 +124,14 @@ if (dist < detectionRange){
 					
 				i++;
 			}
-			
-			ds_list_destroy(col_list);
 		
 		}
 		
-	}
-			
-	/*
-	var detLine1 = collision_line_first(myxCoord, myyCoord, myxCoord + px, myyCoord + py, all, false, true);
-	
-	if (detLine1){
+		ds_list_destroy(col_list);
+		ds_list_destroy(passList);
+		ds_grid_destroy(col_z);
 		
-		if (detLine1 == lookingFor){
-			
-			detectionMeter += ( detectionSpeed * detectionSpeedMultiplier ) + ( detectionSpeed / (dist / detectionRange) * 0.175 );
-			
-		}
-				
-	}else{
-					
-		detectionMeter = lerp(detectionMeter, 0, 0.005);
-				
 	}
-	*/	
 			
 }else{
 		

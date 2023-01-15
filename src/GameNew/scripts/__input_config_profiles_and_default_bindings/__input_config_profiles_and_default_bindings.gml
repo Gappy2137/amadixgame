@@ -19,6 +19,7 @@ INPUT_DEFAULT_PROFILES = {
         right: input_binding_key("D"),
 
 		run: [input_binding_key(vk_shift)],
+		sneak: [input_binding_key(vk_control)],
 		
 		inventoryAccess: input_binding_key("E"),
 		inventory_1: input_binding_key("1"),

@@ -7,6 +7,7 @@ with (obj_amadix){
 	key_up =        input_check("up");
 	key_down =      input_check("down");
 	key_run =       input_check("run");
+	key_sneak =		input_check("sneak");
 	//------------------------------------------------------
 
 
@@ -85,7 +86,9 @@ with (obj_amadix){
 		spd = max_spd;	
 	}
 	
-
+	if ((key_run) && (key_sneak)){
+		running = 0;	
+	}
 	
 	switch (state) {
 		case player_state.moving:
@@ -477,6 +480,10 @@ with (obj_amadix){
 
 	if (!key_run){
 		running = 0;	
+	}
+	
+	if (key_sneak){
+		spd /= 1.5;	
 	}
 	
 	if (running == 2) && (!moving){
