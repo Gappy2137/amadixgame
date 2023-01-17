@@ -21,12 +21,20 @@ facing = index_facing.down;
 eyeHeight = 16;
 
 detected = false;
-detectionRange = 128;
-detectionFOV = 30;
+detectionRange = 96;
+detectionLines = 6;
+detectionSpacing = 3;
 detectionSpeed = 1;
 detectionSpeedMultiplier = 0.25;
 detectionMeter = 0;
 detectionMeterMax = 20;
 
-testx = 0;
-testy = 0;
+
+var i = 0;
+repeat((detectionLines * 2) + 1){
+	
+	testx[i] = 0;
+	testy[i] = 0;
+	
+	i++;
+}
