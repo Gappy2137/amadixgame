@@ -24,3 +24,5 @@ shadowEnable = false;
 canClickAt = false;
 clickRadius = 4;
 cursorSpr = cursorState.normal;
+
+shadowSurface = -1;

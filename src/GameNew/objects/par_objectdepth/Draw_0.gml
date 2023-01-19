@@ -1,11 +1,10 @@
 
-
 //draw_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,true);
 
 // Shadows
 
 if (instance_exists(obj_shadows)){
-	if (shadowEnable) && (sprite_index != -1){
+	if (shadowEnable) && (sprite_index != -1) && (visible){
 		var _skew = obj_shadows.skewX;
 		var _h = shadowHeight;
 		var _alpha = obj_shadows.shadowAlpha;
@@ -15,10 +14,8 @@ if (instance_exists(obj_shadows)){
 		//}else{
 		//	_index = image_index;	
 		//}
-		
-		
-		
-		gpu_set_fog(true, c_black, 0, 1);
+
+		//gpu_set_fog(true, c_black, 0, 1);
 		//gpu_set_blendmode(bm_max);
 		
 		/*
@@ -33,7 +30,8 @@ if (instance_exists(obj_shadows)){
 			(y)+shadowOriginY + 4, 
 			shadowAlpha);
 		*/
-		
+
+
 		draw_sprite_pos(shadowStyle, 0, 
 			(x)-(sprite_width/2)-_skew+shadowOriginX + shadowSizeX,
 			(y)-_h+shadowOriginY + 4 + shadowSizeY, 
@@ -45,9 +43,11 @@ if (instance_exists(obj_shadows)){
 			(y)+shadowOriginY + 4 - shadowSizeY, 
 			shadowAlpha * _alpha
 		);
+
 		
 		//gpu_set_blendmode(bm_normal);
-		gpu_set_fog(false, c_white, 0, 0);
+		//gpu_set_fog(false, c_white, 0, 0);
+
 			
 	}
 }

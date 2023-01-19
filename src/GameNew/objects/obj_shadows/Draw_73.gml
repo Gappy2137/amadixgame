@@ -1,7 +1,7 @@
 
 
-/*
 
+/*
 if(!surface_exists(shadowSurface)){
 	shadowSurface = surface_create(GAMEWIDTH, GAMEHEIGHT);
 }

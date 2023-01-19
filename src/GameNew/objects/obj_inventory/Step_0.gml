@@ -482,7 +482,7 @@ else if (!show_inventory) && (show_slots){
 	
 
 	if (instance_exists(obj_amadix)){
-		if (obj_amadix.y > (room_height - 132)){
+		if (obj_amadix.y > (room_height - 196)){
 			slots_position_up = true;
 		}else{
 			slots_position_up = false;	

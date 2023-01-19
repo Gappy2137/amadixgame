@@ -482,7 +482,7 @@ with (obj_amadix){
 		running = 0;	
 	}
 	
-	if (key_sneak){
+	if (key_sneak) && !( (hsp == 0) && (vsp == 0) ){
 		spd /= 1.5;	
 	}
 	

@@ -676,6 +676,7 @@
     {"id":{"name":"item_add","path":"scripts/item_add/item_add.yy",},"order":4,},
     {"id":{"name":"obj_item","path":"objects/obj_item/obj_item.yy",},"order":0,},
     {"id":{"name":"spr_crafting_ui_craftbutton","path":"sprites/spr_crafting_ui_craftbutton/spr_crafting_ui_craftbutton.yy",},"order":6,},
+    {"id":{"name":"spr_dialoguebox_black","path":"sprites/spr_dialoguebox_black/spr_dialoguebox_black.yy",},"order":25,},
     {"id":{"name":"spr_amadix_hands_sawedoff_r_reload","path":"sprites/spr_amadix_hands_sawedoff_r_reload/spr_amadix_hands_sawedoff_r_reload.yy",},"order":2,},
     {"id":{"name":"container_stack","path":"scripts/container_stack/container_stack.yy",},"order":1,},
     {"id":{"name":"par_container","path":"objects/par_container/par_container.yy",},"order":10,},
