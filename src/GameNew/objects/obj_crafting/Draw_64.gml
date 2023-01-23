@@ -219,7 +219,7 @@ ix = (ii - from) mod craftSlotsWidth;
 				var amount = craft_grid[# C_ING, ii][@ _i][@ C_AMOUNT];
 				
 				
-				var amountInInv = item_find_amount(_item);
+				var amountInInv = (_item >= CRAFTITEMTYPE) ? itemtype_find_amount(_item - CRAFTITEMTYPE) : item_find_amount(_item);
 			
 				if (amountInInv >= amount){
 					_cancraft[_i] = true;
@@ -356,6 +356,7 @@ if (craftSlotSelected != -1){
 		}else{
 			iitem = 0;	
 		}
+
 		
 		// Crafting station requirements
 		
@@ -678,9 +679,19 @@ if (craftSlotSelected != -1){
 			var _amount = craft_grid[# C_ING, craftSlotSelected][@ _i][@ C_AMOUNT];
 			var _sx = (_iitem mod spr_inv_items_columns) * cell_size;
 			var _sy = (_iitem div spr_inv_items_columns) * cell_size;
-			var _name = (iinfo_grid[# 0, _iitem]);
+			var _name = 0;
 			
-			var amountInInv = item_find_amount(_iitem);
+			if (_iitem >= CRAFTITEMTYPE){
+				
+				_name = iinfo_grid[# 2, _iitem - CRAFTITEMTYPE];
+				
+			}else{
+			
+				_name = (iinfo_grid[# 0, _iitem]);
+			
+			}
+			
+			var amountInInv = (_iitem >= CRAFTITEMTYPE) ? itemtype_find_amount(_iitem - CRAFTITEMTYPE) : item_find_amount(_iitem);
 			
 			if (amountInInv >= _amount){
 				ing_alpha[_i] = 1;
@@ -689,7 +700,17 @@ if (craftSlotSelected != -1){
 			}
 			
 			// Draw ingredient sprite
-			draw_sprite_part_ext(spr_inventory_items, 0, _sx, _sy, 24, 24, ing_x[_i], ing_y[_i], .5, .5, c_white, ing_alpha[_i]);
+			if (_iitem >= CRAFTITEMTYPE){
+				
+				draw_sprite_part_ext(spr_inventory_items_types, 0, _sx, _sy, 24, 24, ing_x[_i], ing_y[_i], .5, .5, c_white, ing_alpha[_i]);
+				
+			}else{
+				
+				draw_sprite_part_ext(spr_inventory_items, 0, _sx, _sy, 24, 24, ing_x[_i], ing_y[_i], .5, .5, c_white, ing_alpha[_i]);
+				
+			}
+			
+			
 			
 			// Draw needed amount
 			var _amstr = scribble(_amount);

@@ -535,15 +535,14 @@ if (craftSlotSelected != -1){
 			
 		var _iitem = craft_grid[# C_ING, craftSlotSelected][@ _i][@ C_ITEM];
 		var _amount = craft_grid[# C_ING, craftSlotSelected][@ _i][@ C_AMOUNT];
-			
-		var amountInInv = item_find_amount(_iitem);
-			
+		
+		var amountInInv = (_iitem >= CRAFTITEMTYPE) ? itemtype_find_amount(_iitem - CRAFTITEMTYPE) : item_find_amount(_iitem);
+		
 		if (amountInInv >= _amount){
 			_cancraft[_i] = true;
 		}else{
 			_cancraft[_i] = false;
 		}
-		
 		
 		_i++;
 	}
@@ -617,7 +616,27 @@ if (craftSlotSelected != -1){
 					var _iitem = craft_grid[# C_ING, craftSlotSelected][@ _i][@ C_ITEM];
 					var _amount = craft_grid[# C_ING, craftSlotSelected][@ _i][@ C_AMOUNT];
 					
-					item_remove(_iitem, _amount, false);
+					if (_iitem >= CRAFTITEMTYPE){
+						
+						var __item = 0;
+						
+						repeat(_amount){
+							
+							__item = itemtype_find(_iitem - CRAFTITEMTYPE);
+							
+							item_remove(__item, 1, false);
+							
+						}
+						
+						
+						
+					}else{
+						
+						item_remove(_iitem, _amount, false);
+						
+					}
+					
+					
 					
 					_i++;
 				}
