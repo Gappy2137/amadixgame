@@ -580,6 +580,7 @@
     {"id":{"name":"input_default_gamepad_axis","path":"scripts/input_default_gamepad_axis/input_default_gamepad_axis.yy",},"order":0,},
     {"id":{"name":"string_wrap","path":"scripts/string_wrap/string_wrap.yy",},"order":13,},
     {"id":{"name":"obj_oak","path":"objects/obj_oak/obj_oak.yy",},"order":0,},
+    {"id":{"name":"spr_portrait_pjoter","path":"sprites/spr_portrait_pjoter/spr_portrait_pjoter.yy",},"order":8,},
     {"id":{"name":"input_check","path":"scripts/input_check/input_check.yy",},"order":0,},
     {"id":{"name":"item_at","path":"scripts/item_at/item_at.yy",},"order":6,},
     {"id":{"name":"spr_inventory_hud_back","path":"sprites/spr_inventory_hud_back/spr_inventory_hud_back.yy",},"order":1,},
@@ -600,6 +601,7 @@
     {"id":{"name":"spr_amadix_cutscene","path":"sprites/spr_amadix_cutscene/spr_amadix_cutscene.yy",},"order":0,},
     {"id":{"name":"input_verb_set","path":"scripts/input_verb_set/input_verb_set.yy",},"order":4,},
     {"id":{"name":"__input_exception_handler","path":"scripts/__input_exception_handler/__input_exception_handler.yy",},"order":5,},
+    {"id":{"name":"spr_dialoguebox_namebox_black","path":"sprites/spr_dialoguebox_namebox_black/spr_dialoguebox_namebox_black.yy",},"order":26,},
     {"id":{"name":"input_consume","path":"scripts/input_consume/input_consume.yy",},"order":0,},
     {"id":{"name":"input_keyboard_check_released","path":"scripts/input_keyboard_check_released/input_keyboard_check_released.yy",},"order":2,},
     {"id":{"name":"__scribble_gen_4_build_words","path":"scripts/__scribble_gen_4_build_words/__scribble_gen_4_build_words.yy",},"order":4,},
@@ -1502,6 +1504,7 @@
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"finger_en.yarn","CopyToMask":-1,"filePath":"datafiles/language/dialogue",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"speech_finger.wav","CopyToMask":-1,"filePath":"datafiles/sound/speech",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"item_ids.txt.bak","CopyToMask":-1,"filePath":"datafiles",},
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"janusz_pl — kopia.yarn","CopyToMask":-1,"filePath":"datafiles/language/dialogue",},
   ],
   "MetaData": {
     "IDEVersion": "2022.11.1.56",

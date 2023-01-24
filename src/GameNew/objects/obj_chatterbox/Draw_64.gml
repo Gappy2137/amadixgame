@@ -112,10 +112,12 @@ function choiceshow(){
 		case 1:
 			
 			// Main dialoguebox
-			scr_draw_gui_box_stretch(spr_dialoguebox, dialboxX, dialboxY, dialboxX + dialbox_width, dialboxY + dialbox_height);
-			
+			//scr_draw_gui_box_stretch(spr_dialoguebox, dialboxX, dialboxY, dialboxX + dialbox_width, dialboxY + dialbox_height);
+			draw_sprite_ext(spr_dialoguebox_black, 0, dialboxX, dialboxY, dialbox_width, 1, 0, c_white, 1);
+
 			// Namebox
-			scr_draw_gui_box_stretch(spr_dialoguebox, portraitboxX, nameboxY, portraitboxX + portraitbox_width, nameboxY + namebox_height);
+			//scr_draw_gui_box_stretch(spr_dialoguebox, portraitboxX, nameboxY, portraitboxX + portraitbox_width, nameboxY + namebox_height);
+			draw_sprite(spr_dialoguebox_namebox_black, 0, portraitboxX, nameboxY);
 			
 			// Name
 			var _name = scribble(myName);
@@ -137,7 +139,8 @@ function choiceshow(){
 			_name.draw(nameX, nameY);
 			
 			// Portraitbox
-			scr_draw_gui_box_stretch(spr_dialoguebox, portraitboxX, dialboxY, portraitboxX + portraitbox_width, dialboxY + dialbox_height);
+			//scr_draw_gui_box_stretch(spr_dialoguebox, portraitboxX, dialboxY, portraitboxX + portraitbox_width, dialboxY + dialbox_height);
+			draw_sprite_ext(spr_dialoguebox_black, 0, portraitboxX, dialboxY, portraitbox_width, 1, 0, c_white, 1);
 			
 			// Portrait
 			draw_sprite(asset_get_index(myPortrait),
@@ -145,10 +148,10 @@ function choiceshow(){
 			portraitboxX, dialboxY);
 			
 			// Portrait edge
-			scr_draw_gui_box_stretch(spr_dialoguebox_edge, portraitboxX, dialboxY, portraitboxX + portraitbox_width, dialboxY + dialbox_height);
+			//scr_draw_gui_box_stretch(spr_dialoguebox_edge, portraitboxX, dialboxY, portraitboxX + portraitbox_width, dialboxY + dialbox_height);
 			
 			if (waitArrow){
-				draw_sprite(spr_dialoguebox_arrow, 0, dialboxX + dialbox_width, dialboxY + dialbox_height);	
+				//draw_sprite(spr_dialoguebox_arrow, 0, dialboxX + dialbox_width, dialboxY + dialbox_height);	
 			}
 		break;
 		case 2:

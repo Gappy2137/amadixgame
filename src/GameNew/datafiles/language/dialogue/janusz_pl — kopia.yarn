@@ -1,10 +1,10 @@
 #__PrivCrochet_version:1
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: -1412,-1263
+__PrivCrochet_position: -1141,-1045
 __PrivCrochet_tags: 
 title: Start
 ---
-[speaker,spr_portrait_pjoter,emotion_normal,Pjoter,snd_speech_janusz]Oprawca! Bestia! Ciemiężca!
+[speaker,spr_portrait_janusz,emotion_normal,Janusz,snd_speech_janusz]Cholibka, gdzie ten gówniarz zawszony[speed, 0.5]... [delay, 250][/speed][jitter]PJOTER!!![/jitter][delay, 500] Pjoter chodź zamieniłem się w grę na konkuter, proszę pomóż ojcu swemu sprawiedliwemu, choć rozpikselizowanemu.
 <<wait>>
 [speaker,spr_portrait_janusz,emotion_normal,Janusz,snd_speech_janusz]O, dzień dobry witam Pana szanownego. Nie widział pan w okolicy mojego syna? Taki mały[delay, 250], nie szwędał się gdzieś?
 <<wait>>
