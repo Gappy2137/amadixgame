@@ -679,6 +679,8 @@ if (craftSlotSelected != -1){
 			var _amount = craft_grid[# C_ING, craftSlotSelected][@ _i][@ C_AMOUNT];
 			var _sx = (_iitem mod spr_inv_items_columns) * cell_size;
 			var _sy = (_iitem div spr_inv_items_columns) * cell_size;
+			var _sx_type = ((_iitem - CRAFTITEMTYPE) mod (sprite_get_width(spr_inventory_items_types)/cell_size)) * cell_size;
+			var _sy_type = ((_iitem - CRAFTITEMTYPE) div (sprite_get_width(spr_inventory_items_types)/cell_size)) * cell_size;
 			var _name = 0;
 			
 			if (_iitem >= CRAFTITEMTYPE){
@@ -702,7 +704,7 @@ if (craftSlotSelected != -1){
 			// Draw ingredient sprite
 			if (_iitem >= CRAFTITEMTYPE){
 				
-				draw_sprite_part_ext(spr_inventory_items_types, 0, _sx, _sy, 24, 24, ing_x[_i], ing_y[_i], .5, .5, c_white, ing_alpha[_i]);
+				draw_sprite_part_ext(spr_inventory_items_types, 0, _sx_type, _sy_type, 24, 24, ing_x[_i], ing_y[_i], .5, .5, c_white, ing_alpha[_i]);
 				
 			}else{
 				

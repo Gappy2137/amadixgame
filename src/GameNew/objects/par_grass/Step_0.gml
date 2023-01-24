@@ -9,6 +9,8 @@ if (instance_exists(obj_amadix)){
 			if (canBeHurtByPlayer){
 				var amadixFacing = obj_amadix.facing;
 				
+				event_user(0);
+				
 				switch (amadixFacing){
 					case index_facing.down:
 						hitangle = approach(hitangle, 25 + rnd*5, acc*2);
