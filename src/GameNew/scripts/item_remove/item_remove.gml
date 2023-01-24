@@ -9,6 +9,11 @@ function item_remove(iitem, amount, allitems){
 						if (!picked){
 							if (obj_inventory.ds_inventory[# INVAMOUNT, xx] >= amount){
 								obj_inventory.ds_inventory[# INVAMOUNT, xx] -= amount;
+								
+								if (obj_inventory.ds_inventory[# INVAMOUNT, xx] == 0){
+									slot_remove(xx);
+								}
+								
 							}else{
 								am = amount - obj_inventory.ds_inventory[# INVAMOUNT, xx];
 								obj_inventory.ds_inventory[# INVITEM, xx] = item.none;

@@ -23,7 +23,7 @@ canUseInventory = true;
 page = 0;
 pages = 1;
 
-inv_slots = (48 * (pages + 1)) + 4;
+inv_slots = (48 * (pages + 1)) + ADDITIONALSLOTS;
 inv_slots_width = 12;
 inv_slots_height = 4;
 slots_onpage = inv_slots_width * inv_slots_height;
@@ -265,8 +265,10 @@ repeat(inv_slots){
 	i++;
 }
 
-item_add((inv_slots - 4) + 1, item.classic_jacket, 1, 0, -1);
-item_add((inv_slots - 4) + 2, item.jeans, 1, 0, -1);
-item_add((inv_slots - 4) + 3, item.sneakers, 1, 0, -1);
+item_add((inv_slots - ADDITIONALSLOTS) + 1, item.classic_jacket, 1, 0, -1);
+item_add((inv_slots - ADDITIONALSLOTS) + 2, item.jeans, 1, 0, -1);
+item_add((inv_slots - ADDITIONALSLOTS) + 3, item.sneakers, 1, 0, -1);
 
-
+item_add(-1, item.log, 20, 0, -1);
+item_add(-1, item.apple, 1, 0, -1);
+item_add(-1, item.orange, 1, 0, -1);

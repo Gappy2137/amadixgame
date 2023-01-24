@@ -1,5 +1,6 @@
 
 //EKWIPUNEK
+#macro ADDITIONALSLOTS 4
 #macro INVITEM 0
 #macro INVAMOUNT 1
 #macro INVTYPE 2
@@ -29,6 +30,7 @@
 #macro C_LVL 2
 #macro C_CAP 3
 #macro C_STATION 3
+#macro CRAFTITEMTYPE 10000
 //
 //
 //CZCIONKI

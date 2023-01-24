@@ -152,6 +152,7 @@ var recipeOne = [
 	[item.lemon, 1],
 	[item.orange, 1]
 ];
+
 var recipeOneResult = [item.mango_salsa, 1, 0, -1];
 recipe_add(recipeOne, recipeOneResult, recipe_type.cooking, craftingStation.none);
 
@@ -170,3 +171,5 @@ recipe_add([ [item.lemon, 3],[item.orange,3],[item.apple, 3] ], [item.dandelion,
 recipe_add([ [item.stick, 3],[item.orange,3],[item.apple, 3] ], [item.lemon, 2, 0, -1], recipe_type.cooking, craftingStation.none);
 
 recipe_add([ [item.lemon, 3],[item.orange,3],[item.strawberry, 3] ], [item.apple, 3, 0, -1], recipe_type.cooking, craftingStation.none);
+
+recipe_add([ [item.log,2],[CRAFTITEMTYPE + itemtype.fruit,2] ], [item.stone, 1, 0, -1], recipe_type.cooking, craftingStation.none);
