@@ -35,6 +35,7 @@
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a9134f65-5c22-4716-8000-4cc42dae1e31",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"70791d36-1ccb-4109-9bbd-86f3b34985d8",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"10b7d58e-d827-4e98-ab36-d1fd5106c27e",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b3d276aa-ce1f-47d3-a442-ea2c170c73fe",},
   ],
   "sequence": {
     "resourceType": "GMSequence",
@@ -46,7 +47,7 @@
     "playbackSpeedType": 1,
     "autoRecord": true,
     "volume": 1.0,
-    "length": 7.0,
+    "length": 8.0,
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
@@ -58,6 +59,7 @@
             {"id":"c497b880-a2fa-4a0e-aa7b-26fce10d8004","Key":4.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"a9134f65-5c22-4716-8000-4cc42dae1e31","path":"sprites/spr_rocks_plains_medium/spr_rocks_plains_medium.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"d214acd4-79ab-4201-98a7-b2712336ad26","Key":5.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"70791d36-1ccb-4109-9bbd-86f3b34985d8","path":"sprites/spr_rocks_plains_medium/spr_rocks_plains_medium.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"4dfb1f06-90b8-4a00-955c-3a59f08fd33b","Key":6.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"10b7d58e-d827-4e98-ab36-d1fd5106c27e","path":"sprites/spr_rocks_plains_medium/spr_rocks_plains_medium.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"2609f195-dc13-40c9-886c-77b2d6da91e1","Key":7.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b3d276aa-ce1f-47d3-a442-ea2c170c73fe","path":"sprites/spr_rocks_plains_medium/spr_rocks_plains_medium.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
@@ -76,7 +78,7 @@
     "eventStubScript": null,
   },
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"f4f7ee2e-6f18-4b94-b52e-f3d240f55c4c","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"522d2993-7461-4727-978e-316a5eaf4018","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {

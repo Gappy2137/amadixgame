@@ -324,6 +324,7 @@
     {"id":{"name":"ChatterboxSourceGetTags","path":"scripts/ChatterboxSourceGetTags/ChatterboxSourceGetTags.yy",},"order":6,},
     {"id":{"name":"spr_rocks_plains","path":"sprites/spr_rocks_plains/spr_rocks_plains.yy",},"order":0,},
     {"id":{"name":"spr_amadix_newA_gun_r_shoot","path":"sprites/spr_amadix_newA_gun_r_shoot/spr_amadix_newA_gun_r_shoot.yy",},"order":7,},
+    {"id":{"name":"rm_devroom_cave","path":"rooms/rm_devroom_cave/rm_devroom_cave.yy",},"order":7,},
     {"id":{"name":"__scribble_class_font","path":"scripts/__scribble_class_font/__scribble_class_font.yy",},"order":2,},
     {"id":{"name":"ChatterboxSourceNodeCount","path":"scripts/ChatterboxSourceNodeCount/ChatterboxSourceNodeCount.yy",},"order":7,},
     {"id":{"name":"spr_amadix_newTC_pick_u","path":"sprites/spr_amadix_newTC_pick_u/spr_amadix_newTC_pick_u.yy",},"order":3,},
@@ -1279,6 +1280,7 @@
     {"roomId":{"name":"rm_devroom_3","path":"rooms/rm_devroom_3/rm_devroom_3.yy",},},
     {"roomId":{"name":"rm_obj","path":"rooms/rm_obj/rm_obj.yy",},},
     {"roomId":{"name":"rm_devroom_c","path":"rooms/rm_devroom_c/rm_devroom_c.yy",},},
+    {"roomId":{"name":"rm_devroom_cave","path":"rooms/rm_devroom_cave/rm_devroom_cave.yy",},},
   ],
   "Folders": [
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Animation Curves","folderPath":"folders/Animation Curves.yy","order":1,},

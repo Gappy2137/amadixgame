@@ -13,7 +13,7 @@
   "bbox_left": 0,
   "bbox_right": 1023,
   "bbox_top": 0,
-  "bbox_bottom": 927,
+  "bbox_bottom": 959,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -64,7 +64,7 @@
     "eventStubScript": null,
   },
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"04926f24-9c82-44f7-ad82-72e116926dd7","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"194979aa-3a89-4d44-b7ea-1c149b0522ba","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"pasteLayer",},
   ],
   "nineSlice": {
     "left": 0,
