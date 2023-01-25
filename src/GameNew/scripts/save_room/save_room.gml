@@ -138,6 +138,7 @@ function save_room(){
 		case rm_devroom_3: global.roomData.devroom_3 = struct		break;
 		case rm_devroom_b: global.roomData.devroom_b = struct		break;
 		case rm_devroom_c: global.roomData.devroom_c = struct		break;
+		case rm_devroom_cave: global.roomData.devroom_cave = struct		break;
 	}
 	
 	

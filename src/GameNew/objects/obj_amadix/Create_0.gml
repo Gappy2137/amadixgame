@@ -148,6 +148,14 @@ crafting_station = craftingStation.none;
 meleeID = -4;
 dmgID = -4;
 
+lightSource = instance_create_layer(x, y, "Lights", obj_light_source);
+with (lightSource){
+	image_xscale = 0.01;
+	image_yscale = 0.01;
+	image_blend = #CCCCCC;
+	//scale_change_max = 0.01;
+}
+
 if (obj_gamecontrol.doTransition == true) scr_updatePlayerAnim();
 
 

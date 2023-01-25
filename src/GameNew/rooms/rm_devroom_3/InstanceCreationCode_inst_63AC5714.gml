@@ -1,3 +1,3 @@
-targetRoom = rm_devroom_b;
-targetX = 240;
-targetY = 272;
+targetRoom = rm_devroom_cave;
+targetX = 248;
+targetY = 544;

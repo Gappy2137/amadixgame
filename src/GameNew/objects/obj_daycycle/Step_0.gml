@@ -69,7 +69,20 @@ if (enableChange){
 	}
 }
 
-
+if (obj_levelcontrol.cave){
+	
+		color_mix = [	090.00/255,
+						120.00/255,
+						160.00/255];
+				
+		con_sat_brt_mix = [	0.80,
+							0.90,
+							-0.30,
+							0.30,
+							0.60];
+	
+	
+}
 			
 alpha	= clamp(sin((2 * global.daycycletime + 0.5) * 3.14) * 1.6 - 0.1, 0, 1);
 

@@ -220,4 +220,5 @@ global.roomData = {
 	devroom_3 : 0,
 	devroom_b : 0,
 	devroom_c : 0,
+	devroom_cave : 0
 }
