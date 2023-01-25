@@ -53,7 +53,7 @@ craftSlotSelectedX = 0;
 craftSlotSelectedY = 0;
 
 invRow = 0;
-invSlots = obj_inventory.inv_slots - 4;
+invSlots = obj_inventory.inv_slots - ADDITIONALSLOTS;
 invSlotsWidth = 3;
 invSlotsHeight = 6;
 invSlotsOnPage = 18;

@@ -753,6 +753,74 @@ if (craftSlotSelected != -1){
 
 #endregion
 
+#region Rysowanie opisu przedmiotow w ekwipunku
+	var name = "";
+	var type = "";
+	if (selected_slot_eq >= 0) && (selected_slot_eq < invSlots){
+		iitem = inv_grid[# INVITEM, selected_slot_eq];
+	}else{
+		iitem = 0;	
+	}
+
+
+	if (iitem > 0) && (multipick == 0){
+	
+		//Infobox
+		var infobox_x, infobox_width,
+		name_x, name_y, type_x, type_y;
+	
+		infobox_x = mousex + 8;
+		infobox_y = mousey + 8;
+		
+		infobox_width = cell_size * 4;
+	
+		var hfix = 0;
+	
+		//Nazwa przedmiotu
+		name = (iinfo_grid[# 0, iitem]);
+		var namestr = scribble(name);
+		var name_scale = 0.5;
+		
+		//Rodzaj przedmiotu
+		type = iinfo_grid[# 2, inv_grid[# INVTYPE, selected_slot_eq]];
+		var typestr = scribble(type);
+		var type_scale = 0.25;
+		
+		if (infobox_x + infobox_width > GAMEWIDTH){
+			infobox_x = mousex - 8 - infobox_width;
+		}
+		
+		var infobox_half = (infobox_x + infobox_width/2);
+		
+		infobox_height = ( namestr.get_height() * name_scale ) + ( typestr.get_height() * type_scale ) + 12;
+		
+		var infobox_descheight = ( namestr.get_height() * name_scale ) + ( typestr.get_height() * type_scale ) + 24;
+
+		if (infobox_y + infobox_height >= GAMEHEIGHT){
+			infobox_y = (GAMEHEIGHT - infobox_height);
+		}
+
+		//Rysuj tlo
+		draw_sprite_ext(spr_inventory_desc, 0, infobox_x, infobox_y, infobox_width/cell_size, infobox_height/cell_size, 0, c_white, 1);
+		
+		//Rysuj nazwe
+		namestr.starting_format("font_item", bl);
+		namestr.align(fa_center, fa_top);
+		namestr.transform(name_scale, name_scale, 0);
+		namestr.fit_to_box( ((infobox_width - 6) * 1/name_scale), 48, false);
+		namestr.draw(infobox_half, infobox_y + 4);
+	
+		
+		//Rysuj typ
+		typestr.starting_format("font_item", bl);
+		typestr.align(fa_center, fa_top);
+		typestr.transform(type_scale, type_scale, 0);
+		typestr.wrap( ((infobox_width - 6) * 1/type_scale), 12, false);
+		typestr.draw(infobox_half, infobox_y + namestr.get_height()*name_scale + 4);
+	
+	}
+#endregion
+
 #region Rysowanie przedmiotow przenoszonych
 if (multipick != 0) && (inhand != -1){
 	

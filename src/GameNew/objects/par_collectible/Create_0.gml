@@ -25,6 +25,11 @@ level = 0;
 
 capacity = -1;
 
+canBeHurtByPlayer = false;
+canBeDestroyedByPlayer = false;
+
+hitangle = 0;
+
 /*
 0 - zwykly (kolizja bez etapow)
 1 - krzak (kolizja z overlay)

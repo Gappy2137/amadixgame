@@ -20,6 +20,9 @@ cancollide = false;
 
 enableWind = true;
 
+canBeHurtByPlayer = true;
+canBeDestroyedByPlayer = false;
+
 shake = false;
 rotate = false;
 rotoncol = true;
