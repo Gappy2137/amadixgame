@@ -7,7 +7,16 @@ var _channel = animcurve_get_channel(_curve, "time");
 
 var _val = animcurve_channel_evaluate(_channel, curvePos);
 
-alpha = _val;
+if (obj_levelcontrol.cave){
+	
+	alpha = 0.01;
+	
+}else{
+	
+	alpha = _val;
+	
+}
+
 
 var _curveC = animcurve_get(curveC);
 var _channel_r = animcurve_get_channel(_curveC, "r");

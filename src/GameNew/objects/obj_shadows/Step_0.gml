@@ -13,7 +13,17 @@ var _channel = animcurve_get_channel(_curve, "time");
 
 var _val = animcurve_channel_evaluate(_channel, curvePos);
 
-skewX = _val;
+
+
+if (obj_levelcontrol.cave){
+	
+	skewX = 0;
+	
+}else{
+	
+	skewX = _val;
+	
+}
 
 
 var _curve2 = animcurve_get(curve2);
