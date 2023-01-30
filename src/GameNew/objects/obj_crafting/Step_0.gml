@@ -96,11 +96,19 @@ if isbounded(mousex, 0, GAMEWIDTH/2) {
 	if (mouse_wheel_up()) {
 		if (craftRow > 0){
 			craftRow--;
+			craftSlotSelected -= craftSlotsWidth;
 		}
 	}
 	if (mouse_wheel_down()) {
 		if (craftRow < ( (craftSlots / craftSlotsWidth) - craftSlotsHeight)){
 			craftRow++;
+			if (craftSlotSelected + craftSlotsWidth < recipeAmount) {
+				craftSlotSelected += craftSlotsWidth;
+			}else{
+				craftSlotSelected -= craftSlotsWidth;
+				selected_slot_craft -= craftSlotsWidth;
+				craftSlotSelectedY -= 1;
+			}
 		}
 	}
 } else {

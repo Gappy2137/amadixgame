@@ -196,6 +196,10 @@ ix = (ii - from) mod craftSlotsWidth;
 				ii = 0;	
 			}
 			
+			if (ii >= recipeAmount) || (jj >= craftSlotsOnPage){
+				break;	
+			}
+			
 			//x,y slotow
 			xx = craftUIX + (cell_size * ix);
 			yy = craftUIY + (cell_size * iy);
