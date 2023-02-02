@@ -1,7 +1,9 @@
 {
-  "function": 0,
+  "resourceType": "GMAnimCurve",
+  "resourceVersion": "1.2",
+  "name": "curve_attack_melee_right",
   "channels": [
-    {"colour":4290799884,"visible":true,"points":[
+    {"resourceType":"GMAnimCurveChannel","resourceVersion":"1.0","name":"x","colour":4290799884,"points":[
         {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.0,"y":-12.0,},
         {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.2,"y":0.0,},
         {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.35,"y":9.0,},
@@ -13,8 +15,8 @@
         {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.7,"y":19.0,},
         {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.85,"y":14.0,},
         {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":1.0,"y":14.0,},
-      ],"resourceVersion":"1.0","name":"x","tags":[],"resourceType":"GMAnimCurveChannel",},
-    {"colour":4281083598,"visible":true,"points":[
+      ],"visible":true,},
+    {"resourceType":"GMAnimCurveChannel","resourceVersion":"1.0","name":"y","colour":4281083598,"points":[
         {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.0,"y":2.0,},
         {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.2,"y":-3.0,},
         {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.35,"y":-1.0,},
@@ -26,8 +28,8 @@
         {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.7,"y":31.99963,},
         {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.85,"y":34.75844,},
         {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":1.0,"y":34.75844,},
-      ],"resourceVersion":"1.0","name":"y","tags":[],"resourceType":"GMAnimCurveChannel",},
-    {"colour":4279025727,"visible":true,"points":[
+      ],"visible":true,},
+    {"resourceType":"GMAnimCurveChannel","resourceVersion":"1.0","name":"rot","colour":4279025727,"points":[
         {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.0,"y":35.894703,},
         {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.2,"y":-5.204195,},
         {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.35,"y":-28.179787,},
@@ -35,19 +37,16 @@
         {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.7,"y":-123.24315,},
         {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.85,"y":-134.28824,},
         {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":1.0,"y":-134.28824,},
-      ],"resourceVersion":"1.0","name":"rot","tags":[],"resourceType":"GMAnimCurveChannel",},
-    {"colour":4279234797,"visible":true,"points":[
+      ],"visible":true,},
+    {"resourceType":"GMAnimCurveChannel","resourceVersion":"1.0","name":"yor","colour":4279234797,"points":[
         {"th0":-0.1,"th1":0.1,"tv0":0.0,"tv1":0.0,"x":0.0,"y":0.0,},
         {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.5,"y":0.0,},
         {"th0":-0.1,"th1":0.1,"tv0":0.0,"tv1":0.0,"x":1.0,"y":-24.0,},
-      ],"resourceVersion":"1.0","name":"yor","tags":[],"resourceType":"GMAnimCurveChannel",},
+      ],"visible":true,},
   ],
+  "function": 0,
   "parent": {
     "name": "Attacks",
     "path": "folders/Animation Curves/Attacks.yy",
   },
-  "resourceVersion": "1.2",
-  "name": "curve_attack_melee_right",
-  "tags": [],
-  "resourceType": "GMAnimCurve",
 }

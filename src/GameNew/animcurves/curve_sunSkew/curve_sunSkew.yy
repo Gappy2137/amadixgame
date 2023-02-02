@@ -2,9 +2,8 @@
   "resourceType": "GMAnimCurve",
   "resourceVersion": "1.2",
   "name": "curve_sunSkew",
-  "function": 2,
   "channels": [
-    {"resourceType":"GMAnimCurveChannel","resourceVersion":"1.0","name":"time","colour":4290799884,"visible":true,"points":[
+    {"resourceType":"GMAnimCurveChannel","resourceVersion":"1.0","name":"time","colour":4290799884,"points":[
         {"th0":-0.1,"th1":0.036603827,"tv0":0.0,"tv1":0.010790665,"x":0.0,"y":0.0,},
         {"th0":-0.026195407,"th1":0.0060000005,"tv0":0.0,"tv1":0.0,"x":0.22,"y":0.0,},
         {"th0":-0.0060000005,"th1":0.05,"tv0":0.0,"tv1":0.0,"x":0.25572518,"y":4.0,},
@@ -13,8 +12,9 @@
         {"th0":-0.046660423,"th1":0.0032804012,"tv0":-1.2814754,"tv1":0.09037855,"x":0.889313,"y":-0.25198948,},
         {"th0":-0.0067324494,"th1":0.04981774,"tv0":0.0036010237,"tv1":-0.026646301,"x":0.9,"y":0.0,},
         {"th0":-0.037114084,"th1":0.1,"tv0":0.0,"tv1":0.0,"x":1.0,"y":0.0,},
-      ],},
+      ],"visible":true,},
   ],
+  "function": 2,
   "parent": {
     "name": "Animation Curves",
     "path": "folders/Animation Curves.yy",

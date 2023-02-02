@@ -1,7 +1,9 @@
 {
-  "function": 2,
+  "resourceType": "GMAnimCurve",
+  "resourceVersion": "1.2",
+  "name": "curve_fade_alpha",
   "channels": [
-    {"colour":4290799884,"visible":true,"points":[
+    {"resourceType":"GMAnimCurveChannel","resourceVersion":"1.0","name":"time","colour":4290799884,"points":[
         {"th0":-0.1,"th1":0.005449519,"tv0":0.0,"tv1":-0.0030132309,"x":0.0,"y":0.12,},
         {"th0":-0.029108627,"th1":0.03522795,"tv0":-0.0021839365,"tv1":0.002632901,"x":0.059386972,"y":0.1265951,},
         {"th0":-0.020876035,"th1":0.04355254,"tv0":-0.0029186904,"tv1":0.006089106,"x":0.19530697,"y":0.12686883,},
@@ -11,14 +13,11 @@
         {"th0":-0.025338013,"th1":0.01839757,"tv0":-0.026635539,"tv1":0.019339621,"x":0.8769157,"y":0.10095962,},
         {"th0":-0.0171026,"th1":0.034600735,"tv0":0.0030287206,"tv1":-0.0060783327,"x":0.92911875,"y":0.11477837,},
         {"th0":-0.007871985,"th1":0.1,"tv0":7.450581E-09,"tv1":0.0,"x":1.0,"y":0.12,},
-      ],"resourceVersion":"1.0","name":"time","tags":[],"resourceType":"GMAnimCurveChannel",},
+      ],"visible":true,},
   ],
+  "function": 2,
   "parent": {
     "name": "Animation Curves",
     "path": "folders/Animation Curves.yy",
   },
-  "resourceVersion": "1.2",
-  "name": "curve_fade_alpha",
-  "tags": [],
-  "resourceType": "GMAnimCurve",
 }

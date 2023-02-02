@@ -1,12 +1,11 @@
 {
-  "isDnD": false,
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "Documentation_Reflection",
   "isCompatibility": false,
+  "isDnD": false,
   "parent": {
     "name": "WaterReflection",
     "path": "folders/Extensions/WaterReflection.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "Documentation_Reflection",
-  "tags": [],
-  "resourceType": "GMScript",
 }

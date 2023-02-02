@@ -1,12 +1,11 @@
 {
-  "isDnD": false,
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "input_value_is_binding",
   "isCompatibility": false,
+  "isDnD": false,
   "parent": {
     "name": "Binding Creators",
     "path": "folders/Extensions/Input/Binding Creators.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "input_value_is_binding",
-  "tags": [],
-  "resourceType": "GMScript",
 }

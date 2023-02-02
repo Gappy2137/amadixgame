@@ -1,12 +1,11 @@
 {
-  "isDnD": false,
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "input_binding_get_name",
   "isCompatibility": false,
+  "isDnD": false,
   "parent": {
     "name": "Binding Access",
     "path": "folders/Extensions/Input/Binding Access.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "input_binding_get_name",
-  "tags": [],
-  "resourceType": "GMScript",
 }

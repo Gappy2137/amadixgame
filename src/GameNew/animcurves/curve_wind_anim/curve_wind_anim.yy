@@ -2,9 +2,8 @@
   "resourceType": "GMAnimCurve",
   "resourceVersion": "1.2",
   "name": "curve_wind_anim",
-  "function": 1,
   "channels": [
-    {"resourceType":"GMAnimCurveChannel","resourceVersion":"1.0","name":"spd","colour":4290799884,"visible":true,"points":[
+    {"resourceType":"GMAnimCurveChannel","resourceVersion":"1.0","name":"spd","colour":4290799884,"points":[
         {"th0":-0.1,"th1":0.1,"tv0":0.0,"tv1":0.0,"x":0.0,"y":0.0,},
         {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.05,"y":0.05,},
         {"th0":-0.020000001,"th1":0.020000001,"tv0":0.0,"tv1":0.0,"x":0.1,"y":0.05,},
@@ -13,14 +12,14 @@
         {"th0":-0.02,"th1":0.06,"tv0":0.0,"tv1":0.0,"x":0.4,"y":0.15,},
         {"th0":-0.06,"th1":0.060000002,"tv0":0.0,"tv1":0.0,"x":0.7,"y":0.25,},
         {"th0":-0.1,"th1":0.1,"tv0":0.0,"tv1":0.0,"x":1.0,"y":0.3,},
-      ],},
-    {"resourceType":"GMAnimCurveChannel","resourceVersion":"1.0","name":"rot","colour":4281083598,"visible":true,"points":[
+      ],"visible":true,},
+    {"resourceType":"GMAnimCurveChannel","resourceVersion":"1.0","name":"rot","colour":4281083598,"points":[
         {"th0":-0.1,"th1":0.1,"tv0":0.0,"tv1":0.0,"x":0.0,"y":0.0,},
         {"th0":-0.079771,"th1":0.120229006,"tv0":0.0,"tv1":0.0,"x":0.4,"y":1.0,},
         {"th0":-0.07,"th1":0.05,"tv0":0.0,"tv1":0.0,"x":0.75,"y":-0.2,},
         {"th0":-0.1,"th1":0.1,"tv0":0.0,"tv1":0.0,"x":1.0,"y":0.0,},
-      ],},
-    {"resourceType":"GMAnimCurveChannel","resourceVersion":"1.0","name":"rot2","colour":4285097676,"visible":true,"points":[
+      ],"visible":true,},
+    {"resourceType":"GMAnimCurveChannel","resourceVersion":"1.0","name":"rot2","colour":4285097676,"points":[
         {"th0":-0.1,"th1":0.1,"tv0":0.0,"tv1":0.0,"x":0.0,"y":0.13,},
         {"th0":-0.040458016,"th1":0.039541986,"tv0":0.0,"tv1":0.0,"x":0.20229007,"y":0.51493734,},
         {"th0":-0.079771,"th1":0.120229006,"tv0":0.0,"tv1":0.0,"x":0.4038168,"y":1.2666667,},
@@ -28,8 +27,9 @@
         {"th0":-0.029007638,"th1":0.030916035,"tv0":0.0,"tv1":0.0,"x":0.72137403,"y":1.0133333,},
         {"th0":-0.030916035,"th1":0.025572514,"tv0":0.0,"tv1":0.0,"x":0.8721374,"y":0.6732891,},
         {"th0":-0.1,"th1":0.1,"tv0":0.0,"tv1":0.0,"x":1.0,"y":0.26000005,},
-      ],},
+      ],"visible":true,},
   ],
+  "function": 1,
   "parent": {
     "name": "Animation Curves",
     "path": "folders/Animation Curves.yy",

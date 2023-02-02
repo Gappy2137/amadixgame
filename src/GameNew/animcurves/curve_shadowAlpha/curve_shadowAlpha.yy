@@ -2,9 +2,8 @@
   "resourceType": "GMAnimCurve",
   "resourceVersion": "1.2",
   "name": "curve_shadowAlpha",
-  "function": 2,
   "channels": [
-    {"resourceType":"GMAnimCurveChannel","resourceVersion":"1.0","name":"time","colour":4290799884,"visible":true,"points":[
+    {"resourceType":"GMAnimCurveChannel","resourceVersion":"1.0","name":"time","colour":4290799884,"points":[
         {"th0":-0.1,"th1":0.0034460837,"tv0":0.0,"tv1":0.001015842,"x":0.0,"y":0.7,},
         {"th0":-0.018441249,"th1":0.046095327,"tv0":-0.05552003,"tv1":0.1387766,"x":0.10496183,"y":0.840103,},
         {"th0":-0.064689964,"th1":0.08856973,"tv0":-0.00022947788,"tv1":0.00031418775,"x":0.259542,"y":1.0,},
@@ -12,8 +11,9 @@
         {"th0":-0.024118721,"th1":0.105042815,"tv0":0.0068956614,"tv1":-0.029753149,"x":0.66793895,"y":1.0,},
         {"th0":-0.05414152,"th1":0.073759794,"tv0":0.07332057,"tv1":-0.0998885,"x":0.875,"y":0.8,},
         {"th0":-0.01034373,"th1":0.1,"tv0":0.0,"tv1":0.0,"x":1.0,"y":0.7,},
-      ],},
+      ],"visible":true,},
   ],
+  "function": 2,
   "parent": {
     "name": "Animation Curves",
     "path": "folders/Animation Curves.yy",
