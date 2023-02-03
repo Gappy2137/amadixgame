@@ -1242,7 +1242,7 @@
     {"id":{"name":"spr_amadix_sawedoff_l_shoot","path":"sprites/spr_amadix_sawedoff_l_shoot/spr_amadix_sawedoff_l_shoot.yy",},"order":4,},
     {"id":{"name":"spr_amadix_jeansL_pick_r","path":"sprites/spr_amadix_jeansL_pick_r/spr_amadix_jeansL_pick_r.yy",},"order":2,},
     {"id":{"name":"scr_player_melee_walk","path":"scripts/scr_player_melee_walk/scr_player_melee_walk.yy",},"order":15,},
-    {"id":{"name":"Object140","path":"objects/Object140/Object140.yy",},"order":0,},
+    {"id":{"name":"par_light_tile","path":"objects/par_light_tile/par_light_tile.yy",},"order":0,},
     {"id":{"name":"collision_line_first","path":"scripts/collision_line_first/collision_line_first.yy",},"order":26,},
     {"id":{"name":"input_player_copy","path":"scripts/input_player_copy/input_player_copy.yy",},"order":0,},
     {"id":{"name":"spr_campfire","path":"sprites/spr_campfire/spr_campfire.yy",},"order":0,},

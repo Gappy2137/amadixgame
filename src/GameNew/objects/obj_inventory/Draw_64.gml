@@ -1,9 +1,13 @@
+draw_text(64, 96, "cap " + string(ds_inventory[# INVCAP, abs(selected_slot)]));
+
 if (show_inventory) && (!show_slots){
 
 
 	
 	draw_set_font(font_item);
 
+
+	
 	
 	////////////////
 	//draw_set_color(c_yellow);
@@ -117,26 +121,31 @@ if (show_inventory) && (!show_slots){
 					var amount = inv_grid[# INVAMOUNT, ii];
 					var _cap = inv_grid[# INVCAP, ii];
 					
-					if (_cap != -1){
-						if (inv_grid[# INVTYPE, ii] == itemtype.magazine){
-							draw_set_font(global.font_itemnum);
-							draw_set_halign(fa_right);
-							draw_text_transformed_color(xx + 22, yy + 16, string(_cap), .5, .5, 0, wh, wh, wh, wh, 1);
-							draw_set_halign(fa_left);
-							draw_set_font(font_item);
+					if (inv_grid[# INVTYPE, ii] != itemtype.handgun)
+					&& (inv_grid[# INVTYPE, ii] != itemtype.shotgun){
+						if (_cap != -1){
+							if (inv_grid[# INVTYPE, ii] == itemtype.magazine){
+								draw_set_font(global.font_itemnum);
+								draw_set_halign(fa_right);
+								draw_text_transformed_color(xx + 22, yy + 16, string(_cap), .5, .5, 0, wh, wh, wh, wh, 1);
+								draw_set_halign(fa_left);
+								draw_set_font(font_item);
+							}else{
+								draw_rectangle_color(xx + 4, yy + 20, xx + 20, yy + 22, bl, bl, bl, bl, false);
+								draw_rectangle_color(xx + 4.5, yy + 20.5, xx + 3 + (_cap*3.28) , yy + 21.5, wh, wh, wh, wh, false);
+							}
 						}else{
-							draw_rectangle_color(xx + 4, yy + 20, xx + 20, yy + 22, bl, bl, bl, bl, false);
-							draw_rectangle_color(xx + 4.5, yy + 20.5, xx + 3 + (_cap*3.28) , yy + 21.5, wh, wh, wh, wh, false);
-						}
-					}else{
-						if (amount > 1){
-							draw_set_font(global.font_itemnum);
-							draw_set_halign(fa_right);
-							draw_text_transformed_color(xx + 22, yy + 16, string(amount), .5, .5, 0, wh, wh, wh, wh, 1);
-							draw_set_halign(fa_left);
-							draw_set_font(font_item);
+							if (amount > 1){
+								draw_set_font(global.font_itemnum);
+								draw_set_halign(fa_right);
+								draw_text_transformed_color(xx + 22, yy + 16, string(amount), .5, .5, 0, wh, wh, wh, wh, 1);
+								draw_set_halign(fa_left);
+								draw_set_font(font_item);
+							}
 						}
 					}
+					
+
 				}
 
 		

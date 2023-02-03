@@ -13,7 +13,7 @@ if (obj_amadix.actionstate != player_state_action.handgun){
 
 // Liczba zaladowanych nabojow pobierana z eq
 if (obj_amadix.actionstate == player_state_action.handgun){
-	ammoLoadedInv = obj_inventory.ds_inventory[# INVHP, obj_inventory.mouse_slotx_second];
+	ammoLoadedInv = obj_inventory.ds_inventory[# INVCAP, obj_inventory.mouse_slotx_second];
 }else{
 	ammoLoadedInv = 0;
 }
@@ -69,7 +69,7 @@ if (state != gunState.reloading)
 if (state != gunState.reloading)
 && (state != gunState.reloading_empty)
 && (state != gunState.shooting)
-&& (obj_inventory.ds_inventory[# INVHP, obj_inventory.mouse_slotx_second] < ammoCap)
+&& (obj_inventory.ds_inventory[# INVCAP, obj_inventory.mouse_slotx_second] < ammoCap)
 && (ammoExtra != 0)
 && (obj_amadix.running != 2)
 && (obj_amadix.actionstate == player_state_action.handgun)
@@ -85,7 +85,7 @@ if (state != gunState.reloading)
 if (state != gunState.shooting)
 && (state != gunState.reloading)
 && (state != gunState.reloading_empty){
-	if (obj_inventory.ds_inventory[# INVHP, obj_inventory.mouse_slotx_second] == 0)
+	if (obj_inventory.ds_inventory[# INVCAP, obj_inventory.mouse_slotx_second] == 0)
 	&& (obj_amadix.actionstate == player_state_action.handgun){
 		state = gunState.empty;
 		inChamber = false;
@@ -184,7 +184,7 @@ if (type == 0){
 			canShoot = false;
 			alarm[0] = shootingTime;
 			ammoLoadedInv--;
-			obj_inventory.ds_inventory[# INVHP, obj_inventory.mouse_slotx_second]--;
+			obj_inventory.ds_inventory[# INVCAP, obj_inventory.mouse_slotx_second]--;
 		}
 	}
 	
@@ -274,7 +274,7 @@ if (type == 0){
 			canShoot = false;
 			alarm[0] = shootingTime;
 			ammoLoadedInv--;
-			obj_inventory.ds_inventory[# INVHP, obj_inventory.mouse_slotx_second]--;
+			obj_inventory.ds_inventory[# INVCAP, obj_inventory.mouse_slotx_second]--;
 		}
 	}
 	

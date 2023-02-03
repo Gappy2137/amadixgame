@@ -374,7 +374,9 @@ if (show_inventory) && (!show_slots){
 				inhand = inv_grid[# INVITEM, selected_slot];
 				if (inv_grid[# INVTYPE, selected_slot] == itemtype.alcohol)
 				|| (inv_grid[# INVTYPE, selected_slot] == itemtype.drink)
-				|| (inv_grid[# INVTYPE, selected_slot] == itemtype.magazine){
+				|| (inv_grid[# INVTYPE, selected_slot] == itemtype.magazine)
+				|| (inv_grid[# INVTYPE, selected_slot] == itemtype.handgun)
+				|| (inv_grid[# INVTYPE, selected_slot] == itemtype.shotgun){
 					multipick = inv_grid[# INVAMOUNT, selected_slot];
 					cap = inv_grid[# INVCAP, selected_slot];
 					lvl = inv_grid[# INVLEVEL, selected_slot];

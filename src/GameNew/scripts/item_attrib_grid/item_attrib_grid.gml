@@ -127,7 +127,8 @@ function item_attrib_grid(){
 	
 	//M1911
 	grid[# INVTYPE, item.m1911] = itemtype.handgun;
-	grid[# INVHP, item.m1911] = 0;
+	grid[# INVCAP, item.m1911] = 0;
+	grid[# MAXCAP, item.m1911] = 8;
 	
 	//Wodka
 	grid[# INVTYPE, item.vodka] = itemtype.alcohol;
@@ -223,7 +224,6 @@ function item_attrib_grid(){
 		}
 		if (grid[# INVTYPE, i] == itemtype.handgun){
 			grid[# MAXSTACK, i] = 1;
-			grid[# MAXCAP, i] = -1;
 		}
 		if (grid[# INVTYPE, i] == itemtype.alcohol){
 			grid[# MAXSTACK, i] = 1;
@@ -233,7 +233,6 @@ function item_attrib_grid(){
 		}
 		if (grid[# INVTYPE, i] == itemtype.shotgun){
 			grid[# MAXSTACK, i] = 1;
-			grid[# MAXCAP, i] = -1;
 		}
 		if (grid[# INVTYPE, i] == itemtype.magazine){
 			grid[# MAXSTACK, i] = 1;

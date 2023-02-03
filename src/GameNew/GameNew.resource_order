@@ -1062,7 +1062,7 @@
     {"name":"spr_amadix_sawedoff_l_shoot","order":4,"path":"sprites/spr_amadix_sawedoff_l_shoot/spr_amadix_sawedoff_l_shoot.yy",},
     {"name":"spr_amadix_jeansL_pick_r","order":2,"path":"sprites/spr_amadix_jeansL_pick_r/spr_amadix_jeansL_pick_r.yy",},
     {"name":"scr_player_melee_walk","order":15,"path":"scripts/scr_player_melee_walk/scr_player_melee_walk.yy",},
-    {"name":"Object140","order":16,"path":"objects/Object140/Object140.yy",},
+    {"name":"par_light_tile","order":16,"path":"objects/par_light_tile/par_light_tile.yy",},
     {"name":"collision_line_first","order":26,"path":"scripts/collision_line_first/collision_line_first.yy",},
     {"name":"spr_amadix_m1911_l","order":1,"path":"sprites/spr_amadix_m1911_l/spr_amadix_m1911_l.yy",},
     {"name":"spr_amadix_bareTC_u","order":13,"path":"sprites/spr_amadix_bareTC_u/spr_amadix_bareTC_u.yy",},
