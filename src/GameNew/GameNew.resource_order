@@ -1058,6 +1058,7 @@
     {"name":"draw_sprite_origin","order":9,"path":"scripts/draw_sprite_origin/draw_sprite_origin.yy",},
     {"name":"obj_appletree_1","order":15,"path":"objects/obj_appletree_1/obj_appletree_1.yy",},
     {"name":"spr_amadix_hands_run_d","order":13,"path":"sprites/spr_amadix_hands_run_d/spr_amadix_hands_run_d.yy",},
+    {"name":"item_find_capacity","order":25,"path":"scripts/item_find_capacity/item_find_capacity.yy",},
     {"name":"par_objectdepth","order":5,"path":"objects/par_objectdepth/par_objectdepth.yy",},
     {"name":"spr_amadix_sawedoff_l_shoot","order":4,"path":"sprites/spr_amadix_sawedoff_l_shoot/spr_amadix_sawedoff_l_shoot.yy",},
     {"name":"spr_amadix_jeansL_pick_r","order":2,"path":"sprites/spr_amadix_jeansL_pick_r/spr_amadix_jeansL_pick_r.yy",},

@@ -220,15 +220,37 @@ ix = (ii - from) mod craftSlotsWidth;
 			
 			repeat(ing_amount){
 				var _item = craft_grid[# C_ING, ii][@ _i][@ C_ITEM];
-				var amount = craft_grid[# C_ING, ii][@ _i][@ C_AMOUNT];
+				var _amount = craft_grid[# C_ING, ii][@ _i][@ C_AMOUNT];
 				
 				
 				var amountInInv = (_item >= CRAFTITEMTYPE) ? itemtype_find_amount(_item - CRAFTITEMTYPE) : item_find_amount(_item);
 			
-				if (amountInInv >= amount){
-					_cancraft[_i] = true;
+				if (amountInInv >= _amount){
+			
+					var _type = item_all[# INVTYPE, _iitem];
+			
+					if (item_isinsep(_type)){
+				
+						if (item_find_capacity(_iitem) >= _amount){
+					
+							_cancraft[_i] = true;
+					
+						}else{
+				
+							_cancraft[_i] = false;
+				
+						}
+				
+					}else{
+				
+						_cancraft[_i] = true;
+				
+					}
+			
 				}else{
+			
 					_cancraft[_i] = false;
+			
 				}
 				
 				_i++;
