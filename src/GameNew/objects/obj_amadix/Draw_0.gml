@@ -32,8 +32,8 @@ if (playerVisible){
 	}
 	
 }
-draw_text(x,y+32, fps);
-draw_text(x,y+40, fps_real);
+//draw_text(x,y+32, fps);
+//draw_text(x,y+40, fps_real);
 //draw_text(x + 32, y, hsp);
 //draw_text(x + 32, y + 16, vsp);
 //draw_text(x + 32, y + 24, spd);

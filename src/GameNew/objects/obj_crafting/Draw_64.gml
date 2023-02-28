@@ -227,7 +227,7 @@ ix = (ii - from) mod craftSlotsWidth;
 			
 				if (amountInInv >= _amount){
 			
-					var _type = item_all[# INVTYPE, _iitem];
+					var _type = item_all[# INVTYPE, _item];
 			
 					if (item_isinsep(_type)){
 				

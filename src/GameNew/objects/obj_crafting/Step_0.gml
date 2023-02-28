@@ -672,7 +672,7 @@ if (craftSlotSelected != -1){
 							
 								__item = itemtype_find(_iitem);
 							
-								item_remove(__item, 1, false);
+								item_remove_capacity(__item, 1);
 							
 							}
 							

@@ -289,6 +289,7 @@
     {"name":"input_system_reset","order":9,"path":"scripts/input_system_reset/input_system_reset.yy",},
     {"name":"spr_amadix_m1911_run_d_empty","order":17,"path":"sprites/spr_amadix_m1911_run_d_empty/spr_amadix_m1911_run_d_empty.yy",},
     {"name":"item_exists","order":11,"path":"scripts/item_exists/item_exists.yy",},
+    {"name":"item_remove_capacity","order":26,"path":"scripts/item_remove_capacity/item_remove_capacity.yy",},
     {"name":"snd_wind_forest","order":1,"path":"sounds/snd_wind_forest/snd_wind_forest.yy",},
     {"name":"obj_npc_finger","order":2,"path":"objects/obj_npc_finger/obj_npc_finger.yy",},
     {"name":"spr_eq_menu","order":6,"path":"sprites/spr_eq_menu/spr_eq_menu.yy",},

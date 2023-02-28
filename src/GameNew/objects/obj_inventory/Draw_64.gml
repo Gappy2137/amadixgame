@@ -1,4 +1,4 @@
-draw_text(64, 96, "cap " + string(ds_inventory[# INVCAP, abs(selected_slot)]));
+//draw_text(64, 96, "cap " + string(ds_inventory[# INVCAP, abs(selected_slot)]));
 
 if (show_inventory) && (!show_slots){
 
