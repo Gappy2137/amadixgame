@@ -1,19 +1,21 @@
 function itemtype_find(iitemtype){
 
-	var yy = 0;
-	var iitem = item.none;
+	var i = 0;
+	var eq = obj_inventory.ds_inventory;
 
 	repeat(obj_inventory.inv_slots - ADDITIONALSLOTS){
 		
-		if (obj_inventory.ds_inventory[# INVTYPE, yy] == iitemtype){
+		if (eq[# INVTYPE, i] == iitemtype){
 			
-			iitem = obj_inventory.ds_inventory[# INVITEM, yy];
-			
-			return iitem;
+			if (eq[# INVCAP, i] > 0){
+				
+				return ( eq[# INVITEM, i] );
+				
+			}
 			
 		}
 		
-		yy++;
+		i++;
 		
 	}
 

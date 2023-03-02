@@ -544,11 +544,36 @@ if (craftSlotSelected != -1){
 		var _iitem = craft_grid[# C_ING, craftSlotSelected][@ _i][@ C_ITEM];
 		var _amount = craft_grid[# C_ING, craftSlotSelected][@ _i][@ C_AMOUNT];
 		
-		var amountInInv = (_iitem >= CRAFTITEMTYPE) ? itemtype_find_amount(_iitem - CRAFTITEMTYPE) : item_find_amount(_iitem);
+		var amountInInv = 0;
+		
+		var _type = item_all[# INVTYPE, _iitem];
+		
+		if (_iitem >= CRAFTITEMTYPE){
+		
+			if (item_isinsep(_type)){
+				
+				amountInInv = itemtype_find_amount(_iitem - CRAFTITEMTYPE);
+				
+			}else{
+				
+				amountInInv = itemtype_find_amount(_iitem - CRAFTITEMTYPE);
+				
+			}
+		
+		}else{
+			
+			if (item_isinsep(_type)){
+			
+				amountInInv = item_find_capacity(_iitem);
+			
+			}else{
+				
+				amountInInv = item_find_amount(_iitem);
+				
+			}
+		}
 		
 		if (amountInInv >= _amount){
-			
-			var _type = item_all[# INVTYPE, _iitem];
 			
 			if (item_isinsep(_type)){
 				
@@ -670,7 +695,7 @@ if (craftSlotSelected != -1){
 						
 							repeat(_amount){
 							
-								__item = itemtype_find(_iitem);
+								__item = itemtype_find(_type);
 							
 								item_remove_capacity(__item, 1);
 							

@@ -223,15 +223,41 @@ ix = (ii - from) mod craftSlotsWidth;
 				var _amount = craft_grid[# C_ING, ii][@ _i][@ C_AMOUNT];
 				
 				
-				var amountInInv = (_item >= CRAFTITEMTYPE) ? itemtype_find_amount(_item - CRAFTITEMTYPE) : item_find_amount(_item);
+		
+				var amountInInv = 0;
+		
+				var _type = item_all[# INVTYPE, _item];
+		
+				if (_item >= CRAFTITEMTYPE){
+		
+					if (item_isinsep(_type)){
+				
+						amountInInv = itemtype_find_amount(_item - CRAFTITEMTYPE);
+				
+					}else{
+				
+						amountInInv = itemtype_find_amount(_item - CRAFTITEMTYPE);
+				
+					}
+		
+				}else{
 			
+					if (item_isinsep(_type)){
+			
+						amountInInv = item_find_capacity(_item);
+			
+					}else{
+				
+						amountInInv = item_find_amount(_item);
+				
+					}
+				}
+		
 				if (amountInInv >= _amount){
-			
-					var _type = item_all[# INVTYPE, _item];
 			
 					if (item_isinsep(_type)){
 				
-						if (item_find_capacity(_iitem) >= _amount){
+						if (item_find_capacity(_item) >= _amount){
 					
 							_cancraft[_i] = true;
 					
@@ -719,7 +745,34 @@ if (craftSlotSelected != -1){
 			
 			}
 			
-			var amountInInv = (_iitem >= CRAFTITEMTYPE) ? itemtype_find_amount(_iitem - CRAFTITEMTYPE) : item_find_amount(_iitem);
+			var amountInInv = 0;
+		
+			var _type = item_all[# INVTYPE, _iitem];
+		
+			if (_iitem >= CRAFTITEMTYPE){
+		
+				if (item_isinsep(_type)){
+				
+					amountInInv = itemtype_find_amount(_iitem - CRAFTITEMTYPE);
+				
+				}else{
+				
+					amountInInv = itemtype_find_amount(_iitem - CRAFTITEMTYPE);
+				
+				}
+		
+			}else{
+			
+				if (item_isinsep(_type)){
+			
+					amountInInv = item_find_capacity(_iitem);
+			
+				}else{
+				
+					amountInInv = item_find_amount(_iitem);
+				
+				}
+			}
 			
 			if (amountInInv >= _amount){
 				ing_alpha[_i] = 1;
