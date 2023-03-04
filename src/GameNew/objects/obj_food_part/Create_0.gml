@@ -10,3 +10,5 @@ ninepart = irandom_range(0, 5);
 image_speed = 0;
 image_index = 0;
 scale = choose(0.5, 0.75, 0.55, 0.7);
+rot = choose(5, -5, 11, -11, 9, -9);
+size = 3;
