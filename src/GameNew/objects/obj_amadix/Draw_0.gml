@@ -32,7 +32,7 @@ if (playerVisible){
 	}
 	
 }
-//draw_text(x,y+32, fps);
+draw_text(x,y+32, speedEffect);
 //draw_text(x,y+40, fps_real);
 //draw_text(x + 32, y, hsp);
 //draw_text(x + 32, y + 16, vsp);
@@ -60,13 +60,13 @@ if (playerVisible){
 //draw_sprite(arms2_index, 0, x + 32, y + 48);
 
 
-//draw_text(x + 32, y, hsp);
-//draw_text(x + 32, y + 8, vsp);
+draw_text(x + 32, y, hsp);
+draw_text(x + 32, y + 8, vsp);
 
-//draw_text(x + 32, y + 24, running);
-//draw_text(x + 32, y + 32, spd);
-//draw_text(x + 32, y + 46, skid);
-//draw_text(x + 32, y + 64, skidTimer);
+draw_text(x + 32, y + 24, anim_frame);
+draw_text(x + 32, y + 32, facing);
+draw_text(x + 32, y + 46, skid);
+draw_text(x + 32, y + 64, skidTimer);
 
 //draw_text(x - 32, y + 48, depth);
 //draw_text(x + 32, y + 48, zfloor);

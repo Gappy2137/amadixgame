@@ -305,31 +305,11 @@ with(obj_amadix){
 	}
 	
 	if (skid) && (canmove){
-		switch(facing){
-			case index_facing.down:
-				anim_frame = 0;
-				scr_setPlayerFacingAnim(index_facing.down);
-			break;
-			case index_facing.left:
-				anim_frame = 0;
-				scr_setPlayerFacingAnim(index_facing.left);
-			break;
-			case index_facing.right:
-				anim_frame = 1;
-				scr_setPlayerFacingAnim(index_facing.right);
-			break;
-			case index_facing.up:
-				anim_frame = 2;
-				scr_setPlayerFacingAnim(index_facing.up);
-			break;
-		}
-		anim_speed = 0;
-		anim_frame_num = 0;
 		if (skidTimer <= 0){
 			skidTimer = skidTime;
 			skid = false;
-			scr_setPlayerFacing();
-			anim_frame = 0;
+			//scr_setPlayerFacing();
+			//anim_frame = 0;
 		}else{
 			skidTimer--;
 		}
@@ -344,7 +324,8 @@ with(obj_amadix){
 			}
 		}
 		if (running == 1){
-			anim_frame = 0;
+			if (!skid)
+				anim_frame = 0;
 			running = 0;
 		}
 	}
@@ -395,6 +376,36 @@ with(obj_amadix){
 					facing = index_facing.down;
 				}	
 		}
+	}
+	
+	if (skid){
+		
+		
+		anim_speed = 0;	
+		anim_frame_num = 0;
+		switch(facing){
+			case index_facing.down:
+				anim_frame = 0;
+				facing = index_facing.down;
+				scr_setPlayerFacingAnim(index_facing.down);
+			break;
+			case index_facing.left:
+				anim_frame = 0;
+				facing = index_facing.left;
+				scr_setPlayerFacingAnim(index_facing.left);
+			break;
+			case index_facing.right:
+				anim_frame = 1;
+				facing = index_facing.right;
+				scr_setPlayerFacingAnim(index_facing.right);
+			break;
+			case index_facing.up:
+				anim_frame = 2;
+				facing = index_facing.up;
+				scr_setPlayerFacingAnim(index_facing.up);
+			break;
+		}
+		
 	}
 	
 }

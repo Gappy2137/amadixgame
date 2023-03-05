@@ -64,7 +64,7 @@ with (obj_amadix){
 
 	
 	//Ustawia predkosc
-	var _spd = speedEffect + speedChange;
+	var _spd = round_to2(speedEffect + speedChange);
 	
 	//if (key_run) && (moving){
 	//	if (spd >= (runspeed + _spd) - 0.3){
@@ -92,6 +92,7 @@ with (obj_amadix){
 	
 	switch (state) {
 		case player_state.moving:
+		case player_state.idle:
 					if (!ice_collision){
 						if (running == 0){
 								max_spd = walkspeed + _spd;
@@ -129,7 +130,8 @@ with (obj_amadix){
 									}
 									
 									if (runningTimer == 0){
-										anim_frame = 0;
+										if (!skid)
+											anim_frame = 0;
 										running = 2;	
 									}
 								}
@@ -158,53 +160,6 @@ with (obj_amadix){
 								spd = runspeed + _spd;
 								anim_speed = 0.18;
 							}else if (running == 1){
-								spd = walkspeed + _spd;
-								anim_speed = 0.15;
-							}else{
-								spd = walkspeed + _spd;
-								anim_speed = 0.15;
-							}
-
-					}
-		break;
-		case player_state.idle:
-					if (!ice_collision){
-						if (running == 0){
-								max_spd = walkspeed + _spd;
-								spd = walkspeed + _spd;
-								anim_speed = 0.09;
-								accel = 0.6;
-								deccel = 0.35;
-								
-								runningTimer = timeToRun;
-								
-						}else if (running == 1){
-								max_spd = runspeed + _spd;
-								spd = lerp(spd, (runspeed + _spd), 0.1);
-								anim_speed = lerp(anim_speed, 0.15, 0.05);
-								
-								accel = 0.3;
-								deccel = 0.3;
-								
-						}else{
-								max_spd = runspeed + _spd;
-								spd = runspeed + _spd;
-								anim_speed = 0.3;
-								accel = 0.3;
-								deccel = 0.25;
-								
-								runningTimer = timeToRun;
-						}
-						
-
-					}else{
-						
-						accel = 0.04;
-						deccel = 0.04;
-							if (running){
-								spd = runspeed + _spd;
-								anim_speed = 0.18;
-							}else if (running){
 								spd = walkspeed + _spd;
 								anim_speed = 0.15;
 							}else{

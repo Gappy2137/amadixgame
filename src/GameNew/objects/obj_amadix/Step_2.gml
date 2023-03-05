@@ -1,6 +1,8 @@
 hsp_prev = hsp;
 vsp_prev = vsp;
 
+
+
 if (obj_levelcontrol.cave){
 	
 	lightSource.x = x;
@@ -16,3 +18,5 @@ if (obj_levelcontrol.cave){
 	lightSource.image_yscale = 0.01;
 	
 }
+
+scr_setPlayerFacing();

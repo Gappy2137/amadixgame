@@ -2,6 +2,14 @@ event_inherited();
 
 if (global.pause){exit;}
 
+if (keyboard_check(ord("G"))){
+	speedEffect -= 0.01;	
+}
+if (keyboard_check(ord("H"))){
+	speedEffect += 0.01;	
+}
+
+
 if (instance_exists(obj_inventory)){
 	iteminhand = obj_inventory.ds_inventory[# INVITEM, obj_inventory.mouse_slotx_second];
 	iteminhandType = obj_inventory.ds_inventory[# INVTYPE, obj_inventory.mouse_slotx_second];
