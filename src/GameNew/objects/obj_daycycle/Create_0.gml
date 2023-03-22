@@ -102,3 +102,6 @@ scr_daycycle_params();
 alarm[0] = 1;
 
 lrp = 0;
+
+maskSurf = -1;
+finalSurf = -1;

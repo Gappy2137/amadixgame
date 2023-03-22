@@ -1,3 +1,4 @@
+/*
 var scale = scr_camera_get_scale();
 var vx = camera_get_view_x(view_camera[0]);
 var vy = camera_get_view_y(view_camera[0]);
@@ -62,12 +63,7 @@ shader_reset();
 surface_reset_target();
 
 
-
-
-
-
 var surf = finalSurf;
-draw_surface_ext(surf, 0, 0, 1 / scale, 1 / scale, 0, c_white, 1);
 
 with (par_light){
 	
@@ -85,10 +81,10 @@ with (par_light){
 					if (col_list[| __i].y > myY){
 						
 						// stworz maske
-
+					
 						draw_surface_part_ext(surf, 
-						myX - vx, 
-						myY - vy, 
+						(myX - vx) * scale, 
+						(myY - vy) * scale,
 						(sprite_get_width(sprite_index) * image_xscale) * scale,
 						((sprite_get_height(sprite_index) * image_yscale) - (bbox_top - myY)) * scale,
 						myX - vx, 

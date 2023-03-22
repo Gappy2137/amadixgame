@@ -1,3 +1,4 @@
+/*
 maskSurf = -1;
 finalSurf = -1;
 
