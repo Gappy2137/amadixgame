@@ -26,3 +26,10 @@ clickRadius = 4;
 cursorSpr = cursorState.normal;
 
 shadowSurface = -1;
+
+anim_frame = 0;
+
+finalangle = 0;
+finalblend = c_white;
+finalalpha = 1;
+lightCover = false;

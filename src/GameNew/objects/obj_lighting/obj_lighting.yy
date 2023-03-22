@@ -4,8 +4,7 @@
   "name": "obj_lighting",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":73,"eventType":8,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":12,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":74,"eventType":8,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -13,7 +12,10 @@
     "name": "Important Objects",
     "path": "folders/Objects/Important Objects.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "par_alwaysactive",
+    "path": "objects/par_alwaysactive/par_alwaysactive.yy",
+  },
   "persistent": true,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -31,10 +33,7 @@
     {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"light_ambient","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"$FFFFFFFF","varType":7,},
   ],
   "solid": false,
-  "spriteId": {
-    "name": "spr_lighting",
-    "path": "sprites/spr_lighting/spr_lighting.yy",
-  },
+  "spriteId": null,
   "spriteMaskId": null,
   "visible": true,
 }

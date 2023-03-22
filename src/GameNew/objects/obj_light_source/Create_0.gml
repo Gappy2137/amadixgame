@@ -10,3 +10,6 @@ alpha = 1;
 alarm[0]				= 1;
 image_speed = 0;
 
+
+xscale = image_xscale;
+yscale = image_yscale;

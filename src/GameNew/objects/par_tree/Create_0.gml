@@ -37,3 +37,5 @@ acc = .75;
 windtimer = 0;
 
 rnd = random_range(0.8, 1.3);
+
+lightCover = true;

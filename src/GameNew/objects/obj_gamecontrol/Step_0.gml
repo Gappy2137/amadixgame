@@ -40,6 +40,11 @@ if (refTimerPi >= 2 * pi){
 	refTimerPi = 0;	
 }
 
+refTimer10 += 1;
+if (refTimer10 > 2){
+	refTimer10 = 0;	
+}
+
 
 // Chest
 if (instance_exists(par_container)){

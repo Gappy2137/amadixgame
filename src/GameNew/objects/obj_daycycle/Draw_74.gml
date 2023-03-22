@@ -24,6 +24,10 @@ surface_set_target(srf_lights);
 	gpu_set_blendmode_ext(bm_zero,bm_inv_src_alpha);
 	with(par_lightcover)
 		draw_sprite_ext(sprite_index, image_index, x - vx, y - vy, image_xscale, image_yscale, image_angle, image_blend, 1);
+
+	//if (surface_exists(obj_lighting.finalSurf))
+	//	draw_surface_ext(obj_lighting.finalSurf, 0, 0, 1/scale, 1/scale, 0, c_white, 1);
+	
 	gpu_set_blendmode(bm_add);
 	// reset GPU
 	gpu_set_tex_filter(false); // optional
@@ -39,6 +43,7 @@ texture_set_stage(s_lights, tex_lights);
 if surface_exists(application_surface){
 	draw_surface_ext(application_surface, 0, 0, 1/scale, 1/scale, 0, c_white, 1);
 }
+
 shader_reset();
 
 /*

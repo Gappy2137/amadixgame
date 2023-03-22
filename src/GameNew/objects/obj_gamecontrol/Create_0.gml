@@ -205,6 +205,7 @@ global.debugBbox = false;
 
 refTimer = 0;
 refTimerPi = 0;
+refTimer10 = 0;
 
 global.savingRoom = false;
 
