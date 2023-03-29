@@ -12,11 +12,8 @@
     "name": "Important Objects",
     "path": "folders/Objects/Important Objects.yy",
   },
-  "parentObjectId": {
-    "name": "par_alwaysactive",
-    "path": "objects/par_alwaysactive/par_alwaysactive.yy",
-  },
-  "persistent": true,
+  "parentObjectId": null,
+  "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
   "physicsFriction": 0.2,
@@ -35,5 +32,5 @@
   "solid": false,
   "spriteId": null,
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }

@@ -1,5 +1,9 @@
 event_inherited();
 
+if ((hsp != 0) && (vsp != 0)){
+	depth = -(bbox_bottom - (sprite_height - yorigin) + zaxis);
+}
+
 rot += rotVal;
 
 if (bounceCount != 0){

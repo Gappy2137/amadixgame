@@ -11,3 +11,6 @@ shadowStyle = spr_shadow_big;
 shadowAlpha = 0.2;
 
 shadowEnable = true;
+
+
+depth = -(bbox_bottom - (sprite_height - yorigin) + zaxis);

@@ -15,5 +15,3 @@ if (caveLight){
 
 	alpha = animcurve_channel_evaluate(curveChannel, curvePos);
 }
-
-

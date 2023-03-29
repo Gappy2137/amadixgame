@@ -39,3 +39,5 @@ knockbackFrame = knockbackFrames;
 hurtColor = #FA363F;
 baseColor = #FFFFFF;
 colorBlend = baseColor;
+
+alarm[0] = 1;

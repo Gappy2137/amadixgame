@@ -1,6 +1,10 @@
 // Inherit the parent event
 event_inherited();
 
+if ((hsp != 0) && (vsp != 0)){
+	depth = -(bbox_bottom - (sprite_height - yorigin) + zaxis);
+}
+
 if (defence < 0){
 	defence = 0;	
 }

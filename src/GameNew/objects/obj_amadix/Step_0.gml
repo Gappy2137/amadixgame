@@ -171,7 +171,11 @@ if (oneStepEvent[2] == 2){
 				}else if (right_collision){
 					angle = approach(angle, 25, acc);
 				}else{
-					angle = approach(angle, 0, acc);	
+					if (angle < 2) && (angle > -2){
+						angle = 0;	
+					}else{
+						angle = approach(angle, 0, acc);	
+					}	
 				}
 		
 				resetAngle = false;
@@ -200,7 +204,11 @@ if (oneStepEvent[2] == 2){
 						}else if (right_collision){
 							angle = approach(angle, 25, acc);
 						}else{
-							angle = approach(angle, 0, acc);	
+							if (angle < 2) && (angle > -2){
+								angle = 0;	
+							}else{
+								angle = approach(angle, 0, acc);	
+							}	
 						}
 		
 						resetAngle = false;
@@ -237,4 +245,6 @@ if (keyboard_check_pressed(ord("X"))) && (global.debugMode) && (!global.inConsol
 if (keyboard_check_pressed(ord("C"))) && (global.debugMode) && (!global.inConsole){
 	game_set_speed(GAMESPEED, gamespeed_fps);	
 }
-depth = -(bbox_bottom - (sprite_height - yorigin) + zfloor);
+
+
+depth = -(bbox_bottom - (sprite_height - yorigin) + zaxis);

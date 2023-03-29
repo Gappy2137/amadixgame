@@ -40,9 +40,9 @@ if (refTimerPi >= 2 * pi){
 	refTimerPi = 0;	
 }
 
-refTimer10 += 1;
-if (refTimer10 > 2){
-	refTimer10 = 0;	
+refTimer2 += 1;
+if (refTimer2 > 2){
+	refTimer2 = 0;	
 }
 
 

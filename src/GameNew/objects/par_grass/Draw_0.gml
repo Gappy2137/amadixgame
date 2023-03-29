@@ -1,4 +1,4 @@
-event_inherited();
+
 
 if (wtr){
 	var waterangle = finalangle / 2;
@@ -13,5 +13,9 @@ if (wtr){
 	draw_sprite_ext(spr_entity_wateredge, 0, x, y + 1, 1, 1, 0, c_white, 1);
 	
 }else{
+	
+	draw_sprite_ext(spr_shadow_grass, 0, x, y, 1, 1, 0, c_white, obj_shadows.shadowAlpha / 2);
+	
 	draw_sprite_ext(sprite_index, anim_frame, (x), (y), 1, 1, finalangle, c_white, 1);
+	
 }

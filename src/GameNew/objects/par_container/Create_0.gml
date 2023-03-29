@@ -69,3 +69,6 @@ _a = 0;
 inchest = false;
 
 cursorChange = false;
+
+
+depth = -(bbox_bottom - (sprite_height - yorigin) + zaxis);

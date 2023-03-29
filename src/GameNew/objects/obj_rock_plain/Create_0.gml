@@ -15,3 +15,5 @@ shadowEnable = true;
 cancollide = true;
 
 zheight = 8;
+
+depth = -(bbox_bottom - (sprite_height - yorigin) + zaxis);

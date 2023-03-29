@@ -39,3 +39,8 @@ windtimer = 0;
 rnd = random_range(0.8, 1.3);
 
 lightCover = true;
+
+lightOccluder = instance_create_layer(x, y, "Lights", obj_lightcover);
+lightOccluder.sprite_index = sprite_index;
+lightOccluder.image_index = 1;
+lightOccluder.alpha = 0;

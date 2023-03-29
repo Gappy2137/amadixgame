@@ -1,4 +1,4 @@
-event_inherited();
+//event_inherited();
 
 if (canBeHurtByPlayer){
 	if (instance_exists(obj_amadix)){
@@ -54,7 +54,7 @@ var curveSpdValue = 0;
 var curveRotValue = 0;
 var curveRot2Value = 0;
 
-if (obj_gamecontrol.refTimer10 == 0){
+if (obj_gamecontrol.refTimer2 == 0){
 
 	var curveAsset = curve_wind_anim;
 	var curveSpdPos = wnd;
@@ -102,10 +102,10 @@ if (isWind){
 	}
 	
 	if ((wnd*100) > 10) && ((wnd*100) < 60){
-		if (obj_gamecontrol.refTimer10 == 0)
+		if (obj_gamecontrol.refTimer2 == 0)
 			windangle = approach(windangle, (curveRotValue * (wnd * 50 * wndir)), 1);
 	}else if ((wnd*100) >= 60){
-		if (obj_gamecontrol.refTimer10 == 0)
+		if (obj_gamecontrol.refTimer2 == 0)
 			windangle = approach(windangle, (curveRot2Value * (wnd * 50 * wndir)), 1);
 	}else{
 		if (windangle < 1) && (windangle > -1){
@@ -133,3 +133,6 @@ if (resetAngle){
 		angle = approach(angle, 0, acc);	
 	}
 }
+
+if (obj_gamecontrol.refTimer2 == 0)
+	depth = -(bbox_bottom - (sprite_height - yorigin) + zaxis);

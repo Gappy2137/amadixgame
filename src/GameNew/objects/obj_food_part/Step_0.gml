@@ -1,5 +1,7 @@
 event_inherited();
 
+depth = -(bbox_bottom - (sprite_height - yorigin) + zaxis);
+
 image_alpha -= 0.04;
 
 if (!bounce)

@@ -11,7 +11,7 @@ if (!surface_exists(srf_cover)) {
 	srf_cover = surface_create(GAMEWIDTH, GAMEHEIGHT);
 	tex_cover = surface_get_texture(srf_cover);
 }
-
+/*
 if (!surface_exists(maskSurf)){
 
 	maskSurf = surface_create(GAMEWIDTH * scale, GAMEHEIGHT * scale);
@@ -35,13 +35,35 @@ with (par_objectdepth){
 
 		if (id.lightCover){
 			
-			draw_sprite_ext(sprite_index, anim_frame, (x - vx) * scale, (y - vy - 2) * scale, (image_xscale - 0.1) * scale, (image_yscale - 0.1) * scale, finalangle, finalblend, finalalpha);
+			var col_list = ds_list_create();
+			var col_num = collision_rectangle_list(
+			x - sprite_get_xoffset(sprite_index),
+			y - sprite_get_yoffset(sprite_index),
+			x + sprite_get_xoffset(sprite_index),
+			y + sprite_get_yoffset(sprite_index),
+			par_light, false, true, col_list, false);
+
+			if (col_num != noone){
+				var __i = 0;
+				repeat(col_num){
+					
+					if (col_list[| __i].y < y){
+								
+						draw_sprite_ext(sprite_index, anim_frame, (x - vx) * scale, (y - vy - 2) * scale, (image_xscale - 0.1) * scale, (image_yscale - 0.1) * scale, finalangle, finalblend, finalalpha);
 	
-			gpu_set_colorwriteenable(1, 1, 1, 0);
+						gpu_set_colorwriteenable(1, 1, 1, 0);
 	
-			draw_rectangle_color(0, 0, GAMEWIDTH * scale, GAMEHEIGHT * scale, c_black, c_black, c_black, c_black, false);
+						draw_rectangle_color(0, 0, GAMEWIDTH * scale, GAMEHEIGHT * scale, c_black, c_black, c_black, c_black, false);
 	
-			gpu_set_colorwriteenable(1, 1, 1, 1);
+						gpu_set_colorwriteenable(1, 1, 1, 1);
+								
+					}
+					
+				}
+				
+			}
+			
+
 			
 		}
 	}
@@ -50,32 +72,8 @@ with (par_objectdepth){
 surface_reset_target();
 
 
-
-surface_set_target(finalSurf);
-
-draw_clear_alpha(c_black, 0);
-
-shader_set(shader_blur);
-
-var uniform_texture_size = shader_get_uniform(shader_blur, "texture_size");
-
-shader_set_uniform_f(uniform_texture_size, GAMEWIDTH * scale, GAMEHEIGHT * scale);
-
-var uniform_window_size = shader_get_uniform(shader_blur, "window_size");
-
-shader_set_uniform_f(uniform_window_size, scale, scale);
-
-draw_surface_ext(maskSurf, 0, 0, 1, 1, 0, c_white, 1);
-
-shader_reset();
-
-surface_reset_target();
-
-
-var surf = finalSurf;
-
-
-
+var surf = maskSurf;
+*/
 surface_set_target(srf_lights);
 	draw_clear(c_black);
 	gpu_set_blendmode(bm_add);
@@ -86,13 +84,22 @@ surface_set_target(srf_lights);
 	with(par_light)
 		draw_sprite_ext(sprite_index, image_index, x - vx, y - vy, image_xscale, image_yscale, image_angle, image_blend, alpha * lights_strength);
 	gpu_set_blendmode_ext(bm_zero,bm_inv_src_alpha);
+	
+	
+	
+	// light occluders
+	
 	with(par_lightcover)
-		draw_sprite_ext(sprite_index, image_index, x - vx, y - vy, image_xscale, image_yscale, image_angle, image_blend, 1);
+		draw_sprite_ext(sprite_index, image_index, x - vx, y - vy, image_xscale, image_yscale, image_angle, image_blend, alpha);
 
+	
+	
+	/*
 	with (par_light){
 	
 		var myX = x - sprite_get_width(sprite_index)/2;
 		var myY = y;
+		var relY = y - sprite_get_height(sprite_index)/2
 	
 		var col_list = ds_list_create();
 		var col_num = collision_rectangle_list(bbox_left, bbox_top, bbox_right, bbox_bottom, par_objectdepth, false, true, col_list, false);
@@ -105,17 +112,29 @@ surface_set_target(srf_lights);
 						if (col_list[| __i].y > myY){
 						
 							// stworz maske
+							
+							shader_set(shader_blur_2);
+
+							var uniform_texture_size = shader_get_uniform(shader_blur_2, "texture_size");
+
+							shader_set_uniform_f(uniform_texture_size, GAMEWIDTH * scale, GAMEHEIGHT * scale);
+
+							var uniform_window_size = shader_get_uniform(shader_blur_2, "window_size");
+
+							shader_set_uniform_f(uniform_window_size, scale, scale);
 					
 							draw_surface_part_ext(surf, 
 							(myX - vx) * scale, 
-							(myY - vy) * scale,
+							(relY - vy) * scale,
 							(sprite_get_width(sprite_index) * image_xscale) * scale,
-							((sprite_get_height(sprite_index) * image_yscale) - (bbox_top - myY)) * scale,
+							(sprite_get_height(sprite_index) * image_yscale) * scale,
 							myX - vx, 
-							myY - vy,
+							relY - vy,
 							1 / scale,
 							1 / scale,
 							c_white, col_list[| __i].finalalpha);
+							
+							shader_reset();
 						
 						}
 					}
@@ -126,6 +145,8 @@ surface_set_target(srf_lights);
 		}
 	
 	}
+	*/
+	//
 	
 	gpu_set_blendmode(bm_add);
 	// reset GPU

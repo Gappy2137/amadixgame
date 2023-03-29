@@ -15,3 +15,5 @@ shadowAlpha = 0.3;
 shadowEnable = true;
 
 zheight = 18;
+
+depth = -(bbox_bottom - (sprite_height - yorigin) + zaxis);

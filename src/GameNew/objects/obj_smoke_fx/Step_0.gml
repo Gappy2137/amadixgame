@@ -1,5 +1,9 @@
 event_inherited();
 
+if ((hsp != 0) && (vsp != 0)){
+	depth = -(bbox_bottom - (sprite_height - yorigin) + zaxis);
+}
+
 var _curve_alpha = animcurve_get(curve_alpha);
 var _channel = animcurve_get_channel(_curve_alpha, "alp");
 

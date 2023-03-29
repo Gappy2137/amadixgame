@@ -1,4 +1,6 @@
 
+depth = -(bbox_bottom - (sprite_height - yorigin) + zaxis);
+
 x += lengthdir_x(spd, angle);
 y += lengthdir_y(spd, angle);
 

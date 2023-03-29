@@ -33,3 +33,5 @@ finalangle = 0;
 finalblend = c_white;
 finalalpha = 1;
 lightCover = false;
+
+alarm[11] = 1;
