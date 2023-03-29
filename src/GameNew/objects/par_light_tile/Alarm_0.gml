@@ -1,1 +1,0 @@
-depth = -(bbox_bottom - (sprite_height - yorigin));

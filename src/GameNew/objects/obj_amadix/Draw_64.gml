@@ -1,7 +1,7 @@
 
-//draw_text(64, 64, fps_real);
+draw_text(64, 64, fps_real);
 
-//draw_text(64, 64 + 16, instance_count);
+draw_text(64, 64 + 16, instance_count);
 /*
 draw_text_transformed(16, 128,		"running " + string(running), .5, .5, 0);
 draw_text_transformed(16, 128 + 8, "spd	 " + string(spd), .5, .5, 0);

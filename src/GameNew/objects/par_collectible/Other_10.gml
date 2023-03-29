@@ -1,3 +1,4 @@
+
 if (isanim){
 		if (anim == 0){
 			canclick = false;

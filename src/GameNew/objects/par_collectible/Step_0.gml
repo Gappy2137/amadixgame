@@ -38,7 +38,6 @@ if (itemOverlay != -1){
 	}
 }
 
-event_inherited();
 if (canBeHurtByPlayer){
 	if (instance_exists(obj_amadix)){
 		var damageSource = instance_place(x, y, obj_damage);
