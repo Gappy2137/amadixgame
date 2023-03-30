@@ -30,7 +30,7 @@
 #macro C_LVL 2
 #macro C_CAP 3
 #macro C_STATION 3
-#macro CRAFTITEMTYPE 10000
+#macro CRAFTITEMTYPE item.height
 //
 //
 //CZCIONKI

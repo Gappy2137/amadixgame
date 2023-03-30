@@ -197,4 +197,4 @@ recipe_add([ [item.lemon, 3],[item.orange,3],[item.strawberry, 3] ], [item.apple
 recipe_add([ [item.lemon, 3],[item.orange,3],[item.strawberry, 3] ], [item.apple, 3, 0, -1], recipe_type.cooking, craftingStation.none);
 recipe_add([ [item.lemon, 3],[item.orange,3],[item.strawberry, 3] ], [item.apple, 3, 0, -1], recipe_type.cooking, craftingStation.none);
 recipe_add([ [item.lemon, 3],[item.orange,3],[item.strawberry, 3] ], [item.apple, 3, 0, -1], recipe_type.cooking, craftingStation.none);
-recipe_add([ [item.log,2],[CRAFTITEMTYPE + itemtype.fruit,2] ], [item.stone, 1, 0, -1], recipe_type.cooking, craftingStation.none);
+recipe_add([ [item.log,2],[CRAFTITEMTYPE + itemtype.resource,1] ], [item.stone, 1, 0, -1], recipe_type.cooking, craftingStation.none);

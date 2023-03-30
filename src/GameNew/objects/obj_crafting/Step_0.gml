@@ -671,17 +671,39 @@ if (craftSlotSelected != -1){
 					var _iitem = craft_grid[# C_ING, craftSlotSelected][@ _i][@ C_ITEM];
 					var _amount = craft_grid[# C_ING, craftSlotSelected][@ _i][@ C_AMOUNT];
 					
+					
+					
 					if (_iitem >= CRAFTITEMTYPE){
 						
-						var __item = 0;
+						var _type = _iitem - CRAFTITEMTYPE;
 						
-						repeat(_amount){
+						if (item_isinsep(_type)){
 							
-							__item = itemtype_find(_iitem - CRAFTITEMTYPE);
+							var __item = 0;
+						
+							repeat(_amount){
 							
-							item_remove(__item, 1, false);
+								__item = itemtype_find_cap(_iitem - CRAFTITEMTYPE);
+							
+								item_remove_capacity(__item, 1);
+							
+							}
+							
+						}else{
+							
+							var __item = 0;
+						
+							repeat(_amount){
+							
+								__item = itemtype_find(_iitem - CRAFTITEMTYPE);
+							
+								item_remove(__item, 1, false);
+							
+							}
 							
 						}
+						
+				
 						
 						
 						

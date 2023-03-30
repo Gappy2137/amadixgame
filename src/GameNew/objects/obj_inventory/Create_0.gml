@@ -233,7 +233,7 @@ enum itemtype{
 
 ds_item_info = ds_grid_create(3, item.height);
 
-ds_item_all = ds_grid_create(13, item.height);
+ds_item_all = ds_grid_create(13, item.height + itemtype.height);
 
 //Siatka wszystkich przedmiotow
 var i = 0;

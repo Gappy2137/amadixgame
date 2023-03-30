@@ -781,6 +781,7 @@
     {"id":{"name":"spr_particle_mask","path":"sprites/spr_particle_mask/spr_particle_mask.yy",},},
     {"id":{"name":"spr_nameboard","path":"sprites/spr_nameboard/spr_nameboard.yy",},},
     {"id":{"name":"spr_amadix_newA_gun_d","path":"sprites/spr_amadix_newA_gun_d/spr_amadix_newA_gun_d.yy",},},
+    {"id":{"name":"itemtype_find_cap","path":"scripts/itemtype_find_cap/itemtype_find_cap.yy",},},
     {"id":{"name":"ChatterboxVariablesClearVisited","path":"scripts/ChatterboxVariablesClearVisited/ChatterboxVariablesClearVisited.yy",},},
     {"id":{"name":"spr_slope_dr_steep","path":"sprites/spr_slope_dr_steep/spr_slope_dr_steep.yy",},},
     {"id":{"name":"spr_amadix_head_attack_r","path":"sprites/spr_amadix_head_attack_r/spr_amadix_head_attack_r.yy",},},

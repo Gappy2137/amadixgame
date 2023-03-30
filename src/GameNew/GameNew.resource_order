@@ -656,6 +656,7 @@
     {"name":"input_source_set","order":8,"path":"scripts/input_source_set/input_source_set.yy",},
     {"name":"spr_particle_mask","order":3,"path":"sprites/spr_particle_mask/spr_particle_mask.yy",},
     {"name":"spr_nameboard","order":8,"path":"sprites/spr_nameboard/spr_nameboard.yy",},
+    {"name":"itemtype_find_cap","order":27,"path":"scripts/itemtype_find_cap/itemtype_find_cap.yy",},
     {"name":"ChatterboxVariablesClearVisited","order":3,"path":"scripts/ChatterboxVariablesClearVisited/ChatterboxVariablesClearVisited.yy",},
     {"name":"spr_slope_dr_steep","order":7,"path":"sprites/spr_slope_dr_steep/spr_slope_dr_steep.yy",},
     {"name":"spr_amadix_head_attack_r","order":2,"path":"sprites/spr_amadix_head_attack_r/spr_amadix_head_attack_r.yy",},

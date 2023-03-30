@@ -1,4 +1,4 @@
-function itemtype_find(iitemtype){
+function itemtype_find_cap(iitemtype){
 
 	var i = 0;
 	var eq = obj_inventory.ds_inventory;
@@ -7,7 +7,7 @@ function itemtype_find(iitemtype){
 		
 		if (eq[# INVTYPE, i] == iitemtype){
 			
-			if (eq[# INVAMOUNT, i] > 0){
+			if (eq[# INVCAP, i] > 0){
 				
 				return ( eq[# INVITEM, i] );
 				
