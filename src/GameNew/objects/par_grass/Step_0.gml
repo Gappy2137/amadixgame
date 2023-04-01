@@ -41,50 +41,10 @@ if (resetAngleTimer == 0){
 	resetAngle = true;
 }
 
-timer += 0.01 * rnd;
-if (timer >= 1){
-	timer = 0;
-}
-
 var wnd = global.windStr/100;
-var wndir = global.windDir;
-var tmr = timer;
-
-var curveSpdValue = 0;
-var curveRotValue = 0;
-var curveRot2Value = 0;
-
-if (obj_gamecontrol.refTimer2 == 0){
-
-	var curveAsset = curve_wind_anim;
-	var curveSpdPos = wnd;
-
-
-
-	var curveSpdStruct = animcurve_get(curveAsset);
-	var curveSpdChannel = animcurve_get_channel(curveSpdStruct, "spd");
-
-	 curveSpdValue = animcurve_channel_evaluate(curveSpdChannel, curveSpdPos);
-
-
-
-	var curveRotPos = tmr;
-
-	var curveRotStruct = animcurve_get(curveAsset);
-	var curveRotChannel = animcurve_get_channel(curveRotStruct, "rot");
-
-	 curveRotValue = animcurve_channel_evaluate(curveRotChannel, curveRotPos);
-
-
-
-	var curveRot2Pos = tmr;
-
-	var curveRot2Struct = animcurve_get(curveAsset);
-	var curveRot2Channel = animcurve_get_channel(curveRot2Struct, "rot2");
-
-	 curveRot2Value = animcurve_channel_evaluate(curveRot2Channel, curveRot2Pos);
-
-}
+var curveRotValue = obj_weather.curveRotValue[randomWindPattern];
+var curveRot2Value = obj_weather.curveRot2Value[randomWindPattern];
+var curveSpdValue = obj_weather.curveSpdValue;
 
 if (wnd >= 0){
 	if (wind_enable)
@@ -102,11 +62,9 @@ if (isWind){
 	}
 	
 	if ((wnd*100) > 10) && ((wnd*100) < 60){
-		if (obj_gamecontrol.refTimer2 == 0)
-			windangle = approach(windangle, (curveRotValue * (wnd * 50 * wndir)), 1);
+		windangle = approach(windangle, (curveRotValue * (wnd * 50 * global.windDir)), 1);
 	}else if ((wnd*100) >= 60){
-		if (obj_gamecontrol.refTimer2 == 0)
-			windangle = approach(windangle, (curveRot2Value * (wnd * 50 * wndir)), 1);
+		windangle = approach(windangle, (curveRot2Value * (wnd * 50 * global.windDir)), 1);
 	}else{
 		if (windangle < 1) && (windangle > -1){
 			windangle = 0;	

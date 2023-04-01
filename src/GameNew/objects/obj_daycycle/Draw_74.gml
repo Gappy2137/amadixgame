@@ -89,9 +89,10 @@ surface_set_target(srf_lights);
 	
 	// light occluders
 	
+	if (!global.pause){
 	with(par_lightcover)
 		draw_sprite_ext(sprite_index, image_index, x - vx, y - vy, image_xscale, image_yscale, image_angle, image_blend, alpha);
-
+	}
 	
 	
 	/*

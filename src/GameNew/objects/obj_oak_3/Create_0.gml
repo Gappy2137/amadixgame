@@ -26,3 +26,5 @@ shadowEnable = true;
 treeSize = 1.5;
 
 zheight = 128;
+
+enableWindDisplacement = true;

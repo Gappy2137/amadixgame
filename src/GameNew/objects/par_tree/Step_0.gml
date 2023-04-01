@@ -38,56 +38,15 @@ if (itemNum > itemNumMax){
 	itemNum = itemNumMax;	
 }
 
-windtimer += 0.01 * rnd;
-if (windtimer >= 1){
-	windtimer = 0;
-}
 var wnd = global.windStr/100;
-var wndir = global.windDir;
-var tmr = timer;
-
-var curveSpdValue = 0;
-var curveRotValue = 0;
-var curveRot2Value = 0;
-
-if (obj_gamecontrol.refTimer2 == 0){
-
-	var curveAsset = curve_wind_anim;
-	var curveSpdPos = wnd;
-
-
-
-	var curveSpdStruct = animcurve_get(curveAsset);
-	var curveSpdChannel = animcurve_get_channel(curveSpdStruct, "spd");
-
-	 curveSpdValue = animcurve_channel_evaluate(curveSpdChannel, curveSpdPos);
-
-
-
-	var curveRotPos = tmr;
-
-	var curveRotStruct = animcurve_get(curveAsset);
-	var curveRotChannel = animcurve_get_channel(curveRotStruct, "rot");
-
-	 curveRotValue = animcurve_channel_evaluate(curveRotChannel, curveRotPos);
-
-
-
-	var curveRot2Pos = tmr;
-
-	var curveRot2Struct = animcurve_get(curveAsset);
-	var curveRot2Channel = animcurve_get_channel(curveRot2Struct, "rot2");
-
-	 curveRot2Value = animcurve_channel_evaluate(curveRot2Channel, curveRot2Pos);
-
-}
+var curveRotValue = obj_weather.curveRotValue[randomWindPattern];
+var curveRot2Value = obj_weather.curveRot2Value[randomWindPattern];
+var curveSpdValue = obj_weather.curveSpdValue;
 
 if ((wnd*100) > 10) && ((wnd*100) < 60){
-	if (obj_gamecontrol.refTimer2 == 0)
-		windangle = approach(windangle, (curveRotValue * (wnd * (1/(treeSize - .2)) *  wndir)), 1);
+		windangle = approach(windangle, (curveRotValue * (wnd * (1/(treeSize - .2)) *  global.windDir)), 1);
 }else if ((wnd*100) >= 60){
-	if (obj_gamecontrol.refTimer2 == 0)
-		windangle = approach(windangle, (curveRot2Value * (wnd * (1/(treeSize - .2)) * wndir)), 1);
+		windangle = approach(windangle, (curveRot2Value * (wnd * (1/(treeSize - .2)) * global.windDir)), 1);
 }else{
 	if (windangle < 1) && (windangle > -1){
 		windangle = 0;	
@@ -99,6 +58,10 @@ if ((wnd*100) > 10) && ((wnd*100) < 60){
 event_user(0);
 
 finalangle = clamp((angle + windangle), -15, 15);
+
+
+
+
 
 //
 if (object_index != obj_hazel_bush)
@@ -128,7 +91,7 @@ var xoff = sprite_get_xoffset(sprite_index);
 var yoff = sprite_get_yoffset(sprite_index);
 
 var _lightList = ds_list_create();
-var _light = collision_rectangle_list(x - xoff, y - yoff - lightOffset, x + xoff, y - lightOffset, par_light, false, true, _lightList, true);
+var _light = collision_rectangle_list(x - xoff + 10, y - yoff - lightOffset + 10, x + xoff - 10, y - lightOffset - 10, par_light, false, true, _lightList, true);
 
 
 if (_light != noone){
@@ -142,7 +105,7 @@ if (_light != noone){
 					
 					
 			var dist = point_distance(myxCoord, myyCoord, _lightList[| i].x, _lightList[| i].y - lightOffset);
-			var maxdist = (_lightList[| i].sprite_width * 0.7 + point_distance(myxCoord, myyCoord, x - xoff, y - yoff - lightOffset))*0.7;
+			var maxdist = (_lightList[| i].sprite_width * 0.6 + point_distance(myxCoord, myyCoord, x - xoff, y - yoff - lightOffset))*0.7;
 		
 
 		
@@ -160,7 +123,7 @@ if (_light != noone){
 			if (lightOccluder.alpha < 0.02) && (lightOccluder.alpha > 0){
 				lightOccluder.alpha = 0;	
 			}else{
-				lightOccluder.alpha = approach(lightOccluder.alpha, 0, 0.01);	
+				lightOccluder.alpha = approach(lightOccluder.alpha, 0, 0.02);	
 			}
 		
 		}

@@ -34,9 +34,7 @@ anim = 0;
 
 acc = .75;
 
-windtimer = 0;
-
-rnd = random_range(0.8, 1.3);
+randomWindPattern = irandom_range(0, 9);
 
 lightCover = true;
 
@@ -44,3 +42,5 @@ lightOccluder = instance_create_layer(x, y, "Lights", obj_lightcover);
 lightOccluder.sprite_index = sprite_index;
 lightOccluder.image_index = 1;
 lightOccluder.alpha = 0;
+
+enableWindDisplacement = false;

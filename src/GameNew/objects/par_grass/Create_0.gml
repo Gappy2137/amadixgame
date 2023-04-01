@@ -29,9 +29,7 @@ anim_frame = image_index;
 anim_speed = 0;
 
 
-timer = 0;
-
-rnd = random_range(0.8, 1.3);
+randomWindPattern = irandom_range(0, 9);
 
 resetAngle = true;
 resetAngleTimer = 10;

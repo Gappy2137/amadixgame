@@ -46,14 +46,12 @@ function load_room(){
 		var _itemNum = struct.treesData[i].itemNum;
 		var _windangle = struct.treesData[i].windangle;
 		var _flag = struct.treesData[i].flag;
-		var _windtimer = struct.treesData[i].windtimer;
 		
 		with(_inst){
 			timer = _timer;
 			itemNum = _itemNum;
 			windangle = _windangle;
 			flag = _flag;
-			windtimer = _windtimer;
 		}
 		i++;
 	}
@@ -65,11 +63,9 @@ function load_room(){
 	repeat(struct.grassNum){
 		
 		var _inst = struct.grassData[i].ID;
-		var _timer = struct.grassData[i].timer;
 		var _finalangle = struct.grassData[i].finalangle;
 		
 		with(_inst){
-			timer = _timer;
 			finalangle = _finalangle;
 		}
 		i++;

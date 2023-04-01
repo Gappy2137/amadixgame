@@ -62,7 +62,6 @@ function save_room(){
 			itemNum : _inst.itemNum,
 			windangle : _inst.windangle,
 			flag : _inst.flag,
-			windtimer : _inst.windtimer
 			
 		}
 		
@@ -81,7 +80,6 @@ function save_room(){
 			
 			ID : _inst.id,
 			finalangle : _inst.finalangle,
-			timer : _inst.timer
 			
 		}
 		

@@ -88,9 +88,7 @@ enableWind = false;
 windangle = 0;
 finalangle = 0;
 
-windTimer = 0;
-
-rnd = random_range(0.8, 1.3);
+randomWindPattern = irandom_range(0, 9);
 
 resetAngle = true;
 resetAngleTimer = 10;
