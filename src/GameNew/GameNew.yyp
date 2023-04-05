@@ -194,6 +194,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"tileset_spr","folderPath":"folders/Tile Sets/tileset_spr.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Particles","folderPath":"folders/Particles.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"buttoncolors.csv","CopyToMask":-1,"filePath":"datafiles",},
@@ -273,6 +274,7 @@
     {"id":{"name":"obj_vignette","path":"objects/obj_vignette/obj_vignette.yy",},},
     {"id":{"name":"spr_amadix_hands_u","path":"sprites/spr_amadix_hands_u/spr_amadix_hands_u.yy",},},
     {"id":{"name":"spr_inventory_selected","path":"sprites/spr_inventory_selected/spr_inventory_selected.yy",},},
+    {"id":{"name":"obj_grasspatch","path":"objects/obj_grasspatch/obj_grasspatch.yy",},},
     {"id":{"name":"__scribble_gen_6_build_lines","path":"scripts/__scribble_gen_6_build_lines/__scribble_gen_6_build_lines.yy",},},
     {"id":{"name":"__input_config_gamepad_data","path":"scripts/__input_config_gamepad_data/__input_config_gamepad_data.yy",},},
     {"id":{"name":"input_binding_scan_abort","path":"scripts/input_binding_scan_abort/input_binding_scan_abort.yy",},},
@@ -1372,6 +1374,7 @@
     {"id":{"name":"input_source_using","path":"scripts/input_source_using/input_source_using.yy",},},
     {"id":{"name":"draw_text_scribble","path":"scripts/draw_text_scribble/draw_text_scribble.yy",},},
     {"id":{"name":"__input_class_verb_state","path":"scripts/__input_class_verb_state/__input_class_verb_state.yy",},},
+    {"id":{"name":"spr_grasspatch_16","path":"sprites/spr_grasspatch_16/spr_grasspatch_16.yy",},},
     {"id":{"name":"input_binding_mouse_wheel_up","path":"scripts/input_binding_mouse_wheel_up/input_binding_mouse_wheel_up.yy",},},
     {"id":{"name":"par_alwaysactive","path":"objects/par_alwaysactive/par_alwaysactive.yy",},},
     {"id":{"name":"spr_appletree_1_overlay","path":"sprites/spr_appletree_1_overlay/spr_appletree_1_overlay.yy",},},

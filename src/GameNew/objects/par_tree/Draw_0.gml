@@ -2,8 +2,8 @@ event_inherited();
 
 finalalpha = alpha;
 
-//draw_sprite_ext(sprite_index, 0, x, y, 1, 1, finalangle, c_white, finalalpha);
-
+draw_sprite_ext(sprite_index, 0, x, y, 1, 1, finalangle, c_white, finalalpha);
+/*
 if (enableWindDisplacement){
 	
 	gpu_set_tex_filter_ext(obj_weather.wind_u_distort_tex, true);
@@ -22,7 +22,7 @@ if (enableWindDisplacement){
 	gpu_set_tex_filter(false);
 
 }
-
+*/
 if (itemOverlay != -1){
 	draw_sprite_ext(itemOverlay, itemOverlayState, x, y, 1, 1, finalangle, c_white, finalalpha);
 }

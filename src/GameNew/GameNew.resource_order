@@ -171,6 +171,7 @@
     {"name":"Trees","order":7,"path":"folders/Sprites/World/Trees.yy",},
     {"name":"Tile Sets","order":33,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":39,"path":"folders/Timelines.yy",},
+    {"name":"Particles","order":45,"path":"folders/Particles.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"input_accessibility_verb_toggle_set","order":7,"path":"scripts/input_accessibility_verb_toggle_set/input_accessibility_verb_toggle_set.yy",},
@@ -208,6 +209,7 @@
     {"name":"obj_vignette","order":16,"path":"objects/obj_vignette/obj_vignette.yy",},
     {"name":"spr_amadix_hands_u","order":1,"path":"sprites/spr_amadix_hands_u/spr_amadix_hands_u.yy",},
     {"name":"spr_inventory_selected","order":11,"path":"sprites/spr_inventory_selected/spr_inventory_selected.yy",},
+    {"name":"obj_grasspatch","order":7,"path":"objects/obj_grasspatch/obj_grasspatch.yy",},
     {"name":"__scribble_gen_6_build_lines","order":6,"path":"scripts/__scribble_gen_6_build_lines/__scribble_gen_6_build_lines.yy",},
     {"name":"input_binding_scan_abort","order":7,"path":"scripts/input_binding_scan_abort/input_binding_scan_abort.yy",},
     {"name":"spr_amadix_eating","order":4,"path":"sprites/spr_amadix_eating/spr_amadix_eating.yy",},
@@ -1176,6 +1178,7 @@
     {"name":"spr_oak_bark","order":11,"path":"sprites/spr_oak_bark/spr_oak_bark.yy",},
     {"name":"input_source_using","order":10,"path":"scripts/input_source_using/input_source_using.yy",},
     {"name":"__input_class_verb_state","order":10,"path":"scripts/__input_class_verb_state/__input_class_verb_state.yy",},
+    {"name":"spr_grasspatch_16","order":15,"path":"sprites/spr_grasspatch_16/spr_grasspatch_16.yy",},
     {"name":"input_binding_mouse_wheel_up","order":6,"path":"scripts/input_binding_mouse_wheel_up/input_binding_mouse_wheel_up.yy",},
     {"name":"par_alwaysactive","order":15,"path":"objects/par_alwaysactive/par_alwaysactive.yy",},
     {"name":"spr_appletree_1_overlay","order":18,"path":"sprites/spr_appletree_1_overlay/spr_appletree_1_overlay.yy",},
