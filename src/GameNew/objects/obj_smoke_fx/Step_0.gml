@@ -1,13 +1,8 @@
-event_inherited();
 
 if ((hsp != 0) && (vsp != 0)){
 	depth = -(bbox_bottom - (sprite_height - yorigin) + zaxis);
 }
 
-var _curve_alpha = animcurve_get(curve_alpha);
-var _channel = animcurve_get_channel(_curve_alpha, "alp");
-
-var _alpha = animcurve_channel_evaluate(_channel, curve_alpha_pos);
 
 switch(type){
 	case 0:
@@ -29,7 +24,7 @@ switch(type){
 		zaxis += 0.02;
 		yscale = xscale;
 		
-		alpha = _alpha;
+		alpha -= fadeoutSpeed;
 	break;
 	case 3:
 		x += lengthdir_x(spd, rot) + (-global.windDir * global.windStr/75);
@@ -63,6 +58,6 @@ if (type != 4) || (type != 1){
 	}
 }
 
-if (alpha == 0){
+if (alpha <= 0){
 	instance_destroy();	
 }

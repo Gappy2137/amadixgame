@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Deprecated",
-    "path": "folders/Extensions/Input/(System)/Deprecated.yy",
+    "name": "Other",
+    "path": "folders/Extensions/Input/Other.yy",
   },
 }
