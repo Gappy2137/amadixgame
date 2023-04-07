@@ -1,5 +1,5 @@
 // Inherit the parent event
-event_inherited();
+//event_inherited();
 
 if ((hsp != 0) && (vsp != 0)){
 	depth = -(bbox_bottom - (sprite_height - yorigin) + zaxis);
@@ -166,7 +166,7 @@ if (hp < 0){
 	hp = 0;
 }
 
-if (hp == 0){instance_destroy();}
+if (hp == 0){event_user(14);}
 
 
 	var _list = ds_list_create();
@@ -181,20 +181,22 @@ if (hp == 0){instance_destroy();}
 				var right_collision = collision_rectangle(bbox_left + (bbox_right-bbox_left)/2, bbox_top, bbox_right, bbox_bottom, _id, false, true);
 	
 				if (left_collision){
-					angle = approach(angle, -25, acc);	
+					angle = lerp(angle, -25, acc);	
+					resetAngle = false;
 				}else if (right_collision){
-					angle = approach(angle, 25, acc);
-				}else{
-					angle = approach(angle, 0, acc);	
+					angle = lerp(angle, 25, acc);
+					resetAngle = false;
 				}
-		
-				resetAngle = false;
 
 			}
 			__i++;
 		}
 		ds_list_destroy(_list);
 	}
+	
+	
+	
+	
 	
 	var _list = ds_list_create();
 	var _num = instance_place_list(x, y, par_collectible, _list, false);
@@ -210,11 +212,15 @@ if (hp == 0){instance_destroy();}
 						var right_collision = collision_rectangle(bbox_left + (bbox_right-bbox_left)/2, bbox_top, bbox_right, bbox_bottom, _id, false, true);
 	
 						if (left_collision){
-							angle = approach(angle, -25, acc);	
+							angle = lerp(angle, -25, acc);	
 						}else if (right_collision){
-							angle = approach(angle, 25, acc);
+							angle = lerp(angle, 25, acc);
 						}else{
-							angle = approach(angle, 0, acc);	
+							if (angle < angleTreshold) && (angle > -angleTreshold){
+								angle = 0;
+							}else{
+								angle = lerp(angle, 0, acc);
+							}
 						}
 		
 						resetAngle = false;

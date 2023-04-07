@@ -1,4 +1,4 @@
-event_inherited();
+//event_inherited();
 
 collision = false;
 
@@ -11,6 +11,8 @@ finalangle = 0;
 acc = 2;
 
 yorigin = 31;
+
+angleTreshold = 2;
 
 shadowOriginY = 2;
 shadowOriginX = 0;
@@ -39,11 +41,13 @@ canBeHurtByPlayer = true;
 
 hitangle = 0;
 
+zaxis = 0;
+
 var zf = instance_place(x, y, par_zfloor);
 if (zf){
-	zfloor = zf.zflr;	
+	zaxis = zf.zflr;	
 }else{
-	zfloor = 0;	
+	zaxis = 0;	
 }
 
 shallowwater = collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, obj_shallowwater16, false, true);
@@ -56,3 +60,4 @@ if (shallowwater){
 }
 
 alarm[0] = 1;
+alarm[11] = 1;

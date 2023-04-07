@@ -30,6 +30,8 @@ canBeDestroyedByPlayer = false;
 
 hitangle = 0;
 
+angleTreshold = 1;
+
 /*
 0 - zwykly (kolizja bez etapow)
 1 - krzak (kolizja z overlay)

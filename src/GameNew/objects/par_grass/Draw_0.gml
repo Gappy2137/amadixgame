@@ -14,8 +14,12 @@ if (wtr){
 	
 }else{
 	
-	draw_sprite_ext(spr_shadow_grass, 0, x, y, 1, 1, 0, c_white, obj_shadows.shadowAlpha / 2);
+	draw_set_alpha(obj_shadows.shadowAlpha / 2);
+	draw_sprite(spr_shadow_grass, 0, x, y);
+	draw_set_alpha(1);
 	
-	draw_sprite_ext(sprite_index, anim_frame, (x), (y), 1, 1, finalangle, c_white, 1);
+	draw_sprite_ext(sprite_index, anim_frame, x, y, 1, 1, finalangle, c_white, 1);
+	
+	draw_text(x,y-24,angle);
 	
 }
