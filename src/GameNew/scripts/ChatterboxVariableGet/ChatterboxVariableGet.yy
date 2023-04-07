@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Variables",
-    "path": "folders/Extensions/Chatterbox/Variables.yy",
+    "name": "Variables and Constants",
+    "path": "folders/Extensions/Chatterbox/Variables and Constants.yy",
   },
 }

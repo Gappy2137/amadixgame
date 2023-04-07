@@ -60,6 +60,8 @@ function __ChatterboxClass(_filename, _singleton, _local_scope) constructor
     optionInstruction   = [];
     optionStructArray   = [];
     
+    hopStack = [];
+    
     current_node        = undefined;
     current_instruction = undefined;
     stopped             = true;
@@ -75,21 +77,16 @@ function __ChatterboxClass(_filename, _singleton, _local_scope) constructor
     //Jumps to a given node in the given source
     static Jump = function()
     {
-        var _title      = argument[0];
-        var _filename   = (argument_count > 1)? argument[1] : undefined;
+        var _title    = argument[0];
+        var _filename = (argument_count > 1)? argument[1] : undefined;
         
         if (_filename != undefined)
         {
             var _file = global.chatterboxFiles[? _filename];
-            if (instanceof(_file) == "__ChatterboxClassSource")
-            {
-                file = _file;
-                filename = file.filename;
-            }
-            else
-            {
-                __ChatterboxTrace("Error! File \"", _filename, "\" not found or not loaded");
-            }
+            if (instanceof(_file) != "__ChatterboxClassSource") __ChatterboxTrace("Error! File \"", _filename, "\" not found or not loaded");
+            
+            file = _file;
+            filename = file.filename;
         }
         
         if (!VerifyIsLoaded())
@@ -97,21 +94,93 @@ function __ChatterboxClass(_filename, _singleton, _local_scope) constructor
             __ChatterboxError("Could not go to node \"", _title, "\" because \"", filename, "\" is not loaded");
             return undefined;
         }
-        else
+        
+        var _node = FindNode(_title);
+        if (_node == undefined)
         {
-            var _node = FindNode(_title);
-            if (_node == undefined)
-            {
-                __ChatterboxError("Could not find node \"", _title, "\" in \"", filename, "\"");
-                return undefined;
-            }
-            
-            current_node = _node;
-            current_instruction = current_node.root_instruction;
-            current_node.MarkVisited();
-            
-            __ChatterboxVM();
+            __ChatterboxError("Could not find node \"", _title, "\" in \"", filename, "\"");
+            return undefined;
         }
+        
+        current_node = _node;
+        current_instruction = current_node.root_instruction;
+        current_node.MarkVisited();
+        
+        __ChatterboxVM();
+    }
+    
+    //Jumps to a given node in the given source
+    static Hop = function()
+    {
+        var _title    = argument[0];
+        var _filename = (argument_count > 1)? argument[1] : undefined;
+        
+        array_push(hopStack, {
+            next:     current_instruction,
+            node:     current_node,
+            filename: filename,
+        });
+        
+        if (_filename != undefined)
+        {
+            var _file = global.chatterboxFiles[? _filename];
+            if (instanceof(_file) != "__ChatterboxClassSource") __ChatterboxTrace("Error! File \"", _filename, "\" not found or not loaded");
+            
+            file = _file;
+            filename = file.filename;
+        }
+        
+        if (!VerifyIsLoaded())
+        {
+            __ChatterboxError("Could not go to node \"", _title, "\" because \"", filename, "\" is not loaded");
+            return undefined;
+        }
+        
+        var _node = FindNode(_title);
+        if (_node == undefined)
+        {
+            __ChatterboxError("Could not find node \"", _title, "\" in \"", filename, "\"");
+            return undefined;
+        }
+        
+        current_node = _node;
+        current_instruction = current_node.root_instruction;
+        current_node.MarkVisited();
+        
+        __ChatterboxVM();
+    }
+    
+    //Jumps to a given node in the given source
+    static HopBack = function()
+    {
+        if (array_length(hopStack) <= 0)
+        {
+            __ChatterboxError("Hop stack is empty");
+        }
+        
+        //Otherwise pop a node off of our stack and go to it
+        var _hop_data = hopStack[array_length(hopStack)-1];
+        var _next     = _hop_data.next;
+        var _node     = _hop_data.node;
+        var _filename = _hop_data.filename;
+        array_pop(hopStack);
+        
+        var _file = global.chatterboxFiles[? _filename];
+        if (instanceof(_file) != "__ChatterboxClassSource") __ChatterboxTrace("Error! File \"", _filename, "\" not found or not loaded");
+        
+        file = _file;
+        filename = file.filename;
+        
+        if (!VerifyIsLoaded())
+        {
+            __ChatterboxError("Could hop back because \"", filename, "\" is not loaded");
+            return undefined;
+        }
+        
+        current_node = _node;
+        current_instruction = _next;
+        
+        __ChatterboxVM();
     }
     
     static Select = function(_index)
@@ -121,23 +190,27 @@ function __ChatterboxClass(_filename, _singleton, _local_scope) constructor
             __ChatterboxError("Could not select option because \"", filename, "\" is not loaded");
             return undefined;
         }
+        
+        if (stopped)
+        {
+            __ChatterboxTrace("Warning! Could not select option because this chatterbox has been stopped");
+            return undefined;
+        }
+        
+        if ((_index < 0) || (_index >= array_length(option)))
+        {
+            __ChatterboxTrace("Out of bounds option index (got ", _index, ", maximum index for options is ", array_length(option)-1, ")");
+            return undefined;
+        }
+        
+        if (optionConditionBool[_index])
+        {
+            current_instruction = optionInstruction[_index];
+            __ChatterboxVM();
+        }
         else
         {
-            if ((_index < 0) || (_index >= array_length(option)))
-            {
-                __ChatterboxTrace("Out of bounds option index (got ", _index, ", maximum index for options is ", array_length(option)-1, ")");
-                return undefined;
-            }
-            
-            if (optionConditionBool[_index])
-            {
-                current_instruction = optionInstruction[_index];
-                __ChatterboxVM();
-            }
-            else
-            {
-                __ChatterboxTrace("Warning! Trying to select an option that failed its conditional check");
-            }
+            __ChatterboxTrace("Warning! Trying to select an option that failed its conditional check");
         }
     }
     
@@ -148,63 +221,76 @@ function __ChatterboxClass(_filename, _singleton, _local_scope) constructor
             __ChatterboxError("Could not continue because \"", filename, "\" is not loaded");
             return undefined;
         }
-        else
+        
+        if (stopped)
         {
-            if (!waiting)
-            {
-                __ChatterboxError("Can't continue, provided chatterbox isn't waiting");
-                return undefined;
-            }
-            
-            current_instruction = wait_instruction;
-            __ChatterboxVM();
+            __ChatterboxTrace("Warning! Could not continue because this chatterbox has been stopped");
+            return undefined;
         }
+        
+        if (!waiting)
+        {
+            __ChatterboxError("Can't continue, provided chatterbox isn't waiting");
+            return undefined;
+        }
+        
+        current_instruction = wait_instruction;
+        __ChatterboxVM();
+    }
+    
+    static __CurrentlyProcessing = function()
+    {
+        //Figure out if we're currently processing this chatterbox in a VM
+        var _i = 0;
+        repeat(array_length(global.__chatterboxVMInstanceStack))
+        {
+            if (global.__chatterboxVMInstanceStack[_i] == self) return true;
+            ++_i;
+        }
+        
+        return false;
     }
     
     static Wait = function()
     {
         if (!VerifyIsLoaded())
         {
-            __ChatterboxError("Could not continue because \"", filename, "\" is not loaded");
+            __ChatterboxError("Could not wait because \"", filename, "\" is not loaded");
             return undefined;
+        }
+        
+        if (waiting)
+        {
+            __ChatterboxError("Can't wait, provided chatterbox is already waiting");
+            return undefined;
+        }
+        
+        //Figure out if we're currently processing this chatterbox in a VM
+        if (__CurrentlyProcessing())
+        {
+            //If we *are* processing this chatterbox then set this particular global to <true>
+            //We pick this global up at the bottom of the VM
+            global.__chatterboxVMWait      = true;
+            global.__chatterboxVMForceWait = true;
         }
         else
         {
-            if (waiting)
-            {
-                __ChatterboxError("Can't wait, provided chatterbox is already waiting");
-                return undefined;
-            }
-            
-            //Figure out if we're currently processing this chatterbox in a VM
-            var _currentlyProcessing = false;
-            var _i = 0;
-            repeat(array_length(global.__chatterboxVMInstanceStack))
-            {
-                if (global.__chatterboxVMInstanceStack[_i] == self)
-                {
-                    _currentlyProcessing = true;
-                    break;
-                }
-                
-                ++_i;
-            }
-            
-            if (_currentlyProcessing)
-            {
-                //If we *are* processing this chatterbox then set this particular global to <true>
-                //We pick this global up at the bottom of the VM
-                global.__chatterboxVMWait      = true;
-                global.__chatterboxVMForceWait = true;
-            }
-            else
-            {
-                //Otherwise set up a waiting state
-                waiting          = true;
-                forced_waiting   = true;
-                wait_instruction = current_instruction;
-            }
+            //Otherwise set up a waiting state
+            waiting          = true;
+            forced_waiting   = true;
+            wait_instruction = current_instruction;
         }
+    }
+    
+    static Stop = function()
+    {
+        if (stopped)
+        {
+            __ChatterboxTrace("Can't stop, provided chatterbox is already stopped");
+            return undefined;
+        }
+        
+        stopped = true;
     }
     
     static IsWaiting = function()
@@ -353,7 +439,7 @@ function __ChatterboxClass(_filename, _singleton, _local_scope) constructor
                 
                 content             = [];
                 option              = [];
-                optionInstruction  = [];
+                optionInstruction   = [];
                 current_node        = undefined;
                 current_instruction = undefined;
                 stopped             = true;

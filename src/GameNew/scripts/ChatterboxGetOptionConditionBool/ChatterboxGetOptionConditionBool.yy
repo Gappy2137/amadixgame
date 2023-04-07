@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Options",
-    "path": "folders/Extensions/Chatterbox/Getters/Options.yy",
+    "name": "Option Getters",
+    "path": "folders/Extensions/Chatterbox/Option Getters.yy",
   },
 }

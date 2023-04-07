@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Getters",
-    "path": "folders/Extensions/Chatterbox/Getters.yy",
+    "name": "Chatterboxes",
+    "path": "folders/Extensions/Chatterbox/Chatterboxes.yy",
   },
 }

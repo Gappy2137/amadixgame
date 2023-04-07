@@ -6,6 +6,6 @@
   "isDnD": false,
   "parent": {
     "name": "omg i can't believe you looked in here",
-    "path": "folders/Extensions/Chatterbox/(Internal system bits, don't look in here)/omg i can't believe you looked in here.yy",
+    "path": "folders/Extensions/Chatterbox/(System) (Don't look in here)/omg i can't believe you looked in here.yy",
   },
 }

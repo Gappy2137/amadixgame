@@ -35,11 +35,10 @@ function ChatterboxAddFunction(_name, _in_function)
     
     if (CHATTERBOX_ALLOW_SCRIPTS && is_numeric(_function) && script_exists(_function))
     {
-        __ChatterboxTrace("Function provided for \"", _name, "\" was a script index (", _function, "=", script_get_name(_function), "), binding to <undefined> scope");
+        if (CHATTERBOX_VERBOSE) __ChatterboxTrace("Function provided for \"", _name, "\" was a script index (", _function, "=", script_get_name(_function), "), binding to <undefined> scope");
         _function = method(undefined, _function);
     }
-    
-    if (!is_method(_function))
+    else if (!is_method(_function))
     {
         __ChatterboxError("Function/method supplied for \"", _name, "\" is invalid (", _in_function, ")");
         return false;
@@ -55,11 +54,14 @@ function ChatterboxAddFunction(_name, _in_function)
         case "endif":
         case "end if":
         case "declare":
+        case "constant":
         case "set":
         case "jump":
         case "stop":
         case "wait":
         case "forcewait":
+        case "hop":
+        case "hopback":
         case "visited":
             __ChatterboxError("Function name \"", _name, "\" is reserved for internal Chatterbox use.\nPlease choose another action name.");
             return false;
@@ -78,6 +80,6 @@ function ChatterboxAddFunction(_name, _in_function)
     }
     
     global.__chatterboxFunctions[? _name ] = _function;
-    __ChatterboxTrace("Permitting script \"", _name, "\", calling \"", _function, "()\"" );
+    if (CHATTERBOX_VERBOSE) __ChatterboxTrace("Permitting script \"", _name, "\", calling \"", _function, "()\"" );
     return true;
 }
