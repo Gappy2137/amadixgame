@@ -33,4 +33,8 @@ finalangle = 0;
 finalblend = c_white;
 finalalpha = 1;
 
+active = true;
+trueActive = true;
+nonCullable = false;
+
 alarm[11] = 1;

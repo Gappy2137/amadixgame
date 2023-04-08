@@ -1,5 +1,7 @@
 
 
+show_debug_overlay(true);
+
 //EKWIPUNEK
 #macro ADDITIONALSLOTS 4
 #macro INVITEM 0
@@ -38,7 +40,7 @@
 global.font_itemnum = font_add_sprite(spr_font_item_num, ord("0123456789-.%"), false, 1);
 //
 #macro GAMESPEED 60
-#macro INSTANCE_LOAD_DISTANCE 196
+#macro INSTANCE_LOAD_DISTANCE 64
 #macro GAMEWIDTH 480
 #macro GAMEHEIGHT 270
 
@@ -215,7 +217,7 @@ alarm[1] = GAMESPEED;
 
 alarm[0] = 5;
 
-
+global.culledInstances = [];
 
 //room data
 global.roomData = {

@@ -61,3 +61,4 @@ if (shallowwater){
 
 alarm[0] = 1;
 alarm[11] = 1;
+alarm[5] = 10;

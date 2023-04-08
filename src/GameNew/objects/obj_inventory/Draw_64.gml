@@ -747,11 +747,11 @@ else if (!show_inventory) && (show_slots){
 										//draw selected slot
 										draw_sprite_ext(spr_inv_slot_selected, 0, xx, yy, scale, scale, 0, c_white, 1);
 										//draw item
-										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
+										//draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
 										
-										gpu_set_blendmode(bm_add);
-										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, .2);
-										gpu_set_blendmode(bm_normal);
+										//gpu_set_blendmode(bm_add);
+										draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cell_size, cell_size, xx, yy, scale, scale, c_white, 1);
+										//gpu_set_blendmode(bm_normal);
 						break;
 						default:
 									if (inv_grid[# 1, ii] > 0){
@@ -761,25 +761,25 @@ else if (!show_inventory) && (show_slots){
 						break;
 					}
 				}
-
+			
 				//Rysuj liczbe przedmiotow
+				
 					if (iitem > 0){
 						var amount = inv_grid[# 1, ii];
 						var _cap = inv_grid[# INVCAP, ii];
 						if (amount != 0){
+							draw_set_font(global.font_itemnum);
 							if (inv_grid[# INVTYPE, ii] == itemtype.drink)
 							|| (inv_grid[# INVTYPE, ii] == itemtype.alcohol){
 								draw_rectangle_color(xx + 4, yy + 20, xx + 20, yy + 22, bl, bl, bl, bl, false);
 								draw_rectangle_color(xx + 4.5, yy + 20.5, xx + 3 + (_cap*3.28) , yy + 21.5, wh, wh, wh, wh, false);
 							}else if (inv_grid[# INVTYPE, ii] == itemtype.magazine){
-									draw_set_font(global.font_itemnum);
 									draw_set_halign(fa_right);
 									draw_text_transformed_color(xx + 22, yy + 16, string(_cap), .5, .5, 0, wh, wh, wh, wh, 1);
 									draw_set_halign(fa_left);
 									draw_set_font(font_item);
 							}else{
 								if (amount > 1){
-									draw_set_font(global.font_itemnum);
 									draw_set_halign(fa_right);
 									draw_text_transformed_color(xx + 22, yy + 16, string(amount), .5, .5, 0, wh, wh, wh, wh, 1);
 									draw_set_halign(fa_left);

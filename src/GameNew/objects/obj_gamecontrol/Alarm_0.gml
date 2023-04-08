@@ -11,8 +11,10 @@ instance_activate_object(par_collectible);
 
 instance_activate_region(
 camera_get_view_x(view_camera[0]) - INSTANCE_LOAD_DISTANCE,
-camera_get_view_y(view_camera[0]) - INSTANCE_LOAD_DISTANCE/8,
-camera_get_view_width(view_camera[0]) + INSTANCE_LOAD_DISTANCE*2,
-camera_get_view_height(view_camera[0]) + INSTANCE_LOAD_DISTANCE*3,
+camera_get_view_y(view_camera[0]) - INSTANCE_LOAD_DISTANCE/4,
+camera_get_view_width(view_camera[0]) + INSTANCE_LOAD_DISTANCE,
+camera_get_view_height(view_camera[0]) + INSTANCE_LOAD_DISTANCE,
 true
 );
+
+

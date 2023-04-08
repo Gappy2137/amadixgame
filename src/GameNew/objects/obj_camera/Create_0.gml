@@ -29,4 +29,9 @@ camera_apply(camera);
 camX = 0;
 camY = 0;
 
+camLeft = 0;
+camTop = 0;
+camRight = 0;
+camBottom = 0;
+
 alarm[0] = 5;

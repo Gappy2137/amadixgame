@@ -230,6 +230,7 @@ ix = (ii - from) mod craftSlotsWidth;
 		
 				if (_item >= CRAFTITEMTYPE){
 		
+					
 					if (item_isinsep(_type)){
 				
 						amountInInv = itemtype_find_amount(_item - CRAFTITEMTYPE);
@@ -239,6 +240,7 @@ ix = (ii - from) mod craftSlotsWidth;
 						amountInInv = itemtype_find_amount(_item - CRAFTITEMTYPE);
 				
 					}
+
 		
 				}else{
 			
@@ -751,6 +753,7 @@ if (craftSlotSelected != -1){
 		
 			if (_iitem >= CRAFTITEMTYPE){
 		
+			
 				if (item_isinsep(_type)){
 				
 					amountInInv = itemtype_find_amount(_iitem - CRAFTITEMTYPE);
@@ -760,6 +763,7 @@ if (craftSlotSelected != -1){
 					amountInInv = itemtype_find_amount(_iitem - CRAFTITEMTYPE);
 				
 				}
+
 		
 			}else{
 			

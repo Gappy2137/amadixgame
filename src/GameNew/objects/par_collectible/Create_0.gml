@@ -85,6 +85,8 @@ if (anim_enable){
 	anim_frame = image_index;	
 }
 
+nonCullable = true;
+
 enableWind = false;
 
 windangle = 0;
@@ -104,8 +106,6 @@ if (zf){
 
 shallowwater = collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, obj_shallowwater16, false, true);
 if (shallowwater){shadowEnable = false;}
-
-notActive = false;
 
 /*
 if (type == 0) || (type == 1) || (type == 2) || (type == 5){
