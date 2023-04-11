@@ -34,6 +34,8 @@ anim = 0;
 
 acc = .75;
 
+cull = 2;
+
 randomWindPattern = irandom_range(0, 9);
 
 lightCover = true;

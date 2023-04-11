@@ -148,6 +148,8 @@ crafting_station = craftingStation.none;
 meleeID = -4;
 dmgID = -4;
 
+cull = 0;
+
 lightSource = instance_create_layer(x, y, "Lights", obj_light_source);
 with (lightSource){
 	image_xscale = 0.01;

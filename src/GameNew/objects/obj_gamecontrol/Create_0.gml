@@ -210,6 +210,8 @@ refTimer = 0;
 refTimerPi = 0;
 refTimer2 = 0;
 
+global.pause = false;
+
 global.savingRoom = false;
 
 global.mainTimer = 0;
@@ -218,7 +220,16 @@ alarm[1] = GAMESPEED;
 alarm[0] = 5;
 
 global.culledInstances = [];
+global.partiallyCulledInstances = [];
+/*
+var cull = function(){cullLogic();}
 
+cullEvery = 5;
+
+cullTimer = time_source_create(time_source_game, cullEvery, time_source_units_frames, cull, [], -1);
+								
+time_source_start(cullTimer);
+*/
 //room data
 global.roomData = {
 	devroom_3 : 0,

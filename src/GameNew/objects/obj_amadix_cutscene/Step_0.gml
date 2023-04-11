@@ -1,4 +1,4 @@
-event_inherited();
+//event_inherited();
 
 var _track = sequence_track_get(obj_cutscene_controller.currentSequenceInstance.activeTracks, "Amadix");
 var _index = sequence_track_variable_get(_track, e_SeqTrackVars.IMAGE_INDEX);

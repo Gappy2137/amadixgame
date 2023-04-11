@@ -33,8 +33,13 @@ finalangle = 0;
 finalblend = c_white;
 finalalpha = 1;
 
-active = true;
-trueActive = true;
-nonCullable = false;
+active = true;			//truly inactive outside of camera view - deactivated
+//partActive = true;		//partially active outside of camera view - not deactivated
+//nonCullable = false;	//cant deactivate outside of camera view
+//partCullable = false;
+cull = 2;
+// 0 - non cullable
+// 1 - part
+// 2 - full
 
 alarm[11] = 1;

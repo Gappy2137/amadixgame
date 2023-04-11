@@ -9,7 +9,10 @@
     "name": "Terrain Types",
     "path": "folders/Objects/DEV_/Terrain Types.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "par_terrain",
+    "path": "objects/par_terrain/par_terrain.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

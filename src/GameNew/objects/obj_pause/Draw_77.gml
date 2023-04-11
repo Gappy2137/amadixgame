@@ -19,14 +19,7 @@ if (global.pause){
 		pause = true;
 
 			
-			instance_deactivate_all(true);
 
-			instance_activate_object(obj_amadix);
-			instance_activate_object(par_alwaysactive);
-			instance_activate_object(par_collectible);
-			instance_activate_object(par_light);
-			instance_activate_object(par_lightcover);
-			instance_activate_object(par_container);
 			
 			with(obj_amadix){
 				if (time_source_exists(stopEatingTimer)){
@@ -47,9 +40,21 @@ if (global.pause){
 				pauseSurfBuffer = buffer_create(width * height * 4, buffer_fixed, 1);
 				buffer_get_surface(pauseSurfBuffer, pauseSurf, 0);
 			}
+			
+			instance_deactivate_all(true);
+
+			instance_activate_object(obj_amadix);
+			instance_activate_object(par_alwaysactive);
+			//instance_activate_object(par_collectible);
+			instance_activate_object(par_light);
+			instance_activate_object(par_lightcover);
+			instance_activate_object(par_container);
+			
 	}
 }else{
 	pause = false;
+	
+	/*
 	instance_activate_region(
 	camera_get_view_x(view_camera[0]) - INSTANCE_LOAD_DISTANCE,
 	camera_get_view_y(view_camera[0]) - INSTANCE_LOAD_DISTANCE/32,
@@ -57,6 +62,7 @@ if (global.pause){
 	camera_get_view_height(view_camera[0]) + INSTANCE_LOAD_DISTANCE*3,
 	true
 	);
+	*/
 	
 	with(obj_amadix){
 		if (time_source_exists(stopEatingTimer)){

@@ -18,7 +18,3 @@ if (inst){
 		}
 	}
 }
-
-
-
-event_inherited();

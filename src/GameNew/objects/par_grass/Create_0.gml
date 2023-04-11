@@ -59,6 +59,8 @@ if (shallowwater){
 	//y += 4;
 }
 
+cull = 2;
+
 alarm[0] = 1;
 alarm[11] = 1;
 alarm[5] = 10;

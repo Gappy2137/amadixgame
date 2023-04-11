@@ -1,3 +1,5 @@
+//cull = 2;
+
 sprite = spr_grass_light_1;
 frames = sprite_get_number(sprite);
 texture = sprite_get_texture(sprite, 0);

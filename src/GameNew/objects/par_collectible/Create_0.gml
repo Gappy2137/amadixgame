@@ -85,7 +85,7 @@ if (anim_enable){
 	anim_frame = image_index;	
 }
 
-nonCullable = true;
+cull = 1;
 
 enableWind = false;
 

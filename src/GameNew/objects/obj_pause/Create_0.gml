@@ -1,4 +1,4 @@
-global.pause = false;
+
 pause = false;
 
 pauseSurf = -1;

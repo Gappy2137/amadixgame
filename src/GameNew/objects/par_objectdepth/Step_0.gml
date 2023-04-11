@@ -1,0 +1,1 @@
+//cullInstance(self.id);

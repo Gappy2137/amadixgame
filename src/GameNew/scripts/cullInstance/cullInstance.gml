@@ -1,4 +1,6 @@
 function cullInstance(_id){
+	
+	if (_id == obj_amadix) exit;
 
 	with (_id){
 	
@@ -21,9 +23,33 @@ function cullInstance(_id){
 	
 		if (_cull){
 			
-			active = false;
-			instance_deactivate_object(id);
-			global.culledInstances[| 0] = 0;
+			var _cullArray = global.culledInstances;
+			var _partCullArray = global.partiallyCulledInstances;
+			
+			if (cull == 1){
+				
+				var i = 0, _contains_id = false;
+				
+				repeat(array_length(_partCullArray)) {if (_partCullArray[@ i][@ 0] == _id) _contains_id = true; i++;}
+			
+				active = false;
+				
+				if (!_contains_id)
+					array_push(_partCullArray, [_id, _left, _top, _right, _bottom]);
+			
+			}else if (cull == 2){
+			
+				var i = 0, _contains_id = false;
+				
+				repeat(array_length(_cullArray)) {if (_cullArray[@ i][@ 0] == _id) _contains_id = true; i++;}
+			
+				active = false;
+				instance_deactivate_object(_id);
+			
+				if (!_contains_id)
+					array_push(_cullArray, [_id, _left, _top, _right, _bottom]);
+			
+			}
 		
 		}
 	

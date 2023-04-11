@@ -1,5 +1,7 @@
 event_inherited();
 
+//cullInstance(self.id);
+
 if (ami_clicked(4)){
 	if (canclick){
 		isanim = true;

@@ -1,4 +1,4 @@
-event_inherited();
+//event_inherited();
 
 depth = -(bbox_bottom - (sprite_height - yorigin) + zaxis);
 
